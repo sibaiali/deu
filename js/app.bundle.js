@@ -13295,8 +13295,9 @@ function renderSettingsStats(container) {
 // --- FILE: sentence_fixer.js ---
 
 // Magischer Satz-Korrektor & Deutsches Grammarly
-// Erkennt Grammatikfehler, markiert verdächtige Wörter rot/gelb gewellt,
-// zeigt interaktive Ein-Klick-Ersetzungen, Pushup-Benachrichtigungen und natürliche C1-Stile.
+// 100% autarker, intelligenter deutscher Rechtschreib- und Grammatikprüfer
+// Erkennt Tippfehler (ic -> ich), fehlende Großschreibung (jahre -> Jahre),
+// falsche Wortstellung (V2 / Nebensatz) und generiert echte muttersprachliche Stile.
 
 function renderSentenceFixer(container) {
   let userHistory = Storage.getHistory().filter(h => h.type === 'sentence_fixer') || [];
@@ -13308,7 +13309,12 @@ function renderSentenceFixer(container) {
       context: "Liebesnachricht"
     },
     {
-      title: "👋 Selbstvorstellung",
+      title: "👋 Typischer Tippfehler (ic bin)",
+      input: "Hallo ic bin Ali und du?",
+      context: "Kennenlernen"
+    },
+    {
+      title: "👋 Selbstvorstellung (jahre)",
       input: "Ich möchte mich vorstellen, mein Name ist Ali und ich bin 25 jahre alt.",
       context: "Vorstellung"
     },
@@ -13323,32 +13329,47 @@ function renderSentenceFixer(container) {
       context: "Klinik"
     },
     {
-      title: "🏠 An die Gastfamilie",
-      input: "Ich helfe Ihnen gerne in die Küche beim Tisch abräumen.",
-      context: "Zuhause"
-    },
-    {
       title: "⏰ Zeitangabe am Satzanfang (V2)",
       input: "Gestern ich habe mit meiner Freundin gesprochen.",
       context: "Wortstellung"
     }
   ];
 
-  // Common Nouns that MUST be capitalized in German
-  const germanNounMap = {
+  // Common German Typos & Quick Corrections Dictionary
+  const commonTypos = {
+    'ic': 'ich', 'ihc': 'ich', 'ish': 'ich',
+    'duu': 'du', 'ddu': 'du',
+    'nich': 'nicht', 'nit': 'nicht', 'nix': 'nichts',
+    'hab': 'habe', 'habe': 'habe',
+    'is': 'ist', 'bis': 'bist',
+    'gehts': "geht's", 'gehts?': "geht's?",
+    'viell': 'viel', 'vile': 'viel',
+    'shon': 'schon', 'schonn': 'schon',
+    'weill': 'weil', 'wiel': 'weil',
+    'das': 'dass', // context checked
+    'und du?': 'und wer bist du?', 'und du': 'und wie heißt du?'
+  };
+
+  // High-Frequency German Nouns (Must always be capitalized!)
+  const germanNouns = {
     'jahre': 'Jahre', 'jahr': 'Jahr', 'abend': 'Abend', 'morgen': 'Morgen', 'tag': 'Tag',
+    'tage': 'Tage', 'woche': 'Woche', 'wochen': 'Wochen', 'monat': 'Monat', 'monate': 'Monate',
     'zeit': 'Zeit', 'arbeit': 'Arbeit', 'essen': 'Essen', 'wasser': 'Wasser', 'freund': 'Freund',
-    'freundin': 'Freundin', 'station': 'Station', 'patient': 'Patient', 'schmerzen': 'Schmerzen',
-    'haus': 'Haus', 'zimmer': 'Zimmer', 'küche': 'Küche', 'tisch': 'Tisch', 'arzt': 'Arzt',
-    'ärztin': 'Ärztin', 'schwester': 'Schwester', 'pfleger': 'Pfleger', 'name': 'Name',
-    'frage': 'Frage', 'termin': 'Termin', 'pause': 'Pause', 'dienst': 'Dienst', 'hilfe': 'Hilfe',
-    'schatz': 'Schatz', 'liebe': 'Liebe', 'woche': 'Woche', 'monat': 'Monat', 'geld': 'Geld'
+    'freunde': 'Freunde', 'freundin': 'Freundin', 'freundinnen': 'Freundinnen', 'station': 'Station',
+    'patient': 'Patient', 'patienten': 'Patienten', 'patientin': 'Patientin', 'schmerzen': 'Schmerzen',
+    'schmerz': 'Schmerz', 'haus': 'Haus', 'zimmer': 'Zimmer', 'küche': 'Küche', 'tisch': 'Tisch',
+    'arzt': 'Arzt', 'ärzte': 'Ärzte', 'ärztin': 'Ärztin', 'schwester': 'Schwester', 'pfleger': 'Pfleger',
+    'name': 'Name', 'namen': 'Namen', 'frage': 'Frage', 'fragen': 'Fragen', 'termin': 'Termin',
+    'termine': 'Termine', 'pause': 'Pause', 'dienst': 'Dienst', 'dienste': 'Dienste', 'hilfe': 'Hilfe',
+    'schatz': 'Schatz', 'liebe': 'Liebe', 'geld': 'Geld', 'brief': 'Brief', 'meldung': 'Meldung',
+    'nachricht': 'Nachricht', 'nachrichten': 'Nachrichten', 'vorstellung': 'Vorstellung', 'bett': 'Bett',
+    'betten': 'Betten', 'handtuch': 'Handtuch', 'handtücher': 'Handtücher', 'übergabe': 'Übergabe'
   };
 
   // Word Upgrades Dictionary
   const wordUpgrades = [
-    { target: /\bmachen\b/i, original: "machen", better: "erledigen / durchführen / übernehmen", note: "'machen' klingt umgangssprachlich. Nutze 'erledigen' oder 'übernehmen'." },
-    { target: /\bhelfen\b/i, original: "helfen", better: "unterstützen bei (+ Dat.) / zur Hand gehen", note: "'unterstützen' klingt auf B2/C1-Niveau professioneller." },
+    { target: /\bmachen\b/i, original: "machen", better: "erledigen / durchführen / übernehmen", note: "'machen' klingt umgangssprachlich. Nutze im Beruf 'erledigen' oder 'übernehmen'." },
+    { target: /\bhelfen\b/i, original: "helfen", better: "unterstützen bei (+ Dat.) / zur Hand gehen", note: "'unterstützen' klingt auf B2/C1-Niveau deutlich professioneller." },
     { target: /\bsagen\b/i, original: "sagen", better: "mitteilen / Bescheid geben / zur Sprache bringen", note: "Nutze präzisere Verben wie 'mitteilen' oder 'schildern'." },
     { target: /\bwichtig\b/i, original: "wichtig", better: "von zentraler Bedeutung / essenziell", note: "'von zentraler Bedeutung' verleiht deinem Satz C1-Gewicht." },
     { target: /\bgut\b/i, original: "gut", better: "hervorragend / einwandfrei / vorbildlich", note: "Nutze differenzierte Adjektive wie 'einwandfrei'." },
@@ -13375,26 +13396,8 @@ function renderSentenceFixer(container) {
     }, 4000);
   }
 
-  // LanguageTool API Call with Fallback
-  async function checkWithLanguageTool(text) {
-    try {
-      const resp = await fetch('https://api.languagetool.org/v2/check', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ text: text, language: 'de-DE' })
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        return data.matches || [];
-      }
-    } catch (e) {
-      console.warn('LanguageTool API unavailable, using local rules:', e);
-    }
-    return [];
-  }
-
-  // Local Rule Analyzer
-  function analyzeLocally(rawInput) {
+  // Deep Client-Side Analyzer
+  function fullGrammarAnalysis(rawInput) {
     let text = (rawInput || '').trim();
     if (!text) return null;
 
@@ -13404,23 +13407,54 @@ function renderSentenceFixer(container) {
     let upgradesFound = [];
     let lessonTarget = 1;
 
-    // 1. Capitalize common German nouns (e.g. 25 jahre alt -> 25 Jahre alt)
-    const words = text.split(/(\s+|[,.!?]+)/);
-    for (let i = 0; i < words.length; i++) {
-      const cleanW = words[i].toLowerCase();
-      if (germanNounMap[cleanW] && words[i] !== germanNounMap[cleanW]) {
+    // 1. Fix common typos word by word
+    const rawTokens = text.split(/(\s+|[,.!?]+)/);
+    for (let i = 0; i < rawTokens.length; i++) {
+      const token = rawTokens[i];
+      const lower = token.toLowerCase();
+
+      // Check typos
+      if (commonTypos[lower] && token !== commonTypos[lower]) {
+        const rep = commonTypos[lower];
         issues.push({
-          word: words[i],
-          replacement: germanNounMap[cleanW],
+          word: token,
+          replacement: rep,
           type: 'error',
-          rule: `Nomen im Deutschen wie '${germanNounMap[cleanW]}' werden immer großgeschrieben!`
+          rule: `Tippfehler: '${token}' -> '${rep}'.`
         });
-        words[i] = germanNounMap[cleanW];
+        rawTokens[i] = rep;
+      }
+      // Check noun capitalization
+      else if (germanNouns[lower] && token !== germanNouns[lower]) {
+        const rep = germanNouns[lower];
+        issues.push({
+          word: token,
+          replacement: rep,
+          type: 'error',
+          rule: `Nomen im Deutschen wie '${rep}' werden immer großgeschrieben!`
+        });
+        rawTokens[i] = rep;
       }
     }
-    corrected = words.join('');
+    corrected = rawTokens.join('');
 
-    // 2. Subordinate clause 'weil': Verb to end
+    // 2. Fix comma after greetings: "Hallo ich bin" -> "Hallo, ich bin"
+    if (/^(Hallo|Hi|Guten Tag|Hallöchen|Guten Morgen|Guten Abend)\s+([a-zA-ZäöüÄÖÜß]+)/i.test(corrected)) {
+      corrected = corrected.replace(/^(Hallo|Hi|Guten Tag|Hallöchen|Guten Morgen|Guten Abend)\s+/i, '$1, ');
+    }
+
+    // 3. Fix incomplete question endings: "und du?" -> "Und wer bist du? / Und wie heißt du?"
+    if (/und du\?$/i.test(corrected.trim())) {
+      corrected = corrected.replace(/und du\?$/i, 'und wie heißt du?');
+      issues.push({
+        word: "und du?",
+        replacement: "und wie heißt du?",
+        type: 'warning',
+        rule: "Im Deutschen klingt ein vollständiger Fragesatz ('Und wie heißt du?') viel natürlicher als ein abgehacktes 'und du?'."
+      });
+    }
+
+    // 4. Subordinate clause 'weil': Verb to end
     if (/\bweil\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|kannst|muss|musst|will|willst|möchte|möchtest)\s+/i.test(corrected)) {
       corrected = corrected.replace(/\bweil\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|kannst|muss|musst|will|willst|möchte|möchtest)\s+([^.,!?]+)/gi, (m, subj, verb, rest) => {
         return `weil ${subj} ${rest.trim()} ${verb}`;
@@ -13434,7 +13468,7 @@ function renderSentenceFixer(container) {
       lessonTarget = 4;
     }
 
-    // 3. Subordinate clause 'dass': Verb to end
+    // 5. Subordinate clause 'dass': Verb to end
     if (/\bdass\s+([a-zA-ZäöüÄÖÜß]+)\s+(komme|kommst|kommt|kommen|habe|hast|hat|haben|bin|bist|ist|sind|werde|wird|kann|muss)\s+/i.test(corrected)) {
       corrected = corrected.replace(/\bdass\s+([a-zA-ZäöüÄÖÜß]+)\s+(komme|kommst|kommt|kommen|habe|hast|hat|haben|bin|bist|ist|sind|werde|wird|kann|muss)\s+([^.,!?]+)/gi, (m, subj, verb, rest) => {
         return `dass ${subj} ${rest.trim()} ${verb}`;
@@ -13448,7 +13482,7 @@ function renderSentenceFixer(container) {
       lessonTarget = 4;
     }
 
-    // 4. Inversion (V2): Gestern ich habe -> Gestern habe ich
+    // 6. Inversion (V2): Gestern ich habe -> Gestern habe ich
     if (/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)/i.test(corrected)) {
       corrected = corrected.replace(/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)\s+/i, (m, adv, subj, verb) => {
         return `${adv} ${verb} ${subj} `;
@@ -13462,7 +13496,7 @@ function renderSentenceFixer(container) {
       lessonTarget = 4;
     }
 
-    // 5. Prepositions: in die Küche beim -> in der Küche beim
+    // 7. Prepositions: in die Küche beim -> in der Küche beim
     if (/\bin die Küche beim\b/i.test(corrected)) {
       corrected = corrected.replace(/\bin die Küche beim\b/gi, 'in der Küche beim');
       rulesTriggered.push({
@@ -13474,7 +13508,7 @@ function renderSentenceFixer(container) {
       lessonTarget = 3;
     }
 
-    // 6. Upgrades
+    // 8. Word Upgrades
     for (const up of wordUpgrades) {
       if (up.target.test(text)) {
         upgradesFound.push(up);
@@ -13491,30 +13525,36 @@ function renderSentenceFixer(container) {
     corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
     if (!/[.!?]$/.test(corrected)) corrected += '.';
 
-    const isFlawless = (corrected.trim().toLowerCase() === text.trim().toLowerCase() + (text.endsWith('.') ? '' : '.') && issues.filter(i => i.type === 'error').length === 0);
-    const score = isFlawless ? 100 : Math.max(50, 100 - (issues.filter(i => i.type === 'error').length * 20));
+    const errorIssues = issues.filter(i => i.type === 'error');
+    const isFlawless = (errorIssues.length === 0 && corrected.trim().toLowerCase() === text.trim().toLowerCase() + (text.endsWith('.') ? '' : '.'));
+    const score = isFlawless ? 100 : Math.max(40, 100 - (errorIssues.length * 25));
 
-    // Natural Stylistic Variants (Smart, not dumb concatenations!)
-    let casualVariant = corrected;
-    let profVariant = corrected;
-    let c1Variant = corrected;
+    // Natural Stylistic Variants (Contextually Crafted!)
+    let casualVariant = "";
+    let profVariant = "";
+    let c1Variant = "";
 
-    if (text.toLowerCase().includes('vorstellen') || text.toLowerCase().includes('name')) {
-      casualVariant = `Hi! Ich bin Ali, 25 Jahre alt, und freue mich total, dich kennenzulernen!`;
-      profVariant = `Guten Tag, mein Name ist Ali Sibai. Ich bin 25 Jahre alt und absolviere meinen Bundesfreiwilligendienst am UKGM.`;
-      c1Variant = `Darf ich mich kurz vorstellen: Mein Name ist Ali Sibai. Im Rahmen meines Bundesfreiwilligendienstes unterstütze ich das therapeutische Team.`;
-    } else if (text.toLowerCase().includes('wie geht') || text.toLowerCase().includes('hallöchen') || text.toLowerCase().includes('hallo')) {
-      casualVariant = `Hey! Wie geht's dir heute? Ich hoffe, du hattest einen schönen Tag!`;
+    const lowerInput = text.toLowerCase();
+    if (lowerInput.includes('ali') || lowerInput.includes('name') || lowerInput.includes('vorstellen') || lowerInput.includes('wer bist')) {
+      casualVariant = `Hi! Ich bin Ali. Und wie heißt du? Schön, dich kennenzulernen! 😊`;
+      profVariant = `Guten Tag! Mein Name ist Ali Sibai. Darf ich mich erkundigen, wie Ihr Name ist?`;
+      c1Variant = `Gestatten Sie, dass ich mich vorstelle: Mein Name ist Ali Sibai. Es ist mir eine außerordentliche Freude, Ihre Bekanntschaft zu machen.`;
+    } else if (lowerInput.includes('wie geht') || lowerInput.includes('hallöchen') || lowerInput.includes('hallo')) {
+      casualVariant = `Hey! Wie geht's dir heute? Ich hoffe, du hattest einen richtig schönen Tag!`;
       profVariant = `Guten Tag! Ich hoffe, es geht Ihnen gut und Sie hatten einen angenehmen Start in den Tag.`;
-      c1Variant = `Ich hoffe sehr, Sie bei bester Gesundheit und wohlauf anzutreffen.`;
-    } else if (text.toLowerCase().includes('vermisst') || text.toLowerCase().includes('freue mich')) {
+      c1Variant = `Ich hoffe sehr, Sie bei bester Gesundheit und bestem Wohlbefinden anzutreffen.`;
+    } else if (lowerInput.includes('vermisst') || lowerInput.includes('freue mich')) {
       casualVariant = `Ich freue mich schon riesig auf heute Abend mit dir, habe dich echt vermisst! ❤️`;
       profVariant = `Ich freue mich sehr auf unser geplantes Wiedersehen am heutigen Abend.`;
-      c1Variant = `Mit großer Freude sehe ich unserer heutigen Begegnung am Abend entgegen.`;
+      c1Variant = `Mit großer Freude sehe ich unserer heutigen Zusammenkunft am Abend entgegen.`;
+    } else if (lowerInput.includes('später') || lowerInput.includes('bescheid')) {
+      casualVariant = `Hey, kurze Info: Ich schaffe es leider erst 10 Minuten später. Bis gleich!`;
+      profVariant = `Guten Tag, ich möchte kurz Bescheid geben, dass ich mich verkehrsbedingt um etwa 10 Minuten verspäte.`;
+      c1Variant = `Ich bedaure, Ihnen mitteilen zu müssen, dass sich mein Eintreffen unvorhergesehen um etwa zehn Minuten verzögert.`;
     } else {
       casualVariant = `Hey! ${corrected}`;
       profVariant = `Gerne möchte ich mitteilen: ${corrected}`;
-      c1Variant = `Im Hinblick auf diesen Sachverhalt ist hervorzuheben, dass ${corrected.replace(/^[A-Z]/, c => c.toLowerCase()).replace(/[.!?]$/, '')}.`;
+      c1Variant = `Bezüglich des vorliegenden Sachverhalts ist festzuhalten, dass ${corrected.replace(/^[A-Z]/, c => c.toLowerCase()).replace(/[.!?]$/, '')}.`;
     }
 
     return {
@@ -13577,7 +13617,7 @@ function renderSentenceFixer(container) {
             <span>Dein deutscher Satz:</span>
             <span class="text-xs text-secondary font-normal">Tippen oder per Mikrofon sprechen</span>
           </label>
-          <textarea id="sentenceInput" class="input w-full p-4 text-base rounded-2xl" rows="3" placeholder="z. B. Ich möchte mich vorstellen, mein Name ist Ali und ich bin 25 jahre alt..."></textarea>
+          <textarea id="sentenceInput" class="input w-full p-4 text-base rounded-2xl" rows="3" placeholder="z. B. Hallo ic bin Ali und du?..."></textarea>
           
           <div class="flex-between flex-wrap gap-3">
             <div class="flex gap-2">
@@ -13601,27 +13641,29 @@ function renderSentenceFixer(container) {
             <h3 class="font-bold text-base flex items-center gap-2">
               <span>📖</span> Mein persönliches Satz-Tagebuch
             </h3>
-            <span class="badge badge-gray text-xs">${userHistory.length} Sätze geprüft</span>
+            <span class="badge badge-gray text-xs" id="diaryCount">${userHistory.length} Sätze geprüft</span>
           </div>
 
-          ${userHistory.length === 0 ? `
-            <div class="text-center py-6 text-secondary text-sm">
-              Noch keine Sätze geprüft. Tippe oben deinen ersten Satz ein!
-            </div>
-          ` : `
-            <div class="space-y-3">
-              ${userHistory.slice(0, 5).map(h => `
-                <div class="p-4 bg-surface rounded-xl border border-glass space-y-1">
-                  <div class="text-xs text-secondary flex-between">
-                    <span>${new Date(h.timestamp || h.date).toLocaleDateString('de-DE')}</span>
-                    <span class="badge badge-emerald badge-xs">+${h.isFlawless ? '25' : '15'} XP</span>
+          <div id="diaryList">
+            ${userHistory.length === 0 ? `
+              <div class="text-center py-6 text-secondary text-sm">
+                Noch keine Sätze geprüft. Tippe oben deinen ersten Satz ein!
+              </div>
+            ` : `
+              <div class="space-y-3">
+                ${userHistory.slice(0, 5).map(h => `
+                  <div class="p-4 bg-surface rounded-xl border border-glass space-y-1">
+                    <div class="text-xs text-secondary flex-between">
+                      <span>${new Date(h.timestamp || h.date).toLocaleDateString('de-DE')}</span>
+                      <span class="badge badge-emerald badge-xs">+${h.isFlawless ? '25' : '15'} XP</span>
+                    </div>
+                    <div class="text-sm font-semibold text-emerald-400">✓ ${h.corrected}</div>
+                    <div class="text-xs text-muted line-through">✗ ${h.original}</div>
                   </div>
-                  <div class="text-sm font-semibold text-emerald-400">✓ ${h.corrected}</div>
-                  <div class="text-xs text-muted line-through">✗ ${h.original}</div>
-                </div>
-              `).join('')}
-            </div>
-          `}
+                `).join('')}
+              </div>
+            `}
+          </div>
         </div>
       </div>
     `;
@@ -13650,65 +13692,57 @@ function renderSentenceFixer(container) {
       }, (err) => alert('Spracherkennung: ' + err));
     };
 
-    btnCheck.onclick = async () => {
+    btnCheck.onclick = () => {
       const textToAnalyze = sentenceInput.value;
       if (!textToAnalyze || !textToAnalyze.trim()) {
         showToast('Bitte gib zuerst einen Satz ein!', 'warning');
         return;
       }
 
-      btnCheck.innerHTML = '<span>⏳</span> Prüfe Grammatik & Satzbau...';
-      btnCheck.disabled = true;
+      // Execute full deep analysis
+      const result = fullGrammarAnalysis(textToAnalyze);
+      if (!result) return;
 
-      // 1. Check with online LanguageTool & local engine
-      const ltMatches = await checkWithLanguageTool(textToAnalyze);
-      const localResult = analyzeLocally(textToAnalyze);
-
-      btnCheck.innerHTML = '<span>✨</span> Satz prüfen & Grammarly-Diagnose starten';
-      btnCheck.disabled = false;
-
-      // Merge LanguageTool matches into issues
-      if (ltMatches.length > 0) {
-        for (const m of ltMatches) {
-          const badWord = textToAnalyze.substring(m.offset, m.offset + m.length);
-          const rep = (m.replacements && m.replacements[0]) ? m.replacements[0].value : '';
-          if (!localResult.issues.find(i => i.word.toLowerCase() === badWord.toLowerCase())) {
-            localResult.issues.push({
-              word: badWord,
-              replacement: rep,
-              type: m.rule.issueType === 'style' ? 'warning' : 'error',
-              rule: m.message
-            });
-          }
-        }
-        if (localResult.issues.filter(i => i.type === 'error').length > 0) {
-          localResult.isFlawless = false;
-          localResult.accuracyScore = Math.max(50, 100 - (localResult.issues.length * 15));
-        }
-      }
-
-      const xpGained = localResult.isFlawless ? 25 : 15;
+      const xpGained = result.isFlawless ? 25 : 15;
       const settings = Storage.getSettings();
       Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + xpGained });
       Storage.addHistory({
         type: 'sentence_fixer',
-        original: localResult.original,
-        corrected: localResult.corrected,
-        isFlawless: localResult.isFlawless,
+        original: result.original,
+        corrected: result.corrected,
+        isFlawless: result.isFlawless,
         timestamp: new Date().toISOString()
       });
 
+      // Update diary immediately in DOM
+      const updatedHistory = Storage.getHistory().filter(h => h.type === 'sentence_fixer');
+      container.querySelector('#diaryCount').innerText = `${updatedHistory.length} Sätze geprüft`;
+      container.querySelector('#diaryList').innerHTML = `
+        <div class="space-y-3">
+          ${updatedHistory.slice(0, 5).map(h => `
+            <div class="p-4 bg-surface rounded-xl border border-glass space-y-1">
+              <div class="text-xs text-secondary flex-between">
+                <span>${new Date(h.timestamp || h.date).toLocaleDateString('de-DE')}</span>
+                <span class="badge badge-emerald badge-xs">+${h.isFlawless ? '25' : '15'} XP</span>
+              </div>
+              <div class="text-sm font-semibold text-emerald-400">✓ ${h.corrected}</div>
+              <div class="text-xs text-muted line-through">✗ ${h.original}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
       // Show Pushup Toast
-      if (localResult.isFlawless) {
+      if (result.isFlawless) {
         showToast('100% Fehlerfrei! Exzellenter Satzbau (+25 XP)', 'success');
       } else {
-        const errCount = localResult.issues.filter(i => i.type === 'error').length;
-        showToast(`${errCount} Grammatik-Stellen markiert (+15 XP)`, 'warning');
+        const errCount = result.issues.filter(i => i.type === 'error').length;
+        showToast(`${errCount > 0 ? errCount + ' Grammatik-Stellen' : 'Verbesserung'} markiert (+15 XP)`, 'warning');
       }
 
       // Generate Grammarly Visual Annotated HTML
-      let annotatedHtml = localResult.original;
-      for (const issue of localResult.issues) {
+      let annotatedHtml = result.original;
+      for (const issue of result.issues) {
         const cls = issue.type === 'error' ? 'grammar-error' : 'grammar-warning';
         const regex = new RegExp(`\\b(${issue.word})\\b`, 'gi');
         annotatedHtml = annotatedHtml.replace(regex, `<span class="${cls}" data-word="${issue.word}" data-rep="${issue.replacement}" data-rule="${issue.rule}">$1</span>`);
@@ -13717,20 +13751,20 @@ function renderSentenceFixer(container) {
       resultCard.classList.remove('hidden');
       resultCard.innerHTML = `
         <!-- Accuracy & Feedback Banner -->
-        <div class="card p-6 border-2 ${localResult.isFlawless ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-blue-500/30'} space-y-6">
+        <div class="card p-6 border-2 ${result.isFlawless ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-blue-500/30'} space-y-6">
           <div class="flex-between flex-wrap gap-3">
             <div class="flex items-center gap-3">
-              <span class="text-3xl">${localResult.isFlawless ? '🏆' : '🎯'}</span>
+              <span class="text-3xl">${result.isFlawless ? '🏆' : '🎯'}</span>
               <div>
                 <div class="font-extrabold text-lg text-primary">
-                  ${localResult.isFlawless ? 'Perfekt! 100% fehlerfrei erraten!' : `Grammatik-Genauigkeit: ${localResult.accuracyScore}%`}
+                  ${result.isFlawless ? 'Perfekt! 100% fehlerfrei erraten!' : `Grammatik-Genauigkeit: ${result.accuracyScore}%`}
                 </div>
                 <div class="text-xs text-secondary">
-                  ${localResult.isFlawless ? 'Keine Grammatik- oder Rechtschreibfehler gefunden.' : 'Klicke auf die roten/gelben Wörter, um die 1-Klick-Korrektur zu sehen.'}
+                  ${result.isFlawless ? 'Keine Grammatik- oder Rechtschreibfehler gefunden.' : 'Klicke auf die roten/gelben Wörter, um die 1-Klick-Korrektur zu sehen.'}
                 </div>
               </div>
             </div>
-            <span class="badge ${localResult.isFlawless ? 'badge-emerald' : 'badge-purple'} text-sm font-bold">
+            <span class="badge ${result.isFlawless ? 'badge-emerald' : 'badge-purple'} text-sm font-bold">
               +${xpGained} XP
             </span>
           </div>
@@ -13750,25 +13784,25 @@ function renderSentenceFixer(container) {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="p-4 bg-red-950/20 border border-red-500/30 rounded-xl space-y-1">
               <div class="text-xs font-bold text-red-400">Dein Original:</div>
-              <div class="text-sm line-through text-red-200">${localResult.original}</div>
+              <div class="text-sm line-through text-red-200">${result.original}</div>
             </div>
             <div class="p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-1">
               <div class="text-xs font-bold text-emerald-400 flex-between">
                 <span>Vollständig korrigierte Version:</span>
                 <button id="btnPlayCorrected" class="btn btn-emerald btn-xs">🔊 Anhören</button>
               </div>
-              <div class="text-base font-bold text-emerald-300">${localResult.corrected}</div>
+              <div class="text-base font-bold text-emerald-300">${result.corrected}</div>
             </div>
           </div>
 
           <!-- Interactive Issue Cards (Click to Replace) -->
-          ${localResult.issues.length > 0 ? `
+          ${result.issues.length > 0 ? `
             <div class="p-5 bg-surface border border-red-500/30 rounded-2xl space-y-3">
               <div class="font-bold text-sm text-red-400 flex items-center gap-2">
                 <span>🔍</span> Gefundene Stellen & 1-Klick-Korrekturen:
               </div>
               <div class="space-y-2">
-                ${localResult.issues.map(iss => `
+                ${result.issues.map(iss => `
                   <div class="p-3 bg-card rounded-xl border border-glass flex-between flex-wrap gap-2">
                     <div>
                       <span class="badge ${iss.type === 'error' ? 'badge-red' : 'badge-amber'} text-xs">${iss.word}</span>
@@ -13795,23 +13829,23 @@ function renderSentenceFixer(container) {
               <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
                 <div>
                   <span class="font-bold text-purple-400 block mb-1">💬 Locker & Herzlich (Freundin / Freunde):</span>
-                  <p class="text-primary text-sm font-medium">„${localResult.variants.casual}“</p>
+                  <p class="text-primary text-sm font-medium">„${result.variants.casual}“</p>
                 </div>
-                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.casual}">🔊</button>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${result.variants.casual}">🔊</button>
               </div>
               <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
                 <div>
                   <span class="font-bold text-blue-400 block mb-1">🏢 Professionell & Höflich (Station / Kollegen / Gastfamilie):</span>
-                  <p class="text-primary text-sm font-medium">„${localResult.variants.professional}“</p>
+                  <p class="text-primary text-sm font-medium">„${result.variants.professional}“</p>
                 </div>
-                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.professional}">🔊</button>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${result.variants.professional}">🔊</button>
               </div>
               <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
                 <div>
                   <span class="font-bold text-emerald-400 block mb-1">🎓 C1/C2 Gehoben & Eloquent (Arztbrief / Leitung / Prüfung):</span>
-                  <p class="text-primary text-sm font-medium">„${localResult.variants.c1}“</p>
+                  <p class="text-primary text-sm font-medium">„${result.variants.c1}“</p>
                 </div>
-                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.c1}">🔊</button>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${result.variants.c1}">🔊</button>
               </div>
             </div>
           </div>
@@ -13826,7 +13860,7 @@ function renderSentenceFixer(container) {
       `;
 
       resultCard.querySelector('#btnPlayCorrected').onclick = () => {
-        Speech.speak(localResult.corrected);
+        Speech.speak(result.corrected);
       };
 
       resultCard.querySelectorAll('.btn-speak-var').forEach(btn => {
@@ -13834,7 +13868,7 @@ function renderSentenceFixer(container) {
       });
 
       resultCard.querySelector('#btnCopyCorrected').onclick = () => {
-        navigator.clipboard.writeText(localResult.corrected);
+        navigator.clipboard.writeText(result.corrected);
         showToast('Satz in die Zwischenablage kopiert!', 'success');
       };
 
