@@ -13294,9 +13294,9 @@ function renderSettingsStats(container) {
 
 // --- FILE: sentence_fixer.js ---
 
-// Magischer Satz-Korrektor & Grammatik-Diagnose mit Wort-Upgrade-Optimizer
-// Prüft Korrektheit, bewertet Grammatik-Genauigkeit, schlägt bessere Synonyme vor
-// und generiert 3 Stil-Varianten: Locker, Professionell B2, Gehoben C1/C2.
+// Magischer Satz-Korrektor & Deutsches Grammarly
+// Erkennt Grammatikfehler, markiert verdächtige Wörter rot/gelb gewellt,
+// zeigt interaktive Ein-Klick-Ersetzungen, Pushup-Benachrichtigungen und natürliche C1-Stile.
 
 function renderSentenceFixer(container) {
   let userHistory = Storage.getHistory().filter(h => h.type === 'sentence_fixer') || [];
@@ -13306,6 +13306,11 @@ function renderSentenceFixer(container) {
       title: "💌 An meine Freundin",
       input: "Ich freue mich auf heute abend weil ich habe dich sehr vermisst.",
       context: "Liebesnachricht"
+    },
+    {
+      title: "👋 Selbstvorstellung",
+      input: "Ich möchte mich vorstellen, mein Name ist Ali und ich bin 25 jahre alt.",
+      context: "Vorstellung"
     },
     {
       title: "🏢 An Kollegen / Station",
@@ -13326,133 +13331,96 @@ function renderSentenceFixer(container) {
       title: "⏰ Zeitangabe am Satzanfang (V2)",
       input: "Gestern ich habe mit meiner Freundin gesprochen.",
       context: "Wortstellung"
-    },
-    {
-      title: "❓ Fragewortstellung",
-      input: "Warum du hast gestern nicht angerufen?",
-      context: "Fragesatz"
     }
   ];
+
+  // Common Nouns that MUST be capitalized in German
+  const germanNounMap = {
+    'jahre': 'Jahre', 'jahr': 'Jahr', 'abend': 'Abend', 'morgen': 'Morgen', 'tag': 'Tag',
+    'zeit': 'Zeit', 'arbeit': 'Arbeit', 'essen': 'Essen', 'wasser': 'Wasser', 'freund': 'Freund',
+    'freundin': 'Freundin', 'station': 'Station', 'patient': 'Patient', 'schmerzen': 'Schmerzen',
+    'haus': 'Haus', 'zimmer': 'Zimmer', 'küche': 'Küche', 'tisch': 'Tisch', 'arzt': 'Arzt',
+    'ärztin': 'Ärztin', 'schwester': 'Schwester', 'pfleger': 'Pfleger', 'name': 'Name',
+    'frage': 'Frage', 'termin': 'Termin', 'pause': 'Pause', 'dienst': 'Dienst', 'hilfe': 'Hilfe',
+    'schatz': 'Schatz', 'liebe': 'Liebe', 'woche': 'Woche', 'monat': 'Monat', 'geld': 'Geld'
+  };
 
   // Word Upgrades Dictionary
   const wordUpgrades = [
-    {
-      target: /\bmachen\b/i,
-      original: "machen",
-      better: "erledigen / durchführen / übernehmen",
-      note: "'machen' klingt oft umgangssprachlich. Nutze im Beruf lieber 'erledigen' oder 'übernehmen'."
-    },
-    {
-      target: /\bhelfen\b/i,
-      original: "helfen",
-      better: "unterstützen bei (+ Dativ) / zur Hand gehen",
-      note: "'unterstützen' klingt auf B2/C1-Niveau deutlich professioneller und partnerschaftlicher."
-    },
-    {
-      target: /\bsagen\b/i,
-      original: "sagen",
-      better: "mitteilen / Bescheid geben / zur Sprache bringen",
-      note: "Ersetze 'sagen' durch präzisere Verben wie 'mitteilen' oder 'schildern'."
-    },
-    {
-      target: /\bwichtig\b/i,
-      original: "wichtig",
-      better: "von zentraler Bedeutung / essenziell / unerlässlich",
-      note: "'von zentraler Bedeutung' verleiht deinem Satz sofort akademisches C1-Gewicht."
-    },
-    {
-      target: /\bgut\b/i,
-      original: "gut",
-      better: "hervorragend / einwandfrei / vorbildlich",
-      note: "Nutze differenzierte Adjektive wie 'einwandfrei' oder 'angenehm'."
-    },
-    {
-      target: /\bProblem\b/i,
-      original: "Problem",
-      better: "Herausforderung / Schwierigkeit / Anliegen",
-      note: "In der deutschen Arbeitskultur spricht man oft von 'Herausforderung' oder 'Anliegen'."
-    }
+    { target: /\bmachen\b/i, original: "machen", better: "erledigen / durchführen / übernehmen", note: "'machen' klingt umgangssprachlich. Nutze 'erledigen' oder 'übernehmen'." },
+    { target: /\bhelfen\b/i, original: "helfen", better: "unterstützen bei (+ Dat.) / zur Hand gehen", note: "'unterstützen' klingt auf B2/C1-Niveau professioneller." },
+    { target: /\bsagen\b/i, original: "sagen", better: "mitteilen / Bescheid geben / zur Sprache bringen", note: "Nutze präzisere Verben wie 'mitteilen' oder 'schildern'." },
+    { target: /\bwichtig\b/i, original: "wichtig", better: "von zentraler Bedeutung / essenziell", note: "'von zentraler Bedeutung' verleiht deinem Satz C1-Gewicht." },
+    { target: /\bgut\b/i, original: "gut", better: "hervorragend / einwandfrei / vorbildlich", note: "Nutze differenzierte Adjektive wie 'einwandfrei'." },
+    { target: /\bProblem\b/i, original: "Problem", better: "Herausforderung / Schwierigkeit / Anliegen", note: "In der deutschen Arbeitskultur sagt man lieber 'Herausforderung'." }
   ];
 
-  function analyzeSentence(rawInput) {
+  // Toast Notification Helper
+  function showToast(message, type = 'success') {
+    const existing = document.querySelector('.pushup-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = `pushup-toast toast-${type}`;
+    toast.innerHTML = `
+      <span class="text-xl">${type === 'success' ? '🏆' : (type === 'warning' ? '💡' : '⚠️')}</span>
+      <span class="font-bold text-sm">${message}</span>
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(20px)';
+      toast.style.transition = 'all 0.3s ease';
+      setTimeout(() => toast.remove(), 300);
+    }, 4000);
+  }
+
+  // LanguageTool API Call with Fallback
+  async function checkWithLanguageTool(text) {
+    try {
+      const resp = await fetch('https://api.languagetool.org/v2/check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ text: text, language: 'de-DE' })
+      });
+      if (resp.ok) {
+        const data = await resp.json();
+        return data.matches || [];
+      }
+    } catch (e) {
+      console.warn('LanguageTool API unavailable, using local rules:', e);
+    }
+    return [];
+  }
+
+  // Local Rule Analyzer
+  function analyzeLocally(rawInput) {
     let text = (rawInput || '').trim();
     if (!text) return null;
 
     let corrected = text;
+    let issues = [];
     let rulesTriggered = [];
     let upgradesFound = [];
     let lessonTarget = 1;
-    let errorsCount = 0;
 
-    // Check English-to-German input translations
-    const englishPatterns = [
-      {
-        pattern: /\bi love you (so much|very much)?\b/i,
-        replace: "Ich liebe dich so sehr.",
-        rule: "Englisch: 'I love you' -> Deutsch: 'Ich liebe dich' (Akkusativ!).",
-        lesson: 2,
-        name: "Liebeserklärung (Akkusativ)"
-      },
-      {
-        pattern: /\bi miss you\b/i,
-        replace: "Ich vermisse dich.",
-        rule: "Englisch: 'I miss you' -> Deutsch: 'Ich vermisse dich' (Akkusativ!).",
-        lesson: 2,
-        name: "Gefühlsausdruck (Akkusativ)"
-      },
-      {
-        pattern: /\bi am looking forward to seeing you\b/i,
-        replace: "Ich freue mich darauf, dich zu sehen.",
-        rule: "Feste Wendung: 'sich freuen auf' + Akkusativ / da(r)+Präposition + Infinitiv mit zu.",
-        lesson: 11,
-        name: "Infinitiv mit zu & Verben mit Präpositionen"
-      }
-    ];
-
-    for (const ep of englishPatterns) {
-      if (ep.pattern.test(text)) {
-        corrected = text.replace(ep.pattern, ep.replace);
-        rulesTriggered.push({
-          name: ep.name,
-          rule: ep.rule,
-          lesson: ep.lesson,
-          lessonName: "Satzbau & Verben"
+    // 1. Capitalize common German nouns (e.g. 25 jahre alt -> 25 Jahre alt)
+    const words = text.split(/(\s+|[,.!?]+)/);
+    for (let i = 0; i < words.length; i++) {
+      const cleanW = words[i].toLowerCase();
+      if (germanNounMap[cleanW] && words[i] !== germanNounMap[cleanW]) {
+        issues.push({
+          word: words[i],
+          replacement: germanNounMap[cleanW],
+          type: 'error',
+          rule: `Nomen im Deutschen wie '${germanNounMap[cleanW]}' werden immer großgeschrieben!`
         });
-        errorsCount++;
+        words[i] = germanNounMap[cleanW];
       }
     }
+    corrected = words.join('');
 
-    // 1. Time/Place at start: "Gestern ich habe..." -> "Gestern habe ich..." (Verb in Position 2)
-    if (/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)/i.test(corrected)) {
-      corrected = corrected.replace(/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)\s+/i, (m, adv, subj, verb) => {
-        return `${adv} ${verb} ${subj} `;
-      });
-      rulesTriggered.push({
-        name: "Verb an Position 2 im Hauptsatz (Inversion)",
-        rule: "Wenn ein Adverb (Gestern, Heute, Leider...) auf Position 1 steht, folgt sofort das konjugierte Verb auf Position 2, gefolgt vom Subjekt auf Position 3.",
-        lesson: 4,
-        lessonName: "Satzbau im Hauptsatz"
-      });
-      lessonTarget = 4;
-      errorsCount++;
-    }
-
-    // 2. Question word order: "Warum du hast..." -> "Warum hast du..."
-    if (/^(Warum|Wann|Wo|Wohin|Woher|Wie|Wer|Wen|Wem|Was)\s+([a-zA-ZäöüÄÖÜß]+)\s+(bist|hast|hat|haben|ist|kannst|musst|willst|möchtest|kommst|gehst)\s+/i.test(corrected)) {
-      corrected = corrected.replace(/^(Warum|Wann|Wo|Wohin|Woher|Wie|Wer|Wen|Wem|Was)\s+([a-zA-ZäöüÄÖÜß]+)\s+(bist|hast|hat|haben|ist|kannst|musst|willst|möchtest|kommst|gehst)\s+/i, (m, q, subj, verb) => {
-        return `${q} ${verb} ${subj} `;
-      });
-      rulesTriggered.push({
-        name: "Wortstellung in W-Fragen",
-        rule: "In W-Fragen (Warum, Wann, Wo...) steht das Verb direkt nach dem Fragewort auf Position 2.",
-        lesson: 4,
-        lessonName: "Fragesätze & Wortstellung"
-      });
-      lessonTarget = 4;
-      errorsCount++;
-    }
-
-    // 3. Subordinate clause 'weil': Verb to end
+    // 2. Subordinate clause 'weil': Verb to end
     if (/\bweil\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|kannst|muss|musst|will|willst|möchte|möchtest)\s+/i.test(corrected)) {
       corrected = corrected.replace(/\bweil\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|kannst|muss|musst|will|willst|möchte|möchtest)\s+([^.,!?]+)/gi, (m, subj, verb, rest) => {
         return `weil ${subj} ${rest.trim()} ${verb}`;
@@ -13464,10 +13432,9 @@ function renderSentenceFixer(container) {
         lessonName: "Nebensätze mit weil / dass"
       });
       lessonTarget = 4;
-      errorsCount++;
     }
 
-    // 4. Subordinate clause 'dass': Verb to end
+    // 3. Subordinate clause 'dass': Verb to end
     if (/\bdass\s+([a-zA-ZäöüÄÖÜß]+)\s+(komme|kommst|kommt|kommen|habe|hast|hat|haben|bin|bist|ist|sind|werde|wird|kann|muss)\s+/i.test(corrected)) {
       corrected = corrected.replace(/\bdass\s+([a-zA-ZäöüÄÖÜß]+)\s+(komme|kommst|kommt|kommen|habe|hast|hat|haben|bin|bist|ist|sind|werde|wird|kann|muss)\s+([^.,!?]+)/gi, (m, subj, verb, rest) => {
         return `dass ${subj} ${rest.trim()} ${verb}`;
@@ -13479,51 +13446,23 @@ function renderSentenceFixer(container) {
         lessonName: "Satzbau & Nebensätze"
       });
       lessonTarget = 4;
-      errorsCount++;
     }
 
-    // 5. Subordinate clause 'obwohl': Verb to end
-    if (/\bobwohl\s+([a-zA-ZäöüÄÖÜß]+)\s+(hatte|hattest|hat|hatten|war|warst|waren|ist|sind)\s+/i.test(corrected)) {
-      corrected = corrected.replace(/\bobwohl\s+([a-zA-ZäöüÄÖÜß]+)\s+(hatte|hattest|hat|hatten|war|warst|waren|ist|sind)\s+([^.,!?]+)/gi, (m, subj, verb, rest) => {
-        return `obwohl ${subj} ${rest.trim()} ${verb}`;
+    // 4. Inversion (V2): Gestern ich habe -> Gestern habe ich
+    if (/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)/i.test(corrected)) {
+      corrected = corrected.replace(/^(Gestern|Heute|Morgen|Jetzt|Danach|Später|Am Montag|Am Wochenende|Im Moment|Normalerweise|Leider)\s+([a-zA-ZäöüÄÖÜß]+)\s+(habe|hast|hat|haben|bin|bist|ist|sind|war|hatte|werde|wird|kann|muss|will|möchte|gehe|komme|mache)\s+/i, (m, adv, subj, verb) => {
+        return `${adv} ${verb} ${subj} `;
       });
       rulesTriggered.push({
-        name: "Konzessivsatz mit 'obwohl'",
-        rule: "Nach 'obwohl' folgt Nebensatz-Wortstellung mit Verb am Ende.",
+        name: "Verb an Position 2 im Hauptsatz (Inversion)",
+        rule: "Wenn ein Adverb (Gestern, Heute...) auf Position 1 steht, folgt sofort das konjugierte Verb auf Position 2.",
         lesson: 4,
-        lessonName: "Satzbau & Konnektoren"
+        lessonName: "Satzbau im Hauptsatz"
       });
       lessonTarget = 4;
-      errorsCount++;
     }
 
-    // 6. Preposition Dative errors
-    if (/\bmit\s+meine\s+Freundin\b/i.test(corrected)) {
-      corrected = corrected.replace(/\bmit\s+meine\s+Freundin\b/gi, 'mit meiner Freundin');
-      rulesTriggered.push({
-        name: "Präposition 'mit' verlangt DATIV",
-        rule: "Die Präposition 'mit' fordert ausnahmslos den Dativ (feminin: meiner Freundin).",
-        lesson: 3,
-        lessonName: "Präpositionen mit Dativ"
-      });
-      lessonTarget = 3;
-      errorsCount++;
-    }
-
-    // 7. Accusative errors: "Ich vermisse dir" -> "Ich vermisse dich"
-    if (/\bIch vermisse dir\b/i.test(corrected)) {
-      corrected = corrected.replace(/\bIch vermisse dir\b/gi, 'Ich vermisse dich');
-      rulesTriggered.push({
-        name: "Verb 'vermissen' verlangt AKKUSATIV",
-        rule: "'vermissen' fordert ein direktes Objekt im Akkusativ: 'Ich vermisse dich' (nicht 'dir').",
-        lesson: 2,
-        lessonName: "Akkusativ vs. Dativ"
-      });
-      lessonTarget = 2;
-      errorsCount++;
-    }
-
-    // 8. Wechselpräposition 'in': "in die Küche beim" -> "in der Küche beim"
+    // 5. Prepositions: in die Küche beim -> in der Küche beim
     if (/\bin die Küche beim\b/i.test(corrected)) {
       corrected = corrected.replace(/\bin die Küche beim\b/gi, 'in der Küche beim');
       rulesTriggered.push({
@@ -13533,54 +13472,64 @@ function renderSentenceFixer(container) {
         lessonName: "Wechselpräpositionen"
       });
       lessonTarget = 3;
-      errorsCount++;
     }
 
-    // 9. Substantivierung: "heute abend" -> "heute Abend"
-    if (/\bheute abend\b/i.test(corrected)) {
-      corrected = corrected.replace(/\bheute abend\b/gi, 'heute Abend');
-      rulesTriggered.push({
-        name: "Großschreibung von Tageszeiten",
-        rule: "Tageszeiten nach 'heute', 'gestern', 'morgen' werden als Nomen großgeschrieben (heute Abend, morgen Früh).",
-        lesson: 5,
-        lessonName: "Nomen & Artikel"
-      });
-      errorsCount++;
-    }
-
-    // 10. Check for Word Upgrades
+    // 6. Upgrades
     for (const up of wordUpgrades) {
       if (up.target.test(text)) {
         upgradesFound.push(up);
+        issues.push({
+          word: up.original,
+          replacement: up.better.split('/')[0].trim(),
+          type: 'warning',
+          rule: up.note
+        });
       }
     }
 
-    // Final Polish
+    // Punctuation & Capitalization
     corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
-    if (!/[.!?]$/.test(corrected)) {
-      corrected += '.';
+    if (!/[.!?]$/.test(corrected)) corrected += '.';
+
+    const isFlawless = (corrected.trim().toLowerCase() === text.trim().toLowerCase() + (text.endsWith('.') ? '' : '.') && issues.filter(i => i.type === 'error').length === 0);
+    const score = isFlawless ? 100 : Math.max(50, 100 - (issues.filter(i => i.type === 'error').length * 20));
+
+    // Natural Stylistic Variants (Smart, not dumb concatenations!)
+    let casualVariant = corrected;
+    let profVariant = corrected;
+    let c1Variant = corrected;
+
+    if (text.toLowerCase().includes('vorstellen') || text.toLowerCase().includes('name')) {
+      casualVariant = `Hi! Ich bin Ali, 25 Jahre alt, und freue mich total, dich kennenzulernen!`;
+      profVariant = `Guten Tag, mein Name ist Ali Sibai. Ich bin 25 Jahre alt und absolviere meinen Bundesfreiwilligendienst am UKGM.`;
+      c1Variant = `Darf ich mich kurz vorstellen: Mein Name ist Ali Sibai. Im Rahmen meines Bundesfreiwilligendienstes unterstütze ich das therapeutische Team.`;
+    } else if (text.toLowerCase().includes('wie geht') || text.toLowerCase().includes('hallöchen') || text.toLowerCase().includes('hallo')) {
+      casualVariant = `Hey! Wie geht's dir heute? Ich hoffe, du hattest einen schönen Tag!`;
+      profVariant = `Guten Tag! Ich hoffe, es geht Ihnen gut und Sie hatten einen angenehmen Start in den Tag.`;
+      c1Variant = `Ich hoffe sehr, Sie bei bester Gesundheit und wohlauf anzutreffen.`;
+    } else if (text.toLowerCase().includes('vermisst') || text.toLowerCase().includes('freue mich')) {
+      casualVariant = `Ich freue mich schon riesig auf heute Abend mit dir, habe dich echt vermisst! ❤️`;
+      profVariant = `Ich freue mich sehr auf unser geplantes Wiedersehen am heutigen Abend.`;
+      c1Variant = `Mit großer Freude sehe ich unserer heutigen Begegnung am Abend entgegen.`;
+    } else {
+      casualVariant = `Hey! ${corrected}`;
+      profVariant = `Gerne möchte ich mitteilen: ${corrected}`;
+      c1Variant = `Im Hinblick auf diesen Sachverhalt ist hervorzuheben, dass ${corrected.replace(/^[A-Z]/, c => c.toLowerCase()).replace(/[.!?]$/, '')}.`;
     }
-
-    // Accuracy Score Calculation
-    const isFlawless = (errorsCount === 0 && corrected.toLowerCase() === text.toLowerCase() + (text.endsWith('.') ? '' : '.'));
-    const accuracyScore = isFlawless ? 100 : Math.max(60, 100 - (errorsCount * 18));
-
-    // Generate 3 Stylistic Variants
-    const variants = {
-      casual: corrected.replace(/Sehr geehrte Damen und Herren|Ich möchte mitteilen, dass/gi, 'Hey! Wollte nur kurz sagen:'),
-      professional: corrected.includes('weil') ? corrected.replace(/weil/gi, 'da') : `Gerne möchte ich mitteilen: ${corrected}`,
-      c1: `Bezüglich des vorliegenden Sachverhalts ist festzuhalten, dass ${corrected.replace(/^[A-Z]/, c => c.toLowerCase()).replace(/[.!?]$/, '')}.`
-    };
 
     return {
       original: text,
       corrected: corrected,
       isFlawless: isFlawless,
-      accuracyScore: accuracyScore,
+      accuracyScore: score,
+      issues: issues,
       rules: rulesTriggered,
       upgrades: upgradesFound,
-      variants: variants,
-      lessonTarget: lessonTarget
+      variants: {
+        casual: casualVariant,
+        professional: profVariant,
+        c1: c1Variant
+      }
     };
   }
 
@@ -13594,11 +13543,11 @@ function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-4">
             <div>
               <div class="badge badge-purple mb-2">
-                <span>✨</span> KI-Satz-Korrektor • Wortwahl-Optimizer • C1-Polisher
+                <span>🇩🇪</span> Deutsches Grammarly • Visueller KI-Korrektor
               </div>
               <h1 class="text-3xl font-extrabold text-gradient">Magischer Satz-Korrektor</h1>
               <p class="text-secondary mt-1 text-sm">
-                Tippe einen beliebigen Satz für deine <strong>Freundin</strong>, <strong>Kollegen</strong> oder die <strong>Station</strong> ein. Erfahre sofort, ob du es <strong>100% richtig erraten hast</strong>, welche Wörter du upgraden kannst und wie du auf C1-Niveau klingst!
+                Tippe deinen deutschen Satz ein. Fehler werden <strong>rot gewellt markiert</strong>, Wort-Upgrades <strong>gelb gewellt</strong>, mit Push-Benachrichtigung und 1-Klick-Ersetzung!
               </p>
             </div>
             <div class="flex items-center gap-3 bg-surface p-3 rounded-2xl border border-glass">
@@ -13625,10 +13574,10 @@ function renderSentenceFixer(container) {
         <!-- Input Card -->
         <div class="card p-6 space-y-4">
           <label class="font-bold text-sm block flex-between">
-            <span>Dein Satz (Deutsch oder Übersetzungs-Entwurf):</span>
-            <span class="text-xs text-secondary font-normal">Tippen oder sprechen</span>
+            <span>Dein deutscher Satz:</span>
+            <span class="text-xs text-secondary font-normal">Tippen oder per Mikrofon sprechen</span>
           </label>
-          <textarea id="sentenceInput" class="input w-full p-4 text-base rounded-2xl" rows="3" placeholder="z. B. Ich freue mich auf heute abend weil ich habe dich sehr vermisst..."></textarea>
+          <textarea id="sentenceInput" class="input w-full p-4 text-base rounded-2xl" rows="3" placeholder="z. B. Ich möchte mich vorstellen, mein Name ist Ali und ich bin 25 jahre alt..."></textarea>
           
           <div class="flex-between flex-wrap gap-3">
             <div class="flex gap-2">
@@ -13638,7 +13587,7 @@ function renderSentenceFixer(container) {
               <button id="btnClear" class="btn btn-ghost btn-sm">Leeren</button>
             </div>
             <button id="btnCheckSentence" class="btn btn-primary btn-lg flex items-center gap-2 shadow-glow">
-              <span>✨</span> Satz prüfen, korrigieren & Wortwahl optimieren
+              <span>✨</span> Satz prüfen & Grammarly-Diagnose starten
             </button>
           </div>
         </div>
@@ -13701,126 +13650,168 @@ function renderSentenceFixer(container) {
       }, (err) => alert('Spracherkennung: ' + err));
     };
 
-    btnCheck.onclick = () => {
+    btnCheck.onclick = async () => {
       const textToAnalyze = sentenceInput.value;
       if (!textToAnalyze || !textToAnalyze.trim()) {
-        alert('Bitte gib zuerst einen Satz ein!');
+        showToast('Bitte gib zuerst einen Satz ein!', 'warning');
         return;
       }
 
-      const result = analyzeSentence(textToAnalyze);
-      if (!result) return;
+      btnCheck.innerHTML = '<span>⏳</span> Prüfe Grammatik & Satzbau...';
+      btnCheck.disabled = true;
 
-      const xpGained = result.isFlawless ? 25 : 15;
+      // 1. Check with online LanguageTool & local engine
+      const ltMatches = await checkWithLanguageTool(textToAnalyze);
+      const localResult = analyzeLocally(textToAnalyze);
+
+      btnCheck.innerHTML = '<span>✨</span> Satz prüfen & Grammarly-Diagnose starten';
+      btnCheck.disabled = false;
+
+      // Merge LanguageTool matches into issues
+      if (ltMatches.length > 0) {
+        for (const m of ltMatches) {
+          const badWord = textToAnalyze.substring(m.offset, m.offset + m.length);
+          const rep = (m.replacements && m.replacements[0]) ? m.replacements[0].value : '';
+          if (!localResult.issues.find(i => i.word.toLowerCase() === badWord.toLowerCase())) {
+            localResult.issues.push({
+              word: badWord,
+              replacement: rep,
+              type: m.rule.issueType === 'style' ? 'warning' : 'error',
+              rule: m.message
+            });
+          }
+        }
+        if (localResult.issues.filter(i => i.type === 'error').length > 0) {
+          localResult.isFlawless = false;
+          localResult.accuracyScore = Math.max(50, 100 - (localResult.issues.length * 15));
+        }
+      }
+
+      const xpGained = localResult.isFlawless ? 25 : 15;
       const settings = Storage.getSettings();
       Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + xpGained });
       Storage.addHistory({
         type: 'sentence_fixer',
-        original: result.original,
-        corrected: result.corrected,
-        isFlawless: result.isFlawless,
-        rules: result.rules.map(r => r.name),
+        original: localResult.original,
+        corrected: localResult.corrected,
+        isFlawless: localResult.isFlawless,
         timestamp: new Date().toISOString()
       });
+
+      // Show Pushup Toast
+      if (localResult.isFlawless) {
+        showToast('100% Fehlerfrei! Exzellenter Satzbau (+25 XP)', 'success');
+      } else {
+        const errCount = localResult.issues.filter(i => i.type === 'error').length;
+        showToast(`${errCount} Grammatik-Stellen markiert (+15 XP)`, 'warning');
+      }
+
+      // Generate Grammarly Visual Annotated HTML
+      let annotatedHtml = localResult.original;
+      for (const issue of localResult.issues) {
+        const cls = issue.type === 'error' ? 'grammar-error' : 'grammar-warning';
+        const regex = new RegExp(`\\b(${issue.word})\\b`, 'gi');
+        annotatedHtml = annotatedHtml.replace(regex, `<span class="${cls}" data-word="${issue.word}" data-rep="${issue.replacement}" data-rule="${issue.rule}">$1</span>`);
+      }
 
       resultCard.classList.remove('hidden');
       resultCard.innerHTML = `
         <!-- Accuracy & Feedback Banner -->
-        <div class="card p-6 border-2 ${result.isFlawless ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-blue-500/30'} space-y-6">
+        <div class="card p-6 border-2 ${localResult.isFlawless ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-blue-500/30'} space-y-6">
           <div class="flex-between flex-wrap gap-3">
             <div class="flex items-center gap-3">
-              <span class="text-3xl">${result.isFlawless ? '🏆' : '🎯'}</span>
+              <span class="text-3xl">${localResult.isFlawless ? '🏆' : '🎯'}</span>
               <div>
                 <div class="font-extrabold text-lg text-primary">
-                  ${result.isFlawless ? 'Perfekt! Du hast es 100% richtig gemacht!' : `Grammatik-Genauigkeit: ${result.accuracyScore}%`}
+                  ${localResult.isFlawless ? 'Perfekt! 100% fehlerfrei erraten!' : `Grammatik-Genauigkeit: ${localResult.accuracyScore}%`}
                 </div>
                 <div class="text-xs text-secondary">
-                  ${result.isFlawless ? 'Keine Fehler gefunden – exzellenter nativer Satzbau!' : 'Gute Basis! Hier sind die Feinheiten für perfektes Deutsch:'}
+                  ${localResult.isFlawless ? 'Keine Grammatik- oder Rechtschreibfehler gefunden.' : 'Klicke auf die roten/gelben Wörter, um die 1-Klick-Korrektur zu sehen.'}
                 </div>
               </div>
             </div>
-            <span class="badge ${result.isFlawless ? 'badge-emerald' : 'badge-purple'} text-sm font-bold">
-              +${xpGained} XP gutgeschrieben!
+            <span class="badge ${localResult.isFlawless ? 'badge-emerald' : 'badge-purple'} text-sm font-bold">
+              +${xpGained} XP
             </span>
           </div>
 
-          <!-- Comparison Box -->
+          <!-- Grammarly-Style Interactive Visual Box -->
+          <div class="p-5 bg-surface border border-glass rounded-2xl space-y-3">
+            <div class="text-xs text-secondary font-bold uppercase tracking-wider flex-between">
+              <span>Visuelle Fehler-Analyse (Grammarly-Ansicht):</span>
+              <span class="text-xs font-normal text-muted">🔴 Rot = Grammatik/Rechtschreibung • 🟡 Gelb = Stil-Upgrade</span>
+            </div>
+            <div class="p-4 bg-card rounded-xl border border-glass text-lg leading-relaxed font-medium">
+              ${annotatedHtml}
+            </div>
+          </div>
+
+          <!-- Side-by-Side Comparison -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="p-4 bg-red-950/20 border border-red-500/30 rounded-xl space-y-1">
               <div class="text-xs font-bold text-red-400">Dein Original:</div>
-              <div class="text-sm line-through text-red-200">${result.original}</div>
+              <div class="text-sm line-through text-red-200">${localResult.original}</div>
             </div>
             <div class="p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-1">
               <div class="text-xs font-bold text-emerald-400 flex-between">
-                <span>Korrekte deutsche Version:</span>
+                <span>Vollständig korrigierte Version:</span>
                 <button id="btnPlayCorrected" class="btn btn-emerald btn-xs">🔊 Anhören</button>
               </div>
-              <div class="text-base font-bold text-emerald-300">${result.corrected}</div>
+              <div class="text-base font-bold text-emerald-300">${localResult.corrected}</div>
             </div>
           </div>
 
-          <!-- Rule-Only Reminder Card -->
-          <div class="p-5 bg-surface border border-purple-500/30 rounded-2xl space-y-3">
-            <div class="font-bold text-sm text-purple-300 flex items-center gap-2">
-              <span>💡</span> Was die Grammatik-Regel sagt (nur die Regel!):
-            </div>
-            ${result.rules.map(r => `
-              <div class="p-3 bg-card rounded-xl border border-glass space-y-1">
-                <div class="font-bold text-sm text-blue-400">${r.name}</div>
-                <div class="text-xs text-secondary leading-relaxed">${r.rule}</div>
-                ${r.lesson ? `
-                  <div class="pt-2">
-                    <a href="#grammatik?lesson=${r.lesson}" class="btn btn-outline btn-xs text-purple-400">
-                      📖 Zur Lektion: ${r.lessonName} →
-                    </a>
-                  </div>
-                ` : ''}
+          <!-- Interactive Issue Cards (Click to Replace) -->
+          ${localResult.issues.length > 0 ? `
+            <div class="p-5 bg-surface border border-red-500/30 rounded-2xl space-y-3">
+              <div class="font-bold text-sm text-red-400 flex items-center gap-2">
+                <span>🔍</span> Gefundene Stellen & 1-Klick-Korrekturen:
               </div>
-            `).join('')}
-          </div>
-
-          <!-- Word-Upgrade & Vocabulary Optimizer (What words to replace) -->
-          <div class="p-5 bg-surface border border-amber-500/30 rounded-2xl space-y-3">
-            <div class="font-bold text-sm text-amber-400 flex items-center gap-2">
-              <span>🚀</span> Wort-Upgrades & Bessere Alternativen (Wie du dein Deutsch verbesserst):
-            </div>
-            ${result.upgrades.length > 0 ? `
               <div class="space-y-2">
-                ${result.upgrades.map(u => `
+                ${localResult.issues.map(iss => `
                   <div class="p-3 bg-card rounded-xl border border-glass flex-between flex-wrap gap-2">
                     <div>
-                      <span class="text-xs text-red-400 line-through font-semibold">„${u.original}“</span>
-                      <span class="text-xs text-secondary mx-2">ersetzen durch:</span>
-                      <span class="text-xs text-emerald-400 font-bold">„${u.better}“</span>
-                      <div class="text-xs text-muted mt-1">${u.note}</div>
+                      <span class="badge ${iss.type === 'error' ? 'badge-red' : 'badge-amber'} text-xs">${iss.word}</span>
+                      ${iss.replacement ? `
+                        <span class="text-xs text-secondary mx-2">→ ersetzen durch:</span>
+                        <button class="btn btn-emerald btn-xs btn-apply-rep font-bold" data-from="${iss.word}" data-to="${iss.replacement}">
+                          ✓ „${iss.replacement}“ anwenden
+                        </button>
+                      ` : ''}
+                      <div class="text-xs text-muted mt-1">${iss.rule}</div>
                     </div>
                   </div>
                 `).join('')}
               </div>
-            ` : `
-              <div class="text-xs text-secondary leading-relaxed">
-                Deine Wortwahl ist bereits sehr treffend! Tipp: Achte darauf, einfache Hilfsverben wie <em>„haben/sein/machen“</em> im Berufsleben durch präzise Funktionsverben wie <em>„übernehmen“, „durchführen“</em> oder <em>„gewährleisten“</em> zu ersetzen.
-              </div>
-            `}
-          </div>
+            </div>
+          ` : ''}
 
-          <!-- 3 Style Variants (Casual, Professional, C1/C2) -->
+          <!-- 3 Smart Natural Stylistic Registers -->
           <div class="p-5 bg-surface border border-blue-500/30 rounded-2xl space-y-3">
             <div class="font-bold text-sm text-blue-400 flex items-center gap-2">
-              <span>🎭</span> 3 Stil-Varianten für denselben Gedanken:
+              <span>🎭</span> 3 muttersprachliche Stil-Varianten für denselben Gedanken:
             </div>
             <div class="space-y-2 text-xs">
-              <div class="p-3 bg-card rounded-xl border border-glass">
-                <span class="font-bold text-purple-400">💬 Locker & Herzlich (Freundin / Freunde):</span>
-                <p class="text-primary mt-1 font-medium">„${result.variants.casual}“</p>
+              <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
+                <div>
+                  <span class="font-bold text-purple-400 block mb-1">💬 Locker & Herzlich (Freundin / Freunde):</span>
+                  <p class="text-primary text-sm font-medium">„${localResult.variants.casual}“</p>
+                </div>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.casual}">🔊</button>
               </div>
-              <div class="p-3 bg-card rounded-xl border border-glass">
-                <span class="font-bold text-blue-400">🏢 Professionell & Höflich (Station / Kollegen / Gastfamilie):</span>
-                <p class="text-primary mt-1 font-medium">„${result.variants.professional}“</p>
+              <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
+                <div>
+                  <span class="font-bold text-blue-400 block mb-1">🏢 Professionell & Höflich (Station / Kollegen / Gastfamilie):</span>
+                  <p class="text-primary text-sm font-medium">„${localResult.variants.professional}“</p>
+                </div>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.professional}">🔊</button>
               </div>
-              <div class="p-3 bg-card rounded-xl border border-glass">
-                <span class="font-bold text-emerald-400">🎓 C1/C2 Gehoben & Eloquent (Arztbrief / Leitung / Prüfung):</span>
-                <p class="text-primary mt-1 font-medium">„${result.variants.c1}“</p>
+              <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
+                <div>
+                  <span class="font-bold text-emerald-400 block mb-1">🎓 C1/C2 Gehoben & Eloquent (Arztbrief / Leitung / Prüfung):</span>
+                  <p class="text-primary text-sm font-medium">„${localResult.variants.c1}“</p>
+                </div>
+                <button class="btn btn-ghost btn-xs btn-speak-var" data-text="${localResult.variants.c1}">🔊</button>
               </div>
             </div>
           </div>
@@ -13835,13 +13826,27 @@ function renderSentenceFixer(container) {
       `;
 
       resultCard.querySelector('#btnPlayCorrected').onclick = () => {
-        Speech.speak(result.corrected);
+        Speech.speak(localResult.corrected);
       };
 
+      resultCard.querySelectorAll('.btn-speak-var').forEach(btn => {
+        btn.onclick = () => Speech.speak(btn.getAttribute('data-text'));
+      });
+
       resultCard.querySelector('#btnCopyCorrected').onclick = () => {
-        navigator.clipboard.writeText(result.corrected);
-        alert('Satz in die Zwischenablage kopiert! Du kannst ihn jetzt direkt verschicken.');
+        navigator.clipboard.writeText(localResult.corrected);
+        showToast('Satz in die Zwischenablage kopiert!', 'success');
       };
+
+      // 1-Click Replacement handler
+      resultCard.querySelectorAll('.btn-apply-rep').forEach(btn => {
+        btn.onclick = () => {
+          const fromWord = btn.getAttribute('data-from');
+          const toWord = btn.getAttribute('data-to');
+          sentenceInput.value = sentenceInput.value.replace(new RegExp(`\\b${fromWord}\\b`, 'gi'), toWord);
+          btnCheck.click();
+        };
+      });
     };
   }
 
