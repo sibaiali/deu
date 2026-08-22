@@ -21949,8 +21949,18 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
   const settings = Storage.getSettings();
   SRS.setVocabList(VOCABULARY_DATA);
   
-  const { dueCards, totalDueCount } = await SRS.getDueCards();
-  const dueCount = totalDueCount || 0;
+  let dueCount = 0;
+  try {
+    const res = await SRS.getDueCards();
+    if (res && typeof res.totalDueCount === 'number') {
+      dueCount = res.totalDueCount;
+    } else if (res && Array.isArray(res.dueCards)) {
+      dueCount = res.dueCards.length;
+    }
+  } catch (err) {
+    console.warn('SRS count calculation error:', err);
+    dueCount = 0;
+  }
 
   let activeMode = '45'; // '5min_shift' | '10min_review' | '10' | '20' | '45' | '90' | 'tired'
   let userState = 'normal'; // 'normal' | 'tired'
@@ -22020,23 +22030,23 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
               </div>
             </div>
 
-            <!-- Compact Metrics Footer -->
-            <div class="grid grid-cols-4 gap-2 pt-3 border-t border-subtle text-center">
-              <div>
-                <div class="text-[11px] text-muted">Fällig</div>
-                <div class="font-bold text-base ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">${dueCount}</div>
+            <!-- Distinct Metric Cards (Never overlapping) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-subtle">
+              <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
+                <div class="text-[11px] font-semibold text-muted">Fällig</div>
+                <div class="font-extrabold text-base ${dueCount > 0 ? 'text-amber-400' : 'text-emerald-400'}">${dueCount}</div>
               </div>
-              <div>
-                <div class="text-[11px] text-muted">Wortschatz</div>
-                <div class="font-bold text-base text-primary">${VOCABULARY_DATA.length}</div>
+              <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
+                <div class="text-[11px] font-semibold text-muted">Wortschatz</div>
+                <div class="font-extrabold text-base text-primary">${VOCABULARY_DATA.length}</div>
               </div>
-              <div>
-                <div class="text-[11px] text-muted">Serie</div>
-                <div class="font-bold text-base text-primary">${settings.streak || 1} Tag</div>
+              <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
+                <div class="text-[11px] font-semibold text-muted">Lernserie</div>
+                <div class="font-extrabold text-base text-amber-400">${settings.streak || 1} Tag</div>
               </div>
-              <div>
-                <div class="text-[11px] text-muted">Zielniveau</div>
-                <div class="font-bold text-base text-blue-500">B2 / C1</div>
+              <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
+                <div class="text-[11px] font-semibold text-muted">Zielniveau</div>
+                <div class="font-extrabold text-base text-blue-400">B2 / C1</div>
               </div>
             </div>
           </div>
@@ -22174,7 +22184,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             </div>
           </div>
 
-          <!-- Vertical Timeline Steps -->
+          <!-- Timeline Step Cards -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
             ${adaptivePlan.steps.map((item, idx) => `
               <div class="p-3.5 bg-subtle rounded-xl border border-subtle flex flex-col justify-between space-y-2">
