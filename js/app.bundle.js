@@ -1,14 +1,68 @@
-// German BFD + Psychiatry + B2/C1 Platform — Universal Standalone Bundle
+// DEU PLATFORM — Universal Micro-Bundled Standalone Application
 (function() {
-'use strict';
+  'use strict';
 
+  const __modules = {};
+  const __cache = {};
 
-// --- FILE: icons.js ---
+  function __register(id, factory) {
+    __modules[id] = factory;
+  }
 
+  function __resolve(from, to) {
+    if (!to.startsWith('.')) return to;
+    const parts = from.split('/');
+    parts.pop(); // remove filename
+    const targetParts = to.split('/');
+    for (const p of targetParts) {
+      if (p === '.') continue;
+      if (p === '..') parts.pop();
+      else parts.push(p);
+    }
+    let res = parts.join('/');
+    if (res.startsWith('./')) res = res.substring(2);
+    return res;
+  }
+
+  function __require(callerId, targetId) {
+    let resolved = __resolve(callerId, targetId);
+    if (!resolved.endsWith('.js')) resolved += '.js';
+    if (resolved.startsWith('js/')) resolved = resolved.substring(3);
+    
+    // Normalize aliases
+    for (const k of Object.keys(__modules)) {
+      if (k === resolved || k.endsWith('/' + resolved) || resolved.endsWith('/' + k) || k === resolved.replace(/^\.\//, '')) {
+        resolved = k;
+        break;
+      }
+    }
+
+    if (__cache[resolved]) {
+      return __cache[resolved].exports;
+    }
+
+    if (!__modules[resolved]) {
+      console.error('Module not found:', resolved, 'from', callerId, 'Registered:', Object.keys(__modules));
+      throw new Error('Module not found: ' + resolved);
+    }
+
+    const module = { exports: {} };
+    __cache[resolved] = module;
+    __modules[resolved](module, module.exports, function(reqId) {
+      return __require(resolved, reqId);
+    });
+
+    return module.exports;
+  }
+
+  // ==========================================
+  // MODULE: icons.js
+  // ==========================================
+  __register('icons.js', function(module, exports, require) {
 // Lucide SVG Line Icons Helper
 // Monochromes, semantisches und barrierefreies Icon-System für das gesamte Interface
 
-const Icons = {
+const Icons = exports.Icons = {
   // Navigation & Core
   house: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
   calendarClock: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="16" cy="16" r="6"/><polyline points="16 14 16 16 18 18"/></svg>`,
@@ -43,9 +97,12 @@ const Icons = {
   x: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
 };
 
+  });
 
-// --- FILE: storage.js ---
-
+  // ==========================================
+  // MODULE: storage.js
+  // ==========================================
+  __register('storage.js', function(module, exports, require) {
 // Storage & Persistence Manager
 // IndexedDB + LocalStorage für Offline-First Datenspeicherung
 
@@ -263,15 +320,20 @@ class StorageService {
   }
 }
 
-const Storage = new StorageService();
+const Storage = exports.Storage = new StorageService();
 
+  });
 
-// --- FILE: srs.js ---
-
+  // ==========================================
+  // MODULE: srs.js
+  // ==========================================
+  __register('srs.js', function(module, exports, require) {
 // Spaced Repetition Engine (SM-2 / FSRS-Style Scheduling)
 // Berechnet Wiederholungsintervalle, Stabilitätsfaktoren und Meisterschaftslevel (0 bis 6)
 
-const MASTERY_LEVELS = {
+const { Storage } = require('./storage.js');
+
+const MASTERY_LEVELS = exports.MASTERY_LEVELS = {
   0: { label: "Nicht gelernt", badge: "badge-gray", color: "#6b7280" },
   1: { label: "Gesehen", badge: "badge-blue", color: "#3b82f6" },
   2: { label: "Erkannt", badge: "badge-indigo", color: "#6366f1" },
@@ -281,7 +343,7 @@ const MASTERY_LEVELS = {
   6: { label: "Spontan verwendet", badge: "badge-emerald", color: "#10b981" }
 };
 
-class SRSEngine {
+const SRSEngine = exports.SRSEngine = class SRSEngine {
   constructor(allVocab = []) {
     this.allVocab = allVocab;
   }
@@ -389,11 +451,14 @@ class SRSEngine {
   }
 }
 
-const SRS = new SRSEngine();
+const SRS = exports.SRS = new SRSEngine();
 
+  });
 
-// --- FILE: speech.js ---
-
+  // ==========================================
+  // MODULE: speech.js
+  // ==========================================
+  __register('speech.js', function(module, exports, require) {
 // Speech & Web Audio Sound Effects Service
 // Multi-Speed TTS (0.6x, 0.8x, 1.0x, 1.2x, 1.5x), Spracherkennung und Audiosynthesizer
 
@@ -519,15 +584,18 @@ class SpeechService {
   }
 }
 
-const Speech = new SpeechService();
+const Speech = exports.Speech = new SpeechService();
 
+  });
 
-// --- FILE: safety_guard.js ---
-
+  // ==========================================
+  // MODULE: safety_guard.js
+  // ==========================================
+  __register('safety_guard.js', function(module, exports, require) {
 // Medical & Privacy Safety Guard
 // Strikte Trennung: Sprachtraining vs. Medizinische Handlung
 
-class SafetyGuard {
+const SafetyGuard = exports.SafetyGuard = class SafetyGuard {
   static checkRoleBoundaries(text) {
     const forbidden = [
       { pattern: /\bich gebe ihnen die tablette\b/i, warning: "Rollengrenze: Als BFDler darfst du Medikamente nicht eigenmächtig verabreichen." },
@@ -555,13 +623,16 @@ class SafetyGuard {
   }
 }
 
+  });
 
-// --- FILE: adaptive_engine.js ---
-
+  // ==========================================
+  // MODULE: adaptive_engine.js
+  // ==========================================
+  __register('adaptive_engine.js', function(module, exports, require) {
 // Adaptive Learning & FSRS Engine
 // Berechnet den optimalen täglichen Lernpfad basierend auf Abruferfolg und Zustand.
 
-class AdaptiveEngine {
+const AdaptiveEngine = exports.AdaptiveEngine = class AdaptiveEngine {
   static getDailyPlan(mode = '45', userState = 'normal') {
     if (mode === '5min_shift') {
       return {
@@ -656,13 +727,16 @@ class AdaptiveEngine {
   }
 }
 
+  });
 
-// --- FILE: knowledge_graph.js ---
-
+  // ==========================================
+  // MODULE: knowledge_graph.js
+  // ==========================================
+  __register('knowledge_graph.js', function(module, exports, require) {
 // Interconnected Knowledge Graph Engine
 // Verbindet Konzepte, Vokabeln, Grammatik, Psychologie, Simulationen und Quellen zu einem holistischen System.
 
-class KnowledgeGraph {
+const KnowledgeGraph = exports.KnowledgeGraph = class KnowledgeGraph {
   static getConceptNetwork(conceptIdOrKeyword) {
     const kw = conceptIdOrKeyword.toLowerCase();
     
@@ -736,13 +810,16 @@ class KnowledgeGraph {
   }
 }
 
+  });
 
-// --- FILE: providers.js ---
-
+  // ==========================================
+  // MODULE: api/providers.js
+  // ==========================================
+  __register('api/providers.js', function(module, exports, require) {
 // API & Integration Abstraction Layer
 // Entkoppelt die Plattform von externen Diensten mit 100% Offline-Garantie.
 
-class APIProviders {
+const APIProviders = exports.APIProviders = class APIProviders {
   static getDictionaryProvider() {
     return {
       async lookup(word) {
@@ -779,13 +856,16 @@ class APIProviders {
   }
 }
 
+  });
 
-// --- FILE: search.js ---
-
+  // ==========================================
+  // MODULE: search.js
+  // ==========================================
+  __register('search.js', function(module, exports, require) {
 // Multi-Index Fuzzy Search Engine
 // Durchsucht Vokabeln, Grammatik, Simulationen, Psychologie, BFD-Fakten und Quellen
 
-class SearchEngine {
+const SearchEngine = exports.SearchEngine = class SearchEngine {
   constructor(dataset = {}) {
     this.dataset = dataset;
   }
@@ -933,14 +1013,17 @@ class SearchEngine {
   }
 }
 
-const Search = new SearchEngine();
+const Search = exports.Search = new SearchEngine();
 
+  });
 
-// --- FILE: router.js ---
-
+  // ==========================================
+  // MODULE: router.js
+  // ==========================================
+  __register('router.js', function(module, exports, require) {
 // Client-Side Hash Router
 
-class Router {
+const Router = exports.Router = class Router {
   constructor(routes = {}, defaultRoute = 'heute') {
     this.routes = routes;
     this.defaultRoute = defaultRoute;
@@ -989,13 +1072,16 @@ class Router {
   }
 }
 
+  });
 
-// --- FILE: sources_catalog.js ---
-
+  // ==========================================
+  // MODULE: data/sources_catalog.js
+  // ==========================================
+  __register('data/sources_catalog.js', function(module, exports, require) {
 // Quellenverzeichnis & Quellennachweise
 // Vollständige Inventarisierung aller analysierten Primärquellen und Notizen
 
-const SOURCES_CATALOG = [
+const SOURCES_CATALOG = exports.SOURCES_CATALOG = [
   {
     id: "src_starthilfe",
     filename: "starthilfe_krankenhausalltag.pdf",
@@ -1365,11 +1451,14 @@ const SOURCES_CATALOG = [
   }
 ];
 
+  });
 
-// --- FILE: resources_data.js ---
-
+  // ==========================================
+  // MODULE: data/resources_data.js
+  // ==========================================
+  __register('data/resources_data.js', function(module, exports, require) {
 // Kuratierte, kostenlose und offizielle externe Lernressourcen
-const RESOURCES_DATA = [
+const RESOURCES_DATA = exports.RESOURCES_DATA = [
   {
     id: "res_goethe_uebungen",
     title: "Goethe-Institut • Kostenlos Deutsch üben (A1–C2)",
@@ -1450,13 +1539,16 @@ const RESOURCES_DATA = [
   }
 ];
 
+  });
 
-// --- FILE: bfd_data.js ---
-
+  // ==========================================
+  // MODULE: data/bfd_data.js
+  // ==========================================
+  __register('data/bfd_data.js', function(module, exports, require) {
 // Mein BFD auf einen Blick — Strukturierte Daten für den persönlichen Einsatz
 // Unterscheidung zwischen Fakten (BESTÄTIGT), Notizen (AUS_QUELLE), Wahrscheinlichkeiten (WAHRSCHEINLICH) und offenen Punkten (ZU_PRÜFEN)
 
-const BFD_DATA = {
+const BFD_DATA = exports.BFD_DATA = {
   overview: {
     title: "Mein BFD auf einen Blick",
     subtitle: "Bundesfreiwilligendienst im Zentrum für Psychische Gesundheit / UKGM Marburg",
@@ -1891,11 +1983,14 @@ const BFD_DATA = {
   }
 };
 
+  });
 
-// --- FILE: vocabulary_data.js ---
-
+  // ==========================================
+  // MODULE: data/vocabulary_data.js
+  // ==========================================
+  __register('data/vocabulary_data.js', function(module, exports, require) {
 // Umfassende Vokabel- und Chunk-Datenbank (1000+ Einträge, Anki-Deck, Präfix-Verben, Klinik & Alltag)
-const VOCABULARY_DATA = [
+const VOCABULARY_DATA = exports.VOCABULARY_DATA = [
   {
     "id": "voc_das_taschengeld_001",
     "word": "das Taschengeld",
@@ -19971,13 +20066,16 @@ const VOCABULARY_DATA = [
   }
 ];
 
+  });
 
-// --- FILE: grammar_data.js ---
-
+  // ==========================================
+  // MODULE: data/grammar_data.js
+  // ==========================================
+  __register('data/grammar_data.js', function(module, exports, require) {
 // Grammatiksystem — 25 Lektionen von B1-Konsolidierung bis B2 & C1
 // Synthese aus: Easy German Step-By-Step, Aspekte neu B2, Constantinos Vayenas Der-Die-Das, 99579913-c48d-49ed-a0df-320f9a70cb87_B1-Deutsch.pdf
 
-const GRAMMAR_DATA = {
+const GRAMMAR_DATA = exports.GRAMMAR_DATA = {
   title: "Vollständiges Grammatik-System (B1 -> B2 -> C1)",
   provenance: "AUS_QUELLE",
   lessons: [
@@ -20389,13 +20487,16 @@ Beispiele aus der Praxis:
   ]
 };
 
+  });
 
-// --- FILE: psychology_data.js ---
-
+  // ==========================================
+  // MODULE: data/psychology_data.js
+  // ==========================================
+  __register('data/psychology_data.js', function(module, exports, require) {
 // Psychologie verstehen — Sprach- und Handlungswissen für das psychiatrische Arbeitsumfeld
 // Synthese aus: PsyDeutsch_Idee.pdf, 11a3b5a3-c006-4da8-b3c5-9676d5fcc49e_Psychotherapie.pdf, 85e84574-7323-429f-90b9-dce257bf5641_KJP.pdf, intus_Booklet.pdf, Elisabeth Wagner
 
-const PSYCHOLOGY_DATA = {
+const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   overview: {
     title: "Psychologie & Psychiatrische Kommunikation verstehen",
     disclaimer: "Dieses Modul dient dem Kommunikations-, Sprach- und Handlungswissen im Rahmen des Freiwilligendienstes. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik oder Therapieentscheidung.",
@@ -20532,13 +20633,16 @@ const PSYCHOLOGY_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: simulations_data.js ---
-
+  // ==========================================
+  // MODULE: data/simulations_data.js
+  // ==========================================
+  __register('data/simulations_data.js', function(module, exports, require) {
 // BFD-Simulationen — Interaktive, mehrstufige Kommunikationsszenarien
 // Jedes Szenario enthält: Situation, Dialog, Ziel, Kriterien, Bewertungslogik, und gestufte Musterantworten (Basic, Natürlich, B2, C1)
 
-const SIMULATIONS_DATA = [
+const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   {
     id: "sim_first_day_supervisor",
     title: "Erster Tag: Vorstellung bei der Stationsleitung",
@@ -20678,14 +20782,17 @@ const SIMULATIONS_DATA = [
   }
 ];
 
+  });
 
-// --- FILE: phrases_data.js ---
-
+  // ==========================================
+  // MODULE: data/phrases_data.js
+  // ==========================================
+  __register('data/phrases_data.js', function(module, exports, require) {
 // "Was sage ich?" & "Ich verstehe nicht!" Phrasentrainer
 // Stufenförmige Transformationen: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
 // Vollständig integriert mit allen Phrasen, Redemitteln und Diskursmarkern aus dem Anki-Deck
 
-const PHRASES_DATA = {
+const PHRASES_DATA = exports.PHRASES_DATA = {
   title: "Praktischer Phrasen- & Redemittel-Transformator",
   provenance: "AUS_QUELLE",
   categories: [
@@ -20887,13 +20994,16 @@ const PHRASES_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: reading_data.js ---
-
+  // ==========================================
+  // MODULE: data/reading_data.js
+  // ==========================================
+  __register('data/reading_data.js', function(module, exports, require) {
 // Leseverstehen & Praxistexte (B1+ / B2 / C1)
 // Authentische Krankenhaus- und Alltagsdokumente mit Übungsaufgaben
 
-const READING_DATA = {
+const READING_DATA = exports.READING_DATA = {
   title: "Leseverstehen: Station & Klinikalltag",
   provenance: "AUS_QUELLE",
   texts: [
@@ -20989,12 +21099,15 @@ Um 09:45 Uhr suchte Herr K. eigenständig das Stationszimmer auf und erkundigte 
   ]
 };
 
+  });
 
-// --- FILE: first_week_data.js ---
-
+  // ==========================================
+  // MODULE: data/first_week_data.js
+  // ==========================================
+  __register('data/first_week_data.js', function(module, exports, require) {
 // Meine erste Woche — Geführter 7-Tage-Einarbeitungsplan
 
-const FIRST_WEEK_DATA = {
+const FIRST_WEEK_DATA = exports.FIRST_WEEK_DATA = {
   title: "Meine erste Woche im BFD",
   provenance: "AUS_QUELLE",
   days: [
@@ -21067,12 +21180,15 @@ const FIRST_WEEK_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: first_month_data.js ---
-
+  // ==========================================
+  // MODULE: data/first_month_data.js
+  // ==========================================
+  __register('data/first_month_data.js', function(module, exports, require) {
 // Mein erster Monat — Roadmap für nachhaltige Integration
 
-const FIRST_MONTH_DATA = {
+const FIRST_MONTH_DATA = exports.FIRST_MONTH_DATA = {
   title: "Mein erster Monat im BFD",
   provenance: "AUS_QUELLE",
   weeks: [
@@ -21099,13 +21215,16 @@ const FIRST_MONTH_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: seminars_data.js ---
-
+  // ==========================================
+  // MODULE: data/seminars_data.js
+  // ==========================================
+  __register('data/seminars_data.js', function(module, exports, require) {
 // Seminartage & Bildungszentrum Begleitung
 // Vorbereitung auf die 26 gesetzlichen Seminartage beim Träger (DRK)
 
-const SEMINARS_DATA = {
+const SEMINARS_DATA = exports.SEMINARS_DATA = {
   title: "Seminartage & Bildungsbegleitung",
   provenance: "AUS_QUELLE",
   overview: {
@@ -21144,13 +21263,16 @@ const SEMINARS_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: ethics_data.js ---
-
+  // ==========================================
+  // MODULE: data/ethics_data.js
+  // ==========================================
+  __register('data/ethics_data.js', function(module, exports, require) {
 // Ethik, Schweigepflicht & Professionelle Grenzen
 // Leitlinien für den psychiatrischen Alltag im BFD
 
-const ETHICS_DATA = {
+const ETHICS_DATA = exports.ETHICS_DATA = {
   title: "Ethik & Professionelle Grenzen",
   provenance: "AUS_QUELLE",
   sections: [
@@ -21183,13 +21305,16 @@ const ETHICS_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: culture_data.js ---
-
+  // ==========================================
+  // MODULE: data/culture_data.js
+  // ==========================================
+  __register('data/culture_data.js', function(module, exports, require) {
 // Arbeitskultur in Deutschland & Was sage ich / Was nicht
 // Sprachliche und kulturelle Normen im Krankenhaus- und Arbeitsalltag
 
-const CULTURE_DATA = {
+const CULTURE_DATA = exports.CULTURE_DATA = {
   title: "Arbeitskultur in Deutschland & Professionelle Kommunikation",
   provenance: "AUS_QUELLE",
   workplaceNorms: [
@@ -21254,13 +21379,16 @@ const CULTURE_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: bureaucracy_data.js ---
-
+  // ==========================================
+  // MODULE: data/bureaucracy_data.js
+  // ==========================================
+  __register('data/bureaucracy_data.js', function(module, exports, require) {
 // Behörden- & Alltagsdeutsch in Deutschland
 // Sprachbausteine für Ämter, Wohnen, Bank, Krankenkasse und Nahverkehr
 
-const BUREAUCRACY_DATA = {
+const BUREAUCRACY_DATA = exports.BUREAUCRACY_DATA = {
   title: "Behörden- & Alltagsdeutsch",
   provenance: "AUS_QUELLE",
   topics: [
@@ -21319,13 +21447,16 @@ const BUREAUCRACY_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: engineering_data.js ---
-
+  // ==========================================
+  // MODULE: data/engineering_data.js
+  // ==========================================
+  __register('data/engineering_data.js', function(module, exports, require) {
 // Technisches & Ingenieur-Deutsch (B2/C1)
 // Vorbereitung auf die spätere ingenieurwissenschaftliche Laufbahn
 
-const ENGINEERING_DATA = {
+const ENGINEERING_DATA = exports.ENGINEERING_DATA = {
   title: "Technisches & Ingenieur-Deutsch",
   provenance: "ERGÄNZT",
   description: "Grundlagen des Fachwortschatzes und professioneller technischer Kommunikation (B2/C1).",
@@ -21396,12 +21527,20 @@ const ENGINEERING_DATA = {
   ]
 };
 
+  });
 
-// --- FILE: dashboard.js ---
-
+  // ==========================================
+  // MODULE: components/dashboard.js
+  // ==========================================
+  __register('components/dashboard.js', function(module, exports, require) {
 // Bento Grid Dashboard - Calm, Professional & Focused
 // Reduzierte kognitive Last: Tages-Check-in (Span 8), Überlebensmodus (Span 4),
 // 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und adaptive Sessions (5-Min-Station, 10-Min-Review, Müde).
+
+const { Storage } = require('../storage.js');
+const { SRS } = require('../srs.js');
+const { VOCABULARY_DATA } = require('../data/vocabulary_data.js');
+const { AdaptiveEngine } = require('../adaptive_engine.js');
 
 export async function renderDashboard(container) {
   const settings = Storage.getSettings();
@@ -21652,12 +21791,17 @@ export async function renderDashboard(container) {
   renderView();
 }
 
+  });
 
-// --- FILE: bfd_hub.js ---
-
+  // ==========================================
+  // MODULE: components/bfd_hub.js
+  // ==========================================
+  __register('components/bfd_hub.js', function(module, exports, require) {
 // BFD Hub Component — "Mein BFD auf einen Blick"
 
-function renderBFDHub(container, params = {}) {
+const { BFD_DATA } = require('../data/bfd_data.js');
+
+const renderBFDHub = exports.renderBFDHub = function renderBFDHub(container, params = {}) {
   const activeTab = params.tab || 'overview';
 
   container.innerHTML = `
@@ -21988,13 +22132,20 @@ function renderBFDHub(container, params = {}) {
   });
 }
 
+  });
 
-// --- FILE: flashcards.js ---
-
+  // ==========================================
+  // MODULE: components/flashcards.js
+  // ==========================================
+  __register('components/flashcards.js', function(module, exports, require) {
 // Flashcards Component — Anki-Style SRS Wiederholung & Vokabel-Explorer
 // Vollständige Abdeckung: Präfix-Verben, Stammformen, Komparative, Wortfamilie & B2/C1 Chunks
 
-function renderFlashcards(container, data, params = {}) {
+const { Storage } = require('../storage.js');
+const { SRS } = require('../srs.js');
+const { Speech } = require('../speech.js');
+
+const renderFlashcards = exports.renderFlashcards = function renderFlashcards(container, data, params = {}) {
   const mode = params.mode || 'explorer'; // Default to explorer so user immediately sees all words!
 
   SRS.setVocabList(data.vocabulary);
@@ -22388,12 +22539,17 @@ function renderVocabExplorer(container, vocabList) {
   renderList();
 }
 
+  });
 
-// --- FILE: simulations.js ---
-
+  // ==========================================
+  // MODULE: components/simulations.js
+  // ==========================================
+  __register('components/simulations.js', function(module, exports, require) {
 // Simulations Component — Interaktive Rollenspiele mit Stufen-Feedback
 
-function renderSimulations(container, data, params = {}) {
+const { Speech } = require('../speech.js');
+
+const renderSimulations = exports.renderSimulations = function renderSimulations(container, data, params = {}) {
   const activeSimId = params.id || (data.simulations[0] ? data.simulations[0].id : null);
   const currentSim = data.simulations.find(s => s.id === activeSimId) || data.simulations[0];
 
@@ -22580,12 +22736,17 @@ function renderSimTurn(stage, sim, turnIndex) {
   };
 }
 
+  });
 
-// --- FILE: speaking_trainer.js ---
-
+  // ==========================================
+  // MODULE: components/speaking_trainer.js
+  // ==========================================
+  __register('components/speaking_trainer.js', function(module, exports, require) {
 // Speaking Trainer Component — Sprechtraining & Aussprache
 
-function renderSpeakingTrainer(container, data) {
+const { Speech } = require('../speech.js');
+
+const renderSpeakingTrainer = exports.renderSpeakingTrainer = function renderSpeakingTrainer(container, data) {
   const exercises = [
     {
       id: "spk_01",
@@ -22696,12 +22857,18 @@ function renderSpeakingTrainer(container, data) {
   renderView();
 }
 
+  });
 
-// --- FILE: phrase_trainer.js ---
-
+  // ==========================================
+  // MODULE: components/phrase_trainer.js
+  // ==========================================
+  __register('components/phrase_trainer.js', function(module, exports, require) {
 // Phrase Trainer Component — "Was sage ich?" & "Ich verstehe nicht!"
 
-function renderPhraseTrainer(container) {
+const { PHRASES_DATA } = require('../data/phrases_data.js');
+const { Speech } = require('../speech.js');
+
+const renderPhraseTrainer = exports.renderPhraseTrainer = function renderPhraseTrainer(container) {
   container.innerHTML = `
     <div class="phrase-trainer animate-fadeIn space-y-6">
       <div class="hero-card">
@@ -22792,12 +22959,17 @@ function renderPhraseTrainer(container) {
   });
 }
 
+  });
 
-// --- FILE: grammar_hub.js ---
-
+  // ==========================================
+  // MODULE: components/grammar_hub.js
+  // ==========================================
+  __register('components/grammar_hub.js', function(module, exports, require) {
 // Grammar Hub Component — 25 Lektionen & Der/Die/Das System
 
-function renderGrammarHub(container, params = {}) {
+const { GRAMMAR_DATA } = require('../data/grammar_data.js');
+
+const renderGrammarHub = exports.renderGrammarHub = function renderGrammarHub(container, params = {}) {
   const activeLessonId = params.id || (GRAMMAR_DATA.lessons[0] ? GRAMMAR_DATA.lessons[0].id : null);
   const currentLesson = GRAMMAR_DATA.lessons.find(l => l.id === activeLessonId) || GRAMMAR_DATA.lessons[0];
 
@@ -22917,12 +23089,18 @@ ${currentLesson.explanationGerman}
   });
 }
 
+  });
 
-// --- FILE: psychology_hub.js ---
-
+  // ==========================================
+  // MODULE: components/psychology_hub.js
+  // ==========================================
+  __register('components/psychology_hub.js', function(module, exports, require) {
 // Psychology Hub Component — "Psychologie verstehen"
 
-function renderPsychologyHub(container) {
+const { PSYCHOLOGY_DATA } = require('../data/psychology_data.js');
+const { Speech } = require('../speech.js');
+
+const renderPsychologyHub = exports.renderPsychologyHub = function renderPsychologyHub(container) {
   container.innerHTML = `
     <div class="psychology-wrapper animate-fadeIn space-y-6">
       <div class="hero-card">
@@ -22994,12 +23172,17 @@ function renderPsychologyHub(container) {
   });
 }
 
+  });
 
-// --- FILE: reading_hub.js ---
-
+  // ==========================================
+  // MODULE: components/reading_hub.js
+  // ==========================================
+  __register('components/reading_hub.js', function(module, exports, require) {
 // Reading Hub Component — Leseverstehen & Praxistexte
 
-function renderReadingHub(container, params = {}) {
+const { READING_DATA } = require('../data/reading_data.js');
+
+const renderReadingHub = exports.renderReadingHub = function renderReadingHub(container, params = {}) {
   const activeTextId = params.id || (READING_DATA.texts[0] ? READING_DATA.texts[0].id : null);
   const currentText = READING_DATA.texts.find(t => t.id === activeTextId) || READING_DATA.texts[0];
 
@@ -23094,12 +23277,21 @@ ${currentText.text}
   });
 }
 
+  });
 
-// --- FILE: guided_roadmaps.js ---
-
+  // ==========================================
+  // MODULE: components/guided_roadmaps.js
+  // ==========================================
+  __register('components/guided_roadmaps.js', function(module, exports, require) {
 // Guided Roadmaps Component — Erste Woche, Erster Monat, Seminartage & Ethik
 
-function renderRoadmaps(container, params = {}) {
+const { FIRST_WEEK_DATA } = require('../data/first_week_data.js');
+const { FIRST_MONTH_DATA } = require('../data/first_month_data.js');
+const { SEMINARS_DATA } = require('../data/seminars_data.js');
+const { ETHICS_DATA } = require('../data/ethics_data.js');
+const { Speech } = require('../speech.js');
+
+const renderRoadmaps = exports.renderRoadmaps = function renderRoadmaps(container, params = {}) {
   const activeTab = params.tab || 'first_week';
 
   container.innerHTML = `
@@ -23256,12 +23448,19 @@ function renderRoadmaps(container, params = {}) {
   });
 }
 
+  });
 
-// --- FILE: culture_bureaucracy.js ---
-
+  // ==========================================
+  // MODULE: components/culture_bureaucracy.js
+  // ==========================================
+  __register('components/culture_bureaucracy.js', function(module, exports, require) {
 // Culture & Bureaucracy Component
 
-function renderCultureBureaucracy(container, params = {}) {
+const { CULTURE_DATA } = require('../data/culture_data.js');
+const { BUREAUCRACY_DATA } = require('../data/bureaucracy_data.js');
+const { Speech } = require('../speech.js');
+
+const renderCultureBureaucracy = exports.renderCultureBureaucracy = function renderCultureBureaucracy(container, params = {}) {
   const activeTab = params.tab || 'culture';
 
   container.innerHTML = `
@@ -23377,12 +23576,17 @@ function renderCultureBureaucracy(container, params = {}) {
   });
 }
 
+  });
 
-// --- FILE: engineering_hub.js ---
-
+  // ==========================================
+  // MODULE: components/engineering_hub.js
+  // ==========================================
+  __register('components/engineering_hub.js', function(module, exports, require) {
 // Engineering Hub Component — Technisches Deutsch (B2/C1)
 
-function renderEngineeringHub(container) {
+const { ENGINEERING_DATA } = require('../data/engineering_data.js');
+
+const renderEngineeringHub = exports.renderEngineeringHub = function renderEngineeringHub(container) {
   container.innerHTML = `
     <div class="engineering-wrapper animate-fadeIn space-y-6">
       <div class="hero-card">
@@ -23432,11 +23636,17 @@ function renderEngineeringHub(container) {
   `;
 }
 
+  });
 
-// --- FILE: sources_library.js ---
-
+  // ==========================================
+  // MODULE: components/sources_library.js
+  // ==========================================
+  __register('components/sources_library.js', function(module, exports, require) {
 // Sources Library Component — Quellenprüfung, Provenienz & Lückenanalyse
-function renderSourcesLibrary(container) {
+const { SOURCES_CATALOG } = require('../data/sources_catalog.js');
+const { KnowledgeGraph } = require('../knowledge_graph.js');
+
+const renderSourcesLibrary = exports.renderSourcesLibrary = function renderSourcesLibrary(container) {
   let activeTab = 'audit'; // 'audit' | 'traceability' | 'gaps'
   let searchQuery = '';
 
@@ -23701,12 +23911,17 @@ function renderSourcesLibrary(container) {
   renderView();
 }
 
+  });
 
-// --- FILE: error_log.js ---
-
+  // ==========================================
+  // MODULE: components/error_log.js
+  // ==========================================
+  __register('components/error_log.js', function(module, exports, require) {
 // Error Log Component — "Meine Fehler & Schwachstellen"
 
-function renderErrorLog(container) {
+const { Storage } = require('../storage.js');
+
+const renderErrorLog = exports.renderErrorLog = function renderErrorLog(container) {
   Storage.getAllErrors().then(errors => {
     container.innerHTML = `
       <div class="error-log-wrapper animate-fadeIn space-y-6">
@@ -23748,12 +23963,17 @@ function renderErrorLog(container) {
   });
 }
 
+  });
 
-// --- FILE: settings_stats.js ---
-
+  // ==========================================
+  // MODULE: components/settings_stats.js
+  // ==========================================
+  __register('components/settings_stats.js', function(module, exports, require) {
 // Settings & Stats Component
 
-function renderSettingsStats(container) {
+const { Storage } = require('../storage.js');
+
+const renderSettingsStats = exports.renderSettingsStats = function renderSettingsStats(container) {
   const settings = Storage.getSettings();
 
   container.innerHTML = `
@@ -23848,14 +24068,20 @@ function renderSettingsStats(container) {
   };
 }
 
+  });
 
-// --- FILE: sentence_fixer.js ---
-
+  // ==========================================
+  // MODULE: components/sentence_fixer.js
+  // ==========================================
+  __register('components/sentence_fixer.js', function(module, exports, require) {
 // Magischer Satz-Korrektor • Deutsches Grammarly & Linguistischer KI-Predictor
 // Bietet Echtzeit-Prüfung, linguistische Next-Word-Prediction,
 // KI-Synonym-Booster, 4-Ton-Paraphrasierer und Fehler-Lern-Labor.
 
-function renderSentenceFixer(container) {
+const { Storage } = require('../storage.js');
+const { Speech } = require('../speech.js');
+
+const renderSentenceFixer = exports.renderSentenceFixer = function renderSentenceFixer(container) {
   let activeSubTab = 'checker'; // 'checker' | 'ai_paraphraser' | 'error_lab' | 'diary'
   let userHistory = Storage.getHistory().filter(h => h.type === 'sentence_fixer') || [];
   let typingTimer = null;
@@ -24785,14 +25011,20 @@ function renderSentenceFixer(container) {
   renderView();
 }
 
+  });
 
-// --- FILE: anti_translation.js ---
-
+  // ==========================================
+  // MODULE: components/anti_translation.js
+  // ==========================================
+  __register('components/anti_translation.js', function(module, exports, require) {
 // Anti-Übersetzungs-Trainer (Direct German Thinking)
 // Bricht die Gewohnheit des mentalen Hin- und Her-Übersetzens ins Englische.
 // Trainiert direktes deutsches Konzept-Mapping, Reaktionsübungen und Falsche-Freunde-Busting.
 
-function renderAntiTranslation(container) {
+const { Storage } = require('../storage.js');
+const { Speech } = require('../speech.js');
+
+const renderAntiTranslation = exports.renderAntiTranslation = function renderAntiTranslation(container) {
   let activeTab = 'monolingual'; // 'monolingual' | 'reaction' | 'false_friends'
   let currentScore = 0;
   let currentStreak = 0;
@@ -25208,11 +25440,16 @@ function renderAntiTranslation(container) {
   renderView();
 }
 
+  });
 
-// --- FILE: external_resources.js ---
-
+  // ==========================================
+  // MODULE: components/external_resources.js
+  // ==========================================
+  __register('components/external_resources.js', function(module, exports, require) {
 // Kostenlose externe Lernressourcen Component
-function renderExternalResources(container) {
+const { RESOURCES_DATA } = require('../data/resources_data.js');
+
+const renderExternalResources = exports.renderExternalResources = function renderExternalResources(container) {
   let activeFilter = 'alle';
 
   function renderView() {
@@ -25283,12 +25520,48 @@ function renderExternalResources(container) {
   renderView();
 }
 
+  });
 
-// --- FILE: app.js ---
-
+  // ==========================================
+  // MODULE: app.js
+  // ==========================================
+  __register('app.js', function(module, exports, require) {
 // Main Application Orchestrator
+const { Storage } = require('./storage.js');
+const { Router } = require('./router.js');
+const { Search } = require('./search.js');
+const { Speech } = require('./speech.js');
+
 // Data Modules
+const { BFD_DATA } = require('./data/bfd_data.js');
+const { VOCABULARY_DATA } = require('./data/vocabulary_data.js');
+const { GRAMMAR_DATA } = require('./data/grammar_data.js');
+const { PSYCHOLOGY_DATA } = require('./data/psychology_data.js');
+const { SIMULATIONS_DATA } = require('./data/simulations_data.js');
+const { PHRASES_DATA } = require('./data/phrases_data.js');
+const { READING_DATA } = require('./data/reading_data.js');
+const { SOURCES_CATALOG } = require('./data/sources_catalog.js');
+
 // View Components
+const { renderDashboard } = require('./components/dashboard.js');
+const { renderBFDHub } = require('./components/bfd_hub.js');
+const { renderFlashcards } = require('./components/flashcards.js');
+const { renderSimulations } = require('./components/simulations.js');
+const { renderSpeakingTrainer } = require('./components/speaking_trainer.js');
+const { renderPhraseTrainer } = require('./components/phrase_trainer.js');
+const { renderGrammarHub } = require('./components/grammar_hub.js');
+const { renderPsychologyHub } = require('./components/psychology_hub.js');
+const { renderReadingHub } = require('./components/reading_hub.js');
+const { renderRoadmaps } = require('./components/guided_roadmaps.js');
+const { renderCultureBureaucracy } = require('./components/culture_bureaucracy.js');
+const { renderEngineeringHub } = require('./components/engineering_hub.js');
+const { renderSourcesLibrary } = require('./components/sources_library.js');
+const { renderErrorLog } = require('./components/error_log.js');
+const { renderSettingsStats } = require('./components/settings_stats.js');
+const { renderExternalResources } = require('./components/external_resources.js');
+const { renderSentenceFixer } = require('./components/sentence_fixer.js');
+const { renderAntiTranslation } = require('./components/anti_translation.js');
+
 const appDataset = {
   bfd: BFD_DATA,
   vocabulary: VOCABULARY_DATA,
@@ -25327,7 +25600,7 @@ const routes = {
   'ressourcen': (params) => renderExternalResources(mainView)
 };
 
-const appRouter = new Router(routes, 'heute');
+const appRouter = exports.appRouter = new Router(routes, 'heute');
 
 // Active link highlighter
 function updateActiveNavigation() {
@@ -25466,5 +25739,17 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+  });
 
+  // Run Main Entry Point
+  window.addEventListener('DOMContentLoaded', function() {
+    try {
+      __require('root', 'app.js');
+      console.log('✅ DEU PLATFORM successfully initialized in isolated module scope!');
+    } catch (err) {
+      console.error('Fatal initialization error:', err);
+      const container = document.getElementById('content-container') || document.body;
+      container.innerHTML = '<div style="padding:40px;color:#ef4444;font-family:sans-serif;"><h2>Initialisierungsfehler</h2><pre>' + err.stack + '</pre></div>';
+    }
+  });
 })();
