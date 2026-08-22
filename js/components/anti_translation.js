@@ -227,7 +227,7 @@ export function renderAntiTranslation(container) {
           <div class="flex-between flex-wrap gap-4">
             <div>
               <div class="badge badge-emerald mb-2">
-                <span>🧠</span> Monolinguales Denken • Stop Translating!
+                 Monolinguales Denken • Stop Translating!
               </div>
               <h1 class="text-3xl font-extrabold text-gradient">Anti-Übersetzungs-Trainer</h1>
               <p class="text-secondary mt-1 text-sm">
@@ -383,7 +383,7 @@ export function renderAntiTranslation(container) {
         <div class="card p-6 space-y-4">
           <div class="flex-between">
             <h3 class="font-bold text-base flex items-center gap-2">
-              <span>🚫</span> Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
+               Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
             </h3>
             <span class="badge badge-amber text-xs">${falseFriendsTraps.length} Fallen</span>
           </div>

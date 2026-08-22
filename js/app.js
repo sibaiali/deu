@@ -1,5 +1,4 @@
 // Main Application Orchestrator
-
 import { Storage } from './storage.js';
 import { Router } from './router.js';
 import { Search } from './search.js';
@@ -49,7 +48,7 @@ const appDataset = {
 Search.setDataset(appDataset);
 
 // Setup Views Container
-const mainView = document.getElementById('mainView');
+const mainView = document.getElementById('content-container') || document.getElementById('mainView');
 
 const routes = {
   'heute': (params) => renderDashboard(mainView, appDataset),
@@ -73,93 +72,139 @@ const routes = {
 
 export const appRouter = new Router(routes, 'heute');
 
-// Global Search Overlay Logic
-const searchModal = document.getElementById('searchModal');
-const globalSearchInput = document.getElementById('globalSearchInput');
-const searchResultsList = document.getElementById('searchResultsList');
-
-function openSearch() {
-  searchModal.classList.remove('hidden');
-  globalSearchInput.value = '';
-  searchResultsList.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Tippe ein Wort oder Thema ein (z. B. "Freundin", "Bedarfsmedikation", "Passiv")...</div>';
-  globalSearchInput.focus();
-}
-
-function closeSearch() {
-  searchModal.classList.add('hidden');
-}
-
-globalSearchInput.addEventListener('input', (e) => {
-  const query = e.target.value;
-  const results = Search.search(query);
-
-  if (results.length === 0) {
-    searchResultsList.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Keine Treffer gefunden.</div>';
-    return;
-  }
-
-  searchResultsList.innerHTML = results.map(r => `
-    <div class="p-3 bg-surface rounded-xl border border-glass cursor-pointer hover:bg-glass flex-between search-item" data-route="${r.route}">
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="badge badge-indigo text-xs">${r.type}</span>
-          <span class="font-bold text-sm">${r.title}</span>
-        </div>
-        <div class="text-xs text-secondary mt-1">${r.subtitle}</div>
-      </div>
-      <span class="text-xs text-blue-400 font-semibold">Öffnen →</span>
-    </div>
-  `).join('');
-
-  searchResultsList.querySelectorAll('.search-item').forEach(item => {
-    item.onclick = () => {
-      closeSearch();
-      window.location.hash = item.getAttribute('data-route');
-    };
+// Active link highlighter
+function updateActiveNavigation() {
+  const currentHash = (window.location.hash || '#heute').replace('#', '').split('?')[0];
+  
+  document.querySelectorAll('#sidebarNav .nav-link').forEach(link => {
+    const route = link.getAttribute('data-route');
+    if (route === currentHash || (currentHash === '' && route === 'heute')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
-});
 
-// Keyboard Shortcuts Listener
+  document.querySelectorAll('#mobile-bottom-nav .mobile-nav-item').forEach(link => {
+    const href = (link.getAttribute('href') || '').replace('#', '');
+    if (href === currentHash || (currentHash === '' && href === 'heute')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('hashchange', updateActiveNavigation);
+window.addEventListener('load', updateActiveNavigation);
+
+// Sidebar Collapse / Expand Toggle
+const sidebar = document.getElementById('sidebar');
+const mainWrapper = document.getElementById('main-wrapper');
+const btnToggleSidebar = document.getElementById('btnToggleSidebar');
+
+if (btnToggleSidebar && sidebar && mainWrapper) {
+  btnToggleSidebar.onclick = () => {
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('mobile-open');
+    } else {
+      sidebar.classList.toggle('collapsed');
+      mainWrapper.classList.toggle('sidebar-collapsed');
+    }
+  };
+}
+
+// Theme Switcher (Light / Dark)
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const htmlEl = document.documentElement;
+
+if (themeToggleBtn) {
+  themeToggleBtn.onclick = () => {
+    const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlEl.setAttribute('data-theme', newTheme);
+    const settings = Storage.getSettings();
+    Storage.saveSettings({ ...settings, theme: newTheme });
+  };
+}
+
+// Global Search Overlay Logic
+function createSearchModal() {
+  let modal = document.getElementById('searchModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'searchModal';
+    modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden';
+    modal.innerHTML = `
+      <div class="bg-surface border border-subtle w-full max-w-xl rounded-2xl shadow-xl overflow-hidden animate-popIn">
+        <div class="p-4 border-b border-subtle flex items-center gap-3">
+          <svg class="w-5 h-5 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="globalSearchInput" class="w-full bg-transparent text-primary text-base outline-none" placeholder="Vokabel, Grammatik oder Thema suchen...">
+          <button id="btnCloseSearchModal" class="btn btn-ghost btn-xs text-muted">ESC</button>
+        </div>
+        <div id="searchResultsContainer" class="p-4 max-h-96 overflow-y-auto space-y-2">
+          <div class="p-6 text-center text-secondary text-sm">Tippe ein Wort oder Thema ein (z. B. "Freundin", "Bedarfsmedikation", "Inversion")...</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const input = modal.querySelector('#globalSearchInput');
+    const container = modal.querySelector('#searchResultsContainer');
+    const btnClose = modal.querySelector('#btnCloseSearchModal');
+
+    btnClose.onclick = () => modal.classList.add('hidden');
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+
+    input.addEventListener('input', (e) => {
+      const q = e.target.value;
+      const res = Search.search(q);
+      if (res.length === 0) {
+        container.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Keine Treffer gefunden.</div>';
+        return;
+      }
+      container.innerHTML = res.map(r => `
+        <div class="p-3 bg-subtle rounded-xl flex-between cursor-pointer hover:border-primary border border-transparent search-res-item" data-route="${r.route}">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge badge-blue text-xs">${r.type}</span>
+              <span class="font-bold text-sm text-primary">${r.title}</span>
+            </div>
+            <div class="text-xs text-secondary mt-0.5">${r.subtitle}</div>
+          </div>
+          <span class="text-xs text-blue-500 font-semibold">Öffnen →</span>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.search-res-item').forEach(item => {
+        item.onclick = () => {
+          modal.classList.add('hidden');
+          window.location.hash = item.getAttribute('data-route');
+        };
+      });
+    });
+  }
+  return modal;
+}
+
+function openGlobalSearch() {
+  const modal = createSearchModal();
+  modal.classList.remove('hidden');
+  const input = modal.querySelector('#globalSearchInput');
+  input.value = '';
+  input.focus();
+}
+
+const globalSearchTrigger = document.getElementById('globalSearchTrigger');
+if (globalSearchTrigger) globalSearchTrigger.onclick = openGlobalSearch;
+
 document.addEventListener('keydown', (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
     e.preventDefault();
-    openSearch();
+    openGlobalSearch();
   }
-  if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
-    closeSearch();
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('searchModal');
+    if (modal) modal.classList.add('hidden');
   }
 });
-
-document.getElementById('btnOpenSearch').onclick = openSearch;
-document.getElementById('btnCloseSearch').onclick = closeSearch;
-searchModal.onclick = (e) => {
-  if (e.target === searchModal) closeSearch();
-};
-
-// Sidebar Mobile Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const sidebar = document.getElementById('sidebar');
-if (mobileMenuBtn && sidebar) {
-  mobileMenuBtn.onclick = () => sidebar.classList.toggle('sidebar-open');
-}
-
-// Dark/Light Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.onclick = () => {
-  document.body.classList.toggle('theme-light');
-  const isLight = document.body.classList.contains('theme-light');
-  themeToggle.innerHTML = isLight ? '☀️' : '🌙';
-  const s = Storage.getSettings();
-  Storage.saveSettings({ ...s, theme: isLight ? 'light' : 'dark' });
-};
-
-// Apply initial settings theme
-const initialSettings = Storage.getSettings();
-if (initialSettings.theme === 'light') {
-  document.body.classList.add('theme-light');
-  themeToggle.innerHTML = '☀️';
-}
-
-// Start Router
-appRouter.init();
-console.log('German BFD + Psychiatry + B2/C1 Platform loaded successfully!');

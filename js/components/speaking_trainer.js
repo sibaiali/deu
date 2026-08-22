@@ -54,7 +54,7 @@ export function renderSpeakingTrainer(container, data) {
           <!-- Controls -->
           <div class="flex justify-center gap-4 flex-wrap">
             <button id="btnListenModel" class="btn btn-secondary flex items-center gap-2">
-              <span>🔊</span> Modell anhören (Normal)
+              Audio Modell anhören (Normal)
             </button>
             <button id="btnListenSlow" class="btn btn-outline flex items-center gap-2">
               <span>🐢</span> Langsam anhören (0.7x)
@@ -64,7 +64,7 @@ export function renderSpeakingTrainer(container, data) {
           <!-- Recording Area -->
           <div class="pt-6 border-t border-glass space-y-3">
             <button id="btnRecord" class="btn btn-primary btn-lg flex-center gap-2 mx-auto">
-              <span>🎙️</span> Sprechen & Überprüfen
+               Sprechen & Überprüfen
             </button>
             <div id="recResult" class="text-sm font-semibold text-emerald-400 hidden"></div>
           </div>
@@ -89,13 +89,13 @@ export function renderSpeakingTrainer(container, data) {
       Speech.startListening(
         (transcript) => {
           btnRecord.classList.remove('btn-red');
-          btnRecord.innerHTML = '<span>🎙️</span> Sprechen & Überprüfen';
+          btnRecord.innerHTML = ' Sprechen & Überprüfen';
           recResult.classList.remove('hidden');
           recResult.innerHTML = `✅ Erkannt: "${transcript}"`;
         },
         (err) => {
           btnRecord.classList.remove('btn-red');
-          btnRecord.innerHTML = '<span>🎙️</span> Sprechen & Überprüfen';
+          btnRecord.innerHTML = ' Sprechen & Überprüfen';
           recResult.classList.remove('hidden');
           recResult.innerHTML = `⚠️ Fehler / Nicht verstanden (${err})`;
         }

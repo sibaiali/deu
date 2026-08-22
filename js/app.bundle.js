@@ -3,6 +3,47 @@
 'use strict';
 
 
+// --- FILE: icons.js ---
+
+// Lucide SVG Line Icons Helper
+// Monochromes, semantisches und barrierefreies Icon-System für das gesamte Interface
+
+const Icons = {
+  // Navigation & Core
+  house: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  calendarClock: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="16" cy="16" r="6"/><polyline points="16 14 16 16 18 18"/></svg>`,
+  spellCheck: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m6 16 6-12 6 12"/><path d="M8 12h8"/><path d="m16 20 2 2 4-4"/></svg>`,
+  languages: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>`,
+  building: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>`,
+  brain: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5v14"/><path d="M12 9a3 3 0 0 0 0 6"/></svg>`,
+  bookOpen: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
+  messagesSquare: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>`,
+  mic: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>`,
+  messageCircle: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>`,
+  graduationCap: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
+  bookText: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/><path d="M6 14h6"/></svg>`,
+  route: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>`,
+  map: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>`,
+  cog: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`,
+  fileSearch: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="m13.5 16.5 2 2"/></svg>`,
+  triangleAlert: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  settings: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>`,
+
+  // UI Utilities
+  search: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+  shieldAlert: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+  sparkles: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`,
+  check: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`,
+  arrowRight: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
+  clock: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  volume: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`,
+  sun: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`,
+  moon: (cls = "w-4 h-4") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  menu: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`,
+  x: (cls = "w-5 h-5") => `<svg class="${cls}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
+};
+
+
 // --- FILE: storage.js ---
 
 // Storage & Persistence Manager
@@ -11228,230 +11269,249 @@ const ENGINEERING_DATA = {
 
 // --- FILE: dashboard.js ---
 
-// Dashboard Component — "Heute" & Tagesplan
+// Bento Grid Dashboard - Calm, Professional & Focused
+// Reduzierte kognitive Last: Tages-Check-in (Span 8), Überlebensmodus (Span 4),
+// 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und strukturierte Zeitachse (Tagesplan).
 
-function renderDashboard(container, data) {
+export async function renderDashboard(container) {
   const settings = Storage.getSettings();
-  const userName = "Ali";
+  const dueCards = await SRS.getDueCards(VOCABULARY_DATA);
+  const dueCount = dueCards.length;
 
-  SRS.setVocabList(data.vocabulary);
-  SRS.getDueCards().then(({ dueCards, newCards, totalDueCount, totalLearnedCount }) => {
+  let activePlanDuration = '45'; // '20' | '45' | '90'
+
+  const dailyPlans = {
+    '20': [
+      { time: '08:00', title: 'SRS-Wiederholung', desc: 'Fällige Vokabeln festigen', duration: '7 Min', route: 'wiederholen' },
+      { time: '12:30', title: 'BFD-Phrasen', desc: 'Stations-Kommunikation', duration: '5 Min', route: 'phrasen' },
+      { time: '17:00', title: 'Sprechtraining', desc: '60-Sekunden Challenge', duration: '4 Min', route: 'sprechen' },
+      { time: '20:30', title: 'Satz-Korrektor', desc: '1 persönlicher Satz', duration: '4 Min', route: 'satzkorrektor' }
+    ],
+    '45': [
+      { time: '08:00', title: 'SRS-Wiederholung & Neue Vokabeln', desc: '10 Vokabeln im Kontext', duration: '12 Min', route: 'wiederholen' },
+      { time: '12:30', title: 'BFD-Simulation', desc: 'Sicherheitstraining: Bedarfsmedikation', duration: '10 Min', route: 'simulation' },
+      { time: '16:00', title: 'Psychologie & Deeskalation', desc: 'Trauma & Rollengrenzen', duration: '10 Min', route: 'psychologie' },
+      { time: '19:00', title: 'Sprechtrainer & Aussprache', desc: 'Schichtübergabe sprechen', duration: '8 Min', route: 'sprechen' },
+      { time: '21:00', title: 'Anti-Übersetzung', desc: 'Blitz-Reaktionstraining', duration: '5 Min', route: 'antitruebersetzung' }
+    ],
+    '90': [
+      { time: '07:30', title: 'SRS-Mastery & Tiefen-Wiederholung', desc: 'Vokabeln & Grammatikdrills', duration: '20 Min', route: 'wiederholen' },
+      { time: '10:00', title: 'Grammatik-Intensivlektion', desc: 'Nebensätze & Inversion', duration: '20 Min', route: 'grammatik' },
+      { time: '13:00', title: '2x BFD-Simulationen', desc: 'Akutaufnahme & Deeskalation', duration: '20 Min', route: 'simulation' },
+      { time: '17:00', title: 'Leseverstehen Klinikberichte', desc: 'Original-Dienstübergabe', duration: '15 Min', route: 'lesen' },
+      { time: '20:30', title: 'Satz-Korrektor & Schreibtraining', desc: 'Freies Formulieren', duration: '15 Min', route: 'satzkorrektor' }
+    ]
+  };
+
+  function renderView() {
+    const plan = dailyPlans[activePlanDuration];
+
     container.innerHTML = `
-      <div class="dashboard-wrapper animate-fadeIn">
-        <!-- Hero Header -->
-        <div class="hero-card mb-6">
-          <div class="flex-between flex-wrap gap-4">
-            <div>
-              <div class="badge badge-emerald mb-2">
-                <span class="pulse-dot"></span> BFD & Psychiatrie Vorbereitung
+      <div class="space-y-6 animate-fadeIn">
+        <!-- 12-Column Bento Grid: Row 1 (Hero Check-in & Critical Survival Card) -->
+        <div class="bento-grid">
+          <!-- Span 8: Tages-Check-in / Dein nächster Schritt -->
+          <div class="col-span-8 bento-card hero-checkin">
+            <div class="space-y-3">
+              <div class="flex-between">
+                <span class="badge badge-blue">Tages-Check-in</span>
+                <span class="text-xs text-secondary font-semibold">UKGM Marburg • Station 2</span>
               </div>
-              <h1 class="text-3xl font-bold text-gradient">Guten Tag, ${userName}!</h1>
-              <p class="text-secondary mt-1">
-                Dein tägliches Lernsystem für BFD, klinische Kommunikation und den Weg zu starkem B2/C1.
+              <div>
+                <h1 class="page-title">Guten Tag, Ali!</h1>
+                <p class="subtitle mt-1">
+                  Dein tägliches Lernsystem für BFD, klinische Kommunikation und den Weg zu starkem B2/C1.
+                </p>
+              </div>
+
+              <!-- Dein nächster Schritt (Single Focused Primary Action) -->
+              <div class="p-4 bg-surface rounded-xl border border-subtle mt-4 space-y-2">
+                <div class="text-xs font-bold text-muted uppercase tracking-wider">Dein nächster Schritt</div>
+                <div class="flex-between flex-wrap gap-3">
+                  <div>
+                    <div class="font-bold text-base text-primary">
+                      ${dueCount > 0 ? `SRS-Wiederholung (${dueCount} Karten fällig)` : 'BFD-Simulation: Patient fordert Bedarfsmedikation'}
+                    </div>
+                    <div class="text-xs text-secondary">
+                      ${dueCount > 0 ? 'Wiederhole deine fälligen Vokabeln für langfristige Beherrschung.' : 'Sicherheitstraining: Grenzen setzen und professionell deeskalieren.'}
+                    </div>
+                  </div>
+                  <a href="${dueCount > 0 ? '#wiederholen' : '#simulation'}" class="btn btn-primary btn-sm">
+                    Jetzt starten →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compact Metrics Footer -->
+            <div class="grid grid-cols-4 gap-2 pt-4 border-t border-subtle mt-4 text-center">
+              <div>
+                <div class="text-xs text-secondary">Fällig</div>
+                <div class="font-bold text-base ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">${dueCount}</div>
+              </div>
+              <div>
+                <div class="text-xs text-secondary">Vokabeln</div>
+                <div class="font-bold text-base text-primary">${VOCABULARY_DATA.length}</div>
+              </div>
+              <div>
+                <div class="text-xs text-secondary">Serie</div>
+                <div class="font-bold text-base text-primary">${settings.streak || 1} Tag</div>
+              </div>
+              <div>
+                <div class="text-xs text-secondary">Niveau</div>
+                <div class="font-bold text-base text-blue-500">B1+ → B2</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Span 4: Erster-Tag-Überlebensmodus (Critical Safety & Quick Reference) -->
+          <div class="col-span-4 bento-card survival-card">
+            <div class="space-y-3">
+              <div class="flex-between">
+                <span class="badge badge-amber">WICHTIG</span>
+                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-primary">Erster-Tag-Überlebensmodus</h2>
+                <p class="text-xs text-secondary mt-1 leading-relaxed">
+                  Die wichtigsten Sätze, Fragen und rechtlichen Grenzen für deinen ersten Tag auf Station.
+                </p>
+              </div>
+
+              <div class="p-3 bg-subtle rounded-xl space-y-1 text-xs">
+                <div class="font-semibold text-primary">Sofort-Orientierung:</div>
+                <div class="text-secondary">• Was darf ich? Was darf ich NICHT?</div>
+                <div class="text-secondary">• Der magische Satz bei Unklarheit</div>
+                <div class="text-secondary">• Notfallnummern & Station 2 Regeln</div>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <a href="#bfd?tab=survival" class="btn btn-warning btn-sm w-full">
+                Überlebensmodus öffnen →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12-Column Bento Grid: Row 2 (3 Micro-Modules) -->
+        <div class="bento-grid">
+          <!-- Card 1: Vokabeln & SRS (Span 4) -->
+          <div class="col-span-4 bento-card justify-between">
+            <div class="space-y-2">
+              <div class="flex-between">
+                <span class="badge badge-blue">Spaced Repetition</span>
+                <span class="text-xs font-semibold ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">
+                  ${dueCount > 0 ? `${dueCount} fällig` : 'Alles erledigt'}
+                </span>
+              </div>
+              <h3 class="font-bold text-base text-primary">Vokabeln & SRS</h3>
+              <p class="text-xs text-secondary">
+                ${dueCount > 0 ? 'Wiederhole deine Vokabeln im optimalen Zeitintervall.' : 'Deine heutigen Wiederholungen sind abgeschlossen.'}
               </p>
             </div>
-            <div class="flex gap-3">
-              <button id="btnCheckIn" class="btn btn-secondary flex items-center gap-2">
-                <span>⚡</span> Tages-Check-in
-              </button>
-              <a href="#bfd" class="btn btn-primary flex items-center gap-2">
-                <span>🏢</span> Mein BFD auf einen Blick
+            <div class="pt-4">
+              <a href="#wiederholen" class="btn btn-secondary btn-sm w-full">
+                ${dueCount > 0 ? 'Jetzt wiederholen →' : 'Wortschatz durchsuchen →'}
               </a>
             </div>
           </div>
 
-          <!-- Quick Stats Bar -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-glass">
-            <div class="stat-box">
-              <span class="stat-label">Wiederholungen fällig</span>
-              <span class="stat-value text-amber">${totalDueCount}</span>
+          <!-- Card 2: Sprechtrainer (Span 4) -->
+          <div class="col-span-4 bento-card justify-between">
+            <div class="space-y-2">
+              <div class="flex-between">
+                <span class="badge badge-purple">Sprechen</span>
+                <span class="text-xs text-secondary font-semibold">60 Sekunden</span>
+              </div>
+              <h3 class="font-bold text-base text-primary">Sprechtrainer</h3>
+              <p class="text-xs text-secondary">
+                Challenge: <em>Vorstellung bei der Stationsleitung & BFD-Motivation.</em>
+              </p>
             </div>
-            <div class="stat-box">
-              <span class="stat-label">Gelernte Vokabeln</span>
-              <span class="stat-value text-emerald">${totalLearnedCount}</span>
+            <div class="pt-4">
+              <a href="#sprechen" class="btn btn-secondary btn-sm w-full">
+                Sprechübung starten →
+              </a>
             </div>
-            <div class="stat-box">
-              <span class="stat-label">Aktuelle Serie</span>
-              <span class="stat-value text-blue">${settings.streak} Tage 🔥</span>
+          </div>
+
+          <!-- Card 3: Psychologie & Deeskalation (Span 4) -->
+          <div class="col-span-4 bento-card justify-between">
+            <div class="space-y-2">
+              <div class="flex-between">
+                <span class="badge badge-gray">Klinikwissen</span>
+                <span class="text-xs text-secondary font-semibold">Psychiatrie</span>
+              </div>
+              <h3 class="font-bold text-base text-primary">Psychologie & Deeskalation</h3>
+              <p class="text-xs text-secondary">
+                Aktives Zuhören · Rollengrenzen · 5-4-3-2-1 Erdung bei Unruhe.
+              </p>
             </div>
-            <div class="stat-box">
-              <span class="stat-label">Sprachniveau</span>
-              <span class="stat-value text-purple">B1+ → B2</span>
+            <div class="pt-4">
+              <a href="#psychologie" class="btn btn-secondary btn-sm w-full">
+                Klinikwissen lernen →
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Next Action Hero Card -->
-        <div class="card card-glow mb-6 p-6">
-          <div class="flex-between items-center mb-4">
-            <h2 class="text-xl font-bold flex items-center gap-2">
-              <span>🎯</span> Dein nächster Schritt
-            </h2>
-            <span class="badge badge-blue">Empfohlen für heute</span>
-          </div>
-          <div class="grid md:grid-cols-3 gap-4">
-            <div class="action-card bg-surface p-4 rounded-xl border border-glass">
-              <div class="text-2xl mb-2">🃏</div>
-              <h3 class="font-bold text-lg">SRS Wiederholung</h3>
-              <p class="text-sm text-secondary mt-1">${totalDueCount} Karten warten auf Wiederholung.</p>
-              <a href="#wiederholen" class="btn btn-sm btn-primary w-full mt-4">Jetzt wiederholen (${totalDueCount})</a>
+        <!-- 12-Column Bento Grid: Row 3 (Timeline Daily Plan) -->
+        <div class="bento-card col-span-12 space-y-4">
+          <div class="flex-between flex-wrap gap-3">
+            <div>
+              <h2 class="section-title">Mein strukturierter Tagesplan</h2>
+              <p class="text-xs text-secondary mt-0.5">
+                Kompakte Zeitstruktur für deinen optimalen Lernfortschritt neben dem BFD-Alltag.
+              </p>
             </div>
 
-            <div class="action-card bg-surface p-4 rounded-xl border border-glass">
-              <div class="text-2xl mb-2">🎭</div>
-              <h3 class="font-bold text-lg">BFD-Simulation</h3>
-              <p class="text-sm text-secondary mt-1">Sicherheitstraining: Patient fordert Bedarfsmedikation.</p>
-              <a href="#simulation?id=sim_patient_medication_request" class="btn btn-sm btn-secondary w-full mt-4">Simulation starten</a>
-            </div>
-
-            <div class="action-card bg-surface p-4 rounded-xl border border-glass">
-              <div class="text-2xl mb-2">🎙️</div>
-              <h3 class="font-bold text-lg">Sprechübung (60s)</h3>
-              <p class="text-sm text-secondary mt-1">Spontansprechen: Vorstellung bei der Stationsleitung.</p>
-              <a href="#sprechen" class="btn btn-sm btn-outline w-full mt-4">Sprechtraining</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Emergency Access -->
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div class="card p-6 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-500/30">
-            <div class="flex-between mb-3">
-              <h3 class="text-lg font-bold text-blue-300 flex items-center gap-2">
-                <span>🆘</span> Erster-Tag-Überlebensmodus
-              </h3>
-              <span class="badge badge-indigo">Mobil optimiert</span>
-            </div>
-            <p class="text-sm text-secondary mb-4">
-              10 unverzichtbare Sätze, 10 kritische Fragen und das Deeskalationsprotokoll für deinen ersten Tag auf Station.
-            </p>
-            <a href="#bfd?tab=survival" class="btn btn-sm btn-primary">Überlebensmodus öffnen →</a>
-          </div>
-
-          <div class="card p-6 bg-gradient-to-br from-emerald-900/20 to-teal-900/20 border-emerald-500/30">
-            <div class="flex-between mb-3">
-              <h3 class="text-lg font-bold text-emerald-300 flex items-center gap-2">
-                <span>🧠</span> Psychologie & Deeskalation
-              </h3>
-              <span class="badge badge-emerald">Klinikwissen</span>
-            </div>
-            <p class="text-sm text-secondary mb-4">
-              Trauma, Bindungsmuster, 5-4-3-2-1 Erdungstechnik und professionelle Rollengrenzen.
-            </p>
-            <a href="#psychologie" class="btn btn-sm btn-secondary">Psychologie verstehen →</a>
-          </div>
-        </div>
-
-        <!-- Mein Tagesplan -->
-        <div class="card p-6">
-          <div class="flex-between mb-4">
-            <h2 class="text-xl font-bold flex items-center gap-2">
-              <span>📅</span> Mein Tagesplan (Zeitstruktur)
-            </h2>
-            <div class="flex gap-2">
-              <button class="btn btn-sm btn-outline active-plan" data-time="20">20 Min</button>
-              <button class="btn btn-sm btn-outline" data-time="45">45 Min</button>
-              <button class="btn btn-sm btn-outline" data-time="90">90 Min (Intensiv)</button>
+            <!-- Segmented Control for 20 / 45 / 90 Min -->
+            <div class="flex items-center p-1 bg-subtle rounded-lg border border-subtle">
+              <button class="btn btn-xs ${activePlanDuration === '20' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="20">
+                20 Min
+              </button>
+              <button class="btn btn-xs ${activePlanDuration === '45' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="45">
+                45 Min (Empfohlen)
+              </button>
+              <button class="btn btn-xs ${activePlanDuration === '90' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="90">
+                90 Min Intensiv
+              </button>
             </div>
           </div>
-          <div id="planContent" class="space-y-3">
-            <div class="p-3 bg-surface rounded-lg flex-between border border-glass">
-              <div class="flex items-center gap-3">
-                <span class="text-emerald font-bold">1.</span>
-                <div>
-                  <div class="font-bold">SRS Vokabel-Wiederholung</div>
-                  <div class="text-xs text-secondary">Fällige Karten festigen</div>
+
+          <!-- Vertical Timeline -->
+          <div class="timeline-list pt-2">
+            ${plan.map((item, idx) => `
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="flex-1 p-3 bg-subtle rounded-xl flex-between flex-wrap gap-2">
+                  <div>
+                    <div class="text-xs font-semibold text-muted">${item.time} Uhr • ${item.duration}</div>
+                    <div class="font-bold text-sm text-primary">${item.title}</div>
+                    <div class="text-xs text-secondary">${item.desc}</div>
+                  </div>
+                  <a href="#${item.route}" class="btn btn-secondary btn-xs">
+                    Öffnen →
+                  </a>
                 </div>
               </div>
-              <span class="badge badge-gray">7 Min</span>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg flex-between border border-glass">
-              <div class="flex items-center gap-3">
-                <span class="text-blue font-bold">2.</span>
-                <div>
-                  <div class="font-bold">BFD-Phrasen & Rollengrenzen</div>
-                  <div class="text-xs text-secondary">Was sage ich bei Patientenanfragen?</div>
-                </div>
-              </div>
-              <span class="badge badge-gray">5 Min</span>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg flex-between border border-glass">
-              <div class="flex items-center gap-3">
-                <span class="text-purple font-bold">3.</span>
-                <div>
-                  <div class="font-bold">Sprechtraining & Aussprache</div>
-                  <div class="text-xs text-secondary">Laut vorlesen & Nachsprechen mit TTS</div>
-                </div>
-              </div>
-              <span class="badge badge-gray">4 Min</span>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg flex-between border border-glass">
-              <div class="flex items-center gap-3">
-                <span class="text-amber font-bold">4.</span>
-                <div>
-                  <div class="font-bold">1 BFD-Simulation</div>
-                  <div class="text-xs text-secondary">Reales Rollenspiel mit Feedback</div>
-                </div>
-              </div>
-              <span class="badge badge-gray">4 Min</span>
-            </div>
+            `).join('')}
           </div>
         </div>
       </div>
     `;
 
-    // Hook check-in button
-    const btnCheckIn = container.querySelector('#btnCheckIn');
-    if (btnCheckIn) {
-      btnCheckIn.addEventListener('click', () => showCheckInModal(container));
-    }
-  });
-}
+    // Event Bindings
+    container.querySelectorAll('.plan-toggle-btn').forEach(btn => {
+      btn.onclick = () => {
+        activePlanDuration = btn.getAttribute('data-dur');
+        renderView();
+      };
+    });
+  }
 
-function showCheckInModal(container) {
-  const modal = document.createElement('div');
-  modal.className = 'modal-overlay animate-fadeIn';
-  modal.innerHTML = `
-    <div class="modal-card p-6 max-w-md w-full bg-card rounded-2xl shadow-2xl border border-glass">
-      <div class="flex-between mb-4">
-        <h3 class="text-xl font-bold">⚡ Täglicher Check-in</h3>
-        <button id="closeModal" class="btn btn-sm btn-ghost">✕</button>
-      </div>
-      <p class="text-sm text-secondary mb-4">Wie fühlst du dich heute und wie viel Zeit möchtest du investieren?</p>
-      
-      <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-semibold mb-2">Energie-Level:</label>
-          <div class="grid grid-cols-3 gap-2">
-            <button class="btn btn-outline btn-energy" data-energy="low">😴 Niedrig</button>
-            <button class="btn btn-outline btn-energy active" data-energy="medium">⚡ Normal</button>
-            <button class="btn btn-outline btn-energy" data-energy="high">🚀 Hoch</button>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold mb-2">Geplante Zeit:</label>
-          <div class="grid grid-cols-3 gap-2">
-            <button class="btn btn-outline btn-time" data-time="15">15 Min</button>
-            <button class="btn btn-outline btn-time active" data-time="30">30 Min</button>
-            <button class="btn btn-outline btn-time" data-time="60">60 Min</button>
-          </div>
-        </div>
-      </div>
-
-      <button id="saveCheckIn" class="btn btn-primary w-full mt-6">Tagesplan anpassen & Starten</button>
-    </div>
-  `;
-  document.body.appendChild(modal);
-
-  modal.querySelector('#closeModal').onclick = () => modal.remove();
-  modal.querySelector('#saveCheckIn').onclick = () => {
-    modal.remove();
-    Speech.speak("Willkommen zurück, Ali. Dein Tagesplan ist bereit.", 1.0);
-  };
+  renderView();
 }
 
 
@@ -11538,7 +11598,7 @@ function renderBFDHub(container, params = {}) {
 
         <div class="card p-6">
           <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>🧠</span> Prioritäten: Was muss ich wissen?
+             Prioritäten: Was muss ich wissen?
           </h2>
           <div class="space-y-4">
             <div>
@@ -11647,7 +11707,7 @@ function renderBFDHub(container, params = {}) {
 
       <div class="card p-6 mt-6">
         <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-          <span>🏥</span> Die psychiatrischen Stationen & Kriseninterventions-Einheit
+           Die psychiatrischen Stationen & Kriseninterventions-Einheit
         </h3>
         <div class="grid md:grid-cols-2 gap-4">
           ${BFD_DATA.wards.map(w => `
@@ -11732,7 +11792,7 @@ function renderBFDHub(container, params = {}) {
 
         <div class="card p-6">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>💬</span> 10 Sätze, die du am ersten Tag unbedingt brauchst
+             10 Sätze, die du am ersten Tag unbedingt brauchst
           </h3>
           <div class="space-y-3">
             ${BFD_DATA.firstDaySurvival.tenEssentialPhrases.map((p, idx) => `
@@ -11929,7 +11989,7 @@ function renderReviewPlayer(container, deck) {
         <!-- Action Controls -->
         <div class="flex-between items-center mt-6 gap-3 flex-wrap">
           <button id="btnAudio" class="btn btn-outline flex items-center gap-2">
-            <span>🔊</span> Aussprache (S)
+            Audio Aussprache (S)
           </button>
 
           <!-- SRS Grading Buttons (Shown when flipped) -->
@@ -12322,7 +12382,7 @@ function renderSpeakingTrainer(container, data) {
           <!-- Controls -->
           <div class="flex justify-center gap-4 flex-wrap">
             <button id="btnListenModel" class="btn btn-secondary flex items-center gap-2">
-              <span>🔊</span> Modell anhören (Normal)
+              Audio Modell anhören (Normal)
             </button>
             <button id="btnListenSlow" class="btn btn-outline flex items-center gap-2">
               <span>🐢</span> Langsam anhören (0.7x)
@@ -12332,7 +12392,7 @@ function renderSpeakingTrainer(container, data) {
           <!-- Recording Area -->
           <div class="pt-6 border-t border-glass space-y-3">
             <button id="btnRecord" class="btn btn-primary btn-lg flex-center gap-2 mx-auto">
-              <span>🎙️</span> Sprechen & Überprüfen
+               Sprechen & Überprüfen
             </button>
             <div id="recResult" class="text-sm font-semibold text-emerald-400 hidden"></div>
           </div>
@@ -12357,13 +12417,13 @@ function renderSpeakingTrainer(container, data) {
       Speech.startListening(
         (transcript) => {
           btnRecord.classList.remove('btn-red');
-          btnRecord.innerHTML = '<span>🎙️</span> Sprechen & Überprüfen';
+          btnRecord.innerHTML = ' Sprechen & Überprüfen';
           recResult.classList.remove('hidden');
           recResult.innerHTML = `✅ Erkannt: "${transcript}"`;
         },
         (err) => {
           btnRecord.classList.remove('btn-red');
-          btnRecord.innerHTML = '<span>🎙️</span> Sprechen & Überprüfen';
+          btnRecord.innerHTML = ' Sprechen & Überprüfen';
           recResult.classList.remove('hidden');
           recResult.innerHTML = `⚠️ Fehler / Nicht verstanden (${err})`;
         }
@@ -12405,7 +12465,7 @@ function renderPhraseTrainer(container) {
         ${PHRASES_DATA.categories.map(cat => `
           <div class="card p-6">
             <h2 class="text-xl font-bold mb-4 text-purple-300 flex items-center gap-2">
-              <span>💬</span> ${cat.name}
+               ${cat.name}
             </h2>
             <div class="space-y-4">
               ${cat.phrases.map(p => `
@@ -13676,7 +13736,7 @@ function renderSentenceFixer(container) {
           <!-- Smart Next-Word & Phrase Prediction Bar -->
           <div id="predictionBar" class="space-y-2 pt-1">
             <div class="text-xs text-secondary font-semibold flex items-center gap-1">
-              <span>💡</span> Vorschläge für die nächsten Wörter (1 Klick zum Einfügen):
+               Vorschläge für die nächsten Wörter (1 Klick zum Einfügen):
             </div>
             <div id="predictionChips" class="flex flex-wrap gap-2"></div>
           </div>
@@ -13692,16 +13752,16 @@ function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3 pt-2">
             <div class="flex gap-2">
               <button id="btnVoiceInput" class="btn btn-secondary btn-sm flex items-center gap-2">
-                <span>🎙️</span> Diktieren
+                 Diktieren
               </button>
               <button id="btnClear" class="btn btn-ghost btn-sm">Leeren</button>
             </div>
             <div class="flex gap-2">
               <button id="btnAutoFixAll" class="btn btn-autofix btn-sm flex items-center gap-2 hidden">
-                <span>⚡</span> Alles automatisch korrigieren
+                 Alles automatisch korrigieren
               </button>
               <button id="btnCheckSentence" class="btn btn-primary btn-lg flex items-center gap-2 shadow-glow">
-                <span>✨</span> Diagnose & XP sichern
+                 Diagnose & XP sichern
               </button>
             </div>
           </div>
@@ -13893,7 +13953,7 @@ function renderSentenceFixer(container) {
             ${result.issues.length > 0 ? `
               <div class="p-5 bg-surface border border-red-500/30 rounded-2xl space-y-3">
                 <div class="font-bold text-sm text-red-400 flex items-center gap-2">
-                  <span>🔍</span> Gefundene Korrekturen (1-Klick-Anwendung):
+                   Gefundene Korrekturen (1-Klick-Anwendung):
                 </div>
                 <div class="space-y-2">
                   ${result.issues.map(iss => `
@@ -13917,7 +13977,7 @@ function renderSentenceFixer(container) {
             <!-- 4 Muttersprachliche Stil-Varianten -->
             <div class="p-5 bg-surface border border-blue-500/30 rounded-2xl space-y-3">
               <div class="font-bold text-sm text-blue-400 flex items-center gap-2">
-                <span>🎭</span> 4 muttersprachliche Stil-Varianten:
+                 4 muttersprachliche Stil-Varianten:
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                 <div class="p-3 bg-card rounded-xl border border-glass space-y-1">
@@ -13946,7 +14006,7 @@ function renderSentenceFixer(container) {
             <!-- Copy Button -->
             <div class="flex justify-end gap-3 pt-2">
               <button id="btnCopyCorrected" class="btn btn-secondary btn-sm flex items-center gap-2">
-                <span>📋</span> Korrigierten Satz kopieren
+                 Korrigierten Satz kopieren
               </button>
             </div>
           </div>
@@ -14003,7 +14063,7 @@ function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>🎭</span> 4-Ton-KI-Paraphrasierer • Satz-Transformator
+                 4-Ton-KI-Paraphrasierer • Satz-Transformator
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Verwandle jeden einfachen Satz in 4 authentische Register: Locker, Professionell, Klinik oder C1/C2!
@@ -14016,7 +14076,7 @@ function renderSentenceFixer(container) {
             <label class="text-xs font-semibold text-secondary">Ausgangssatz eingeben:</label>
             <input type="text" id="paraphraseInput" class="input w-full text-base rounded-2xl" placeholder="z. B. Ich habe keine Zeit um das zu machen..." value="Ich möchte Bescheid geben dass ich später komme.">
             <button id="btnParaphrase" class="btn btn-primary btn-sm flex items-center gap-2">
-              <span>🚀</span> In alle 4 Stile transformieren (+15 XP)
+               In alle 4 Stile transformieren (+15 XP)
             </button>
           </div>
 
@@ -14087,7 +14147,7 @@ function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>🧠</span> Aus Fehlern lernen • Trainings-Labor
+                 Aus Fehlern lernen • Trainings-Labor
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Trainiere deine gesammelten Fehler gezielt, bis du sie zu 100% beherrschst!
@@ -14171,7 +14231,7 @@ function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>📖</span> Mein persönliches Satz-Tagebuch
+                 Mein persönliches Satz-Tagebuch
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Alle deine bisher geprüften Sätze im Überblick.
@@ -14479,7 +14539,7 @@ function renderAntiTranslation(container) {
           <div class="flex-between flex-wrap gap-4">
             <div>
               <div class="badge badge-emerald mb-2">
-                <span>🧠</span> Monolinguales Denken • Stop Translating!
+                 Monolinguales Denken • Stop Translating!
               </div>
               <h1 class="text-3xl font-extrabold text-gradient">Anti-Übersetzungs-Trainer</h1>
               <p class="text-secondary mt-1 text-sm">
@@ -14635,7 +14695,7 @@ function renderAntiTranslation(container) {
         <div class="card p-6 space-y-4">
           <div class="flex-between">
             <h3 class="font-bold text-base flex items-center gap-2">
-              <span>🚫</span> Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
+               Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
             </h3>
             <span class="badge badge-amber text-xs">${falseFriendsTraps.length} Fallen</span>
           </div>
@@ -14677,7 +14737,6 @@ function renderAntiTranslation(container) {
 // --- FILE: app.js ---
 
 // Main Application Orchestrator
-
 // Data Modules
 // View Components
 const appDataset = {
@@ -14695,7 +14754,7 @@ const appDataset = {
 Search.setDataset(appDataset);
 
 // Setup Views Container
-const mainView = document.getElementById('mainView');
+const mainView = document.getElementById('content-container') || document.getElementById('mainView');
 
 const routes = {
   'heute': (params) => renderDashboard(mainView, appDataset),
@@ -14719,96 +14778,142 @@ const routes = {
 
 const appRouter = new Router(routes, 'heute');
 
-// Global Search Overlay Logic
-const searchModal = document.getElementById('searchModal');
-const globalSearchInput = document.getElementById('globalSearchInput');
-const searchResultsList = document.getElementById('searchResultsList');
-
-function openSearch() {
-  searchModal.classList.remove('hidden');
-  globalSearchInput.value = '';
-  searchResultsList.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Tippe ein Wort oder Thema ein (z. B. "Freundin", "Bedarfsmedikation", "Passiv")...</div>';
-  globalSearchInput.focus();
-}
-
-function closeSearch() {
-  searchModal.classList.add('hidden');
-}
-
-globalSearchInput.addEventListener('input', (e) => {
-  const query = e.target.value;
-  const results = Search.search(query);
-
-  if (results.length === 0) {
-    searchResultsList.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Keine Treffer gefunden.</div>';
-    return;
-  }
-
-  searchResultsList.innerHTML = results.map(r => `
-    <div class="p-3 bg-surface rounded-xl border border-glass cursor-pointer hover:bg-glass flex-between search-item" data-route="${r.route}">
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="badge badge-indigo text-xs">${r.type}</span>
-          <span class="font-bold text-sm">${r.title}</span>
-        </div>
-        <div class="text-xs text-secondary mt-1">${r.subtitle}</div>
-      </div>
-      <span class="text-xs text-blue-400 font-semibold">Öffnen →</span>
-    </div>
-  `).join('');
-
-  searchResultsList.querySelectorAll('.search-item').forEach(item => {
-    item.onclick = () => {
-      closeSearch();
-      window.location.hash = item.getAttribute('data-route');
-    };
+// Active link highlighter
+function updateActiveNavigation() {
+  const currentHash = (window.location.hash || '#heute').replace('#', '').split('?')[0];
+  
+  document.querySelectorAll('#sidebarNav .nav-link').forEach(link => {
+    const route = link.getAttribute('data-route');
+    if (route === currentHash || (currentHash === '' && route === 'heute')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
-});
 
-// Keyboard Shortcuts Listener
+  document.querySelectorAll('#mobile-bottom-nav .mobile-nav-item').forEach(link => {
+    const href = (link.getAttribute('href') || '').replace('#', '');
+    if (href === currentHash || (currentHash === '' && href === 'heute')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('hashchange', updateActiveNavigation);
+window.addEventListener('load', updateActiveNavigation);
+
+// Sidebar Collapse / Expand Toggle
+const sidebar = document.getElementById('sidebar');
+const mainWrapper = document.getElementById('main-wrapper');
+const btnToggleSidebar = document.getElementById('btnToggleSidebar');
+
+if (btnToggleSidebar && sidebar && mainWrapper) {
+  btnToggleSidebar.onclick = () => {
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('mobile-open');
+    } else {
+      sidebar.classList.toggle('collapsed');
+      mainWrapper.classList.toggle('sidebar-collapsed');
+    }
+  };
+}
+
+// Theme Switcher (Light / Dark)
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const htmlEl = document.documentElement;
+
+if (themeToggleBtn) {
+  themeToggleBtn.onclick = () => {
+    const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlEl.setAttribute('data-theme', newTheme);
+    const settings = Storage.getSettings();
+    Storage.saveSettings({ ...settings, theme: newTheme });
+  };
+}
+
+// Global Search Overlay Logic
+function createSearchModal() {
+  let modal = document.getElementById('searchModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'searchModal';
+    modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden';
+    modal.innerHTML = `
+      <div class="bg-surface border border-subtle w-full max-w-xl rounded-2xl shadow-xl overflow-hidden animate-popIn">
+        <div class="p-4 border-b border-subtle flex items-center gap-3">
+          <svg class="w-5 h-5 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="globalSearchInput" class="w-full bg-transparent text-primary text-base outline-none" placeholder="Vokabel, Grammatik oder Thema suchen...">
+          <button id="btnCloseSearchModal" class="btn btn-ghost btn-xs text-muted">ESC</button>
+        </div>
+        <div id="searchResultsContainer" class="p-4 max-h-96 overflow-y-auto space-y-2">
+          <div class="p-6 text-center text-secondary text-sm">Tippe ein Wort oder Thema ein (z. B. "Freundin", "Bedarfsmedikation", "Inversion")...</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const input = modal.querySelector('#globalSearchInput');
+    const container = modal.querySelector('#searchResultsContainer');
+    const btnClose = modal.querySelector('#btnCloseSearchModal');
+
+    btnClose.onclick = () => modal.classList.add('hidden');
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+
+    input.addEventListener('input', (e) => {
+      const q = e.target.value;
+      const res = Search.search(q);
+      if (res.length === 0) {
+        container.innerHTML = '<div class="p-6 text-center text-secondary text-sm">Keine Treffer gefunden.</div>';
+        return;
+      }
+      container.innerHTML = res.map(r => `
+        <div class="p-3 bg-subtle rounded-xl flex-between cursor-pointer hover:border-primary border border-transparent search-res-item" data-route="${r.route}">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="badge badge-blue text-xs">${r.type}</span>
+              <span class="font-bold text-sm text-primary">${r.title}</span>
+            </div>
+            <div class="text-xs text-secondary mt-0.5">${r.subtitle}</div>
+          </div>
+          <span class="text-xs text-blue-500 font-semibold">Öffnen →</span>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.search-res-item').forEach(item => {
+        item.onclick = () => {
+          modal.classList.add('hidden');
+          window.location.hash = item.getAttribute('data-route');
+        };
+      });
+    });
+  }
+  return modal;
+}
+
+function openGlobalSearch() {
+  const modal = createSearchModal();
+  modal.classList.remove('hidden');
+  const input = modal.querySelector('#globalSearchInput');
+  input.value = '';
+  input.focus();
+}
+
+const globalSearchTrigger = document.getElementById('globalSearchTrigger');
+if (globalSearchTrigger) globalSearchTrigger.onclick = openGlobalSearch;
+
 document.addEventListener('keydown', (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
     e.preventDefault();
-    openSearch();
+    openGlobalSearch();
   }
-  if (e.key === 'Escape' && !searchModal.classList.contains('hidden')) {
-    closeSearch();
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('searchModal');
+    if (modal) modal.classList.add('hidden');
   }
 });
-
-document.getElementById('btnOpenSearch').onclick = openSearch;
-document.getElementById('btnCloseSearch').onclick = closeSearch;
-searchModal.onclick = (e) => {
-  if (e.target === searchModal) closeSearch();
-};
-
-// Sidebar Mobile Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const sidebar = document.getElementById('sidebar');
-if (mobileMenuBtn && sidebar) {
-  mobileMenuBtn.onclick = () => sidebar.classList.toggle('sidebar-open');
-}
-
-// Dark/Light Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.onclick = () => {
-  document.body.classList.toggle('theme-light');
-  const isLight = document.body.classList.contains('theme-light');
-  themeToggle.innerHTML = isLight ? '☀️' : '🌙';
-  const s = Storage.getSettings();
-  Storage.saveSettings({ ...s, theme: isLight ? 'light' : 'dark' });
-};
-
-// Apply initial settings theme
-const initialSettings = Storage.getSettings();
-if (initialSettings.theme === 'light') {
-  document.body.classList.add('theme-light');
-  themeToggle.innerHTML = '☀️';
-}
-
-// Start Router
-appRouter.init();
-console.log('German BFD + Psychiatry + B2/C1 Platform loaded successfully!');
 
 
 })();

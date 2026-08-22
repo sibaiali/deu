@@ -138,7 +138,7 @@ function renderReviewPlayer(container, deck) {
         <!-- Action Controls -->
         <div class="flex-between items-center mt-6 gap-3 flex-wrap">
           <button id="btnAudio" class="btn btn-outline flex items-center gap-2">
-            <span>🔊</span> Aussprache (S)
+            Audio Aussprache (S)
           </button>
 
           <!-- SRS Grading Buttons (Shown when flipped) -->

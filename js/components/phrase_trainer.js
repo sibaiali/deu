@@ -22,7 +22,7 @@ export function renderPhraseTrainer(container) {
         ${PHRASES_DATA.categories.map(cat => `
           <div class="card p-6">
             <h2 class="text-xl font-bold mb-4 text-purple-300 flex items-center gap-2">
-              <span>💬</span> ${cat.name}
+               ${cat.name}
             </h2>
             <div class="space-y-4">
               ${cat.phrases.map(p => `

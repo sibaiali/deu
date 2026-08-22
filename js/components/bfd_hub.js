@@ -81,7 +81,7 @@ export function renderBFDHub(container, params = {}) {
 
         <div class="card p-6">
           <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>🧠</span> Prioritäten: Was muss ich wissen?
+             Prioritäten: Was muss ich wissen?
           </h2>
           <div class="space-y-4">
             <div>
@@ -190,7 +190,7 @@ export function renderBFDHub(container, params = {}) {
 
       <div class="card p-6 mt-6">
         <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-          <span>🏥</span> Die psychiatrischen Stationen & Kriseninterventions-Einheit
+           Die psychiatrischen Stationen & Kriseninterventions-Einheit
         </h3>
         <div class="grid md:grid-cols-2 gap-4">
           ${BFD_DATA.wards.map(w => `
@@ -275,7 +275,7 @@ export function renderBFDHub(container, params = {}) {
 
         <div class="card p-6">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>💬</span> 10 Sätze, die du am ersten Tag unbedingt brauchst
+             10 Sätze, die du am ersten Tag unbedingt brauchst
           </h3>
           <div class="space-y-3">
             ${BFD_DATA.firstDaySurvival.tenEssentialPhrases.map((p, idx) => `

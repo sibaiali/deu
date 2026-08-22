@@ -361,7 +361,7 @@ export function renderSentenceFixer(container) {
           <!-- Smart Next-Word & Phrase Prediction Bar -->
           <div id="predictionBar" class="space-y-2 pt-1">
             <div class="text-xs text-secondary font-semibold flex items-center gap-1">
-              <span>💡</span> Vorschläge für die nächsten Wörter (1 Klick zum Einfügen):
+               Vorschläge für die nächsten Wörter (1 Klick zum Einfügen):
             </div>
             <div id="predictionChips" class="flex flex-wrap gap-2"></div>
           </div>
@@ -377,16 +377,16 @@ export function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3 pt-2">
             <div class="flex gap-2">
               <button id="btnVoiceInput" class="btn btn-secondary btn-sm flex items-center gap-2">
-                <span>🎙️</span> Diktieren
+                 Diktieren
               </button>
               <button id="btnClear" class="btn btn-ghost btn-sm">Leeren</button>
             </div>
             <div class="flex gap-2">
               <button id="btnAutoFixAll" class="btn btn-autofix btn-sm flex items-center gap-2 hidden">
-                <span>⚡</span> Alles automatisch korrigieren
+                 Alles automatisch korrigieren
               </button>
               <button id="btnCheckSentence" class="btn btn-primary btn-lg flex items-center gap-2 shadow-glow">
-                <span>✨</span> Diagnose & XP sichern
+                 Diagnose & XP sichern
               </button>
             </div>
           </div>
@@ -578,7 +578,7 @@ export function renderSentenceFixer(container) {
             ${result.issues.length > 0 ? `
               <div class="p-5 bg-surface border border-red-500/30 rounded-2xl space-y-3">
                 <div class="font-bold text-sm text-red-400 flex items-center gap-2">
-                  <span>🔍</span> Gefundene Korrekturen (1-Klick-Anwendung):
+                   Gefundene Korrekturen (1-Klick-Anwendung):
                 </div>
                 <div class="space-y-2">
                   ${result.issues.map(iss => `
@@ -602,7 +602,7 @@ export function renderSentenceFixer(container) {
             <!-- 4 Muttersprachliche Stil-Varianten -->
             <div class="p-5 bg-surface border border-blue-500/30 rounded-2xl space-y-3">
               <div class="font-bold text-sm text-blue-400 flex items-center gap-2">
-                <span>🎭</span> 4 muttersprachliche Stil-Varianten:
+                 4 muttersprachliche Stil-Varianten:
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                 <div class="p-3 bg-card rounded-xl border border-glass space-y-1">
@@ -631,7 +631,7 @@ export function renderSentenceFixer(container) {
             <!-- Copy Button -->
             <div class="flex justify-end gap-3 pt-2">
               <button id="btnCopyCorrected" class="btn btn-secondary btn-sm flex items-center gap-2">
-                <span>📋</span> Korrigierten Satz kopieren
+                 Korrigierten Satz kopieren
               </button>
             </div>
           </div>
@@ -688,7 +688,7 @@ export function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>🎭</span> 4-Ton-KI-Paraphrasierer • Satz-Transformator
+                 4-Ton-KI-Paraphrasierer • Satz-Transformator
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Verwandle jeden einfachen Satz in 4 authentische Register: Locker, Professionell, Klinik oder C1/C2!
@@ -701,7 +701,7 @@ export function renderSentenceFixer(container) {
             <label class="text-xs font-semibold text-secondary">Ausgangssatz eingeben:</label>
             <input type="text" id="paraphraseInput" class="input w-full text-base rounded-2xl" placeholder="z. B. Ich habe keine Zeit um das zu machen..." value="Ich möchte Bescheid geben dass ich später komme.">
             <button id="btnParaphrase" class="btn btn-primary btn-sm flex items-center gap-2">
-              <span>🚀</span> In alle 4 Stile transformieren (+15 XP)
+               In alle 4 Stile transformieren (+15 XP)
             </button>
           </div>
 
@@ -772,7 +772,7 @@ export function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>🧠</span> Aus Fehlern lernen • Trainings-Labor
+                 Aus Fehlern lernen • Trainings-Labor
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Trainiere deine gesammelten Fehler gezielt, bis du sie zu 100% beherrschst!
@@ -856,7 +856,7 @@ export function renderSentenceFixer(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <h2 class="text-xl font-bold flex items-center gap-2">
-                <span>📖</span> Mein persönliches Satz-Tagebuch
+                 Mein persönliches Satz-Tagebuch
               </h2>
               <p class="text-xs text-secondary mt-1">
                 Alle deine bisher geprüften Sätze im Überblick.
