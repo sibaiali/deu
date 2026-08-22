@@ -26311,15 +26311,21 @@ document.addEventListener('keydown', (e) => {
 
   });
 
-  // Run Main Entry Point
-  window.addEventListener('DOMContentLoaded', function() {
+  // Safe Universal App Launcher (Checks document.readyState)
+  function __bootDeuPlatform() {
     try {
       __require('root', 'app.js');
       console.log('✅ DEU PLATFORM successfully initialized in isolated module scope!');
     } catch (err) {
       console.error('Fatal initialization error:', err);
       const container = document.getElementById('content-container') || document.body;
-      container.innerHTML = '<div style="padding:40px;color:#ef4444;font-family:sans-serif;"><h2>Initialisierungsfehler</h2><pre>' + err.stack + '</pre></div>';
+      container.innerHTML = '<div style="padding:40px;color:#ef4444;font-family:sans-serif;"><h2>Initialisierungsfehler</h2><pre>' + (err.stack || err) + '</pre></div>';
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __bootDeuPlatform);
+  } else {
+    __bootDeuPlatform();
+  }
 })();
