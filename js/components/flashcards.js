@@ -26,6 +26,7 @@ export function renderFlashcards(container, data, params = {}) {
               <button id="btnExplorerMode" class="btn btn-sm ${mode === 'explorer' ? 'btn-primary' : 'btn-secondary'}">
                 📚 Wortschatz & Explorer (${data.vocabulary.length})
               </button>
+              <a href="#unterschiede" class="btn btn-sm btn-secondary">⚖️ Wann welches Wort?</a>
               <button id="btnReviewMode" class="btn btn-sm ${mode === 'review' ? 'btn-primary' : 'btn-secondary'}">
                 🔄 SRS-Wiederholung (${totalDueCount})
               </button>

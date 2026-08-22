@@ -1,3 +1,4 @@
+import { renderSynonymsDiffHub } from './components/synonyms_diff_hub.js';
 // Main Application Orchestrator
 import { Storage } from './storage.js';
 import { Router } from './router.js';
@@ -69,7 +70,8 @@ const routes = {
   'quellen': (params) => renderSourcesLibrary(mainView),
   'fehler': (params) => renderErrorLog(mainView),
   'fortschritt': (params) => renderSettingsStats(mainView),
-  'ressourcen': (params) => renderExternalResources(mainView)
+  'ressourcen': (params) => renderExternalResources(mainView),
+  'unterschiede': (params) => renderSynonymsDiffHub(mainView)
 };
 
 export const appRouter = new Router(routes, 'heute');
