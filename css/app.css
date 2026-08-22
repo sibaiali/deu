@@ -465,3 +465,80 @@ body {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+
+/* Ultra-Modern Dynamic Animations & Visual Aesthetics */
+.live-pulse {
+  animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+.shimmer-glow {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.grammar-error-live {
+  text-decoration: underline wavy #f43f5e 2.5px;
+  background: rgba(244, 63, 94, 0.15);
+  border-radius: 4px;
+  padding: 2px 4px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.grammar-error-live:hover {
+  background: rgba(244, 63, 94, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+}
+
+.grammar-warning-live {
+  text-decoration: underline wavy #fbbf24 2.5px;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 4px;
+  padding: 2px 4px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.grammar-warning-live:hover {
+  background: rgba(251, 191, 36, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.popover-card {
+  position: absolute;
+  z-index: 1000;
+  background: #1e1b4b;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  animation: popIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95) translateY(5px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.btn-autofix {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
+.btn-autofix:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}

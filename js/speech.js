@@ -1,97 +1,119 @@
-// Speech Service — Web Speech API (TTS & SpeechRecognition) mit robuster Fallback-Logik
-
+// Speech & Web Audio Sound Effects Service
 class SpeechService {
   constructor() {
-    this.synth = window.speechSynthesis || null;
-    this.voices = [];
-    this.germanVoice = null;
-    this.recognition = null;
-    this.isListening = false;
+    this.synth = window.speechSynthesis;
+    this.selectedVoice = null;
+    this.audioCtx = null;
     this.initVoices();
-    this.initRecognition();
+  }
+
+  initAudio() {
+    if (!this.audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) this.audioCtx = new AudioContext();
+    }
+  }
+
+  playSound(type) {
+    try {
+      this.initAudio();
+      if (!this.audioCtx) return;
+      if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
+
+      const osc = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      const now = this.audioCtx.currentTime;
+
+      if (type === 'success') {
+        // Bright victory chime
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+        osc.frequency.setValueAtTime(783.99, now + 0.16); // G5
+        osc.frequency.setValueAtTime(1046.50, now + 0.24); // C6
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+        osc.start(now);
+        osc.stop(now + 0.6);
+      } else if (type === 'error') {
+        // Soft low tone
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.setValueAtTime(180, now + 0.1);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc.start(now);
+        osc.stop(now + 0.35);
+      } else if (type === 'pop') {
+        // Subtle click/pop
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.exponentialRampToValueAtTime(400, now + 0.05);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      }
+    } catch (e) {
+      // Audio context may be restricted before user gesture
+    }
   }
 
   initVoices() {
     if (!this.synth) return;
-    const load = () => {
-      this.voices = this.synth.getVoices();
-      this.germanVoice = this.voices.find(v => v.lang.startsWith('de')) || null;
+    const loadVoices = () => {
+      const voices = this.synth.getVoices();
+      this.selectedVoice = voices.find(v => v.lang.startsWith('de') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Katja') || v.name.includes('Marlene') || v.name.includes('Hedda'))) ||
+                           voices.find(v => v.lang.startsWith('de')) ||
+                           null;
     };
-    load();
+    loadVoices();
     if (this.synth.onvoiceschanged !== undefined) {
-      this.synth.onvoiceschanged = load;
+      this.synth.onvoiceschanged = loadVoices;
     }
   }
 
-  initRecognition() {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
-    if (SpeechRecognition) {
-      try {
-        this.recognition = new SpeechRecognition();
-        this.recognition.lang = 'de-DE';
-        this.recognition.continuous = false;
-        this.recognition.interimResults = false;
-      } catch (e) {
-        console.warn('SpeechRecognition init failed:', e);
-      }
-    }
-  }
+  speak(text, onEnd = null) {
+    if (!this.synth) return;
+    this.synth.cancel();
+    const clean = text.replace(/<[^>]*>?/gm, '').trim();
+    if (!clean) return;
 
-  // Speak German text with adjustable speed
-  speak(text, speed = 0.9) {
-    if (!this.synth) {
-      console.warn('TTS not supported in this browser.');
-      return false;
-    }
-    this.synth.cancel(); // Stop ongoing speech
-    const cleanText = text.replace(/[*_#]/g, '').trim();
-    const utterance = new SpeechSynthesisUtterance(cleanText);
+    const utterance = new SpeechSynthesisUtterance(clean);
     utterance.lang = 'de-DE';
-    utterance.rate = speed; // 0.6 = slow, 0.9 = normal, 1.1 = fast
-    if (this.germanVoice) {
-      utterance.voice = this.germanVoice;
-    }
+    utterance.rate = 0.92;
+    utterance.pitch = 1.0;
+    if (this.selectedVoice) utterance.voice = this.selectedVoice;
+    if (onEnd) utterance.onend = onEnd;
     this.synth.speak(utterance);
-    return true;
   }
 
-  stopSpeaking() {
-    if (this.synth) this.synth.cancel();
-  }
-
-  // Start speech recognition with callback
-  startListening(onResult, onError, onEnd) {
-    if (!this.recognition) {
-      if (onError) onError('Spracherkennung wird von diesem Browser nicht unterstützt. Bitte tippen Sie Ihre Antwort ein.');
-      return false;
+  startRecognition(onResult, onError, onStart, onEnd) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      if (onError) onError('Spracherkennung wird in diesem Browser nicht unterstützt. Bitte nutze Chrome, Edge oder Safari.');
+      return null;
     }
+    const rec = new SpeechRecognition();
+    rec.lang = 'de-DE';
+    rec.continuous = false;
+    rec.interimResults = false;
+    rec.onstart = () => onStart && onStart();
+    rec.onresult = (e) => {
+      const transcript = e.results[0][0].transcript;
+      if (onResult) onResult(transcript);
+    };
+    rec.onerror = (e) => onError && onError(e.error);
+    rec.onend = () => onEnd && onEnd();
     try {
-      this.recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        if (onResult) onResult(transcript);
-      };
-      this.recognition.onerror = (event) => {
-        console.warn('Speech recognition error:', event.error);
-        if (onError) onError(event.error);
-      };
-      this.recognition.onend = () => {
-        this.isListening = false;
-        if (onEnd) onEnd();
-      };
-      this.isListening = true;
-      this.recognition.start();
-      return true;
-    } catch (e) {
-      console.error('Failed to start recognition:', e);
-      if (onError) onError(e.message);
-      return false;
-    }
-  }
-
-  stopListening() {
-    if (this.recognition && this.isListening) {
-      this.recognition.stop();
-      this.isListening = false;
+      rec.start();
+      return rec;
+    } catch (err) {
+      if (onError) onError(err.message);
+      return null;
     }
   }
 }
