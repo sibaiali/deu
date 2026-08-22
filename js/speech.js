@@ -1,9 +1,12 @@
 // Speech & Web Audio Sound Effects Service
+// Multi-Speed TTS (0.6x, 0.8x, 1.0x, 1.2x, 1.5x), Spracherkennung und Audiosynthesizer
+
 class SpeechService {
   constructor() {
     this.synth = window.speechSynthesis;
     this.selectedVoice = null;
     this.audioCtx = null;
+    this.currentRate = 0.95;
     this.initVoices();
   }
 
@@ -57,9 +60,7 @@ class SpeechService {
         osc.start(now);
         osc.stop(now + 0.05);
       }
-    } catch (e) {
-      // Audio context may be restricted before user gesture
-    }
+    } catch (e) {}
   }
 
   initVoices() {
@@ -76,7 +77,11 @@ class SpeechService {
     }
   }
 
-  speak(text, onEnd = null) {
+  setRate(rate) {
+    this.currentRate = parseFloat(rate) || 0.95;
+  }
+
+  speak(text, rate = null, onEnd = null) {
     if (!this.synth) return;
     this.synth.cancel();
     const clean = text.replace(/<[^>]*>?/gm, '').trim();
@@ -84,7 +89,7 @@ class SpeechService {
 
     const utterance = new SpeechSynthesisUtterance(clean);
     utterance.lang = 'de-DE';
-    utterance.rate = 0.92;
+    utterance.rate = rate !== null ? parseFloat(rate) : this.currentRate;
     utterance.pitch = 1.0;
     if (this.selectedVoice) utterance.voice = this.selectedVoice;
     if (onEnd) utterance.onend = onEnd;
@@ -94,7 +99,7 @@ class SpeechService {
   startRecognition(onResult, onError, onStart, onEnd) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      if (onError) onError('Spracherkennung wird in diesem Browser nicht unterstützt. Bitte nutze Chrome, Edge oder Safari.');
+      if (onError) onError('Spracherkennung wird in diesem Browser nicht unterstützt. Bitte nutze die manuelle Selbstbewertung.');
       return null;
     }
     const rec = new SpeechRecognition();
