@@ -1,47 +1,46 @@
 // Bento Grid Dashboard - Calm, Professional & Focused
 // Reduzierte kognitive Last: Tages-Check-in (Span 8), Überlebensmodus (Span 4),
-// 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und strukturierte Zeitachse (Tagesplan).
+// 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und adaptive Sessions (5-Min-Station, 10-Min-Review, Müde).
 
 import { Storage } from '../storage.js';
 import { SRS } from '../srs.js';
 import { VOCABULARY_DATA } from '../data/vocabulary_data.js';
-import { SIMULATIONS_DATA } from '../data/simulations_data.js';
+import { AdaptiveEngine } from '../adaptive_engine.js';
 
 export async function renderDashboard(container) {
   const settings = Storage.getSettings();
   const dueCards = await SRS.getDueCards(VOCABULARY_DATA);
   const dueCount = dueCards.length;
 
-  let activePlanDuration = '45'; // '20' | '45' | '90'
-
-  const dailyPlans = {
-    '20': [
-      { time: '08:00', title: 'SRS-Wiederholung', desc: 'Fällige Vokabeln festigen', duration: '7 Min', route: 'wiederholen' },
-      { time: '12:30', title: 'BFD-Phrasen', desc: 'Stations-Kommunikation', duration: '5 Min', route: 'phrasen' },
-      { time: '17:00', title: 'Sprechtraining', desc: '60-Sekunden Challenge', duration: '4 Min', route: 'sprechen' },
-      { time: '20:30', title: 'Satz-Korrektor', desc: '1 persönlicher Satz', duration: '4 Min', route: 'satzkorrektor' }
-    ],
-    '45': [
-      { time: '08:00', title: 'SRS-Wiederholung & Neue Vokabeln', desc: '10 Vokabeln im Kontext', duration: '12 Min', route: 'wiederholen' },
-      { time: '12:30', title: 'BFD-Simulation', desc: 'Sicherheitstraining: Bedarfsmedikation', duration: '10 Min', route: 'simulation' },
-      { time: '16:00', title: 'Psychologie & Deeskalation', desc: 'Trauma & Rollengrenzen', duration: '10 Min', route: 'psychologie' },
-      { time: '19:00', title: 'Sprechtrainer & Aussprache', desc: 'Schichtübergabe sprechen', duration: '8 Min', route: 'sprechen' },
-      { time: '21:00', title: 'Anti-Übersetzung', desc: 'Blitz-Reaktionstraining', duration: '5 Min', route: 'antitruebersetzung' }
-    ],
-    '90': [
-      { time: '07:30', title: 'SRS-Mastery & Tiefen-Wiederholung', desc: 'Vokabeln & Grammatikdrills', duration: '20 Min', route: 'wiederholen' },
-      { time: '10:00', title: 'Grammatik-Intensivlektion', desc: 'Nebensätze & Inversion', duration: '20 Min', route: 'grammatik' },
-      { time: '13:00', title: '2x BFD-Simulationen', desc: 'Akutaufnahme & Deeskalation', duration: '20 Min', route: 'simulation' },
-      { time: '17:00', title: 'Leseverstehen Klinikberichte', desc: 'Original-Dienstübergabe', duration: '15 Min', route: 'lesen' },
-      { time: '20:30', title: 'Satz-Korrektor & Schreibtraining', desc: 'Freies Formulieren', duration: '15 Min', route: 'satzkorrektor' }
-    ]
-  };
+  let activeMode = '45'; // '5min_shift' | '10min_review' | '10' | '20' | '45' | '90' | 'tired'
+  let userState = 'normal'; // 'normal' | 'tired'
 
   function renderView() {
-    const plan = dailyPlans[activePlanDuration];
+    const adaptivePlan = AdaptiveEngine.getDailyPlan(activeMode, userState);
 
     container.innerHTML = `
       <div class="space-y-6 animate-fadeIn">
+        <!-- Quick Session Launcher (Adaptive State Controls) -->
+        <div class="flex flex-wrap items-center justify-between gap-3 p-3 bg-surface rounded-xl border border-subtle">
+          <div class="text-xs font-bold text-muted uppercase tracking-wider flex items-center gap-1.5">
+            <span>⚡</span> Sofort-Lernmodus:
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button class="btn btn-xs ${activeMode === '5min_shift' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="5min_shift">
+              🏥 5-Min. Vor der Schicht
+            </button>
+            <button class="btn btn-xs ${activeMode === '10min_review' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="10min_review">
+              📝 10-Min. Nachbereitung
+            </button>
+            <button class="btn btn-xs ${userState === 'tired' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="tired">
+              🌙 Ich bin müde
+            </button>
+            <button class="btn btn-xs ${activeMode === '45' && userState === 'normal' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="45">
+              ⭐ Standard (45 Min)
+            </button>
+          </div>
+        </div>
+
         <!-- 12-Column Bento Grid: Row 1 (Hero Check-in & Critical Survival Card) -->
         <div class="bento-grid">
           <!-- Span 8: Tages-Check-in / Dein nächster Schritt -->
@@ -98,7 +97,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Span 4: Erster-Tag-Überlebensmodus (Critical Safety & Quick Reference) -->
+          <!-- Span 4: Erster-Tag-Überlebensmodus -->
           <div class="col-span-4 bento-card survival-card">
             <div class="space-y-3">
               <div class="flex-between">
@@ -130,7 +129,7 @@ export async function renderDashboard(container) {
 
         <!-- 12-Column Bento Grid: Row 2 (3 Micro-Modules) -->
         <div class="bento-grid">
-          <!-- Card 1: Vokabeln & SRS (Span 4) -->
+          <!-- Card 1: Vokabeln & SRS -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -151,7 +150,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Card 2: Sprechtrainer (Span 4) -->
+          <!-- Card 2: Sprechtrainer -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -170,7 +169,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Card 3: Psychologie & Deeskalation (Span 4) -->
+          <!-- Card 3: Psychologie & Deeskalation -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -190,43 +189,37 @@ export async function renderDashboard(container) {
           </div>
         </div>
 
-        <!-- 12-Column Bento Grid: Row 3 (Timeline Daily Plan) -->
+        <!-- 12-Column Bento Grid: Row 3 (Timeline Daily Plan - Adaptiv) -->
         <div class="bento-card col-span-12 space-y-4">
           <div class="flex-between flex-wrap gap-3">
             <div>
-              <h2 class="section-title">Mein strukturierter Tagesplan</h2>
+              <h2 class="section-title">${adaptivePlan.title}</h2>
               <p class="text-xs text-secondary mt-0.5">
-                Kompakte Zeitstruktur für deinen optimalen Lernfortschritt neben dem BFD-Alltag.
+                ${adaptivePlan.focus}
               </p>
             </div>
 
-            <!-- Segmented Control for 20 / 45 / 90 Min -->
+            <!-- Duration Controls -->
             <div class="flex items-center p-1 bg-subtle rounded-lg border border-subtle">
-              <button class="btn btn-xs ${activePlanDuration === '20' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="20">
-                20 Min
-              </button>
-              <button class="btn btn-xs ${activePlanDuration === '45' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="45">
-                45 Min (Empfohlen)
-              </button>
-              <button class="btn btn-xs ${activePlanDuration === '90' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="90">
-                90 Min Intensiv
-              </button>
+              <button class="btn btn-xs ${activeMode === '10' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="10">10 Min</button>
+              <button class="btn btn-xs ${activeMode === '20' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="20">20 Min</button>
+              <button class="btn btn-xs ${activeMode === '45' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="45">45 Min</button>
+              <button class="btn btn-xs ${activeMode === '90' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="90">90 Min</button>
             </div>
           </div>
 
           <!-- Vertical Timeline -->
           <div class="timeline-list pt-2">
-            ${plan.map((item, idx) => `
+            ${adaptivePlan.steps.map((item, idx) => `
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="flex-1 p-3 bg-subtle rounded-xl flex-between flex-wrap gap-2">
                   <div>
-                    <div class="text-xs font-semibold text-muted">${item.time} Uhr • ${item.duration}</div>
+                    <div class="text-xs font-semibold text-muted">Schritt ${idx + 1} • ${item.duration}</div>
                     <div class="font-bold text-sm text-primary">${item.title}</div>
-                    <div class="text-xs text-secondary">${item.desc}</div>
                   </div>
                   <a href="#${item.route}" class="btn btn-secondary btn-xs">
-                    Öffnen →
+                    Starten →
                   </a>
                 </div>
               </div>
@@ -237,9 +230,24 @@ export async function renderDashboard(container) {
     `;
 
     // Event Bindings
+    container.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.onclick = () => {
+        const mode = btn.getAttribute('data-mode');
+        if (mode === 'tired') {
+          userState = 'tired';
+          activeMode = 'tired';
+        } else {
+          userState = 'normal';
+          activeMode = mode;
+        }
+        renderView();
+      };
+    });
+
     container.querySelectorAll('.plan-toggle-btn').forEach(btn => {
       btn.onclick = () => {
-        activePlanDuration = btn.getAttribute('data-dur');
+        userState = 'normal';
+        activeMode = btn.getAttribute('data-dur');
         renderView();
       };
     });

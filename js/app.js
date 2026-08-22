@@ -30,6 +30,7 @@ import { renderEngineeringHub } from './components/engineering_hub.js';
 import { renderSourcesLibrary } from './components/sources_library.js';
 import { renderErrorLog } from './components/error_log.js';
 import { renderSettingsStats } from './components/settings_stats.js';
+import { renderExternalResources } from './components/external_resources.js';
 import { renderSentenceFixer } from './components/sentence_fixer.js';
 import { renderAntiTranslation } from './components/anti_translation.js';
 
@@ -67,7 +68,8 @@ const routes = {
   'engineering': (params) => renderEngineeringHub(mainView),
   'quellen': (params) => renderSourcesLibrary(mainView),
   'fehler': (params) => renderErrorLog(mainView),
-  'fortschritt': (params) => renderSettingsStats(mainView)
+  'fortschritt': (params) => renderSettingsStats(mainView),
+  'ressourcen': (params) => renderExternalResources(mainView)
 };
 
 export const appRouter = new Router(routes, 'heute');

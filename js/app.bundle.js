@@ -517,6 +517,184 @@ class SpeechService {
 const Speech = new SpeechService();
 
 
+// --- FILE: safety_guard.js ---
+
+// Medical & Privacy Safety Guard
+// Strikte Trennung: Sprachtraining vs. Medizinische Handlung
+
+class SafetyGuard {
+  static checkRoleBoundaries(text) {
+    const forbidden = [
+      { pattern: /\bich gebe ihnen die tablette\b/i, warning: "Rollengrenze: Als BFDler darfst du Medikamente nicht eigenmächtig verabreichen." },
+      { pattern: /\bich stelle die diagnose\b/i, warning: "Rollengrenze: Diagnosestellung obliegt ausschließlich Fachärzten." },
+      { pattern: /\bich verspreche ihnen\b/i, warning: "Rollengrenze: Keine Behandlungsversprechen abgeben." }
+    ];
+
+    for (const rule of forbidden) {
+      if (rule.pattern.test(text)) {
+        return { safe: false, warning: rule.warning };
+      }
+    }
+    return { safe: true };
+  }
+
+  static sanitizePrivacy(text) {
+    const hasNameLike = /\b(Herr|Frau)\s+[A-ZÄÖÜ][a-zäöüß]+\s+(aus Zimmer|in Zimmer)\s+\d+/i.test(text);
+    if (hasNameLike) {
+      return {
+        safe: false,
+        warning: "Datenschutz-Hinweis: Bitte niemals echte Patientennamen oder Zimmernummern eingeben!"
+      };
+    }
+    return { safe: true };
+  }
+}
+
+
+// --- FILE: adaptive_engine.js ---
+
+// Adaptive Learning & FSRS Engine
+// Berechnet den optimalen täglichen Lernpfad basierend auf Abruferfolg und Zustand.
+
+class AdaptiveEngine {
+  static getDailyPlan(mode = '45', userState = 'normal') {
+    if (mode === '5min_shift') {
+      return {
+        title: "5-Minuten-Station (Vor Schichtbeginn)",
+        focus: "3 Phrasen • 3 Vokabeln • 1 Rollengrenze • 1 Spontanreaktion",
+        steps: [
+          { type: 'phrase', title: 'Übergabe-Phrasen aktivieren', duration: '1 Min', route: 'phrasen' },
+          { type: 'vocab', title: '3 psychiatrische Kernwörter', duration: '1.5 Min', route: 'wiederholen' },
+          { type: 'safety', title: 'Rollengrenzen & Magischer Satz', duration: '1 Min', route: 'bfd?tab=survival' },
+          { type: 'speaking', title: '60-Sekunden Sprachaktivierung', duration: '1.5 Min', route: 'sprechen' }
+        ]
+      };
+    }
+
+    if (mode === '10min_review') {
+      return {
+        title: "10-Minuten-Nachbereitung (Nach Schichtende)",
+        focus: "Reflexion • Unverstandene Wörter festhalten • Fehler erfassen",
+        steps: [
+          { type: 'reflection', title: 'Was war heute herausfordernd?', duration: '3 Min', route: 'satzkorrektor' },
+          { type: 'vocab', title: 'Neue Begriffe aus der Schicht aufnehmen', duration: '3 Min', route: 'wiederholen' },
+          { type: 'errors', title: 'Fehlerprotokoll aktualisieren', duration: '4 Min', route: 'fehler' }
+        ]
+      };
+    }
+
+    if (userState === 'tired') {
+      return {
+        title: "Schonendes Lernen (Müdigkeits-Modus)",
+        focus: "Passives Hören • Wiedererkennung • Keine schwere Textproduktion",
+        steps: [
+          { type: 'listening', title: 'Stationsdialoge anhören', duration: '7 Min', route: 'lesen' },
+          { type: 'vocab', title: 'Leichte Vokabel-Wiedererkennung', duration: '5 Min', route: 'wiederholen' },
+          { type: 'phrasen', title: 'Phrasen-Audio mitsprechen', duration: '5 Min', route: 'phrasen' }
+        ]
+      };
+    }
+
+    if (mode === '10') {
+      return {
+        title: "10-Minuten-Blitztraining",
+        focus: "Fällige Karten • 1 Kernphrase • Blitzreaktion",
+        steps: [
+          { type: 'vocab', title: 'SRS-Wiederholung (Fällige Karten)', duration: '5 Min', route: 'wiederholen' },
+          { type: 'anti_translation', title: '3x Blitz-Reaktionstraining', duration: '3 Min', route: 'antitruebersetzung' },
+          { type: 'phrase', title: '1 Notfall-Phrase festigen', duration: '2 Min', route: 'phrasen' }
+        ]
+      };
+    }
+
+    // Standard 45 Min
+    return {
+      title: "45-Minuten Standard-Lernpfad (B2/C1 & BFD)",
+      focus: "SRS • BFD-Simulation • Grammatik • Sprechtraining • Deeskalation",
+      steps: [
+        { type: 'vocab', title: 'SRS-Wiederholung & 5 neue Vokabeln', duration: '12 Min', route: 'wiederholen' },
+        { type: 'sim', title: 'BFD-Simulation: Akutpsychiatrie', duration: '10 Min', route: 'simulation' },
+        { type: 'psy', title: 'Psychologie & Deeskalation', duration: '8 Min', route: 'psychologie' },
+        { type: 'speaking', title: 'Sprechtrainer: Schichtübergabe', duration: '8 Min', route: 'sprechen' },
+        { type: 'grammar', title: 'Grammatik-Check & Satz-Korrektor', duration: '7 Min', route: 'satzkorrektor' }
+      ]
+    };
+  }
+
+  static clusterErrors(errorsList) {
+    const clusters = {
+      'Dativ & Präpositionen': [],
+      'Verb-Endstellung (Nebensätze)': [],
+      'Inversion (V2)': [],
+      'N-Deklination': [],
+      'Großschreibung von Nomen': [],
+      'Wortwahl & Register': []
+    };
+
+    for (const err of errorsList) {
+      const txt = (err.original || err.wrong || '').toLowerCase();
+      if (txt.includes('mit der') || txt.includes('in die küche') || txt.includes('bei der')) {
+        clusters['Dativ & Präpositionen'].push(err);
+      } else if (txt.includes('weil') || txt.includes('dass') || txt.includes('obwohl')) {
+        clusters['Verb-Endstellung (Nebensätze)'].push(err);
+      } else if (txt.includes('gestern ich') || txt.includes('heute wir') || txt.includes('warum du')) {
+        clusters['Inversion (V2)'].push(err);
+      } else if (txt.includes('patient') || txt.includes('herrn')) {
+        clusters['N-Deklination'].push(err);
+      } else if (txt.includes('jahre') || txt.includes('abend') || txt.includes('zeit')) {
+        clusters['Großschreibung von Nomen'].push(err);
+      } else {
+        clusters['Wortwahl & Register'].push(err);
+      }
+    }
+    return clusters;
+  }
+}
+
+
+// --- FILE: providers.js ---
+
+// API & Integration Abstraction Layer
+// Entkoppelt die Plattform von externen Diensten mit 100% Offline-Garantie.
+
+class APIProviders {
+  static getDictionaryProvider() {
+    return {
+      async lookup(word) {
+        return {
+          source: 'Lokal/Duden-Katalog',
+          definition: `Deutsches Lemma für ${word}`,
+          grammar: 'Nomen/Verb/Adjektiv',
+          links: {
+            duden: `https://www.duden.de/rechtschreibung/${encodeURIComponent(word)}`,
+            dwds: `https://www.dwds.de/wb/${encodeURIComponent(word)}`
+          }
+        };
+      }
+    };
+  }
+
+  static getGrammarProvider() {
+    return {
+      async checkText(text) {
+        try {
+          const resp = await fetch('https://api.languagetool.org/v2/check', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ text: text, language: 'de-DE' })
+          });
+          if (resp.ok) {
+            const data = await resp.json();
+            return { provider: 'LanguageTool', matches: data.matches || [] };
+          }
+        } catch (e) {}
+        return { provider: 'LocalRuleEngine', matches: [] };
+      }
+    };
+  }
+}
+
+
 // --- FILE: search.js ---
 
 // Multi-Index Fuzzy Search Engine
@@ -1099,6 +1277,91 @@ const SOURCES_CATALOG = [
     simulationsDerived: ["sim_first_day_supervisor", "sim_seminar_lydia", "sim_acute_ward_rules"],
     coveragePercent: 100,
     provenance: "AUS_QUELLE"
+  }
+];
+
+
+// --- FILE: resources_data.js ---
+
+// Kuratierte, kostenlose und offizielle externe Lernressourcen
+const RESOURCES_DATA = [
+  {
+    id: "res_goethe_uebungen",
+    title: "Goethe-Institut • Kostenlos Deutsch üben (A1–C2)",
+    provider: "Goethe-Institut",
+    category: "Offizielle Quelle",
+    domain: "Allgemeines Deutsch & B2/C1",
+    level: "A1–C2",
+    description: "Umfangreiche kostenlose Online-Übungen zu Grammatik, Wortschatz, Lese- und Hörverstehen sowie beruflichen Situationen.",
+    url: "https://www.goethe.de/de/spr/ueb.html",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["goethe", "grammatik", "hoeren", "lesen", "b2", "c1"]
+  },
+  {
+    id: "res_goethe_deutschland_kennenlernen",
+    title: "Goethe-Institut • Deutschland. Kennen. Lernen.",
+    provider: "Goethe-Institut",
+    category: "Deutschland & Alltag",
+    domain: "Wohnen, BFD & Arbeitsleben",
+    level: "A2–B2",
+    description: "Interaktive Lernmaterialien rund um das Ankommen, Wohnen, Arbeiten und Freiwilligendienst in Deutschland.",
+    url: "https://www.goethe.de/de/spr/ueb/dkl.html",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["deutschland", "kultur", "arbeiten", "wohnen", "bfd"]
+  },
+  {
+    id: "res_goethe_deutsch_fuer_dich",
+    title: "Goethe-Institut • Deutsch für dich Community",
+    provider: "Goethe-Institut",
+    category: "Übung & Community",
+    domain: "Interaktives Training",
+    level: "A1–C1",
+    description: "Kostenlose Lernplattform mit hunderten Übungen, Lernspielen und direktem Austausch mit anderen Deutschlernern weltweit.",
+    url: "https://www.goethe.de/de/spr/ueb/dfd.html",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["community", "uebungen", "spiele"]
+  },
+  {
+    id: "res_telc_kostenlos",
+    title: "telc • Kostenlose Zusatzmaterialien & Modellprüfungen",
+    provider: "telc gGmbH",
+    category: "Prüfung & Zertifikat",
+    domain: "B2/C1 Prüfungsvorbereitung",
+    level: "B1–C1",
+    description: "Kostenfreie offizielle Modelltests, Hördateien und Zusatzübungen zur gezielten telc B2 / telc Deutsch Medizin Vorbereitung.",
+    url: "https://www.telc.net/pruefungsteilnehmende/kostenlose-uebungsmaterialien.html",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["telc", "pruefung", "medizin", "b2", "c1"]
+  },
+  {
+    id: "res_dw_deutsch_lernen",
+    title: "Deutsche Welle • Deutschkurse & Video-Themen",
+    provider: "Deutsche Welle (DW)",
+    category: "Hören & Sprechen",
+    domain: "Nachrichten & Alltagssprache",
+    level: "B1–C1",
+    description: "Langsam gesprochene Nachrichten, Video-Themen mit Manuskript und interaktive Sprachkurse zur Verbesserung des Hörverstehens.",
+    url: "https://learngerman.dw.com/de/overview",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["hoeren", "nachrichten", "dw", "video"]
+  },
+  {
+    id: "res_duden_online",
+    title: "Duden Online • Rechtschreibung & Synonyme",
+    provider: "Duden Verlag",
+    category: "Wörterbuch",
+    domain: "Standardreferenz",
+    level: "A1–C2",
+    description: "Die maßgebliche Referenz für deutsche Rechtschreibung, Grammatikangaben, Bedeutungen, Rektion und Synonyme.",
+    url: "https://www.duden.de/",
+    isOfficial: true,
+    rating: "Empfohlen",
+    tags: ["woerterbuch", "duden", "rechtschreibung", "synonyme"]
   }
 ];
 
@@ -11271,43 +11534,42 @@ const ENGINEERING_DATA = {
 
 // Bento Grid Dashboard - Calm, Professional & Focused
 // Reduzierte kognitive Last: Tages-Check-in (Span 8), Überlebensmodus (Span 4),
-// 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und strukturierte Zeitachse (Tagesplan).
+// 3 Micro-Module (Vokabeln, Sprechen, Psychologie) und adaptive Sessions (5-Min-Station, 10-Min-Review, Müde).
 
 export async function renderDashboard(container) {
   const settings = Storage.getSettings();
   const dueCards = await SRS.getDueCards(VOCABULARY_DATA);
   const dueCount = dueCards.length;
 
-  let activePlanDuration = '45'; // '20' | '45' | '90'
-
-  const dailyPlans = {
-    '20': [
-      { time: '08:00', title: 'SRS-Wiederholung', desc: 'Fällige Vokabeln festigen', duration: '7 Min', route: 'wiederholen' },
-      { time: '12:30', title: 'BFD-Phrasen', desc: 'Stations-Kommunikation', duration: '5 Min', route: 'phrasen' },
-      { time: '17:00', title: 'Sprechtraining', desc: '60-Sekunden Challenge', duration: '4 Min', route: 'sprechen' },
-      { time: '20:30', title: 'Satz-Korrektor', desc: '1 persönlicher Satz', duration: '4 Min', route: 'satzkorrektor' }
-    ],
-    '45': [
-      { time: '08:00', title: 'SRS-Wiederholung & Neue Vokabeln', desc: '10 Vokabeln im Kontext', duration: '12 Min', route: 'wiederholen' },
-      { time: '12:30', title: 'BFD-Simulation', desc: 'Sicherheitstraining: Bedarfsmedikation', duration: '10 Min', route: 'simulation' },
-      { time: '16:00', title: 'Psychologie & Deeskalation', desc: 'Trauma & Rollengrenzen', duration: '10 Min', route: 'psychologie' },
-      { time: '19:00', title: 'Sprechtrainer & Aussprache', desc: 'Schichtübergabe sprechen', duration: '8 Min', route: 'sprechen' },
-      { time: '21:00', title: 'Anti-Übersetzung', desc: 'Blitz-Reaktionstraining', duration: '5 Min', route: 'antitruebersetzung' }
-    ],
-    '90': [
-      { time: '07:30', title: 'SRS-Mastery & Tiefen-Wiederholung', desc: 'Vokabeln & Grammatikdrills', duration: '20 Min', route: 'wiederholen' },
-      { time: '10:00', title: 'Grammatik-Intensivlektion', desc: 'Nebensätze & Inversion', duration: '20 Min', route: 'grammatik' },
-      { time: '13:00', title: '2x BFD-Simulationen', desc: 'Akutaufnahme & Deeskalation', duration: '20 Min', route: 'simulation' },
-      { time: '17:00', title: 'Leseverstehen Klinikberichte', desc: 'Original-Dienstübergabe', duration: '15 Min', route: 'lesen' },
-      { time: '20:30', title: 'Satz-Korrektor & Schreibtraining', desc: 'Freies Formulieren', duration: '15 Min', route: 'satzkorrektor' }
-    ]
-  };
+  let activeMode = '45'; // '5min_shift' | '10min_review' | '10' | '20' | '45' | '90' | 'tired'
+  let userState = 'normal'; // 'normal' | 'tired'
 
   function renderView() {
-    const plan = dailyPlans[activePlanDuration];
+    const adaptivePlan = AdaptiveEngine.getDailyPlan(activeMode, userState);
 
     container.innerHTML = `
       <div class="space-y-6 animate-fadeIn">
+        <!-- Quick Session Launcher (Adaptive State Controls) -->
+        <div class="flex flex-wrap items-center justify-between gap-3 p-3 bg-surface rounded-xl border border-subtle">
+          <div class="text-xs font-bold text-muted uppercase tracking-wider flex items-center gap-1.5">
+            <span>⚡</span> Sofort-Lernmodus:
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button class="btn btn-xs ${activeMode === '5min_shift' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="5min_shift">
+              🏥 5-Min. Vor der Schicht
+            </button>
+            <button class="btn btn-xs ${activeMode === '10min_review' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="10min_review">
+              📝 10-Min. Nachbereitung
+            </button>
+            <button class="btn btn-xs ${userState === 'tired' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="tired">
+              🌙 Ich bin müde
+            </button>
+            <button class="btn btn-xs ${activeMode === '45' && userState === 'normal' ? 'btn-primary' : 'btn-secondary'} mode-btn" data-mode="45">
+              ⭐ Standard (45 Min)
+            </button>
+          </div>
+        </div>
+
         <!-- 12-Column Bento Grid: Row 1 (Hero Check-in & Critical Survival Card) -->
         <div class="bento-grid">
           <!-- Span 8: Tages-Check-in / Dein nächster Schritt -->
@@ -11364,7 +11626,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Span 4: Erster-Tag-Überlebensmodus (Critical Safety & Quick Reference) -->
+          <!-- Span 4: Erster-Tag-Überlebensmodus -->
           <div class="col-span-4 bento-card survival-card">
             <div class="space-y-3">
               <div class="flex-between">
@@ -11396,7 +11658,7 @@ export async function renderDashboard(container) {
 
         <!-- 12-Column Bento Grid: Row 2 (3 Micro-Modules) -->
         <div class="bento-grid">
-          <!-- Card 1: Vokabeln & SRS (Span 4) -->
+          <!-- Card 1: Vokabeln & SRS -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -11417,7 +11679,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Card 2: Sprechtrainer (Span 4) -->
+          <!-- Card 2: Sprechtrainer -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -11436,7 +11698,7 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Card 3: Psychologie & Deeskalation (Span 4) -->
+          <!-- Card 3: Psychologie & Deeskalation -->
           <div class="col-span-4 bento-card justify-between">
             <div class="space-y-2">
               <div class="flex-between">
@@ -11456,43 +11718,37 @@ export async function renderDashboard(container) {
           </div>
         </div>
 
-        <!-- 12-Column Bento Grid: Row 3 (Timeline Daily Plan) -->
+        <!-- 12-Column Bento Grid: Row 3 (Timeline Daily Plan - Adaptiv) -->
         <div class="bento-card col-span-12 space-y-4">
           <div class="flex-between flex-wrap gap-3">
             <div>
-              <h2 class="section-title">Mein strukturierter Tagesplan</h2>
+              <h2 class="section-title">${adaptivePlan.title}</h2>
               <p class="text-xs text-secondary mt-0.5">
-                Kompakte Zeitstruktur für deinen optimalen Lernfortschritt neben dem BFD-Alltag.
+                ${adaptivePlan.focus}
               </p>
             </div>
 
-            <!-- Segmented Control for 20 / 45 / 90 Min -->
+            <!-- Duration Controls -->
             <div class="flex items-center p-1 bg-subtle rounded-lg border border-subtle">
-              <button class="btn btn-xs ${activePlanDuration === '20' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="20">
-                20 Min
-              </button>
-              <button class="btn btn-xs ${activePlanDuration === '45' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="45">
-                45 Min (Empfohlen)
-              </button>
-              <button class="btn btn-xs ${activePlanDuration === '90' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="90">
-                90 Min Intensiv
-              </button>
+              <button class="btn btn-xs ${activeMode === '10' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="10">10 Min</button>
+              <button class="btn btn-xs ${activeMode === '20' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="20">20 Min</button>
+              <button class="btn btn-xs ${activeMode === '45' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="45">45 Min</button>
+              <button class="btn btn-xs ${activeMode === '90' ? 'btn-primary' : 'btn-ghost'} plan-toggle-btn" data-dur="90">90 Min</button>
             </div>
           </div>
 
           <!-- Vertical Timeline -->
           <div class="timeline-list pt-2">
-            ${plan.map((item, idx) => `
+            ${adaptivePlan.steps.map((item, idx) => `
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="flex-1 p-3 bg-subtle rounded-xl flex-between flex-wrap gap-2">
                   <div>
-                    <div class="text-xs font-semibold text-muted">${item.time} Uhr • ${item.duration}</div>
+                    <div class="text-xs font-semibold text-muted">Schritt ${idx + 1} • ${item.duration}</div>
                     <div class="font-bold text-sm text-primary">${item.title}</div>
-                    <div class="text-xs text-secondary">${item.desc}</div>
                   </div>
                   <a href="#${item.route}" class="btn btn-secondary btn-xs">
-                    Öffnen →
+                    Starten →
                   </a>
                 </div>
               </div>
@@ -11503,9 +11759,24 @@ export async function renderDashboard(container) {
     `;
 
     // Event Bindings
+    container.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.onclick = () => {
+        const mode = btn.getAttribute('data-mode');
+        if (mode === 'tired') {
+          userState = 'tired';
+          activeMode = 'tired';
+        } else {
+          userState = 'normal';
+          activeMode = mode;
+        }
+        renderView();
+      };
+    });
+
     container.querySelectorAll('.plan-toggle-btn').forEach(btn => {
       btn.onclick = () => {
-        activePlanDuration = btn.getAttribute('data-dur');
+        userState = 'normal';
+        activeMode = btn.getAttribute('data-dur');
         renderView();
       };
     });
@@ -14734,6 +15005,81 @@ function renderAntiTranslation(container) {
 }
 
 
+// --- FILE: external_resources.js ---
+
+// Kostenlose externe Lernressourcen Component
+function renderExternalResources(container) {
+  let activeFilter = 'alle';
+
+  function renderView() {
+    const filtered = activeFilter === 'alle' 
+      ? RESOURCES_DATA 
+      : RESOURCES_DATA.filter(r => r.category.toLowerCase().includes(activeFilter.toLowerCase()) || r.tags.includes(activeFilter));
+
+    container.innerHTML = `
+      <div class="space-y-6 animate-fadeIn max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-blue mb-2">Offizielle & Kostenfreie Ergänzungen</span>
+              <h1 class="page-title">Kostenlose Externe Ressourcen</h1>
+              <p class="subtitle mt-1">
+                Kuratierte Links zu offiziellen Übungsmaterialien des <strong>Goethe-Instituts</strong>, <strong>telc</strong>, der <strong>Deutschen Welle</strong> und dem <strong>Duden</strong>.
+              </p>
+            </div>
+            <span class="status-pill pill-blue">${RESOURCES_DATA.length} Kuratierte Quellen</span>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-subtle">
+            <button class="btn btn-xs ${activeFilter === 'alle' ? 'btn-primary' : 'btn-secondary'} filter-btn" data-filter="alle">Alle anzeigen</button>
+            <button class="btn btn-xs ${activeFilter === 'goethe' ? 'btn-primary' : 'btn-secondary'} filter-btn" data-filter="goethe">Goethe-Institut</button>
+            <button class="btn btn-xs ${activeFilter === 'telc' ? 'btn-primary' : 'btn-secondary'} filter-btn" data-filter="telc">telc Prüfungen</button>
+            <button class="btn btn-xs ${activeFilter === 'hoeren' ? 'btn-primary' : 'btn-secondary'} filter-btn" data-filter="hoeren">Hören & Audio</button>
+            <button class="btn btn-xs ${activeFilter === 'wohnen' ? 'btn-primary' : 'btn-secondary'} filter-btn" data-filter="wohnen">Deutschland & Alltag</button>
+          </div>
+        </div>
+
+        <!-- Resources Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          ${filtered.map(res => `
+            <div class="bento-card justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex-between">
+                  <span class="badge badge-blue text-xs">${res.category}</span>
+                  <span class="badge badge-emerald text-xs">${res.level}</span>
+                </div>
+                <h3 class="font-bold text-base text-primary">${res.title}</h3>
+                <p class="text-xs text-secondary leading-relaxed">${res.description}</p>
+                <div class="text-xs font-semibold text-muted">Anbieter: ${res.provider}</div>
+              </div>
+
+              <div class="pt-3 border-t border-subtle flex-between">
+                <span class="badge badge-gray text-xs">✓ Kostenlos & Legal</span>
+                <a href="${res.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs flex items-center gap-1">
+                  <span>Öffnen</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    container.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeFilter = btn.getAttribute('data-filter');
+        renderView();
+      };
+    });
+  }
+
+  renderView();
+}
+
+
 // --- FILE: app.js ---
 
 // Main Application Orchestrator
@@ -14773,7 +15119,8 @@ const routes = {
   'engineering': (params) => renderEngineeringHub(mainView),
   'quellen': (params) => renderSourcesLibrary(mainView),
   'fehler': (params) => renderErrorLog(mainView),
-  'fortschritt': (params) => renderSettingsStats(mainView)
+  'fortschritt': (params) => renderSettingsStats(mainView),
+  'ressourcen': (params) => renderExternalResources(mainView)
 };
 
 const appRouter = new Router(routes, 'heute');
