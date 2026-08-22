@@ -1,0 +1,16 @@
+{
+  "name": "German BFD + Psychiatry + B2/C1 Platform",
+  "short_name": "DeuPlatform",
+  "description": "Single Source of Truth for German BFD, Psychiatry Communication and B2/C1 Learning",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

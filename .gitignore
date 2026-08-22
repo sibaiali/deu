@@ -1,0 +1,11 @@
+# Raw large binary sources
+*.pdf
+*.epub
+
+# Python cache & temp
+__pycache__/
+*.pyc
+*.pyo
+
+# System generated
+.system_generated/

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>German BFD + Psychiatry + B2/C1 Platform</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b0f19">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="p-6 border-b border-glass flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex-center font-bold text-lg text-white shadow-glow">
+          DE
+        </div>
+        <div>
+          <div class="font-extrabold text-sm text-gradient">DEU PLATFORM</div>
+          <div class="text-xs text-secondary">BFD • Psy • B2/C1</div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-4 space-y-1 overflow-y-auto flex-1">
+        <a href="#heute" class="nav-link nav-active" data-route="heute">
+          <span>🏠</span> Heute & Tagesplan
+        </a>
+        <a href="#satzkorrektor" class="nav-link text-purple-400 font-bold" data-route="satzkorrektor">
+          <span>✨</span> Satz-Korrektor (KI-Regel)
+        </a>
+        <a href="#antitruebersetzung" class="nav-link text-emerald-400 font-bold" data-route="antitruebersetzung">
+          <span>🧠</span> Anti-Übersetzung (Deutsch denken)
+        </a>
+        <a href="#bfd" class="nav-link" data-route="bfd">
+          <span>🏢</span> Mein BFD (UKGM)
+        </a>
+        <a href="#psychologie" class="nav-link" data-route="psychologie">
+          <span>🧠</span> Psychologie verstehen
+        </a>
+        <a href="#wiederholen" class="nav-link" data-route="wiederholen">
+          <span>🃏</span> Vokabeln & SRS (200+)
+        </a>
+        <a href="#simulation" class="nav-link" data-route="simulation">
+          <span>🎭</span> BFD-Simulationen
+        </a>
+        <a href="#sprechen" class="nav-link" data-route="sprechen">
+          <span>🎙️</span> Sprechtrainer
+        </a>
+        <a href="#phrasen" class="nav-link" data-route="phrasen">
+          <span>💬</span> Was sage ich?
+        </a>
+        <a href="#grammatik" class="nav-link" data-route="grammatik">
+          <span>📖</span> Grammatik (25 Lekt.)
+        </a>
+        <a href="#lesen" class="nav-link" data-route="lesen">
+          <span>📑</span> Leseverstehen
+        </a>
+        <a href="#roadmaps" class="nav-link" data-route="roadmaps">
+          <span>🗺️</span> Praxis-Roadmaps
+        </a>
+        <a href="#kultur" class="nav-link" data-route="kultur">
+          <span>🇩🇪</span> Kultur & Alltag
+        </a>
+        <a href="#engineering" class="nav-link" data-route="engineering">
+          <span>⚙️</span> Engineering Deutsch
+        </a>
+        <a href="#quellen" class="nav-link" data-route="quellen">
+          <span>📚</span> Quellenprüfung
+        </a>
+        <a href="#fehler" class="nav-link" data-route="fehler">
+          <span>❌</span> Meine Fehler
+        </a>
+        <a href="#fortschritt" class="nav-link" data-route="fortschritt">
+          <span>📊</span> Einstellungen & Stats
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-glass text-xs text-secondary flex-between">
+        <span>Level: B1+ → B2</span>
+        <span class="badge badge-xs badge-emerald">Lokal & Offline</span>
+      </div>
+    </aside>
+
+    <!-- Main Viewport -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <header class="top-navbar">
+        <button id="mobileMenuBtn" class="btn btn-ghost lg:hidden text-xl">☰</button>
+
+        <button id="btnOpenSearch" class="btn btn-secondary flex items-center gap-3 text-xs md:text-sm py-1.5 px-4 rounded-xl">
+          <span>🔍</span>
+          <span class="text-secondary">Suchen...</span>
+          <kbd class="px-1.5 py-0.5 bg-surface text-secondary rounded text-xs border border-glass hidden md:inline">Strg + K</kbd>
+        </button>
+
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" class="btn btn-ghost p-2 text-lg" title="Design umschalten">🌙</button>
+          <div class="flex items-center gap-2 bg-surface py-1.5 px-3 rounded-xl border border-glass">
+            <span class="text-sm">🔥</span>
+            <span class="font-bold text-xs text-amber-400">1 Tag</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Container -->
+      <main class="page-container" id="mainView"></main>
+    </div>
+  </div>
+
+  <!-- Global Search Modal -->
+  <div id="searchModal" class="modal-overlay hidden">
+    <div class="modal-card max-w-xl w-full bg-card rounded-2xl p-6 border border-glass shadow-2xl space-y-4">
+      <div class="flex-between">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span>🔍</span> Globale Suche
+        </div>
+        <button id="btnCloseSearch" class="btn btn-ghost btn-sm">✕</button>
+      </div>
+
+      <input type="text" id="globalSearchInput" placeholder="Vokabel, Grammatik, Psychologie oder BFD-Fakt suchen..." class="input w-full text-base p-3" />
+
+      <div id="searchResultsList" class="space-y-2 max-h-96 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <script src="js/app.bundle.js"></script>
+</body>
+</html>
