@@ -1,4 +1,4 @@
-// Umfassende Vokabel- und Chunk-Datenbank (1000+ Einträge, Präfix-Verben, Klinik & Alltag)
+// Umfassende Vokabel- und Chunk-Datenbank (1000+ Einträge, Anki-Deck, Präfix-Verben, Klinik & Alltag)
 export const VOCABULARY_DATA = [
   {
     "id": "voc_das_taschengeld_001",
@@ -421,18 +421,19 @@ export const VOCABULARY_DATA = [
     "level": "B2",
     "domain": "Psychiatrie",
     "register": "Standardsprache",
-    "germanDefinition": "Eine gegenteilige Meinung äußern oder sich Anweisungen widersetzen.",
-    "exampleGerman": "Der Patient widerspricht den Anweisungen des Therapeuten.",
-    "exampleEnglish": "The patient contradicts / opposes the therapist's instructions.",
+    "germanDefinition": "Einer Meinung fundiert nicht zustimmen oder formellen Einspruch erheben.",
+    "exampleGerman": "Ich muss Ihnen in diesem Punkt respektvoll widersprechen: Die Richtlinie verlangt Handschuhe.",
+    "exampleEnglish": "I must respectfully disagree with you on this point: The guideline requires gloves.",
     "synonyms": [
       "dagegenreden",
       "protestieren"
     ],
     "collocations": [
-      "einer Anweisung widersprechen",
-      "jemandem widersprechen"
+      "einer Aussage widersprechen",
+      "einem Bescheid widersprechen",
+      "vehement widersprechen"
     ],
-    "grammarNotes": "Unregelmäßiges Verb mit Dativ (widerspricht, widersprach, hat widersprochen).",
+    "grammarNotes": "Unregelmäßig: widersprechen – widersprach – hat widersprochen (er widerspricht + Dativ).",
     "dictionaryLinks": {
       "duden": "https://www.duden.de/rechtschreibung/widersprechen",
       "dwds": "https://www.dwds.de/wb/widersprechen",
@@ -449,7 +450,14 @@ export const VOCABULARY_DATA = [
     "tags": [
       "kommunikation",
       "verb"
-    ]
+    ],
+    "relatedWords": [
+      "der Widerspruch (¨-e)",
+      "widersprüchlich",
+      "der Widerspruchsbescheid",
+      "Widerspruch einlegen"
+    ],
+    "stammformen": "widersprechen – widersprach – hat widersprochen"
   },
   {
     "id": "voc_aufweisen_013",
@@ -5678,17 +5686,19 @@ export const VOCABULARY_DATA = [
     "level": "B1+",
     "domain": "B2 Wortschatz",
     "register": "Standardsprache",
-    "germanDefinition": "Lösung eines Konflikts, bei der jede Seite Zugeständnisse macht.",
-    "exampleGerman": "Beim Dienstplan für die Feiertage haben wir einen fairen Kompromiss gefunden.",
-    "exampleEnglish": "In the holiday duty schedule, we found a fair compromise.",
+    "germanDefinition": "Eine Einigung in einem Konflikt, bei der beide Seiten Zugeständnisse machen.",
+    "exampleGerman": "Im Dienstplan fanden wir einen guten Kompromiss für die Wochenendschichten.",
+    "exampleEnglish": "In the shift roster, we found a good compromise for the weekend shifts.",
     "synonyms": [
       "die Einigung",
       "das Zugeständnis"
     ],
     "collocations": [
-      "einen Kompromiss schließen / eingehen"
+      "einen Kompromiss schließen",
+      "kompromissbereit sein",
+      "einen Kompromiss finden"
     ],
-    "grammarNotes": "Nomen Maskulin.",
+    "grammarNotes": "Nomen Maskulinum.",
     "dictionaryLinks": {
       "duden": "https://www.duden.de/rechtschreibung/Kompromiss",
       "dwds": "https://www.dwds.de/wb/Kompromiss",
@@ -5705,7 +5715,13 @@ export const VOCABULARY_DATA = [
     "tags": [
       "b2 wortschatz",
       "b1+"
-    ]
+    ],
+    "relatedWords": [
+      "kompromissbereit",
+      "die Kompromissbereitschaft",
+      "kompromisslos"
+    ],
+    "stammformen": ""
   },
   {
     "id": "voc_die_eigenverantwortung_153",
@@ -8940,18 +8956,19 @@ export const VOCABULARY_DATA = [
     "level": "B2",
     "domain": "Beruf & Alltag",
     "register": "Standardsprache",
-    "germanDefinition": "Einen vereinbarten Termin oder eine Schicht stornieren.",
-    "exampleGerman": "Ich muss den Termin leider kurzfristig absagen, da ich im Dienstplan eingeteilt bin.",
-    "exampleEnglish": "Unfortunately, I have to cancel the appointment on short notice because I am scheduled on duty.",
+    "germanDefinition": "Einen vereinbarten Termin, Dienst oder ein Vorstellungsgespräch rechtzeitig stornieren.",
+    "exampleGerman": "Herr Wagner musste seinen Termin zur Ergotherapie wegen starker Schmerzen absagen.",
+    "exampleEnglish": "Mr. Wagner had to cancel his occupational therapy appointment due to severe pain.",
     "synonyms": [
       "stornieren",
       "annullieren"
     ],
     "collocations": [
       "einen Termin absagen",
-      "eine Teilnahme absagen"
+      "eine Teilnahme absagen",
+      "kurzfristig absagen"
     ],
-    "grammarNotes": "Regelmäßiges Verb (sagt ab, sagte ab, hat abgesagt).",
+    "grammarNotes": "Regelmäßig: absagen – sagte ab – hat abgesagt.",
     "dictionaryLinks": {
       "duden": "https://www.duden.de/rechtschreibung/absagen",
       "dwds": "https://www.dwds.de/wb/absagen",
@@ -8972,7 +8989,14 @@ export const VOCABULARY_DATA = [
       "praefix_ab",
       "beruf",
       "alltag"
-    ]
+    ],
+    "relatedWords": [
+      "die Absage (-n)",
+      "das Absageschreiben",
+      "eine Absage erteilen",
+      "eine Absage erhalten"
+    ],
+    "stammformen": "absagen – sagte ab – hat abgesagt"
   },
   {
     "id": "voc_beraten_lassen_sich",
@@ -11960,18 +11984,19 @@ export const VOCABULARY_DATA = [
     "level": "B1+",
     "domain": "Kommunikation",
     "register": "Standardsprache",
-    "germanDefinition": "Jemanden während des Redens stoppen oder einen Vorgang pausieren.",
-    "exampleGerman": "Im aktiven Zuhören sollte man den Patienten nicht vorschnell unterbrechen.",
-    "exampleEnglish": "In active listening, one should not interrupt the patient prematurely.",
+    "germanDefinition": "Eine sprechende Person stoppen oder eine Handlung vorübergehend anhalten.",
+    "exampleGerman": "Entschuldigen Sie bitte, wenn ich Sie kurz unterbreche: Der Arzt bittet um die Akte.",
+    "exampleEnglish": "Excuse me please for interrupting you briefly: The doctor is asking for the file.",
     "synonyms": [
       "einhaken",
       "pausieren"
     ],
     "collocations": [
       "ein Gespräch unterbrechen",
-      "die Arbeit unterbrechen"
+      "die Arbeit unterbrechen",
+      "unhöflich unterbrechen"
     ],
-    "grammarNotes": "Unregelmäßig (unterbricht, unterbrach, hat unterbrochen)",
+    "grammarNotes": "Unregelmäßig: unterbrechen – unterbrach – hat unterbrochen (er unterbricht).",
     "dictionaryLinks": {
       "duden": "https://www.duden.de/rechtschreibung/unterbrechen",
       "dwds": "https://www.dwds.de/wb/unterbrechen",
@@ -11991,7 +12016,14 @@ export const VOCABULARY_DATA = [
       "verben",
       "praefix_unter",
       "kommunikation"
-    ]
+    ],
+    "relatedWords": [
+      "die Unterbrechung (-en)",
+      "ununterbrochen",
+      "unterbrechungsfrei",
+      "der Unterbrecher"
+    ],
+    "stammformen": "unterbrechen – unterbrach – hat unterbrochen"
   },
   {
     "id": "voc_unterdruecken",
@@ -13541,18 +13573,19 @@ export const VOCABULARY_DATA = [
     "level": "B1+",
     "domain": "Kommunikation",
     "register": "Standardsprache",
-    "germanDefinition": "Eine Idee oder Lösung zur Diskussion einbringen.",
-    "exampleGerman": "Ich schlage vor, dass wir den Spaziergang auf den Nachmittag verschieben.",
-    "exampleEnglish": "I suggest that we postpone the walk to the afternoon.",
+    "germanDefinition": "Einen Gedanken, Plan oder Lösungsweg zur gemeinsamen Diskussion einbringen.",
+    "exampleGerman": "Ich schlage vor, dass wir vor der Stationsvisite noch die Vitalwerte messen.",
+    "exampleEnglish": "I suggest that we measure vital signs before the ward rounds.",
     "synonyms": [
       "anregen",
       "empfehlen"
     ],
     "collocations": [
-      "einen Plan vorschlagen",
-      "eine Lösung vorschlagen"
+      "einen Vorschlag unterbreiten",
+      "eine Lösung vorschlagen",
+      "einen Plan vorschlagen"
     ],
-    "grammarNotes": "Unregelmäßig (schlägt vor, schlug vor, hat vorgeschlagen)",
+    "grammarNotes": "Unregelmäßig: vorschlagen – schlug vor – hat vorgeschlagen.",
     "dictionaryLinks": {
       "duden": "https://www.duden.de/rechtschreibung/vorschlagen",
       "dwds": "https://www.dwds.de/wb/vorschlagen",
@@ -13572,7 +13605,14 @@ export const VOCABULARY_DATA = [
       "verben",
       "praefix_vor",
       "kommunikation"
-    ]
+    ],
+    "relatedWords": [
+      "der Vorschlag (¨-e)",
+      "vorschlagsberechtigt",
+      "der Gegenvorschlag",
+      "die Vorschlagsliste"
+    ],
+    "stammformen": "vorschlagen – schlug vor – hat vorgeschlagen"
   },
   {
     "id": "voc_mitnehmen",
@@ -14382,6 +14422,3655 @@ export const VOCABULARY_DATA = [
       "verben",
       "praefix_zer",
       "hygiene"
+    ]
+  },
+  {
+    "id": "voc_buchen",
+    "word": "buchen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (regelmäßig)",
+    "level": "B1",
+    "domain": "Alltag & Verwaltung",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine Dienstleistung, Reise, Fortbildung oder ein Ticket verbindlich reservieren und bezahlen.",
+    "exampleGerman": "Für die vorgeschriebene BFD-Seminarwoche habe ich das Bahnticket gebucht.",
+    "exampleEnglish": "I booked the train ticket for the required BFD seminar week.",
+    "synonyms": [
+      "reservieren",
+      "bestellen"
+    ],
+    "collocations": [
+      "ein Ticket buchen",
+      "eine Fortbildung buchen",
+      "ein Zimmer buchen"
+    ],
+    "grammarNotes": "Regelmäßig: buchen – buchte – hat gebucht.",
+    "relatedWords": [
+      "die Buchung (-en)",
+      "die Umbuchung",
+      "die Stornierung",
+      "ausgebucht sein",
+      "abbuchen"
+    ],
+    "stammformen": "buchen – buchte – hat gebucht",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/buchen",
+      "dwds": "https://www.dwds.de/wb/buchen",
+      "dictcc": "https://www.dict.cc/?s=buchen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "alltag",
+      "reisen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_reservieren",
+    "word": "reservieren",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (regelmäßig)",
+    "level": "B1",
+    "domain": "Alltag & Organisation",
+    "register": "Standardsprache",
+    "germanDefinition": "Einen Platz, ein Zimmer oder Material für eine bestimmte Person freihalten lassen.",
+    "exampleGerman": "Die Stationsleitung hat für das Teamgespräch den Konferenzraum reserviert.",
+    "exampleEnglish": "The ward manager reserved the conference room for the team meeting.",
+    "synonyms": [
+      "vormerken",
+      "belegen",
+      "freihalten"
+    ],
+    "collocations": [
+      "einen Platz reservieren",
+      "ein Bett reservieren",
+      "einen Tisch reservieren"
+    ],
+    "grammarNotes": "Regelmäßig: reservieren – reservierte – hat reserviert.",
+    "relatedWords": [
+      "die Reservierung (-en)",
+      "die Platzreservierung",
+      "die Vorreservierung",
+      "reservierungspflichtig"
+    ],
+    "stammformen": "reservieren – reservierte – hat reserviert",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/reservieren",
+      "dwds": "https://www.dwds.de/wb/reservieren",
+      "dictcc": "https://www.dict.cc/?s=reservieren"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "alltag",
+      "organisation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_buchstabieren",
+    "word": "buchstabieren",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (regelmäßig)",
+    "level": "A2",
+    "domain": "Kommunikation & Dokumentation",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein Wort Buchstabe für Buchstabe laut nennen oder schreiben.",
+    "exampleGerman": "Könnten Sie Ihren Nachnamen bitte kurz für die Patientenakte buchstabieren?",
+    "exampleEnglish": "Could you please briefly spell your last name for the patient file?",
+    "synonyms": [
+      "in Buchstaben zerlegen"
+    ],
+    "collocations": [
+      "den Namen buchstabieren",
+      "nach dem Buchstabieralphabet buchstabieren"
+    ],
+    "grammarNotes": "Regelmäßig: buchstabieren – buchstabierte – hat buchstabiert.",
+    "relatedWords": [
+      "der Buchstabe (-n)",
+      "die Buchstabiertafel",
+      "die Buchstabierung"
+    ],
+    "stammformen": "buchstabieren – buchstabierte – hat buchstabiert",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/buchstabieren",
+      "dwds": "https://www.dwds.de/wb/buchstabieren",
+      "dictcc": "https://www.dict.cc/?s=buchstabieren"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "kommunikation",
+      "dokumentation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_ausreden",
+    "word": "ausreden",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, regelmäßig)",
+    "level": "B1+",
+    "domain": "Kommunikation & Höflichkeit",
+    "register": "Standardsprache",
+    "germanDefinition": "Zu Ende sprechen, ohne von anderen unterbrochen zu werden; auch jemanden von etwas abbringen.",
+    "exampleGerman": "Lassen Sie den Patienten bitte erst in Ruhe ausreden, bevor Sie antworten.",
+    "exampleEnglish": "Please let the patient finish speaking calmly before answering.",
+    "synonyms": [
+      "zu Ende sprechen",
+      "aussprechen lassen"
+    ],
+    "collocations": [
+      "jemanden ausreden lassen",
+      "nicht ausreden dürfen",
+      "jemandem etwas ausreden"
+    ],
+    "grammarNotes": "Regelmäßig: ausreden – redete aus – hat ausgeredet.",
+    "relatedWords": [
+      "die Ausrede (-n)",
+      "jemandem einen Gedanken ausreden",
+      "die Redepause"
+    ],
+    "stammformen": "ausreden – redete aus – hat ausgeredet",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/ausreden",
+      "dwds": "https://www.dwds.de/wb/ausreden",
+      "dictcc": "https://www.dict.cc/?s=ausreden"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_aus",
+      "kommunikation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_einladen",
+    "word": "einladen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, unregelmäßig)",
+    "level": "A2",
+    "domain": "Soziales & Beruf",
+    "register": "Standardsprache",
+    "germanDefinition": "Jemanden zu einer Feier, einem Vorstellungsgespräch oder einem Essen bitten.",
+    "exampleGerman": "Die Pflegedirektion hat alle BFDler zu einem monatlichen Feedback-Treffen eingeladen.",
+    "exampleEnglish": "The nursing directorate invited all BFD volunteers to a monthly feedback meeting.",
+    "synonyms": [
+      "bitten",
+      "auffordern"
+    ],
+    "collocations": [
+      "zu einem Gespräch einladen",
+      "Gäste einladen",
+      "herzlich einladen"
+    ],
+    "grammarNotes": "Unregelmäßig: einladen – lud ein – hat eingeladen (er lädt ein).",
+    "relatedWords": [
+      "die Einladung (-en)",
+      "das Einladungsschreiben",
+      "einladend wirken"
+    ],
+    "stammformen": "einladen – lud ein – hat eingeladen",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/einladen",
+      "dwds": "https://www.dwds.de/wb/einladen",
+      "dictcc": "https://www.dict.cc/?s=einladen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_ein",
+      "soziales",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_erklaeren",
+    "word": "erklären",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (untrennbar, regelmäßig)",
+    "level": "B1",
+    "domain": "Kommunikation & Pflege",
+    "register": "Standardsprache",
+    "germanDefinition": "Einen Zusammenhang verständlich machen oder eine offizielle Erklärung abgeben.",
+    "exampleGerman": "Die Krankenschwester erklärte dem Patienten den Ablauf der morgigen Magenspiegelung.",
+    "exampleEnglish": "The nurse explained the procedure for tomorrow's gastroscopy to the patient.",
+    "synonyms": [
+      "erläutern",
+      "verständlich machen",
+      "deklarieren"
+    ],
+    "collocations": [
+      "den Ablauf erklären",
+      "einen Begriff erklären",
+      "die Einverständniserklärung erklären"
+    ],
+    "grammarNotes": "Regelmäßig: erklären – erklärte – hat erklärt.",
+    "relatedWords": [
+      "die Erklärung (-en)",
+      "die Einverständniserklärung",
+      "erklärbar",
+      "selbsterklärend",
+      "unerklärlich"
+    ],
+    "stammformen": "erklären – erklärte – hat erklärt",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/erklären",
+      "dwds": "https://www.dwds.de/wb/erklären",
+      "dictcc": "https://www.dict.cc/?s=erklären"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_er",
+      "kommunikation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_nachfragen",
+    "word": "nachfragen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, regelmäßig)",
+    "level": "B1+",
+    "domain": "Kommunikation & Sicherheit",
+    "register": "Standardsprache",
+    "germanDefinition": "Bei Unklarheiten oder Zweifeln noch einmal gezielt fragen, um Fehler zu vermeiden.",
+    "exampleGerman": "Wenn eine ärztliche Anordnung unleserlich ist, frage ich sofort beim Dienstarzt nach.",
+    "exampleEnglish": "If a medical order is illegible, I inquire immediately with the doctor on duty.",
+    "synonyms": [
+      "sich erkundigen",
+      "recherchieren",
+      "zurückfragen"
+    ],
+    "collocations": [
+      "beim Arzt nachfragen",
+      "höflich nachfragen",
+      "nochmals nachfragen"
+    ],
+    "grammarNotes": "Regelmäßig: nachfragen – fragte nach – hat nachgefragt.",
+    "relatedWords": [
+      "die Nachfrage (-n)",
+      "die Rückfrage",
+      "nachfragedringend",
+      "ohne Nachfrage"
+    ],
+    "stammformen": "nachfragen – fragte nach – hat nachgefragt",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/nachfragen",
+      "dwds": "https://www.dwds.de/wb/nachfragen",
+      "dictcc": "https://www.dict.cc/?s=nachfragen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_nach",
+      "sicherheit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_wiederholen",
+    "word": "wiederholen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (untrennbar, regelmäßig)",
+    "level": "A2",
+    "domain": "Lernen & Kommunikation",
+    "register": "Standardsprache",
+    "germanDefinition": "Etwas noch einmal sagen, durchführen oder im Gedächtnis festigen.",
+    "exampleGerman": "Könnten Sie den letzten Satz bitte noch einmal für mich wiederholen?",
+    "exampleEnglish": "Could you please repeat the last sentence for me once again?",
+    "synonyms": [
+      "nochmals sagen",
+      "repetieren"
+    ],
+    "collocations": [
+      "einen Satz wiederholen",
+      "Vokabeln wiederholen",
+      "die Messung wiederholen"
+    ],
+    "grammarNotes": "Regelmäßig: wiederholen – wiederholte – hat wiederholt.",
+    "relatedWords": [
+      "die Wiederholung (-en)",
+      "die Wiederholungsprüfung",
+      "wiederholt",
+      "unwiederholbar"
+    ],
+    "stammformen": "wiederholen – wiederholte – hat wiederholt",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/wiederholen",
+      "dwds": "https://www.dwds.de/wb/wiederholen",
+      "dictcc": "https://www.dict.cc/?s=wiederholen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_wieder",
+      "lernen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_kuemmern_sich_um__akk",
+    "word": "kümmern (sich um + Akk)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (reflexiv, regelmäßig)",
+    "level": "B1",
+    "domain": "Pflege & Fürsorge",
+    "register": "Standardsprache",
+    "germanDefinition": "Verantwortungsvoll für das Wohlbefinden oder die Belange einer Person sorgen.",
+    "exampleGerman": "Ich kümmere mich darum, dass Frau Becker pünktlich zur Krankengymnastik gebracht wird.",
+    "exampleEnglish": "I will take care of ensuring that Mrs. Becker is brought to physiotherapy on time.",
+    "synonyms": [
+      "betreuen",
+      "sorgen für",
+      "pflegen"
+    ],
+    "collocations": [
+      "sich um Patienten kümmern",
+      "sich um die Dokumentation kümmern",
+      "sorgsam kümmern"
+    ],
+    "grammarNotes": "Regelmäßig: sich kümmern – kümmerte sich – hat sich gekümmert. Rektion: um + Akkusativ.",
+    "relatedWords": [
+      "die Kümmernis",
+      "die Fürsorge",
+      "der Betreuer",
+      "bekümmert"
+    ],
+    "stammformen": "sich kümmern – kümmerte sich – hat sich gekümmert",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/kümmern (um + Akk)",
+      "dwds": "https://www.dwds.de/wb/kümmern (um + Akk)",
+      "dictcc": "https://www.dict.cc/?s=kümmern (um + Akk)"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "pflege",
+      "rektion",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_beschweren_sich_ueber__akk",
+    "word": "beschweren (sich über + Akk)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (untrennbar, reflexiv)",
+    "level": "B1+",
+    "domain": "Klinik & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Unzufriedenheit, Schmerzen oder Kritik förmlich äußern.",
+    "exampleGerman": "Der Patient beschwerte sich über die lauten Geräusche im Flur während der Nacht.",
+    "exampleEnglish": "The patient complained about the loud noises in the corridor during the night.",
+    "synonyms": [
+      "klagen über",
+      "monieren",
+      "beanstanden"
+    ],
+    "collocations": [
+      "sich über Schmerzen beschweren",
+      "sich beim Personal beschweren",
+      "formell beschweren"
+    ],
+    "grammarNotes": "Regelmäßig: sich beschweren – beschwerte sich – hat sich beschwert. Rektion: über + Akkusativ.",
+    "relatedWords": [
+      "die Beschwerde (-n)",
+      "die Schmerzbeschwerde",
+      "das Beschwerdemanagement",
+      "beschwerdefrei"
+    ],
+    "stammformen": "sich beschweren – beschwerte sich – hat sich beschwert",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/beschweren (über + Akk)",
+      "dwds": "https://www.dwds.de/wb/beschweren (über + Akk)",
+      "dictcc": "https://www.dict.cc/?s=beschweren (über + Akk)"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_be",
+      "klinik",
+      "rektion",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_abreisen",
+    "word": "abreisen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, regelmäßig)",
+    "level": "B1",
+    "domain": "Reisen & Entlassung",
+    "register": "Standardsprache",
+    "germanDefinition": "Einen Ort, ein Hotel oder eine Reha-Klinik verlassen und die Heimreise antreten.",
+    "exampleGerman": "Nach drei Wochen Reha-Aufenthalt reiste der Patient heute gestärkt ab.",
+    "exampleEnglish": "After three weeks of rehabilitation, the patient departed today in strengthened health.",
+    "synonyms": [
+      "abfahren",
+      "die Heimreise antreten"
+    ],
+    "collocations": [
+      "pünktlich abreisen",
+      "vorzeitig abreisen",
+      "aus der Kur abreisen"
+    ],
+    "grammarNotes": "Regelmäßig mit sein: abreisen – reiste ab – ist abgereist.",
+    "relatedWords": [
+      "die Abreise (-n)",
+      "der Abreisetag",
+      "die Abreisezeit"
+    ],
+    "stammformen": "abreisen – reiste ab – ist abgereist",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/abreisen",
+      "dwds": "https://www.dwds.de/wb/abreisen",
+      "dictcc": "https://www.dict.cc/?s=abreisen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_ab",
+      "reisen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_anreisen",
+    "word": "anreisen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, regelmäßig)",
+    "level": "B1",
+    "domain": "Reisen & Aufnahme",
+    "register": "Standardsprache",
+    "germanDefinition": "An einem Zielort oder einer Klinik zur Aufnahme ankommen.",
+    "exampleGerman": "Die Teilnehmer des Seminars reisen bereits am Sonntagabend in Marburg an.",
+    "exampleEnglish": "The seminar participants are already arriving in Marburg on Sunday evening.",
+    "synonyms": [
+      "ankommen",
+      "eintreffen"
+    ],
+    "collocations": [
+      "mit der Bahn anreisen",
+      "zur Schulung anreisen",
+      "rechtzeitig anreisen"
+    ],
+    "grammarNotes": "Regelmäßig mit sein: anreisen – reiste an – ist angereist.",
+    "relatedWords": [
+      "die Anreise (-n)",
+      "der Anreisetag",
+      "die Ankunftszeit"
+    ],
+    "stammformen": "anreisen – reiste an – ist angereist",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/anreisen",
+      "dwds": "https://www.dwds.de/wb/anreisen",
+      "dictcc": "https://www.dict.cc/?s=anreisen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_an",
+      "reisen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_zustimmen_dat",
+    "word": "zustimmen (Dat)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, regelmäßig)",
+    "level": "B1+",
+    "domain": "Kommunikation & Recht",
+    "register": "Standardsprache",
+    "germanDefinition": "Einer Meinung, Maßnahme oder ärztlichen Operation formell beipflichten.",
+    "exampleGerman": "Der Patient stimmte der empfohlenen Schmerztherapie nach ausführlicher Aufklärung zu.",
+    "exampleEnglish": "The patient consented to the recommended pain therapy after detailed information.",
+    "synonyms": [
+      "einwilligen",
+      "akzeptieren",
+      "bejahen"
+    ],
+    "collocations": [
+      "einem Vorschlag zustimmen",
+      "der Operation zustimmen",
+      "voll und ganz zustimmen"
+    ],
+    "grammarNotes": "Regelmäßig: zustimmen – stimmte zu – hat zugestimmt. Rektion: Dativ.",
+    "relatedWords": [
+      "die Zustimmung (-en)",
+      "zustimmend nicken",
+      "die Einverständniserklärung",
+      "zustimmungsbedürftig"
+    ],
+    "stammformen": "zustimmen – stimmte zu – hat zugestimmt",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/zustimmen (Dat)",
+      "dwds": "https://www.dwds.de/wb/zustimmen (Dat)",
+      "dictcc": "https://www.dict.cc/?s=zustimmen (Dat)"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_zu",
+      "recht",
+      "rektion",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_verbessern_sich",
+    "word": "verbessern (sich)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (untrennbar, reflexiv)",
+    "level": "B1",
+    "domain": "Gesundheit & Fortschritt",
+    "register": "Standardsprache",
+    "germanDefinition": "Einen Zustand optimieren oder gesünder/leistungsfähiger werden.",
+    "exampleGerman": "Durch die tägliche Physiotherapie hat sich die Mobilität des Patienten deutlich verbessert.",
+    "exampleEnglish": "Through daily physical therapy, the patient's mobility has significantly improved.",
+    "synonyms": [
+      "optimieren",
+      "steigern",
+      "sich erholen"
+    ],
+    "collocations": [
+      "die Sprachkenntnisse verbessern",
+      "den Zustand verbessern",
+      "sich spürbar verbessern"
+    ],
+    "grammarNotes": "Regelmäßig: verbessern – verbesserte – hat verbessert.",
+    "relatedWords": [
+      "die Verbesserung (-en)",
+      "der Verbesserungsvorschlag",
+      "die Besserung",
+      "verbesserungswürdig"
+    ],
+    "stammformen": "verbessern – verbesserte – hat verbessert",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/verbessern",
+      "dwds": "https://www.dwds.de/wb/verbessern",
+      "dictcc": "https://www.dict.cc/?s=verbessern"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_ver",
+      "gesundheit",
+      "fortschritt",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_nachweisen",
+    "word": "nachweisen",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Verb (trennbar, unregelmäßig)",
+    "level": "B2",
+    "domain": "Labor & Diagnostik",
+    "register": "Fachsprache",
+    "germanDefinition": "Das Vorhandensein eines Erregers, Wertes oder Umstands durch wissenschaftliche Analyse belegen.",
+    "exampleGerman": "Im Abstrich konnte der Erreger eindeutig nachgewiesen werden.",
+    "exampleEnglish": "In the swab, the pathogen could be clearly detected/proven.",
+    "synonyms": [
+      "belegen",
+      "feststellen",
+      "detektieren"
+    ],
+    "collocations": [
+      "einen Erreger nachweisen",
+      "eine Infektion nachweisen",
+      "die Qualifikation nachweisen"
+    ],
+    "grammarNotes": "Unregelmäßig: nachweisen – wies nach – hat nachgewiesen.",
+    "relatedWords": [
+      "der Nachweis (-e)",
+      "nachweislich",
+      "nachweisbar",
+      "der Erregernachweis",
+      "die Nachweispflicht"
+    ],
+    "stammformen": "nachweisen – wies nach – hat nachgewiesen",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/nachweisen",
+      "dwds": "https://www.dwds.de/wb/nachweisen",
+      "dictcc": "https://www.dict.cc/?s=nachweisen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "verben",
+      "praefix_nach",
+      "labor",
+      "diagnostik",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_peinlich",
+    "word": "peinlich",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "B1",
+    "domain": "Emotionen & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein Gefühl von Scham, Unbehagen oder Verlegenheit hervorrufend.",
+    "exampleGerman": "Dem Patienten war es peinlich, bei der Körperpflege auf fremde Hilfe angewiesen zu sein.",
+    "exampleEnglish": "The patient felt embarrassed to rely on outside help for personal hygiene.",
+    "synonyms": [
+      "unangenehm",
+      "beschämend",
+      "verlegen"
+    ],
+    "collocations": [
+      "peinlich berührt sein",
+      "eine peinliche Situation",
+      "höchst peinlich"
+    ],
+    "grammarNotes": "Steigerung: peinlich – peinlicher – am peinlichsten.",
+    "relatedWords": [
+      "die Peinlichkeit (-en)",
+      "peinigen",
+      "die Pein",
+      "unpeinlich"
+    ],
+    "stammformen": "peinlich – peinlicher – am peinlichsten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/peinlich",
+      "dwds": "https://www.dwds.de/wb/peinlich",
+      "dictcc": "https://www.dict.cc/?s=peinlich"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "emotionen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_ruhig",
+    "word": "ruhig",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "A1",
+    "domain": "Deeskalation & Gesundheit",
+    "register": "Standardsprache",
+    "germanDefinition": "Frei von Lärm, Hektik, Aufregung oder Zittern; gelassen.",
+    "exampleGerman": "Bitte atmen Sie ganz ruhig und tief ein und aus.",
+    "exampleEnglish": "Please breathe in and out very calmly and deeply.",
+    "synonyms": [
+      "gelassen",
+      "still",
+      "besonnen"
+    ],
+    "collocations": [
+      "die Ruhe bewahren",
+      "ein ruhiger Puls",
+      "ruhig bleiben"
+    ],
+    "grammarNotes": "Steigerung: ruhig – ruhiger – am ruhigsten.",
+    "relatedWords": [
+      "die Ruhe (-)",
+      "beruhigen",
+      "das Beruhigungsmittel",
+      "der Ruhepuls",
+      "unruhig"
+    ],
+    "stammformen": "ruhig – ruhiger – am ruhigsten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/ruhig",
+      "dwds": "https://www.dwds.de/wb/ruhig",
+      "dictcc": "https://www.dict.cc/?s=ruhig"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "gesundheit",
+      "deeskalation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_nervoes",
+    "word": "nervös",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "A2",
+    "domain": "Psychologie & Klinik",
+    "register": "Standardsprache",
+    "germanDefinition": "Innerlich unruhig, angespannt oder ängstlich vor einem Ereignis.",
+    "exampleGerman": "Vor der Operation war die Patientin verständlicherweise sehr nervös.",
+    "exampleEnglish": "Before the surgery, the patient was understandably very nervous.",
+    "synonyms": [
+      "angespannt",
+      "aufgeregt",
+      "unruhig"
+    ],
+    "collocations": [
+      "nervös wirken",
+      "die Nerven verlieren",
+      "nervös machen"
+    ],
+    "grammarNotes": "Steigerung: nervös – nervöser – am nervösesten.",
+    "relatedWords": [
+      "die Nervosität (-)",
+      "der Nerv (-en)",
+      "das Nervensystem",
+      "nervenschonend",
+      "nervenaufreibend"
+    ],
+    "stammformen": "nervös – nervöser – am nervösesten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/nervös",
+      "dwds": "https://www.dwds.de/wb/nervös",
+      "dictcc": "https://www.dict.cc/?s=nervös"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "psychologie",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_wichtig",
+    "word": "wichtig",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "A1",
+    "domain": "Priorisierung & Klinik",
+    "register": "Standardsprache",
+    "germanDefinition": "Von großer Bedeutung, Tragweite oder Notwendigkeit für das Überleben/Team.",
+    "exampleGerman": "Eine lückenlose Dokumentation der Vitalwerte ist für die Patientensicherheit lebenswichtig.",
+    "exampleEnglish": "Seamless documentation of vital signs is vital for patient safety.",
+    "synonyms": [
+      "bedeutsam",
+      "essenziell",
+      "relevant"
+    ],
+    "collocations": [
+      "äußerst wichtig",
+      "lebenswichtig",
+      "wichtige Hinweise"
+    ],
+    "grammarNotes": "Steigerung: wichtig – wichtiger – am wichtigsten.",
+    "relatedWords": [
+      "die Wichtigkeit (-)",
+      "überlebenswichtig",
+      "vorrangig",
+      "unwichtig"
+    ],
+    "stammformen": "wichtig – wichtiger – am wichtigsten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/wichtig",
+      "dwds": "https://www.dwds.de/wb/wichtig",
+      "dictcc": "https://www.dict.cc/?s=wichtig"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "klinik",
+      "sicherheit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_praktisch",
+    "word": "praktisch",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "B1",
+    "domain": "Alltag & Beruf",
+    "register": "Standardsprache",
+    "germanDefinition": "Auf die Wirklichkeit und tatsächliche Anwendung bezogen; nützlich und handlich.",
+    "exampleGerman": "Im BFD erwerbe ich wertvolle praktische Erfahrungen für mein späteres Medizinstudium.",
+    "exampleEnglish": "In the BFD, I gain valuable practical experience for my future medical studies.",
+    "synonyms": [
+      "anwendungsorientiert",
+      "zweckmäßig",
+      "handlich"
+    ],
+    "collocations": [
+      "praktische Erfahrung",
+      "praktisch veranlagt",
+      "praktische Tipps"
+    ],
+    "grammarNotes": "Steigerung: praktisch – praktischer – am praktischsten.",
+    "relatedWords": [
+      "die Praxis (Praxen)",
+      "der Praktikant (-en)",
+      "das Praktikum",
+      "praktizieren",
+      "unpraktisch"
+    ],
+    "stammformen": "praktisch – praktischer – am praktischsten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/praktisch",
+      "dwds": "https://www.dwds.de/wb/praktisch",
+      "dictcc": "https://www.dict.cc/?s=praktisch"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "beruf",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_stolz_auf__akk",
+    "word": "stolz (auf + Akk)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "A2",
+    "domain": "Psychologie & Emotionen",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein hohes Selbstwertgefühl und Freude über eine erbrachte Leistung empfindend.",
+    "exampleGerman": "Der Patient war sehr stolz darauf, die Treppe heute ohne Rollator bewältigt zu haben.",
+    "exampleEnglish": "The patient was very proud to have mastered the stairs today without a rollator.",
+    "synonyms": [
+      "selbstbewusst",
+      "erfreut"
+    ],
+    "collocations": [
+      "stolz sein auf",
+      "voller Stolz",
+      "stolz berichten"
+    ],
+    "grammarNotes": "Steigerung: stolz – stolzer – am stolzesten. Rektion: auf + Akkusativ.",
+    "relatedWords": [
+      "der Stolz (-)",
+      "das Selbstwertgefühl",
+      "stolzerfüllt"
+    ],
+    "stammformen": "stolz – stolzer – am stolzesten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/stolz (auf + Akk)",
+      "dwds": "https://www.dwds.de/wb/stolz (auf + Akk)",
+      "dictcc": "https://www.dict.cc/?s=stolz (auf + Akk)"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "emotionen",
+      "rektion",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_riesig",
+    "word": "riesig",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "B1",
+    "domain": "Alltag & Dimensionen",
+    "register": "Standardsprache",
+    "germanDefinition": "Sehr groß, gewaltig oder von außerordentlichem Ausmaß.",
+    "exampleGerman": "Das Universitätsklinikum Gießen und Marburg (UKGM) ist ein riesiger Klinikkomplex.",
+    "exampleEnglish": "The University Hospital of Gießen and Marburg (UKGM) is a huge hospital complex.",
+    "synonyms": [
+      "gigantisch",
+      "enorm",
+      "gewaltig"
+    ],
+    "collocations": [
+      "eine riesige Erleichterung",
+      "riesige Ausmaße",
+      "ein riesiger Vorteil"
+    ],
+    "grammarNotes": "Steigerung: riesig – riesiger – am riesigsten.",
+    "relatedWords": [
+      "der Riese (-n)",
+      "die Riesigkeit",
+      "riesengroß"
+    ],
+    "stammformen": "riesig – riesiger – am riesigsten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/riesig",
+      "dwds": "https://www.dwds.de/wb/riesig",
+      "dictcc": "https://www.dict.cc/?s=riesig"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_entfernt_von__dat",
+    "word": "entfernt (von + Dat)",
+    "article": "",
+    "plural": "",
+    "partOfSpeech": "Adjektiv",
+    "level": "B1",
+    "domain": "Geografie & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Räumlich oder zeitlich weit weg gelegen.",
+    "exampleGerman": "Das Personalwohnheim ist nur fünf Gehminuten von der Station entfernt.",
+    "exampleEnglish": "The staff residence is only a five-minute walk away from the ward.",
+    "synonyms": [
+      "weit weg",
+      "distanziert",
+      "abgelegen"
+    ],
+    "collocations": [
+      "weit entfernt sein",
+      "nur wenige Meter entfernt",
+      "entfernte Verwandte"
+    ],
+    "grammarNotes": "Steigerung: entfernt – entfernter – am entferntesten.",
+    "relatedWords": [
+      "die Entfernung (-en)",
+      "entfernen",
+      "die Fernbedienung",
+      "nah"
+    ],
+    "stammformen": "entfernt – entfernter – am entferntesten",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/entfernt (von + Dat)",
+      "dwds": "https://www.dwds.de/wb/entfernt (von + Dat)",
+      "dictcc": "https://www.dict.cc/?s=entfernt (von + Dat)"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "adjektive",
+      "wohnen",
+      "geografie",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_geschichte",
+    "word": "die Geschichte",
+    "article": "die",
+    "plural": "die Geschichten",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Klinik & Allgemein",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Gesamtheit vergangener Ereignisse oder eine Erzählung (medizinisch: Anamnese/Krankengeschichte).",
+    "exampleGerman": "In der Übergabe besprechen wir die medizinische Vorgeschichte des neuen Patienten.",
+    "exampleEnglish": "During the handover, we discuss the new patient's medical history.",
+    "synonyms": [
+      "die Erzählung",
+      "die Historie",
+      "die Anamnese"
+    ],
+    "collocations": [
+      "die Krankengeschichte",
+      "die Vorgeschichte",
+      "eine Geschichte erzählen"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "die Krankengeschichte",
+      "geschichtlich",
+      "der Historiker",
+      "vorgeschichtlich"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Geschichte",
+      "dwds": "https://www.dwds.de/wb/Geschichte",
+      "dictcc": "https://www.dict.cc/?s=Geschichte"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "anamnese",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_schuld",
+    "word": "die Schuld",
+    "article": "die",
+    "plural": "die Schulden (Finanzen)",
+    "partOfSpeech": "Nomen",
+    "level": "B1+",
+    "domain": "Psychologie & Recht",
+    "register": "Standardsprache",
+    "germanDefinition": "Die moralische oder rechtliche Verantwortung für ein Fehlverhalten; Plural: Geldschulden.",
+    "exampleGerman": "In der Psychotherapie lernen Patienten, unberechtigte Schuldgefühle abzubauen.",
+    "exampleEnglish": "In psychotherapy, patients learn to reduce unjustified feelings of guilt.",
+    "synonyms": [
+      "die Verantwortung",
+      "das Verschulden",
+      "die Verbindlichkeit"
+    ],
+    "collocations": [
+      "Schuldgefühle haben",
+      "schuld sein an",
+      "Schulden tilgen"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "die Schuldgefühle",
+      "schuldfähig",
+      "schuldlos",
+      "die Schuldfrage",
+      "der Schuldner"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Schuld",
+      "dwds": "https://www.dwds.de/wb/Schuld",
+      "dictcc": "https://www.dict.cc/?s=Schuld"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "psychologie",
+      "recht",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_grund",
+    "word": "der Grund",
+    "article": "der",
+    "plural": "die Gründe",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Logik & Klinik",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Ursache, das Motiv oder die Begründung für einen Zustand oder eine Aufnahme.",
+    "exampleGerman": "Der Hauptgrund für die stationäre Aufnahme waren akute, unklare Unterbauchschmerzen.",
+    "exampleEnglish": "The primary reason for inpatient admission was acute, unexplained lower abdominal pain.",
+    "synonyms": [
+      "die Ursache",
+      "der Anlass",
+      "das Motiv"
+    ],
+    "collocations": [
+      "aus diesem Grund",
+      "der Aufnahmegrund",
+      "aus triftigem Grund"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "grundlegend",
+      "begründen",
+      "die Begründung",
+      "grundlos",
+      "gründlich"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Grund",
+      "dwds": "https://www.dwds.de/wb/Grund",
+      "dictcc": "https://www.dict.cc/?s=Grund"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "logik",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_ernaehrung",
+    "word": "die Ernährung",
+    "article": "die",
+    "plural": "-",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Gesundheit & Pflege",
+    "register": "Fachsprache",
+    "germanDefinition": "Die Zufuhr von Nährstoffen und Nahrung zur Erhaltung des Lebens und der Genesung.",
+    "exampleGerman": "Eine ausgewogene und ballaststoffreiche Ernährung unterstützt die Wundheilung maßgeblich.",
+    "exampleEnglish": "A balanced and fiber-rich nutrition significantly supports wound healing.",
+    "synonyms": [
+      "die Kost",
+      "die Verpflegung",
+      "die Diät"
+    ],
+    "collocations": [
+      "gesunde Ernährung",
+      "die Sondenernährung",
+      "Ernährungsberatung"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "sich ernähren",
+      "die Fehlernährung",
+      "die Mangelernährung",
+      "der Nährstoff",
+      "die Ernährungsberatung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Ernährung",
+      "dwds": "https://www.dwds.de/wb/Ernährung",
+      "dictcc": "https://www.dict.cc/?s=Ernährung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "pflege",
+      "gesundheit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_verhalten",
+    "word": "das Verhalten",
+    "article": "das",
+    "plural": "-",
+    "partOfSpeech": "Nomen",
+    "level": "B1+",
+    "domain": "Psychiatrie & Psychologie",
+    "register": "Fachsprache",
+    "germanDefinition": "Die Gesamtheit aller beobachtbaren Reaktionen und Handlungen eines Menschen.",
+    "exampleGerman": "Wir dokumentieren jede plötzliche Veränderung im Verhalten des Patienten wertfrei.",
+    "exampleEnglish": "We document any sudden change in the patient's behavior without judgment.",
+    "synonyms": [
+      "das Benehmen",
+      "die Handlungsweise",
+      "das Agieren"
+    ],
+    "collocations": [
+      "auffälliges Verhalten",
+      "Verhaltensmuster erkennen",
+      "sich adäquat verhalten"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "sich verhalten",
+      "die Verhaltensauffälligkeit",
+      "die Verhaltenstherapie",
+      "verhaltensoriginell"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Verhalten",
+      "dwds": "https://www.dwds.de/wb/Verhalten",
+      "dictcc": "https://www.dict.cc/?s=Verhalten"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "psychiatrie",
+      "psychologie",
+      "beobachtung",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_wissenschaftler",
+    "word": "der Wissenschaftler",
+    "article": "der",
+    "plural": "die Wissenschaftler",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Forschung & Medizin",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine Person, die an einer Hochschule oder einem Institut systematisch forscht.",
+    "exampleGerman": "Wissenschaftler an der Universität Marburg erforschen neue Therapien bei Depressionen.",
+    "exampleEnglish": "Scientists at the University of Marburg are researching new therapies for depression.",
+    "synonyms": [
+      "der Forscher",
+      "der Gelehrte"
+    ],
+    "collocations": [
+      "medizinische Wissenschaftler",
+      "Wissenschaftler und Ärzte"
+    ],
+    "grammarNotes": "Nomen Maskulinum (Femininum: die Wissenschaftlerin).",
+    "relatedWords": [
+      "die Wissenschaft (-en)",
+      "wissenschaftlich fundiert",
+      "die Naturwissenschaft",
+      "das Wissen"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Wissenschaftler",
+      "dwds": "https://www.dwds.de/wb/Wissenschaftler",
+      "dictcc": "https://www.dict.cc/?s=Wissenschaftler"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "wissenschaft",
+      "forschung",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_zeichen",
+    "word": "das Zeichen",
+    "article": "das",
+    "plural": "die Zeichen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Medizin & Diagnostik",
+    "register": "Fachsprache",
+    "germanDefinition": "Ein sichtbares Signal, Symptom oder Symbol (z. B. Vitalzeichen).",
+    "exampleGerman": "Blässe, kalter Schweiß und Zittern sind deutliche Zeichen eines Schocks.",
+    "exampleEnglish": "Paleness, cold sweat, and trembling are clear signs of shock.",
+    "synonyms": [
+      "das Signal",
+      "das Symptom",
+      "das Merkmal"
+    ],
+    "collocations": [
+      "die Vitalzeichen kontrollieren",
+      "ein Warnzeichen",
+      "als Zeichen des Vertrauens"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "die Vitalzeichen",
+      "das Anzeichen",
+      "kennzeichnen",
+      "das Lebenszeichen",
+      "die Zeichensprache"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Zeichen",
+      "dwds": "https://www.dwds.de/wb/Zeichen",
+      "dictcc": "https://www.dict.cc/?s=Zeichen"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "medizin",
+      "diagnostik",
+      "vitalzeichen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_beispiel",
+    "word": "das Beispiel",
+    "article": "das",
+    "plural": "die Beispiele",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Didaktik & Kommunikation",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein Einzelfall zur Veranschaulichung einer allgemeinen Regel.",
+    "exampleGerman": "Könnten Sie mir dafür bitte ein konkretes praktisches Beispiel nennen?",
+    "exampleEnglish": "Could you please give me a concrete practical example of that?",
+    "synonyms": [
+      "das Exempel",
+      "das Vorbild"
+    ],
+    "collocations": [
+      "zum Beispiel (z. B.)",
+      "als Beispiel dienen",
+      "ein anschauliches Beispiel"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "beispielsweise",
+      "beispielhaft",
+      "das Fallbeispiel",
+      "das Vorbild"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Beispiel",
+      "dwds": "https://www.dwds.de/wb/Beispiel",
+      "dictcc": "https://www.dict.cc/?s=Beispiel"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "didaktik",
+      "kommunikation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_moeglichkeit",
+    "word": "die Möglichkeit",
+    "article": "die",
+    "plural": "die Möglichkeiten",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Planung & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Die denkbare Option oder Chance, etwas zu tun oder zu verwirklichen.",
+    "exampleGerman": "Es gibt mehrere therapeutische Möglichkeiten zur Behandlung von Schlafstörungen.",
+    "exampleEnglish": "There are several therapeutic options for treating sleep disorders.",
+    "synonyms": [
+      "die Option",
+      "die Chance",
+      "die Gelegenheit"
+    ],
+    "collocations": [
+      "Möglichkeiten ausschöpfen",
+      "eine gute Möglichkeit",
+      "keine andere Möglichkeit haben"
+    ],
+    "grammarNotes": "Nomen Femininum auf -keit.",
+    "relatedWords": [
+      "möglich",
+      "möglicherweise",
+      "die Unmöglichkeit",
+      "ermöglichen"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Möglichkeit",
+      "dwds": "https://www.dwds.de/wb/Möglichkeit",
+      "dictcc": "https://www.dict.cc/?s=Möglichkeit"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "planung",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_vorstellungsgespraech",
+    "word": "das Vorstellungsgespräch",
+    "article": "das",
+    "plural": "die Vorstellungsgespräche",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Beruf & Onboarding",
+    "register": "Berufssprache",
+    "germanDefinition": "Offizielles Bewerbungsgespräch zur gegenseitigen Vorstellung vor einer Einstellung.",
+    "exampleGerman": "Ich bereitete mich intensiv auf mein Vorstellungsgespräch für den BFD am UKGM vor.",
+    "exampleEnglish": "I prepared intensively for my interview for the BFD at the UKGM.",
+    "synonyms": [
+      "das Bewerbungsgespräch",
+      "das Interview"
+    ],
+    "collocations": [
+      "ein Vorstellungsgespräch führen",
+      "zum Vorstellungsgespräch eingeladen werden"
+    ],
+    "grammarNotes": "Nomen Neutrum (die Vorstellung + das Gespräch).",
+    "relatedWords": [
+      "sich vorstellen",
+      "die Bewerbung",
+      "die Bewerbungsunterlagen",
+      "der Bewerber"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Vorstellungsgespräch",
+      "dwds": "https://www.dwds.de/wb/Vorstellungsgespräch",
+      "dictcc": "https://www.dict.cc/?s=Vorstellungsgespräch"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "beruf",
+      "onboarding",
+      "bfd",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_gesundheit",
+    "word": "die Gesundheit",
+    "article": "die",
+    "plural": "-",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Medizin & Wohlbefinden",
+    "register": "Standardsprache",
+    "germanDefinition": "Der Zustand des vollständigen körperlichen, geistigen und sozialen Wohlbefindens (WHO).",
+    "exampleGerman": "Die Wiederherstellung der Gesundheit steht im Mittelpunkt unserer pflegerischen Arbeit.",
+    "exampleEnglish": "The restoration of health is at the center of our nursing work.",
+    "synonyms": [
+      "das Wohlbefinden",
+      "die Genesung"
+    ],
+    "collocations": [
+      "die Gesundheit fördern",
+      "der Gesundheitszustand",
+      "zur Gesundheit beitragen"
+    ],
+    "grammarNotes": "Nomen Femininum auf -heit.",
+    "relatedWords": [
+      "gesund",
+      "der Gesundheitszustand",
+      "das Gesundheitsamt",
+      "die Gesundheitsförderung",
+      "gesundheitsschädlich"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Gesundheit",
+      "dwds": "https://www.dwds.de/wb/Gesundheit",
+      "dictcc": "https://www.dict.cc/?s=Gesundheit"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "gesundheit",
+      "medizin",
+      "pflege",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_arzt",
+    "word": "der Arzt",
+    "article": "der",
+    "plural": "die Ärzte",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Klinik & Medizin",
+    "register": "Fachsprache",
+    "germanDefinition": "Medizinisch approbierter Akademiker, der Diagnosen stellt und Behandlungen anordnet.",
+    "exampleGerman": "Der Stationsarzt bespricht die Medikation während der täglichen Visite mit dem Patienten.",
+    "exampleEnglish": "The ward physician discusses the medication with the patient during daily rounds.",
+    "synonyms": [
+      "der Mediziner",
+      "der Doktor"
+    ],
+    "collocations": [
+      "den Arzt rufen",
+      "zum Arzt gehen",
+      "die ärztliche Anordnung",
+      "die ärztliche Schweigepflicht"
+    ],
+    "grammarNotes": "Nomen Maskulinum (Femininum: die Ärztin, -nen).",
+    "relatedWords": [
+      "die Ärztin",
+      "der Stationsarzt",
+      "der Chefarzt",
+      "der Dienstarzt",
+      "ärztlich",
+      "das Arztzimmer"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Arzt",
+      "dwds": "https://www.dwds.de/wb/Arzt",
+      "dictcc": "https://www.dict.cc/?s=Arzt"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "medizin",
+      "berufe",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_gespraech",
+    "word": "das Gespräch",
+    "article": "das",
+    "plural": "die Gespräche",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Kommunikation",
+    "register": "Standardsprache",
+    "germanDefinition": "Mündlicher Gedankenaustausch zwischen zwei oder mehreren Personen.",
+    "exampleGerman": "Ein ruhiges, einfühlsames Gespräch half dem aufgeregten Patienten sehr.",
+    "exampleEnglish": "A calm, empathetic conversation helped the agitated patient greatly.",
+    "synonyms": [
+      "die Unterhaltung",
+      "der Dialog",
+      "die Konversation"
+    ],
+    "collocations": [
+      "ein Gespräch führen",
+      "das Aufnahmegespräch",
+      "unter vier Augen sprechen"
+    ],
+    "grammarNotes": "Nomen Neutrum (sprechen -> das Gespräch).",
+    "relatedWords": [
+      "gesprächsbereit",
+      "die Gesprächsführung",
+      "das Mitarbeitergespräch",
+      "das Entlassungsgespräch"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Gespräch",
+      "dwds": "https://www.dwds.de/wb/Gespräch",
+      "dictcc": "https://www.dict.cc/?s=Gespräch"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "kommunikation",
+      "psychiatrie",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_meinung",
+    "word": "die Meinung",
+    "article": "die",
+    "plural": "die Meinungen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Kommunikation & Ethik",
+    "register": "Standardsprache",
+    "germanDefinition": "Die persönliche Ansicht, Einstellung oder Überzeugung zu einem Thema.",
+    "exampleGerman": "Meiner Meinung nach sollten wir den Patienten heute noch nicht überfordern.",
+    "exampleEnglish": "In my opinion, we should not overwhelm the patient today.",
+    "synonyms": [
+      "die Ansicht",
+      "der Standpunkt",
+      "die Haltung"
+    ],
+    "collocations": [
+      "meiner Meinung nach",
+      "eine Meinung vertreten",
+      "die Zweitmeinung einholen"
+    ],
+    "grammarNotes": "Nomen Femininum auf -ung.",
+    "relatedWords": [
+      "meinen",
+      "die Meinungsverschiedenheit",
+      "das Meinungsbild",
+      "vielerorts geteilte Meinung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Meinung",
+      "dwds": "https://www.dwds.de/wb/Meinung",
+      "dictcc": "https://www.dict.cc/?s=Meinung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "kommunikation",
+      "ethik",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_formular",
+    "word": "das Formular",
+    "article": "das",
+    "plural": "die Formulare",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Verwaltung & Klinik",
+    "register": "Standardsprache",
+    "germanDefinition": "Vorgedrucktes Dokument mit Feldern zum Ausfüllen von Daten und Unterschrift.",
+    "exampleGerman": "Bitte füllen Sie dieses Formular zur Erfassung Ihrer persönlichen Daten aus.",
+    "exampleEnglish": "Please fill out this form to record your personal details.",
+    "synonyms": [
+      "der Vordruck",
+      "der Bogen",
+      "der Fragebogen"
+    ],
+    "collocations": [
+      "ein Formular ausfüllen",
+      "das Anmeldeformular",
+      "das Formular einreichen"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "formulieren",
+      "die Formulierung",
+      "die Vorlage",
+      "der Erfassungsbogen"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Formular",
+      "dwds": "https://www.dwds.de/wb/Formular",
+      "dictcc": "https://www.dict.cc/?s=Formular"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "verwaltung",
+      "klinik",
+      "dokumentation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_ausweis",
+    "word": "der Ausweis",
+    "article": "der",
+    "plural": "die Ausweise",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Verwaltung & Sicherheit",
+    "register": "Standardsprache",
+    "germanDefinition": "Amtliches Dokument zum Nachweis der Identität oder Zutrittsberechtigung.",
+    "exampleGerman": "Für den Zutritt zu den geschützten Stationen benötigen Mitarbeiter ihren Dienstausweis.",
+    "exampleEnglish": "Employees need their employee badge/ID to access the secured wards.",
+    "synonyms": [
+      "das Identitätsdokument",
+      "die Legitimation"
+    ],
+    "collocations": [
+      "den Personalausweis vorlegen",
+      "der Dienstausweis",
+      "sich ausweisen"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "sich ausweisen",
+      "der Personalausweis",
+      "der Reisepass",
+      "die Ausweispflicht"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Ausweis",
+      "dwds": "https://www.dwds.de/wb/Ausweis",
+      "dictcc": "https://www.dict.cc/?s=Ausweis"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "verwaltung",
+      "sicherheit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_fahrkarte",
+    "word": "die Fahrkarte",
+    "article": "die",
+    "plural": "die Fahrkarten",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Verkehr & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Berechtigungsschein zur Benutzung öffentlicher Verkehrsmittel (Bus, Bahn).",
+    "exampleGerman": "Mit dem Deutschlandticket habe ich eine bundesweit gültige Fahrkarte für Bus und Bahn.",
+    "exampleEnglish": "With the Deutschlandticket, I have a nationwide valid ticket for buses and trains.",
+    "synonyms": [
+      "der Fahrschein",
+      "das Ticket"
+    ],
+    "collocations": [
+      "eine Fahrkarte kaufen",
+      "die Fahrkarte entwerten",
+      "eine gültige Fahrkarte"
+    ],
+    "grammarNotes": "Nomen Femininum (fahren + die Karte).",
+    "relatedWords": [
+      "der Fahrschein",
+      "der Fahrkartenautomat",
+      "die Monatskarte",
+      "die Schwarzfahrt"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Fahrkarte",
+      "dwds": "https://www.dwds.de/wb/Fahrkarte",
+      "dictcc": "https://www.dict.cc/?s=Fahrkarte"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "verkehr",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_termin",
+    "word": "der Termin",
+    "article": "der",
+    "plural": "die Termine",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Organisation & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein vereinbarter Zeitpunkt für eine Untersuchung, Besprechung oder ein Treffen.",
+    "exampleGerman": "Ich habe morgen um 09:30 Uhr einen Termin zur arbeitsmedizinischen Vorsorgeuntersuchung.",
+    "exampleEnglish": "I have an appointment for the occupational health examination tomorrow at 9:30 AM.",
+    "synonyms": [
+      "die Verabredung",
+      "die Konsultation"
+    ],
+    "collocations": [
+      "einen Termin vereinbaren",
+      "einen Termin absagen",
+      "einen Termin wahrnehmen",
+      "fristgerecht"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "die Terminabsprache",
+      "der Terminkalender",
+      "der Notfalltermin",
+      "fristgebunden"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Termin",
+      "dwds": "https://www.dwds.de/wb/Termin",
+      "dictcc": "https://www.dict.cc/?s=Termin"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "organisation",
+      "termine",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_arbeit",
+    "word": "die Arbeit",
+    "article": "die",
+    "plural": "die Arbeiten",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Beruf & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Körperliche oder geistige berufliche Tätigkeit zur Erfüllung von Aufgaben.",
+    "exampleGerman": "Die pflegerische Arbeit auf Station erfordert hohes Verantwortungsbewusstsein und Teamgeist.",
+    "exampleEnglish": "Nursing work on the ward requires a high sense of responsibility and team spirit.",
+    "synonyms": [
+      "die Beschäftigung",
+      "die Tätigkeit",
+      "der Dienst"
+    ],
+    "collocations": [
+      "zur Arbeit gehen",
+      "die Arbeitsunfähigkeit (AU)",
+      "der Arbeitsschritt",
+      "Hand in Hand arbeiten"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "arbeiten",
+      "der Arbeitsplatz",
+      "die Arbeitsunfähigkeitsbescheinigung (AU)",
+      "der Arbeitsschutz",
+      "die Schichtarbeit"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Arbeit",
+      "dwds": "https://www.dwds.de/wb/Arbeit",
+      "dictcc": "https://www.dict.cc/?s=Arbeit"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "beruf",
+      "arbeitskultur",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_bahnhof",
+    "word": "der Bahnhof",
+    "article": "der",
+    "plural": "die Bahnhöfe",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Verkehr & Geografie",
+    "register": "Standardsprache",
+    "germanDefinition": "Anlage mit Gleisen und Bahnsteigen für den Zusteig in Züge.",
+    "exampleGerman": "Vom Marburger Hauptbahnhof fährt der Bus direkt zum Klinikum auf die Lahnberge.",
+    "exampleEnglish": "From Marburg Central Station, the bus goes directly to the university hospital on the Lahnberge.",
+    "synonyms": [
+      "die Bahnstation",
+      "der Haltepunkt"
+    ],
+    "collocations": [
+      "zum Bahnhof fahren",
+      "am Bahnhof ankommen",
+      "der Hauptbahnhof"
+    ],
+    "grammarNotes": "Nomen Maskulinum (die Bahn + der Hof).",
+    "relatedWords": [
+      "die Bahn",
+      "die Gleise",
+      "der Bahnsteig",
+      "der Zugverkehr"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Bahnhof",
+      "dwds": "https://www.dwds.de/wb/Bahnhof",
+      "dictcc": "https://www.dict.cc/?s=Bahnhof"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "verkehr",
+      "geografie",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_reise",
+    "word": "die Reise",
+    "article": "die",
+    "plural": "die Reisen",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Alltag & Freizeit",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Fahrt oder der Flug an einen weiter entfernten Ort.",
+    "exampleGerman": "Die Anreise zur zentralen BFD-Bildungswoche dauerte drei Stunden mit dem Zug.",
+    "exampleEnglish": "The journey to the central BFD education week took three hours by train.",
+    "synonyms": [
+      "die Fahrt",
+      "der Trip",
+      "die Exkursion"
+    ],
+    "collocations": [
+      "eine Reise antreten",
+      "die Dienstreise",
+      "gute Reise!"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "reisen",
+      "die Abreise",
+      "die Anreise",
+      "der Reiseleiter",
+      "reisefertig"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Reise",
+      "dwds": "https://www.dwds.de/wb/Reise",
+      "dictcc": "https://www.dict.cc/?s=Reise"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "alltag",
+      "reisen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_preis",
+    "word": "der Preis",
+    "article": "der",
+    "plural": "die Preise",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Finanzen & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Der in Geld ausgedrückte Gegenwert für Waren oder eine Auszeichnung.",
+    "exampleGerman": "Das Preis-Leistungs-Verhältnis der Klinik-Cafeteria ist für Mitarbeiter sehr fair.",
+    "exampleEnglish": "The price-performance ratio of the clinic cafeteria is very fair for employees.",
+    "synonyms": [
+      "die Kosten",
+      "der Tarif",
+      "die Auszeichnung"
+    ],
+    "collocations": [
+      "den Preis bezahlen",
+      "ein fairer Preis",
+      "das Preis-Leistungs-Verhältnis"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "preiswert",
+      "die Preissteigerung",
+      "der Gesamtpreis",
+      "kostengünstig"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Preis",
+      "dwds": "https://www.dwds.de/wb/Preis",
+      "dictcc": "https://www.dict.cc/?s=Preis"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "finanzen",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_beschwerde",
+    "word": "die Beschwerde",
+    "article": "die",
+    "plural": "die Beschwerden",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Klinik & Symptome",
+    "register": "Fachsprache",
+    "germanDefinition": "Körperliche Schmerzen/Symptome oder förmliche Beanstandung einer Unzulänglichkeit.",
+    "exampleGerman": "Der Patient schilderte diffuse abdominale Beschwerden seit dem Vortag.",
+    "exampleEnglish": "The patient described diffuse abdominal complaints since the previous day.",
+    "synonyms": [
+      "das Symptom",
+      "der Schmerz",
+      "die Reklamation"
+    ],
+    "collocations": [
+      "über Beschwerden klagen",
+      "körperliche Beschwerden",
+      "das Beschwerdemanagement"
+    ],
+    "grammarNotes": "Nomen Femininum auf -e.",
+    "relatedWords": [
+      "sich beschweren",
+      "die Schmerzbeschwerde",
+      "beschwerdefrei",
+      "die Magenbeschwerden"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Beschwerde",
+      "dwds": "https://www.dwds.de/wb/Beschwerde",
+      "dictcc": "https://www.dict.cc/?s=Beschwerde"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "symptome",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_apotheke",
+    "word": "die Apotheke",
+    "article": "die",
+    "plural": "die Apotheken",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Pharmazie & Gesundheit",
+    "register": "Fachsprache",
+    "germanDefinition": "Geschäft oder klinische Abteilung zur Lagerung und Ausgabe von Arzneimitteln.",
+    "exampleGerman": "Die Stationsschwester bestellt die benötigten Antibiotika direkt in der Krankenhausapotheke.",
+    "exampleEnglish": "The ward nurse orders the required antibiotics directly from the hospital pharmacy.",
+    "synonyms": [
+      "die Arzneimittelausgabe"
+    ],
+    "collocations": [
+      "in die Apotheke gehen",
+      "die Krankenhausapotheke",
+      "rezeptpflichtig in der Apotheke"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "der Apotheker (-)",
+      "die Apothekerin (-nen)",
+      "die Notdienst-Apotheke",
+      "das Medikament"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Apotheke",
+      "dwds": "https://www.dwds.de/wb/Apotheke",
+      "dictcc": "https://www.dict.cc/?s=Apotheke"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "pharmazie",
+      "gesundheit",
+      "klinik",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_kurs",
+    "word": "der Kurs",
+    "article": "der",
+    "plural": "die Kurse",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Bildung & Training",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine Reihe von Unterrichtsstunden zu einem bestimmten Thema.",
+    "exampleGerman": "Ich nehme regelmäßig an einem fachspezifischen Deutschkurs für medizinische Berufe teil.",
+    "exampleEnglish": "I regularly take part in a specialized German course for medical professions.",
+    "synonyms": [
+      "der Lehrgang",
+      "das Seminar",
+      "die Schulung"
+    ],
+    "collocations": [
+      "einen Kurs besuchen",
+      "der Deutschkurs",
+      "den Kurs erfolgreich abschließen"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "der Kursteilnehmer",
+      "die Kursleitung",
+      "der Sprachkurs",
+      "der Fortbildungskurs"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Kurs",
+      "dwds": "https://www.dwds.de/wb/Kurs",
+      "dictcc": "https://www.dict.cc/?s=Kurs"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "bildung",
+      "training",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_urlaub",
+    "word": "der Urlaub",
+    "article": "der",
+    "plural": "die Urlaube",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Arbeitsrecht & Freizeit",
+    "register": "Standardsprache",
+    "germanDefinition": "Gesetzlich garantierte bezahlte Freistellung von der Arbeit zur Erholung.",
+    "exampleGerman": "Im BFD stehen mir gesetzlich 30 Tage Erholungsurlaub pro Dienstjahr zu.",
+    "exampleEnglish": "In the BFD, I am legally entitled to 30 days of recreational leave per service year.",
+    "synonyms": [
+      "die Ferien",
+      "die Freizeit",
+      "die Freistellung"
+    ],
+    "collocations": [
+      "Urlaub beantragen",
+      "in den Urlaub fahren",
+      "den Urlaub genehmigen"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "der Erholungsurlaub",
+      "der Urlaubsantrag",
+      "der Sonderurlaub",
+      "die Urlaubsvertretung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Urlaub",
+      "dwds": "https://www.dwds.de/wb/Urlaub",
+      "dictcc": "https://www.dict.cc/?s=Urlaub"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "arbeitsrecht",
+      "bfd",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_amt",
+    "word": "das Amt",
+    "article": "das",
+    "plural": "die Ämter",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Behörden & Staat",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine staatliche oder kommunale Dienststelle mit behördlichen Aufgaben.",
+    "exampleGerman": "Nach dem Einzug in Marburg muss man sich innerhalb von zwei Wochen beim Bürgeramt anmelden.",
+    "exampleEnglish": "After moving to Marburg, one must register at the citizen's office within two weeks.",
+    "synonyms": [
+      "die Behörde",
+      "die Dienststelle"
+    ],
+    "collocations": [
+      "zum Amt gehen",
+      "das Bürgeramt",
+      "das Gesundheitsamt",
+      "amtlich beglaubigt"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "die Behörde",
+      "das Bürgeramt",
+      "das Gesundheitsamt",
+      "der Beamte",
+      "die Amtssprache"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Amt",
+      "dwds": "https://www.dwds.de/wb/Amt",
+      "dictcc": "https://www.dict.cc/?s=Amt"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "behoerden",
+      "alltag",
+      "recht",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_antrag",
+    "word": "der Antrag",
+    "article": "der",
+    "plural": "die Anträge",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Verwaltung & Recht",
+    "register": "Berufssprache",
+    "germanDefinition": "Schriftliches Gesuch an eine Behörde, Krankenkasse oder Leitung zur Genehmigung.",
+    "exampleGerman": "Der Patient stellte einen Antrag auf Bewilligung einer Anschlussheilbehandlung (AHB).",
+    "exampleEnglish": "The patient submitted an application for the approval of follow-up rehabilitation treatment.",
+    "synonyms": [
+      "das Gesuch",
+      "die Eingabe",
+      "die Petition"
+    ],
+    "collocations": [
+      "einen Antrag stellen",
+      "dem Antrag stattgeben",
+      "einen Antrag ablehnen"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "beantragen",
+      "das Antragsformular",
+      "der Aufnahmeantrag",
+      "die Antragsfrist"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Antrag",
+      "dwds": "https://www.dwds.de/wb/Antrag",
+      "dictcc": "https://www.dict.cc/?s=Antrag"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "verwaltung",
+      "recht",
+      "klinik",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_nachteil",
+    "word": "der Nachteil",
+    "article": "der",
+    "plural": "die Nachteile",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Analyse & Abwägung",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein ungünstiger Umstand, Mangel oder eine negative Begleiterscheinung.",
+    "exampleGerman": "Ein wesentlicher Nachteil des Schichtdienstes ist der unregelmäßige Schlafrhythmus.",
+    "exampleEnglish": "A major disadvantage of shift work is the irregular sleep pattern.",
+    "synonyms": [
+      "das Manko",
+      "der Minuspunkt",
+      "die Schattenseite"
+    ],
+    "collocations": [
+      "Vor- und Nachteile abwägen",
+      "im Nachteil sein",
+      "einen Nachteil ausgleichen"
+    ],
+    "grammarNotes": "Nomen Maskulinum (nach + der Teil).",
+    "relatedWords": [
+      "nachteilig",
+      "benachteiligen",
+      "die Benachteiligung",
+      "der Vorteil"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Nachteil",
+      "dwds": "https://www.dwds.de/wb/Nachteil",
+      "dictcc": "https://www.dict.cc/?s=Nachteil"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "analyse",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_vorteil",
+    "word": "der Vorteil",
+    "article": "der",
+    "plural": "die Vorteile",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Analyse & Abwägung",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein günstiger Umstand, Nutzen oder positiver Vorzug einer Sache.",
+    "exampleGerman": "Ein großer Vorteil des BFD ist der direkte Einblick in das deutsche Kliniksystem.",
+    "exampleEnglish": "A great advantage of the BFD is the direct insight into the German hospital system.",
+    "synonyms": [
+      "der Nutzen",
+      "der Vorzug",
+      "der Pluspunkt"
+    ],
+    "collocations": [
+      "einen Vorteil bieten",
+      "im Vorteil sein",
+      "von Vorteil sein"
+    ],
+    "grammarNotes": "Nomen Maskulinum (vor + der Teil).",
+    "relatedWords": [
+      "vorteilhaft",
+      "begünstigen",
+      "die Bevorzugung",
+      "der Nachteil"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Vorteil",
+      "dwds": "https://www.dwds.de/wb/Vorteil",
+      "dictcc": "https://www.dict.cc/?s=Vorteil"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "analyse",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_umzug",
+    "word": "der Umzug",
+    "article": "der",
+    "plural": "die Umzüge",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Wohnen & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Der Wechsel der Wohnung und der Transport des Hausrats an den neuen Wohnort.",
+    "exampleGerman": "Der Umzug von meiner alten Wohnung in das Personalwohnheim verlief reibungslos.",
+    "exampleEnglish": "The move from my old apartment to the staff residence went smoothly.",
+    "synonyms": [
+      "der Wohnungswechsel",
+      "die Übersiedlung"
+    ],
+    "collocations": [
+      "einen Umzug planen",
+      "beim Umzug helfen",
+      "die Umzugskartons"
+    ],
+    "grammarNotes": "Nomen Maskulinum (umziehen -> der Umzug).",
+    "relatedWords": [
+      "umziehen",
+      "die Umzugskartons",
+      "das Umzugsunternehmen",
+      "der Umzugshelfer"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Umzug",
+      "dwds": "https://www.dwds.de/wb/Umzug",
+      "dictcc": "https://www.dict.cc/?s=Umzug"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "wohnen",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_entscheidung",
+    "word": "die Entscheidung",
+    "article": "die",
+    "plural": "die Entscheidungen",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Klinik & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Wahl einer Handlungsoption nach sorgfältiger Abwägung aller Alternativen.",
+    "exampleGerman": "Die Entscheidung über eine Operation trifft der Patient gemeinsam mit dem Facharzt.",
+    "exampleEnglish": "The decision regarding an operation is made by the patient together with the specialist.",
+    "synonyms": [
+      "der Beschluss",
+      "das Urteil",
+      "der Entschluss"
+    ],
+    "collocations": [
+      "eine Entscheidung treffen",
+      "eine Entscheidung fällen",
+      "eine weise Entscheidung"
+    ],
+    "grammarNotes": "Nomen Femininum (entscheiden -> die Entscheidung).",
+    "relatedWords": [
+      "entscheiden",
+      "entscheidungsfähig",
+      "die Entscheidungsfindung",
+      "entschlossen"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Entscheidung",
+      "dwds": "https://www.dwds.de/wb/Entscheidung",
+      "dictcc": "https://www.dict.cc/?s=Entscheidung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "ethik",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_weiterbildung",
+    "word": "die Weiterbildung",
+    "article": "die",
+    "plural": "die Weiterbildungen",
+    "partOfSpeech": "Nomen",
+    "level": "B1+",
+    "domain": "Beruf & Bildung",
+    "register": "Berufssprache",
+    "germanDefinition": "Fachspezifische Qualifizierung zur Erlangung höherer beruflicher Abschlüsse.",
+    "exampleGerman": "Viele Pflegekräfte absolvieren eine Weiterbildung zur Fachkraft für Psychiatrie.",
+    "exampleEnglish": "Many nurses complete continuing training to become psychiatric specialists.",
+    "synonyms": [
+      "die Fortbildung",
+      "die Spezialisierung",
+      "die Nachqualifikation"
+    ],
+    "collocations": [
+      "eine Weiterbildung machen",
+      "an einer Weiterbildung teilnehmen"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "weiterbilden",
+      "die Fachweiterbildung",
+      "das Weiterbildungszertifikat",
+      "die Qualifikation"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Weiterbildung",
+      "dwds": "https://www.dwds.de/wb/Weiterbildung",
+      "dictcc": "https://www.dict.cc/?s=Weiterbildung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "bildung",
+      "beruf",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_bitte",
+    "word": "die Bitte",
+    "article": "die",
+    "plural": "die Bitten",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Höflichkeit & Kommunikation",
+    "register": "Standardsprache",
+    "germanDefinition": "Höfliche Äußerung eines Wunsches oder Anliegens.",
+    "exampleGerman": "Ich habe eine kurze Bitte: Könnten Sie mir beim Bettenmachen zur Hand gehen?",
+    "exampleEnglish": "I have a short request: Could you give me a hand with making the beds?",
+    "synonyms": [
+      "das Ersuchen",
+      "der Wunsch"
+    ],
+    "collocations": [
+      "eine Bitte äußern",
+      "einer Bitte nachkommen",
+      "bitte sehr!"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "bitten (um + Akk)",
+      "bittend",
+      "das Bittschreiben",
+      "der Bittsteller"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Bitte",
+      "dwds": "https://www.dwds.de/wb/Bitte",
+      "dictcc": "https://www.dict.cc/?s=Bitte"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "kommunikation",
+      "hoeflichkeit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_bewerbung",
+    "word": "die Bewerbung",
+    "article": "die",
+    "plural": "die Bewerbungen",
+    "partOfSpeech": "Nomen",
+    "level": "B1",
+    "domain": "Beruf & Onboarding",
+    "register": "Berufssprache",
+    "germanDefinition": "Schriftliches Angebot der eigenen Arbeitskraft an einen Arbeitgeber.",
+    "exampleGerman": "Meine Bewerbung für den BFD in der Psychiatrie wurde vom Klinikum positiv beantwortet.",
+    "exampleEnglish": "My application for the BFD in psychiatry was answered positively by the hospital.",
+    "synonyms": [
+      "die Kandidatur",
+      "das Gesuch"
+    ],
+    "collocations": [
+      "eine Bewerbung einreichen",
+      "die Bewerbungsunterlagen",
+      "sich bewerben um"
+    ],
+    "grammarNotes": "Nomen Femininum (bewerben -> die Bewerbung).",
+    "relatedWords": [
+      "sich bewerben",
+      "der Bewerber (-)",
+      "das Bewerbungsschreiben",
+      "die Initiativbewerbung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Bewerbung",
+      "dwds": "https://www.dwds.de/wb/Bewerbung",
+      "dictcc": "https://www.dict.cc/?s=Bewerbung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "beruf",
+      "onboarding",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_miete",
+    "word": "die Miete",
+    "article": "die",
+    "plural": "die Mieten",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Wohnen & Finanzen",
+    "register": "Standardsprache",
+    "germanDefinition": "Monatlicher Geldbetrag für die Nutzung einer gemieteten Wohnung oder eines Zimmers.",
+    "exampleGerman": "Die Warmmiete für das Zimmer im Wohnheim beinhaltet bereits Strom und Heizung.",
+    "exampleEnglish": "The warm rent for the room in the dormitory already includes electricity and heating.",
+    "synonyms": [
+      "der Mietzins",
+      "die Wohnkosten"
+    ],
+    "collocations": [
+      "die Miete überweisen",
+      "die Warmmiete",
+      "die Kaltmiete",
+      "die Mietkaution"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "mieten",
+      "der Mieter (-)",
+      "der Vermieter (-)",
+      "der Mietvertrag",
+      "die Mietkaution"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Miete",
+      "dwds": "https://www.dwds.de/wb/Miete",
+      "dictcc": "https://www.dict.cc/?s=Miete"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "wohnen",
+      "finanzen",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_beruf",
+    "word": "der Beruf",
+    "article": "der",
+    "plural": "die Berufe",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Arbeitswelt",
+    "register": "Standardsprache",
+    "germanDefinition": "Erlernte und ausgeübte Erwerbstätigkeit eines Menschen.",
+    "exampleGerman": "Die Pflege ist ein anspruchsvoller und sinnstiftender sozialer Beruf.",
+    "exampleEnglish": "Nursing is a demanding and meaningful social profession.",
+    "synonyms": [
+      "die Profession",
+      "das Gewerbe",
+      "die Tätigkeit"
+    ],
+    "collocations": [
+      "von Beruf sein",
+      "einen Beruf erlernen",
+      "berufstätig sein"
+    ],
+    "grammarNotes": "Nomen Maskulinum.",
+    "relatedWords": [
+      "beruflich",
+      "die Berufsausbildung",
+      "die Berufserfahrung",
+      "die Berufsschule"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Beruf",
+      "dwds": "https://www.dwds.de/wb/Beruf",
+      "dictcc": "https://www.dict.cc/?s=Beruf"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "beruf",
+      "arbeitswelt",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_wohnung",
+    "word": "die Wohnung",
+    "article": "die",
+    "plural": "die Wohnungen",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Wohnen & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Räumlichkeiten in einem Haus, die als private Unterkunft dienen.",
+    "exampleGerman": "Ich habe in Marburg eine ruhige Wohnung in der Nähe des Schlossparks gefunden.",
+    "exampleEnglish": "I found a quiet apartment in Marburg near the castle park.",
+    "synonyms": [
+      "das Zuhause",
+      "das Domizil",
+      "das Appartement"
+    ],
+    "collocations": [
+      "eine Wohnung suchen",
+      "die Dienstwohnung",
+      "die Wohnungsbesichtigung"
+    ],
+    "grammarNotes": "Nomen Femininum (wohnen -> die Wohnung).",
+    "relatedWords": [
+      "wohnen",
+      "der Wohnort",
+      "das Wohnheim",
+      "die Wohnfläche",
+      "der Wohnsitz"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Wohnung",
+      "dwds": "https://www.dwds.de/wb/Wohnung",
+      "dictcc": "https://www.dict.cc/?s=Wohnung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "wohnen",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_erfahrung",
+    "word": "die Erfahrung",
+    "article": "die",
+    "plural": "die Erfahrungen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Kompetenz & Lernen",
+    "register": "Standardsprache",
+    "germanDefinition": "Durch praktische Anschauung und Erleben erworbenes Wissen und Können.",
+    "exampleGerman": "Im Umgang mit unruhigen Patienten konnte ich bereits wertvolle Erfahrungen sammeln.",
+    "exampleEnglish": "In dealing with restless patients, I have already been able to gather valuable experience.",
+    "synonyms": [
+      "die Praxis",
+      "die Routine",
+      "die Kenntnis"
+    ],
+    "collocations": [
+      "Erfahrungen sammeln",
+      "aus Erfahrung sprechen",
+      "langjährige Erfahrung"
+    ],
+    "grammarNotes": "Nomen Femininum (erfahren -> die Erfahrung).",
+    "relatedWords": [
+      "erfahren (Adjektiv/Verb)",
+      "die Praxiserfahrung",
+      "erfahrungsgemäß",
+      "die Lebenserfahrung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Erfahrung",
+      "dwds": "https://www.dwds.de/wb/Erfahrung",
+      "dictcc": "https://www.dict.cc/?s=Erfahrung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "kompetenz",
+      "lernen",
+      "bfd",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_einladung",
+    "word": "die Einladung",
+    "article": "die",
+    "plural": "die Einladungen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Soziales & Termine",
+    "register": "Standardsprache",
+    "germanDefinition": "Mündliche oder schriftliche Bitte an jemanden, zu einem Anlass zu kommen.",
+    "exampleGerman": "Ich habe die Einladung zum Vorstellungsgespräch am UKGM mit großer Freude erhalten.",
+    "exampleEnglish": "I received the invitation to the interview at the UKGM with great joy.",
+    "synonyms": [
+      "die Aufforderung",
+      "das Einladungsschreiben"
+    ],
+    "collocations": [
+      "eine Einladung annehmen",
+      "eine Einladung aussprechen",
+      "die Einladungskarte"
+    ],
+    "grammarNotes": "Nomen Femininum (einladen -> die Einladung).",
+    "relatedWords": [
+      "einladen",
+      "einladend",
+      "das Einladungsschreiben",
+      "die Gästeliste"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Einladung",
+      "dwds": "https://www.dwds.de/wb/Einladung",
+      "dictcc": "https://www.dict.cc/?s=Einladung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "soziales",
+      "onboarding",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_reservierung",
+    "word": "die Reservierung",
+    "article": "die",
+    "plural": "die Reservierungen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Alltag & Organisation",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Sicherung eines Platzes, Zimmers oder Tickets vor der Inanspruchnahme.",
+    "exampleGerman": "Bitte zeigen Sie bei der Ankunft die Bestätigung Ihrer Reservierung vor.",
+    "exampleEnglish": "Please present the confirmation of your reservation upon arrival.",
+    "synonyms": [
+      "die Vormerkung",
+      "die Buchung"
+    ],
+    "collocations": [
+      "eine Reservierung stornieren",
+      "die Zimmerreservierung",
+      "die Reservierungsbestätigung"
+    ],
+    "grammarNotes": "Nomen Femininum (reservieren -> die Reservierung).",
+    "relatedWords": [
+      "reservieren",
+      "die Reservierungsnummer",
+      "die Sitzplatzreservierung",
+      "reservierungspflichtig"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Reservierung",
+      "dwds": "https://www.dwds.de/wb/Reservierung",
+      "dictcc": "https://www.dict.cc/?s=Reservierung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "organisation",
+      "alltag",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_medikament",
+    "word": "das Medikament",
+    "article": "das",
+    "plural": "die Medikamente",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Pharmazie & Klinik",
+    "register": "Fachsprache",
+    "germanDefinition": "Arzneistoff zur Heilung, Linderung oder Verhütung von Krankheiten.",
+    "exampleGerman": "Die Verabreichung von Medikamenten erfolgt streng nach der 5-R-Regel durch Pflegefachkräfte.",
+    "exampleEnglish": "The administration of medications is carried out strictly according to the 5-R rule by nursing professionals.",
+    "synonyms": [
+      "das Arzneimittel",
+      "das Präparat",
+      "die Medizin"
+    ],
+    "collocations": [
+      "Medikamente einnehmen",
+      "die Bedarfsmedikation",
+      "ein Medikament verordnen"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "die Medikation",
+      "medikamentös",
+      "die Arzneimitteltherapiesicherheit",
+      "die Nebenwirkung"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Medikament",
+      "dwds": "https://www.dwds.de/wb/Medikament",
+      "dictcc": "https://www.dict.cc/?s=Medikament"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "pharmazie",
+      "klinik",
+      "sicherheit",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_idee",
+    "word": "die Idee",
+    "article": "die",
+    "plural": "die Ideen",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Kreativität & Planung",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein geistiger Einfall, Gedanke oder kreativer Lösungsvorschlag.",
+    "exampleGerman": "Das Team hatte die Idee, für die Patienten einen wöchentlichen Musiknachmittag anzubieten.",
+    "exampleEnglish": "The team had the idea of offering a weekly music afternoon for the patients.",
+    "synonyms": [
+      "der Einfall",
+      "der Gedanke",
+      "die Eingebung"
+    ],
+    "collocations": [
+      "eine gute Idee haben",
+      "auf eine Idee kommen",
+      "eine Idee umsetzen"
+    ],
+    "grammarNotes": "Nomen Femininum.",
+    "relatedWords": [
+      "ideenreich",
+      "die Ideenfindung",
+      "ideengenerierend",
+      "die Leitidee"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Idee",
+      "dwds": "https://www.dwds.de/wb/Idee",
+      "dictcc": "https://www.dict.cc/?s=Idee"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "kreativitaet",
+      "planung",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_der_vorschlag",
+    "word": "der Vorschlag",
+    "article": "der",
+    "plural": "die Vorschläge",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Kommunikation & Team",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine Empfehlung oder Idee zur Entscheidung und gemeinsamen Umsetzung.",
+    "exampleGerman": "Die Stationsleitung nahm meinen Vorschlag zur Optimierung der Materiallagerung gerne an.",
+    "exampleEnglish": "The ward manager gladly accepted my proposal for optimizing material storage.",
+    "synonyms": [
+      "die Anregung",
+      "die Empfehlung",
+      "die Initiative"
+    ],
+    "collocations": [
+      "einen Vorschlag machen",
+      "einen Vorschlag ablehnen",
+      "einen Gegenvorschlag unterbreiten"
+    ],
+    "grammarNotes": "Nomen Maskulinum (vorschlagen -> der Vorschlag).",
+    "relatedWords": [
+      "vorschlagen",
+      "der Verbesserungsvorschlag",
+      "die Vorschlagsliste",
+      "vorschlagsberechtigt"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Vorschlag",
+      "dwds": "https://www.dwds.de/wb/Vorschlag",
+      "dictcc": "https://www.dict.cc/?s=Vorschlag"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "team",
+      "kommunikation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_die_loesung",
+    "word": "die Lösung",
+    "article": "die",
+    "plural": "die Lösungen",
+    "partOfSpeech": "Nomen",
+    "level": "A2",
+    "domain": "Problemlösung & Chemie",
+    "register": "Standardsprache",
+    "germanDefinition": "Die Behebung eines Problems oder eine gelöste chemische Flüssigkeit (z. B. Kochsalzlösung).",
+    "exampleGerman": "Gemeinsam mit dem Pflegeteam fanden wir eine deeskalierende Lösung für den Konflikt.",
+    "exampleEnglish": "Together with the nursing team, we found a de-escalating solution for the conflict.",
+    "synonyms": [
+      "der Ausweg",
+      "die Problembehebung",
+      "die Mixtur"
+    ],
+    "collocations": [
+      "eine Lösung finden",
+      "die Kochsalzlösung",
+      "lösungsorientiert handeln"
+    ],
+    "grammarNotes": "Nomen Femininum (lösen -> die Lösung).",
+    "relatedWords": [
+      "lösen",
+      "lösungsorientiert",
+      "die Infusionslösung",
+      "die Desinfektionslösung",
+      "unlösbar"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Lösung",
+      "dwds": "https://www.dwds.de/wb/Lösung",
+      "dictcc": "https://www.dict.cc/?s=Lösung"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "probleme",
+      "labor",
+      "deeskalation",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_zimmer",
+    "word": "das Zimmer",
+    "article": "das",
+    "plural": "die Zimmer",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Klinik & Wohnen",
+    "register": "Standardsprache",
+    "germanDefinition": "Ein abgegrenzter Raum in einer Klinik oder Wohnung (z. B. Patientenzimmer, Dienstzimmer).",
+    "exampleGerman": "Vor dem Betreten des Patientenzimmers klopfen wir stets an und desinfizieren die Hände.",
+    "exampleEnglish": "Before entering the patient's room, we always knock and disinfect our hands.",
+    "synonyms": [
+      "der Raum",
+      "die Stube",
+      "das Gemach"
+    ],
+    "collocations": [
+      "das Patientenzimmer",
+      "das Dienstzimmer",
+      "das Zimmer lüften",
+      "das Isolierzimmer"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "das Patientenzimmer",
+      "das Dienstzimmer",
+      "das Einzelzimmer",
+      "die Zimmernummer",
+      "der Zimmernachbar"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Zimmer",
+      "dwds": "https://www.dwds.de/wb/Zimmer",
+      "dictcc": "https://www.dict.cc/?s=Zimmer"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "klinik",
+      "station",
+      "wohnen",
+      "anki"
+    ]
+  },
+  {
+    "id": "voc_das_problem",
+    "word": "das Problem",
+    "article": "das",
+    "plural": "die Probleme",
+    "partOfSpeech": "Nomen",
+    "level": "A1",
+    "domain": "Klinik & Alltag",
+    "register": "Standardsprache",
+    "germanDefinition": "Eine schwierige, ungelöste Aufgabe oder ein störender Zwischenfall.",
+    "exampleGerman": "Wenn ein unvorhergesehenes Problem auftritt, informiere ich unverzüglich die Stationsleitung.",
+    "exampleEnglish": "If an unforeseen problem arises, I inform the ward manager immediately.",
+    "synonyms": [
+      "die Schwierigkeit",
+      "die Komplikation",
+      "die Hürde"
+    ],
+    "collocations": [
+      "ein Problem lösen",
+      "kein Problem!",
+      "Probleme ansprechen",
+      "auf Probleme stoßen"
+    ],
+    "grammarNotes": "Nomen Neutrum.",
+    "relatedWords": [
+      "problematisch",
+      "die Problemstellung",
+      "problembehaftet",
+      "die Problemlösung",
+      "unproblematisch"
+    ],
+    "stammformen": "",
+    "dictionaryLinks": {
+      "duden": "https://www.duden.de/rechtschreibung/Problem",
+      "dwds": "https://www.dwds.de/wb/Problem",
+      "dictcc": "https://www.dict.cc/?s=Problem"
+    },
+    "sourceIds": [
+      "src_user_anki_deck",
+      "src_starthilfe",
+      "src_duden_dictionary"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "provenance": "AUS_QUELLE",
+    "status": "BESTÄTIGT",
+    "tags": [
+      "nomen",
+      "probleme",
+      "deeskalation",
+      "alltag",
+      "anki"
     ]
   }
 ];

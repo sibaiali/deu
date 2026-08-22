@@ -1,5 +1,5 @@
 // Flashcards Component — Anki-Style SRS Wiederholung & Vokabel-Explorer
-// Vollständige Abdeckung: Präfix-Verben (ab-, unter-, über-, an-, auf-, etc.), Klinik, Alltag & B2/C1
+// Vollständige Abdeckung: Präfix-Verben, Stammformen, Komparative, Wortfamilie & B2/C1 Chunks
 
 import { Storage } from '../storage.js';
 import { SRS } from '../srs.js';
@@ -16,15 +16,15 @@ export function renderFlashcards(container, data, params = {}) {
         <div class="hero-card">
           <div class="flex-between flex-wrap gap-4">
             <div>
-              <span class="badge badge-blue mb-2">Vokabel- & Verb-Zentrale</span>
-              <h1 class="page-title">Vokabeln, Verben & SRS (${data.vocabulary.length} Einträge)</h1>
+              <span class="badge badge-blue mb-2">Vokabel-, Verb- & Phrasen-Zentrale</span>
+              <h1 class="page-title">Wortschatz, Verben & SRS (${data.vocabulary.length} Karten)</h1>
               <p class="subtitle mt-1">
-                Umfassender Wortschatz mit allen essenziellen Präfix-Verben (<em>ab-, unter-, über-, an-, auf-, aus-, ein-</em>), Klinikbegriffen und Alltags-Chunks.
+                Umfassender Wortschatz mit Stammformen (<em>Infinitiv – Präteritum – Perfekt</em>), Steigerung (<em>Positiv – Komparativ – Superlativ</em>), Wortfamilien & Präfix-Verben.
               </p>
             </div>
             <div class="flex gap-2">
               <button id="btnExplorerMode" class="btn btn-sm ${mode === 'explorer' ? 'btn-primary' : 'btn-secondary'}">
-                📚 Wortschatz & Verben (${data.vocabulary.length})
+                📚 Wortschatz & Explorer (${data.vocabulary.length})
               </button>
               <button id="btnReviewMode" class="btn btn-sm ${mode === 'review' ? 'btn-primary' : 'btn-secondary'}">
                 🔄 SRS-Wiederholung (${totalDueCount})
@@ -65,7 +65,7 @@ function renderReviewPlayer(container, deck) {
         <div class="bento-card p-8 text-center max-w-lg mx-auto space-y-4">
           <div class="text-4xl">🎉</div>
           <h2 class="section-title">Hervorragend gemacht!</h2>
-          <p class="text-xs text-secondary">Du hast alle Wiederholungskarten für diese Einheit gemeistert.</p>
+          <p class="text-xs text-secondary">Du hast alle fälligen Wiederholungen für diese Lerneinheit gemeistert.</p>
           <div class="flex justify-center gap-3 pt-2">
             <a href="#heute" class="btn btn-primary btn-sm">Zum Dashboard</a>
             <button id="btnRestart" class="btn btn-secondary btn-sm">Weitere Karten lernen</button>
@@ -97,17 +97,18 @@ function renderReviewPlayer(container, deck) {
         </div>
 
         <!-- The Flashcard Box -->
-        <div id="cardBox" class="bento-card p-8 cursor-pointer text-center min-h-[300px] flex flex-col justify-between transition-all select-none">
+        <div id="cardBox" class="bento-card p-8 cursor-pointer text-center min-h-[320px] flex flex-col justify-between transition-all select-none">
           <div class="flex-between items-center text-xs text-secondary">
             <span class="badge badge-gray">${card.partOfSpeech}</span>
             <span class="badge ${card.provenance === 'AUS_QUELLE' ? 'badge-emerald' : 'badge-amber'}">${card.provenance}</span>
           </div>
 
           <!-- Front Content -->
-          <div class="my-6">
-            ${card.article && card.article !== '-' ? `<div class="text-sm font-bold uppercase text-blue-500 mb-1">${card.article}</div>` : ''}
+          <div class="my-6 space-y-2">
+            ${card.article && card.article !== '-' ? `<div class="text-sm font-bold uppercase text-blue-500">${card.article}</div>` : ''}
             <div class="text-3xl font-extrabold text-primary tracking-tight">${card.word}</div>
-            ${card.plural && card.plural !== '-' ? `<div class="text-xs text-secondary mt-1">Plural: ${card.plural}</div>` : ''}
+            ${card.stammformen ? `<div class="text-xs font-mono text-blue-400 bg-blue-500/10 py-1 px-2.5 rounded-md inline-block mt-1">${card.stammformen}</div>` : ''}
+            ${card.plural && card.plural !== '-' ? `<div class="text-xs text-secondary">Plural: ${card.plural}</div>` : ''}
           </div>
 
           <!-- Hint -->
@@ -128,9 +129,16 @@ function renderReviewPlayer(container, deck) {
               ${card.exampleEnglish ? `<div class="text-muted text-[11px]">${card.exampleEnglish}</div>` : ''}
             </div>
 
+            ${card.relatedWords && card.relatedWords.length > 0 ? `
+              <div class="text-xs">
+                <span class="font-bold text-muted">Wortfamilie / Verwandt: </span>
+                <span class="text-blue-400 font-medium">${card.relatedWords.join(' · ')}</span>
+              </div>
+            ` : ''}
+
             ${card.collocations && card.collocations.length > 0 ? `
               <div class="text-xs">
-                <span class="font-bold text-muted">Typische Kollokationen: </span>
+                <span class="font-bold text-muted">Kollokationen: </span>
                 <span class="text-secondary">${card.collocations.join(' · ')}</span>
               </div>
             ` : ''}
@@ -222,7 +230,7 @@ function renderVocabExplorer(container, vocabList) {
       <!-- Search & Filters Bar -->
       <div class="bento-card space-y-3">
         <div class="flex-between flex-wrap gap-3">
-          <input type="text" id="searchInput" placeholder="Vokabel, Bedeutung oder Präfix suchen (z. B. 'ablegen', 'unter-', 'übernehmen', 'Belastung')..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-sm outline-none flex-1 min-w-[260px]" />
+          <input type="text" id="searchInput" placeholder="Vokabel, Bedeutung, Präfix oder Stammform suchen (z. B. 'vorschlagen', 'unterbrechen', 'peinlich', 'Grund')..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-sm outline-none flex-1 min-w-[260px]" />
           <div class="flex gap-2">
             <select id="filterLevel" class="p-2 bg-subtle border border-subtle rounded-lg text-primary text-xs outline-none">
               <option value="">Alle Niveaus</option>
@@ -246,7 +254,7 @@ function renderVocabExplorer(container, vocabList) {
           </div>
         </div>
 
-        <!-- Quick Prefix Filter Buttons (AB, UNTER, ÜBER, AN, AUF, AUS, EIN, VOR, MIT, VER, BE, ENT, ZER) -->
+        <!-- Quick Prefix Filter Buttons -->
         <div class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-subtle text-xs">
           <span class="font-bold text-muted uppercase text-[11px] mr-1">Präfix-Verben:</span>
           <button class="btn btn-xs ${activePrefix === 'alle' ? 'btn-primary' : 'btn-secondary'} prefix-btn" data-prefix="alle">Alle</button>
@@ -268,7 +276,7 @@ function renderVocabExplorer(container, vocabList) {
       <!-- Word Count Badge -->
       <div class="flex-between text-xs text-secondary px-1">
         <span>Gefundene Wörter: <strong id="vocabCount">${vocabList.length}</strong></span>
-        <span>Klicke auf <strong>▶</strong> für Sprachausgabe</span>
+        <span>Klicke auf <strong>▶ 1.0x</strong> oder <strong>🐢 0.7x</strong> für Sprachausgabe</span>
       </div>
 
       <!-- Vocabulary Grid -->
@@ -301,9 +309,12 @@ function renderVocabExplorer(container, vocabList) {
             <span class="badge ${v.provenance === 'AUS_QUELLE' ? 'badge-emerald' : 'badge-amber'} text-[10px]">${v.provenance}</span>
           </div>
 
-          <div class="flex items-baseline gap-2 pt-1">
-            ${v.article && v.article !== '-' ? `<span class="text-xs font-bold uppercase text-blue-500">${v.article}</span>` : ''}
-            <h3 class="font-bold text-lg text-primary">${v.word}</h3>
+          <div class="pt-1">
+            <div class="flex items-baseline gap-2">
+              ${v.article && v.article !== '-' ? `<span class="text-xs font-bold uppercase text-blue-500">${v.article}</span>` : ''}
+              <h3 class="font-bold text-lg text-primary">${v.word}</h3>
+            </div>
+            ${v.stammformen ? `<div class="text-[11px] font-mono text-blue-400 bg-blue-500/10 py-0.5 px-2 rounded mt-1 inline-block">${v.stammformen}</div>` : ''}
           </div>
           ${v.plural && v.plural !== '-' ? `<div class="text-[11px] text-muted">Plural: ${v.plural}</div>` : ''}
 
@@ -314,8 +325,14 @@ function renderVocabExplorer(container, vocabList) {
             ${v.exampleEnglish ? `<div class="text-muted text-[11px]">${v.exampleEnglish}</div>` : ''}
           </div>
 
-          ${v.collocations && v.collocations.length > 0 ? `
+          ${v.relatedWords && v.relatedWords.length > 0 ? `
             <div class="text-[11px] text-muted pt-1">
+              <span class="font-semibold text-blue-400">Wortfamilie:</span> ${v.relatedWords.join(' · ')}
+            </div>
+          ` : ''}
+
+          ${v.collocations && v.collocations.length > 0 ? `
+            <div class="text-[11px] text-muted pt-0.5">
               <span class="font-semibold text-secondary">Kollokation:</span> ${v.collocations.slice(0, 2).join(' · ')}
             </div>
           ` : ''}
@@ -351,7 +368,7 @@ function renderVocabExplorer(container, vocabList) {
     const dom = filterDomain.value;
 
     filtered = vocabList.filter(v => {
-      const matchQ = !q || v.word.toLowerCase().includes(q) || v.germanDefinition.toLowerCase().includes(q) || (v.tags || []).some(t => t.toLowerCase().includes(q));
+      const matchQ = !q || v.word.toLowerCase().includes(q) || v.germanDefinition.toLowerCase().includes(q) || (v.stammformen || '').toLowerCase().includes(q) || (v.relatedWords || []).some(rw => rw.toLowerCase().includes(q)) || (v.tags || []).some(t => t.toLowerCase().includes(q));
       const matchLvl = !lvl || v.level === lvl;
       const matchDom = !dom || v.domain.toLowerCase().includes(dom.toLowerCase());
       
