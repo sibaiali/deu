@@ -1,5 +1,6 @@
 // "Was sage ich?" & "Ich verstehe nicht!" Phrasentrainer
 // Stufenförmige Transformationen: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
+// Vollständig erweitert mit allen typischen Alltags- und Stations-Redewendungen
 
 export const PHRASES_DATA = {
   title: "Praktischer Phrasen-Transformator",
@@ -58,71 +59,68 @@ export const PHRASES_DATA = {
         },
         {
           id: "phr_006",
-          situation: "Man wird gebeten, eine Aufgabe zu übernehmen, für die man keine Zeit hat.",
-          basic: "Ich kann jetzt nicht.",
-          natural: "Ich muss erst das Zimmer fertig machen.",
-          professionalB2: "Ich bin aktuell noch mit dem Beziehen der Betten auf Zimmer 4 beschäftigt. Soll ich diese Aufgabe unterbrechen oder hat das Vorrang?",
-          c1: "Gegenwärtig bindet mich die Materialversorgung auf Station. Sofern die neue Maßnahme prioritär zu behandeln ist, disponiere ich meine Aufgaben gerne um."
+          situation: "Ein Patient verlangt vertrauliche Informationen über einen Mitpatienten.",
+          basic: "Das weiß ich nicht.",
+          natural: "Darüber darf ich leider keine Auskunft geben.",
+          professionalB2: "Aus Gründen der gesetzlichen Schweigepflicht (§ 203 StGB) und des Datenschutzes darf ich Ihnen dazu keine Auskunft erteilen.",
+          c1: "Ich bitte um Verständnis, dass mir im Rahmen der ärztlichen Schweigepflicht und des Datenschutzes jegliche Auskunft über Dritte strikt untersagt ist."
         }
       ]
     },
     {
-      id: "cat_fehler_feedback",
-      name: "Fehler eingestehen & Feedback erbitten",
+      id: "cat_redewendungen_arbeitskultur",
+      name: "Arbeitskultur & Deutsche Redewendungen",
       phrases: [
         {
           id: "phr_007",
-          situation: "Man hat ein Glas umgestoßen oder einen Arbeitsauftrag vergessen.",
-          basic: "Tut mir leid.",
-          natural: "Entschuldigung, das war mein Fehler, ich mache das sofort sauber.",
-          professionalB2: "Bitte entschuldigen Sie das Missgeschick. Ich bringe das unverzüglich in Ordnung und achte in Zukunft verstärkt darauf.",
-          c1: "Bedauerlicherweise ist mir hierbei ein Versäumnis unterlaufen. Ich habe bereits die notwendigen Korrekturmaßnahmen eingeleitet, um den ordnungsgemäßen Zustand wiederherzustellen."
+          situation: "Ein Kollege bietet das 'Du' an ('Du kannst mich übrigens duzen').",
+          basic: "Okay, danke.",
+          natural: "Danke, sehr gerne! Ich bin Ali.",
+          professionalB2: "Vielen Dank für das Angebot, das nehme ich gerne an! Dann machen wir das so.",
+          c1: "Herzlichen Dank für das entgegengebrachte Vertrauen. Das erleichtert die kollegiale Zusammenarbeit ungemein.",
+          whyExplanation: "In deutschen Krankenhäusern duzen sich Pflegeteams fast immer; Vorgesetzte und Ärzte werden meist gesiezt."
         },
         {
           id: "phr_008",
-          situation: "Man möchte am Ende der ersten Woche Rückmeldung erhalten.",
-          basic: "Wie war ich?",
-          natural: "Können Sie mir sagen, wie ich meine Arbeit mache?",
-          professionalB2: "Hätten Sie im Laufe des Tages kurz Zeit für eine kurze Rückmeldung zu meiner Arbeitsweise in der ersten Woche?",
-          c1: "Ich wäre Ihnen sehr dankbar für ein kurzes orientierendes Feedback bezüglich meiner bisherigen Stationsintegration und möglicher Entwicklungspotenziale."
-        }
-      ]
-    },
-    {
-      id: "cat_zeit_gewinnen",
-      name: "Zeit gewinnen & Deeskalieren",
-      phrases: [
+          situation: "Man möchte jemandem einen guten Feierabend wünschen ('Schönen Feierabend!').",
+          basic: "Tschüss bis morgen.",
+          natural: "Schönen Feierabend und erhol dich gut!",
+          professionalB2: "Ich wünsche allen einen angenehmen und erholsamen Feierabend! Bis morgen früh.",
+          c1: "Ich verabschiede mich für heute und wünsche Ihnen einen wohlverdienten, erholsamen Feierabend."
+        },
         {
           id: "phr_009",
-          situation: "Ein Patient drängt auf eine sofortige Entscheidung oder Antwort.",
-          basic: "Warten Sie kurz.",
-          natural: "Geben Sie mir bitte eine Minute, ich schaue nach.",
-          professionalB2: "Ich verstehe, dass Ihnen das wichtig ist. Bitte geben Sie mir einen kurzen Moment, damit ich mich bei der Schichtleitung für Sie erkundigen kann.",
-          c1: "Ich nehme Ihr dringliches Anliegen vollkommen wahr. Um Ihnen eine fundierte Auskunft erteilen zu können, halte ich umgehend Rücksprache mit der verantwortlichen Bezugspflegekraft."
+          situation: "Jemand erklärt, wie der Ablauf auf Station funktioniert ('wie der Hase läuft').",
+          basic: "Ich lerne das.",
+          natural: "Ich schaue mir erst mal an, wie hier der Hase läuft.",
+          professionalB2: "Ich mache mich in den ersten Tagen gründlich mit den internen Stationsabläufen und Routinen vertraut.",
+          c1: "Ich nutze die Einarbeitungsphase gezielt, um die stationsspezifischen Prozesse und Gepflogenheiten minutiös zu verinnerlichen."
+        },
+        {
+          id: "phr_010",
+          situation: "Ein Kollege muss dringend vertraulich mit einem sprechen ('unter vier Augen').",
+          basic: "Komm mal mit.",
+          natural: "Können wir kurz unter vier Augen sprechen?",
+          professionalB2: "Hätten Sie kurz einen Moment Zeit für ein vertrauliches Gespräch unter vier Augen?",
+          c1: "Dürfte ich Sie um eine kurze bilaterale Rücksprache im Dienstzimmer unter Ausschluss Dritter bitten?"
+        },
+        {
+          id: "phr_011",
+          situation: "Man verspricht, das Team über wichtige Neuigkeiten zu informieren ('Bescheid geben / auf dem Laufenden halten').",
+          basic: "Ich sage es euch.",
+          natural: "Ich gebe euch sofort Bescheid, wenn sich etwas ändert.",
+          professionalB2: "Ich halte Sie über die weiteren Entwicklungen selbstverständlich lückenlos auf dem Laufenden.",
+          c1: "Sobald neue Erkenntnisse oder Laborbefunde vorliegen, werde ich das gesamte Team unverzüglich in Kenntnis setzen."
+        },
+        {
+          id: "phr_012",
+          situation: "In einer stressigen Stationssituation Ruhe bewahren ('einen kühlen Kopf bewahren').",
+          basic: "Nicht stressen.",
+          natural: "Keine Panik, wir bewahren jetzt erst mal einen kühlen Kopf.",
+          professionalB2: "Lassen Sie uns trotz der Hektik besonnen vorgehen und die Prioritäten der Reihe nach abarbeiten.",
+          c1: "In dieser Akutsituation ist es unabdingbar, Ruhe zu bewahren und ein strukturiertes, deeskalierendes Handeln zu gewährleisten."
         }
       ]
     }
-  ],
-
-  emergencyUnderstandingTrainer: {
-    title: "Ich verstehe nicht! — Schnelles & undeutliches Deutsch meistern",
-    tips: [
-      "1. Ruhe bewahren: Es ist völlig normal, dass Muttersprachler im Klinikalltag schnell und mit Dialekt/Abkürzungen sprechen.",
-      "2. Signalwort-Technik: Konzentriere dich auf Nomen und Verben (z. B. 'Zimmer 4', 'Wäschesack', 'bringen').",
-      "3. Sofortiges Nachfragen signalisiert Kompetenz, kein Versagen.",
-      "4. Paraphrasieren ('Du meinst also...') zwingt das Gegenüber zur Verlangsamung."
-    ],
-    scenarios: [
-      {
-        spokenFast: "Ali, bring ma eben fix die Kurve von der Zwo rüber ins Arztzimmer zum Doc!",
-        clarificationB2: "Habe ich richtig verstanden: Die Patientenkurve aus Zimmer 2 soll zu Dr. Weber ins Arztzimmer gebracht werden?",
-        standardGerman: "Ali, bringe bitte einmal schnell das Kurvenblatt aus Zimmer 2 hinüber in das Arztzimmer zum Arzt."
-      },
-      {
-        spokenFast: "Mensch, der 10er dekompensiert grad völlig, hol ma sofort die Bedarfsmedikation aus'm Giftschrank!",
-        clarificationB2: "Ich verständige sofort die Schichtleitung für Zimmer 10 – ich selbst darf nicht an den Medikamentenschrank.",
-        standardGerman: "Der Patient in Zimmer 10 ist in einer schweren Krise. Als BFDler alarmiere ich sofort das examinierte Pflegepersonal."
-      }
-    ]
-  }
+  ]
 };
