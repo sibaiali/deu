@@ -1021,14 +1021,30 @@ const Search = exports.Search = new SearchEngine();
   // ==========================================
   __register('router.js', function(module, exports, require) {
 // Client-Side Hash Router
-
 const Router = exports.Router = class Router {
   constructor(routes = {}, defaultRoute = 'heute') {
     this.routes = routes;
     this.defaultRoute = defaultRoute;
     this.currentRoute = null;
     this.params = {};
+    
     window.addEventListener('hashchange', () => this.handleRoute());
+
+    // Intercept clicks on hash navigation links to guarantee routing even on re-clicks
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const targetHash = link.getAttribute('href');
+        if (targetHash) {
+          const raw = targetHash.slice(1);
+          const [path] = raw.split('?');
+          if (this.currentRoute === path) {
+            // Same route clicked - force re-render
+            this.handleRoute();
+          }
+        }
+      }
+    });
   }
 
   init() {
@@ -1042,7 +1058,7 @@ const Router = exports.Router = class Router {
   handleRoute() {
     const rawHash = window.location.hash.slice(1) || this.defaultRoute;
     const [path, queryString] = rawHash.split('?');
-    this.currentRoute = path;
+    this.currentRoute = path || this.defaultRoute;
     this.params = {};
 
     if (queryString) {
@@ -1052,21 +1068,37 @@ const Router = exports.Router = class Router {
       }
     }
 
-    const handler = this.routes[path] || this.routes[this.defaultRoute];
+    const handler = this.routes[this.currentRoute] || this.routes[this.defaultRoute];
     if (handler) {
-      handler(this.params);
+      try {
+        handler(this.params);
+      } catch (err) {
+        console.error('Error executing route [' + this.currentRoute + ']:', err);
+        const container = document.getElementById('content-container') || document.body;
+        container.innerHTML = '<div class="p-8 bento-card border-red-500/50 text-red-400"><h2>Fehler beim Laden dieser Seite</h2><pre>' + (err.stack || err) + '</pre></div>';
+      }
+    } else {
+      console.warn('No handler for route:', this.currentRoute);
     }
 
     // Update active nav links
     document.querySelectorAll('.nav-link').forEach(el => {
-      if (el.getAttribute('data-route') === path) {
-        el.classList.add('nav-active');
+      if (el.getAttribute('data-route') === this.currentRoute) {
+        el.classList.add('active');
       } else {
-        el.classList.remove('nav-active');
+        el.classList.remove('active');
       }
     });
 
-    // Scroll to top
+    document.querySelectorAll('.mobile-nav-item').forEach(el => {
+      const href = (el.getAttribute('href') || '').replace('#', '');
+      if (href === this.currentRoute) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
     window.scrollTo(0, 0);
   }
 }
@@ -21912,7 +21944,7 @@ const { SRS } = require('../srs.js');
 const { VOCABULARY_DATA } = require('../data/vocabulary_data.js');
 const { AdaptiveEngine } = require('../adaptive_engine.js');
 
-export async function renderDashboard(container) {
+const renderDashboard = exports.renderDashboard = async function renderDashboard(container) {
   const settings = Storage.getSettings();
   const dueCards = await SRS.getDueCards(VOCABULARY_DATA);
   const dueCount = dueCards.length;
@@ -26308,6 +26340,9 @@ document.addEventListener('keydown', (e) => {
     if (modal) modal.classList.add('hidden');
   }
 });
+
+// Initialize Router
+appRouter.init();
 
   });
 

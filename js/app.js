@@ -212,3 +212,6 @@ document.addEventListener('keydown', (e) => {
     if (modal) modal.classList.add('hidden');
   }
 });
+
+// Initialize Router
+appRouter.init();
