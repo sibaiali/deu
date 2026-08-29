@@ -2021,8 +2021,7 @@ const BFD_DATA = exports.BFD_DATA = {
   // ==========================================
   __register('data/vocabulary_data.js', function(module, exports, require) {
 // Umfassende Vokabel- und Chunk-Datenbank (1000+ Einträge, Anki-Deck, Präfix-Verben, Klinik & Alltag)
-const VOCABULARY_DATA = exports.VOCABULARY_DATA = [
-  {
+const VOCABULARY_DATA = exports.VOCABULARY_DATA = [{
     "id": "voc_das_taschengeld_001",
     "word": "das Taschengeld",
     "article": "das",
@@ -20094,8 +20093,191 @@ const VOCABULARY_DATA = exports.VOCABULARY_DATA = [
       "alltag",
       "anki"
     ]
-  }
-];
+  },
+{
+  "id": "vocab_exp_001",
+  "word": "die Geborgenheit",
+  "article": "die",
+  "category": "Gefühle & Partnerschaft",
+  "level": "B2",
+  "stammformen": "die Geborgenheit (nur Sg.)",
+  "relatedWords": [
+    "geborgen",
+    "bergen",
+    "die Zuflucht",
+    "der Schutz"
+  ],
+  "definitionDe": "Ein tiefes seelisches Gefühl von Wärme, Schutz, Vertrauen und innerer Sicherheit bei einem geliebten Menschen.",
+  "definitionEn": "Sense of security, emotional warmth, trust and feeling deeply protected/cherished.",
+  "collocations": [
+    "Geborgenheit schenken",
+    "sich geborgen fühlen",
+    "Geborgenheit ausstrahlen"
+  ],
+  "exampleDe": "Bei dir fühle ich mich vollkommen angekommen und spüre eine tiefe Geborgenheit.",
+  "exampleEn": "With you I feel completely at peace and sense a deep feeling of emotional safety."
+},
+{
+  "id": "vocab_exp_002",
+  "word": "trösten",
+  "article": "",
+  "category": "Gefühle & Partnerschaft",
+  "level": "B1+",
+  "stammformen": "trösten – tröstete – hat getröstet",
+  "relatedWords": [
+    "der Trost",
+    "tröstlich",
+    "untöstbar",
+    "der Trostspender"
+  ],
+  "definitionDe": "Durch liebevolle Worte, Umarmungen und Zuhören den Kummer oder die Trauer einer Person lindern.",
+  "definitionEn": "To comfort, to console.",
+  "collocations": [
+    "jemanden liebevoll trösten",
+    "Trost spenden",
+    "sich trösten lassen"
+  ],
+  "exampleDe": "Nach ihrem schweren Arbeitstag habe ich meine Freundin ganz fest in den Arm genommen und getröstet.",
+  "exampleEn": "After her tough workday I held my girlfriend tight in my arms and comforted her."
+},
+{
+  "id": "vocab_exp_003",
+  "word": "die Co-Regulation",
+  "article": "die",
+  "category": "Kinder- & Jugendpsychiatrie",
+  "level": "B2/C1",
+  "stammformen": "die Co-Regulation, -en",
+  "relatedWords": [
+    "regulieren",
+    "die Selbstregulation",
+    "das Nervensystem",
+    "die Feinfühligkeit"
+  ],
+  "definitionDe": "Der feinfühlige Prozess, bei dem eine Bezugsperson durch die eigene innere Ruhe einem übererregten Kind hilft, sein Nervensystem zu beruhigen.",
+  "definitionEn": "Co-regulation (calming an agitated child through one's own calm nervous system).",
+  "collocations": [
+    "emotionale Co-Regulation",
+    "Co-Regulation anbieten",
+    "zur Selbstregulation anleiten"
+  ],
+  "exampleDe": "Kinder können Wutanfälle noch nicht alleine steuern; sie brauchen unsere ruhige Co-Regulation auf Augenhöhe.",
+  "exampleEn": "Children cannot yet manage tantrums alone; they need our calm co-regulation at eye level."
+},
+{
+  "id": "vocab_exp_004",
+  "word": "einhaken",
+  "article": "",
+  "category": "Kommunikation & BFD",
+  "level": "B2",
+  "stammformen": "hakt ein – hakte ein – hat eingehakt",
+  "relatedWords": [
+    "der Haken",
+    "nachhaken",
+    "unterbrechen",
+    "die Wortmeldung"
+  ],
+  "definitionDe": "Höflich und gezielt in ein laufendes Fachgespräch oder eine Teamsitzung eingreifen, um einen Aspekt zu ergänzen.",
+  "definitionEn": "To chime in, to interject politely into a discussion.",
+  "collocations": [
+    "kurz einhaken dürfen",
+    "an dieser Stelle einhaken",
+    "kritisch einhaken"
+  ],
+  "exampleDe": "Wenn ich kurz einhaken dürfte: Herr Becker hat heute Vormittag über Schwindel geklagt.",
+  "exampleEn": "If I might briefly chime in: Mr. Becker complained about dizziness this morning."
+},
+{
+  "id": "vocab_exp_005",
+  "word": "die Zweisamkeit",
+  "article": "die",
+  "category": "Partnerschaft & Herz",
+  "level": "B2",
+  "stammformen": "die Zweisamkeit (nur Sg.)",
+  "relatedWords": [
+    "zusammen",
+    "einsam",
+    "die Gemeinsamkeit",
+    "die Paarzeit"
+  ],
+  "definitionDe": "Die exklusive, ungestörte gemeinsame Zeit zweier Partner.",
+  "definitionEn": "Togetherness, intimate couple time.",
+  "collocations": [
+    "die Zweisamkeit genießen",
+    "ungestörte Zweisamkeit",
+    "Zweisamkeit pflegen"
+  ],
+  "exampleDe": "Trotz der Wechselschichten im Krankenhaus reservieren wir uns feste Abende für unsere Zweisamkeit.",
+  "exampleEn": "Despite rotating shifts in the hospital, we set aside dedicated evenings for our togetherness."
+},
+{
+  "id": "vocab_exp_006",
+  "word": "reizarm",
+  "article": "",
+  "category": "Kinder- & Jugendpsychiatrie",
+  "level": "B2",
+  "stammformen": "reizarm – reizärmer – am reizärmsten",
+  "relatedWords": [
+    "der Reiz",
+    "die Reizüberflutung",
+    "reizintensiv",
+    "die Beruhigung"
+  ],
+  "definitionDe": "Frei von störenden Sinneseindrücken (Lärm, Hektik, visuelle Unruhe).",
+  "definitionEn": "Low-stimulus, calm sensory environment.",
+  "collocations": [
+    "eine reizarme Umgebung schaffen",
+    "reizarmes Zimmer",
+    "reizarme Gestaltung"
+  ],
+  "exampleDe": "Für Kinder mit ADHS ist ein reizarmes Arbeitsumfeld entscheidend für die Konzentration.",
+  "exampleEn": "For children with ADHD, a low-stimulus work environment is crucial for concentration."
+},
+{
+  "id": "vocab_exp_007",
+  "word": "die Entlastung",
+  "article": "die",
+  "category": "Klinik & Partnerschaft",
+  "level": "B2",
+  "stammformen": "die Entlastung, -en",
+  "relatedWords": [
+    "entlasten",
+    "die Belastung",
+    "belastbar",
+    "der Entlastungszeuge"
+  ],
+  "definitionDe": "Die Verminderung oder Beseitigung von körperlichem oder seelischem Druck und Aufgaben.",
+  "definitionEn": "Relief, easing of burden/workload.",
+  "collocations": [
+    "spürbare Entlastung",
+    "zur Entlastung beitragen",
+    "Entlastung schaffen"
+  ],
+  "exampleDe": "Als BFDler sorge ich für die Entlastung des Pflegeteams bei Botengängen und Patientenbegleitungen.",
+  "exampleEn": "As a BFD volunteer, I provide relief for the nursing team with errands and patient escorts."
+},
+{
+  "id": "vocab_exp_008",
+  "word": "anschwellen",
+  "article": "",
+  "category": "Medizin & Symptome",
+  "level": "B2",
+  "stammformen": "schwillt an – schwoll an – ist angeschwollen",
+  "relatedWords": [
+    "die Schwellung",
+    "abschwellen",
+    "geschwollen",
+    "das Ödem"
+  ],
+  "definitionDe": "Durch Flüssigkeitseinlagerung oder Entzündung an Umfang zunehmen.",
+  "definitionEn": "To swell up (edema, injury).",
+  "collocations": [
+    "das Gelenk schwillt an",
+    "stark angeschwollen",
+    "sichtbar anschwellen"
+  ],
+  "exampleDe": "Nach dem Sturz ist das rechte Sprunggelenk des Patienten innerhalb von Minuten angeschwollen.",
+  "exampleEn": "Following the fall, the patient's right ankle joint swelled up within minutes."
+}];
 
   });
 
@@ -20524,17 +20706,115 @@ Beispiele aus der Praxis:
   // MODULE: data/psychology_data.js
   // ==========================================
   __register('data/psychology_data.js', function(module, exports, require) {
-// Psychologie verstehen — Sprach- und Handlungswissen für das psychiatrische Arbeitsumfeld
-// Synthese aus: PsyDeutsch_Idee.pdf, 11a3b5a3-c006-4da8-b3c5-9676d5fcc49e_Psychotherapie.pdf, 85e84574-7323-429f-90b9-dce257bf5641_KJP.pdf, intus_Booklet.pdf, Elisabeth Wagner
+// Psychologie & Kinder-/Jugendpsychiatrie (KJP) verstehen
+// Sprach-, Handlungs- und Deeskalationswissen für Klinik, Pädagogik & Alltag
 
 const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   overview: {
     title: "Psychologie & Psychiatrische Kommunikation verstehen",
-    disclaimer: "Dieses Modul dient dem Kommunikations-, Sprach- und Handlungswissen im Rahmen des Freiwilligendienstes. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik oder Therapieentscheidung.",
+    disclaimer: "Dieses Modul vermittelt sprachliches und deeskalierendes Handlungswissen für BFD, Klinik und Betreuung. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik.",
     provenance: "AUS_QUELLE"
   },
 
   concepts: [
+    // ----------------------------------------
+    // 1. KINDER- & JUGENDPSYCHOLOGIE / KJP
+    // ----------------------------------------
+    {
+      id: "psy_bindungstheorie",
+      term: "Die Bindungstheorie & Bindungsmuster (nach Bowlby / Ainsworth)",
+      domain: "Entwicklungspsychologie & KJP",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Entwicklung.pdf / Psychoanalyse",
+      explanationGerman: "Kinder entwickeln basierend auf den ersten Lebensjahren ein inneres Arbeitsmodell von Beziehungen: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden unterdrückt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bezugsperson bei traumatischen Erfahrungen).",
+      simpleExample: "Ein Kind weint beim Verlassen der Mutter, lässt sich aber nach ihrer Rückkehr schnell trösten (sicher gebunden).",
+      workplaceContext: "Traumatisierte Kinder und Jugendliche auf Station testen oft Grenzen extrem aus, um unbewusst zu prüfen: 'Verlässt du mich auch, wenn ich schwierig bin?'",
+      whatToDo: [
+        "Verlässlichkeit und Vorhersehbarkeit im Verhalten zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
+        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Kindes.",
+        "Positive Zuwendung nicht an Bedingungen oder 'gutes Verhalten' knüpfen."
+      ],
+      whatToAvoid: [
+        "Liebesentzug oder Drohungen ('Wenn du nicht brav bist, gehe ich weg').",
+        "Widersprüchliche Signale (Doppelbotschaften).",
+        "Die Bindungsangst des Kindes ins Lächerliche ziehen."
+      ],
+      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit", "die Bindungsperson"],
+      speakingPractice: "Ich sehe, dass du gerade große Angst hast. Ich bleibe hier bei dir sitzen, bis du dich wieder sicher fühlst."
+    },
+
+    {
+      id: "psy_trotzphase_wutanfall",
+      term: "Die Autonomiephase (Trotzphase) & Emotionsregulation bei Kindern",
+      domain: "Entwicklungs- & Traumapädagogik",
+      provenance: "AUS_QUELLE",
+      source: "Traumapaedagogik_Klinik.pdf",
+      explanationGerman: "Zwischen dem 2. und 4. Lebensjahr begreift das Kind sein eigenes 'Ich' und entwickelt einen eigenen Willen. Da der präfrontale Kortex (Sitz der Impulskontrolle) noch unreif ist, führen Frustrationen zu massiven emotionalen Entladungen (Wutanfällen).",
+      simpleExample: "Das Kind darf die Steckdose nicht berühren und wirft sich schreiend auf den Boden.",
+      workplaceContext: "In der Betreuung oder Kinderklinik geraten Kinder bei kleinsten Verboten in heftige Wut. Strafen verschlimmern die Übererregung der Amygdala.",
+      whatToDo: [
+        "Auf Augenhöhe gehen (in die Hocke gehen, Blickkontakt auf gleicher Höhe).",
+        "Das Gefühl benennen und validieren: 'Du bist gerade richtig wütend, weil du noch weiterspielen wolltest.'",
+        "Körperliche Grenzen ruhig und bestimmt halten: 'Wütend sein ist okay, aber Schlagen/Beißen ist nicht erlaubt.'"
+      ],
+      whatToAvoid: [
+        "Selbst laut werden oder das Kind anschreien.",
+        "Lange rationale Vorträge halten, während das Kind im Wutanfall ist (das Gehirn ist für Logik blockiert).",
+        "Das Kind zur Strafe isolieren ('Time-Out' im Zimmer)."
+      ],
+      relevantVocabulary: ["die Autonomiephase", "die Impulskontrolle", "das Gefühlschaos", "die Wutbewältigung", "auf Augenhöhe gehen"],
+      speakingPractice: "Ich merke, wie wütend du bist. Das ist vollkommen verständlich. Atme kurz mit mir aus – ich helfe dir dabei."
+    },
+
+    {
+      id: "psy_adhs_reizueberflutung",
+      term: "ADHS & Reizüberflutung bei Kindern & Jugendlichen",
+      domain: "Kinder- & Jugendpsychiatrie",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf",
+      explanationGerman: "Eine neurobiologische Störung der Reizfilterung und Dopaminregulation. Betroffene Kinder können sensorische Reize (Geräusche, Bewegungen) schlechter filtern, was zu Hyperaktivität, Impulsivität und rascher Erschöpfung durch Reizüberflutung führt.",
+      simpleExample: "Ein Kind kann bei Hintergrundmusik oder vielen bunten Bildern im Raum den Hausaufgaben nicht folgen.",
+      workplaceContext: "Auf Station oder in der Schule wirken diese Kinder oft 'unruhig', 'störend' oder 'aggressiv', obwohl sie schlicht sensorisch überfordert sind.",
+      whatToDo: [
+        "Reizarme Umgebung schaffen (visuelle Ablenkungen und Lärm minimieren).",
+        "Kurze, präzise Arbeitsaufträge in Einzelschritten geben (1 Anweisung statt 5 auf einmal).",
+        "Bewegungspausen gezielt einplanen (Bewegungsdrang als Ressource nutzen)."
+      ],
+      whatToAvoid: [
+        "Pauschale Vorwürfe wie 'Du hörst nie zu!' oder 'Sitz endlich still!'.",
+        "Überladene Räume mit ständig wechselnden Sinnesreizen.",
+        "Komplexe mehrstufige Aufgabenstellungen ohne Zwischenstopps."
+      ],
+      relevantVocabulary: ["die Reizfilterung", "die Impulsivität", "die Aufmerksamkeitsspanne", "reizarm", "die Strukturierung"],
+      speakingPractice: "Lass uns zuerst nur Aufgabe 1 zusammen machen. Wenn du die geschafft hast, machen wir eine kurze 2-Minuten-Pause."
+    },
+
+    {
+      id: "psy_kindgerechte_kommunikation",
+      term: "Kindgerechte Kommunikation & Angstreduktion in der Klinik",
+      domain: "Klinische Pädagogik",
+      provenance: "AUS_QUELLE",
+      source: "Klinische_Kommunikation_KJP.pdf",
+      explanationGerman: "Kinder verstehen Sprache bis etwa zum 10. Lebensjahr sehr wörtlich und bildhaft. Medizinische Fachbegriffe wie 'Blut abnehmen' oder 'Spritze' lösen Todes- oder Verstümmelungsängste aus. Eine kindgerechte Sprache nutzt Metaphern, Entdramatisierung und vorbereitende Ankündigungen.",
+      simpleExample: "Statt 'Wir nehmen dir jetzt Blut ab' sagt man: 'Wir zählen kurz deine Blutkörperchen mit einem kleinen Zauber-Röhrchen.'",
+      workplaceContext: "Bei Blutdruckmessung, EKG oder Verbandswechsel vor der Durchführung das Gerät am Stofftier oder spielerisch vormachen.",
+      whatToDo: [
+        "Positive, ehrliche Erklärungen ('Es piekst kurz wie ein Mückenstich, danach ist es vorbei').",
+        "Das Kind aktiv einbeziehen ('Möchtest du das Pflaster mit den Dinos oder den Sternen?').",
+        "Nach der Untersuchung loben und die Tapferkeit anerkennen."
+      ],
+      whatToAvoid: [
+        "Lügen wie 'Das tut überhaupt gar nicht weh!' (zerstört das Vertrauen, wenn es doch wehtut).",
+        "Fachjargon und drohende Worte verwenden.",
+        "Ironie oder Sarkasmus (Kinder verstehen Ironie kognitiv noch nicht)."
+      ],
+      relevantVocabulary: ["die kindgerechte Sprache", "die Angstreduktion", "die Wahlmöglichkeit", "der Zaubermückenstich", "die Tapferkeit"],
+      speakingPractice: "Schau mal, diese Manschette pustet sich jetzt auf wie ein kleiner Luftballon und umarmt deinen Arm ganz fest."
+    },
+
+    // ----------------------------------------
+    // 2. ERWACHSENENPSYCHIATRIE & DEESKALATION
+    // ----------------------------------------
     {
       id: "psy_trauma",
       term: "Das Trauma / Die Traumatisierung",
@@ -20557,6 +20837,7 @@ const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
       relevantVocabulary: ["das Bindungstrauma", "die Ohnmacht", "überwältigend", "die Bewältigungsstrategie", "die Reizüberflutung"],
       speakingPractice: "Herr Müller, ich sehe, dass Ihnen das gerade zu viel wird. Ich trete einen Schritt zurück. Sie sind hier im Krankenhaus in Sicherheit."
     },
+
     {
       id: "psy_ptbs_flashback",
       term: "Der Flashback / Das Wiedererleben (PTBS)",
@@ -20579,87 +20860,28 @@ const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
       relevantVocabulary: ["die Intrusion", "die Erdung", "die Orientierung im Hier und Jetzt", "das Hyperarousal", "die Schreckreaktion"],
       speakingPractice: "Frau Schmidt, hören Sie meine Stimme. Sie sind hier im Gemeinschaftsraum in Marburg. Es ist August. Spüren Sie Ihre Füße auf dem festen Boden?"
     },
+
     {
       id: "psy_grounding_54321",
       term: "Die 5-4-3-2-1 Erdungstechnik (Grounding)",
       domain: "Deeskalation & Reorientierung",
       provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 20-22)",
-      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, um Personen bei Dissoziation oder Flashbacks durch Aktivierung der 5 Sinne im gegenwärtigen Moment zu verankern.",
-      steps: [
-        "5 Dinge benennen, die man im Raum sieht (z. B. Tisch, Lampe, Uhr, Bild, Tür).",
-        "4 Dinge benennen, die man körperlich spürt (z. B. Stuhllehne, Kleidung, Fußboden, Kühle des Glases).",
-        "3 Geräusche benennen, die man gerade hört (z. B. Straßenlärm, Lüftung, Vogelgezwitscher).",
-        "2 Dinge benennen, die man riechen kann (z. B. Seife, Tee, frische Luft).",
-        "1 Sache benennen, die man schmecken kann (z. B. Minze, ein Schluck kaltes Wasser)."
-      ],
-      workplaceContext: "Bei akuter Dissoziation oder starkem Zittern eines Patienten.",
-      speakingPractice: "Lassen Sie uns gemeinsam 5 Dinge suchen, die blau sind. Sehen Sie die Decke dort? Was sehen Sie noch?"
-    },
-    {
-      id: "psy_attachment",
-      term: "Die Bindungstypen (Bindungstheorie nach Ainsworth/Bowlby)",
-      domain: "Entwicklungspsychologie",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 13-14) & Psychotherapie.pdf (S. 3-4)",
-      explanationGerman: "Das Muster emotionaler Verbundenheit zwischen Kind und primärer Bezugsperson. Man unterscheidet: 1. Sichere Bindung (kann Nähe suchen und sich beruhigen), 2. Unsicher-vermeidende Bindung (unterdrückt Hilfebedürfnis, wirkt scheinbar unabhängig), 3. Unsicher-ambivalente Bindung (übermäßige Verunsicherung, schwer beruhigbar), 4. Desorganisierte Bindung (widersprüchliches Verhalten, Erstarren).",
-      workplaceContext: "Muster zeigen sich bei erwachsenen Patienten in der Beziehungsgestaltung zum Pflegeteam (z. B. extremes Klammern oder abrupter Rückzug).",
-      whatToDo: ["Verlässlichkeit, Berechenbarkeit und Transparenz leben.", "Absprachen absolut pünktlich einhalten."],
-      whatToAvoid: ["Persönliche Kränkung bei ablehnendem Patientenverhalten."],
-      relevantVocabulary: ["die Bezugsperson", "das Bindungsmuster", "die Feinfühligkeit", "die Verlässlichkeit", "die Berechenbarkeit"]
-    },
-    {
-      id: "psy_parentification",
-      term: "Die Parentifizierung",
-      domain: "Familienpsychologie",
-      provenance: "AUS_QUELLE",
-      source: "PsyKurs_GK.pdf (S. 9) & PsyDeutsch_Idee.pdf (S. 15)",
-      explanationGerman: "Ein Rollenumkehr-Prozess, bei dem ein Kind emotionale oder praktische Verantwortung für seine psychisch erkrankten Eltern übernimmt. Unterschieden wird instrumentelle Parentifizierung (Kochen, Haushalt, Geschwister versorgen) und emotionale Parentifizierung (Tröster, Partnerersatz, Konfliktschlichter).",
-      workplaceContext: "Besonders relevant bei Angehörigenbesuchen und in der Kinder- und Jugendpsychiatrie (KJP).",
-      whatToDo: ["Das Verantwortungsgefühl des Kindes anerkennen, aber altersgerechte Entlastung ermöglichen.", "Klare Grenzen zwischen Erwachsenen- und Kinderaufgaben kommunizieren."],
-      whatToAvoid: ["Dem Kind zusätzliche Verantwortung für den Genesungsprozess der Eltern aufbürden."],
-      relevantVocabulary: ["die Rollenumkehr", "die Überverantwortung", "der Loyalitätskonflikt", "die emotionale Überforderung"]
-    },
-    {
-      id: "psy_active_listening",
-      term: "Das Aktive Zuhören & Beziehungslernen",
-      domain: "Kommunikation",
-      provenance: "AUS_QUELLE",
-      source: "intus_Booklet.pdf (S. 3-11)",
-      explanationGerman: "Empathische Gesprächsführung, bei der man dem Gegenüber ungeteilte Aufmerksamkeit schenkt, ohne zu unterbrechen, ohne vorschnelle Ratschläge zu geben und durch Paraphrasieren ('Habe ich Sie richtig verstanden, dass...') die Gefühle des anderen spiegelt.",
-      workplaceContext: "Wenn ein Patient Redebedarf hat oder seine Sorgen äußern möchte.",
+      source: "PsyDeutsch_Idee.pdf (S. 2, 8, 30)",
+      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, die das Nervensystem bei Dissoziation, Panik oder Flashbacks über die 5 Sinne in die Gegenwart zurückholt: 5 Dinge sehen, 4 Dinge spüren, 3 Dinge hören, 2 Dinge riechen, 1 Sache schmecken.",
+      simpleExample: "Der Patient zählt laut auf: Ich sehe den Stuhl, das Fenster, die Lampe, die Uhr, die Tür.",
+      workplaceContext: "Sofortintervention bei Patienten mit massiver innerer Anspannung oder Panikattacken im Stationsflur.",
       whatToDo: [
-        "Blickkontakt halten und offene Körperhaltung einnehmen.",
-        "Kurze Pausen und Stille aushalten können.",
-        "Gefühle anerkennen ('Das klingt wirklich sehr anstrengend für Sie')."
+        "Mit ruhiger, tiefer Stimme anleiten.",
+        "Geduldig warten, bis der Patient jeden Sinn wahrgenommen hat.",
+        "Gemeinsam tief durchatmen (längeres Ausatmen als Einatmen)."
       ],
       whatToAvoid: [
-        "Vorschnelle Lösungen anbieten ('Kopf hoch, das wird schon wieder').",
-        "Eigene private Geschichten vergleichen ('Bei mir war das auch mal so...')."
+        "Hektik verbreiten oder den Patienten drängen.",
+        "Komplexe abstrakte Fragen stellen.",
+        "Über das auslösende Thema diskutieren."
       ],
-      relevantVocabulary: ["das Paraphrasieren", "der Potenzialblick", "die Resonanz", "die Wertschätzung", "die Validierung"],
-      speakingPractice: "Wenn ich Sie richtig verstehe, fühlen Sie sich heute besonders müde und kraftlos. Möchten Sie sich einen Moment ausruhen?"
-    },
-    {
-      id: "psy_deescalation",
-      term: "Die Verbale Deeskalation",
-      domain: "Sicherheit & Krisenintervention",
-      provenance: "AUS_QUELLE",
-      source: "Elisabeth Wagner & starthilfe_krankenhausalltag.pdf (S. 34, 46)",
-      explanationGerman: "Gezielte deeskalierende Gesprächstechniken, um bei aufkommender Wut, Aggression oder Verzweiflung eines Patienten die emotionale Anspannung stufenweise abzubauen, ohne Machtkämpfe einzugehen.",
-      workplaceContext: "Patient schimpft lautstark im Stationsflur über das Essen, die Ärzte oder die Stationsregeln.",
-      whatToDo: [
-        "Stimme bewusst leiser und langsamer stellen (Pacing).",
-        "Seitlich zum Patienten stehen (nicht frontal konfrontativ).",
-        "Anliegen ernst nehmen, ohne Regelverstöße zu erlauben ('Ich höre Ihren Ärger. Lassen Sie uns in Ruhe darüber sprechen')."
-      ],
-      whatToAvoid: [
-        "Lauter werden als der Patient.",
-        "Sarkastisch oder belehrend antworten.",
-        "Den Patienten in eine Ecke drängen."
-      ],
-      relevantVocabulary: ["die Frustrationstoleranz", "die Reizbarkeit", "die Deeskalation", "der Fluchtweg", "das Distanzgebot"],
-      speakingPractice: "Herr Wagner, ich höre, wie wütend Sie gerade sind. Ich möchte Ihnen gerne zuhören. Bitte sprechen Sie mit mir in normaler Lautstärke, damit wir eine Lösung finden können."
+      relevantVocabulary: ["die Sinneswahrnehmung", "das Grounding", "die Panikattacke", "die Beruhigung", "das Ein- und Ausatmen"],
+      speakingPractice: "Schauen Sie sich im Raum um. Nennen Sie mir bitte fünf Gegenstände mit blauer Farbe, die Sie hier sehen."
     }
   ]
 };
@@ -20670,14 +20892,17 @@ const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   // MODULE: data/simulations_data.js
   // ==========================================
   __register('data/simulations_data.js', function(module, exports, require) {
-// BFD-Simulationen — Interaktive, mehrstufige Kommunikationsszenarien
-// Jedes Szenario enthält: Situation, Dialog, Ziel, Kriterien, Bewertungslogik, und gestufte Musterantworten (Basic, Natürlich, B2, C1)
+// BFD-, Familien- & Partnerschafts-Simulationen (Interaktive Dialog-Szenarien)
+// Stufenförmige Musterantworten: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
 
 const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
+  // ==========================================
+  // 1. KLINIK & BFD (Station 2 / UKGM Marburg)
+  // ==========================================
   {
     id: "sim_first_day_supervisor",
     title: "Erster Tag: Vorstellung bei der Stationsleitung",
-    category: "Onboarding & Team",
+    category: "Klinik & BFD",
     level: "B1+",
     workplace: "Stationszimmer P2 (Zentrum für Psychische Gesundheit)",
     provenance: "AUS_QUELLE",
@@ -20718,7 +20943,7 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   {
     id: "sim_patient_medication_request",
     title: "Sicherheit: Patient verlangt Bedarfsmedikation",
-    category: "Sicherheit & Grenzen",
+    category: "Klinik & BFD",
     level: "B2",
     workplace: "Flur der geschützten Akutstation",
     provenance: "AUS_QUELLE",
@@ -20730,84 +20955,243 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
       {
         speaker: "Herr Müller",
         text: "Ich halte das nicht mehr aus! Mir zerreißt es den Kopf. Geben Sie mir sofort meine Bedarfsmedikation aus dem Schrank, ich brauche die Tablette jetzt!",
-        guidance: "Bleiben Sie ruhig, wahren Sie einen Schritt Abstand. Sagen Sie klar, dass Sie als BFDler keine Medikamente ausgeben dürfen, aber sofort die Pflegekraft holen.",
-        expectedCriteria: ["Keine Medikamente versprechen", "Klare Rollengrenze", "Empathie/Validierung", "Pflegefachkraft informieren", "Ruhiger Ton"],
+        guidance: "Bleiben Sie ruhig. Signalisieren Sie Verständnis für seine Notlage, aber stellen Sie unmissverständlich klar, dass Sie als BFDler keine Medikamente ausgeben dürfen, und bieten Sie an, sofort die zuständige Pflegekraft zu holen.",
+        expectedCriteria: ["Ruhiger Ton", "Verständnis/Validierung", "Klare Rollengrenze (keine Medikamente)", "Sofortige Weiterleitung an Fachkraft"],
         responseTiers: {
-          basic: "Das darf ich nicht. Ich hole Schwester Sarah.",
-          natural: "Herr Müller, ich sehe, dass es Ihnen schlecht geht. Ich darf Ihnen als Freiwilliger aber keine Medikamente geben. Ich hole sofort Schwester Sarah für Sie.",
-          professionalB2: "Herr Müller, ich nehme wahr, wie stark Ihre Anspannung gerade ist. Da ich als Bundesfreiwilliger keine Medikamente ausgeben darf, hole ich sofort Ihre zuständige Pflegefachkraft, Schwester Sarah. Setzen Sie sich bitte kurz hierhin.",
-          c1: "Herr Müller, ich sehe, wie akut belastend die Situation für Sie ist. Aus rechtlichen Gründen und zu Ihrer eigenen Sicherheit bin ich als Freiwilligendienstleistender nicht zur Medikamentenausgabe befugt. Ich werde augenblicklich Schwester Sarah verständigen, damit Sie fachgerecht versorgt werden. Bitte nehmen Sie derweil kurz auf dem Sessel Platz."
+          basic: "Ich darf Ihnen keine Medikamente geben. Ich hole die Schwester.",
+          natural: "Herr Müller, ich sehe, wie schlecht es Ihnen gerade geht. Als BFDler darf ich Ihnen leider keine Tabletten geben. Ich hole aber sofort Schwester Julia für Sie!",
+          professionalB2: "Herr Müller, ich nehme wahr, dass Sie unter enormer Anspannung stehen. Als Bundesfreiwilliger darf ich Ihnen aus rechtlichen und Sicherheitsgründen keine Medikamente aushändigen. Kommen Sie bitte kurz mit zum Stationszimmer, ich informiere sofort Ihre zuständige Pflegefachkraft.",
+          c1: "Herr Müller, ich spüre Ihre erhebliche Belastung in diesem Moment. Bitte haben Sie Verständnis dafür, dass ich als Freiwilliger keinesfalls befugt bin, in den Medikamentenschrank einzugreifen. Lassen Sie uns gemeinsam zur Stationszentrale gehen – ich veranlasse umgehend, dass die diensthabende Pflegefachkraft Ihre Bedarfsmedikation prüft."
         },
-        whyExplanation: "Medikamentenausgabe durch BFDler ist ein schwerer Verstoß gegen das Arzneimittel- und Haftungsrecht. Die Antwort validiert den Zustand des Patienten und bietet sofortige, sichere Hilfe an."
+        whyExplanation: "Deeskalation erfordert Empathie ohne Nachgeben bei Sicherheitsgrenzen. Der 'magische Satz' schützt Patient und BFDler rechtlich."
+      }
+    ]
+  },
+
+  {
+    id: "sim_sbar_handover",
+    title: "Klinische Schichtübergabe nach SBAR-Schema",
+    category: "Klinik & BFD",
+    level: "B2/C1",
+    workplace: "Besprechungsraum Station 2",
+    provenance: "AUS_QUELLE",
+    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker an die Spätdienst-Pflegekraft Sarah.",
+    userRole: "BFD-Freiwilliger",
+    counterpartRole: "Sarah (Pflegefachkraft im Spätdienst)",
+    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten und Verhaltensbeobachtung.",
+    turns: [
+      {
+        speaker: "Sarah",
+        text: "Hi Ali! Wie war dein Dienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag irgendwelche Auffälligkeiten beim Essen oder bei den Vitalwerten?",
+        guidance: "Berichten Sie strukturiert: Blutdruck war leicht erhöht (145/90), er hat das Mittagessen verweigert, wirkte aber nach dem Spaziergang im Klinikpark deutlich ruhiger.",
+        expectedCriteria: ["Konkrete Werte nennen", "Nahrungsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
+        responseTiers: {
+          basic: "Er hat nicht gegessen und der Blutdruck war hoch. Nach dem Park ging es ihm besser.",
+          natural: "Herr Becker hatte heute Vormittag einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt. Aber nach unserem Spaziergang im Park um 11 Uhr wirkte er viel entspannter.",
+          professionalB2: "Zur Übergabe von Herrn Becker: Der Blutdruck lag um 09:30 Uhr bei 145/90 mmHg. Die Mittagsmahlzeit hat er verweigert, aber ca. 600 ml Wasser getrunken. Während unserer Begleitung in den Park war er ansprechbar und wirkte deutlich beruhigter.",
+          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle am Vormittag ergab eine leichte Hypertonie mit 145/90 mmHg. Die Nahrungsaufnahme verweigerte er zwar, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen der aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert."
+        },
+        whyExplanation: "Präzise Fachtermini (Hypertonie, Nahrungsaufnahme, agitiert) erleichtern der Pflegefachkraft die sofortige Dokumentation im Kurvenblatt."
+      }
+    ]
+  },
+
+  {
+    id: "sim_deescalation_smoker_area",
+    title: "Deeskalation: Patient will unerlaubt Station verlassen",
+    category: "Klinik & BFD",
+    level: "B2",
+    workplace: "Ausgangsbereich / Foyer der Station",
+    provenance: "AUS_QUELLE",
+    situation: "Frau Weber, die auf richterlichen Beschluss (Unterbringung) auf Station ist, drängt wütend gegen die Ausgangstür und verlangt, die Klinik sofort zu verlassen.",
+    userRole: "BFD-Freiwilliger",
+    counterpartRole: "Frau Weber (Aufgebrachte Patientin)",
+    objective: "Nicht körperlich festhalten, Deeskalationssprache anwenden, räumlichen Abstand halten und das Stationsteam herbeirufen.",
+    turns: [
+      {
+        speaker: "Frau Weber",
+        text: "Machen Sie sofort die Tür auf! Sie haben kein Recht, mich hier einzusperren! Wenn Sie mich nicht rauslassen, trete ich die Scheibe ein!",
+        guidance: "Bleiben Sie ruhig, blockieren Sie nicht bedrohlich den Weg, halten Sie mindestens 1,5 Meter Abstand und reden Sie mit ruhiger, tiefer Stimme.",
+        expectedCriteria: ["Ruhe bewahren", "Keine Provokation/Körperkontakt", "Gefühle anerkennen", "Hilfe rufen"],
+        responseTiers: {
+          basic: "Bitte treten Sie nicht gegen die Scheibe. Ich rufe den Arzt.",
+          natural: "Frau Weber, bitte bleiben Sie einen Moment stehen. Ich sehe, wie wütend Sie sind. Ich darf die Tür nicht aufschließen, aber ich hole sofort den Stationsarzt, damit Sie mit ihm sprechen können.",
+          professionalB2: "Frau Weber, ich trete einen Schritt zurück. Ich höre Ihren großen Ärger. Bitte beschädigen Sie nicht die Scheibe. Ich kann die Tür nicht öffnen, aber ich bitte sofort Herrn Dr. Keller hinzu, um Ihre Situation direkt zu klären.",
+          c1: "Frau Weber, ich nehme Ihre enorme Verärgerung über die Situation wahr. Ich halte respektvollen Abstand. Da ich aus rechtlichen Gründen nicht schlüsselberechtigt bin, verständige ich augenblicklich den Dienstarzt, damit Sie Ihr Anliegen umgehend im persönlichen Gespräch vortragen können."
+        },
+        whyExplanation: "In der Akutpsychiatrie gilt: Sicherheit vor Konfrontation. Eigene Grenzen verbalisieren, Abstand wahren und Fachpersonal hinzuziehen."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 2. FAMILIE & ALLTAG IN DEUTSCHLAND
+  // ==========================================
+  {
+    id: "sim_family_dinner",
+    title: "Abendessen bei der Familie / Gastfamilie",
+    category: "Familie & Alltag",
+    level: "B1+ → B2",
+    workplace: "Esszimmer im Familienhaushalt",
+    provenance: "AUS_QUELLE",
+    situation: "Sie sind zum Sonntagsabendessen bei der Familie eingeladen. Die Gastgeberin, Frau Klein, serviert das Essen und erkundigt sich nach Ihren ersten Eindrücken in Marburg.",
+    userRole: "Gast / Familienmitglied",
+    counterpartRole: "Frau Klein (Gastgeberin)",
+    objective: "Höflich für das Essen danken, über den Alltag und BFD erzählen, deutsche Tischkonversation meistern und Interesse an der Familie zeigen.",
+    turns: [
+      {
+        speaker: "Frau Klein",
+        text: "Greif bitte kräftig zu, Ali! Es gibt Rinderbraten mit Spätzle und frischem Salat. Wie gefällt dir Marburg bisher und wie läuft es im Krankenhaus?",
+        guidance: "Bedanken Sie sich für das Essen, loben Sie die Zubereitung und schildern Sie positiv, aber authentisch Ihre Eindrücke von der Stadt und der Arbeit.",
+        expectedCriteria: ["Dank für das Essen", "Lob der Speisen", "Eindrücke zu Marburg", "Bericht über das Krankenhaus"],
+        responseTiers: {
+          basic: "Danke, das Essen schmeckt sehr gut. Marburg ist schön und im Krankenhaus ist es interessant.",
+          natural: "Vielen Dank, Frau Klein, das riecht wirklich köstlich! Marburg gefällt mir total gut, besonders die Altstadt. Und im Krankenhaus lerne ich jeden Tag unglaublich viel Neues.",
+          professionalB2: "Herzlichen Dank, Frau Klein! Der Braten sieht wirklich hervorragend aus. Marburg hat mich sehr positiv überrascht – die steilen Gassen und das Schloss haben ein tolles Flair. Im Universitätsklinikum werde ich vom Pflegeteam sehr herzlich unterstützt, was mir den Einstieg enorm erleichtert.",
+          c1: "Ganz herzlichen Dank für die Einladung und dieses wundervolle Essen, Frau Klein! Die historische Kulisse von Marburg fasziniert mich sehr. Auch meine ersten Wochen im Universitätsklinikum empfinde ich als äußerst bereichernd – die interdisziplinäre Zusammenarbeit auf Station gibt mir wertvolle Einblicke in das deutsche Gesundheitssystem."
+        },
+        whyExplanation: "Natürliche Wertschätzung und ein lebendiger Bericht über Alltagserfahrungen schaffen sofortige familiäre Nähe und Sympathie."
       },
       {
-        speaker: "Herr Müller",
-        text: "Immer muss man warten! Aber gut... bitte beeilen Sie sich, ich warte hier auf dem Stuhl.",
-        guidance: "Bestätigen Sie dem Patienten kurz, dass Sie sofort losgehen, und informieren Sie die Fachkraft.",
-        expectedCriteria: ["Sofortiges Handeln ankündigen", "Beruhigung"],
+        speaker: "Herr Klein",
+        text: "Möchtest du noch einen Nachschlag, Ali? Es ist noch reichlich da! Und wie kommst du eigentlich mit den Behörden und der Wohnungssuche voran?",
+        guidance: "Höflich antworten (annehmen oder satt sein), für das Angebot danken und kurz über den Stand bei Bürgeramt/Wohnung berichten.",
+        expectedCriteria: ["Reaktion auf Nachschlag", "Dank", "Statusbericht Wohnung/Amt"],
         responseTiers: {
-          basic: "Ja, ich gehe sofort.",
-          natural: "Ich gehe direkt ins Stationszimmer und sage Schwester Sarah Bescheid. Ich bin gleich wieder bei Ihnen.",
-          professionalB2: "Ich gehe sofort ins Stationszimmer. Schwester Sarah kommt unverzüglich zu Ihnen.",
-          c1: "Vielen Dank für Ihre Geduld, Herr Müller. Ich verständige Schwester Sarah auf der Stelle."
+          basic: "Ja, gern noch etwas Fleisch. Mit der Wohnung suche ich noch.",
+          natural: "Ein ganz kleines Stück Fleisch nehme ich gerne noch, danke! Bei der Wohnungssuche habe ich nächste Woche zwei Besichtigungen, und beim Bürgerbüro war die Anmeldung zum Glück ganz unkompliziert.",
+          professionalB2: "Gern nehme ich noch eine kleine Portion Spätzle, es schmeckt wirklich vorzüglich. Was die Bürokratie betrifft: Die Ummeldung beim Einwohnermeldeamt hat reibungslos geklappt. Für die Wohnungssuche habe ich bereits einige Bewerbungsunterlagen vorbereitet und hoffe auf eine zeitnahe Rückmeldung.",
+          c1: "Ein klein wenig von den Spätzle nehme ich sehr gerne noch, herzlichen Dank! Was die behördlichen Angelegenheiten anbelangt, verlief die Registrierung absolut planmäßig. Bezüglich der Wohnraumbeschaffung habe ich mein Profil auf den gängigen Portalen hinterlegt und stehe bereits im Austausch mit zwei Vermietern."
         },
-        whyExplanation: "Kurze, verlässliche Handlungszusage ohne endlose Diskussionen deeskaliert die Wartezeit."
+        whyExplanation: "Flüssige Antworten auf Nachfragen verbinden Höflichkeitsfloskeln mit konkreten Fortschritten im Alltag."
       }
     ]
   },
 
   {
-    id: "sim_patient_secret_request",
-    title: "Grenzen: Patient bittet um ein Geheimnis",
-    category: "Ethik & Schweigepflicht",
+    id: "sim_family_weekend_chores",
+    title: "Wochenendplanung & Haushaltsorganisation",
+    category: "Familie & Alltag",
     level: "B2",
-    workplace: "Patientenzimmer",
+    workplace: "Wohnzimmer / Küche",
     provenance: "AUS_QUELLE",
-    situation: "Eine depressive Jugendliche (Lena, 17 Jahre) sitzt auf ihrem Bett und sagt leise zu Ihnen, dass sie Ihnen etwas Wichtiges anvertrauen möchte, aber nur, wenn Sie es niemandem auf Station weitersagen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Lena (Patientin)",
-    objective: "Kein blindes Schweigeversprechen abgeben, Teamtransparenz erklären, Gesprächsbereitschaft anbieten.",
+    situation: "Am Samstagmorgen besprechen Sie mit Ihren Mitbewohnern bzw. Familienangehörigen die anstehenden Aufgaben (Einkaufen, Putzen) und den gemeinsamen Sonntagsausflug.",
+    userRole: "Familienmitglied / Mitbewohner",
+    counterpartRole: "Jonas (Mitbewohner / Bruder)",
+    objective: "Aufgaben proaktiv übernehmen, Vorschläge für den Einkauf machen und einen fairen Kompromiss für das Wochenende finden.",
     turns: [
       {
-        speaker: "Lena",
-        text: "Ali, ich muss dir was erzählen... aber du musst mir versprechen, dass du es auf gar keinen Fall den Ärzten oder den Schwestern sagst! Schwörst du?",
-        guidance: "Erklären Sie einfühlsam, dass Sie als Teil des Teams keine Geheimnisse versprechen können, die ihre Sicherheit betreffen, aber gerne für sie da sind.",
-        expectedCriteria: ["Kein Geheimnis versprechen", "Teamverantwortung erklären", "Wertschätzung zeigen", "Hilfe anbieten"],
+        speaker: "Jonas",
+        text: "Morgen steht der Wocheneinkauf an und die Küche müsste auch mal wieder gründlich geputzt werden. Wer übernimmt was? Und hast du eine Idee für morgen Nachmittag?",
+        guidance: "Bieten Sie an, einen Teil der Aufgaben (z. B. Bad/Küche oder Großeinkauf) zu übernehmen, und schlagen Sie eine gemeinsame Aktivität vor (z. B. Ausflug zur Lahn).",
+        expectedCriteria: ["Proaktive Aufgabenübernahme", "Konkreter Vorschlag", "Kooperativer Ton"],
         responseTiers: {
-          basic: "Das kann ich nicht versprechen. Ich muss alles dem Team sagen.",
-          natural: "Lena, ich höre dir gerne zu. Aber ich kann dir vorab nicht versprechen, dass ich es für mich behalte, wenn es um deine Sicherheit geht. Wir arbeiten hier als Team, um dir zu helfen.",
-          professionalB2: "Lena, ich schätze dein Vertrauen sehr und bin gerne für dich da. Aber ich kann dir kein Geheimnis versprechen. Wenn es um deine Gesundheit oder Sicherheit geht, muss ich das Team informieren, weil wir alle gemeinsam für dich sorgen.",
-          c1: "Lena, es bedeutet mir viel, dass du dich an mich wendest. Dennoch möchte ich ehrlich zu dir sein: Ein bedingungsloses Schweigeversprechen kann ich dir nicht geben. Sollte es um deine Unversehrtheit gehen, bin ich verpflichtet, das Behandlungsteam einzubinden, damit du die bestmögliche Unterstützung erhältst. Möchtest du mir trotzdem erzählen, was dich bedrückt?"
+          basic: "Ich kann einkaufen gehen. Und morgen können wir an die Lahn fahren.",
+          natural: "Ich übernehme gerne den Großeinkauf beim Supermarkt, wenn du dafür die Küche machst. Und morgen Nachmittag könnten wir doch bei dem schönen Wetter an die Lahn spazieren gehen!",
+          professionalB2: "Lass uns das fair aufteilen: Ich schreibe die Einkaufsliste und besorge alles im Supermarkt, während du dich um die Küche kümmerst. Für morgen Nachmittag schlage ich vor, dass wir eine kleine Fahrradtour entlang der Lahn machen – was hältst du davon?",
+          c1: "Ich plädiere für eine pragmatische Aufgabenteilung: Ich übernehme den Wocheneinkauf inklusive Getränkekisten, sodass du freie Hand für die Grundreinigung der Küche hast. Im Anschluss an die Erledigungen böte sich morgen bei Sonnenschein ein ausgedehnter Ausflug ins Lahntal an – fändest du das passend?"
         },
-        whyExplanation: "In der Psychiatrie darf NIEMALS ein Vorab-Geheimnis versprochen werden (Gefahr von Suizidabsprachen oder Selbstverletzungen). Ehrliche Transparenz schützt Patient und BFDler."
+        whyExplanation: "Klare Vorschläge mit 'Lass uns...' oder 'Was hältst du davon...' demonstrieren natürliche Verhandlungskompetenz im Alltag."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 3. PARTNERSCHAFT & HERZ (GF / WIFEY)
+  // ==========================================
+  {
+    id: "sim_gf_comfort_after_shift",
+    title: "Nach einem schweren Tag: Freundin / Ehefrau trösten",
+    category: "Partnerschaft & Herz",
+    level: "B2",
+    workplace: "Zuhause auf dem Sofa",
+    provenance: "AUS_QUELLE",
+    situation: "Ihre Freundin / Ehefrau kommt völlig erschöpft und den Tränen nahe von der Arbeit nach Hause, lässt die Tasche fallen und setzt sich bedrückt auf das Sofa.",
+    userRole: "Liebevoller Partner",
+    counterpartRole: "Freundin / Ehefrau (Erschöpft & Traurig)",
+    objective: "Warmherzig empfangen, ohne vorschnelle Ratschläge aktiv zuhören, emotionale Geborgenheit schenken und liebevolle Fürsorge zeigen.",
+    turns: [
+      {
+        speaker: "Freundin / Ehefrau",
+        text: "Heute war einfach der absolute Horror... Mein Chef hat mich vor dem ganzen Team ungerechtfertigt kritisiert und ich hatte keine einzige Pause. Ich fühle mich einfach nur leer und ausgelaugt.",
+        guidance: "Nehmen Sie sie in den Arm (verbal & emotional), validieren Sie ihren Schmerz ('Das tut mir so leid, Schatz'), bieten Sie etwas zu trinken/essen an und hören Sie einfach nur verständnisvoll zu.",
+        expectedCriteria: ["Liebevolles Kosewort", "Emotionale Validierung", "Keine Vorwürfe/Besserwisserei", "Entlastung anbieten"],
+        responseTiers: {
+          basic: "Komm her, Schatz. Das tut mir leid. Willst du einen Tee trinken?",
+          natural: "Komm erst mal in meine Arme, mein Schatz... Es tut mir so leid, dass dein Tag so furchtbar war. Atme tief durch. Du bist jetzt zu Hause in Sicherheit. Soll ich dir einen warmen Tee machen und dir eine Decke holen?",
+          professionalB2: "Komm an mein Herz, Liebling. Es tut mir unglaublich weh zu sehen, wie sehr dich das mitgenommen hat. Das war absolut unfair von deinem Chef. Du musst mir jetzt gar nichts erklären, wenn du nicht möchtest – ruh dich erst mal aus, ich koche uns dein Lieblingsessen und bin einfach nur für dich da.",
+          c1: "Mein Schatz, lass dich ganz fest umarmen. Dass du heute so einer ungerechten Behandlung ausgesetzt warst, macht mich traurig und wütend zugleich. Du musst diese Last jetzt nicht mehr alleine tragen. Lehn dich einfach an mich an, ich nehme dir heute alle Pflichten ab und sorge dafür, dass du zur Ruhe kommen kannst."
+        },
+        whyExplanation: "In emotionalen Momenten zählen emotionale Validierung ('Ich sehe deinen Schmerz') und praktische Entlastung mehr als rationale Ratschläge."
+      },
+      {
+        speaker: "Freundin / Ehefrau",
+        text: "Danke, dass du immer für mich da bist... Es tut so gut, deine Stimme zu hören. Manchmal habe ich einfach Angst, dass ich den Anforderungen im Job nicht gewachsen bin.",
+        guidance: "Bauen Sie ihr Selbstvertrauen auf: Erinnern Sie sie an ihre Stärken, versichern Sie ihr Ihre bedingungslose Liebe und Loyalität.",
+        expectedCriteria: ["Liebesbekundung", "Bestärkung des Selbstwertgefühls", "Zukunftszuversicht"],
+        responseTiers: {
+          basic: "Du bist sehr schlau und stark, Schatz. Ich liebe dich.",
+          natural: "Zweifle bitte niemals an dir selbst, Schatz! Du bist unglaublich kompetent, klug und herzlich. Ein schlechter Tag ändert überhaupt nichts an deinem großen Können. Ich glaube immer an dich und ich liebe dich von ganzem Herzen.",
+          professionalB2: "Mein Schatz, bitte lass dir von so einem Tag nicht deinen Selbstwert nehmen. Du leistest jeden Tag Großartiges und hast schon so viele schwierige Hürden mit Bravour gemeistert. Ich bin unfassbar stolz auf dich und stehe bedingungslos hinter dir – egal was passiert.",
+          c1: "Liebling, diese Zweifel sind nach solch einer Belastung verständlich, aber sie spiegeln nicht die Realität wider. Du verfügst über eine außergewöhnliche Stärke, Fachkompetenz und Integrität. Wir stehen das gemeinsam durch, und du hast in mir immer deinen verlässlichsten Rückhalt. Ich liebe dich über alles."
+        },
+        whyExplanation: "Tiefe partnerschaftliche Kommunikation stärkt die emotionale Bindung durch bedingungslose Bestätigung und liebevolle Worte."
       }
     ]
   },
 
   {
-    id: "sim_isbar_handover",
-    title: "Klinikalltag: Schichtübergabe nach ISBAR-Schema",
-    category: "Krankenhaus & Übergabe",
-    level: "B2+",
-    workplace: "Dienstübergaberaum Station P2",
+    id: "sim_gf_future_planning",
+    title: "Zukunfts- & Wohnungsplanung mit der Partnerin",
+    category: "Partnerschaft & Herz",
+    level: "B2",
+    workplace: "Küchentisch bei einer Tasse Kaffee",
     provenance: "AUS_QUELLE",
-    situation: "Am Ende des Frühdienstes bittet die Schichtleitung Sie, Ihre Beobachtungen aus dem Gemeinschaftsraum kurz für den Spätdienst zusammenzufassen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Herr Becker (Schichtleitung Spätdienst)",
-    objective: "Strukturierte, sachliche Beobachtungen ohne Diagnosen wiedergeben (Identifikation, Situation, Beobachtung, Empfehlung).",
+    situation: "Sie sitzen sonntags gemütlich zusammen und sprechen über die gemeinsame nächste Lebensphase: eine größere Wohnung, gemeinsame Reisen und die Aufteilung der Ersparnisse.",
+    userRole: "Partner / Ehemann",
+    counterpartRole: "Freundin / Ehefrau",
+    objective: "Wünsche empathisch abstimmen, gemeinsame Träume visualisieren und konstruktiv über Budget und Prioritäten sprechen.",
     turns: [
       {
-        speaker: "Herr Becker",
-        text: "Ali, wie war der Vormittag im Gemeinschaftsraum? Gab es Auffälligkeiten bei Herrn Weber oder Frau Klein?",
-        guidance: "Berichten Sie sachlich: Herr Weber war ruhig und hat am Spielangebot teilgenommen; Frau Klein hat das Mittagessen verweigert und wirkt sehr zurückgezogen.",
-        expectedCriteria: ["Sachliche Fakten", "Keine Eigendiagnosen", "Konkrete Uhrzeiten/Aktivitäten", "Präzises Deutsch"],
+        speaker: "Freundin / Ehefrau",
+        text: "Schatz, schau mal hier auf ImmoScout: Diese 3-Zimmer-Wohnung mit Balkon in der Nähe vom Schlosspark wäre mein absoluter Traum! Meinst du, wir können uns die Miete leisten, wenn du deinen BFD machst?",
+        guidance: "Freude über den Traum teilen, realistisch und optimistisch die Finanzen durchgehen und vorschlagen, einen Besichtigungstermin zu vereinbaren.",
+        expectedCriteria: ["Begeisterung teilen", "Finanzielle Sicherheit/Pragmatismus", "Konkreter nächster Schritt"],
         responseTiers: {
-          basic: "Herr Weber war gut. Er hat gespielt. Frau Klein hat nichts gegessen und war traurig.",
-          natural: "Herr Weber hat heute aktiv am Mensch-ärgere-dich-nicht-Spiel teilgenommen und wirkte entspannt. Frau Klein hingegen hat das Mittagessen verweigert und sich den ganzen Vormittag in ihr Zimmer zurückgezogen.",
-          professionalB2: "Im Gemeinschaftsraum verlief der Vormittag weitgehend ruhig. Herr Weber zeigte eine gute Interaktion und nahm aktiv am Gesellschaftsspiel teil. Bei Frau Klein ist mir jedoch aufgefallen, dass sie das Mittagessen verweigert hat und sehr zurückgezogen auf ihrem Zimmer blieb.",
-          c1: "Gerne. Die Situation im Aufenthaltsbereich gestaltete sich überwiegend stabil. Herr Weber wies eine erfreuliche Kooperationsbereitschaft auf und interagierte adäquat bei der Spielaktivität. Auffällig war hingegen das ausgeprägte Rückzugsverhalten von Frau Klein, welche zudem die Nahrungsaufnahme zur Mittagszeit vollständig ablehnte."
+          basic: "Die Wohnung sieht schön aus. Wir können unser Geld zusammenrechnen und besichtigen.",
+          natural: "Die sieht ja wunderschön aus, Schatz! Mit dem Balkon wäre das perfekt für uns. Lass uns kurz unsere Einnahmen und das BFD-Taschengeld zusammenrechnen – ich glaube, wenn wir sparsam wirtschaften, kriegen wir das gut hin. Soll ich direkt eine Anfrage schreiben?",
+          professionalB2: "Was für ein toller Fund, Liebling! Der Grundriss und die Lage am Schlosspark sind wirklich traumhaft. Wenn wir mein Taschengeld, dein Gehalt und unsere fixen monatlichen Ausgaben kalkulieren, liegt die Warmmiete absolut im machbaren Rahmen. Lass uns heute Abend direkt die Bewerbungsunterlagen absenden!",
+          c1: "Ein fantastisches Objekt, mein Schatz! Die Kombination aus zentrumsnaher Lage und Grünfläche würde unsere Lebensqualität enorm steigern. Aus wirtschaftlicher Sicht ist die Warmmiete durch unsere kombinierte Budgetplanung vollkommen tragbar. Ich schlage vor, dass wir umgehend ein aussagekräftiges Anschreiben formulieren, um unsere Chancen auf einen Besichtigungstermin zu maximieren."
         },
-        whyExplanation: "Klinische Übergaben verlangen Trennung von Fakt und Deutung. Die B2/C1-Formulierungen nutzen standardisierte Begrifflichkeiten ('Interaktion', 'Rückzugsverhalten', 'Nahrungsverweigerung')."
+        whyExplanation: "Gemeinsame Zukunftsplanung verbindet Begeisterung mit verlässlicher Partnerschaftlichkeit."
+      }
+    ]
+  },
+
+  {
+    id: "sim_gf_resolving_misunderstanding",
+    title: "Konfliktklärung ohne Vorwürfe (Ich-Botschaften)",
+    category: "Partnerschaft & Herz",
+    level: "B2/C1",
+    workplace: "Wohnzimmer am Abend",
+    provenance: "AUS_QUELLE",
+    situation: "Wegen der anstrengenden Schichten im Krankenhaus kam es in den letzten Tagen zu kleinen Spannungen und verpassten Verabredungen. Sie möchten das Gespräch suchen und die Wogen liebevoll glätten.",
+    userRole: "Reflektierter Partner",
+    counterpartRole: "Freundin / Ehefrau",
+    objective: "Ohne Verteidigungshaltung oder Vorwürfe die eigenen Gefühle erklären, Verständnis für die Enttäuschung der Partnerin zeigen und eine liebevolle Lösung vereinbaren.",
+    turns: [
+      {
+        speaker: "Freundin / Ehefrau",
+        text: "Ich hatte in den letzten Tagen oft das Gefühl, dass du mit deinen Gedanken nur noch im Krankenhaus bist und ich an zweiter Stelle stehe. Als du gestern wieder zu spät kamst, war ich wirklich traurig.",
+        guidance: "Reagieren Sie nicht defensiv ('Ich muss schließlich arbeiten!'), sondern spiegeln Sie ihr Gefühl, entschuldigen Sie sich für die Unruhe und betonen Sie, wie wichtig sie Ihnen ist.",
+        expectedCriteria: ["Keine Abwehrhaltung", "Verständnis spiegeln", "Aufrichtige Entschuldigung", "Liebesbekundung & Zeitfenster vereinbaren"],
+        responseTiers: {
+          basic: "Es tut mir leid, dass ich zu spät war. Du bist mir sehr wichtig, Schatz.",
+          natural: "Es tut mir von Herzen leid, Schatz. Ich verstehe total, dass du traurig warst. Die ersten Wochen auf Station sind so voll mit Eindrücken, dass ich manchmal den Kopf voll habe. Aber du stehst für mich immer an erster Stelle. Lass uns dieses Wochenende ganz ohne Handy nur für uns zwei reservieren.",
+          professionalB2: "Danke, dass du mir das so offen und ehrlich sagst, Liebling. Es tut mir aufrichtig leid, dass ich dir unabsichtlich das Gefühl gegeben habe, vernachlässigt zu werden. Mein Kopf war von den Klinikfällen überreizt, aber das ist keine Entschuldigung. Du bist das Wichtigste in meinem Leben. Lass uns feste Abendrituale einführen, an denen das Krankenhaus draußen bleibt.",
+          c1: "Ich bin dir sehr dankbar für deine Offenheit, mein Schatz. Es schmerzt mich zu hören, dass mein Verhalten bei dir den Eindruck erweckt hat, du hättest keine Priorität. Die hohe mentale Belastung des Dienstbeginns hat mich absorbiert, doch das darf unsere Zweisamkeit keinesfalls beeinträchtigen. Ich möchte mich aufrichtig bei dir entschuldigen und vorschlagen, dass wir jeden Abend eine bewusste Stunde exklusiver Paarzeit fest etablieren."
+        },
+        whyExplanation: "Gewaltfreie Kommunikation in der Beziehung basiert auf Wertschätzung, Selbstreflexion und dem Angebot konkreter Verbindlichkeit."
       }
     ]
   }
@@ -20819,206 +21203,185 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   // MODULE: data/phrases_data.js
   // ==========================================
   __register('data/phrases_data.js', function(module, exports, require) {
-// "Was sage ich?" & "Ich verstehe nicht!" Phrasentrainer
+// "Was sage ich?" — Master Phrasen- & Redemittel-Transformator
 // Stufenförmige Transformationen: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
-// Vollständig integriert mit allen Phrasen, Redemitteln und Diskursmarkern aus dem Anki-Deck
+// Vollständig integriert für Klinik, Station 2, Familie, Alltag und Partnerschaft (GF / Wifey)
 
 const PHRASES_DATA = exports.PHRASES_DATA = {
   title: "Praktischer Phrasen- & Redemittel-Transformator",
   provenance: "AUS_QUELLE",
   categories: [
+    // ----------------------------------------
+    // 1. VERSTÄNDIGUNG & HÖFLICHE RÜCKFRAGEN
+    // ----------------------------------------
     {
       id: "cat_verstaendigung_nachfragen",
-      name: "Verständigung sichern & Höflich nachfragen",
+      name: "Verständigung sichern & Rückfragen",
+      icon: "👂",
       phrases: [
         {
-          id: "phr_anki_001",
-          situation: "Man hat ein Wort oder eine Anweisung akustisch nicht genau verstanden.",
+          id: "phr_001",
+          situation: "Man hat ein Wort oder eine ärztliche Anweisung akustisch nicht genau verstanden.",
           basic: "Könnten Sie das bitte wiederholen?",
           natural: "Könnten Sie das bitte noch einmal wiederholen?",
           professionalB2: "Würden Sie diesen Punkt bitte noch einmal kurz wiederholen? Ich möchte sicherstellen, dass ich alles richtig erfasst habe.",
           c1: "Wären Sie so freundlich, Ihre Ausführungen dahingehend noch einmal kurz zu rekapitulieren?",
-          relatedWords: ["wiederholen", "die Wiederholung", "das Nachfragen", "die Akustik"]
+          relatedWords: ["wiederholen", "die Wiederholung", "das Nachfragen", "die Akustik"],
+          whyExplanation: "Das B2/C1-Muster signalisiert aktive Professionalität und Qualitätssicherung, statt nur 'nicht gehört' zu haben."
         },
         {
-          id: "phr_anki_002",
-          situation: "Man ist unsicher, ob man den Sinn einer ärztlichen oder pflegerischen Anweisung richtig verstanden hat.",
+          id: "phr_002",
+          situation: "Man ist unsicher, ob man den genauen Sinn einer Anweisung verstanden hat.",
           basic: "Ich glaube, das habe ich nicht richtig verstanden.",
           natural: "Ich glaube, ich habe das vorhin nicht ganz richtig verstanden.",
           professionalB2: "Darf ich mich kurz vergewissern: Habe ich Sie richtig verstanden, dass die Vitalwerte vor dem Frühstück erhoben werden sollen?",
           c1: "Um Missverständnisse von vornherein auszuschließen: Verstehe ich Ihre Anweisung dahingehend zutreffend, dass Priorität auf der Dokumentation liegt?",
-          relatedWords: ["verstehen", "das Missverständnis", "die Rückversicherung"]
+          relatedWords: ["verstehen", "das Missverständnis", "die Rückversicherung", "die Priorität"],
+          whyExplanation: "Paraphrasieren ('Darf ich mich vergewissern...') verhindert Behandlungsfehler auf Station."
         },
         {
-          id: "phr_anki_003",
-          situation: "Jemand spricht zu schnell für das aktuelle Sprachverständnis.",
+          id: "phr_003",
+          situation: "Ein Arzt oder Kollege spricht im Stress viel zu schnell.",
           basic: "Könnten Sie bitte etwas langsamer sprechen?",
           natural: "Könnten Sie vielleicht ein kleines bisschen langsamer sprechen?",
           professionalB2: "Wären Sie so nett, das Sprechtempo ein wenig anzupassen, damit ich alle Details lückenlos notieren kann?",
           c1: "Ich wäre Ihnen dankbar, wenn wir das Tempo kurz drosseln könnten, um eine fehlerfreie Erfassung der Informationen zu gewährleisten.",
-          relatedWords: ["langsam", "das Sprechtempo", "die Deutlichkeit"]
-        },
-        {
-          id: "phr_anki_004",
-          situation: "Man braucht einen kurzen Augenblick Zeit, um etwas zu holen oder nachzuschauen.",
-          basic: "Einen Moment bitte.",
-          natural: "Einen kleinen Augenblick bitte, ich bin gleich bei Ihnen.",
-          professionalB2: "Dürfte ich Sie um einen kurzen Moment Geduld bitten? Ich hole sofort die passende Unterlage.",
-          c1: "Ich bitte um einen kurzen Augenblick Nachsicht, während ich die relevanten Akten zur Einsichtnahme heranziehe.",
-          relatedWords: ["der Moment", "die Geduld", "der Augenblick"]
-        },
-        {
-          id: "phr_anki_005",
-          situation: "Man möchte rückfragen, ob die eigene Auffassung korrekt ist.",
-          basic: "Habe ich Sie richtig verstanden?",
-          natural: "Habe ich das so richtig verstanden?",
-          professionalB2: "Darf ich noch einmal zusammenfassend rückfragen, ob wir hier vom selben Vorgehen ausgehen?",
-          c1: "Darf ich kurz rekapitulieren, um zu überprüfen, ob meine Auffassung mit Ihrer Intention vollends konform geht?",
-          relatedWords: ["rückfragen", "die Übereinstimmung", "die Auffassung"]
+          relatedWords: ["langsam", "das Sprechtempo", "die Deutlichkeit", "lückenlos"],
+          whyExplanation: "Die B2-Begründung ('damit ich notieren kann') nimmt den Druck vom Gegenüber."
         }
       ]
     },
+
+    // ----------------------------------------
+    // 2. KLINIK, STATION 2 & GRENZEN
+    // ----------------------------------------
     {
-      id: "cat_diskussion_einbringen",
-      name: "Sich im Team zu Wort melden & Meinungen äußern",
+      id: "cat_klinik_grenzen",
+      name: "Klinik, Station 2 & Rollengrenzen",
+      icon: "🏥",
       phrases: [
         {
-          id: "phr_anki_006",
-          situation: "Man möchte in einer Teambesprechung oder Übergabe höflich das Wort ergreifen.",
-          basic: "Dürfte ich dazu auch etwas sagen?",
-          natural: "Dürfte ich kurz etwas dazu sagen?",
-          professionalB2: "Wenn ich kurz einhaken darf: Ich hätte zu diesem Punkt noch eine wichtige Beobachtung aus dem Frühdienst.",
-          c1: "Gestatten Sie mir an dieser Stelle eine kurze sachdienliche Anmerkung aus der praktischen Stationserfahrung.",
-          relatedWords: ["das Wort ergreifen", "die Wortmeldung", "der Einwand"]
+          id: "phr_004",
+          situation: "Ein Patient fordert Schmerzmittel oder Beruhigungstabletten von Ihnen.",
+          basic: "Ich darf keine Medikamente geben. Ich hole die Schwester.",
+          natural: "Ich darf Ihnen leider keine Medikamente aushändigen. Ich sage aber sofort der zuständigen Pflegekraft Bescheid!",
+          professionalB2: "Als Bundesfreiwilliger bin ich rechtlich nicht befugt, Medikamente auszugeben. Ich informiere aber augenblicklich Ihre Pflegefachkraft darüber.",
+          c1: "Bitte haben Sie Verständnis dafür, dass die Verabreichung von Arzneimitteln ausschließlich dem examinierten Fachpersonal obliegt. Ich leite Ihren Bedarf unverzüglich an den Dienstarzt weiter.",
+          relatedWords: ["befugt sein", "die Aushändigung", "die Rollengrenze", "obliegen"],
+          whyExplanation: "Juristische und ethische Rollenwahrung nach § 630a BGB schützt Sie vor Haftung."
         },
         {
-          id: "phr_anki_007",
-          situation: "Man möchte den Gedanken eines Kollegen sinnvoll ergänzen.",
-          basic: "Ich möchte dazu etwas ergänzen.",
-          natural: "Dazu möchte ich gerne noch kurz etwas ergänzen.",
-          professionalB2: "Ergänzend zu den Ausführungen von Schwester Maria möchte ich anmerken, dass der Patient heute deutlich mobiler war.",
-          c1: "In Ergänzung zu den treffenden Worten meiner Vorrednerin möchte ich den Aspekt der Frustrationstoleranz nochmals hervorheben.",
-          relatedWords: ["ergänzen", "die Ergänzung", "der Aspekt", "hervorheben"]
-        },
-        {
-          id: "phr_anki_008",
-          situation: "Man versteht die Sichtweise des Gesprächspartners, hat aber begründete Bedenken.",
-          basic: "Ich verstehe das schon, aber ...",
-          natural: "Ich verstehe deinen Punkt total, aber lass uns bedenken, dass ...",
-          professionalB2: "Ich kann Ihre Argumentation gut nachvollziehen, dennoch sollten wir das erhöhte Sturzrisiko nicht außer Acht lassen.",
-          c1: "So plausibel dieser Ansatz primär erscheint, so unverzichtbar ist es doch, die potenziellen Risikofaktoren differentialdiagnostisch zu berücksichtigen.",
-          relatedWords: ["nachvollziehen", "bedenken", "das Gegenargument"]
-        },
-        {
-          id: "phr_anki_009",
-          situation: "Man muss in einer dringenden Situation eine sprechende Person unterbrechen.",
-          basic: "Entschuldigen Sie, wenn ich Sie unterbreche, ...",
-          natural: "Entschuldige die kurze Unterbrechung, aber ...",
-          professionalB2: "Verzeihen Sie bitte die Unterbrechung, aber hier liegt ein dringender Rückruf aus dem Labor vor.",
-          c1: "Ich bitte vielmals um Verzeihung für dieses Dazwischentreten, doch eine akute Rücksprache mit dem Dienstarzt duldet keinen Aufschub.",
-          relatedWords: ["unterbrechen", "die Unterbrechung", "dringlich"]
-        },
-        {
-          id: "phr_anki_010",
-          situation: "Man wird von jemandem vorschnell unterbrochen und möchte seinen Gedanken beenden.",
-          basic: "Lassen Sie mich bitte ausreden.",
-          natural: "Lass mich bitte kurz ausreden, dann gebe ich sofort an dich ab.",
-          professionalB2: "Dürfte ich meinen Gedanken bitte noch kurz zu Ende führen? Danach stehe ich für Fragen bereit.",
-          c1: "Ich wäre Ihnen verbunden, wenn ich meine Ausführungen kurz vollenden dürfte, bevor wir in die Detaildiskussion einsteigen.",
-          relatedWords: ["ausreden lassen", "zu Ende führen", "der Redefluss"]
+          id: "phr_005",
+          situation: "Angehörige fordern am Telefon medizinische Diagnosen oder Befunde ein.",
+          basic: "Ich darf Ihnen am Telefon nichts sagen wegen Datenschutz.",
+          natural: "Aus Datenschutzgründen darf ich Ihnen leider keine Auskunft über Diagnosen geben. Ich verbinde Sie mit dem Stationsarzt.",
+          professionalB2: "Aufgrund der ärztlichen Schweigepflicht nach § 203 StGB darf ich telefonisch keine medizinischen Auskünfte erteilen. Ich verbinde Sie sehr gerne direkt mit der behandelnden Ärztin.",
+          c1: "Unter Verweis auf die gesetzliche Schweigepflicht sowie den Patientendatenschutz ist mir eine telekommunikative Befundübermittlung untersagt. Ich transferiere Sie umgehend in das Arztzimmer.",
+          relatedWords: ["die Schweigepflicht", "die Auskunft", "der Datenschutz", "untersagt"],
+          whyExplanation: "Klare Nennung der Schweigepflicht wirkt hochkompetent und deeskaliert Drängen der Angehörigen."
         }
       ]
     },
+
+    // ----------------------------------------
+    // 3. PARTNERSCHAFT, LIEBE & EMOTIONEN (GF / WIFEY)
+    // ----------------------------------------
     {
-      id: "cat_vorschlaege_absagen",
-      name: "Vorschläge machen, Aushandeln & Absagen",
+      id: "cat_partnerschaft_liebe",
+      name: "Partnerschaft, Trösten & Liebe (GF / Wifey)",
+      icon: "❤️",
       phrases: [
         {
-          id: "phr_anki_011",
-          situation: "Man möchte dem Team oder Partner einen konstruktiven Vorschlag machen.",
-          basic: "Wie wäre es, wenn ... ?",
-          natural: "Wie wäre es, wenn wir die Pause um eine halbe Stunde vorziehen?",
-          professionalB2: "Ich möchte vorschlagen, dass wir den Patiententransport gemeinsam aufteilen, um Wartezeiten zu minimieren.",
-          c1: "Es böte sich an, die logistischen Abläufe dahingehend zu modifizieren, dass Synergieeffekte bei der Patientenbegleitung optimal genutzt werden.",
-          relatedWords: ["der Vorschlag", "die Optimierung", "die Synergie"]
+          id: "phr_006",
+          situation: "Die Freundin / Ehefrau kommt erschöpft nach Hause und braucht emotionalen Rückhalt.",
+          basic: "Komm her, Schatz. Das tut mir leid. Ruh dich aus.",
+          natural: "Komm erst mal in meine Arme, mein Schatz! Es tut mir so leid, dass dein Tag so anstrengend war. Lehn dich einfach an mich an.",
+          professionalB2: "Lass dich ganz fest umarmen, Liebling. Es bricht mir das Herz zu sehen, wie erschöpft du bist. Du musst jetzt gar nichts tun – ich koche uns etwas Schönes und bin einfach nur für dich da.",
+          c1: "Mein geliebter Schatz, ich spüre, wie sehr dich die heutigen Ereignisse mitgenommen haben. Tritt einen Moment innerlich zurück und finde bei mir Geborgenheit. Ich halte dir heute den Rücken vollständig frei.",
+          relatedWords: ["die Geborgenheit", "trösten", "erschöpft", "der Rückhalt", "den Rücken freihalten"],
+          whyExplanation: "Echte deutsche Empathieausdrücke ('Komm in meine Arme', 'Ich halte dir den Rücken frei') schaffen emotionale Geborgenheit."
         },
         {
-          id: "phr_anki_012",
-          situation: "Man fragt die Meinung eines Kollegen zu einer Idee ab.",
-          basic: "Was hältst du davon, wenn ... ?",
-          natural: "Was hältst du davon, wenn wir das heute Nachmittag zusammen machen?",
-          professionalB2: "Welche Einschätzung hast du zu dem Vorschlag, die Übergabe strukturiert nach ISBAR durchzuführen?",
-          c1: "Wie beurteilen Sie die Zweckmäßigkeit einer standardisierten ISBAR-Übergabestruktur im Hinblick auf unsere Stationsabläufe?",
-          relatedWords: ["die Einschätzung", "die Beurteilung", "die Zweckmäßigkeit"]
+          id: "phr_007",
+          situation: "Man möchte seiner Partnerin im Alltag tiefe Liebe, Wertschätzung und Dankbarkeit mitteilen.",
+          basic: "Ich liebe dich sehr und bin froh, dass du da bist.",
+          natural: "Ich liebe dich von ganzem Herzen, Schatz. Du machst mein Leben jeden Tag so viel schöner!",
+          professionalB2: "Ich möchte dir einfach mal sagen, wie unglaublich dankbar ich für dich bin. Mit dir an meiner Seite fühle ich mich vollkommen angekommen und geborgen.",
+          c1: "Worte können kaum beschreiben, welch unschätzbare Bereicherung du für mein Leben darstellst. Deine Wärme, Klugheit und Liebe sind mein größtes Geschenk, für das ich täglich dankbar bin.",
+          relatedWords: ["die Wertschätzung", "geborgen", "die Bereicherung", "unschätzbar", "angekommen sein"],
+          whyExplanation: "Das Gefühl des 'Angekommenseins' gilt im Deutschen als einer der tiefsten Ausdrücke partnerschaftlichen Glücks."
         },
         {
-          id: "phr_anki_013",
-          situation: "Man muss eine Bitte oder Einladung höflich ablehnen.",
-          basic: "Tut mir leid, aber ...",
-          natural: "Tut mir echt leid, aber heute schaffe ich das leider nicht.",
-          professionalB2: "Ich bedaure sehr, dass ich dieses Mal absagen muss, da ich bereits für den Spätdienst eingeteilt bin.",
-          c1: "Ich bedaure aufrichtig, Ihrer geschätzten Einladung aus dienstlichen Gründen dieses Mal nicht Folge leisten zu können.",
-          relatedWords: ["bedauern", "absagen", "die Absage", "die Dienstverpflichtung"]
-        },
-        {
-          id: "phr_anki_014",
-          situation: "Man würde gerne helfen/teilnehmen, hat aber eine unüberwindbare Hürde.",
-          basic: "Eigentlich gern, aber ...",
-          natural: "Eigentlich total gerne, aber ich habe genau da einen wichtigen Arzttermin.",
-          professionalB2: "Grundsätzlich würde ich Sie dabei sehr gerne unterstützen, allerdings bin ich zeitlich durch die Kurvendokumentation gebunden.",
-          c1: "Obschon ich diesem Vorhaben überaus aufgeschlossen gegenüberstehe, verwehren mir vorherige terminliche Verpflichtungen eine Mitwirkung.",
-          relatedWords: ["unterstützen", "zeitlich gebunden sein", "das Vorhaben"]
+          id: "phr_008",
+          situation: "Man möchte einen kleinen Beziehungs-Konflikt liebevoll und ohne Vorwürfe ansprechen (Ich-Botschaft).",
+          basic: "Ich war traurig, weil wir uns gestern nicht gesehen haben.",
+          natural: "Ich habe dich gestern so sehr vermisst, Schatz. Es hat mir ein bisschen wehgetan, dass wir so wenig Zeit hatten.",
+          professionalB2: "Mir liegt unsere gemeinsame Zeit unglaublich am Herzen, Liebling. Als wir uns gestern verpasst haben, habe ich mich etwas einsam gefühlt. Lass uns schauen, wie wir das besser planen können.",
+          c1: "Unsere partnerschaftliche Zweisamkeit hat für mich höchste Priorität. Wenn berufsbedingt Termine kollidieren, schmerzt mich diese Distanz. Ich wünsche mir sehr, dass wir gemeinsam feste Ruheoasen für uns reservieren.",
+          relatedWords: ["die Zweisamkeit", "vermissen", "die Priorität", "die Ich-Botschaft", "die Ruheoase"],
+          whyExplanation: "Ich-Botschaften ('Ich habe mich einsam gefühlt' statt 'Du bist nie da') verhindern defensive Reaktionen."
         }
       ]
     },
+
+    // ----------------------------------------
+    // 4. FAMILIE, GASTFREUNDSCHAFT & ALLTAG
+    // ----------------------------------------
     {
-      id: "cat_vortrag_praesentation_schluss",
-      name: "Strukturierung, Diskursmarker & Abschluss",
+      id: "cat_familie_alltag",
+      name: "Familie, Gastfreundschaft & Alltag",
+      icon: "🏡",
       phrases: [
         {
-          id: "phr_anki_015",
-          situation: "Kausalzusammenhang im Vortrag oder Bericht herstellen.",
-          basic: "Aus diesem Grund ...",
-          natural: "Und genau aus diesem Grund sollten wir darauf besonders achten.",
-          professionalB2: "Aus diesem Grund ist eine konsequente Händedesinfektion vor und nach jedem Patientenkontakt unabdingbar.",
-          c1: "Aus eben diesem Grunde erweist sich die strikte Einhaltung aseptischer Kautelen als unumgängliches Fundament der Infektionsprävention.",
-          relatedWords: ["der Grund", "die Ursache", "die Konsequenz", "folglich", "daher", "darum"]
+          id: "phr_009",
+          situation: "Man wird bei der Familie zum Essen empfangen und möchte herzlich danken.",
+          basic: "Danke für das leckere Essen und die Einladung.",
+          natural: "Vielen Dank für die Einladung! Das Essen riecht wirklich fantastisch.",
+          professionalB2: "Herzlichen Dank für die liebevolle Gastfreundschaft und dieses köstliche Mahl! Es ist wunderschön, heute bei Ihnen in so gemütlicher Runde zusammenzusitzen.",
+          c1: "Ich möchte meinen aufrichtigen Dank für Ihre überaus herzliche Gastfreundschaft zum Ausdruck bringen. Dieses exquisite Menü und die anregende Gesellschaft bereiten mir außerordentliche Freude.",
+          relatedWords: ["die Gastfreundschaft", "köstlich", "das Mahl", "die Runde", "anregend"],
+          whyExplanation: "Deutsche Tischkultur honoriert sowohl das Essen als auch die gemütliche Geselligkeit."
         },
         {
-          id: "phr_anki_016",
-          situation: "Einen Vortrag, Fallbericht oder eine Argumentation zusammenfassen.",
-          basic: "Zusammenfassend ...",
-          natural: "Zusammenfassend kann man sagen, dass sich die Lage stabilisiert hat.",
-          professionalB2: "Zusammenfassend lässt sich festhalten, dass die therapeutischen Maßnahmen gut angeschlagen haben.",
-          c1: "Zusammenfassend bleibt zu konstatieren, dass die implementierten Interventionen eine messbare Besserung des Gesamtzustandes bewirkt haben.",
-          relatedWords: ["zusammenfassend", "das Fazit", "die Schlussfolgerung", "konstatieren"]
+          id: "phr_010",
+          situation: "Man möchte bei Tisch höflich ablehnen, wenn man bereits satt ist.",
+          basic: "Nein danke, ich bin voll.",
+          natural: "Vielen Dank, aber ich bin wirklich pappsatt! Es war super lecker.",
+          professionalB2: "Es hat ganz hervorragend geschmeckt, aber ich bin nun wirklich wunschlos satt und rundum zufrieden, vielen Dank!",
+          c1: "Ich danke Ihnen für den überaus großzügigen Nachschlag, muss jedoch dankend ablehnen, da ich vollends gesättigt bin. Das Mahl war vorzüglich.",
+          relatedWords: ["pappsatt", "wunschlos", "gesättigt", "vorzüglich", "der Nachschlag"],
+          whyExplanation: "'Ich bin pappsatt' ist umgangssprachlich herzlich; 'wunschlos satt' ist das ideale B2-Kompliment."
+        }
+      ]
+    },
+
+    // ----------------------------------------
+    // 5. DISKURS & DISKUSSION (B2/C1)
+    // ----------------------------------------
+    {
+      id: "cat_diskurs_meinung",
+      name: "Diskurs, Meinung äußern & Einwände",
+      icon: "💬",
+      phrases: [
+        {
+          id: "phr_011",
+          situation: "Höflich unterbrechen, um in der Teamsitzung einen wichtigen Gedanken zu ergänzen.",
+          basic: "Darf ich auch etwas sagen?",
+          natural: "Dürfte ich dazu ganz kurz etwas ergänzen?",
+          professionalB2: "Wenn ich kurz einhaken dürfte: Zu diesem Aspekt gibt es eine wichtige Beobachtung aus dem Frühdienst.",
+          c1: "Gestatten Sie mir an dieser Stelle eine kurze Intervention, um die Argumentation um eine wesentliche klinische Nuance zu erweitern.",
+          relatedWords: ["einhaken", "die Intervention", "der Aspekt", "ergänzen", "die Nuance"],
+          whyExplanation: "'Wenn ich kurz einhaken dürfte' ist der eleganteste B2-Diskursmarker in deutschen Teambesprechungen."
         },
         {
-          id: "phr_anki_017",
-          situation: "Einen Vortrag oder eine Präsentation förmlich beenden.",
-          basic: "Ich komme jetzt zum Schluss.",
-          natural: "Damit bin ich auch schon am Ende meiner Präsentation angelangt.",
-          professionalB2: "Ich komme nun zum abschließenden Fazit meiner Fallvorstellung und bedanke mich für Ihre Aufmerksamkeit.",
-          c1: "Mit diesen Ausführungen möchte ich meine Präsentation beschließen und danke Ihnen herzlich für Ihr geschätztes Interesse.",
-          relatedWords: ["das Fazit", "der Abschluss", "die Aufmerksamkeit", "beschließen"]
-        },
-        {
-          id: "phr_anki_018",
-          situation: "Nach einer Präsentation die Fragerunde für Kollegen oder Prüfer eröffnen.",
-          basic: "Gibt es noch Fragen?",
-          natural: "Habt ihr dazu noch irgendwelche Fragen?",
-          professionalB2: "Stehen Ihrerseits noch Fragen oder Anmerkungen zu den vorgestellten Inhalten im Raum?",
-          c1: "Ich stehe Ihnen nun sehr gerne für etwaige Rückfragen oder eine vertiefende Diskussion zur Verfügung.",
-          relatedWords: ["die Fragerunde", "die Rückfragen", "die Diskussion"]
-        },
-        {
-          id: "phr_anki_019",
-          situation: "Sich zu Beginn eines Telefonats oder Gesprächs vorstellen.",
-          basic: "Guten Tag, mein Name ist ...",
-          natural: "Guten Tag, mein Name ist Ali, ich bin Freiwilliger auf Station 2.",
-          professionalB2: "Guten Tag, mein Name ist Ali Sibaie. Ich melde mich von Station 2 des Universitätsklinikums bezüglich Herrn Müller.",
-          c1: "Guten Tag, mein Name ist Ali Sibaie vom Bundesfreiwilligendienst der Station 2 des UKGM. Ich kontaktiere Sie bezüglich der Verlegung.",
-          relatedWords: ["die Vorstellung", "sich vorstellen", "das Telefonat", "die Verlegung"]
+          id: "phr_012",
+          situation: "Einen Vortrag, eine Übergabe oder ein langes Argument zusammenfassend beenden.",
+          basic: "Ich bin jetzt fertig. Gibt es noch Fragen?",
+          natural: "Ich komme jetzt zum Schluss. Habt ihr dazu noch Fragen?",
+          professionalB2: "Zusammenfassend lässt sich festhalten, dass der Zustand stabil ist. Damit schließe ich meinen Bericht und stehe für Rückfragen zur Verfügung.",
+          c1: "Resümierend darf ich konstatieren, dass die eingeleiteten Maßnahmen greifen. Ich bedanke mich für Ihre Aufmerksamkeit und freue mich auf den anschließenden Diskurs.",
+          relatedWords: ["zusammenfassend", "konstatieren", "resümierend", "der Diskurs", "festhalten"],
+          whyExplanation: "'Zusammenfassend lässt sich festhalten...' ist das Standard-Fazit für B2/C1 Prüfungen und Konferenzen."
         }
       ]
     }
@@ -21935,7 +22298,7 @@ const ENGINEERING_DATA = exports.ENGINEERING_DATA = {
   // MODULE: components/dashboard.js
   // ==========================================
   __register('components/dashboard.js', function(module, exports, require) {
-// Bento Grid Dashboard - Calm, Professional, Structured & High-Yield Learning
+// Bento Grid Dashboard - High-Yield German Learning Operating System
 // 12-Spalten Layout: Hero Mission (Span 8), Station 2 Überlebensmodus (Span 4),
 // 4 Säulen-Sprints (Span 3 je) und adaptiver Tagesablauf (Span 12).
 
@@ -21943,7 +22306,7 @@ const { Storage } = require('../storage.js');
 const { SRS } = require('../srs.js');
 const { VOCABULARY_DATA } = require('../data/vocabulary_data.js');
 const { AdaptiveEngine } = require('../adaptive_engine.js');
-const { NUANCES_DATA } = require('../data/nuances_data.js');
+const { SIMULATIONS_DATA } = require('../data/simulations_data.js');
 
 const renderDashboard = exports.renderDashboard = async function renderDashboard(container) {
   const settings = Storage.getSettings();
@@ -21998,7 +22361,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             <div class="space-y-3">
               <div class="flex-between">
                 <div class="flex items-center gap-2">
-                  <span class="badge badge-blue">Tages-Check-in</span>
+                  <span class="badge badge-amber">Tages-Check-in</span>
                   <span class="badge badge-emerald">BFD • UKGM Station 2</span>
                 </div>
                 <span class="text-xs text-muted font-semibold">B1+ → C1 System</span>
@@ -22007,7 +22370,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
               <div>
                 <h1 class="page-title">Guten Tag, Ali!</h1>
                 <p class="subtitle mt-1">
-                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, fehlerfreies Deutsch und flüssiges Sprechen.
+                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, flüssiges Deutsch im Alltag und tiefe Partnerschaftsgespräche.
                 </p>
               </div>
 
@@ -22017,10 +22380,10 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
                 <div class="flex-between flex-wrap gap-3">
                   <div class="space-y-0.5">
                     <div class="font-bold text-base text-primary">
-                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Simulation: Grenzen setzen & Deeskalieren'}
+                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Dialog-Simulation: BFD, Familie oder Partnerschaft'}
                     </div>
                     <div class="text-xs text-secondary">
-                      ${dueCount > 0 ? 'Fällige Verben und Chunks im Langzeitgedächtnis festigen.' : 'Trainiere 4 Sprachebenen im Patientenkontakt auf Station 2.'}
+                      ${dueCount > 0 ? 'Fällige Verben, Wortfamilien und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog mit Audio-Feedback.'}
                     </div>
                   </div>
                   <a href="${dueCount > 0 ? '#wiederholen?mode=review' : '#simulation'}" class="btn btn-primary btn-sm whitespace-nowrap">
@@ -22061,7 +22424,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
               <div>
                 <h2 class="text-lg font-bold text-primary">Überlebensmodus & Grenzen</h2>
                 <p class="text-xs text-secondary mt-1 leading-relaxed">
-                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken und Schutzregeln für den Klinikdienst.
+                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken (§ 203 StGB) und Schutzregeln für den Klinikdienst.
                 </p>
               </div>
 
@@ -22083,18 +22446,18 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
 
         <!-- 12-Column Bento Grid: Row 2 (4 Power Learning Pillars - Span 3 each) -->
         <div class="bento-grid">
-          <!-- Pillar 1: Vokabeln & Präfix-Verben -->
+          <!-- Pillar 1: Vokabeln & Wortfamilien -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-blue">Wortschatz</span>
+                <span class="badge badge-amber">Wortschatz</span>
                 <span class="text-xs font-semibold ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">
                   ${dueCount > 0 ? `${dueCount} fällig` : '✓ Bereit'}
                 </span>
               </div>
               <h3 class="font-bold text-base text-primary">Verben & SRS</h3>
               <p class="text-xs text-secondary">
-                ${VOCABULARY_DATA.length} Einträge mit allen Präfixen (<em>ab-, unter-, über-, an-, ein-</em>), Stammformen und Audio.
+                ${VOCABULARY_DATA.length} Vokabeln mit Wortfamilien, Präfixen (<em>ab-, unter-, an-, ein-</em>), Stammformen und Audio.
               </p>
             </div>
             <div class="pt-2">
@@ -22104,59 +22467,59 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             </div>
           </div>
 
-          <!-- Pillar 2: Nuancen & Synonyme -->
+          <!-- Pillar 2: Dialog-Simulationen (BFD, Familie, GF) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-indigo">Unterschiede</span>
-                <span class="badge badge-gray text-[10px]">${NUANCES_DATA.length} Gruppen</span>
+                <span class="badge badge-emerald">Simulation</span>
+                <span class="badge badge-gray text-[10px]">${SIMULATIONS_DATA.length} Szenarien</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Wann welches Wort?</h3>
+              <h3 class="font-bold text-base text-primary">Rollenspiele & Dialoge</h3>
               <p class="text-xs text-secondary">
-                <em>absagen vs. abbrechen vs. ablehnen</em> · <em>untersuchen vs. überwachen</em> · Keine Verwechslungen mehr.
+                Station 2 Übergaben, familiäres Abendessen & tiefe Partnerschaftsgespräche (Freundin/Wifey trösten).
               </p>
             </div>
             <div class="pt-2">
-              <a href="#unterschiede" class="btn btn-secondary btn-sm w-full">
-                Nuancen vergleichen →
+              <a href="#simulation" class="btn btn-secondary btn-sm w-full">
+                Dialoge üben →
               </a>
             </div>
           </div>
 
-          <!-- Pillar 3: Sprechtrainer & Audio -->
+          <!-- Pillar 3: Kinder- & Jugendpsychiatrie (KJP) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-purple">Sprechen</span>
-                <span class="text-xs text-secondary font-semibold">0.7x – 1.2x</span>
+                <span class="badge badge-purple">Psychologie</span>
+                <span class="badge badge-gray text-[10px]">KJP & Deeskalation</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Sprechtrainer</h3>
+              <h3 class="font-bold text-base text-primary">Psychologie & KJP</h3>
               <p class="text-xs text-secondary">
-                Schattensprechen, Aussprachetraining und spontane Reaktionsübungen für den Stationsalltag.
+                Bindungsmuster nach Bowlby, Co-Regulation bei kindlichen Wutanfällen, ADHS und Notfall-Erdung.
               </p>
             </div>
             <div class="pt-2">
-              <a href="#sprechen" class="btn btn-secondary btn-sm w-full">
-                Sprechen trainieren →
+              <a href="#psychologie" class="btn btn-secondary btn-sm w-full">
+                Psychologie lernen →
               </a>
             </div>
           </div>
 
-          <!-- Pillar 4: Satz-Korrektor (KI-Regeln) -->
+          <!-- Pillar 4: Was sage ich? Redemittel-Transformator -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-emerald">Grammatik</span>
-                <span class="badge badge-gray text-[10px]">Live-Korrektur</span>
+                <span class="badge badge-blue">Redemittel</span>
+                <span class="badge badge-gray text-[10px]">4 CEFR-Stufen</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Satz-Korrektor</h3>
+              <h3 class="font-bold text-base text-primary">Was sage ich?</h3>
               <p class="text-xs text-secondary">
-                Tippe deutsche Sätze ein: Live-Korrektur von Satzstellung (Verbzweit/Verbletzt), Fällen und Kommasetzung.
+                Verwandle einfache B1-Sätze in natürliches Deutsch, professionelles B2 und hochpräzises C1.
               </p>
             </div>
             <div class="pt-2">
-              <a href="#satzkorrektor" class="btn btn-secondary btn-sm w-full">
-                Sätze korrigieren →
+              <a href="#phrasen" class="btn btn-secondary btn-sm w-full">
+                Redemittel trainieren →
               </a>
             </div>
           </div>
@@ -22167,7 +22530,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
           <div class="flex-between flex-wrap gap-3">
             <div>
               <div class="flex items-center gap-2">
-                <span class="badge badge-blue text-xs">Strukturierter Ablauf</span>
+                <span class="badge badge-amber text-xs">Strukturierter Ablauf</span>
                 <h2 class="section-title">${adaptivePlan.title}</h2>
               </div>
               <p class="text-xs text-secondary mt-1">
@@ -22189,7 +22552,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             ${adaptivePlan.steps.map((item, idx) => `
               <div class="p-3.5 bg-subtle rounded-xl border border-subtle flex flex-col justify-between space-y-2">
                 <div>
-                  <div class="text-[11px] font-bold text-blue-400 uppercase">Schritt ${idx + 1} • ${item.duration}</div>
+                  <div class="text-[11px] font-bold text-amber-400 uppercase">Schritt ${idx + 1} • ${item.duration}</div>
                   <div class="font-bold text-sm text-primary mt-0.5">${item.title}</div>
                 </div>
                 <div class="pt-2 border-t border-subtle flex-between">
@@ -23184,195 +23547,313 @@ const renderSynonymsDiffHub = exports.renderSynonymsDiffHub = function renderSyn
   // MODULE: components/simulations.js
   // ==========================================
   __register('components/simulations.js', function(module, exports, require) {
-// Simulations Component — Interaktive Rollenspiele mit Stufen-Feedback
+// Simulations Component — Interaktive Rollenspiele (BFD, Familie, Partnerschaft)
 
 const { Speech } = require('../speech.js');
+const { SIMULATIONS_DATA } = require('../data/simulations_data.js');
 
 const renderSimulations = exports.renderSimulations = function renderSimulations(container, data, params = {}) {
-  const activeSimId = params.id || (data.simulations[0] ? data.simulations[0].id : null);
-  const currentSim = data.simulations.find(s => s.id === activeSimId) || data.simulations[0];
+  const sims = SIMULATIONS_DATA || (data && data.simulations) || [];
+  let activeCategory = 'alle';
+  let activeSimId = params.id || (sims[0] ? sims[0].id : null);
+  let currentSim = sims.find(s => s.id === activeSimId) || sims[0];
 
-  container.innerHTML = `
-    <div class="simulations-wrapper animate-fadeIn">
-      <div class="flex-between flex-wrap gap-4 mb-6">
-        <div>
-          <div class="badge badge-emerald mb-2">PRAXIS-SIMULATOR</div>
-          <h1 class="text-3xl font-bold text-gradient">🎭 BFD- & Klinik-Simulationen</h1>
-          <p class="text-secondary mt-1">Interaktive Dialoge mit mehrstufigem Feedback (Basic, Natürlich, B2, C1).</p>
-        </div>
-        <select id="selectSim" class="select select-sm max-w-xs">
-          ${data.simulations.map(s => `
-            <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>${s.title} (${s.level})</option>
-          `).join('')}
-        </select>
-      </div>
+  function renderView() {
+    const filteredSims = activeCategory === 'alle' 
+      ? sims 
+      : sims.filter(s => s.category === activeCategory);
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Sidebar: Scenario Overview -->
-        <div class="card p-5 space-y-4">
-          <div class="flex-between">
-            <span class="badge badge-indigo">${currentSim.level}</span>
-            <span class="badge badge-purple">${currentSim.category}</span>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Einsatzort:</div>
-            <div class="font-semibold text-blue-300">📍 ${currentSim.workplace}</div>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Situation:</div>
-            <p class="text-sm text-secondary">${currentSim.situation}</p>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Dein Ziel:</div>
-            <p class="text-sm text-emerald-300 font-medium">${currentSim.objective}</p>
+    if (!filteredSims.some(s => s.id === currentSim.id) && filteredSims.length > 0) {
+      currentSim = filteredSims[0];
+    }
+
+    container.innerHTML = `
+      <div class="simulations-wrapper animate-fadeIn space-y-6 max-w-6xl mx-auto">
+        <!-- Hero Header -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR</span>
+              <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
+              <p class="subtitle mt-1">
+                Lebensnahe Simulationen für Krankenhaus, Stationsalltag, Familie und tiefe Partnerschaftsgespräche mit 4-Stufen-Feedback.
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="badge badge-emerald py-1 px-3 text-xs font-semibold">${sims.length} Szenarien aktiv</span>
+            </div>
           </div>
         </div>
 
-        <!-- Main: Interactive Dialogue Stage -->
-        <div class="md:col-span-2 space-y-4">
-          <div class="card p-6" id="chatStage"></div>
+        <!-- Category Tabs & Scenario Selector -->
+        <div class="bento-card p-4 space-y-3">
+          <div class="flex-between flex-wrap gap-3">
+            <div class="flex gap-2 flex-wrap" id="simCategoryTabs">
+              <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
+                Alle Szenarien (${sims.length})
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
+                🏥 Klinik & BFD
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Familie & Alltag' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie & Alltag">
+                🏡 Familie & Alltag
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
+                ❤️ Partnerschaft & Herz
+              </button>
+            </div>
+
+            <!-- Scenario Dropdown -->
+            <select id="selectSim" class="p-2 bg-subtle border border-subtle rounded-lg text-primary text-xs font-bold outline-none flex-1 max-w-md">
+              ${filteredSims.map(s => `
+                <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>
+                  ${s.category === 'Partnerschaft & Herz' ? '❤️' : (s.category === 'Familie & Alltag' ? '🏡' : '🏥')} ${s.title} (${s.level})
+                </option>
+              `).join('')}
+            </select>
+          </div>
         </div>
-      </div>
-    </div>
-  `;
 
-  // Hook simulation selector
-  container.querySelector('#selectSim').onchange = (e) => {
-    window.location.hash = `#simulation?id=${e.target.value}`;
-  };
+        <!-- 2-Column Main Workspace -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Left: Scenario Overview & Objectives -->
+          <div class="bento-card p-5 space-y-4 border border-subtle">
+            <div class="flex-between items-center border-b border-subtle pb-3">
+              <span class="badge badge-blue text-xs">${currentSim.level}</span>
+              <span class="badge badge-amber text-xs">${currentSim.category}</span>
+            </div>
 
-  renderSimTurn(container.querySelector('#chatStage'), currentSim, 0);
-}
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Ort & Kontext:</div>
+              <div class="font-bold text-sm text-primary">📍 ${currentSim.workplace}</div>
+            </div>
 
-function renderSimTurn(stage, sim, turnIndex) {
-  if (turnIndex >= sim.turns.length) {
-    stage.innerHTML = `
-      <div class="text-center p-8">
-        <div class="text-5xl mb-3">🏆</div>
-        <h2 class="text-2xl font-bold mb-2">Simulation erfolgreich abgeschlossen!</h2>
-        <p class="text-secondary mb-6">Du hast alle Gesprächsphasen dieses Szenarios souverän gemeistert.</p>
-        <div class="flex justify-center gap-3">
-          <a href="#heute" class="btn btn-primary">Zurück zum Dashboard</a>
-          <button id="btnRetrySim" class="btn btn-outline">Simulation wiederholen</button>
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Rollen:</div>
+              <div class="text-xs text-secondary"><strong>Du:</strong> ${currentSim.userRole}</div>
+              <div class="text-xs text-secondary"><strong>Gegenüber:</strong> ${currentSim.counterpartRole}</div>
+            </div>
+
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Situation:</div>
+              <p class="text-xs text-secondary leading-relaxed">${currentSim.situation}</p>
+            </div>
+
+            <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1">
+              <div class="text-[11px] uppercase font-bold text-emerald-400">Dein Hauptziel:</div>
+              <p class="text-xs text-primary font-medium">${currentSim.objective}</p>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Stage -->
+          <div class="md:col-span-2 space-y-4">
+            <div class="bento-card p-6 border border-subtle" id="chatStage"></div>
+          </div>
         </div>
       </div>
     `;
-    const btnRetry = stage.querySelector('#btnRetrySim');
-    if (btnRetry) btnRetry.onclick = () => renderSimTurn(stage, sim, 0);
-    return;
+
+    // Category button events
+    container.querySelectorAll('.sim-cat-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeCategory = btn.getAttribute('data-cat');
+        renderView();
+      };
+    });
+
+    // Select dropdown event
+    const selectElem = container.querySelector('#selectSim');
+    if (selectElem) {
+      selectElem.onchange = (e) => {
+        const found = sims.find(s => s.id === e.target.value);
+        if (found) {
+          currentSim = found;
+          renderView();
+        }
+      };
+    }
+
+    renderSimTurn(container.querySelector('#chatStage'), currentSim, 0);
   }
 
-  const turn = sim.turns[turnIndex];
-
-  stage.innerHTML = `
-    <div class="space-y-4">
-      <div class="flex-between text-xs text-secondary border-b border-glass pb-2">
-        <span>Gesprächsschritt ${turnIndex + 1} von ${sim.turns.length}</span>
-        <span>Rolle: ${turn.speaker}</span>
-      </div>
-
-      <!-- Counterpart Message Bubble -->
-      <div class="p-4 bg-surface rounded-2xl border border-glass flex items-start gap-3">
-        <div class="text-2xl">👤</div>
-        <div class="flex-1">
-          <div class="font-bold text-sm text-purple-300 mb-1">${turn.speaker} (${sim.counterpartRole}):</div>
-          <div class="text-base text-gray-100 font-medium">${turn.text}</div>
-          <button id="btnPlayCounterpart" class="btn btn-ghost btn-xs text-xs text-blue-400 mt-2">🔊 Vorlesen</button>
+  function renderSimTurn(stage, sim, turnIndex) {
+    if (turnIndex >= sim.turns.length) {
+      stage.innerHTML = `
+        <div class="text-center p-8 space-y-4 animate-fadeIn">
+          <div class="text-5xl">🏆</div>
+          <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
+          <p class="text-sm text-secondary max-w-md mx-auto">
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich durchlaufen und die wesentlichen Kriterien erfüllt.
+          </p>
+          <div class="flex justify-center gap-3 pt-4">
+            <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
+            <a href="#heute" class="btn btn-secondary btn-sm">Zum Dashboard</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Guidance -->
-      <div class="p-3 bg-blue-950/20 border border-blue-500/30 rounded-xl text-xs text-blue-300">
-        💡 <strong>Deine Aufgabe:</strong> ${turn.guidance}
-      </div>
-
-      <!-- Input Area -->
-      <div class="space-y-2">
-        <label class="block text-xs font-semibold text-secondary">Deine Antwort auf Deutsch:</label>
-        <div class="flex gap-2">
-          <textarea id="userResponseInput" rows="2" class="input w-full text-sm" placeholder="Tippe deine Antwort oder nutze das Mikrofon..."></textarea>
-          <button id="btnMic" class="btn btn-outline flex-center px-4" title="Sprechen">🎙️</button>
-        </div>
-        <button id="btnSubmitResponse" class="btn btn-primary w-full">Antwort überprüfen & Stufen vergleichen</button>
-      </div>
-
-      <!-- Feedback & Response Tiers Area (Hidden initially) -->
-      <div id="feedbackArea" class="hidden space-y-4 mt-6 border-t border-glass pt-4 animate-fadeIn"></div>
-    </div>
-  `;
-
-  const btnPlay = stage.querySelector('#btnPlayCounterpart');
-  const btnMic = stage.querySelector('#btnMic');
-  const txtInput = stage.querySelector('#userResponseInput');
-  const btnSubmit = stage.querySelector('#btnSubmitResponse');
-  const feedbackArea = stage.querySelector('#feedbackArea');
-
-  btnPlay.onclick = () => Speech.speak(turn.text, 0.9);
-
-  let isRecording = false;
-  btnMic.onclick = () => {
-    if (!isRecording) {
-      isRecording = true;
-      btnMic.classList.add('btn-red');
-      Speech.startListening(
-        (transcript) => {
-          txtInput.value = transcript;
-          btnMic.classList.remove('btn-red');
-          isRecording = false;
-        },
-        (err) => {
-          alert('Spracherkennung: ' + err);
-          btnMic.classList.remove('btn-red');
-          isRecording = false;
-        }
-      );
-    } else {
-      Speech.stopListening();
-      btnMic.classList.remove('btn-red');
-      isRecording = false;
+      `;
+      stage.querySelector('#btnRetrySim').onclick = () => renderSimTurn(stage, sim, 0);
+      return;
     }
-  };
 
-  btnSubmit.onclick = () => {
-    const userText = txtInput.value.trim();
-    feedbackArea.classList.remove('hidden');
-    feedbackArea.innerHTML = `
-      <div class="space-y-4">
-        <div class="card p-4 bg-emerald-950/20 border border-emerald-500/30">
-          <h4 class="font-bold text-emerald-400 text-sm mb-2">🎯 Auswertung & Vergleichsstufen</h4>
-          <p class="text-xs text-secondary mb-4">${turn.whyExplanation}</p>
+    const turn = sim.turns[turnIndex];
 
-          <div class="space-y-3">
-            <div class="p-3 bg-surface rounded-lg border border-glass">
-              <div class="text-xs font-bold text-gray-400 uppercase">1. Basic (B1):</div>
-              <div class="text-sm text-gray-300">${turn.responseTiers.basic}</div>
-            </div>
+    stage.innerHTML = `
+      <div class="space-y-5 animate-fadeIn">
+        <!-- Progress Bar -->
+        <div class="flex-between text-xs text-muted font-semibold pb-1">
+          <span>Gesprächsphase ${turnIndex + 1} von ${sim.turns.length}</span>
+          <span>${Math.round(((turnIndex + 1) / sim.turns.length) * 100)}%</span>
+        </div>
+        <div class="w-full bg-subtle h-1.5 rounded-full overflow-hidden">
+          <div class="bg-amber-500 h-full transition-all duration-300" style="width: ${((turnIndex + 1) / sim.turns.length) * 100}%"></div>
+        </div>
 
-            <div class="p-3 bg-surface rounded-lg border border-glass">
-              <div class="text-xs font-bold text-blue-400 uppercase">2. Natürlich & Alltäglich:</div>
-              <div class="text-sm text-blue-200">${turn.responseTiers.natural}</div>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg border border-emerald-500/30 bg-emerald-950/10">
-              <div class="text-xs font-bold text-emerald-400 uppercase">3. Professionell (B2 - Empfohlen):</div>
-              <div class="text-sm text-emerald-200 font-semibold">${turn.responseTiers.professionalB2}</div>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg border border-purple-500/30 bg-purple-950/10">
-              <div class="text-xs font-bold text-purple-400 uppercase">4. C1-Niveau (Souverän & Nuanciert):</div>
-              <div class="text-sm text-purple-200">${turn.responseTiers.c1}</div>
-            </div>
+        <!-- Counterpart Message -->
+        <div class="p-4 bg-subtle rounded-2xl border border-subtle space-y-2">
+          <div class="flex-between items-center">
+            <span class="font-extrabold text-sm text-amber-400">${turn.speaker}</span>
+            <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-turn" data-text="${turn.text}">
+              🔊 Vorlesen
+            </button>
+          </div>
+          <div class="text-sm text-primary font-medium leading-relaxed italic">
+            "${turn.text}"
           </div>
         </div>
 
-        <button id="btnNextTurn" class="btn btn-primary w-full">Nächster Gesprächsschritt →</button>
+        <!-- Guidance Cue -->
+        <div class="p-3 bg-surface rounded-xl border border-blue-500/30 text-xs space-y-1">
+          <div class="font-bold text-blue-400">💡 Deine Aufgabe in dieser Phase:</div>
+          <div class="text-secondary">${turn.guidance}</div>
+          ${turn.expectedCriteria ? `
+            <div class="flex gap-1.5 flex-wrap pt-1">
+              ${turn.expectedCriteria.map(c => `<span class="badge badge-gray text-[10px]">✓ ${c}</span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+
+        <!-- Free Text Typing Mode -->
+        <div class="space-y-2 pt-2">
+          <label class="block text-xs font-bold text-secondary">✍️ Tippe deine Antwort (oder wähle unten eine Musterlösung):</label>
+          <div class="flex gap-2">
+            <input type="text" id="userSimInput" placeholder="Deine deutsche Antwort hier eingeben..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-xs flex-1 outline-none focus:border-amber-500" />
+            <button id="btnCheckUserInput" class="btn btn-primary btn-sm">Prüfen</button>
+          </div>
+          <div id="userInputFeedback" class="hidden text-xs p-2.5 rounded-lg"></div>
+        </div>
+
+        <!-- Tiered Sample Responses -->
+        <div class="space-y-3 pt-3 border-t border-subtle">
+          <div class="text-xs font-bold text-muted uppercase tracking-wider">Musterantworten nach Sprachebene:</div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- Basic B1 -->
+            <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-gray text-[10px]">Basic (B1)</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.basic}">▶</button>
+                </div>
+                <div class="text-xs text-secondary mt-1 font-medium">${turn.responseTiers.basic}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.basic}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- Natürlich -->
+            <div class="p-3 bg-subtle rounded-xl border border-blue-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-blue text-[10px]">Natürlich</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.natural}">▶</button>
+                </div>
+                <div class="text-xs text-primary mt-1 font-medium">${turn.responseTiers.natural}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.natural}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- Professionell B2 -->
+            <div class="p-3 bg-subtle rounded-xl border border-amber-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-amber text-[10px]">Professionell (B2)</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.professionalB2}">▶</button>
+                </div>
+                <div class="text-xs text-primary mt-1 font-bold">${turn.responseTiers.professionalB2}</div>
+              </div>
+              <button class="btn btn-primary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.professionalB2}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- C1 Nuanciert -->
+            <div class="p-3 bg-subtle rounded-xl border border-purple-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-purple text-[10px]">C1 Nuanciert</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.c1}">▶</button>
+                </div>
+                <div class="text-xs text-purple-300 mt-1 font-medium">${turn.responseTiers.c1}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.c1}">Diese Antwort wählen →</button>
+            </div>
+          </div>
+
+          ${turn.whyExplanation ? `
+            <div class="p-2.5 bg-surface rounded-lg text-xs text-muted italic border border-subtle mt-2">
+              💡 <strong>Linguistische Erklärung:</strong> ${turn.whyExplanation}
+            </div>
+          ` : ''}
+        </div>
       </div>
     `;
 
-    feedbackArea.querySelector('#btnNextTurn').onclick = () => {
-      renderSimTurn(stage, sim, turnIndex + 1);
+    // Attach Audio Events
+    stage.querySelector('.btn-speak-turn').onclick = () => {
+      Speech.speak(turn.text, 0.95);
     };
-  };
+
+    stage.querySelectorAll('.btn-speak-opt').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        Speech.speak(btn.getAttribute('data-text'), 0.95);
+      };
+    });
+
+    // Tier button selection -> proceed to next turn
+    stage.querySelectorAll('.btn-select-tier').forEach(btn => {
+      btn.onclick = () => {
+        renderSimTurn(stage, sim, turnIndex + 1);
+      };
+    });
+
+    // Check user free text input
+    const inputField = stage.querySelector('#userSimInput');
+    const btnCheck = stage.querySelector('#btnCheckUserInput');
+    const feedbackBox = stage.querySelector('#userInputFeedback');
+
+    function checkAnswer() {
+      const val = inputField.value.trim();
+      if (!val) return;
+
+      feedbackBox.classList.remove('hidden');
+      feedbackBox.className = 'text-xs p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 space-y-2';
+      feedbackBox.innerHTML = `
+        <div>✓ <strong>Gute Formulierung!</strong> Du hast die Phase aktiv beantwortet.</div>
+        <div class="flex gap-2 pt-1">
+          <button id="btnProceedNextTurn" class="btn btn-primary btn-xs">Weiter zur nächsten Phase →</button>
+        </div>
+      `;
+
+      stage.querySelector('#btnProceedNextTurn').onclick = () => {
+        renderSimTurn(stage, sim, turnIndex + 1);
+      };
+    }
+
+    btnCheck.onclick = checkAnswer;
+    inputField.onkeydown = (e) => {
+      if (e.key === 'Enter') checkAnswer();
+    };
+  }
+
+  renderView();
 }
 
   });
@@ -23508,94 +23989,187 @@ const { PHRASES_DATA } = require('../data/phrases_data.js');
 const { Speech } = require('../speech.js');
 
 const renderPhraseTrainer = exports.renderPhraseTrainer = function renderPhraseTrainer(container) {
-  container.innerHTML = `
-    <div class="phrase-trainer animate-fadeIn space-y-6">
-      <div class="hero-card">
-        <div class="flex-between flex-wrap gap-4">
-          <div>
-            <span class="badge badge-blue mb-2">FORMULIERUNGS-TRANSFORMATOR</span>
-            <h1 class="text-3xl font-bold text-gradient">${PHRASES_DATA.title}</h1>
-            <p class="text-secondary mt-1">Lerne, wie du von einfachem B1 stufenweise zu natürlichem und hochprofessionellem B2/C1 wechselst.</p>
+  let activeCatId = 'alle';
+  let searchQuery = '';
+
+  function renderView() {
+    const q = searchQuery.toLowerCase().trim();
+    const allCategories = PHRASES_DATA.categories;
+
+    const filteredCategories = allCategories.map(cat => {
+      if (activeCatId !== 'alle' && cat.id !== activeCatId) return null;
+      const matchingPhrases = cat.phrases.filter(p => {
+        if (!q) return true;
+        return p.situation.toLowerCase().includes(q) ||
+               p.basic.toLowerCase().includes(q) ||
+               p.natural.toLowerCase().includes(q) ||
+               p.professionalB2.toLowerCase().includes(q) ||
+               p.c1.toLowerCase().includes(q) ||
+               (p.relatedWords && p.relatedWords.some(w => w.toLowerCase().includes(q)));
+      });
+      if (matchingPhrases.length === 0) return null;
+      return { ...cat, phrases: matchingPhrases };
+    }).filter(Boolean);
+
+    container.innerHTML = `
+      <div class="phrase-trainer animate-fadeIn space-y-6 max-w-6xl mx-auto">
+        <!-- Hero Card -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-amber mb-2">FORMULIERUNGS-TRANSFORMATOR</span>
+              <h1 class="page-title">💬 Was sage ich? (Redemittel für jede Situation)</h1>
+              <p class="subtitle mt-1">
+                Verwandle einfache B1-Sätze stufenweise in natürliches Deutsch, professionelles B2 und hochpräzises C1.
+              </p>
+            </div>
+            <a href="#heute" class="btn btn-secondary btn-sm">← Zum Dashboard</a>
           </div>
-          <a href="#heute" class="btn btn-secondary">← Zurück</a>
         </div>
-      </div>
 
-      <!-- Categories -->
-      <div class="space-y-6">
-        ${PHRASES_DATA.categories.map(cat => `
-          <div class="card p-6">
-            <h2 class="text-xl font-bold mb-4 text-purple-300 flex items-center gap-2">
-               ${cat.name}
-            </h2>
-            <div class="space-y-4">
-              ${cat.phrases.map(p => `
-                <div class="p-4 bg-surface rounded-xl border border-glass space-y-3">
-                  <div class="text-xs text-secondary font-semibold">📍 Situation: ${p.situation}</div>
-                  
-                  <div class="grid md:grid-cols-4 gap-3">
-                    <div class="p-3 bg-gray-900/50 rounded-lg border border-gray-700">
-                      <div class="text-xs font-bold text-gray-400 uppercase mb-1">Basic (B1):</div>
-                      <div class="text-sm text-gray-300">${p.basic}</div>
-                    </div>
-
-                    <div class="p-3 bg-blue-950/30 rounded-lg border border-blue-500/30">
-                      <div class="text-xs font-bold text-blue-400 uppercase mb-1">Natürlich:</div>
-                      <div class="text-sm text-blue-200">${p.natural}</div>
-                    </div>
-
-                    <div class="p-3 bg-emerald-950/30 rounded-lg border border-emerald-500/30">
-                      <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Professionell (B2):</div>
-                      <div class="text-sm text-emerald-200 font-semibold">${p.professionalB2}</div>
-                    </div>
-
-                    <div class="p-3 bg-purple-950/30 rounded-lg border border-purple-500/30">
-                      <div class="text-xs font-bold text-purple-400 uppercase mb-1">C1-Register:</div>
-                      <div class="text-sm text-purple-200">${p.c1}</div>
-                    </div>
-                  </div>
-
-                  <div class="flex-between pt-2">
-                    <span class="text-xs text-secondary italic">💡 ${p.whyExplanation || ''}</span>
-                    <button class="btn btn-ghost btn-xs text-blue-400 btn-speak-p" data-text="${p.professionalB2}">
-                      🔊 B2-Phrase anhören
-                    </button>
-                  </div>
-                </div>
+        <!-- Search & Category Filters -->
+        <div class="bento-card p-4 space-y-3">
+          <div class="flex-between flex-wrap gap-3">
+            <input type="text" id="phraseSearch" placeholder="Nach Situation oder Phrase suchen (z. B. 'wiederholen', 'trösten', 'Grenze', 'satt')..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-xs outline-none flex-1 min-w-[260px] focus:border-amber-500" value="${searchQuery}" />
+            <div class="flex gap-1.5 flex-wrap" id="phraseCatTabs">
+              <button class="btn btn-xs ${activeCatId === 'alle' ? 'btn-primary' : 'btn-secondary'} phr-cat-btn" data-cat="alle">
+                Alle Bereiche
+              </button>
+              ${allCategories.map(cat => `
+                <button class="btn btn-xs ${activeCatId === cat.id ? 'btn-primary' : 'btn-secondary'} phr-cat-btn" data-cat="${cat.id}">
+                  ${cat.icon || '💬'} ${cat.name}
+                </button>
               `).join('')}
             </div>
           </div>
-        `).join('')}
-      </div>
+        </div>
 
-      <!-- Emergency Understanding Trainer -->
-      <div class="card p-6 bg-gradient-to-br from-amber-950/30 to-red-950/30 border border-amber-500/30">
-        <h3 class="text-2xl font-bold text-amber-300 mb-3">🚨 ${PHRASES_DATA.emergencyUnderstandingTrainer.title}</h3>
-        <div class="grid md:grid-cols-2 gap-4 mb-6">
-          ${PHRASES_DATA.emergencyUnderstandingTrainer.tips.map(tip => `
-            <div class="p-3 bg-surface rounded-lg text-xs text-secondary border border-glass">
-              ${tip}
+        <!-- Category Groups -->
+        <div class="space-y-6">
+          ${filteredCategories.length === 0 ? `
+            <div class="bento-card p-8 text-center text-muted">Keine passenden Phrasen gefunden.</div>
+          ` : filteredCategories.map(cat => `
+            <div class="bento-card p-6 space-y-4 border border-subtle">
+              <div class="flex items-center gap-2 border-b border-subtle pb-3">
+                <span class="text-xl">${cat.icon || '💬'}</span>
+                <h2 class="text-lg font-bold text-primary">${cat.name}</h2>
+                <span class="badge badge-gray text-xs ml-auto">${cat.phrases.length} Situationen</span>
+              </div>
+
+              <div class="space-y-4">
+                ${cat.phrases.map(p => `
+                  <div class="p-4 bg-subtle rounded-xl border border-subtle space-y-3">
+                    <div class="flex-between items-center flex-wrap gap-2">
+                      <div class="text-xs font-bold text-amber-400">
+                        📍 Situation: <span class="text-primary font-medium">${p.situation}</span>
+                      </div>
+                      ${p.relatedWords ? `
+                        <div class="flex gap-1 flex-wrap">
+                          ${p.relatedWords.map(w => `<span class="badge badge-gray text-[10px]">${w}</span>`).join('')}
+                        </div>
+                      ` : ''}
+                    </div>
+
+                    <!-- 4 Tier Comparison Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-1">
+                      <!-- Basic B1 -->
+                      <div class="p-3 bg-surface rounded-lg border border-subtle space-y-1 flex flex-col justify-between">
+                        <div>
+                          <div class="flex-between">
+                            <span class="badge badge-gray text-[10px]">Basic (B1)</span>
+                            <button class="btn btn-ghost btn-xs btn-speak-p" data-text="${p.basic}">▶</button>
+                          </div>
+                          <div class="text-xs text-secondary mt-1">${p.basic}</div>
+                        </div>
+                        <button class="btn btn-ghost btn-xs text-[10px] text-muted btn-copy-p mt-1" data-text="${p.basic}">📋 Kopieren</button>
+                      </div>
+
+                      <!-- Natürlich -->
+                      <div class="p-3 bg-surface rounded-lg border border-blue-500/25 space-y-1 flex flex-col justify-between">
+                        <div>
+                          <div class="flex-between">
+                            <span class="badge badge-blue text-[10px]">Natürlich</span>
+                            <button class="btn btn-ghost btn-xs text-blue-400 btn-speak-p" data-text="${p.natural}">▶</button>
+                          </div>
+                          <div class="text-xs text-primary font-medium mt-1">${p.natural}</div>
+                        </div>
+                        <button class="btn btn-ghost btn-xs text-[10px] text-blue-400 btn-copy-p mt-1" data-text="${p.natural}">📋 Kopieren</button>
+                      </div>
+
+                      <!-- Professionell B2 -->
+                      <div class="p-3 bg-surface rounded-lg border border-amber-500/35 space-y-1 flex flex-col justify-between">
+                        <div>
+                          <div class="flex-between">
+                            <span class="badge badge-amber text-[10px]">Professionell (B2)</span>
+                            <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-p" data-text="${p.professionalB2}">▶</button>
+                          </div>
+                          <div class="text-xs text-primary font-bold mt-1">${p.professionalB2}</div>
+                        </div>
+                        <button class="btn btn-ghost btn-xs text-[10px] text-amber-400 btn-copy-p mt-1" data-text="${p.professionalB2}">📋 Kopieren</button>
+                      </div>
+
+                      <!-- C1 Nuanciert -->
+                      <div class="p-3 bg-surface rounded-lg border border-purple-500/25 space-y-1 flex flex-col justify-between">
+                        <div>
+                          <div class="flex-between">
+                            <span class="badge badge-purple text-[10px]">C1 Nuanciert</span>
+                            <button class="btn btn-ghost btn-xs text-purple-400 btn-speak-p" data-text="${p.c1}">▶</button>
+                          </div>
+                          <div class="text-xs text-purple-300 font-medium mt-1">${p.c1}</div>
+                        </div>
+                        <button class="btn btn-ghost btn-xs text-[10px] text-purple-400 btn-copy-p mt-1" data-text="${p.c1}">📋 Kopieren</button>
+                      </div>
+                    </div>
+
+                    ${p.whyExplanation ? `
+                      <div class="p-2 bg-surface rounded-lg text-xs text-muted italic border border-subtle">
+                        💡 <strong>Warum dieser Unterschied zählt:</strong> ${p.whyExplanation}
+                      </div>
+                    ` : ''}
+                  </div>
+                `).join('')}
+              </div>
             </div>
           `).join('')}
         </div>
-
-        <div class="space-y-3">
-          ${PHRASES_DATA.emergencyUnderstandingTrainer.scenarios.map(sc => `
-            <div class="p-4 bg-surface rounded-xl border border-glass space-y-2">
-              <div class="text-xs font-bold text-red-400 uppercase">Klinik-Alltagston (Schnell & Umgangssprachlich):</div>
-              <div class="text-base text-gray-200 font-semibold">"${sc.spokenFast}"</div>
-              <div class="text-xs font-bold text-emerald-400 uppercase mt-2">Souveräne B2-Klärung:</div>
-              <div class="text-sm text-emerald-300">${sc.clarificationB2}</div>
-            </div>
-          `).join('')}
-        </div>
       </div>
-    </div>
-  `;
+    `;
 
-  container.querySelectorAll('.btn-speak-p').forEach(btn => {
-    btn.onclick = () => Speech.speak(btn.getAttribute('data-text'), 0.9);
-  });
+    // Event Bindings
+    container.querySelectorAll('.phr-cat-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeCatId = btn.getAttribute('data-cat');
+        renderView();
+      };
+    });
+
+    const searchInput = container.querySelector('#phraseSearch');
+    if (searchInput) {
+      searchInput.oninput = () => {
+        searchQuery = searchInput.value;
+        renderView();
+      };
+    }
+
+    container.querySelectorAll('.btn-speak-p').forEach(btn => {
+      btn.onclick = () => {
+        Speech.speak(btn.getAttribute('data-text'), 0.95);
+      };
+    });
+
+    container.querySelectorAll('.btn-copy-p').forEach(btn => {
+      btn.onclick = () => {
+        const text = btn.getAttribute('data-text');
+        navigator.clipboard.writeText(text).then(() => {
+          const original = btn.textContent;
+          btn.textContent = '✓ Kopiert!';
+          setTimeout(() => btn.textContent = original, 1500);
+        });
+      };
+    });
+  }
+
+  renderView();
 }
 
   });
@@ -23734,81 +24308,165 @@ ${currentLesson.explanationGerman}
   // MODULE: components/psychology_hub.js
   // ==========================================
   __register('components/psychology_hub.js', function(module, exports, require) {
-// Psychology Hub Component — "Psychologie verstehen"
+// Psychology Hub Component — "Psychologie & KJP verstehen"
 
 const { PSYCHOLOGY_DATA } = require('../data/psychology_data.js');
 const { Speech } = require('../speech.js');
 
 const renderPsychologyHub = exports.renderPsychologyHub = function renderPsychologyHub(container) {
-  container.innerHTML = `
-    <div class="psychology-wrapper animate-fadeIn space-y-6">
-      <div class="hero-card">
-        <div class="flex-between flex-wrap gap-4">
-          <div>
-            <div class="badge badge-emerald mb-2">KLINIK- & HANDLUNGSWISSEN</div>
-            <h1 class="text-3xl font-bold text-gradient">${PSYCHOLOGY_DATA.overview.title}</h1>
-            <p class="text-secondary mt-1">Verständnis für Patientenverhalten, Deeskalation, Bindungsmuster und Grenzen.</p>
-          </div>
-          <a href="#heute" class="btn btn-secondary">← Zurück</a>
-        </div>
-        <div class="alert alert-info text-xs mt-4">
-          ℹ️ ${PSYCHOLOGY_DATA.overview.disclaimer}
-        </div>
-      </div>
+  let activeDomain = 'alle';
+  let searchQuery = '';
 
-      <!-- Concepts Grid -->
-      <div class="grid md:grid-cols-2 gap-6">
-        ${PSYCHOLOGY_DATA.concepts.map(c => `
-          <div class="card p-6 space-y-4 border border-glass">
-            <div class="flex-between">
-              <span class="badge badge-indigo">${c.domain}</span>
-              <span class="text-xs text-secondary">${c.source}</span>
+  function renderView() {
+    const q = searchQuery.toLowerCase().trim();
+    const filtered = PSYCHOLOGY_DATA.concepts.filter(c => {
+      const matchDomain = activeDomain === 'alle' || c.domain.includes(activeDomain);
+      const matchQ = !q || c.term.toLowerCase().includes(q) || c.explanationGerman.toLowerCase().includes(q) || (c.relevantVocabulary && c.relevantVocabulary.some(v => v.toLowerCase().includes(q)));
+      return matchDomain && matchQ;
+    });
+
+    container.innerHTML = `
+      <div class="psychology-wrapper animate-fadeIn space-y-6 max-w-6xl mx-auto">
+        <!-- Hero Header -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-amber mb-2">KLINISCHES- & PÄDAGOGISCHES WISSEN</span>
+              <h1 class="page-title">🧠 Psychologie & Kinder-/Jugendpsychiatrie</h1>
+              <p class="subtitle mt-1">
+                Handlungswissen für Station 2, Bindungstheorie, Co-Regulation bei Kindern, Wutanfälle und deeskalierende Gesprächsführung.
+              </p>
             </div>
-
-            <h2 class="text-xl font-bold text-emerald-300">${c.term}</h2>
-            <p class="text-sm text-gray-200">${c.explanationGerman}</p>
-
-            ${c.workplaceContext ? `
-              <div class="p-3 bg-surface rounded-xl border border-glass text-xs text-secondary">
-                🏥 <strong>Klinischer Kontext:</strong> ${c.workplaceContext}
-              </div>
-            ` : ''}
-
-            ${c.steps ? `
-              <div class="p-3 bg-blue-950/30 border border-blue-500/30 rounded-xl space-y-1">
-                <div class="text-xs font-bold text-blue-400">Ablaufschritte:</div>
-                <ul class="list-disc list-inside text-xs text-blue-200 space-y-1">
-                  ${c.steps.map(s => `<li>${s}</li>`).join('')}
-                </ul>
-              </div>
-            ` : ''}
-
-            ${c.whatToDo ? `
-              <div class="space-y-2">
-                <div class="text-xs font-bold text-emerald-400">✅ Was ich tun sollte:</div>
-                <ul class="list-disc list-inside text-xs text-secondary space-y-1">
-                  ${c.whatToDo.map(d => `<li>${d}</li>`).join('')}
-                </ul>
-              </div>
-            ` : ''}
-
-            ${c.speakingPractice ? `
-              <div class="p-3 bg-purple-950/30 border border-purple-500/30 rounded-xl flex-between flex-wrap gap-2">
-                <div class="text-xs text-purple-200 italic">💬 "${c.speakingPractice}"</div>
-                <button class="btn btn-ghost btn-xs text-purple-400 btn-speak-psy" data-text="${c.speakingPractice}">
-                  🔊 Anhören
-                </button>
-              </div>
-            ` : ''}
+            <a href="#heute" class="btn btn-secondary btn-sm">← Zum Dashboard</a>
           </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
+          <div class="p-3 bg-surface rounded-xl border border-amber-500/30 text-xs text-secondary mt-3">
+            ℹ️ ${PSYCHOLOGY_DATA.overview.disclaimer}
+          </div>
+        </div>
 
-  container.querySelectorAll('.btn-speak-psy').forEach(btn => {
-    btn.onclick = () => Speech.speak(btn.getAttribute('data-text'), 0.9);
-  });
+        <!-- Controls & Filter Tabs -->
+        <div class="bento-card p-4 space-y-3">
+          <div class="flex-between flex-wrap gap-3">
+            <input type="text" id="psySearch" placeholder="Nach Konzepten suchen (z. B. 'Bindung', 'Wutanfall', 'ADHS', 'Erdung')..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-xs outline-none flex-1 min-w-[260px] focus:border-amber-500" value="${searchQuery}" />
+            <div class="flex gap-1.5 flex-wrap" id="psyDomainTabs">
+              <button class="btn btn-xs ${activeDomain === 'alle' ? 'btn-primary' : 'btn-secondary'} psy-tab-btn" data-domain="alle">
+                Alle (${PSYCHOLOGY_DATA.concepts.length})
+              </button>
+              <button class="btn btn-xs ${activeDomain === 'KJP' ? 'btn-primary' : 'btn-secondary'} psy-tab-btn" data-domain="KJP">
+                👶 Kinder & KJP
+              </button>
+              <button class="btn btn-xs ${activeDomain === 'Traumapädagogik' ? 'btn-primary' : 'btn-secondary'} psy-tab-btn" data-domain="Traumapädagogik">
+                🛡️ Traumapädagogik
+              </button>
+              <button class="btn btn-xs ${activeDomain === 'Deeskalation' ? 'btn-primary' : 'btn-secondary'} psy-tab-btn" data-domain="Deeskalation">
+                ⚡ Deeskalation & Notfall
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concepts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          ${filtered.map(c => `
+            <div class="bento-card p-6 space-y-4 border border-subtle justify-between">
+              <div class="space-y-3">
+                <div class="flex-between flex-wrap gap-2">
+                  <span class="badge ${c.domain.includes('KJP') ? 'badge-amber' : 'badge-blue'} text-xs">${c.domain}</span>
+                  <span class="text-[11px] font-mono text-muted">${c.source || ''}</span>
+                </div>
+
+                <h2 class="text-lg font-bold text-primary">${c.term}</h2>
+                <p class="text-xs text-secondary leading-relaxed">${c.explanationGerman}</p>
+
+                ${c.simpleExample ? `
+                  <div class="p-2.5 bg-subtle rounded-lg text-xs text-primary border border-subtle">
+                    💡 <strong>Alltagsbeispiel:</strong> ${c.simpleExample}
+                  </div>
+                ` : ''}
+
+                ${c.workplaceContext ? `
+                  <div class="p-3 bg-surface rounded-xl border border-blue-500/20 text-xs text-secondary space-y-0.5">
+                    <div class="font-bold text-blue-400">🏥 Praxis- & Klinik-Kontext:</div>
+                    <div>${c.workplaceContext}</div>
+                  </div>
+                ` : ''}
+
+                <!-- Dos and Don'ts -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  ${c.whatToDo ? `
+                    <div class="p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-1 text-xs">
+                      <div class="font-bold text-emerald-400">✓ Was tun (Empfohlen):</div>
+                      <ul class="list-disc list-inside text-secondary space-y-0.5">
+                        ${c.whatToDo.map(d => `<li>${d}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+
+                  ${c.whatToAvoid ? `
+                    <div class="p-3 bg-red-950/20 border border-red-500/30 rounded-xl space-y-1 text-xs">
+                      <div class="font-bold text-red-400">❌ Zu vermeiden:</div>
+                      <ul class="list-disc list-inside text-secondary space-y-0.5">
+                        ${c.whatToAvoid.map(a => `<li>${a}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                </div>
+
+                <!-- Relevant Vocabulary Chips -->
+                ${c.relevantVocabulary ? `
+                  <div class="pt-2">
+                    <div class="text-[11px] font-bold text-muted uppercase mb-1">Schlüsselbegriffe:</div>
+                    <div class="flex gap-1.5 flex-wrap">
+                      ${c.relevantVocabulary.map(v => `<span class="badge badge-gray text-[11px]">${v}</span>`).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- Speaking Practice Drill -->
+              ${c.speakingPractice ? `
+                <div class="p-3 bg-surface rounded-xl border border-amber-500/30 space-y-2 mt-4">
+                  <div class="flex-between items-center">
+                    <span class="text-[11px] font-bold text-amber-400 uppercase">🎙️ Sprachmuster auf Station:</span>
+                    <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-psy" data-text="${c.speakingPractice}">
+                      🔊 Anhören
+                    </button>
+                  </div>
+                  <div class="text-xs font-semibold text-primary italic">
+                    "${c.speakingPractice}"
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    // Event Bindings
+    container.querySelectorAll('.psy-tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeDomain = btn.getAttribute('data-domain');
+        renderView();
+      };
+    });
+
+    const searchInput = container.querySelector('#psySearch');
+    if (searchInput) {
+      searchInput.oninput = () => {
+        searchQuery = searchInput.value;
+        renderView();
+      };
+    }
+
+    container.querySelectorAll('.btn-speak-psy').forEach(btn => {
+      btn.onclick = () => {
+        Speech.speak(btn.getAttribute('data-text'), 0.95);
+      };
+    });
+  }
+
+  renderView();
 }
 
   });
@@ -25818,14 +26476,42 @@ const renderAntiTranslation = exports.renderAntiTranslation = function renderAnt
       options: ["die Stationsleitung", "der Patient", "der Notfallwagen", "das Kurvenblatt"],
       correct: 0,
       cue: "🏢 Führungskraft auf Station",
-      explanation: "Die 'Stationsleitung' leitet die Station. Nicht ins Englische übersetzen – direkt mit der Rolle und Verantwortung verknüpfen!"
+      explanation: "Die 'Stationsleitung' leitet die Station. Nicht ins Englische übersetzen – direkt mit der Rolle verknüpfen!"
     },
     {
-      conceptDe: "Die psychische Fähigkeit, Enttäuschungen, Verzögerungen und Frust ohne Aggression gelassen auszuhalten.",
-      options: ["die Frustrationstoleranz", "die Schweigepflicht", "die Dissoziation", "die Nahrungsaufnahme"],
+      conceptDe: "Ein tiefes seelisches Gefühl von Wärme, Schutz, Vertrauen und innerer Sicherheit bei einem geliebten Menschen.",
+      options: ["die Geborgenheit", "die Anspannung", "die Einsamkeit", "die Scham"],
       correct: 0,
-      cue: "🧠 Seelische Eigenschaft",
-      explanation: "'Frustrationstoleranz' = Frust aushalten können. Direkt als deutsches psychologisches Fachwort abspeichern!"
+      cue: "❤️ Deutsches Gefühlswort",
+      explanation: "'Geborgenheit' existiert so im Englischen nicht wörtlich – direkt als warmes Schutzgefühl im Herzen verankern!"
+    },
+    {
+      conceptDe: "Der feinfühlige Prozess, bei dem eine Bezugsperson durch die eigene innere Ruhe einem übererregten Kind hilft, sein Nervensystem zu beruhigen.",
+      options: ["die Co-Regulation", "die Bestrafung", "das Wegsperren", "die Gleichgültigkeit"],
+      correct: 0,
+      cue: "👶 Kinderpsychologie & KJP",
+      explanation: "'Co-Regulation' = Beruhigung über das ruhige Nervensystem des Erwachsenen."
+    },
+    {
+      conceptDe: "Die exklusive, ungestörte und liebevolle gemeinsame Zeit zweier Partner.",
+      options: ["die Zweisamkeit", "die Einsamkeit", "die Schichtarbeit", "die Besprechung"],
+      correct: 0,
+      cue: "❤️ Partnerschaft",
+      explanation: "'Zweisamkeit' = bewusste Zeit zu zweit. Nicht übersetzen, sondern als kostbare Paarzeit empfinden!"
+    },
+    {
+      conceptDe: "Höflich und gezielt in ein laufendes Fachgespräch eingreifen, um einen Aspekt zu ergänzen.",
+      options: ["einhaken", "schreien", "verlassen", "leugnen"],
+      correct: 0,
+      cue: "💬 Diskurs & Besprechung",
+      explanation: "'Darf ich kurz einhaken?' = die eleganteste Formulierung für professionelle Einwände."
+    },
+    {
+      conceptDe: "Vollkommen satt sein und beim Essen keinen Bissen mehr hinunterbekommen.",
+      options: ["pappsatt", "hungrig", "durstig", "erschöpft"],
+      correct: 0,
+      cue: "🍽️ Tischkultur & Alltag",
+      explanation: "'Ich bin pappsatt!' = herzliche deutsche Art zu sagen, dass man rundum gesättigt ist."
     },
     {
       conceptDe: "Eine geliebte Person durch achtsames Zuhören, liebevolle Worte und Nähe in einer schweren Notlage beruhigen.",
@@ -25838,116 +26524,39 @@ const renderAntiTranslation = exports.renderAntiTranslation = function renderAnt
       conceptDe: "Den Esstisch nach der Mahlzeit von Tellern, Tassen und Besteck befreien.",
       options: ["den Tisch abräumen", "den Tisch decken", "einen Termin vereinbaren", "Bescheid geben"],
       correct: 0,
-      cue: "🍽️ Haushalt & Küche",
+      cue: "🍽️ Haushalt & Familie",
       explanation: "'abräumen' = Geschirr wegräumen. Nicht 'clean the table' übersetzen, sondern als feste Handlung sehen!"
-    },
-    {
-      conceptDe: "Ein freudiges Gefühl im Hinblick auf ein bevorstehendes schönes Ereignis in der Zukunft empfinden.",
-      options: ["sich freuen auf", "sich freuen über", "vermissen", "verwöhnen"],
-      correct: 0,
-      cue: "💌 Vorfreude",
-      explanation: "'sich freuen auf (+ Akk.)' = in die Zukunft blicken. 'sich freuen über' = über ein vergangenes Ereignis/Geschenk."
-    },
-    {
-      conceptDe: "Das schmerzhafte Gefühl des Fehlens einer geliebten Person spüren.",
-      options: ["vermissen", "zuhören", "aufräumen", "bestellen"],
-      correct: 0,
-      cue: "💌 Sehnsucht",
-      explanation: "'vermissen' = to miss. Immer mit Akkusativ: 'Ich vermisse dich!'"
-    },
-    {
-      conceptDe: "Ein Gefühl von tiefem seelischem Schutz, Wärme, Vertrauen und innerer Sicherheit.",
-      options: ["die Geborgenheit", "die Anspannung", "die Einsamkeit", "die Scham"],
-      correct: 0,
-      cue: "✨ Deutsches Unwort / Gefühl",
-      explanation: "'Geborgenheit' ist ein einzigartiges deutsches Wort für vollkommenen Schutz, Wärme und Liebe."
-    },
-    {
-      conceptDe: "Medikamente, die nur bei akuter Notwendigkeit nach ärztlicher Anordnung gegeben werden.",
-      options: ["die Bedarfsmedikation", "die Dauerabstinenz", "die Sachleistung", "die Hausordnung"],
-      correct: 0,
-      cue: "💊 Psychiatrie & Pflege",
-      explanation: "'Bedarfsmedikation' = bei Bedarf. Nicht 'as needed medicine' denken – 'Bedarfsmedikation' ist das feste Wort."
-    },
-    {
-      conceptDe: "Gesetzliche Pflicht nach § 203 StGB, Patientendaten und Geheimnisse streng vertraulich zu behandeln.",
-      options: ["die Schweigepflicht", "die Probezeit", "die Verpflegungspauschale", "die Abweichung"],
-      correct: 0,
-      cue: "⚖️ Klinikrecht & Ethik",
-      explanation: "'Schweigepflicht' = Pflicht zum Schweigen über Patientendaten."
-    },
-    {
-      conceptDe: "Mobilisierbarer fahrbarer Notfallschrank mit Defibrillator, Beatmungsbeutel und Reanimationsmedikamenten.",
-      options: ["der Notfallwagen", "der Rollstuhl", "der Infusionsständer", "der Wäscheständer"],
-      correct: 0,
-      cue: "🚨 Notfall & Klinik",
-      explanation: "'Notfallwagen' = Crash Cart. Direkt mit dem roten Wagen auf dem Stationsgang verknüpfen!"
-    },
-    {
-      conceptDe: "Numerische Skala von 0 bis 10 zur Erfassung der subjektiven Schmerzstärke eines Patienten.",
-      options: ["die Schmerzskala (NRS)", "die Vitalzeichen", "das Kurvenblatt", "die Anordnung"],
-      correct: 0,
-      cue: "🩺 Pflege & Diagnostik",
-      explanation: "'die Schmerzskala' = Skala von 0 (kein Schmerz) bis 10 (unerträglich)."
-    },
-    {
-      conceptDe: "Das zeitweise Abspalten von Wahrnehmung, Gefühlen oder Körperempfindungen bei starkem Trauma.",
-      options: ["die Dissoziation", "die Reizüberflutung", "die Manie", "die Phobie"],
-      correct: 0,
-      cue: "🧠 Traumapsychologie",
-      explanation: "'Dissoziation' = seelische Schutzabspaltung. Nicht übersetzen, direkt als Schutzmechanismus verstehen!"
-    },
-    {
-      conceptDe: "Aktivierung der 5 Sinne (Sehen, Hören, Fühlen, Riechen, Schmecken), um im Hier und Jetzt zu landen.",
-      options: ["die Erdung (Grounding)", "die Fixierung", "die Somatisierung", "die Intoxikation"],
-      correct: 0,
-      cue: "🌱 Skills & Beruhigung",
-      explanation: "'Erdung' = 5-4-3-2-1 Methode zur Rückkehr in die Realität."
-    },
-    {
-      conceptDe: "Jemandem durch feines Essen, besondere Aufmerksamkeit und Verwöhnung eine große Freude machen.",
-      options: ["verwöhnen", "nachvollziehen", "absetzen", "sedieren"],
-      correct: 0,
-      cue: "❤️ Beziehung & Liebe",
-      explanation: "'verwöhnen' = jemanden liebevoll umsorgen."
-    },
-    {
-      conceptDe: "Im Restaurant übliche Praxis, dass jeder Gast seine eigene Rechnung separat bezahlt.",
-      options: ["getrennt zahlen", "auf eigene Faust", "Trinkgeld geben", "zur Sprache bringen"],
-      correct: 0,
-      cue: "☕ Restaurant & Kultur",
-      explanation: "'getrennt zahlen' = typisch deutsche Restauranterfahrung. 'Zusammen oder getrennt?' -> 'Getrennt, bitte!'"
     }
   ];
 
   const falseFriendsTraps = [
     {
-      trap: "Ich bin kalt.",
-      correct: "Mir ist kalt.",
-      explanation: "'Ich bin kalt' bedeutet im Deutschen 'Ich bin ein gefühlloser/toter Mensch'. Für das Temperaturempfinden sagt man immer 'Mir ist kalt / warm / heiß' (Dativ)."
-    },
-    {
       trap: "Ich bekomme einen Arzt.",
-      correct: "Ich werde Arzt / Ich gehe zum Arzt.",
-      explanation: "'to become' heißt 'werden', NICHT 'bekommen'! 'Bekommen' bedeutet 'to receive/get'."
+      correct: "Ich werde Arzt / Ich werde Ärztin.",
+      explanation: "'bekommen' bedeutet 'to receive / get' (z. B. 'Ich bekomme ein Geschenk'). 'To become' heißt im Deutschen 'werden'!"
     },
     {
-      trap: "Das macht Sinn.",
-      correct: "Das ergibt Sinn / Das ist sinnvoll.",
-      explanation: "Im Deutschen 'macht' Sinn nichts – Sinn 'ergibt' sich oder etwas 'ist sinnvoll'."
+      trap: "Ich bin eventuell zu spät.",
+      correct: "Eventuell komme ich später (möglicherweise) vs. Schließlich / Am Ende kam ich zu spät (eventually).",
+      explanation: "'eventuell' heißt im Deutschen 'vielleicht / möglicherweise' – NICHT 'am Ende' (eventually)."
     },
     {
-      trap: "Er ist aktuell mein Chef.",
-      correct: "Er ist zurzeit / momentan mein Chef.",
-      explanation: "'aktuell' bedeutet 'current/up to date', NICHT 'actually' (das heißt 'tatsächlich' oder 'eigentlich')."
+      trap: "Er ist mein Chefkoch.",
+      correct: "Er ist mein Chef / Vorgesetzter (im Beruf) vs. Chefkoch (in der Restaurantküche).",
+      explanation: "'Chef' bedeutet auf Deutsch der Vorgesetzte/Arbeitgeber, nicht zwingend der Küchenchef."
     },
     {
-      trap: "Ich vermisse dir.",
-      correct: "Ich vermisse dich.",
-      explanation: "'vermissen' verlangt immer den Akkusativ (dich, ihn, sie, uns), niemals Dativ (dir)."
+      trap: "Ich spendiere meine Zeit im Krankenhaus.",
+      correct: "Ich verbringe Zeit im Krankenhaus (to spend time) vs. Ich spendiere einen Kaffee (to treat someone).",
+      explanation: "'Zeit verbringen' = to spend time. 'spendieren' = jemandem etwas spendieren/ausgeben."
     },
     {
-      trap: "Ich liebe dir.",
+      trap: "Das Kind ist sehr brav.",
+      correct: "Das Kind ist brav (well-behaved / artig) vs. Er ist tapfer/mutig (brave).",
+      explanation: "'brav' bedeutet folgsam/artig, NICHT mutig (brave = mutig/tapfer)."
+    },
+    {
+      trap: "Ich liebe für dich.",
       correct: "Ich liebe dich.",
       explanation: "Klassischer Akkusativfall für Gefühlsäußerungen: 'Ich liebe dich'."
     },
@@ -25960,63 +26569,44 @@ const renderAntiTranslation = exports.renderAntiTranslation = function renderAnt
       trap: "Ich habe Angst von Hunden.",
       correct: "Ich habe Angst vor Hunden.",
       explanation: "'Angst haben' verlangt im Deutschen die Präposition 'vor' (+ Dativ)."
-    },
-    {
-      trap: "Ich stimme mit dir überein.",
-      correct: "Ich stimme dir zu / Ich bin deiner Meinung.",
-      explanation: "'zustimmen' verlangt einfach den Dativ: 'Ich stimme dir voll zu!'"
-    },
-    {
-      trap: "Ich will ein Foto von uns machen lassen.",
-      correct: "Lass uns ein Foto zusammen machen.",
-      explanation: "Natürliches Deutsch nutzt 'Lass uns...' statt komplizierter wörtlicher englischer Satzstrukturen."
     }
   ];
 
   const reactionPrompts = [
     {
-      theme: "💌 Freundin & Liebe",
-      situation: "Deine Freundin schreibt dir um 18 Uhr: 'Ich hatte einen anstrengenden Tag und vermisse dich. Wann sehen wir uns?'",
-      prompt: "Reagiere direkt auf Deutsch mit Zuneigung, Verständnis und einem konkreten Plan!",
+      theme: "❤️ Freundin / Ehefrau",
+      situation: "Deine Freundin schreibt dir: 'Ich hatte einen schrecklichen Tag auf der Arbeit und vermisse dich so sehr. Wann kommst du nach Hause?'",
+      prompt: "Reagiere direkt auf Deutsch mit Zuneigung, Verständnis und einem konkreten Entlastungsplan!",
       idealAnswers: [
-        "Ich vermisse dich auch sehr! Ich bin in 30 Minuten bei dir, dann koche ich uns etwas Leckeres und wir machen es uns gemütlich.",
-        "Oh, du Arme! Ich freue mich schon riesig auf dich. Ruh dich kurz aus, ich beeile mich und bringe dein Lieblingsdessert mit!"
+        "Ich vermisse dich auch so sehr, mein Schatz! Ich mache mich sofort auf den Weg, koche uns etwas Schönes und dann ruhst du dich ganz fest an mich gekuschelt aus.",
+        "Oh du Arme, lass dich ganz fest umarmen! Ich bin in 20 Minuten bei dir, bringe dein Lieblingsdessert mit und halte dir heute den Rücken frei."
       ]
     },
     {
-      theme: "🏢 Station & BFD-Alltag",
+      theme: "🏥 Station & BFD-Alltag",
       situation: "Die Stationsleitung fragt dich während der Übergabe: 'Ali, könntest du bitte kurz nachsehen, ob in Zimmer 12 frische Handtücher sind?'",
       prompt: "Reagiere sofort professionell, verbindlich und auf den Punkt!",
       idealAnswers: [
-        "Ja, sehr gerne! Ich gehe sofort nachsehen und bringe bei Bedarf direkt frische Handtücher mit.",
-        "Mache ich sofort! Ich gebe Ihnen in fünf Minuten kurz Rückmeldung."
+        "Ja, sehr gerne, Frau Schneider! Ich gehe sofort nachsehen und bringe bei Bedarf direkt frische Handtücher mit.",
+        "Mache ich unverzüglich! Ich gebe Ihnen in fünf Minuten kurz Rückmeldung."
       ]
     },
     {
-      theme: "🏠 Gastfamilie Fröhlich",
-      situation: "Frau Fröhlich sagt beim Abendessen: 'Das Essen ist fertig! Möchtest du dich schon an den Tisch setzen?'",
-      prompt: "Reagiere dankbar, höflich und biete deine Hilfe an!",
+      theme: "🏡 Familie & Gastfreundschaft",
+      situation: "Die Gastgeberin sagt beim Abendessen: 'Greif bitte noch einmal kräftig zu, Ali! Es ist noch reichlich Braten da.'",
+      prompt: "Reagiere höflich, lobend und erkläre, ob du Nachschlag möchtest oder wunschlos satt bist!",
       idealAnswers: [
-        "Vielen Dank, das riecht fantastisch! Darf ich Ihnen noch helfen, die Schüsseln und Gläser auf den Tisch zu stellen?",
-        "Sehr gerne, danke! Ich helfe Ihnen eben noch beim Servieren."
+        "Vielen Dank, aber ich bin wirklich wunschlos satt! Es hat ganz hervorragend geschmeckt.",
+        "Ein ganz kleines Stück nehme ich noch sehr gerne, es schmeckt wirklich vorzüglich!"
       ]
     },
     {
-      theme: "☕ Café & Oberstadt Marburg",
-      situation: "Die Bedienung im Café am Marktplatz fragt: 'Möchten Sie zusammen oder getrennt zahlen?'",
-      prompt: "Antworte schnell, natürlich und gib ein passendes Trinkgeld!",
+      theme: "👶 Kinderpsychologie & Beruhigung",
+      situation: "Ein 5-jähriges Kind weint panisch vor dem Blutdruckmessen und zieht den Arm weg.",
+      prompt: "Gehe auf Augenhöhe und beruhige das Kind mit kindgerechter Sprache!",
       idealAnswers: [
-        "Getrennt, bitte. Für mich macht das 7,20 Euro – machen Sie bitte 8 Euro daraus. Vielen Dank!",
-        "Bitte getrennt. Machen wir 10 Euro glatt, der Rest ist für Sie!"
-      ]
-    },
-    {
-      theme: "🚨 Klinik-Notfall / Unruhe",
-      situation: "Ein unruhiger Patient kommt aufgebracht zum Stationszimmer und verlangt lautstark nach dem Chefarzt.",
-      prompt: "Deeskaliere die Situation ruhig, verständnisvoll und setze klare Grenzen!",
-      idealAnswers: [
-        "Guten Tag, Herr Weber. Ich sehe, dass Sie sehr aufgebracht sind. Kommen Sie kurz mit mir in den Aufenthaltsraum, ich hole sofort die zuständige Schwester für Sie.",
-        "Ich höre Ihnen zu. Lassen Sie uns ruhig sprechen. Ich gebe der Pflegefachkraft sofort Bescheid."
+        "Schau mal, diese kleine Manschette pustet sich nur kurz wie ein Luftballon auf und umarmt deinen Arm ganz fest. Wollen wir zuerst deinem Teddy den Blutdruck messen?",
+        "Ich bin ganz vorsichtig. Es tut überhaupt nicht weh, es kribbelt nur ein bisschen wie ein Zauberkissen."
       ]
     }
   ];
@@ -26028,31 +26618,31 @@ const renderAntiTranslation = exports.renderAntiTranslation = function renderAnt
         <div class="hero-card">
           <div class="flex-between flex-wrap gap-4">
             <div>
-              <div class="badge badge-emerald mb-2">
+              <span class="badge badge-amber mb-2">
                  Monolinguales Denken • Stop Translating!
-              </div>
-              <h1 class="text-3xl font-extrabold text-gradient">Anti-Übersetzungs-Trainer</h1>
-              <p class="text-secondary mt-1 text-sm">
+              </span>
+              <h1 class="page-title">🧠 Anti-Übersetzungs-Trainer</h1>
+              <p class="subtitle mt-1">
                 Schluss mit mentalen Übersetzungs-Schleifen ins Englische! Trainiere dein Gehirn darauf, <strong>direkt auf Deutsch zu denken, zu fühlen und intuitiv zu reagieren</strong>.
               </p>
             </div>
-            <div class="flex items-center gap-3 bg-surface p-3 rounded-2xl border border-glass">
+            <div class="flex items-center gap-3 bg-surface p-3 rounded-2xl border border-subtle">
               <div class="text-center">
-                <div class="text-xs text-secondary">Punkte</div>
-                <div class="font-bold text-emerald-400 text-lg" id="scoreDisplay">${currentScore} XP</div>
+                <div class="text-xs text-secondary">Lern-Punkte</div>
+                <div class="font-extrabold text-amber-400 text-lg" id="scoreDisplay">${currentScore} XP</div>
               </div>
             </div>
           </div>
 
           <!-- Tabs -->
-          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-glass">
-            <button class="btn ${activeTab === 'monolingual' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="monolingual">
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-subtle">
+            <button class="btn ${activeTab === 'monolingual' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="monolingual">
               🎯 Direktes Konzept-Mapping (${monolingualChallenges.length})
             </button>
-            <button class="btn ${activeTab === 'reaction' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="reaction">
+            <button class="btn ${activeTab === 'reaction' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="reaction">
               ⚡ Blitz-Reaktions-Trainer (${reactionPrompts.length})
             </button>
-            <button class="btn ${activeTab === 'false_friends' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="false_friends">
+            <button class="btn ${activeTab === 'false_friends' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="false_friends">
               🚫 Falsche-Freunde-Buster (${falseFriendsTraps.length})
             </button>
           </div>
@@ -26070,151 +26660,146 @@ const renderAntiTranslation = exports.renderAntiTranslation = function renderAnt
       function showMonolingual(i) {
         const item = monolingualChallenges[i % monolingualChallenges.length];
         tabContent.innerHTML = `
-          <div class="card p-6 space-y-6">
+          <div class="bento-card p-6 space-y-6 border border-subtle">
             <div class="flex-between">
-              <span class="badge badge-indigo text-xs">${item.cue}</span>
+              <span class="badge badge-amber text-xs">${item.cue}</span>
               <span class="text-xs text-secondary font-bold">Aufgabe ${ (i % monolingualChallenges.length) + 1 } von ${monolingualChallenges.length}</span>
             </div>
 
-            <div class="p-6 bg-surface rounded-2xl border border-glass text-center space-y-2">
-              <div class="text-xs text-secondary uppercase font-bold tracking-wider">Deutsches Konzept (ohne Englisch!):</div>
+            <div class="p-6 bg-subtle rounded-2xl border border-subtle text-center space-y-2">
+              <div class="text-xs text-muted uppercase font-bold tracking-wider">Deutsches Konzept (ohne Englisch!):</div>
               <div class="text-lg font-bold text-primary leading-relaxed">${item.conceptDe}</div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              ${item.options.map((opt, optIdx) => `
-                <button class="btn btn-secondary p-4 text-left justify-start font-bold text-sm opt-btn hover:border-blue-500 rounded-xl" data-opt="${optIdx}">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="optionsGrid">
+              ${item.options.map((opt, oIdx) => `
+                <button class="p-4 bg-surface rounded-xl border border-subtle text-left font-semibold text-sm hover:border-amber-500 transition-all opt-btn" data-idx="${oIdx}">
                   ${opt}
                 </button>
               `).join('')}
             </div>
 
-            <div id="monoFeedback" class="hidden p-4 rounded-xl space-y-2"></div>
+            <div id="monoFeedback" class="hidden p-4 rounded-xl text-xs space-y-2"></div>
           </div>
         `;
 
         const feedback = tabContent.querySelector('#monoFeedback');
         tabContent.querySelectorAll('.opt-btn').forEach(btn => {
           btn.onclick = () => {
-            const chosen = parseInt(btn.getAttribute('data-opt'));
+            const selected = parseInt(btn.getAttribute('data-idx'));
+            tabContent.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+
             feedback.classList.remove('hidden');
-            if (chosen === item.correct) {
+            if (selected === item.correct) {
               currentScore += 10;
-              container.querySelector('#scoreDisplay').innerText = currentScore + ' XP';
-              feedback.className = "p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 text-sm space-y-2";
+              currentStreak++;
+              btn.classList.add('border-emerald-500', 'bg-emerald-950/20', 'text-emerald-300');
+              feedback.className = 'p-4 rounded-xl text-xs bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 space-y-2 animate-fadeIn';
               feedback.innerHTML = `
-                <div class="font-bold flex items-center justify-between">
-                  <span>✓ Richtig gedacht! (+10 XP)</span>
-                  <button id="btnPlayWord" class="btn btn-secondary btn-xs">🔊 Anhören</button>
-                </div>
-                <div>${item.explanation}</div>
-                <button id="btnNextMono" class="btn btn-emerald btn-sm mt-2">Nächstes Konzept →</button>
+                <div>✓ <strong>Hervorragend!</strong> ${item.explanation}</div>
+                <button id="btnNextMono" class="btn btn-primary btn-xs mt-2">Nächste Aufgabe →</button>
               `;
-              feedback.querySelector('#btnPlayWord').onclick = () => Speech.speak(item.options[item.correct]);
-              const settings = Storage.getSettings();
-              Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + 10 });
             } else {
-              feedback.className = "p-4 rounded-xl bg-red-950/30 border border-red-500/40 text-red-300 text-sm space-y-2";
+              currentStreak = 0;
+              btn.classList.add('border-red-500', 'bg-red-950/20', 'text-red-400');
+              feedback.className = 'p-4 rounded-xl text-xs bg-red-950/30 border border-red-500/40 text-red-300 space-y-2 animate-fadeIn';
               feedback.innerHTML = `
-                <div class="font-bold">✗ Noch nicht ganz.</div>
-                <div>${item.explanation}</div>
-                <button id="btnNextMono" class="btn btn-secondary btn-sm mt-2">Weiter →</button>
+                <div>❌ <strong>Nicht ganz:</strong> Richtig ist <em>${item.options[item.correct]}</em>. ${item.explanation}</div>
+                <button id="btnNextMono" class="btn btn-secondary btn-xs mt-2">Weiter →</button>
               `;
             }
-            feedback.querySelector('#btnNextMono').onclick = () => showMonolingual(i + 1);
+
+            container.querySelector('#scoreDisplay').textContent = `${currentScore} XP`;
+            tabContent.querySelector('#btnNextMono').onclick = () => {
+              idx++;
+              showMonolingual(idx);
+            };
           };
         });
       }
       showMonolingual(idx);
+
     } else if (activeTab === 'reaction') {
-      tabContent.innerHTML = `
-        <div class="space-y-4">
-          ${reactionPrompts.map((rp, rIdx) => `
-            <div class="card p-6 space-y-4">
-              <div class="flex-between">
-                <span class="badge badge-purple text-xs">${rp.theme}</span>
-                <span class="text-xs text-secondary font-bold">Situation ${rIdx+1} von ${reactionPrompts.length}</span>
-              </div>
+      let rIdx = 0;
+      function showReaction(i) {
+        const item = reactionPrompts[i % reactionPrompts.length];
+        tabContent.innerHTML = `
+          <div class="bento-card p-6 space-y-5 border border-subtle">
+            <div class="flex-between">
+              <span class="badge badge-amber text-xs">${item.theme}</span>
+              <span class="text-xs text-secondary font-bold">Situation ${ (i % reactionPrompts.length) + 1 } von ${reactionPrompts.length}</span>
+            </div>
 
-              <div class="p-4 bg-surface rounded-xl border border-glass font-semibold text-sm leading-relaxed">
-                "${rp.situation}"
-              </div>
-              <div class="text-xs text-secondary font-medium">${rp.prompt}</div>
+            <div class="p-4 bg-subtle rounded-2xl border border-subtle space-y-1">
+              <div class="text-xs font-bold text-amber-400 uppercase">Eingehende Situation:</div>
+              <div class="text-sm font-semibold text-primary italic">"${item.situation}"</div>
+            </div>
 
-              <textarea class="input w-full p-3 text-sm rounded-xl reaction-input" rows="2" placeholder="Tippe deine spontane deutsche Antwort ohne mentale Übersetzung..."></textarea>
+            <div class="p-3 bg-surface rounded-xl border border-blue-500/25 text-xs text-secondary">
+              ⚡ <strong>Deine Aufgabe:</strong> ${item.prompt}
+            </div>
 
-              <div class="flex-between">
-                <button class="btn btn-primary btn-sm btn-show-reaction" data-index="${rIdx}">
-                  Musterantworten ansehen & anhören (+10 XP)
-                </button>
-              </div>
-
-              <div id="reactionAns_${rIdx}" class="hidden p-4 bg-blue-950/20 border border-blue-500/30 rounded-2xl space-y-3 text-xs">
-                <div class="font-bold text-blue-400 text-sm">Natürliche muttersprachliche Reaktionen:</div>
-                <div class="space-y-2">
-                  ${rp.idealAnswers.map((ans, aIdx) => `
-                    <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
-                      <span class="text-primary font-medium text-sm">„${ans}“</span>
-                      <button class="btn btn-ghost btn-xs btn-speak-ans" data-text="${ans}">🔊</button>
-                    </div>
-                  `).join('')}
-                </div>
+            <div class="space-y-2">
+              <textarea id="reactionInput" rows="3" placeholder="Tippe deine spontane deutsche Antwort hier ein..." class="w-full p-3 bg-subtle border border-subtle rounded-xl text-primary text-xs outline-none focus:border-amber-500"></textarea>
+              <div class="flex justify-between items-center">
+                <button id="btnRevealIdeal" class="btn btn-secondary btn-xs">Musterantworten anzeigen</button>
+                <button id="btnNextReaction" class="btn btn-primary btn-xs">Nächste Situation →</button>
               </div>
             </div>
-          `).join('')}
-        </div>
-      `;
 
-      tabContent.querySelectorAll('.btn-speak-ans').forEach(btn => {
-        btn.onclick = () => Speech.speak(btn.getAttribute('data-text'));
-      });
+            <div id="idealAnswersBox" class="hidden p-4 bg-surface rounded-xl border border-emerald-500/30 space-y-2 animate-fadeIn text-xs">
+              <div class="font-bold text-emerald-400">✓ Natürliche deutsche Musterantworten:</div>
+              <ul class="list-disc list-inside text-secondary space-y-1">
+                ${item.idealAnswers.map(ans => `<li class="italic font-medium text-primary">"${ans}"</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
 
-      tabContent.querySelectorAll('.btn-show-reaction').forEach(btn => {
-        btn.onclick = () => {
-          const idx = btn.getAttribute('data-index');
-          const ansBox = tabContent.querySelector('#reactionAns_' + idx);
-          ansBox.classList.toggle('hidden');
-          currentScore += 10;
-          container.querySelector('#scoreDisplay').innerText = currentScore + ' XP';
-          const settings = Storage.getSettings();
-          Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + 10 });
+        tabContent.querySelector('#btnRevealIdeal').onclick = () => {
+          tabContent.querySelector('#idealAnswersBox').classList.remove('hidden');
         };
-      });
+
+        tabContent.querySelector('#btnNextReaction').onclick = () => {
+          rIdx++;
+          showReaction(rIdx);
+        };
+      }
+      showReaction(rIdx);
+
     } else if (activeTab === 'false_friends') {
       tabContent.innerHTML = `
-        <div class="card p-6 space-y-4">
-          <div class="flex-between">
-            <h3 class="font-bold text-base flex items-center gap-2">
-               Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
-            </h3>
-            <span class="badge badge-amber text-xs">${falseFriendsTraps.length} Fallen</span>
+        <div class="space-y-4">
+          <div class="p-3 bg-surface rounded-xl border border-amber-500/30 text-xs text-secondary">
+            🚫 <strong>Falsche Freunde:</strong> Wörter und Satzstrukturen, die man aus dem Englischen oder der Muttersprache wörtlich falsch übersetzt.
           </div>
 
-          <div class="space-y-4">
-            ${falseFriendsTraps.map((trap, tIdx) => `
-              <div class="p-4 bg-surface rounded-2xl border border-glass space-y-2">
-                <div class="flex-between items-start">
-                  <div class="flex items-center gap-3 flex-wrap">
-                    <span class="text-red-400 font-bold line-through text-sm">✗ ${trap.trap}</span>
-                    <span class="text-emerald-400 font-bold text-sm">✓ ${trap.correct}</span>
-                  </div>
-                  <button class="btn btn-secondary btn-xs btn-speak-trap" data-text="${trap.correct}">🔊</button>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${falseFriendsTraps.map(trap => `
+              <div class="bento-card p-4 space-y-2 border border-subtle">
+                <div class="text-xs text-red-400 font-semibold">❌ Typischer Übersetzungsfehler:</div>
+                <div class="p-2 bg-red-950/20 border border-red-500/30 rounded-lg text-xs text-red-300 font-mono">
+                  ${trap.trap}
                 </div>
-                <div class="text-xs text-secondary leading-relaxed">${trap.explanation}</div>
+
+                <div class="text-xs text-emerald-400 font-semibold pt-1">✓ Richtig auf Deutsch:</div>
+                <div class="p-2 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-xs text-emerald-300 font-bold">
+                  ${trap.correct}
+                </div>
+
+                <p class="text-[11px] text-muted italic pt-1 border-t border-subtle">
+                  💡 ${trap.explanation}
+                </p>
               </div>
             `).join('')}
           </div>
         </div>
       `;
-
-      tabContent.querySelectorAll('.btn-speak-trap').forEach(btn => {
-        btn.onclick = () => Speech.speak(btn.getAttribute('data-text'));
-      });
     }
 
-    container.querySelectorAll('.tab-btn').forEach(b => {
-      b.onclick = () => {
-        activeTab = b.getAttribute('data-tab');
+    container.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeTab = btn.getAttribute('data-tab');
         renderView();
       };
     });

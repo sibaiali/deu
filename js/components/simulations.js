@@ -1,190 +1,308 @@
-// Simulations Component — Interaktive Rollenspiele mit Stufen-Feedback
+// Simulations Component — Interaktive Rollenspiele (BFD, Familie, Partnerschaft)
 
 import { Speech } from '../speech.js';
+import { SIMULATIONS_DATA } from '../data/simulations_data.js';
 
 export function renderSimulations(container, data, params = {}) {
-  const activeSimId = params.id || (data.simulations[0] ? data.simulations[0].id : null);
-  const currentSim = data.simulations.find(s => s.id === activeSimId) || data.simulations[0];
+  const sims = SIMULATIONS_DATA || (data && data.simulations) || [];
+  let activeCategory = 'alle';
+  let activeSimId = params.id || (sims[0] ? sims[0].id : null);
+  let currentSim = sims.find(s => s.id === activeSimId) || sims[0];
 
-  container.innerHTML = `
-    <div class="simulations-wrapper animate-fadeIn">
-      <div class="flex-between flex-wrap gap-4 mb-6">
-        <div>
-          <div class="badge badge-emerald mb-2">PRAXIS-SIMULATOR</div>
-          <h1 class="text-3xl font-bold text-gradient">🎭 BFD- & Klinik-Simulationen</h1>
-          <p class="text-secondary mt-1">Interaktive Dialoge mit mehrstufigem Feedback (Basic, Natürlich, B2, C1).</p>
-        </div>
-        <select id="selectSim" class="select select-sm max-w-xs">
-          ${data.simulations.map(s => `
-            <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>${s.title} (${s.level})</option>
-          `).join('')}
-        </select>
-      </div>
+  function renderView() {
+    const filteredSims = activeCategory === 'alle' 
+      ? sims 
+      : sims.filter(s => s.category === activeCategory);
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Sidebar: Scenario Overview -->
-        <div class="card p-5 space-y-4">
-          <div class="flex-between">
-            <span class="badge badge-indigo">${currentSim.level}</span>
-            <span class="badge badge-purple">${currentSim.category}</span>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Einsatzort:</div>
-            <div class="font-semibold text-blue-300">📍 ${currentSim.workplace}</div>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Situation:</div>
-            <p class="text-sm text-secondary">${currentSim.situation}</p>
-          </div>
-          <div>
-            <div class="text-xs uppercase font-bold text-secondary mb-1">Dein Ziel:</div>
-            <p class="text-sm text-emerald-300 font-medium">${currentSim.objective}</p>
+    if (!filteredSims.some(s => s.id === currentSim.id) && filteredSims.length > 0) {
+      currentSim = filteredSims[0];
+    }
+
+    container.innerHTML = `
+      <div class="simulations-wrapper animate-fadeIn space-y-6 max-w-6xl mx-auto">
+        <!-- Hero Header -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR</span>
+              <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
+              <p class="subtitle mt-1">
+                Lebensnahe Simulationen für Krankenhaus, Stationsalltag, Familie und tiefe Partnerschaftsgespräche mit 4-Stufen-Feedback.
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="badge badge-emerald py-1 px-3 text-xs font-semibold">${sims.length} Szenarien aktiv</span>
+            </div>
           </div>
         </div>
 
-        <!-- Main: Interactive Dialogue Stage -->
-        <div class="md:col-span-2 space-y-4">
-          <div class="card p-6" id="chatStage"></div>
+        <!-- Category Tabs & Scenario Selector -->
+        <div class="bento-card p-4 space-y-3">
+          <div class="flex-between flex-wrap gap-3">
+            <div class="flex gap-2 flex-wrap" id="simCategoryTabs">
+              <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
+                Alle Szenarien (${sims.length})
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
+                🏥 Klinik & BFD
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Familie & Alltag' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie & Alltag">
+                🏡 Familie & Alltag
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
+                ❤️ Partnerschaft & Herz
+              </button>
+            </div>
+
+            <!-- Scenario Dropdown -->
+            <select id="selectSim" class="p-2 bg-subtle border border-subtle rounded-lg text-primary text-xs font-bold outline-none flex-1 max-w-md">
+              ${filteredSims.map(s => `
+                <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>
+                  ${s.category === 'Partnerschaft & Herz' ? '❤️' : (s.category === 'Familie & Alltag' ? '🏡' : '🏥')} ${s.title} (${s.level})
+                </option>
+              `).join('')}
+            </select>
+          </div>
         </div>
-      </div>
-    </div>
-  `;
 
-  // Hook simulation selector
-  container.querySelector('#selectSim').onchange = (e) => {
-    window.location.hash = `#simulation?id=${e.target.value}`;
-  };
+        <!-- 2-Column Main Workspace -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Left: Scenario Overview & Objectives -->
+          <div class="bento-card p-5 space-y-4 border border-subtle">
+            <div class="flex-between items-center border-b border-subtle pb-3">
+              <span class="badge badge-blue text-xs">${currentSim.level}</span>
+              <span class="badge badge-amber text-xs">${currentSim.category}</span>
+            </div>
 
-  renderSimTurn(container.querySelector('#chatStage'), currentSim, 0);
-}
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Ort & Kontext:</div>
+              <div class="font-bold text-sm text-primary">📍 ${currentSim.workplace}</div>
+            </div>
 
-function renderSimTurn(stage, sim, turnIndex) {
-  if (turnIndex >= sim.turns.length) {
-    stage.innerHTML = `
-      <div class="text-center p-8">
-        <div class="text-5xl mb-3">🏆</div>
-        <h2 class="text-2xl font-bold mb-2">Simulation erfolgreich abgeschlossen!</h2>
-        <p class="text-secondary mb-6">Du hast alle Gesprächsphasen dieses Szenarios souverän gemeistert.</p>
-        <div class="flex justify-center gap-3">
-          <a href="#heute" class="btn btn-primary">Zurück zum Dashboard</a>
-          <button id="btnRetrySim" class="btn btn-outline">Simulation wiederholen</button>
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Rollen:</div>
+              <div class="text-xs text-secondary"><strong>Du:</strong> ${currentSim.userRole}</div>
+              <div class="text-xs text-secondary"><strong>Gegenüber:</strong> ${currentSim.counterpartRole}</div>
+            </div>
+
+            <div>
+              <div class="text-[11px] uppercase font-bold text-muted mb-1">Situation:</div>
+              <p class="text-xs text-secondary leading-relaxed">${currentSim.situation}</p>
+            </div>
+
+            <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1">
+              <div class="text-[11px] uppercase font-bold text-emerald-400">Dein Hauptziel:</div>
+              <p class="text-xs text-primary font-medium">${currentSim.objective}</p>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Stage -->
+          <div class="md:col-span-2 space-y-4">
+            <div class="bento-card p-6 border border-subtle" id="chatStage"></div>
+          </div>
         </div>
       </div>
     `;
-    const btnRetry = stage.querySelector('#btnRetrySim');
-    if (btnRetry) btnRetry.onclick = () => renderSimTurn(stage, sim, 0);
-    return;
+
+    // Category button events
+    container.querySelectorAll('.sim-cat-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeCategory = btn.getAttribute('data-cat');
+        renderView();
+      };
+    });
+
+    // Select dropdown event
+    const selectElem = container.querySelector('#selectSim');
+    if (selectElem) {
+      selectElem.onchange = (e) => {
+        const found = sims.find(s => s.id === e.target.value);
+        if (found) {
+          currentSim = found;
+          renderView();
+        }
+      };
+    }
+
+    renderSimTurn(container.querySelector('#chatStage'), currentSim, 0);
   }
 
-  const turn = sim.turns[turnIndex];
-
-  stage.innerHTML = `
-    <div class="space-y-4">
-      <div class="flex-between text-xs text-secondary border-b border-glass pb-2">
-        <span>Gesprächsschritt ${turnIndex + 1} von ${sim.turns.length}</span>
-        <span>Rolle: ${turn.speaker}</span>
-      </div>
-
-      <!-- Counterpart Message Bubble -->
-      <div class="p-4 bg-surface rounded-2xl border border-glass flex items-start gap-3">
-        <div class="text-2xl">👤</div>
-        <div class="flex-1">
-          <div class="font-bold text-sm text-purple-300 mb-1">${turn.speaker} (${sim.counterpartRole}):</div>
-          <div class="text-base text-gray-100 font-medium">${turn.text}</div>
-          <button id="btnPlayCounterpart" class="btn btn-ghost btn-xs text-xs text-blue-400 mt-2">🔊 Vorlesen</button>
+  function renderSimTurn(stage, sim, turnIndex) {
+    if (turnIndex >= sim.turns.length) {
+      stage.innerHTML = `
+        <div class="text-center p-8 space-y-4 animate-fadeIn">
+          <div class="text-5xl">🏆</div>
+          <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
+          <p class="text-sm text-secondary max-w-md mx-auto">
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich durchlaufen und die wesentlichen Kriterien erfüllt.
+          </p>
+          <div class="flex justify-center gap-3 pt-4">
+            <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
+            <a href="#heute" class="btn btn-secondary btn-sm">Zum Dashboard</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Guidance -->
-      <div class="p-3 bg-blue-950/20 border border-blue-500/30 rounded-xl text-xs text-blue-300">
-        💡 <strong>Deine Aufgabe:</strong> ${turn.guidance}
-      </div>
-
-      <!-- Input Area -->
-      <div class="space-y-2">
-        <label class="block text-xs font-semibold text-secondary">Deine Antwort auf Deutsch:</label>
-        <div class="flex gap-2">
-          <textarea id="userResponseInput" rows="2" class="input w-full text-sm" placeholder="Tippe deine Antwort oder nutze das Mikrofon..."></textarea>
-          <button id="btnMic" class="btn btn-outline flex-center px-4" title="Sprechen">🎙️</button>
-        </div>
-        <button id="btnSubmitResponse" class="btn btn-primary w-full">Antwort überprüfen & Stufen vergleichen</button>
-      </div>
-
-      <!-- Feedback & Response Tiers Area (Hidden initially) -->
-      <div id="feedbackArea" class="hidden space-y-4 mt-6 border-t border-glass pt-4 animate-fadeIn"></div>
-    </div>
-  `;
-
-  const btnPlay = stage.querySelector('#btnPlayCounterpart');
-  const btnMic = stage.querySelector('#btnMic');
-  const txtInput = stage.querySelector('#userResponseInput');
-  const btnSubmit = stage.querySelector('#btnSubmitResponse');
-  const feedbackArea = stage.querySelector('#feedbackArea');
-
-  btnPlay.onclick = () => Speech.speak(turn.text, 0.9);
-
-  let isRecording = false;
-  btnMic.onclick = () => {
-    if (!isRecording) {
-      isRecording = true;
-      btnMic.classList.add('btn-red');
-      Speech.startListening(
-        (transcript) => {
-          txtInput.value = transcript;
-          btnMic.classList.remove('btn-red');
-          isRecording = false;
-        },
-        (err) => {
-          alert('Spracherkennung: ' + err);
-          btnMic.classList.remove('btn-red');
-          isRecording = false;
-        }
-      );
-    } else {
-      Speech.stopListening();
-      btnMic.classList.remove('btn-red');
-      isRecording = false;
+      `;
+      stage.querySelector('#btnRetrySim').onclick = () => renderSimTurn(stage, sim, 0);
+      return;
     }
-  };
 
-  btnSubmit.onclick = () => {
-    const userText = txtInput.value.trim();
-    feedbackArea.classList.remove('hidden');
-    feedbackArea.innerHTML = `
-      <div class="space-y-4">
-        <div class="card p-4 bg-emerald-950/20 border border-emerald-500/30">
-          <h4 class="font-bold text-emerald-400 text-sm mb-2">🎯 Auswertung & Vergleichsstufen</h4>
-          <p class="text-xs text-secondary mb-4">${turn.whyExplanation}</p>
+    const turn = sim.turns[turnIndex];
 
-          <div class="space-y-3">
-            <div class="p-3 bg-surface rounded-lg border border-glass">
-              <div class="text-xs font-bold text-gray-400 uppercase">1. Basic (B1):</div>
-              <div class="text-sm text-gray-300">${turn.responseTiers.basic}</div>
-            </div>
+    stage.innerHTML = `
+      <div class="space-y-5 animate-fadeIn">
+        <!-- Progress Bar -->
+        <div class="flex-between text-xs text-muted font-semibold pb-1">
+          <span>Gesprächsphase ${turnIndex + 1} von ${sim.turns.length}</span>
+          <span>${Math.round(((turnIndex + 1) / sim.turns.length) * 100)}%</span>
+        </div>
+        <div class="w-full bg-subtle h-1.5 rounded-full overflow-hidden">
+          <div class="bg-amber-500 h-full transition-all duration-300" style="width: ${((turnIndex + 1) / sim.turns.length) * 100}%"></div>
+        </div>
 
-            <div class="p-3 bg-surface rounded-lg border border-glass">
-              <div class="text-xs font-bold text-blue-400 uppercase">2. Natürlich & Alltäglich:</div>
-              <div class="text-sm text-blue-200">${turn.responseTiers.natural}</div>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg border border-emerald-500/30 bg-emerald-950/10">
-              <div class="text-xs font-bold text-emerald-400 uppercase">3. Professionell (B2 - Empfohlen):</div>
-              <div class="text-sm text-emerald-200 font-semibold">${turn.responseTiers.professionalB2}</div>
-            </div>
-
-            <div class="p-3 bg-surface rounded-lg border border-purple-500/30 bg-purple-950/10">
-              <div class="text-xs font-bold text-purple-400 uppercase">4. C1-Niveau (Souverän & Nuanciert):</div>
-              <div class="text-sm text-purple-200">${turn.responseTiers.c1}</div>
-            </div>
+        <!-- Counterpart Message -->
+        <div class="p-4 bg-subtle rounded-2xl border border-subtle space-y-2">
+          <div class="flex-between items-center">
+            <span class="font-extrabold text-sm text-amber-400">${turn.speaker}</span>
+            <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-turn" data-text="${turn.text}">
+              🔊 Vorlesen
+            </button>
+          </div>
+          <div class="text-sm text-primary font-medium leading-relaxed italic">
+            "${turn.text}"
           </div>
         </div>
 
-        <button id="btnNextTurn" class="btn btn-primary w-full">Nächster Gesprächsschritt →</button>
+        <!-- Guidance Cue -->
+        <div class="p-3 bg-surface rounded-xl border border-blue-500/30 text-xs space-y-1">
+          <div class="font-bold text-blue-400">💡 Deine Aufgabe in dieser Phase:</div>
+          <div class="text-secondary">${turn.guidance}</div>
+          ${turn.expectedCriteria ? `
+            <div class="flex gap-1.5 flex-wrap pt-1">
+              ${turn.expectedCriteria.map(c => `<span class="badge badge-gray text-[10px]">✓ ${c}</span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+
+        <!-- Free Text Typing Mode -->
+        <div class="space-y-2 pt-2">
+          <label class="block text-xs font-bold text-secondary">✍️ Tippe deine Antwort (oder wähle unten eine Musterlösung):</label>
+          <div class="flex gap-2">
+            <input type="text" id="userSimInput" placeholder="Deine deutsche Antwort hier eingeben..." class="p-2.5 bg-subtle border border-subtle rounded-lg text-primary text-xs flex-1 outline-none focus:border-amber-500" />
+            <button id="btnCheckUserInput" class="btn btn-primary btn-sm">Prüfen</button>
+          </div>
+          <div id="userInputFeedback" class="hidden text-xs p-2.5 rounded-lg"></div>
+        </div>
+
+        <!-- Tiered Sample Responses -->
+        <div class="space-y-3 pt-3 border-t border-subtle">
+          <div class="text-xs font-bold text-muted uppercase tracking-wider">Musterantworten nach Sprachebene:</div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- Basic B1 -->
+            <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-gray text-[10px]">Basic (B1)</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.basic}">▶</button>
+                </div>
+                <div class="text-xs text-secondary mt-1 font-medium">${turn.responseTiers.basic}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.basic}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- Natürlich -->
+            <div class="p-3 bg-subtle rounded-xl border border-blue-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-blue text-[10px]">Natürlich</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.natural}">▶</button>
+                </div>
+                <div class="text-xs text-primary mt-1 font-medium">${turn.responseTiers.natural}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.natural}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- Professionell B2 -->
+            <div class="p-3 bg-subtle rounded-xl border border-amber-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-amber text-[10px]">Professionell (B2)</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.professionalB2}">▶</button>
+                </div>
+                <div class="text-xs text-primary mt-1 font-bold">${turn.responseTiers.professionalB2}</div>
+              </div>
+              <button class="btn btn-primary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.professionalB2}">Diese Antwort wählen →</button>
+            </div>
+
+            <!-- C1 Nuanciert -->
+            <div class="p-3 bg-subtle rounded-xl border border-purple-500/30 space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div class="flex-between">
+                  <span class="badge badge-purple text-[10px]">C1 Nuanciert</span>
+                  <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.c1}">▶</button>
+                </div>
+                <div class="text-xs text-purple-300 mt-1 font-medium">${turn.responseTiers.c1}</div>
+              </div>
+              <button class="btn btn-secondary btn-xs w-full btn-select-tier mt-2" data-text="${turn.responseTiers.c1}">Diese Antwort wählen →</button>
+            </div>
+          </div>
+
+          ${turn.whyExplanation ? `
+            <div class="p-2.5 bg-surface rounded-lg text-xs text-muted italic border border-subtle mt-2">
+              💡 <strong>Linguistische Erklärung:</strong> ${turn.whyExplanation}
+            </div>
+          ` : ''}
+        </div>
       </div>
     `;
 
-    feedbackArea.querySelector('#btnNextTurn').onclick = () => {
-      renderSimTurn(stage, sim, turnIndex + 1);
+    // Attach Audio Events
+    stage.querySelector('.btn-speak-turn').onclick = () => {
+      Speech.speak(turn.text, 0.95);
     };
-  };
+
+    stage.querySelectorAll('.btn-speak-opt').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        Speech.speak(btn.getAttribute('data-text'), 0.95);
+      };
+    });
+
+    // Tier button selection -> proceed to next turn
+    stage.querySelectorAll('.btn-select-tier').forEach(btn => {
+      btn.onclick = () => {
+        renderSimTurn(stage, sim, turnIndex + 1);
+      };
+    });
+
+    // Check user free text input
+    const inputField = stage.querySelector('#userSimInput');
+    const btnCheck = stage.querySelector('#btnCheckUserInput');
+    const feedbackBox = stage.querySelector('#userInputFeedback');
+
+    function checkAnswer() {
+      const val = inputField.value.trim();
+      if (!val) return;
+
+      feedbackBox.classList.remove('hidden');
+      feedbackBox.className = 'text-xs p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 space-y-2';
+      feedbackBox.innerHTML = `
+        <div>✓ <strong>Gute Formulierung!</strong> Du hast die Phase aktiv beantwortet.</div>
+        <div class="flex gap-2 pt-1">
+          <button id="btnProceedNextTurn" class="btn btn-primary btn-xs">Weiter zur nächsten Phase →</button>
+        </div>
+      `;
+
+      stage.querySelector('#btnProceedNextTurn').onclick = () => {
+        renderSimTurn(stage, sim, turnIndex + 1);
+      };
+    }
+
+    btnCheck.onclick = checkAnswer;
+    inputField.onkeydown = (e) => {
+      if (e.key === 'Enter') checkAnswer();
+    };
+  }
+
+  renderView();
 }

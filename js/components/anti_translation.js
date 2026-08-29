@@ -16,14 +16,42 @@ export function renderAntiTranslation(container) {
       options: ["die Stationsleitung", "der Patient", "der Notfallwagen", "das Kurvenblatt"],
       correct: 0,
       cue: "🏢 Führungskraft auf Station",
-      explanation: "Die 'Stationsleitung' leitet die Station. Nicht ins Englische übersetzen – direkt mit der Rolle und Verantwortung verknüpfen!"
+      explanation: "Die 'Stationsleitung' leitet die Station. Nicht ins Englische übersetzen – direkt mit der Rolle verknüpfen!"
     },
     {
-      conceptDe: "Die psychische Fähigkeit, Enttäuschungen, Verzögerungen und Frust ohne Aggression gelassen auszuhalten.",
-      options: ["die Frustrationstoleranz", "die Schweigepflicht", "die Dissoziation", "die Nahrungsaufnahme"],
+      conceptDe: "Ein tiefes seelisches Gefühl von Wärme, Schutz, Vertrauen und innerer Sicherheit bei einem geliebten Menschen.",
+      options: ["die Geborgenheit", "die Anspannung", "die Einsamkeit", "die Scham"],
       correct: 0,
-      cue: "🧠 Seelische Eigenschaft",
-      explanation: "'Frustrationstoleranz' = Frust aushalten können. Direkt als deutsches psychologisches Fachwort abspeichern!"
+      cue: "❤️ Deutsches Gefühlswort",
+      explanation: "'Geborgenheit' existiert so im Englischen nicht wörtlich – direkt als warmes Schutzgefühl im Herzen verankern!"
+    },
+    {
+      conceptDe: "Der feinfühlige Prozess, bei dem eine Bezugsperson durch die eigene innere Ruhe einem übererregten Kind hilft, sein Nervensystem zu beruhigen.",
+      options: ["die Co-Regulation", "die Bestrafung", "das Wegsperren", "die Gleichgültigkeit"],
+      correct: 0,
+      cue: "👶 Kinderpsychologie & KJP",
+      explanation: "'Co-Regulation' = Beruhigung über das ruhige Nervensystem des Erwachsenen."
+    },
+    {
+      conceptDe: "Die exklusive, ungestörte und liebevolle gemeinsame Zeit zweier Partner.",
+      options: ["die Zweisamkeit", "die Einsamkeit", "die Schichtarbeit", "die Besprechung"],
+      correct: 0,
+      cue: "❤️ Partnerschaft",
+      explanation: "'Zweisamkeit' = bewusste Zeit zu zweit. Nicht übersetzen, sondern als kostbare Paarzeit empfinden!"
+    },
+    {
+      conceptDe: "Höflich und gezielt in ein laufendes Fachgespräch eingreifen, um einen Aspekt zu ergänzen.",
+      options: ["einhaken", "schreien", "verlassen", "leugnen"],
+      correct: 0,
+      cue: "💬 Diskurs & Besprechung",
+      explanation: "'Darf ich kurz einhaken?' = die eleganteste Formulierung für professionelle Einwände."
+    },
+    {
+      conceptDe: "Vollkommen satt sein und beim Essen keinen Bissen mehr hinunterbekommen.",
+      options: ["pappsatt", "hungrig", "durstig", "erschöpft"],
+      correct: 0,
+      cue: "🍽️ Tischkultur & Alltag",
+      explanation: "'Ich bin pappsatt!' = herzliche deutsche Art zu sagen, dass man rundum gesättigt ist."
     },
     {
       conceptDe: "Eine geliebte Person durch achtsames Zuhören, liebevolle Worte und Nähe in einer schweren Notlage beruhigen.",
@@ -36,116 +64,39 @@ export function renderAntiTranslation(container) {
       conceptDe: "Den Esstisch nach der Mahlzeit von Tellern, Tassen und Besteck befreien.",
       options: ["den Tisch abräumen", "den Tisch decken", "einen Termin vereinbaren", "Bescheid geben"],
       correct: 0,
-      cue: "🍽️ Haushalt & Küche",
+      cue: "🍽️ Haushalt & Familie",
       explanation: "'abräumen' = Geschirr wegräumen. Nicht 'clean the table' übersetzen, sondern als feste Handlung sehen!"
-    },
-    {
-      conceptDe: "Ein freudiges Gefühl im Hinblick auf ein bevorstehendes schönes Ereignis in der Zukunft empfinden.",
-      options: ["sich freuen auf", "sich freuen über", "vermissen", "verwöhnen"],
-      correct: 0,
-      cue: "💌 Vorfreude",
-      explanation: "'sich freuen auf (+ Akk.)' = in die Zukunft blicken. 'sich freuen über' = über ein vergangenes Ereignis/Geschenk."
-    },
-    {
-      conceptDe: "Das schmerzhafte Gefühl des Fehlens einer geliebten Person spüren.",
-      options: ["vermissen", "zuhören", "aufräumen", "bestellen"],
-      correct: 0,
-      cue: "💌 Sehnsucht",
-      explanation: "'vermissen' = to miss. Immer mit Akkusativ: 'Ich vermisse dich!'"
-    },
-    {
-      conceptDe: "Ein Gefühl von tiefem seelischem Schutz, Wärme, Vertrauen und innerer Sicherheit.",
-      options: ["die Geborgenheit", "die Anspannung", "die Einsamkeit", "die Scham"],
-      correct: 0,
-      cue: "✨ Deutsches Unwort / Gefühl",
-      explanation: "'Geborgenheit' ist ein einzigartiges deutsches Wort für vollkommenen Schutz, Wärme und Liebe."
-    },
-    {
-      conceptDe: "Medikamente, die nur bei akuter Notwendigkeit nach ärztlicher Anordnung gegeben werden.",
-      options: ["die Bedarfsmedikation", "die Dauerabstinenz", "die Sachleistung", "die Hausordnung"],
-      correct: 0,
-      cue: "💊 Psychiatrie & Pflege",
-      explanation: "'Bedarfsmedikation' = bei Bedarf. Nicht 'as needed medicine' denken – 'Bedarfsmedikation' ist das feste Wort."
-    },
-    {
-      conceptDe: "Gesetzliche Pflicht nach § 203 StGB, Patientendaten und Geheimnisse streng vertraulich zu behandeln.",
-      options: ["die Schweigepflicht", "die Probezeit", "die Verpflegungspauschale", "die Abweichung"],
-      correct: 0,
-      cue: "⚖️ Klinikrecht & Ethik",
-      explanation: "'Schweigepflicht' = Pflicht zum Schweigen über Patientendaten."
-    },
-    {
-      conceptDe: "Mobilisierbarer fahrbarer Notfallschrank mit Defibrillator, Beatmungsbeutel und Reanimationsmedikamenten.",
-      options: ["der Notfallwagen", "der Rollstuhl", "der Infusionsständer", "der Wäscheständer"],
-      correct: 0,
-      cue: "🚨 Notfall & Klinik",
-      explanation: "'Notfallwagen' = Crash Cart. Direkt mit dem roten Wagen auf dem Stationsgang verknüpfen!"
-    },
-    {
-      conceptDe: "Numerische Skala von 0 bis 10 zur Erfassung der subjektiven Schmerzstärke eines Patienten.",
-      options: ["die Schmerzskala (NRS)", "die Vitalzeichen", "das Kurvenblatt", "die Anordnung"],
-      correct: 0,
-      cue: "🩺 Pflege & Diagnostik",
-      explanation: "'die Schmerzskala' = Skala von 0 (kein Schmerz) bis 10 (unerträglich)."
-    },
-    {
-      conceptDe: "Das zeitweise Abspalten von Wahrnehmung, Gefühlen oder Körperempfindungen bei starkem Trauma.",
-      options: ["die Dissoziation", "die Reizüberflutung", "die Manie", "die Phobie"],
-      correct: 0,
-      cue: "🧠 Traumapsychologie",
-      explanation: "'Dissoziation' = seelische Schutzabspaltung. Nicht übersetzen, direkt als Schutzmechanismus verstehen!"
-    },
-    {
-      conceptDe: "Aktivierung der 5 Sinne (Sehen, Hören, Fühlen, Riechen, Schmecken), um im Hier und Jetzt zu landen.",
-      options: ["die Erdung (Grounding)", "die Fixierung", "die Somatisierung", "die Intoxikation"],
-      correct: 0,
-      cue: "🌱 Skills & Beruhigung",
-      explanation: "'Erdung' = 5-4-3-2-1 Methode zur Rückkehr in die Realität."
-    },
-    {
-      conceptDe: "Jemandem durch feines Essen, besondere Aufmerksamkeit und Verwöhnung eine große Freude machen.",
-      options: ["verwöhnen", "nachvollziehen", "absetzen", "sedieren"],
-      correct: 0,
-      cue: "❤️ Beziehung & Liebe",
-      explanation: "'verwöhnen' = jemanden liebevoll umsorgen."
-    },
-    {
-      conceptDe: "Im Restaurant übliche Praxis, dass jeder Gast seine eigene Rechnung separat bezahlt.",
-      options: ["getrennt zahlen", "auf eigene Faust", "Trinkgeld geben", "zur Sprache bringen"],
-      correct: 0,
-      cue: "☕ Restaurant & Kultur",
-      explanation: "'getrennt zahlen' = typisch deutsche Restauranterfahrung. 'Zusammen oder getrennt?' -> 'Getrennt, bitte!'"
     }
   ];
 
   const falseFriendsTraps = [
     {
-      trap: "Ich bin kalt.",
-      correct: "Mir ist kalt.",
-      explanation: "'Ich bin kalt' bedeutet im Deutschen 'Ich bin ein gefühlloser/toter Mensch'. Für das Temperaturempfinden sagt man immer 'Mir ist kalt / warm / heiß' (Dativ)."
-    },
-    {
       trap: "Ich bekomme einen Arzt.",
-      correct: "Ich werde Arzt / Ich gehe zum Arzt.",
-      explanation: "'to become' heißt 'werden', NICHT 'bekommen'! 'Bekommen' bedeutet 'to receive/get'."
+      correct: "Ich werde Arzt / Ich werde Ärztin.",
+      explanation: "'bekommen' bedeutet 'to receive / get' (z. B. 'Ich bekomme ein Geschenk'). 'To become' heißt im Deutschen 'werden'!"
     },
     {
-      trap: "Das macht Sinn.",
-      correct: "Das ergibt Sinn / Das ist sinnvoll.",
-      explanation: "Im Deutschen 'macht' Sinn nichts – Sinn 'ergibt' sich oder etwas 'ist sinnvoll'."
+      trap: "Ich bin eventuell zu spät.",
+      correct: "Eventuell komme ich später (möglicherweise) vs. Schließlich / Am Ende kam ich zu spät (eventually).",
+      explanation: "'eventuell' heißt im Deutschen 'vielleicht / möglicherweise' – NICHT 'am Ende' (eventually)."
     },
     {
-      trap: "Er ist aktuell mein Chef.",
-      correct: "Er ist zurzeit / momentan mein Chef.",
-      explanation: "'aktuell' bedeutet 'current/up to date', NICHT 'actually' (das heißt 'tatsächlich' oder 'eigentlich')."
+      trap: "Er ist mein Chefkoch.",
+      correct: "Er ist mein Chef / Vorgesetzter (im Beruf) vs. Chefkoch (in der Restaurantküche).",
+      explanation: "'Chef' bedeutet auf Deutsch der Vorgesetzte/Arbeitgeber, nicht zwingend der Küchenchef."
     },
     {
-      trap: "Ich vermisse dir.",
-      correct: "Ich vermisse dich.",
-      explanation: "'vermissen' verlangt immer den Akkusativ (dich, ihn, sie, uns), niemals Dativ (dir)."
+      trap: "Ich spendiere meine Zeit im Krankenhaus.",
+      correct: "Ich verbringe Zeit im Krankenhaus (to spend time) vs. Ich spendiere einen Kaffee (to treat someone).",
+      explanation: "'Zeit verbringen' = to spend time. 'spendieren' = jemandem etwas spendieren/ausgeben."
     },
     {
-      trap: "Ich liebe dir.",
+      trap: "Das Kind ist sehr brav.",
+      correct: "Das Kind ist brav (well-behaved / artig) vs. Er ist tapfer/mutig (brave).",
+      explanation: "'brav' bedeutet folgsam/artig, NICHT mutig (brave = mutig/tapfer)."
+    },
+    {
+      trap: "Ich liebe für dich.",
       correct: "Ich liebe dich.",
       explanation: "Klassischer Akkusativfall für Gefühlsäußerungen: 'Ich liebe dich'."
     },
@@ -158,63 +109,44 @@ export function renderAntiTranslation(container) {
       trap: "Ich habe Angst von Hunden.",
       correct: "Ich habe Angst vor Hunden.",
       explanation: "'Angst haben' verlangt im Deutschen die Präposition 'vor' (+ Dativ)."
-    },
-    {
-      trap: "Ich stimme mit dir überein.",
-      correct: "Ich stimme dir zu / Ich bin deiner Meinung.",
-      explanation: "'zustimmen' verlangt einfach den Dativ: 'Ich stimme dir voll zu!'"
-    },
-    {
-      trap: "Ich will ein Foto von uns machen lassen.",
-      correct: "Lass uns ein Foto zusammen machen.",
-      explanation: "Natürliches Deutsch nutzt 'Lass uns...' statt komplizierter wörtlicher englischer Satzstrukturen."
     }
   ];
 
   const reactionPrompts = [
     {
-      theme: "💌 Freundin & Liebe",
-      situation: "Deine Freundin schreibt dir um 18 Uhr: 'Ich hatte einen anstrengenden Tag und vermisse dich. Wann sehen wir uns?'",
-      prompt: "Reagiere direkt auf Deutsch mit Zuneigung, Verständnis und einem konkreten Plan!",
+      theme: "❤️ Freundin / Ehefrau",
+      situation: "Deine Freundin schreibt dir: 'Ich hatte einen schrecklichen Tag auf der Arbeit und vermisse dich so sehr. Wann kommst du nach Hause?'",
+      prompt: "Reagiere direkt auf Deutsch mit Zuneigung, Verständnis und einem konkreten Entlastungsplan!",
       idealAnswers: [
-        "Ich vermisse dich auch sehr! Ich bin in 30 Minuten bei dir, dann koche ich uns etwas Leckeres und wir machen es uns gemütlich.",
-        "Oh, du Arme! Ich freue mich schon riesig auf dich. Ruh dich kurz aus, ich beeile mich und bringe dein Lieblingsdessert mit!"
+        "Ich vermisse dich auch so sehr, mein Schatz! Ich mache mich sofort auf den Weg, koche uns etwas Schönes und dann ruhst du dich ganz fest an mich gekuschelt aus.",
+        "Oh du Arme, lass dich ganz fest umarmen! Ich bin in 20 Minuten bei dir, bringe dein Lieblingsdessert mit und halte dir heute den Rücken frei."
       ]
     },
     {
-      theme: "🏢 Station & BFD-Alltag",
+      theme: "🏥 Station & BFD-Alltag",
       situation: "Die Stationsleitung fragt dich während der Übergabe: 'Ali, könntest du bitte kurz nachsehen, ob in Zimmer 12 frische Handtücher sind?'",
       prompt: "Reagiere sofort professionell, verbindlich und auf den Punkt!",
       idealAnswers: [
-        "Ja, sehr gerne! Ich gehe sofort nachsehen und bringe bei Bedarf direkt frische Handtücher mit.",
-        "Mache ich sofort! Ich gebe Ihnen in fünf Minuten kurz Rückmeldung."
+        "Ja, sehr gerne, Frau Schneider! Ich gehe sofort nachsehen und bringe bei Bedarf direkt frische Handtücher mit.",
+        "Mache ich unverzüglich! Ich gebe Ihnen in fünf Minuten kurz Rückmeldung."
       ]
     },
     {
-      theme: "🏠 Gastfamilie Fröhlich",
-      situation: "Frau Fröhlich sagt beim Abendessen: 'Das Essen ist fertig! Möchtest du dich schon an den Tisch setzen?'",
-      prompt: "Reagiere dankbar, höflich und biete deine Hilfe an!",
+      theme: "🏡 Familie & Gastfreundschaft",
+      situation: "Die Gastgeberin sagt beim Abendessen: 'Greif bitte noch einmal kräftig zu, Ali! Es ist noch reichlich Braten da.'",
+      prompt: "Reagiere höflich, lobend und erkläre, ob du Nachschlag möchtest oder wunschlos satt bist!",
       idealAnswers: [
-        "Vielen Dank, das riecht fantastisch! Darf ich Ihnen noch helfen, die Schüsseln und Gläser auf den Tisch zu stellen?",
-        "Sehr gerne, danke! Ich helfe Ihnen eben noch beim Servieren."
+        "Vielen Dank, aber ich bin wirklich wunschlos satt! Es hat ganz hervorragend geschmeckt.",
+        "Ein ganz kleines Stück nehme ich noch sehr gerne, es schmeckt wirklich vorzüglich!"
       ]
     },
     {
-      theme: "☕ Café & Oberstadt Marburg",
-      situation: "Die Bedienung im Café am Marktplatz fragt: 'Möchten Sie zusammen oder getrennt zahlen?'",
-      prompt: "Antworte schnell, natürlich und gib ein passendes Trinkgeld!",
+      theme: "👶 Kinderpsychologie & Beruhigung",
+      situation: "Ein 5-jähriges Kind weint panisch vor dem Blutdruckmessen und zieht den Arm weg.",
+      prompt: "Gehe auf Augenhöhe und beruhige das Kind mit kindgerechter Sprache!",
       idealAnswers: [
-        "Getrennt, bitte. Für mich macht das 7,20 Euro – machen Sie bitte 8 Euro daraus. Vielen Dank!",
-        "Bitte getrennt. Machen wir 10 Euro glatt, der Rest ist für Sie!"
-      ]
-    },
-    {
-      theme: "🚨 Klinik-Notfall / Unruhe",
-      situation: "Ein unruhiger Patient kommt aufgebracht zum Stationszimmer und verlangt lautstark nach dem Chefarzt.",
-      prompt: "Deeskaliere die Situation ruhig, verständnisvoll und setze klare Grenzen!",
-      idealAnswers: [
-        "Guten Tag, Herr Weber. Ich sehe, dass Sie sehr aufgebracht sind. Kommen Sie kurz mit mir in den Aufenthaltsraum, ich hole sofort die zuständige Schwester für Sie.",
-        "Ich höre Ihnen zu. Lassen Sie uns ruhig sprechen. Ich gebe der Pflegefachkraft sofort Bescheid."
+        "Schau mal, diese kleine Manschette pustet sich nur kurz wie ein Luftballon auf und umarmt deinen Arm ganz fest. Wollen wir zuerst deinem Teddy den Blutdruck messen?",
+        "Ich bin ganz vorsichtig. Es tut überhaupt nicht weh, es kribbelt nur ein bisschen wie ein Zauberkissen."
       ]
     }
   ];
@@ -226,31 +158,31 @@ export function renderAntiTranslation(container) {
         <div class="hero-card">
           <div class="flex-between flex-wrap gap-4">
             <div>
-              <div class="badge badge-emerald mb-2">
+              <span class="badge badge-amber mb-2">
                  Monolinguales Denken • Stop Translating!
-              </div>
-              <h1 class="text-3xl font-extrabold text-gradient">Anti-Übersetzungs-Trainer</h1>
-              <p class="text-secondary mt-1 text-sm">
+              </span>
+              <h1 class="page-title">🧠 Anti-Übersetzungs-Trainer</h1>
+              <p class="subtitle mt-1">
                 Schluss mit mentalen Übersetzungs-Schleifen ins Englische! Trainiere dein Gehirn darauf, <strong>direkt auf Deutsch zu denken, zu fühlen und intuitiv zu reagieren</strong>.
               </p>
             </div>
-            <div class="flex items-center gap-3 bg-surface p-3 rounded-2xl border border-glass">
+            <div class="flex items-center gap-3 bg-surface p-3 rounded-2xl border border-subtle">
               <div class="text-center">
-                <div class="text-xs text-secondary">Punkte</div>
-                <div class="font-bold text-emerald-400 text-lg" id="scoreDisplay">${currentScore} XP</div>
+                <div class="text-xs text-secondary">Lern-Punkte</div>
+                <div class="font-extrabold text-amber-400 text-lg" id="scoreDisplay">${currentScore} XP</div>
               </div>
             </div>
           </div>
 
           <!-- Tabs -->
-          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-glass">
-            <button class="btn ${activeTab === 'monolingual' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="monolingual">
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-subtle">
+            <button class="btn ${activeTab === 'monolingual' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="monolingual">
               🎯 Direktes Konzept-Mapping (${monolingualChallenges.length})
             </button>
-            <button class="btn ${activeTab === 'reaction' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="reaction">
+            <button class="btn ${activeTab === 'reaction' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="reaction">
               ⚡ Blitz-Reaktions-Trainer (${reactionPrompts.length})
             </button>
-            <button class="btn ${activeTab === 'false_friends' ? 'btn-primary' : 'btn-secondary'} btn-sm tab-btn" data-tab="false_friends">
+            <button class="btn ${activeTab === 'false_friends' ? 'btn-primary' : 'btn-secondary'} btn-xs tab-btn" data-tab="false_friends">
               🚫 Falsche-Freunde-Buster (${falseFriendsTraps.length})
             </button>
           </div>
@@ -268,151 +200,146 @@ export function renderAntiTranslation(container) {
       function showMonolingual(i) {
         const item = monolingualChallenges[i % monolingualChallenges.length];
         tabContent.innerHTML = `
-          <div class="card p-6 space-y-6">
+          <div class="bento-card p-6 space-y-6 border border-subtle">
             <div class="flex-between">
-              <span class="badge badge-indigo text-xs">${item.cue}</span>
+              <span class="badge badge-amber text-xs">${item.cue}</span>
               <span class="text-xs text-secondary font-bold">Aufgabe ${ (i % monolingualChallenges.length) + 1 } von ${monolingualChallenges.length}</span>
             </div>
 
-            <div class="p-6 bg-surface rounded-2xl border border-glass text-center space-y-2">
-              <div class="text-xs text-secondary uppercase font-bold tracking-wider">Deutsches Konzept (ohne Englisch!):</div>
+            <div class="p-6 bg-subtle rounded-2xl border border-subtle text-center space-y-2">
+              <div class="text-xs text-muted uppercase font-bold tracking-wider">Deutsches Konzept (ohne Englisch!):</div>
               <div class="text-lg font-bold text-primary leading-relaxed">${item.conceptDe}</div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              ${item.options.map((opt, optIdx) => `
-                <button class="btn btn-secondary p-4 text-left justify-start font-bold text-sm opt-btn hover:border-blue-500 rounded-xl" data-opt="${optIdx}">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="optionsGrid">
+              ${item.options.map((opt, oIdx) => `
+                <button class="p-4 bg-surface rounded-xl border border-subtle text-left font-semibold text-sm hover:border-amber-500 transition-all opt-btn" data-idx="${oIdx}">
                   ${opt}
                 </button>
               `).join('')}
             </div>
 
-            <div id="monoFeedback" class="hidden p-4 rounded-xl space-y-2"></div>
+            <div id="monoFeedback" class="hidden p-4 rounded-xl text-xs space-y-2"></div>
           </div>
         `;
 
         const feedback = tabContent.querySelector('#monoFeedback');
         tabContent.querySelectorAll('.opt-btn').forEach(btn => {
           btn.onclick = () => {
-            const chosen = parseInt(btn.getAttribute('data-opt'));
+            const selected = parseInt(btn.getAttribute('data-idx'));
+            tabContent.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+
             feedback.classList.remove('hidden');
-            if (chosen === item.correct) {
+            if (selected === item.correct) {
               currentScore += 10;
-              container.querySelector('#scoreDisplay').innerText = currentScore + ' XP';
-              feedback.className = "p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 text-sm space-y-2";
+              currentStreak++;
+              btn.classList.add('border-emerald-500', 'bg-emerald-950/20', 'text-emerald-300');
+              feedback.className = 'p-4 rounded-xl text-xs bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 space-y-2 animate-fadeIn';
               feedback.innerHTML = `
-                <div class="font-bold flex items-center justify-between">
-                  <span>✓ Richtig gedacht! (+10 XP)</span>
-                  <button id="btnPlayWord" class="btn btn-secondary btn-xs">🔊 Anhören</button>
-                </div>
-                <div>${item.explanation}</div>
-                <button id="btnNextMono" class="btn btn-emerald btn-sm mt-2">Nächstes Konzept →</button>
+                <div>✓ <strong>Hervorragend!</strong> ${item.explanation}</div>
+                <button id="btnNextMono" class="btn btn-primary btn-xs mt-2">Nächste Aufgabe →</button>
               `;
-              feedback.querySelector('#btnPlayWord').onclick = () => Speech.speak(item.options[item.correct]);
-              const settings = Storage.getSettings();
-              Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + 10 });
             } else {
-              feedback.className = "p-4 rounded-xl bg-red-950/30 border border-red-500/40 text-red-300 text-sm space-y-2";
+              currentStreak = 0;
+              btn.classList.add('border-red-500', 'bg-red-950/20', 'text-red-400');
+              feedback.className = 'p-4 rounded-xl text-xs bg-red-950/30 border border-red-500/40 text-red-300 space-y-2 animate-fadeIn';
               feedback.innerHTML = `
-                <div class="font-bold">✗ Noch nicht ganz.</div>
-                <div>${item.explanation}</div>
-                <button id="btnNextMono" class="btn btn-secondary btn-sm mt-2">Weiter →</button>
+                <div>❌ <strong>Nicht ganz:</strong> Richtig ist <em>${item.options[item.correct]}</em>. ${item.explanation}</div>
+                <button id="btnNextMono" class="btn btn-secondary btn-xs mt-2">Weiter →</button>
               `;
             }
-            feedback.querySelector('#btnNextMono').onclick = () => showMonolingual(i + 1);
+
+            container.querySelector('#scoreDisplay').textContent = `${currentScore} XP`;
+            tabContent.querySelector('#btnNextMono').onclick = () => {
+              idx++;
+              showMonolingual(idx);
+            };
           };
         });
       }
       showMonolingual(idx);
+
     } else if (activeTab === 'reaction') {
-      tabContent.innerHTML = `
-        <div class="space-y-4">
-          ${reactionPrompts.map((rp, rIdx) => `
-            <div class="card p-6 space-y-4">
-              <div class="flex-between">
-                <span class="badge badge-purple text-xs">${rp.theme}</span>
-                <span class="text-xs text-secondary font-bold">Situation ${rIdx+1} von ${reactionPrompts.length}</span>
-              </div>
+      let rIdx = 0;
+      function showReaction(i) {
+        const item = reactionPrompts[i % reactionPrompts.length];
+        tabContent.innerHTML = `
+          <div class="bento-card p-6 space-y-5 border border-subtle">
+            <div class="flex-between">
+              <span class="badge badge-amber text-xs">${item.theme}</span>
+              <span class="text-xs text-secondary font-bold">Situation ${ (i % reactionPrompts.length) + 1 } von ${reactionPrompts.length}</span>
+            </div>
 
-              <div class="p-4 bg-surface rounded-xl border border-glass font-semibold text-sm leading-relaxed">
-                "${rp.situation}"
-              </div>
-              <div class="text-xs text-secondary font-medium">${rp.prompt}</div>
+            <div class="p-4 bg-subtle rounded-2xl border border-subtle space-y-1">
+              <div class="text-xs font-bold text-amber-400 uppercase">Eingehende Situation:</div>
+              <div class="text-sm font-semibold text-primary italic">"${item.situation}"</div>
+            </div>
 
-              <textarea class="input w-full p-3 text-sm rounded-xl reaction-input" rows="2" placeholder="Tippe deine spontane deutsche Antwort ohne mentale Übersetzung..."></textarea>
+            <div class="p-3 bg-surface rounded-xl border border-blue-500/25 text-xs text-secondary">
+              ⚡ <strong>Deine Aufgabe:</strong> ${item.prompt}
+            </div>
 
-              <div class="flex-between">
-                <button class="btn btn-primary btn-sm btn-show-reaction" data-index="${rIdx}">
-                  Musterantworten ansehen & anhören (+10 XP)
-                </button>
-              </div>
-
-              <div id="reactionAns_${rIdx}" class="hidden p-4 bg-blue-950/20 border border-blue-500/30 rounded-2xl space-y-3 text-xs">
-                <div class="font-bold text-blue-400 text-sm">Natürliche muttersprachliche Reaktionen:</div>
-                <div class="space-y-2">
-                  ${rp.idealAnswers.map((ans, aIdx) => `
-                    <div class="p-3 bg-card rounded-xl border border-glass flex-between items-center gap-3">
-                      <span class="text-primary font-medium text-sm">„${ans}“</span>
-                      <button class="btn btn-ghost btn-xs btn-speak-ans" data-text="${ans}">🔊</button>
-                    </div>
-                  `).join('')}
-                </div>
+            <div class="space-y-2">
+              <textarea id="reactionInput" rows="3" placeholder="Tippe deine spontane deutsche Antwort hier ein..." class="w-full p-3 bg-subtle border border-subtle rounded-xl text-primary text-xs outline-none focus:border-amber-500"></textarea>
+              <div class="flex justify-between items-center">
+                <button id="btnRevealIdeal" class="btn btn-secondary btn-xs">Musterantworten anzeigen</button>
+                <button id="btnNextReaction" class="btn btn-primary btn-xs">Nächste Situation →</button>
               </div>
             </div>
-          `).join('')}
-        </div>
-      `;
 
-      tabContent.querySelectorAll('.btn-speak-ans').forEach(btn => {
-        btn.onclick = () => Speech.speak(btn.getAttribute('data-text'));
-      });
+            <div id="idealAnswersBox" class="hidden p-4 bg-surface rounded-xl border border-emerald-500/30 space-y-2 animate-fadeIn text-xs">
+              <div class="font-bold text-emerald-400">✓ Natürliche deutsche Musterantworten:</div>
+              <ul class="list-disc list-inside text-secondary space-y-1">
+                ${item.idealAnswers.map(ans => `<li class="italic font-medium text-primary">"${ans}"</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
 
-      tabContent.querySelectorAll('.btn-show-reaction').forEach(btn => {
-        btn.onclick = () => {
-          const idx = btn.getAttribute('data-index');
-          const ansBox = tabContent.querySelector('#reactionAns_' + idx);
-          ansBox.classList.toggle('hidden');
-          currentScore += 10;
-          container.querySelector('#scoreDisplay').innerText = currentScore + ' XP';
-          const settings = Storage.getSettings();
-          Storage.saveSettings({ ...settings, totalXP: (settings.totalXP || 0) + 10 });
+        tabContent.querySelector('#btnRevealIdeal').onclick = () => {
+          tabContent.querySelector('#idealAnswersBox').classList.remove('hidden');
         };
-      });
+
+        tabContent.querySelector('#btnNextReaction').onclick = () => {
+          rIdx++;
+          showReaction(rIdx);
+        };
+      }
+      showReaction(rIdx);
+
     } else if (activeTab === 'false_friends') {
       tabContent.innerHTML = `
-        <div class="card p-6 space-y-4">
-          <div class="flex-between">
-            <h3 class="font-bold text-base flex items-center gap-2">
-               Die 10 gefährlichsten Deutsch-Englisch Übersetzungsfallen
-            </h3>
-            <span class="badge badge-amber text-xs">${falseFriendsTraps.length} Fallen</span>
+        <div class="space-y-4">
+          <div class="p-3 bg-surface rounded-xl border border-amber-500/30 text-xs text-secondary">
+            🚫 <strong>Falsche Freunde:</strong> Wörter und Satzstrukturen, die man aus dem Englischen oder der Muttersprache wörtlich falsch übersetzt.
           </div>
 
-          <div class="space-y-4">
-            ${falseFriendsTraps.map((trap, tIdx) => `
-              <div class="p-4 bg-surface rounded-2xl border border-glass space-y-2">
-                <div class="flex-between items-start">
-                  <div class="flex items-center gap-3 flex-wrap">
-                    <span class="text-red-400 font-bold line-through text-sm">✗ ${trap.trap}</span>
-                    <span class="text-emerald-400 font-bold text-sm">✓ ${trap.correct}</span>
-                  </div>
-                  <button class="btn btn-secondary btn-xs btn-speak-trap" data-text="${trap.correct}">🔊</button>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${falseFriendsTraps.map(trap => `
+              <div class="bento-card p-4 space-y-2 border border-subtle">
+                <div class="text-xs text-red-400 font-semibold">❌ Typischer Übersetzungsfehler:</div>
+                <div class="p-2 bg-red-950/20 border border-red-500/30 rounded-lg text-xs text-red-300 font-mono">
+                  ${trap.trap}
                 </div>
-                <div class="text-xs text-secondary leading-relaxed">${trap.explanation}</div>
+
+                <div class="text-xs text-emerald-400 font-semibold pt-1">✓ Richtig auf Deutsch:</div>
+                <div class="p-2 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-xs text-emerald-300 font-bold">
+                  ${trap.correct}
+                </div>
+
+                <p class="text-[11px] text-muted italic pt-1 border-t border-subtle">
+                  💡 ${trap.explanation}
+                </p>
               </div>
             `).join('')}
           </div>
         </div>
       `;
-
-      tabContent.querySelectorAll('.btn-speak-trap').forEach(btn => {
-        btn.onclick = () => Speech.speak(btn.getAttribute('data-text'));
-      });
     }
 
-    container.querySelectorAll('.tab-btn').forEach(b => {
-      b.onclick = () => {
-        activeTab = b.getAttribute('data-tab');
+    container.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeTab = btn.getAttribute('data-tab');
         renderView();
       };
     });

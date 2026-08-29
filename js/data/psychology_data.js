@@ -1,14 +1,112 @@
-// Psychologie verstehen — Sprach- und Handlungswissen für das psychiatrische Arbeitsumfeld
-// Synthese aus: PsyDeutsch_Idee.pdf, 11a3b5a3-c006-4da8-b3c5-9676d5fcc49e_Psychotherapie.pdf, 85e84574-7323-429f-90b9-dce257bf5641_KJP.pdf, intus_Booklet.pdf, Elisabeth Wagner
+// Psychologie & Kinder-/Jugendpsychiatrie (KJP) verstehen
+// Sprach-, Handlungs- und Deeskalationswissen für Klinik, Pädagogik & Alltag
 
 export const PSYCHOLOGY_DATA = {
   overview: {
     title: "Psychologie & Psychiatrische Kommunikation verstehen",
-    disclaimer: "Dieses Modul dient dem Kommunikations-, Sprach- und Handlungswissen im Rahmen des Freiwilligendienstes. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik oder Therapieentscheidung.",
+    disclaimer: "Dieses Modul vermittelt sprachliches und deeskalierendes Handlungswissen für BFD, Klinik und Betreuung. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik.",
     provenance: "AUS_QUELLE"
   },
 
   concepts: [
+    // ----------------------------------------
+    // 1. KINDER- & JUGENDPSYCHOLOGIE / KJP
+    // ----------------------------------------
+    {
+      id: "psy_bindungstheorie",
+      term: "Die Bindungstheorie & Bindungsmuster (nach Bowlby / Ainsworth)",
+      domain: "Entwicklungspsychologie & KJP",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Entwicklung.pdf / Psychoanalyse",
+      explanationGerman: "Kinder entwickeln basierend auf den ersten Lebensjahren ein inneres Arbeitsmodell von Beziehungen: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden unterdrückt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bezugsperson bei traumatischen Erfahrungen).",
+      simpleExample: "Ein Kind weint beim Verlassen der Mutter, lässt sich aber nach ihrer Rückkehr schnell trösten (sicher gebunden).",
+      workplaceContext: "Traumatisierte Kinder und Jugendliche auf Station testen oft Grenzen extrem aus, um unbewusst zu prüfen: 'Verlässt du mich auch, wenn ich schwierig bin?'",
+      whatToDo: [
+        "Verlässlichkeit und Vorhersehbarkeit im Verhalten zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
+        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Kindes.",
+        "Positive Zuwendung nicht an Bedingungen oder 'gutes Verhalten' knüpfen."
+      ],
+      whatToAvoid: [
+        "Liebesentzug oder Drohungen ('Wenn du nicht brav bist, gehe ich weg').",
+        "Widersprüchliche Signale (Doppelbotschaften).",
+        "Die Bindungsangst des Kindes ins Lächerliche ziehen."
+      ],
+      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit", "die Bindungsperson"],
+      speakingPractice: "Ich sehe, dass du gerade große Angst hast. Ich bleibe hier bei dir sitzen, bis du dich wieder sicher fühlst."
+    },
+
+    {
+      id: "psy_trotzphase_wutanfall",
+      term: "Die Autonomiephase (Trotzphase) & Emotionsregulation bei Kindern",
+      domain: "Entwicklungs- & Traumapädagogik",
+      provenance: "AUS_QUELLE",
+      source: "Traumapaedagogik_Klinik.pdf",
+      explanationGerman: "Zwischen dem 2. und 4. Lebensjahr begreift das Kind sein eigenes 'Ich' und entwickelt einen eigenen Willen. Da der präfrontale Kortex (Sitz der Impulskontrolle) noch unreif ist, führen Frustrationen zu massiven emotionalen Entladungen (Wutanfällen).",
+      simpleExample: "Das Kind darf die Steckdose nicht berühren und wirft sich schreiend auf den Boden.",
+      workplaceContext: "In der Betreuung oder Kinderklinik geraten Kinder bei kleinsten Verboten in heftige Wut. Strafen verschlimmern die Übererregung der Amygdala.",
+      whatToDo: [
+        "Auf Augenhöhe gehen (in die Hocke gehen, Blickkontakt auf gleicher Höhe).",
+        "Das Gefühl benennen und validieren: 'Du bist gerade richtig wütend, weil du noch weiterspielen wolltest.'",
+        "Körperliche Grenzen ruhig und bestimmt halten: 'Wütend sein ist okay, aber Schlagen/Beißen ist nicht erlaubt.'"
+      ],
+      whatToAvoid: [
+        "Selbst laut werden oder das Kind anschreien.",
+        "Lange rationale Vorträge halten, während das Kind im Wutanfall ist (das Gehirn ist für Logik blockiert).",
+        "Das Kind zur Strafe isolieren ('Time-Out' im Zimmer)."
+      ],
+      relevantVocabulary: ["die Autonomiephase", "die Impulskontrolle", "das Gefühlschaos", "die Wutbewältigung", "auf Augenhöhe gehen"],
+      speakingPractice: "Ich merke, wie wütend du bist. Das ist vollkommen verständlich. Atme kurz mit mir aus – ich helfe dir dabei."
+    },
+
+    {
+      id: "psy_adhs_reizueberflutung",
+      term: "ADHS & Reizüberflutung bei Kindern & Jugendlichen",
+      domain: "Kinder- & Jugendpsychiatrie",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf",
+      explanationGerman: "Eine neurobiologische Störung der Reizfilterung und Dopaminregulation. Betroffene Kinder können sensorische Reize (Geräusche, Bewegungen) schlechter filtern, was zu Hyperaktivität, Impulsivität und rascher Erschöpfung durch Reizüberflutung führt.",
+      simpleExample: "Ein Kind kann bei Hintergrundmusik oder vielen bunten Bildern im Raum den Hausaufgaben nicht folgen.",
+      workplaceContext: "Auf Station oder in der Schule wirken diese Kinder oft 'unruhig', 'störend' oder 'aggressiv', obwohl sie schlicht sensorisch überfordert sind.",
+      whatToDo: [
+        "Reizarme Umgebung schaffen (visuelle Ablenkungen und Lärm minimieren).",
+        "Kurze, präzise Arbeitsaufträge in Einzelschritten geben (1 Anweisung statt 5 auf einmal).",
+        "Bewegungspausen gezielt einplanen (Bewegungsdrang als Ressource nutzen)."
+      ],
+      whatToAvoid: [
+        "Pauschale Vorwürfe wie 'Du hörst nie zu!' oder 'Sitz endlich still!'.",
+        "Überladene Räume mit ständig wechselnden Sinnesreizen.",
+        "Komplexe mehrstufige Aufgabenstellungen ohne Zwischenstopps."
+      ],
+      relevantVocabulary: ["die Reizfilterung", "die Impulsivität", "die Aufmerksamkeitsspanne", "reizarm", "die Strukturierung"],
+      speakingPractice: "Lass uns zuerst nur Aufgabe 1 zusammen machen. Wenn du die geschafft hast, machen wir eine kurze 2-Minuten-Pause."
+    },
+
+    {
+      id: "psy_kindgerechte_kommunikation",
+      term: "Kindgerechte Kommunikation & Angstreduktion in der Klinik",
+      domain: "Klinische Pädagogik",
+      provenance: "AUS_QUELLE",
+      source: "Klinische_Kommunikation_KJP.pdf",
+      explanationGerman: "Kinder verstehen Sprache bis etwa zum 10. Lebensjahr sehr wörtlich und bildhaft. Medizinische Fachbegriffe wie 'Blut abnehmen' oder 'Spritze' lösen Todes- oder Verstümmelungsängste aus. Eine kindgerechte Sprache nutzt Metaphern, Entdramatisierung und vorbereitende Ankündigungen.",
+      simpleExample: "Statt 'Wir nehmen dir jetzt Blut ab' sagt man: 'Wir zählen kurz deine Blutkörperchen mit einem kleinen Zauber-Röhrchen.'",
+      workplaceContext: "Bei Blutdruckmessung, EKG oder Verbandswechsel vor der Durchführung das Gerät am Stofftier oder spielerisch vormachen.",
+      whatToDo: [
+        "Positive, ehrliche Erklärungen ('Es piekst kurz wie ein Mückenstich, danach ist es vorbei').",
+        "Das Kind aktiv einbeziehen ('Möchtest du das Pflaster mit den Dinos oder den Sternen?').",
+        "Nach der Untersuchung loben und die Tapferkeit anerkennen."
+      ],
+      whatToAvoid: [
+        "Lügen wie 'Das tut überhaupt gar nicht weh!' (zerstört das Vertrauen, wenn es doch wehtut).",
+        "Fachjargon und drohende Worte verwenden.",
+        "Ironie oder Sarkasmus (Kinder verstehen Ironie kognitiv noch nicht)."
+      ],
+      relevantVocabulary: ["die kindgerechte Sprache", "die Angstreduktion", "die Wahlmöglichkeit", "der Zaubermückenstich", "die Tapferkeit"],
+      speakingPractice: "Schau mal, diese Manschette pustet sich jetzt auf wie ein kleiner Luftballon und umarmt deinen Arm ganz fest."
+    },
+
+    // ----------------------------------------
+    // 2. ERWACHSENENPSYCHIATRIE & DEESKALATION
+    // ----------------------------------------
     {
       id: "psy_trauma",
       term: "Das Trauma / Die Traumatisierung",
@@ -31,6 +129,7 @@ export const PSYCHOLOGY_DATA = {
       relevantVocabulary: ["das Bindungstrauma", "die Ohnmacht", "überwältigend", "die Bewältigungsstrategie", "die Reizüberflutung"],
       speakingPractice: "Herr Müller, ich sehe, dass Ihnen das gerade zu viel wird. Ich trete einen Schritt zurück. Sie sind hier im Krankenhaus in Sicherheit."
     },
+
     {
       id: "psy_ptbs_flashback",
       term: "Der Flashback / Das Wiedererleben (PTBS)",
@@ -53,87 +152,28 @@ export const PSYCHOLOGY_DATA = {
       relevantVocabulary: ["die Intrusion", "die Erdung", "die Orientierung im Hier und Jetzt", "das Hyperarousal", "die Schreckreaktion"],
       speakingPractice: "Frau Schmidt, hören Sie meine Stimme. Sie sind hier im Gemeinschaftsraum in Marburg. Es ist August. Spüren Sie Ihre Füße auf dem festen Boden?"
     },
+
     {
       id: "psy_grounding_54321",
       term: "Die 5-4-3-2-1 Erdungstechnik (Grounding)",
       domain: "Deeskalation & Reorientierung",
       provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 20-22)",
-      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, um Personen bei Dissoziation oder Flashbacks durch Aktivierung der 5 Sinne im gegenwärtigen Moment zu verankern.",
-      steps: [
-        "5 Dinge benennen, die man im Raum sieht (z. B. Tisch, Lampe, Uhr, Bild, Tür).",
-        "4 Dinge benennen, die man körperlich spürt (z. B. Stuhllehne, Kleidung, Fußboden, Kühle des Glases).",
-        "3 Geräusche benennen, die man gerade hört (z. B. Straßenlärm, Lüftung, Vogelgezwitscher).",
-        "2 Dinge benennen, die man riechen kann (z. B. Seife, Tee, frische Luft).",
-        "1 Sache benennen, die man schmecken kann (z. B. Minze, ein Schluck kaltes Wasser)."
-      ],
-      workplaceContext: "Bei akuter Dissoziation oder starkem Zittern eines Patienten.",
-      speakingPractice: "Lassen Sie uns gemeinsam 5 Dinge suchen, die blau sind. Sehen Sie die Decke dort? Was sehen Sie noch?"
-    },
-    {
-      id: "psy_attachment",
-      term: "Die Bindungstypen (Bindungstheorie nach Ainsworth/Bowlby)",
-      domain: "Entwicklungspsychologie",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 13-14) & Psychotherapie.pdf (S. 3-4)",
-      explanationGerman: "Das Muster emotionaler Verbundenheit zwischen Kind und primärer Bezugsperson. Man unterscheidet: 1. Sichere Bindung (kann Nähe suchen und sich beruhigen), 2. Unsicher-vermeidende Bindung (unterdrückt Hilfebedürfnis, wirkt scheinbar unabhängig), 3. Unsicher-ambivalente Bindung (übermäßige Verunsicherung, schwer beruhigbar), 4. Desorganisierte Bindung (widersprüchliches Verhalten, Erstarren).",
-      workplaceContext: "Muster zeigen sich bei erwachsenen Patienten in der Beziehungsgestaltung zum Pflegeteam (z. B. extremes Klammern oder abrupter Rückzug).",
-      whatToDo: ["Verlässlichkeit, Berechenbarkeit und Transparenz leben.", "Absprachen absolut pünktlich einhalten."],
-      whatToAvoid: ["Persönliche Kränkung bei ablehnendem Patientenverhalten."],
-      relevantVocabulary: ["die Bezugsperson", "das Bindungsmuster", "die Feinfühligkeit", "die Verlässlichkeit", "die Berechenbarkeit"]
-    },
-    {
-      id: "psy_parentification",
-      term: "Die Parentifizierung",
-      domain: "Familienpsychologie",
-      provenance: "AUS_QUELLE",
-      source: "PsyKurs_GK.pdf (S. 9) & PsyDeutsch_Idee.pdf (S. 15)",
-      explanationGerman: "Ein Rollenumkehr-Prozess, bei dem ein Kind emotionale oder praktische Verantwortung für seine psychisch erkrankten Eltern übernimmt. Unterschieden wird instrumentelle Parentifizierung (Kochen, Haushalt, Geschwister versorgen) und emotionale Parentifizierung (Tröster, Partnerersatz, Konfliktschlichter).",
-      workplaceContext: "Besonders relevant bei Angehörigenbesuchen und in der Kinder- und Jugendpsychiatrie (KJP).",
-      whatToDo: ["Das Verantwortungsgefühl des Kindes anerkennen, aber altersgerechte Entlastung ermöglichen.", "Klare Grenzen zwischen Erwachsenen- und Kinderaufgaben kommunizieren."],
-      whatToAvoid: ["Dem Kind zusätzliche Verantwortung für den Genesungsprozess der Eltern aufbürden."],
-      relevantVocabulary: ["die Rollenumkehr", "die Überverantwortung", "der Loyalitätskonflikt", "die emotionale Überforderung"]
-    },
-    {
-      id: "psy_active_listening",
-      term: "Das Aktive Zuhören & Beziehungslernen",
-      domain: "Kommunikation",
-      provenance: "AUS_QUELLE",
-      source: "intus_Booklet.pdf (S. 3-11)",
-      explanationGerman: "Empathische Gesprächsführung, bei der man dem Gegenüber ungeteilte Aufmerksamkeit schenkt, ohne zu unterbrechen, ohne vorschnelle Ratschläge zu geben und durch Paraphrasieren ('Habe ich Sie richtig verstanden, dass...') die Gefühle des anderen spiegelt.",
-      workplaceContext: "Wenn ein Patient Redebedarf hat oder seine Sorgen äußern möchte.",
+      source: "PsyDeutsch_Idee.pdf (S. 2, 8, 30)",
+      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, die das Nervensystem bei Dissoziation, Panik oder Flashbacks über die 5 Sinne in die Gegenwart zurückholt: 5 Dinge sehen, 4 Dinge spüren, 3 Dinge hören, 2 Dinge riechen, 1 Sache schmecken.",
+      simpleExample: "Der Patient zählt laut auf: Ich sehe den Stuhl, das Fenster, die Lampe, die Uhr, die Tür.",
+      workplaceContext: "Sofortintervention bei Patienten mit massiver innerer Anspannung oder Panikattacken im Stationsflur.",
       whatToDo: [
-        "Blickkontakt halten und offene Körperhaltung einnehmen.",
-        "Kurze Pausen und Stille aushalten können.",
-        "Gefühle anerkennen ('Das klingt wirklich sehr anstrengend für Sie')."
+        "Mit ruhiger, tiefer Stimme anleiten.",
+        "Geduldig warten, bis der Patient jeden Sinn wahrgenommen hat.",
+        "Gemeinsam tief durchatmen (längeres Ausatmen als Einatmen)."
       ],
       whatToAvoid: [
-        "Vorschnelle Lösungen anbieten ('Kopf hoch, das wird schon wieder').",
-        "Eigene private Geschichten vergleichen ('Bei mir war das auch mal so...')."
+        "Hektik verbreiten oder den Patienten drängen.",
+        "Komplexe abstrakte Fragen stellen.",
+        "Über das auslösende Thema diskutieren."
       ],
-      relevantVocabulary: ["das Paraphrasieren", "der Potenzialblick", "die Resonanz", "die Wertschätzung", "die Validierung"],
-      speakingPractice: "Wenn ich Sie richtig verstehe, fühlen Sie sich heute besonders müde und kraftlos. Möchten Sie sich einen Moment ausruhen?"
-    },
-    {
-      id: "psy_deescalation",
-      term: "Die Verbale Deeskalation",
-      domain: "Sicherheit & Krisenintervention",
-      provenance: "AUS_QUELLE",
-      source: "Elisabeth Wagner & starthilfe_krankenhausalltag.pdf (S. 34, 46)",
-      explanationGerman: "Gezielte deeskalierende Gesprächstechniken, um bei aufkommender Wut, Aggression oder Verzweiflung eines Patienten die emotionale Anspannung stufenweise abzubauen, ohne Machtkämpfe einzugehen.",
-      workplaceContext: "Patient schimpft lautstark im Stationsflur über das Essen, die Ärzte oder die Stationsregeln.",
-      whatToDo: [
-        "Stimme bewusst leiser und langsamer stellen (Pacing).",
-        "Seitlich zum Patienten stehen (nicht frontal konfrontativ).",
-        "Anliegen ernst nehmen, ohne Regelverstöße zu erlauben ('Ich höre Ihren Ärger. Lassen Sie uns in Ruhe darüber sprechen')."
-      ],
-      whatToAvoid: [
-        "Lauter werden als der Patient.",
-        "Sarkastisch oder belehrend antworten.",
-        "Den Patienten in eine Ecke drängen."
-      ],
-      relevantVocabulary: ["die Frustrationstoleranz", "die Reizbarkeit", "die Deeskalation", "der Fluchtweg", "das Distanzgebot"],
-      speakingPractice: "Herr Wagner, ich höre, wie wütend Sie gerade sind. Ich möchte Ihnen gerne zuhören. Bitte sprechen Sie mit mir in normaler Lautstärke, damit wir eine Lösung finden können."
+      relevantVocabulary: ["die Sinneswahrnehmung", "das Grounding", "die Panikattacke", "die Beruhigung", "das Ein- und Ausatmen"],
+      speakingPractice: "Schauen Sie sich im Raum um. Nennen Sie mir bitte fünf Gegenstände mit blauer Farbe, die Sie hier sehen."
     }
   ]
 };

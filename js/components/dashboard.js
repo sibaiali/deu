@@ -1,4 +1,4 @@
-// Bento Grid Dashboard - Calm, Professional, Structured & High-Yield Learning
+// Bento Grid Dashboard - High-Yield German Learning Operating System
 // 12-Spalten Layout: Hero Mission (Span 8), Station 2 Überlebensmodus (Span 4),
 // 4 Säulen-Sprints (Span 3 je) und adaptiver Tagesablauf (Span 12).
 
@@ -6,7 +6,7 @@ import { Storage } from '../storage.js';
 import { SRS } from '../srs.js';
 import { VOCABULARY_DATA } from '../data/vocabulary_data.js';
 import { AdaptiveEngine } from '../adaptive_engine.js';
-import { NUANCES_DATA } from '../data/nuances_data.js';
+import { SIMULATIONS_DATA } from '../data/simulations_data.js';
 
 export async function renderDashboard(container) {
   const settings = Storage.getSettings();
@@ -61,7 +61,7 @@ export async function renderDashboard(container) {
             <div class="space-y-3">
               <div class="flex-between">
                 <div class="flex items-center gap-2">
-                  <span class="badge badge-blue">Tages-Check-in</span>
+                  <span class="badge badge-amber">Tages-Check-in</span>
                   <span class="badge badge-emerald">BFD • UKGM Station 2</span>
                 </div>
                 <span class="text-xs text-muted font-semibold">B1+ → C1 System</span>
@@ -70,7 +70,7 @@ export async function renderDashboard(container) {
               <div>
                 <h1 class="page-title">Guten Tag, Ali!</h1>
                 <p class="subtitle mt-1">
-                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, fehlerfreies Deutsch und flüssiges Sprechen.
+                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, flüssiges Deutsch im Alltag und tiefe Partnerschaftsgespräche.
                 </p>
               </div>
 
@@ -80,10 +80,10 @@ export async function renderDashboard(container) {
                 <div class="flex-between flex-wrap gap-3">
                   <div class="space-y-0.5">
                     <div class="font-bold text-base text-primary">
-                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Simulation: Grenzen setzen & Deeskalieren'}
+                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Dialog-Simulation: BFD, Familie oder Partnerschaft'}
                     </div>
                     <div class="text-xs text-secondary">
-                      ${dueCount > 0 ? 'Fällige Verben und Chunks im Langzeitgedächtnis festigen.' : 'Trainiere 4 Sprachebenen im Patientenkontakt auf Station 2.'}
+                      ${dueCount > 0 ? 'Fällige Verben, Wortfamilien und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog mit Audio-Feedback.'}
                     </div>
                   </div>
                   <a href="${dueCount > 0 ? '#wiederholen?mode=review' : '#simulation'}" class="btn btn-primary btn-sm whitespace-nowrap">
@@ -124,7 +124,7 @@ export async function renderDashboard(container) {
               <div>
                 <h2 class="text-lg font-bold text-primary">Überlebensmodus & Grenzen</h2>
                 <p class="text-xs text-secondary mt-1 leading-relaxed">
-                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken und Schutzregeln für den Klinikdienst.
+                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken (§ 203 StGB) und Schutzregeln für den Klinikdienst.
                 </p>
               </div>
 
@@ -146,18 +146,18 @@ export async function renderDashboard(container) {
 
         <!-- 12-Column Bento Grid: Row 2 (4 Power Learning Pillars - Span 3 each) -->
         <div class="bento-grid">
-          <!-- Pillar 1: Vokabeln & Präfix-Verben -->
+          <!-- Pillar 1: Vokabeln & Wortfamilien -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-blue">Wortschatz</span>
+                <span class="badge badge-amber">Wortschatz</span>
                 <span class="text-xs font-semibold ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">
                   ${dueCount > 0 ? `${dueCount} fällig` : '✓ Bereit'}
                 </span>
               </div>
               <h3 class="font-bold text-base text-primary">Verben & SRS</h3>
               <p class="text-xs text-secondary">
-                ${VOCABULARY_DATA.length} Einträge mit allen Präfixen (<em>ab-, unter-, über-, an-, ein-</em>), Stammformen und Audio.
+                ${VOCABULARY_DATA.length} Vokabeln mit Wortfamilien, Präfixen (<em>ab-, unter-, an-, ein-</em>), Stammformen und Audio.
               </p>
             </div>
             <div class="pt-2">
@@ -167,59 +167,59 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Pillar 2: Nuancen & Synonyme -->
+          <!-- Pillar 2: Dialog-Simulationen (BFD, Familie, GF) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-indigo">Unterschiede</span>
-                <span class="badge badge-gray text-[10px]">${NUANCES_DATA.length} Gruppen</span>
+                <span class="badge badge-emerald">Simulation</span>
+                <span class="badge badge-gray text-[10px]">${SIMULATIONS_DATA.length} Szenarien</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Wann welches Wort?</h3>
+              <h3 class="font-bold text-base text-primary">Rollenspiele & Dialoge</h3>
               <p class="text-xs text-secondary">
-                <em>absagen vs. abbrechen vs. ablehnen</em> · <em>untersuchen vs. überwachen</em> · Keine Verwechslungen mehr.
+                Station 2 Übergaben, familiäres Abendessen & tiefe Partnerschaftsgespräche (Freundin/Wifey trösten).
               </p>
             </div>
             <div class="pt-2">
-              <a href="#unterschiede" class="btn btn-secondary btn-sm w-full">
-                Nuancen vergleichen →
+              <a href="#simulation" class="btn btn-secondary btn-sm w-full">
+                Dialoge üben →
               </a>
             </div>
           </div>
 
-          <!-- Pillar 3: Sprechtrainer & Audio -->
+          <!-- Pillar 3: Kinder- & Jugendpsychiatrie (KJP) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-purple">Sprechen</span>
-                <span class="text-xs text-secondary font-semibold">0.7x – 1.2x</span>
+                <span class="badge badge-purple">Psychologie</span>
+                <span class="badge badge-gray text-[10px]">KJP & Deeskalation</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Sprechtrainer</h3>
+              <h3 class="font-bold text-base text-primary">Psychologie & KJP</h3>
               <p class="text-xs text-secondary">
-                Schattensprechen, Aussprachetraining und spontane Reaktionsübungen für den Stationsalltag.
+                Bindungsmuster nach Bowlby, Co-Regulation bei kindlichen Wutanfällen, ADHS und Notfall-Erdung.
               </p>
             </div>
             <div class="pt-2">
-              <a href="#sprechen" class="btn btn-secondary btn-sm w-full">
-                Sprechen trainieren →
+              <a href="#psychologie" class="btn btn-secondary btn-sm w-full">
+                Psychologie lernen →
               </a>
             </div>
           </div>
 
-          <!-- Pillar 4: Satz-Korrektor (KI-Regeln) -->
+          <!-- Pillar 4: Was sage ich? Redemittel-Transformator -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-emerald">Grammatik</span>
-                <span class="badge badge-gray text-[10px]">Live-Korrektur</span>
+                <span class="badge badge-blue">Redemittel</span>
+                <span class="badge badge-gray text-[10px]">4 CEFR-Stufen</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Satz-Korrektor</h3>
+              <h3 class="font-bold text-base text-primary">Was sage ich?</h3>
               <p class="text-xs text-secondary">
-                Tippe deutsche Sätze ein: Live-Korrektur von Satzstellung (Verbzweit/Verbletzt), Fällen und Kommasetzung.
+                Verwandle einfache B1-Sätze in natürliches Deutsch, professionelles B2 und hochpräzises C1.
               </p>
             </div>
             <div class="pt-2">
-              <a href="#satzkorrektor" class="btn btn-secondary btn-sm w-full">
-                Sätze korrigieren →
+              <a href="#phrasen" class="btn btn-secondary btn-sm w-full">
+                Redemittel trainieren →
               </a>
             </div>
           </div>
@@ -230,7 +230,7 @@ export async function renderDashboard(container) {
           <div class="flex-between flex-wrap gap-3">
             <div>
               <div class="flex items-center gap-2">
-                <span class="badge badge-blue text-xs">Strukturierter Ablauf</span>
+                <span class="badge badge-amber text-xs">Strukturierter Ablauf</span>
                 <h2 class="section-title">${adaptivePlan.title}</h2>
               </div>
               <p class="text-xs text-secondary mt-1">
@@ -252,7 +252,7 @@ export async function renderDashboard(container) {
             ${adaptivePlan.steps.map((item, idx) => `
               <div class="p-3.5 bg-subtle rounded-xl border border-subtle flex flex-col justify-between space-y-2">
                 <div>
-                  <div class="text-[11px] font-bold text-blue-400 uppercase">Schritt ${idx + 1} • ${item.duration}</div>
+                  <div class="text-[11px] font-bold text-amber-400 uppercase">Schritt ${idx + 1} • ${item.duration}</div>
                   <div class="font-bold text-sm text-primary mt-0.5">${item.title}</div>
                 </div>
                 <div class="pt-2 border-t border-subtle flex-between">

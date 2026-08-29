@@ -1,6 +1,5 @@
 // Umfassende Vokabel- und Chunk-Datenbank (1000+ Einträge, Anki-Deck, Präfix-Verben, Klinik & Alltag)
-export const VOCABULARY_DATA = [
-  {
+export const VOCABULARY_DATA = [{
     "id": "voc_das_taschengeld_001",
     "word": "das Taschengeld",
     "article": "das",
@@ -18072,5 +18071,188 @@ export const VOCABULARY_DATA = [
       "alltag",
       "anki"
     ]
-  }
-];
+  },
+{
+  "id": "vocab_exp_001",
+  "word": "die Geborgenheit",
+  "article": "die",
+  "category": "Gefühle & Partnerschaft",
+  "level": "B2",
+  "stammformen": "die Geborgenheit (nur Sg.)",
+  "relatedWords": [
+    "geborgen",
+    "bergen",
+    "die Zuflucht",
+    "der Schutz"
+  ],
+  "definitionDe": "Ein tiefes seelisches Gefühl von Wärme, Schutz, Vertrauen und innerer Sicherheit bei einem geliebten Menschen.",
+  "definitionEn": "Sense of security, emotional warmth, trust and feeling deeply protected/cherished.",
+  "collocations": [
+    "Geborgenheit schenken",
+    "sich geborgen fühlen",
+    "Geborgenheit ausstrahlen"
+  ],
+  "exampleDe": "Bei dir fühle ich mich vollkommen angekommen und spüre eine tiefe Geborgenheit.",
+  "exampleEn": "With you I feel completely at peace and sense a deep feeling of emotional safety."
+},
+{
+  "id": "vocab_exp_002",
+  "word": "trösten",
+  "article": "",
+  "category": "Gefühle & Partnerschaft",
+  "level": "B1+",
+  "stammformen": "trösten – tröstete – hat getröstet",
+  "relatedWords": [
+    "der Trost",
+    "tröstlich",
+    "untöstbar",
+    "der Trostspender"
+  ],
+  "definitionDe": "Durch liebevolle Worte, Umarmungen und Zuhören den Kummer oder die Trauer einer Person lindern.",
+  "definitionEn": "To comfort, to console.",
+  "collocations": [
+    "jemanden liebevoll trösten",
+    "Trost spenden",
+    "sich trösten lassen"
+  ],
+  "exampleDe": "Nach ihrem schweren Arbeitstag habe ich meine Freundin ganz fest in den Arm genommen und getröstet.",
+  "exampleEn": "After her tough workday I held my girlfriend tight in my arms and comforted her."
+},
+{
+  "id": "vocab_exp_003",
+  "word": "die Co-Regulation",
+  "article": "die",
+  "category": "Kinder- & Jugendpsychiatrie",
+  "level": "B2/C1",
+  "stammformen": "die Co-Regulation, -en",
+  "relatedWords": [
+    "regulieren",
+    "die Selbstregulation",
+    "das Nervensystem",
+    "die Feinfühligkeit"
+  ],
+  "definitionDe": "Der feinfühlige Prozess, bei dem eine Bezugsperson durch die eigene innere Ruhe einem übererregten Kind hilft, sein Nervensystem zu beruhigen.",
+  "definitionEn": "Co-regulation (calming an agitated child through one's own calm nervous system).",
+  "collocations": [
+    "emotionale Co-Regulation",
+    "Co-Regulation anbieten",
+    "zur Selbstregulation anleiten"
+  ],
+  "exampleDe": "Kinder können Wutanfälle noch nicht alleine steuern; sie brauchen unsere ruhige Co-Regulation auf Augenhöhe.",
+  "exampleEn": "Children cannot yet manage tantrums alone; they need our calm co-regulation at eye level."
+},
+{
+  "id": "vocab_exp_004",
+  "word": "einhaken",
+  "article": "",
+  "category": "Kommunikation & BFD",
+  "level": "B2",
+  "stammformen": "hakt ein – hakte ein – hat eingehakt",
+  "relatedWords": [
+    "der Haken",
+    "nachhaken",
+    "unterbrechen",
+    "die Wortmeldung"
+  ],
+  "definitionDe": "Höflich und gezielt in ein laufendes Fachgespräch oder eine Teamsitzung eingreifen, um einen Aspekt zu ergänzen.",
+  "definitionEn": "To chime in, to interject politely into a discussion.",
+  "collocations": [
+    "kurz einhaken dürfen",
+    "an dieser Stelle einhaken",
+    "kritisch einhaken"
+  ],
+  "exampleDe": "Wenn ich kurz einhaken dürfte: Herr Becker hat heute Vormittag über Schwindel geklagt.",
+  "exampleEn": "If I might briefly chime in: Mr. Becker complained about dizziness this morning."
+},
+{
+  "id": "vocab_exp_005",
+  "word": "die Zweisamkeit",
+  "article": "die",
+  "category": "Partnerschaft & Herz",
+  "level": "B2",
+  "stammformen": "die Zweisamkeit (nur Sg.)",
+  "relatedWords": [
+    "zusammen",
+    "einsam",
+    "die Gemeinsamkeit",
+    "die Paarzeit"
+  ],
+  "definitionDe": "Die exklusive, ungestörte gemeinsame Zeit zweier Partner.",
+  "definitionEn": "Togetherness, intimate couple time.",
+  "collocations": [
+    "die Zweisamkeit genießen",
+    "ungestörte Zweisamkeit",
+    "Zweisamkeit pflegen"
+  ],
+  "exampleDe": "Trotz der Wechselschichten im Krankenhaus reservieren wir uns feste Abende für unsere Zweisamkeit.",
+  "exampleEn": "Despite rotating shifts in the hospital, we set aside dedicated evenings for our togetherness."
+},
+{
+  "id": "vocab_exp_006",
+  "word": "reizarm",
+  "article": "",
+  "category": "Kinder- & Jugendpsychiatrie",
+  "level": "B2",
+  "stammformen": "reizarm – reizärmer – am reizärmsten",
+  "relatedWords": [
+    "der Reiz",
+    "die Reizüberflutung",
+    "reizintensiv",
+    "die Beruhigung"
+  ],
+  "definitionDe": "Frei von störenden Sinneseindrücken (Lärm, Hektik, visuelle Unruhe).",
+  "definitionEn": "Low-stimulus, calm sensory environment.",
+  "collocations": [
+    "eine reizarme Umgebung schaffen",
+    "reizarmes Zimmer",
+    "reizarme Gestaltung"
+  ],
+  "exampleDe": "Für Kinder mit ADHS ist ein reizarmes Arbeitsumfeld entscheidend für die Konzentration.",
+  "exampleEn": "For children with ADHD, a low-stimulus work environment is crucial for concentration."
+},
+{
+  "id": "vocab_exp_007",
+  "word": "die Entlastung",
+  "article": "die",
+  "category": "Klinik & Partnerschaft",
+  "level": "B2",
+  "stammformen": "die Entlastung, -en",
+  "relatedWords": [
+    "entlasten",
+    "die Belastung",
+    "belastbar",
+    "der Entlastungszeuge"
+  ],
+  "definitionDe": "Die Verminderung oder Beseitigung von körperlichem oder seelischem Druck und Aufgaben.",
+  "definitionEn": "Relief, easing of burden/workload.",
+  "collocations": [
+    "spürbare Entlastung",
+    "zur Entlastung beitragen",
+    "Entlastung schaffen"
+  ],
+  "exampleDe": "Als BFDler sorge ich für die Entlastung des Pflegeteams bei Botengängen und Patientenbegleitungen.",
+  "exampleEn": "As a BFD volunteer, I provide relief for the nursing team with errands and patient escorts."
+},
+{
+  "id": "vocab_exp_008",
+  "word": "anschwellen",
+  "article": "",
+  "category": "Medizin & Symptome",
+  "level": "B2",
+  "stammformen": "schwillt an – schwoll an – ist angeschwollen",
+  "relatedWords": [
+    "die Schwellung",
+    "abschwellen",
+    "geschwollen",
+    "das Ödem"
+  ],
+  "definitionDe": "Durch Flüssigkeitseinlagerung oder Entzündung an Umfang zunehmen.",
+  "definitionEn": "To swell up (edema, injury).",
+  "collocations": [
+    "das Gelenk schwillt an",
+    "stark angeschwollen",
+    "sichtbar anschwellen"
+  ],
+  "exampleDe": "Nach dem Sturz ist das rechte Sprunggelenk des Patienten innerhalb von Minuten angeschwollen.",
+  "exampleEn": "Following the fall, the patient's right ankle joint swelled up within minutes."
+}];
