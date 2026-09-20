@@ -61,7 +61,7 @@ export const HESSEN_FRANKFURT_DATA = {
           humorTip: "Die Standard-Aufforderung zum kollegialen Austausch in der Pause."
         }
       ]
-    ],
+    },
 
     // 2. Typische Sprachmuster & Kontraktionen im Alltag
     {
@@ -93,7 +93,7 @@ export const HESSEN_FRANKFURT_DATA = {
           usage: "Füllwörter, die den Redefluss flüssig und muttersprachlich klingen lassen."
         }
       ]
-    ],
+    },
 
     // 3. Humor, Schlagfertigkeit & Kaffeeküchen-Banter
     {
@@ -125,6 +125,6 @@ export const HESSEN_FRANKFURT_DATA = {
           tone: "Lösungsorientiert"
         }
       ]
-    ]
+    }
   ]
 };
