@@ -1,215 +1,251 @@
-// BFD-, Familien- & Partnerschafts-Simulationen (Interaktive Dialog-Szenarien)
-// Stufenförmige Musterantworten: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
+// BFD, Engineering, Wohnen, Feste & Partnerschafts-Simulationen
+// Höchstes Niveau: Aktiv B2 -> Professionell B2+ -> C1 Nuanciert -> C2 Idiomatisch
 
 export const SIMULATIONS_DATA = [
   // ==========================================
   // 1. KLINIK & BFD (Station 2 / UKGM Marburg)
   // ==========================================
   {
-    id: "sim_first_day_supervisor",
-    title: "Erster Tag: Vorstellung bei der Stationsleitung",
-    category: "Klinik & BFD",
-    level: "B1+",
-    workplace: "Stationszimmer P2 (Zentrum für Psychische Gesundheit)",
-    provenance: "AUS_QUELLE",
-    situation: "Sie betreten am ersten Arbeitstag um 06:45 Uhr das Stationszimmer. Die Stationsleitung, Frau Schneider, blickt von der Patientenakte auf und begrüßt Sie.",
-    userRole: "Neuer BFD-Freiwilliger",
-    counterpartRole: "Frau Schneider (Stationsleitung)",
-    objective: "Sich freundlich, klar und strukturiert vorstellen, Rollenbereitschaft signalisieren und nach den ersten Schritten für den Tag fragen.",
-    turns: [
-      {
-        speaker: "Frau Schneider",
-        text: "Guten Morgen! Sie müssen der neue BFDler sein. Herzlich willkommen auf Station P2. Wie heißen Sie und haben Sie gut hergefunden?",
-        guidance: "Stellen Sie sich mit vollem Namen vor, bestätigen Sie Ihre Rolle als Bundesfreiwilliger und bedanken Sie sich für den Empfang.",
-        expectedCriteria: ["Name nennen", "Freundlicher Gruß", "Bestätigung der Ankunft", "Höfliche Ansprache (Sie)"],
-        responseTiers: {
-          basic: "Guten Morgen. Ich bin Ali. Ja, ich habe den Weg gefunden. Ich bin der neue BFDler.",
-          natural: "Guten Morgen, Frau Schneider! Mein Name ist Ali. Ja, vielen Dank, ich habe gut hergefunden. Ich freue mich sehr auf meinen Bundesfreiwilligendienst bei Ihnen auf Station.",
-          professionalB2: "Guten Morgen, Frau Schneider! Vielen Dank für die freundliche Aufnahme. Mein Name ist Ali, ich trete heute meinen BFD bei Ihnen an. Die Anfahrt vom Bahnhof Marburg hat reibungslos geklappt. Wo kann ich mich umziehen und wer ist heute meine Ansprechperson?",
-          c1: "Guten Morgen, Frau Schneider! Herzlichen Dank für das Willkommen. Mein Name ist Ali, und ich freue mich außerordentlich darauf, mein Freiwilligenjahr hier im Zentrum für Psychische Gesundheit zu absolvieren. Der Weg hierher war völlig unkompliziert. Wo darf ich meine Sachen deponieren, und mit wem darf ich den heutigen Tagesablauf abstimmen?"
-        },
-        whyExplanation: "Die professionelle B2/C1-Antwort verbindet Höflichkeit mit proaktiver Organisation (Umkleide, Ansprechpartner), was sofortige Verlässlichkeit signalisiert."
-      },
-      {
-        speaker: "Frau Schneider",
-        text: "Sehr schön, Ali! Der Umkleideraum ist im Untergeschoss, Spind Nummer 14 gehört Ihnen. Die Dienstkleidung liegt bereit. Wenn Sie umgezogen sind, kommen Sie bitte direkt wieder hoch zur Frühbesprechung. Haben Sie vorab noch dringende Fragen?",
-        guidance: "Bedanken Sie sich, bestätigen Sie die Anweisung (Umkleide UG, Spind 14) und kündigen Sie an, zur Übergabe pünktlich wieder da zu sein.",
-        expectedCriteria: ["Bestätigung der Anweisung", "Pünktlichkeit zusichern", "Dank"],
-        responseTiers: {
-          basic: "Danke, ich gehe mich jetzt umziehen und komme wieder.",
-          natural: "Alles klar, vielen Dank! Ich ziehe mich schnell im Untergeschoss um und bin zur Übergabe pünktlich wieder hier im Stationszimmer.",
-          professionalB2: "Vielen Dank für die Einweisung, Frau Schneider! Ich gehe direkt in die Umkleide zu Spind 14 und bin zur Frühbesprechung pünktlich wieder im Stationszimmer.",
-          c1: "Hervorragend, vielen Dank! Ich werde mich umgehend im Untergeschoss umziehen und pünktlich zur Frühbesprechung wieder hier sein. Weitere Fragen klären wir gerne im Anschluss an die Übergabe."
-        },
-        whyExplanation: "Wiederholen der Eckdaten (UG, Spind 14, Frühbesprechung) zeigt aktives Zuhören und vermeidet Missverständnisse."
-      }
-    ]
-  },
-
-  {
-    id: "sim_patient_medication_request",
-    title: "Sicherheit: Patient verlangt Bedarfsmedikation",
-    category: "Klinik & BFD",
-    level: "B2",
-    workplace: "Flur der geschützten Akutstation",
-    provenance: "AUS_QUELLE",
-    situation: "Ein sichtlich angespannter Patient (Herr Müller) kommt im Flur auf Sie zu, zittert an den Händen und fordert vehement eine Beruhigungstablette von Ihnen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Herr Müller (Angespannter Patient)",
-    objective: "Ruhig bleiben, absolute Rollengrenze wahren (keine Medikamente!), Empathie zeigen und die zuständige Pflegefachkraft herbeirufen.",
-    turns: [
-      {
-        speaker: "Herr Müller",
-        text: "Ich halte das nicht mehr aus! Mir zerreißt es den Kopf. Geben Sie mir sofort meine Bedarfsmedikation aus dem Schrank, ich brauche die Tablette jetzt!",
-        guidance: "Bleiben Sie ruhig. Signalisieren Sie Verständnis für seine Notlage, aber stellen Sie unmissverständlich klar, dass Sie als BFDler keine Medikamente ausgeben dürfen, und bieten Sie an, sofort die zuständige Pflegekraft zu holen.",
-        expectedCriteria: ["Ruhiger Ton", "Verständnis/Validierung", "Klare Rollengrenze (keine Medikamente)", "Sofortige Weiterleitung an Fachkraft"],
-        responseTiers: {
-          basic: "Ich darf Ihnen keine Medikamente geben. Ich hole die Schwester.",
-          natural: "Herr Müller, ich sehe, wie schlecht es Ihnen gerade geht. Als BFDler darf ich Ihnen leider keine Tabletten geben. Ich hole aber sofort Schwester Julia für Sie!",
-          professionalB2: "Herr Müller, ich nehme wahr, dass Sie unter enormer Anspannung stehen. Als Bundesfreiwilliger darf ich Ihnen aus rechtlichen und Sicherheitsgründen keine Medikamente aushändigen. Kommen Sie bitte kurz mit zum Stationszimmer, ich informiere sofort Ihre zuständige Pflegefachkraft.",
-          c1: "Herr Müller, ich spüre Ihre erhebliche Belastung in diesem Moment. Bitte haben Sie Verständnis dafür, dass ich als Freiwilliger keinesfalls befugt bin, in den Medikamentenschrank einzugreifen. Lassen Sie uns gemeinsam zur Stationszentrale gehen – ich veranlasse umgehend, dass die diensthabende Pflegefachkraft Ihre Bedarfsmedikation prüft."
-        },
-        whyExplanation: "Deeskalation erfordert Empathie ohne Nachgeben bei Sicherheitsgrenzen. Der 'magische Satz' schützt Patient und BFDler rechtlich."
-      }
-    ]
-  },
-
-  {
     id: "sim_sbar_handover",
     title: "Klinische Schichtübergabe nach SBAR-Schema",
     category: "Klinik & BFD",
     level: "B2/C1",
-    workplace: "Besprechungsraum Station 2",
+    workplace: "Besprechungsraum Station 2 (UKGM Marburg)",
     provenance: "AUS_QUELLE",
-    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker an die Spätdienst-Pflegekraft Sarah.",
+    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker (Zimmer 12) an die Spätdienst-Pflegekraft Sarah.",
     userRole: "BFD-Freiwilliger",
     counterpartRole: "Sarah (Pflegefachkraft im Spätdienst)",
-    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten und Verhaltensbeobachtung.",
+    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten, Verhaltensbeobachtung und Nahrungsaufnahme.",
     turns: [
       {
         speaker: "Sarah",
-        text: "Hi Ali! Wie war dein Dienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag irgendwelche Auffälligkeiten beim Essen oder bei den Vitalwerten?",
-        guidance: "Berichten Sie strukturiert: Blutdruck war leicht erhöht (145/90), er hat das Mittagessen verweigert, wirkte aber nach dem Spaziergang im Klinikpark deutlich ruhiger.",
-        expectedCriteria: ["Konkrete Werte nennen", "Nahrungsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
+        text: "Hi Ali! Wie war dein Frühdienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag Auffälligkeiten beim Essen oder bei den Vitalwerten?",
+        guidance: "Berichten Sie präzise: Vitalwerte (145/90 mmHg), Verweigerung der Mittagsmahlzeit, aber 600 ml getrunken, nach Begleitung im Klinikpark motorisch deutlich entspannter.",
+        expectedCriteria: ["Konkrete Werte nennen", "Nahrungs-/Flüssigkeitsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
         responseTiers: {
-          basic: "Er hat nicht gegessen und der Blutdruck war hoch. Nach dem Park ging es ihm besser.",
-          natural: "Herr Becker hatte heute Vormittag einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt. Aber nach unserem Spaziergang im Park um 11 Uhr wirkte er viel entspannter.",
-          professionalB2: "Zur Übergabe von Herrn Becker: Der Blutdruck lag um 09:30 Uhr bei 145/90 mmHg. Die Mittagsmahlzeit hat er verweigert, aber ca. 600 ml Wasser getrunken. Während unserer Begleitung in den Park war er ansprechbar und wirkte deutlich beruhigter.",
-          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle am Vormittag ergab eine leichte Hypertonie mit 145/90 mmHg. Die Nahrungsaufnahme verweigerte er zwar, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen der aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert."
+          basic: "Herr Becker hatte Blutdruck 145 zu 90. Er hat nicht gegessen, aber getrunken. Im Park ging es ihm viel besser.",
+          natural: "Herr Becker hatte um 09:30 Uhr einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt, aber ca. 600 ml Wasser getrunken. Nach unserem Spaziergang im Park wirkte er deutlich ruhiger.",
+          professionalB2: "Zur Übergabe von Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle ergab einen leichten Blutdruckanstieg auf 145/90 mmHg. Die feste Nahrung hat er verweigert, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen unserer aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert.",
+          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die morgendliche Statuserhebung zeigte eine mäßige Hypertonie von 145/90 mmHg bei normofrequenter Herzaktion. Während die Nahrungsaufnahme aufgrund depressiver Antriebslosigkeit sistierte, konnte eine adäquate Hydratation von 600 ml sichergestellt werden. Psychopathologisch präsentierte er sich nach der milieu-therapeutischen Parkbegleitung affektiv deutlich stabilisierter und zugewandter."
         },
-        whyExplanation: "Präzise Fachtermini (Hypertonie, Nahrungsaufnahme, agitiert) erleichtern der Pflegefachkraft die sofortige Dokumentation im Kurvenblatt."
+        whyExplanation: "Strukturierte Fachterminologie (Hypertonie, Hydratation, affektiv stabilisiert) spart Zeit und sichert die lückenlose Behandlungsqualität."
       }
     ]
   },
 
   {
-    id: "sim_deescalation_smoker_area",
-    title: "Deeskalation: Patient will unerlaubt Station verlassen",
+    id: "sim_doctor_rounds_visite",
+    title: "Ärztliche Visite & Fallbesprechung mit der Oberärztin",
     category: "Klinik & BFD",
-    level: "B2",
-    workplace: "Ausgangsbereich / Foyer der Station",
+    level: "B2/C1",
+    workplace: "Arztzimmer / Visite am Patientenbett",
     provenance: "AUS_QUELLE",
-    situation: "Frau Weber, die auf richterlichen Beschluss (Unterbringung) auf Station ist, drängt wütend gegen die Ausgangstür und verlangt, die Klinik sofort zu verlassen.",
+    situation: "Die Oberärztin Dr. Weber bittet Sie während der Visite um Ihre Einschätzung zur Tagesstruktur und Gruppenbeteiligung von Frau Jansen.",
     userRole: "BFD-Freiwilliger",
-    counterpartRole: "Frau Weber (Aufgebrachte Patientin)",
-    objective: "Nicht körperlich festhalten, Deeskalationssprache anwenden, räumlichen Abstand halten und das Stationsteam herbeirufen.",
+    counterpartRole: "Dr. Weber (Oberärztin)",
+    objective: "Wertfreie, präzise Verhaltensbeobachtung ohne Eigendiagnosen schildern und Kooperation in der Ergotherapie beschreiben.",
     turns: [
       {
-        speaker: "Frau Weber",
-        text: "Machen Sie sofort die Tür auf! Sie haben kein Recht, mich hier einzusperren! Wenn Sie mich nicht rauslassen, trete ich die Scheibe ein!",
-        guidance: "Bleiben Sie ruhig, blockieren Sie nicht bedrohlich den Weg, halten Sie mindestens 1,5 Meter Abstand und reden Sie mit ruhiger, tiefer Stimme.",
-        expectedCriteria: ["Ruhe bewahren", "Keine Provokation/Körperkontakt", "Gefühle anerkennen", "Hilfe rufen"],
+        speaker: "Dr. Weber",
+        text: "Ali, Sie haben Frau Jansen diese Woche bei der Ergotherapie und beim gemeinsamen Kochen begleitet. Wie erleben Sie ihre Konzentration und ihre soziale Interaktion in der Gruppe?",
+        guidance: "Schildern Sie differenziert: Zu Beginn zurückhaltend und reizempfindlich, nach ca. 20 Minuten aktive Teilnahme beim Gemüseschneiden, freundlicher Austausch mit Mitpatienten.",
+        expectedCriteria: ["Wertfreie Beobachtung", "Zeitlicher Verlauf", "Gruppeninteraktion", "Rollenangemessene Sprache"],
         responseTiers: {
-          basic: "Bitte treten Sie nicht gegen die Scheibe. Ich rufe den Arzt.",
-          natural: "Frau Weber, bitte bleiben Sie einen Moment stehen. Ich sehe, wie wütend Sie sind. Ich darf die Tür nicht aufschließen, aber ich hole sofort den Stationsarzt, damit Sie mit ihm sprechen können.",
-          professionalB2: "Frau Weber, ich trete einen Schritt zurück. Ich höre Ihren großen Ärger. Bitte beschädigen Sie nicht die Scheibe. Ich kann die Tür nicht öffnen, aber ich bitte sofort Herrn Dr. Keller hinzu, um Ihre Situation direkt zu klären.",
-          c1: "Frau Weber, ich nehme Ihre enorme Verärgerung über die Situation wahr. Ich halte respektvollen Abstand. Da ich aus rechtlichen Gründen nicht schlüsselberechtigt bin, verständige ich augenblicklich den Dienstarzt, damit Sie Ihr Anliegen umgehend im persönlichen Gespräch vortragen können."
+          basic: "Am Anfang war sie leise, aber danach hat sie gut mitgemacht und mit den anderen gesprochen.",
+          natural: "Zu Beginn der Kochgruppe wirkte Frau Jansen noch etwas zurückhaltend und lärmempfindlich. Nach etwa zwanzig Minuten hat sie sich dann aber aktiv beteiligt, beim Schneiden mitgeholfen und sogar gelächelt.",
+          professionalB2: "Frau Jansen zeigte anfangs eine deutliche Reizempfindlichkeit und zog sich zurück. Im weiteren Verlauf konnte sie sich jedoch gut auf die praktische Aufgabe konzentrieren und trat von sich aus in einen freundlichen Austausch mit zwei Mitpatientinnen.",
+          c1: "Phänomenologisch imponierte Frau Jansen zu Beginn der Intervention durch eine ausgeprägte Reizüberflutung mit Rückzugstendenzen. Durch gezielte Reizreduktion gelang ihr jedoch eine erfreuliche Re-Fokussierung: Sie vollzog komplexe Handlungsabläufe adäquat und zeigte im Gruppenkontakt eine spürbare affektive Aufhellung."
         },
-        whyExplanation: "In der Akutpsychiatrie gilt: Sicherheit vor Konfrontation. Eigene Grenzen verbalisieren, Abstand wahren und Fachpersonal hinzuziehen."
+        whyExplanation: "Genaue Verhaltensbeschreibungen unterstützen Ärzte bei der Beurteilung des Therapieerfolgs."
       }
     ]
   },
 
   // ==========================================
-  // 2. FAMILIE & ALLTAG IN DEUTSCHLAND
+  // 2. ENGINEERING & IT-ARBEITSPLATZ
   // ==========================================
   {
-    id: "sim_family_dinner",
-    title: "Abendessen bei der Familie / Gastfamilie",
-    category: "Familie & Alltag",
-    level: "B1+ → B2",
-    workplace: "Esszimmer im Familienhaushalt",
+    id: "sim_tech_daily_standup",
+    title: "Daily Stand-up & Sprint-Architektur im IT-Team",
+    category: "Engineering & IT",
+    level: "B2/C1",
+    workplace: "Agiler Meetingraum / Remote Video Call",
     provenance: "AUS_QUELLE",
-    situation: "Sie sind zum Sonntagsabendessen bei der Familie eingeladen. Die Gastgeberin, Frau Klein, serviert das Essen und erkundigt sich nach Ihren ersten Eindrücken in Marburg.",
-    userRole: "Gast / Familienmitglied",
-    counterpartRole: "Frau Klein (Gastgeberin)",
-    objective: "Höflich für das Essen danken, über den Alltag und BFD erzählen, deutsche Tischkonversation meistern und Interesse an der Familie zeigen.",
+    situation: "Im 15-minütigen Daily Scrum berichten Sie dem Entwicklerteam über den aktuellen Stand der API-Optimierung und bestehende Blocker.",
+    userRole: "Software Engineer / IT Specialist",
+    counterpartRole: "Markus (Scrum Master / Lead Architect)",
+    objective: "Gestern Erledigtes, Heutiges und Blocker (Datenbank-Flaschenhals) klar, prägnant und lösungsorientiert präsentieren.",
     turns: [
       {
-        speaker: "Frau Klein",
-        text: "Greif bitte kräftig zu, Ali! Es gibt Rinderbraten mit Spätzle und frischem Salat. Wie gefällt dir Marburg bisher und wie läuft es im Krankenhaus?",
-        guidance: "Bedanken Sie sich für das Essen, loben Sie die Zubereitung und schildern Sie positiv, aber authentisch Ihre Eindrücke von der Stadt und der Arbeit.",
-        expectedCriteria: ["Dank für das Essen", "Lob der Speisen", "Eindrücke zu Marburg", "Bericht über das Krankenhaus"],
+        speaker: "Markus",
+        text: "Morgen zusammen! Ali, du bist dran: Was hast du gestern geschafft, woran arbeitest du heute und gibt es Blocker bei der Microservice-Migration?",
+        guidance: "Berichten Sie: Gestern Endpunkte refaktoriert, heute Unit-Tests und Docker-Containerisierung, Blocker: Latenzprobleme bei SQL-Queries (Datenbank-Flaschenhals).",
+        expectedCriteria: ["Struktur (Gestern/Heute/Blocker)", "Präzise IT-Fachsprache", "Lösungsvorschlag anbieten"],
         responseTiers: {
-          basic: "Danke, das Essen schmeckt sehr gut. Marburg ist schön und im Krankenhaus ist es interessant.",
-          natural: "Vielen Dank, Frau Klein, das riecht wirklich köstlich! Marburg gefällt mir total gut, besonders die Altstadt. Und im Krankenhaus lerne ich jeden Tag unglaublich viel Neues.",
-          professionalB2: "Herzlichen Dank, Frau Klein! Der Braten sieht wirklich hervorragend aus. Marburg hat mich sehr positiv überrascht – die steilen Gassen und das Schloss haben ein tolles Flair. Im Universitätsklinikum werde ich vom Pflegeteam sehr herzlich unterstützt, was mir den Einstieg enorm erleichtert.",
-          c1: "Ganz herzlichen Dank für die Einladung und dieses wundervolle Essen, Frau Klein! Die historische Kulisse von Marburg fasziniert mich sehr. Auch meine ersten Wochen im Universitätsklinikum empfinde ich als äußerst bereichernd – die interdisziplinäre Zusammenarbeit auf Station gibt mir wertvolle Einblicke in das deutsche Gesundheitssystem."
+          basic: "Gestern habe ich den Code verbessert. Heute schreibe ich Tests. Bei der Datenbank ist es noch zu langsam.",
+          natural: "Gestern habe ich das Refactoring der Authentifizierungs-Endpunkte abgeschlossen. Heute schreibe ich die Unit-Tests und baue den Docker-Container. Als Blocker haben wir noch eine hohe Latenz bei den Datenbank-Queries – da müssen wir die Indizes optimieren.",
+          professionalB2: "Gestern konnte ich das Refactoring der REST-API-Schnittstellen erfolgreich abschließen. Mein Fokus liegt heute auf der Testabdeckung mit PyTest sowie dem Container-Deployment. Als potenziellen Flaschenhals sehe ich die Abfragezeiten der SQL-Datenbank; ich schlage vor, nach dem Stand-up mit Jonas ein kurzes Query-Profiling durchzuführen.",
+          c1: "Gestern habe ich die serviceübergreifende Schnittstellenarchitektur konsolidiert und redundante Payloads eliminiert. Der heutige Meilenstein umfasst die automatisierte CI/CD-Pipeline-Integration und Lasttests. Als kritischen Blocker identifiziere ich persistente I/O-Latenzen im Datenbankcluster, weshalb ich eine Index-Restrukturierung sowie die Implementierung einer Redis-Caching-Schicht favorisiere."
         },
-        whyExplanation: "Natürliche Wertschätzung und ein lebendiger Bericht über Alltagserfahrungen schaffen sofortige familiäre Nähe und Sympathie."
-      },
-      {
-        speaker: "Herr Klein",
-        text: "Möchtest du noch einen Nachschlag, Ali? Es ist noch reichlich da! Und wie kommst du eigentlich mit den Behörden und der Wohnungssuche voran?",
-        guidance: "Höflich antworten (annehmen oder satt sein), für das Angebot danken und kurz über den Stand bei Bürgeramt/Wohnung berichten.",
-        expectedCriteria: ["Reaktion auf Nachschlag", "Dank", "Statusbericht Wohnung/Amt"],
-        responseTiers: {
-          basic: "Ja, gern noch etwas Fleisch. Mit der Wohnung suche ich noch.",
-          natural: "Ein ganz kleines Stück Fleisch nehme ich gerne noch, danke! Bei der Wohnungssuche habe ich nächste Woche zwei Besichtigungen, und beim Bürgerbüro war die Anmeldung zum Glück ganz unkompliziert.",
-          professionalB2: "Gern nehme ich noch eine kleine Portion Spätzle, es schmeckt wirklich vorzüglich. Was die Bürokratie betrifft: Die Ummeldung beim Einwohnermeldeamt hat reibungslos geklappt. Für die Wohnungssuche habe ich bereits einige Bewerbungsunterlagen vorbereitet und hoffe auf eine zeitnahe Rückmeldung.",
-          c1: "Ein klein wenig von den Spätzle nehme ich sehr gerne noch, herzlichen Dank! Was die behördlichen Angelegenheiten anbelangt, verlief die Registrierung absolut planmäßig. Bezüglich der Wohnraumbeschaffung habe ich mein Profil auf den gängigen Portalen hinterlegt und stehe bereits im Austausch mit zwei Vermietern."
-        },
-        whyExplanation: "Flüssige Antworten auf Nachfragen verbinden Höflichkeitsfloskeln mit konkreten Fortschritten im Alltag."
+        whyExplanation: "Im agilen Tech-Umfeld zählen klare Fakten, Fachbegriffe (Refactoring, Latenz, Flaschenhals, Lasttests) und proaktive Lösungen."
       }
     ]
   },
 
   {
-    id: "sim_family_weekend_chores",
-    title: "Wochenendplanung & Haushaltsorganisation",
-    category: "Familie & Alltag",
+    id: "sim_tech_code_review_discussion",
+    title: "Konstruktives Code-Review & Architektur-Debatte",
+    category: "Engineering & IT",
+    level: "B2/C1",
+    workplace: "GitHub Pull Request / Review-Session",
+    provenance: "AUS_QUELLE",
+    situation: "Ein Kollege hat einen Pull Request eingereicht, bei dem Sicherheitsaspekte und Skalierbarkeit unzureichend gelöst sind. Sie möchten das Feedback kollegial und fachlich fundiert vortragen.",
+    userRole: "Senior Software Developer",
+    counterpartRole: "Tobias (Entwicklerkollege)",
+    objective: "Wertschätzend positives Feedback voranstellen, Sicherheitsrisiken sachlich erläutern und Best Practices vorschlagen.",
+    turns: [
+      {
+        speaker: "Tobias",
+        text: "Hi Ali, hast du dir meinen Pull Request für das neue Zahlungs-Gateway schon angeschaut? Ich wollte den Branch eigentlich gleich mergen.",
+        guidance: "Loben Sie die schnelle Umsetzung, weisen Sie aber diplomatisch auf fehlende Eingabevalidierung und unverschlüsselte API-Keys hin, und schlagen Sie Umgebungsvariablen (.env) vor.",
+        expectedCriteria: ["Wertschätzender Einstieg", "Klares Aufzeigen von Risiken", "Konkreter technischer Gegenvorschlag"],
+        responseTiers: {
+          basic: "Der Code ist gut, aber die Passwörter stehen im Klartext. Das können wir so nicht mergen.",
+          natural: "Danke für die schnelle Umsetzung, Tobias! Die Logik sieht super aus. Mir ist allerdings aufgefallen, dass die API-Keys noch direkt im Quellcode stehen. Lass uns die kurz in Umgebungsvariablen auslagern und eine Validierung einbauen, dann können wir direkt mergen.",
+          professionalB2: "Vielen Dank für den PR, die Modulstruktur ist wirklich sauber aufgebaut. Aus Sicherheitsgründen sollten wir die sensiblen Credentials jedoch keinesfalls im Repository committen, sondern über ein Secret-Management laden. Wenn du das kurz anpasst und wir noch zwei Edge-Case-Tests ergänzen, gebe ich sofort mein Approval.",
+          c1: "Ich begrüße die elegante Entkopplung der Komponenten in deinem Entwurf ausdrücklich. Unter Sicherheitsaspekten birgt die Hardcodierung der API-Secrets jedoch ein gravierendes Vulnerabilitätsrisiko. Ich plädiere dafür, die Konfiguration über Vault bzw. Environment-Variablen zu kapseln und strikte Input-Sanitization zu implementieren, um Injection-Vektoren verlässlich zu unterbinden."
+        },
+        whyExplanation: "Konstruktive Kritik im Code-Review trennt die Person von der Sache und schützt die Softwarequalität."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 3. WOHNEN, VERMIETER & HAUSGEMEINSCHAFT
+  // ==========================================
+  {
+    id: "sim_house_heating_complaint",
+    title: "Mängelrüge an den Vermieter (Heizungsausfall im Winter)",
+    category: "Wohnen & Vermieter",
+    level: "B2/C1",
+    workplace: "Telefonat / Schriftliche Mitteilung an die Hausverwaltung",
+    provenance: "AUS_QUELLE",
+    situation: "Mitte November fällt in Ihrer Mietwohnung die Heizung komplett aus. Die Raumtemperatur beträgt nur noch 14 Grad. Sie rufen die Hausverwaltung an, um eine sofortige Notfall-Reparatur einzufordern.",
+    userRole: "Mieter",
+    counterpartRole: "Herr Fischer (Hausverwalter)",
+    objective: "Den Sachverhalt sachlich und bestimmt schildern, Dringlichkeit begründen, Frist setzen und Mietminderung ankündigen falls keine Abhilfe erfolgt.",
+    turns: [
+      {
+        speaker: "Herr Fischer",
+        text: "Hausverwaltung Fischer, guten Tag. Worum geht es bitte?",
+        guidance: "Nennen Sie Namen, Adresse und Wohnungsnummer. Schildern Sie den Totalausfall der Heizung bei Minusgraden und fordern Sie einen Heizungsmonteur für den heutigen Tag an.",
+        expectedCriteria: ["Genaue Adressangabe", "Präzise Mängelbeschreibung", "Dringlichkeit/Frist", "Bestimmter, professioneller Ton"],
+        responseTiers: {
+          basic: "Guten Tag, hier ist Ali. Bei mir ist die Heizung kaputt und es ist sehr kalt. Bitte schicken Sie schnell jemanden.",
+          natural: "Guten Tag, Herr Fischer, mein Name ist Ali aus der Weidenhäuser Straße 14, 2. Stock. Bei mir ist seit gestern Abend die Heizung komplett ausgefallen und die Wohnung hat nur noch 14 Grad. Da es draußen friert, brauche ich bitte heute dringend einen Notdienst.",
+          professionalB2: "Guten Tag, Herr Fischer. Ich melde hiermit einen dringenden Mangel in meiner Wohnung in der Weidenhäuser Straße 14. Die Heizkörper bleiben trotz voller Einstellung vollkommen kalt, die Raumtemperatur liegt unter 15 Grad Celsius. Da hier akute Unbewohnbarkeit droht, bitte ich Sie um die umgehende Entsendung eines Heizungsmonteurs noch am heutigen Vormittag.",
+          c1: "Guten Tag, Herr Fischer. Ich rüge hiermit gemäß § 536 BGB einen gravierenden Mangel an der Mietsache in der Weidenhäuser Straße 14. Es liegt ein vollständiger Ausfall der Heizungsanlage bei winterlichen Außentemperaturen vor, was zu einer Unterschreitung der vertraglich geschuldeten Mindesttemperatur führt. Ich fordere Sie hiermit zur unverzüglichen Mängelbeseitigung binnen 24 Stunden auf und behalte mir andernfalls eine angemessene Mietminderung sowie die Veranlassung einer Ersatzvornahme vor."
+        },
+        whyExplanation: "Im Mietrecht sichert eine präzise Fristsetzung und Verweis auf Mindesttemperaturen sofortiges Handeln der Hausverwaltung."
+      }
+    ]
+  },
+
+  {
+    id: "sim_house_noise_neighbor",
+    title: "Ruhezeiten & Lärmbeschwerde bei Nachbarn klären",
+    category: "Wohnen & Vermieter",
     level: "B2",
-    workplace: "Wohnzimmer / Küche",
+    workplace: "Hausflur / Wohnungstür des Nachbarn",
     provenance: "AUS_QUELLE",
-    situation: "Am Samstagmorgen besprechen Sie mit Ihren Mitbewohnern bzw. Familienangehörigen die anstehenden Aufgaben (Einkaufen, Putzen) und den gemeinsamen Sonntagsausflug.",
-    userRole: "Familienmitglied / Mitbewohner",
-    counterpartRole: "Jonas (Mitbewohner / Bruder)",
-    objective: "Aufgaben proaktiv übernehmen, Vorschläge für den Einkauf machen und einen fairen Kompromiss für das Wochenende finden.",
+    situation: "Ihr Nachbar spielt um 23:30 Uhr unter der Woche laute Musik, während Sie am nächsten Morgen um 05:30 Uhr Frühdienst im Krankenhaus haben. Sie klingeln freundlich, aber bestimmt.",
+    userRole: "Nachbar / BFD-Mitarbeiter",
+    counterpartRole: "Lukas (Feiernder Nachbar)",
+    objective: "Freundlich bleiben, Verständnis für Geselligkeit zeigen, aber klar die gesetzliche Nachtruhe (ab 22 Uhr) und den frühen Dienstbeginn einfordern.",
     turns: [
       {
-        speaker: "Jonas",
-        text: "Morgen steht der Wocheneinkauf an und die Küche müsste auch mal wieder gründlich geputzt werden. Wer übernimmt was? Und hast du eine Idee für morgen Nachmittag?",
-        guidance: "Bieten Sie an, einen Teil der Aufgaben (z. B. Bad/Küche oder Großeinkauf) zu übernehmen, und schlagen Sie eine gemeinsame Aktivität vor (z. B. Ausflug zur Lahn).",
-        expectedCriteria: ["Proaktive Aufgabenübernahme", "Konkreter Vorschlag", "Kooperativer Ton"],
+        speaker: "Lukas",
+        text: "Hi! Sorry, ist die Musik zu laut? Wir feiern nur kurz in meinen Geburtstag rein.",
+        guidance: "Gratulieren Sie kurz zum Geburtstag, erklären Sie Ihre Situation (Frühdienst 05:30 Uhr im Krankenhaus) und bitten Sie darum, die Bässe/Lautstärke auf Zimmerlautstärke zu drosseln.",
+        expectedCriteria: ["Glückwunsch zum Geburtstag", "Empathie für Anlass", "Eigene Schichtarbeit begründen", "Klare Bitte um Zimmerlautstärke"],
         responseTiers: {
-          basic: "Ich kann einkaufen gehen. Und morgen können wir an die Lahn fahren.",
-          natural: "Ich übernehme gerne den Großeinkauf beim Supermarkt, wenn du dafür die Küche machst. Und morgen Nachmittag könnten wir doch bei dem schönen Wetter an die Lahn spazieren gehen!",
-          professionalB2: "Lass uns das fair aufteilen: Ich schreibe die Einkaufsliste und besorge alles im Supermarkt, während du dich um die Küche kümmerst. Für morgen Nachmittag schlage ich vor, dass wir eine kleine Fahrradtour entlang der Lahn machen – was hältst du davon?",
-          c1: "Ich plädiere für eine pragmatische Aufgabenteilung: Ich übernehme den Wocheneinkauf inklusive Getränkekisten, sodass du freie Hand für die Grundreinigung der Küche hast. Im Anschluss an die Erledigungen böte sich morgen bei Sonnenschein ein ausgedehnter Ausflug ins Lahntal an – fändest du das passend?"
+          basic: "Alles Gute zum Geburtstag! Aber bitte mach die Musik leiser, ich muss morgen früh um 5 aufstehen.",
+          natural: "Erst mal herzlichen Glückwunsch zum Geburtstag! Ich gönne euch die Feier von Herzen. Ich habe morgen früh allerdings um 05:30 Uhr Frühdienst im Klinikum und muss dringend schlafen. Wäre es möglich, dass ihr die Bässe etwas runterdreht und die Musik auf Zimmerlautstärke stellt?",
+          professionalB2: "Ganz herzlichen Glückwunsch zum Geburtstag, Lukas! Ich verstehe vollkommen, dass du deinen Ehrentag zelebrieren möchtest. Da ich morgen früh um 05:30 Uhr meinen Dienst auf der Akutstation im Krankenhaus antrete, bin ich dringend auf meinen Schlaf angewiesen. Ich wäre dir sehr dankbar, wenn ihr die Lautstärke der Musik und der Bässe ab jetzt auf Zimmerlautstärke reduzieren könntet.",
+          c1: "Zunächst meine aufrichtigen Glückwünsche zu deinem Geburtstag! Ich möchte eure Feierlaune keineswegs trüben. Da ich jedoch im Rahmen meines Dienstes im Universitätsklinikum morgen früh um 05:30 Uhr voll einsatzfähig sein muss, appelliere ich an deine Rücksichtnahme hinsichtlich der gesetzlichen Nachtruhe. Ich danke dir sehr für dein Verständnis, wenn ihr die Lautstärke entsprechend dämpft."
         },
-        whyExplanation: "Klare Vorschläge mit 'Lass uns...' oder 'Was hältst du davon...' demonstrieren natürliche Verhandlungskompetenz im Alltag."
+        whyExplanation: "Die Kombination aus Glückwünschen und klarer Schilderung der beruflichen Verantwortung entwaffnet Konflikte sofort."
       }
     ]
   },
 
   // ==========================================
-  // 3. PARTNERSCHAFT & HERZ (GF / WIFEY)
+  // 4. FAMILIE, FESTE & WEIHNACHTEN
+  // ==========================================
+  {
+    id: "sim_family_christmas_dinner",
+    title: "Heiligabend & Weihnachtsfeier bei der Familie",
+    category: "Familie, Feste & Feiern",
+    level: "B2/C1",
+    workplace: "Festlich geschmücktes Wohnzimmer am 24. Dezember",
+    provenance: "AUS_QUELLE",
+    situation: "Sie verbringen Heiligabend bei der Familie / Gastfamilie in Hessen. Nach der Bescherung am Tannenbaum stoßen alle mit einem Glas Wein / Sekt an und blicken auf das vergangene Jahr zurück.",
+    userRole: "Gast / Familienmitglied",
+    counterpartRole: "Großmutter / Gastgeberin Elisabeth",
+    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für die Geborgenheit und Integration ausdrücken und frohe Weihnachten wünschen.",
+    turns: [
+      {
+        speaker: "Elisabeth",
+        text: "Lieber Ali, wir freuen uns so sehr, dass du heute an Heiligabend bei uns bist und wir diesen besonderen Abend gemeinsam verbringen dürfen! Möchtest du mit uns anstoßen?",
+        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Aufnahme in die Familie, reflektieren Sie kurz über das Jahr und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
+        expectedCriteria: ["Dank für die Aufnahme", "Gefühl der Geborgenheit", "Reflexion über das Jahr", "Weihnachtswunsch / Toast"],
+        responseTiers: {
+          basic: "Danke für die Einladung. Ich freue mich sehr, hier zu sein. Frohe Weihnachten an alle!",
+          natural: "Ganz herzlichen Dank, liebe Elisabeth! Es bedeutet mir unglaublich viel, heute Heiligabend mit euch in diesem warmen Kreis zu verbringen. Ich habe mich selten so herzlich aufgenommen und geborgen gefühlt. Auf ein frohes und gesegnetes Weihnachtsfest – Prost zusammen!",
+          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Als ich nach Deutschland kam, war vieles neu und herausfordernd – doch durch eure Unterstützung habe ich hier ein echtes Zuhause gefunden. Ich wünsche uns allen erholsame, besinnliche Feiertage und beste Gesundheit. Frohe Weihnachten!",
+          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir zuteilwerden lasst, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Weihnachtsfest!"
+        },
+        whyExplanation: "Weihnachten ist in Deutschland das emotionalste Fest des Jahres – persönliche Dankbarkeit und Wärme berühren tief."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_birthday_toast",
+    title: "Geburtstagsfeier & Gratulationsrede",
+    category: "Familie, Feste & Feiern",
+    level: "B2",
+    workplace: "Geburtstagsfeier im Restaurant / Garten",
+    provenance: "AUS_QUELLE",
+    situation: "Ein geschätzter Kollege bzw. Familienfreund feiert seinen 50. Geburtstag. Sie überreichen ein Geschenk und halten einen kurzen humorvollen Trinkspruch.",
+    userRole: "Gast & Gratulant",
+    counterpartRole: "Jürgen (Das Geburtstagskind)",
+    objective: "Herzlich gratulieren, humorvoll auf das Alter anspielen, gute Wünsche aussprechen und das Geschenk überreichen.",
+    turns: [
+      {
+        speaker: "Jürgen",
+        text: "Ali, wie schön, dass du da bist! Schön, dass du den Weg gefunden hast. Lass uns erst mal anstoßen!",
+        guidance: "Überreichen Sie das Geschenk, wünschen Sie Gesundheit und Glück, machen Sie einen sympathischen Witz über die '50' und stoßen Sie an.",
+        expectedCriteria: ["Herzliche Glückwünsche", "Geschenkübergabe", "Humorvoller Spruch", "Trinkspruch"],
+        responseTiers: {
+          basic: "Alles Gute zum 50. Geburtstag, Jürgen! Hier ist ein kleines Geschenk für dich. Auf deine Gesundheit!",
+          natural: "Herzlichen Glückwunsch zum 50. Geburtstag, lieber Jürgen! Man sieht dir die fünfzig wirklich kein bisschen an – du wirst nicht älter, sondern nur erfahrener! Hier ist eine kleine Aufmerksamkeit von mir. Auf deine Gesundheit, viel Glück und ein fantastisches neues Lebensjahr!",
+          professionalB2: "Lieber Jürgen, zu deinem runden Geburtstag gratuliere ich dir von ganzem Herzen! 50 Jahre sind ein wunderbarer Meilenstein – voller Erfolge, wertvoller Erfahrungen und lebendiger Geschichten. Ich habe dir ein kleines Präsent mitgebracht, das dir hoffentlich eine Freude bereitet. Ich wünsche dir für das kommende Lebensjahrzehnt unerschütterliche Gesundheit, Lebensfreude und weiterhin so viel Energie!",
+          c1: "Lieber Jürgen! Zu diesem herausragenden Jubiläum entbiete ich dir meine herzlichsten Glück- und Segenswünsche. Dein unermüdlicher Tatendrang und deine lebensbejahende Art sind für uns alle eine Inspiration. Möge dir das neue Lebensjahrzehnt beste physische wie mentale Vitalität, inspirierende Momente und berufliche wie private Erfüllung bescheren. Auf dein Wohl und auf die nächsten fünfzig Jahre!"
+        },
+        whyExplanation: "Runde Geburtstage (30, 40, 50) werden in Deutschland mit besonderer Würdigung gefeiert."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 5. PARTNERSCHAFT & HERZ (GF / WIFEY)
   // ==========================================
   {
     id: "sim_gf_comfort_after_shift",
     title: "Nach einem schweren Tag: Freundin / Ehefrau trösten",
     category: "Partnerschaft & Herz",
-    level: "B2",
+    level: "B2/C1",
     workplace: "Zuhause auf dem Sofa",
     provenance: "AUS_QUELLE",
     situation: "Ihre Freundin / Ehefrau kommt völlig erschöpft und den Tränen nahe von der Arbeit nach Hause, lässt die Tasche fallen und setzt sich bedrückt auf das Sofa.",
@@ -220,7 +256,7 @@ export const SIMULATIONS_DATA = [
       {
         speaker: "Freundin / Ehefrau",
         text: "Heute war einfach der absolute Horror... Mein Chef hat mich vor dem ganzen Team ungerechtfertigt kritisiert und ich hatte keine einzige Pause. Ich fühle mich einfach nur leer und ausgelaugt.",
-        guidance: "Nehmen Sie sie in den Arm (verbal & emotional), validieren Sie ihren Schmerz ('Das tut mir so leid, Schatz'), bieten Sie etwas zu trinken/essen an und hören Sie einfach nur verständnisvoll zu.",
+        guidance: "Nehmen Sie sie verbal und emotional in den Arm, validieren Sie ihren Schmerz ('Das tut mir so leid, Schatz'), bieten Sie Tee/Essen an und hören Sie einfach nur verständnisvoll zu.",
         expectedCriteria: ["Liebevolles Kosewort", "Emotionale Validierung", "Keine Vorwürfe/Besserwisserei", "Entlastung anbieten"],
         responseTiers: {
           basic: "Komm her, Schatz. Das tut mir leid. Willst du einen Tee trinken?",
@@ -229,75 +265,37 @@ export const SIMULATIONS_DATA = [
           c1: "Mein Schatz, lass dich ganz fest umarmen. Dass du heute so einer ungerechten Behandlung ausgesetzt warst, macht mich traurig und wütend zugleich. Du musst diese Last jetzt nicht mehr alleine tragen. Lehn dich einfach an mich an, ich nehme dir heute alle Pflichten ab und sorge dafür, dass du zur Ruhe kommen kannst."
         },
         whyExplanation: "In emotionalen Momenten zählen emotionale Validierung ('Ich sehe deinen Schmerz') und praktische Entlastung mehr als rationale Ratschläge."
-      },
-      {
-        speaker: "Freundin / Ehefrau",
-        text: "Danke, dass du immer für mich da bist... Es tut so gut, deine Stimme zu hören. Manchmal habe ich einfach Angst, dass ich den Anforderungen im Job nicht gewachsen bin.",
-        guidance: "Bauen Sie ihr Selbstvertrauen auf: Erinnern Sie sie an ihre Stärken, versichern Sie ihr Ihre bedingungslose Liebe und Loyalität.",
-        expectedCriteria: ["Liebesbekundung", "Bestärkung des Selbstwertgefühls", "Zukunftszuversicht"],
-        responseTiers: {
-          basic: "Du bist sehr schlau und stark, Schatz. Ich liebe dich.",
-          natural: "Zweifle bitte niemals an dir selbst, Schatz! Du bist unglaublich kompetent, klug und herzlich. Ein schlechter Tag ändert überhaupt nichts an deinem großen Können. Ich glaube immer an dich und ich liebe dich von ganzem Herzen.",
-          professionalB2: "Mein Schatz, bitte lass dir von so einem Tag nicht deinen Selbstwert nehmen. Du leistest jeden Tag Großartiges und hast schon so viele schwierige Hürden mit Bravour gemeistert. Ich bin unfassbar stolz auf dich und stehe bedingungslos hinter dir – egal was passiert.",
-          c1: "Liebling, diese Zweifel sind nach solch einer Belastung verständlich, aber sie spiegeln nicht die Realität wider. Du verfügst über eine außergewöhnliche Stärke, Fachkompetenz und Integrität. Wir stehen das gemeinsam durch, und du hast in mir immer deinen verlässlichsten Rückhalt. Ich liebe dich über alles."
-        },
-        whyExplanation: "Tiefe partnerschaftliche Kommunikation stärkt die emotionale Bindung durch bedingungslose Bestätigung und liebevolle Worte."
       }
     ]
   },
 
+  // ==========================================
+  // 6. HESSEN & FRANKFURT LOKALKOLORIT
+  // ==========================================
   {
-    id: "sim_gf_future_planning",
-    title: "Zukunfts- & Wohnungsplanung mit der Partnerin",
-    category: "Partnerschaft & Herz",
-    level: "B2",
-    workplace: "Küchentisch bei einer Tasse Kaffee",
+    id: "sim_hessen_coffee_banter",
+    title: "Kaffeeküchen-Plausch & Frankfurter Dialekt-Banter",
+    category: "Hessen & Frankfurt",
+    level: "B2 (Authentisch)",
+    workplace: "Kaffeeküche auf Station P2 / Universitätsklinikum",
     provenance: "AUS_QUELLE",
-    situation: "Sie sitzen sonntags gemütlich zusammen und sprechen über die gemeinsame nächste Lebensphase: eine größere Wohnung, gemeinsame Reisen und die Aufteilung der Ersparnisse.",
-    userRole: "Partner / Ehemann",
-    counterpartRole: "Freundin / Ehefrau",
-    objective: "Wünsche empathisch abstimmen, gemeinsame Träume visualisieren und konstruktiv über Budget und Prioritäten sprechen.",
+    situation: "Um 10:30 Uhr treffen Sie Pfleger Heinz in der Kaffeeküche. Heinz ist ein waschechter Frankfurter und begrüßt Sie mit typischem hessischen Charme.",
+    userRole: "BFD-Freiwilliger",
+    counterpartRole: "Pfleger Heinz (Ur-Frankfurter)",
+    objective: "Locker auf Hessisch antworten, den Witz aufgreifen, Smalltalk über den Tag führen und kollegiale Nähe aufbauen.",
     turns: [
       {
-        speaker: "Freundin / Ehefrau",
-        text: "Schatz, schau mal hier auf ImmoScout: Diese 3-Zimmer-Wohnung mit Balkon in der Nähe vom Schlosspark wäre mein absoluter Traum! Meinst du, wir können uns die Miete leisten, wenn du deinen BFD machst?",
-        guidance: "Freude über den Traum teilen, realistisch und optimistisch die Finanzen durchgehen und vorschlagen, einen Besichtigungstermin zu vereinbaren.",
-        expectedCriteria: ["Begeisterung teilen", "Finanzielle Sicherheit/Pragmatismus", "Konkreter nächster Schritt"],
+        speaker: "Heinz",
+        text: "Ei gude, Ali! Na, machste dir erst mal 'nen Schoppe Kaffee? Wie läuft's denn mit den Patienten uff Zimmer 4, machen die kaan Zirkus?",
+        guidance: "Antworten Sie mit einem charmanten 'Gude!', bestätigen Sie den Kaffee und berichten Sie mit einer Prise Humor, dass auf Zimmer 4 alles friedlich ist.",
+        expectedCriteria: ["Hessische Grußformel (Gude)", "Lockerer Kaffeeküchen-Ton", "Entwarnung mit Humor"],
         responseTiers: {
-          basic: "Die Wohnung sieht schön aus. Wir können unser Geld zusammenrechnen und besichtigen.",
-          natural: "Die sieht ja wunderschön aus, Schatz! Mit dem Balkon wäre das perfekt für uns. Lass uns kurz unsere Einnahmen und das BFD-Taschengeld zusammenrechnen – ich glaube, wenn wir sparsam wirtschaften, kriegen wir das gut hin. Soll ich direkt eine Anfrage schreiben?",
-          professionalB2: "Was für ein toller Fund, Liebling! Der Grundriss und die Lage am Schlosspark sind wirklich traumhaft. Wenn wir mein Taschengeld, dein Gehalt und unsere fixen monatlichen Ausgaben kalkulieren, liegt die Warmmiete absolut im machbaren Rahmen. Lass uns heute Abend direkt die Bewerbungsunterlagen absenden!",
-          c1: "Ein fantastisches Objekt, mein Schatz! Die Kombination aus zentrumsnaher Lage und Grünfläche würde unsere Lebensqualität enorm steigern. Aus wirtschaftlicher Sicht ist die Warmmiete durch unsere kombinierte Budgetplanung vollkommen tragbar. Ich schlage vor, dass wir umgehend ein aussagekräftiges Anschreiben formulieren, um unsere Chancen auf einen Besichtigungstermin zu maximieren."
+          basic: "Gude Heinz! Ja, Kaffee brauche ich. Auf Zimmer 4 ist alles ruhig.",
+          natural: "Ei gude, Heinz! Ohne den Kaffee geht heute gar nix mehr! Bei Zimmer 4 ist zum Glück alles friedlich – die machen heute kaan Zirkus, die schlafen tief und fest.",
+          professionalB2: "Gude Heinz! Absolut, der Kaffee ist meine Rettung für die zweite Schichthälfte! Auf Zimmer 4 läuft alles wie am Schnürchen, die Patienten sind versorgt und die Stimmung ist total entspannt. Wie sieht's drüben bei dir aus?",
+          c1: "Ei gude wie, Heinz! Auf diesen Lebenselixier-Kaffee habe ich den ganzen Vormittag hingearbeitet. Bezüglich Zimmer 4 kann ich vollständige Entwarnung geben: Keinerlei Turbulenzen, alle Vitalwerte sind stabil erfasst und die Patienten sind kooperativ. Gönnen wir uns erst mal fünf Minuten Ruhe!"
         },
-        whyExplanation: "Gemeinsame Zukunftsplanung verbindet Begeisterung mit verlässlicher Partnerschaftlichkeit."
-      }
-    ]
-  },
-
-  {
-    id: "sim_gf_resolving_misunderstanding",
-    title: "Konfliktklärung ohne Vorwürfe (Ich-Botschaften)",
-    category: "Partnerschaft & Herz",
-    level: "B2/C1",
-    workplace: "Wohnzimmer am Abend",
-    provenance: "AUS_QUELLE",
-    situation: "Wegen der anstrengenden Schichten im Krankenhaus kam es in den letzten Tagen zu kleinen Spannungen und verpassten Verabredungen. Sie möchten das Gespräch suchen und die Wogen liebevoll glätten.",
-    userRole: "Reflektierter Partner",
-    counterpartRole: "Freundin / Ehefrau",
-    objective: "Ohne Verteidigungshaltung oder Vorwürfe die eigenen Gefühle erklären, Verständnis für die Enttäuschung der Partnerin zeigen und eine liebevolle Lösung vereinbaren.",
-    turns: [
-      {
-        speaker: "Freundin / Ehefrau",
-        text: "Ich hatte in den letzten Tagen oft das Gefühl, dass du mit deinen Gedanken nur noch im Krankenhaus bist und ich an zweiter Stelle stehe. Als du gestern wieder zu spät kamst, war ich wirklich traurig.",
-        guidance: "Reagieren Sie nicht defensiv ('Ich muss schließlich arbeiten!'), sondern spiegeln Sie ihr Gefühl, entschuldigen Sie sich für die Unruhe und betonen Sie, wie wichtig sie Ihnen ist.",
-        expectedCriteria: ["Keine Abwehrhaltung", "Verständnis spiegeln", "Aufrichtige Entschuldigung", "Liebesbekundung & Zeitfenster vereinbaren"],
-        responseTiers: {
-          basic: "Es tut mir leid, dass ich zu spät war. Du bist mir sehr wichtig, Schatz.",
-          natural: "Es tut mir von Herzen leid, Schatz. Ich verstehe total, dass du traurig warst. Die ersten Wochen auf Station sind so voll mit Eindrücken, dass ich manchmal den Kopf voll habe. Aber du stehst für mich immer an erster Stelle. Lass uns dieses Wochenende ganz ohne Handy nur für uns zwei reservieren.",
-          professionalB2: "Danke, dass du mir das so offen und ehrlich sagst, Liebling. Es tut mir aufrichtig leid, dass ich dir unabsichtlich das Gefühl gegeben habe, vernachlässigt zu werden. Mein Kopf war von den Klinikfällen überreizt, aber das ist keine Entschuldigung. Du bist das Wichtigste in meinem Leben. Lass uns feste Abendrituale einführen, an denen das Krankenhaus draußen bleibt.",
-          c1: "Ich bin dir sehr dankbar für deine Offenheit, mein Schatz. Es schmerzt mich zu hören, dass mein Verhalten bei dir den Eindruck erweckt hat, du hättest keine Priorität. Die hohe mentale Belastung des Dienstbeginns hat mich absorbiert, doch das darf unsere Zweisamkeit keinesfalls beeinträchtigen. Ich möchte mich aufrichtig bei dir entschuldigen und vorschlagen, dass wir jeden Abend eine bewusste Stunde exklusiver Paarzeit fest etablieren."
-        },
-        whyExplanation: "Gewaltfreie Kommunikation in der Beziehung basiert auf Wertschätzung, Selbstreflexion und dem Angebot konkreter Verbindlichkeit."
+        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Pflegeteam."
       }
     ]
   }

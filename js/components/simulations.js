@@ -1,4 +1,4 @@
-// Simulations Component — Interaktive Rollenspiele (BFD, Familie, Partnerschaft)
+// Simulations Component — Interaktive Rollenspiele (BFD, Tech, Wohnen, Feste, Partnerschaft, Hessen)
 
 import { Speech } from '../speech.js';
 import { SIMULATIONS_DATA } from '../data/simulations_data.js';
@@ -24,10 +24,10 @@ export function renderSimulations(container, data, params = {}) {
         <div class="hero-card">
           <div class="flex-between flex-wrap gap-4">
             <div>
-              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR</span>
+              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR B2 / C1</span>
               <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
               <p class="subtitle mt-1">
-                Lebensnahe Simulationen für Krankenhaus, Stationsalltag, Familie und tiefe Partnerschaftsgespräche mit 4-Stufen-Feedback.
+                Lebensnahe Simulationen für Krankenhaus, IT/Tech-Arbeitsplatz, Mietrecht, Familienfeste, Partnerschaft und Frankfurter Lokalkolorit.
               </p>
             </div>
             <div class="flex items-center gap-2">
@@ -39,18 +39,27 @@ export function renderSimulations(container, data, params = {}) {
         <!-- Category Tabs & Scenario Selector -->
         <div class="bento-card p-4 space-y-3">
           <div class="flex-between flex-wrap gap-3">
-            <div class="flex gap-2 flex-wrap" id="simCategoryTabs">
+            <div class="flex gap-1.5 flex-wrap" id="simCategoryTabs">
               <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
-                Alle Szenarien (${sims.length})
+                Alle (${sims.length})
               </button>
               <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
                 🏥 Klinik & BFD
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Familie & Alltag' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie & Alltag">
-                🏡 Familie & Alltag
+              <button class="btn btn-xs ${activeCategory === 'Engineering & IT' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Engineering & IT">
+                💻 Engineering & IT
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Wohnen & Vermieter' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Wohnen & Vermieter">
+                🏡 Wohnen & Vermieter
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Familie, Feste & Feiern' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie, Feste & Feiern">
+                🎄 Familie & Feste
               </button>
               <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
                 ❤️ Partnerschaft & Herz
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Hessen & Frankfurt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Frankfurt">
+                🏙️ Hessen & Dialekt
               </button>
             </div>
 
@@ -58,7 +67,7 @@ export function renderSimulations(container, data, params = {}) {
             <select id="selectSim" class="p-2 bg-subtle border border-subtle rounded-lg text-primary text-xs font-bold outline-none flex-1 max-w-md">
               ${filteredSims.map(s => `
                 <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>
-                  ${s.category === 'Partnerschaft & Herz' ? '❤️' : (s.category === 'Familie & Alltag' ? '🏡' : '🏥')} ${s.title} (${s.level})
+                  ${s.title} (${s.level})
                 </option>
               `).join('')}
             </select>
@@ -134,7 +143,7 @@ export function renderSimulations(container, data, params = {}) {
           <div class="text-5xl">🏆</div>
           <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
           <p class="text-sm text-secondary max-w-md mx-auto">
-            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich durchlaufen und die wesentlichen Kriterien erfüllt.
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und die Kriterien erfüllt.
           </p>
           <div class="flex justify-center gap-3 pt-4">
             <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
@@ -198,11 +207,11 @@ export function renderSimulations(container, data, params = {}) {
           <div class="text-xs font-bold text-muted uppercase tracking-wider">Musterantworten nach Sprachebene:</div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <!-- Basic B1 -->
+            <!-- Basic B1 / Aktiv B2 -->
             <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1.5 flex flex-col justify-between">
               <div>
                 <div class="flex-between">
-                  <span class="badge badge-gray text-[10px]">Basic (B1)</span>
+                  <span class="badge badge-gray text-[10px]">Basis</span>
                   <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.basic}">▶</button>
                 </div>
                 <div class="text-xs text-secondary mt-1 font-medium">${turn.responseTiers.basic}</div>

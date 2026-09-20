@@ -1,71 +1,97 @@
-// Technisches & Ingenieur-Deutsch (B2/C1)
-// Vorbereitung auf die spätere ingenieurwissenschaftliche Laufbahn
+// Technisches & Software-Ingenieur-Deutsch (B2/C1)
+// Vorbereitung auf Softwareentwicklung, Informatik, Cloud, Data Engineering & IT-Teams
 
 export const ENGINEERING_DATA = {
-  title: "Technisches & Ingenieur-Deutsch",
+  title: "Software-, Computer- & Ingenieur-Deutsch (B2/C1)",
   provenance: "ERGÄNZT",
-  description: "Grundlagen des Fachwortschatzes und professioneller technischer Kommunikation (B2/C1).",
+  description: "Fachwortschatz, Redemittel und Diskussionsmuster für Softwareentwicklung, IT-Architektur, Code Reviews und agile Teams.",
   categories: [
     {
-      name: "Messungen & Spezifikationen",
+      name: "Software-Architektur & Systementwurf",
       vocabulary: [
         {
-          word: "die Abweichung",
+          word: "die Skalierbarkeit",
           article: "die",
-          level: "B2",
-          definition: "Der Unterschied zwischen dem gemessenen Ist-Wert und dem vorgegebenen Soll-Wert.",
-          exampleGerman: "Die gemessene Toleranz weist eine geringfügige Abweichung von 0,02 mm auf.",
-          exampleEnglish: "The measured tolerance shows a slight deviation of 0.02 mm."
+          level: "B2/C1",
+          definition: "Die Fähigkeit eines Softwaresystems, bei steigender Benutzerlast ohne Leistungseinbußen zu wachsen.",
+          exampleGerman: "Durch die Migration auf Kubernetes gewährleisten wir die horizontale Skalierbarkeit des Backends.",
+          exampleEnglish: "Through migration to Kubernetes, we ensure the horizontal scalability of the backend."
         },
         {
-          word: "die Anforderung",
-          article: "die",
-          level: "B2",
-          definition: "Eine verbindliche Vorgabe oder Bedingung, die ein technisches System erfüllen muss.",
-          exampleGerman: "Das neue Gehäuse erfüllt alle sicherheitstechnischen Anforderungen nach ISO-Norm.",
-          exampleEnglish: "The new housing meets all safety requirements according to ISO standard."
-        },
-        {
-          word: "der Wirkungsgrad",
+          word: "der Flaschenhals (das Bottleneck)",
           article: "der",
+          level: "B2",
+          definition: "Die langsamste Komponente im System, welche die Gesamtleistung limitiert.",
+          exampleGerman: "Die synchrone Festplatten-I/O stellte sich im Profiling als der primäre Flaschenhals heraus.",
+          exampleEnglish: "Synchronous disk I/O turned out to be the primary bottleneck during profiling."
+        },
+        {
+          word: "das Refactoring",
+          article: "das",
+          level: "B2",
+          definition: "Die Überarbeitung und Säuberung des Quellcodes ohne Veränderung der externen Funktionalität.",
+          exampleGerman: "Vor dem nächsten Release führen wir ein gründliches Refactoring der Legacy-Module durch.",
+          exampleEnglish: "Prior to the next release, we conduct a thorough refactoring of the legacy modules."
+        },
+        {
+          word: "die Entkopplung",
+          article: "die",
           level: "C1",
-          definition: "Das Verhältnis der nutzbaren Energie zur zugeführten Energie eines Systems.",
-          exampleGerman: "Durch die Optimierung der Steuerung konnte der Wirkungsgrad um 4,5 % gesteigert werden.",
-          exampleEnglish: "By optimizing the control system, the efficiency was increased by 4.5%."
+          definition: "Die Trennung von Modulen, sodass Änderungen in Modul A keine unerwünschten Seiteneffekte in Modul B erzeugen.",
+          exampleGerman: "Durch Event-Driven Architecture erreichen wir eine lose Entkopplung der Microservices.",
+          exampleEnglish: "Through event-driven architecture, we achieve loose decoupling of microservices."
         }
       ]
     },
+
     {
-      name: "Fehleranalyse & Troubleshooting",
+      name: "DevOps, Cloud & Datenpipelines",
       vocabulary: [
         {
-          word: "die Ursachenanalyse",
+          word: "die Bereitstellung (das Deployment)",
           article: "die",
-          level: "C1",
-          definition: "Die systematische Untersuchung zur Ermittlung des Grundes eines Systemausfalls.",
-          exampleGerman: "Wir leiten unverzüglich eine Ursachenanalyse ein, um den Fehler im Schaltkreis zu lokalisieren.",
-          exampleEnglish: "We are immediately initiating a root cause analysis to locate the fault in the circuit."
+          level: "B2",
+          definition: "Das automatische Übertragen und Starten einer neuen Softwareversion auf dem Produktionsserver.",
+          exampleGerman: "Die CI/CD-Pipeline führt die automatisierte Bereitstellung nach erfolgreichen Unit-Tests aus.",
+          exampleEnglish: "The CI/CD pipeline executes automated deployment following successful unit tests."
         },
         {
-          word: "die Störanfälligkeit",
+          word: "die Ausfallsicherheit (High Availability)",
           article: "die",
           level: "C1",
-          definition: "Die Neigung eines Systems, unter Belastung oder Umwelteinflüssen Fehler zu produzieren.",
-          exampleGerman: "Durch die neue Abschirmung konnte die Störanfälligkeit signifikant gesenkt werden.",
-          exampleEnglish: "Thanks to the new shielding, the susceptibility to interference was significantly reduced."
+          definition: "Die Eigenschaft eines Systems, auch bei Hardware- oder Serverausfällen kontinuierlich weiterzulaufen.",
+          exampleGerman: "Multi-Region-Cluster garantieren maximale Ausfallsicherheit bei Cloud-Hostern.",
+          exampleEnglish: "Multi-region clusters guarantee maximum fault tolerance with cloud providers."
+        },
+        {
+          word: "die Latenz (die Verzögerungszeit)",
+          article: "die",
+          level: "B2/C1",
+          definition: "Die Zeitspanne zwischen dem Absenden einer Anfrage und dem Eintreffen der Antwort.",
+          exampleGerman: "Die Redis-Caching-Schicht konnte die Latenz der API von 250 ms auf 12 ms reduzieren.",
+          exampleEnglish: "The Redis caching layer was able to reduce API latency from 250 ms to 12 ms."
         }
       ]
     },
+
     {
-      name: "Technische Berichte & Besprechungen",
-      phrases: [
+      name: "IT-Besprechungen, Code Reviews & Agilität",
+      vocabulary: [
         {
-          german: "Den vorliegenden Messergebnissen zufolge können wir schlussfolgern, dass...",
-          english: "According to the available measurement results, we can conclude that..."
+          word: "die Testabdeckung (Code Coverage)",
+          article: "die",
+          level: "B2",
+          definition: "Der prozentuale Anteil des Quellcodes, der durch automatisierte Tests abgedeckt ist.",
+          exampleGerman: "Wir streben eine Testabdeckung von mindestens 85 % für alle Kernmodule an.",
+          exampleEnglish: "We aim for a code coverage of at least 85% across all core modules."
         },
         {
-          german: "Um die Betriebssicherheit zu gewährleisten, ist eine Nachjustierung der Parameter erforderlich.",
-          english: "To ensure operational safety, a readjustment of the parameters is required."
+          word: "der Meilenstein",
+          article: "der",
+          level: "B2",
+          definition: "Ein zentrales Zwischenziel im Projektplan, an dem wichtige Teilergebnisse abgeschlossen sind.",
+          exampleGerman: "Mit dem erfolgreichen Lasttest haben wir den zweiten Meilenstein im Sprint erreicht.",
+          exampleEnglish: "With the successful load test, we reached the second milestone in the sprint."
         }
       ]
     }

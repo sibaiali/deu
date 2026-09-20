@@ -20277,6 +20277,224 @@ const VOCABULARY_DATA = exports.VOCABULARY_DATA = [{
   ],
   "exampleDe": "Nach dem Sturz ist das rechte Sprunggelenk des Patienten innerhalb von Minuten angeschwollen.",
   "exampleEn": "Following the fall, the patient's right ankle joint swelled up within minutes."
+},
+{
+  "id": "vocab_nvv_001",
+  "word": "in Betracht ziehen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "zieht in Betracht – zog in Betracht – hat in Betracht gezogen",
+  "relatedWords": [
+    "die Betrachtung",
+    "betrachten",
+    "berücksichtigen",
+    "die Erwägung"
+  ],
+  "definitionDe": "Etwas gründlich überlegen, prüfen oder bei einer Entscheidung berücksichtigen.",
+  "definitionEn": "To take into consideration / to take into account.",
+  "collocations": [
+    "eine Alternative in Betracht ziehen",
+    "ernsthaft in Betracht ziehen"
+  ],
+  "exampleDe": "Bei anhaltenden Nebenwirkungen müssen wir einen Wechsel des Medikaments in Betracht ziehen.",
+  "exampleEn": "In case of persistent side effects, we must take a medication change into consideration."
+},
+{
+  "id": "vocab_nvv_002",
+  "word": "zur Verfügung stehen / stellen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "steht zur Verfügung – stand – hat gestanden / stellt zur Verfügung",
+  "relatedWords": [
+    "die Verfügung",
+    "verfügbar",
+    "die Verfügbarkeit"
+  ],
+  "definitionDe": "Bereitstehen, genutzt werden können ODER etwas für andere bereitstellen.",
+  "definitionEn": "To be available / to make available.",
+  "collocations": [
+    "jederzeit zur Verfügung stehen",
+    "Mittel zur Verfügung stellen"
+  ],
+  "exampleDe": "Für Fragen zur Pflegedokumentation stehe ich Ihnen gerne jederzeit zur Verfügung.",
+  "exampleEn": "I am gladly available at any time for questions regarding nursing documentation."
+},
+{
+  "id": "vocab_nvv_003",
+  "word": "in Kenntnis setzen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "setzt in Kenntnis – setzte in Kenntnis – hat in Kenntnis gesetzt",
+  "relatedWords": [
+    "die Kenntnis",
+    "kennen",
+    "informieren",
+    "die Benachrichtigung"
+  ],
+  "definitionDe": "Jemanden offiziell, formell und schriftlich/mündlich über einen Sachverhalt informieren.",
+  "definitionEn": "To inform / to notify formally.",
+  "collocations": [
+    "den Dienstarzt in Kenntnis setzen",
+    "unverzüglich in Kenntnis setzen"
+  ],
+  "exampleDe": "Bei akuter Verschlechterung der Vitalwerte habe ich den Dienstarzt unverzüglich in Kenntnis gesetzt.",
+  "exampleEn": "Upon acute deterioration of vital signs, I immediately notified the physician on duty."
+},
+{
+  "id": "vocab_nvv_004",
+  "word": "zur Sprache bringen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "bringt zur Sprache – brachte zur Sprache – hat zur Sprache gebracht",
+  "relatedWords": [
+    "die Sprache",
+    "ansprechen",
+    "thematisieren",
+    "die Debatte"
+  ],
+  "definitionDe": "Ein wichtiges oder heikles Thema in einer Besprechung oder einem Gespräch ansprechen.",
+  "definitionEn": "To bring up / to raise a topic.",
+  "collocations": [
+    "ein Problem zur Sprache bringen",
+    "in der Teamsitzung zur Sprache bringen"
+  ],
+  "exampleDe": "Die Lärmbelästigung auf dem Flur sollten wir in der nächsten Stationsbesprechung zur Sprache bringen.",
+  "exampleEn": "We should bring up the noise issue in the hallway during the next ward meeting."
+},
+{
+  "id": "vocab_nvv_005",
+  "word": "in Kauf nehmen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "nimmt in Kauf – nahm in Kauf – hat in Kauf genommen",
+  "relatedWords": [
+    "der Kauf",
+    "akzeptieren",
+    "der Nachteil",
+    "das Risiko"
+  ],
+  "definitionDe": "Einen unvermeidlichen Nachteil oder ein Risiko bewusst akzeptieren, um ein größeres Ziel zu erreichen.",
+  "definitionEn": "To accept / to put up with a drawback.",
+  "collocations": [
+    "Nachteile in Kauf nehmen",
+    "ein gewisses Risiko in Kauf nehmen"
+  ],
+  "exampleDe": "Für den schnelleren Systemstart müssen wir einen etwas höheren Speicherverbrauch in Kauf nehmen.",
+  "exampleEn": "For a faster system startup, we must accept slightly higher memory usage."
+},
+{
+  "id": "vocab_verb_001",
+  "word": "gewährleisten",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "gewährleistet – gewährleistete – hat gewährleistet",
+  "relatedWords": [
+    "die Gewährleistung",
+    "die Garantie",
+    "sicherstellen",
+    "die Sicherheit"
+  ],
+  "definitionDe": "Verlässlich dafür sorgen, dass etwas sicher, fehlerfrei und stabil funktioniert.",
+  "definitionEn": "To guarantee, to ensure, to warrant.",
+  "collocations": [
+    "Sicherheit gewährleisten",
+    "lückenlose Betreuung gewährleisten"
+  ],
+  "exampleDe": "Durch die regelmäßigen Kontrollen gewährleisten wir die Patientensicherheit auf Station.",
+  "exampleEn": "Through regular checks, we ensure patient safety on the ward."
+},
+{
+  "id": "vocab_verb_002",
+  "word": "beheben",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2",
+  "stammformen": "behebt – behob – hat behoben",
+  "relatedWords": [
+    "die Behebung",
+    "beseitigen",
+    "der Fehler",
+    "der Mangel"
+  ],
+  "definitionDe": "Einen Schaden, Fehler oder Mangel vollständig reparieren oder lösen.",
+  "definitionEn": "To resolve / to rectify / to fix a defect.",
+  "collocations": [
+    "einen Fehler beheben",
+    "einen Mangel unverzüglich beheben"
+  ],
+  "exampleDe": "Der Heizungsmonteur konnte den Ausfall der Therme innerhalb von zwei Stunden beheben.",
+  "exampleEn": "The heating technician was able to fix the boiler breakdown within two hours."
+},
+{
+  "id": "vocab_verb_003",
+  "word": "beeinträchtigen",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "beeinträchtigt – beeinträchtigte – hat beeinträchtigt",
+  "relatedWords": [
+    "die Beeinträchtigung",
+    "die Einschränkung",
+    "behindern",
+    "schwächen"
+  ],
+  "definitionDe": "Auf etwas störend, mindernd oder negativ einwirken.",
+  "definitionEn": "To impair, to adversely affect.",
+  "collocations": [
+    "die Lebensqualität beeinträchtigen",
+    "die Urteilsfähigkeit beeinträchtigen"
+  ],
+  "exampleDe": "Chronischer Schlafmangel beeinträchtigt die Konzentrationsfähigkeit im Schichtdienst erheblich.",
+  "exampleEn": "Chronic sleep deprivation significantly impairs concentration during shift work."
+},
+{
+  "id": "vocab_verb_004",
+  "word": "unterbinden",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "C1",
+  "stammformen": "unterbindet – unterband – hat unterbunden",
+  "relatedWords": [
+    "die Unterbindung",
+    "verhindern",
+    "stoppen",
+    "die Prävention"
+  ],
+  "definitionDe": "Eine unerwünschte Handlung oder Gefahr sofort und energisch stoppen/verhindern.",
+  "definitionEn": "To prevent, to stop, to curb energetically.",
+  "collocations": [
+    "Sicherheitsrisiken unterbinden",
+    "Schmuggel unterbinden"
+  ],
+  "exampleDe": "Um Kreuzinfektionen zu unterbinden, ist die Händedesinfektion vor jedem Zimmerkontakt obligatorisch.",
+  "exampleEn": "To prevent cross-infections, hand disinfection is mandatory before every room contact."
+},
+{
+  "id": "vocab_verb_005",
+  "word": "plädieren (für)",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "C1",
+  "stammformen": "plädiert – plädierte – hat plädiert",
+  "relatedWords": [
+    "das Plädoyer",
+    "sich einsetzen für",
+    "befürworten"
+  ],
+  "definitionDe": "Sich mit überzeugenden Argumenten für eine bestimmte Lösung oder Haltung aussprechen.",
+  "definitionEn": "To plead for / to advocate for.",
+  "collocations": [
+    "für eine Lösung plädieren",
+    "für mehr Ruhezeiten plädieren"
+  ],
+  "exampleDe": "In der Architektur-Diskussion plädiere ich für eine Microservice-Struktur anstelle eines Monolithen.",
+  "exampleEn": "In the architecture discussion, I advocate for a microservice structure instead of a monolith."
 }];
 
   });
@@ -20291,8 +20509,7 @@ const VOCABULARY_DATA = exports.VOCABULARY_DATA = [{
 const GRAMMAR_DATA = exports.GRAMMAR_DATA = {
   title: "Vollständiges Grammatik-System (B1 -> B2 -> C1)",
   provenance: "AUS_QUELLE",
-  lessons: [
-    {
+  lessons: [{
       id: "gram_01",
       number: 1,
       title: "Satzstellung im Hauptsatz & Inversion",
@@ -20696,8 +20913,119 @@ Beispiele aus der Praxis:
           hint: "Konjunktiv I von 'sein' in der 3. Person Singular ist 'sei'."
         }
       ]
+    },
+{
+  "id": "gram_b2_passiversatz",
+  "number": 26,
+  "title": "Passiversatzformen (sein + zu + Infinitiv, sich lassen, -bar/-lich)",
+  "level": "B2/C1",
+  "category": "Passiv & Stil",
+  "summary": "Elegante Alternativen zum 'Werden-Passiv' für präzises Fachdeutsch.",
+  "explanationGerman": "Im gehobenen Deutsch (Klinikberichte, IT-Architektur, Behörden) vermeidet man monotone Passivsätze mit 'werden' durch drei elegante Passiversatzformen:\n\n1. sein + zu + Infinitiv (drückt Notwendigkeit oder Möglichkeit aus):\n   - Passiv: Die Akte muss sofort archiviert werden.\n   - B2/C1: Die Akte ist sofort zu archivieren.\n   - Passiv: Das Problem kann nicht gelöst werden.\n   - B2/C1: Das Problem ist nicht zu lösen.\n\n2. sich lassen + Infinitiv (drückt Möglichkeit aus = 'kann gemacht werden'):\n   - Passiv: Die Datenbank kann leicht skaliert werden.\n   - B2/C1: Die Datenbank lässt sich leicht skalieren.\n\n3. Adjektive auf -bar / -lich (drückt passive Machbarkeit aus):\n   - Passiv: Der Fehler kann nicht vermieden werden.\n   - B2/C1: Der Fehler ist unvermeidbar / unvermeidlich.",
+  "examples": [
+    {
+      "german": "Die Vitalwerte sind vor der Medikamentengabe lückenlos zu dokumentieren.",
+      "english": "The vital signs are to be completely documented prior to medication administration."
+    },
+    {
+      "german": "Dieser Softwarefehler lässt sich durch ein kurzes Refactoring zügig beheben.",
+      "english": "This software bug can be fixed quickly through a short refactoring."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Die Akte ist zu archivieren müssen.* -> Richtig: *Die Akte ist zu archivieren.* (Kein Modalverb zusätzlich!)"
+  ],
+  "exercises": [
+    {
+      "id": "ex_passiv_1",
+      "question": "Formen Sie um mit 'sein + zu + Infinitiv': 'Die Dosierung muss vom Dienstarzt überprüft werden.'",
+      "correctSentence": "Die Dosierung ist vom Dienstarzt zu überprüfen.",
+      "hint": "Ersetzen Sie 'muss ... überprüft werden' durch 'ist ... zu überprüfen'."
     }
   ]
+},
+{
+  "id": "gram_b2_partizipialattribute",
+  "number": 27,
+  "title": "Erweiterte Partizipialattribute (Partizip I & II)",
+  "level": "C1",
+  "category": "Satzbau & Stil",
+  "summary": "Kondensierte Informationsdichte vor dem Nomen ohne Relativsätze.",
+  "explanationGerman": "Partizipialattribute komprimieren komplexe Relativsätze direkt vor das Nomen. Typisch für Arztbriefe, IT-Spezifikationen und wissenschaftliche Texte.\n\n1. Partizip I (Gleichzeitigkeit / Aktiv / Vorgang):\n   - Relativsatz: Der Patient, der laut schreit...\n   - C1-Partizip: Der laut schreiende Patient.\n   - Mit 'zu' (Gerundiv = Notwendigkeit): Die noch zu erfassenden Vitalwerte (die Werte, die noch erfasst werden müssen).\n\n2. Partizip II (Vorzeitigkeit / Passiv / Resultat):\n   - Relativsatz: Die Studie, die von der Universität Marburg veröffentlicht wurde...\n   - C1-Partizip: Die von der Universität Marburg veröffentlichte Studie.",
+  "examples": [
+    {
+      "german": "Die von der Stationsleitung angeordnete Isolierungsmaßnahme greift sofort.",
+      "english": "The isolation measure ordered by the ward management takes effect immediately."
+    },
+    {
+      "german": "Das im Code-Review identifizierte Sicherheitsproblem wurde behoben.",
+      "english": "The security vulnerability identified during the code review was resolved."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Der laut geschriene Patient* -> Richtig: *Der laut schreiende Patient* (Partizip I für andauernde Handlung!)"
+  ],
+  "exercises": [
+    {
+      "id": "ex_partizip_1",
+      "question": "Verwandeln Sie in ein Partizipialattribut: 'Die Tests, die automatisiert ablaufen'",
+      "correctSentence": "Die automatisiert ablaufenden Tests",
+      "hint": "Nutzen Sie das Partizip I von 'ablaufen' mit Adjektivendung."
+    }
+  ]
+},
+{
+  "id": "gram_b2_konjunktiv_indirekte_rede",
+  "number": 28,
+  "title": "Konjunktiv I (Indirekte Rede im Klinikbericht)",
+  "level": "B2/C1",
+  "category": "Verben & Distanzierung",
+  "summary": "Sachliche Distanzierung bei Patientenaussagen und Zeugenberichten.",
+  "explanationGerman": "Im Pflegebericht und Arztbrief dokumentiert man Aussagen des Patienten mit Konjunktiv I, um zu signalisieren: 'Der Patient behauptet das, es ist keine gesicherte Tatsache des Personals.'\n\nBildung: Verbstamm + Konjunktiv-Endungen (-e, -est, -e, -en, -et, -en).\nBesonders wichtig: sein -> er sei, sie seien / haben -> er habe, sie hätten / wollen -> er wolle.\n\nBeispiele:\n- Direkte Rede: Patient sagt: 'Ich habe keine Schmerzen und will nach Hause.'\n- B2/C1 Dokumentation: Der Patient gab an, er habe keine Schmerzen und wolle nach Hause entlassen werden.",
+  "examples": [
+    {
+      "german": "Herr Meyer äußerte, er fühle sich deutlich ruhiger und habe gut geschlafen.",
+      "english": "Mr. Meyer stated that he felt significantly calmer and had slept well."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Patient sagt, er hat keine Schmerzen.* (Umgangssprachlich; im Klinikbericht gehört Konjunktiv I: *er habe*)."
+  ],
+  "exercises": [
+    {
+      "id": "ex_konj_1",
+      "question": "Setzen Sie in den Konjunktiv I: 'Die Patientin berichtet: Ich bin seit gestern fieberfrei.' -> 'Die Patientin berichtet, sie ______ seit gestern fieberfrei.'",
+      "correctSentence": "Die Patientin berichtet, sie sei seit gestern fieberfrei.",
+      "hint": "3. Person Singular Konjunktiv I von 'sein' ist 'sei'."
+    }
+  ]
+},
+{
+  "id": "gram_b2_gehobene_konnektoren",
+  "number": 29,
+  "title": "Gehobene Konnektoren & Satzverknüpfungen (C1)",
+  "level": "C1",
+  "category": "Konnektoren & Diskurs",
+  "summary": "Meisterhafte logische Verknüpfungen für flüssige Argumentation.",
+  "explanationGerman": "Um auf C1-Niveau spontan und gewandt zu klingen, nutzt man präzise Konnektoren:\n\n1. insofern als / insoweit als (Einschränkend-begründend):\n   - Das System ist stabil, insofern als keine neuen API-Fehler auftreten.\n\n2. geschweige denn (Steigernde Verneinung = 'erst recht nicht'):\n   - Der Patient kann kaum alleine stehen, geschweige denn Treppen steigen.\n\n3. ungeachtet dessen (Konzessiv = 'trotzdem / dennoch'):\n   - Die Schicht war extrem fordernd; ungeachtet dessen blieb das Team hochkonzentriert.\n\n4. je nachdem ob / wie (Konditionale Abhängigkeit):\n   - Wir verlegen den Patienten morgen, je nachdem wie sich die Entzündungswerte entwickeln.",
+  "examples": [
+    {
+      "german": "Wir entscheiden über das Release, je nachdem ob die Lasttests erfolgreich durchlaufen.",
+      "english": "We will decide on the release depending on whether the load tests succeed."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Er kann nicht laufen, geschweige denn er kann rennen.* -> Richtig: *Er kann nicht laufen, geschweige denn rennen.*"
+  ],
+  "exercises": [
+    {
+      "id": "ex_konn_1",
+      "question": "Vervollständigen Sie: 'Er hat kein Geld für ein Fahrrad, ______ für ein teures Auto.'",
+      "correctSentence": "geschweige denn",
+      "hint": "Bedeutet: 'und erst recht nicht'."
+    }
+  ]
+}]
 };
 
   });
@@ -20892,218 +21220,254 @@ const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   // MODULE: data/simulations_data.js
   // ==========================================
   __register('data/simulations_data.js', function(module, exports, require) {
-// BFD-, Familien- & Partnerschafts-Simulationen (Interaktive Dialog-Szenarien)
-// Stufenförmige Musterantworten: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
+// BFD, Engineering, Wohnen, Feste & Partnerschafts-Simulationen
+// Höchstes Niveau: Aktiv B2 -> Professionell B2+ -> C1 Nuanciert -> C2 Idiomatisch
 
 const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   // ==========================================
   // 1. KLINIK & BFD (Station 2 / UKGM Marburg)
   // ==========================================
   {
-    id: "sim_first_day_supervisor",
-    title: "Erster Tag: Vorstellung bei der Stationsleitung",
-    category: "Klinik & BFD",
-    level: "B1+",
-    workplace: "Stationszimmer P2 (Zentrum für Psychische Gesundheit)",
-    provenance: "AUS_QUELLE",
-    situation: "Sie betreten am ersten Arbeitstag um 06:45 Uhr das Stationszimmer. Die Stationsleitung, Frau Schneider, blickt von der Patientenakte auf und begrüßt Sie.",
-    userRole: "Neuer BFD-Freiwilliger",
-    counterpartRole: "Frau Schneider (Stationsleitung)",
-    objective: "Sich freundlich, klar und strukturiert vorstellen, Rollenbereitschaft signalisieren und nach den ersten Schritten für den Tag fragen.",
-    turns: [
-      {
-        speaker: "Frau Schneider",
-        text: "Guten Morgen! Sie müssen der neue BFDler sein. Herzlich willkommen auf Station P2. Wie heißen Sie und haben Sie gut hergefunden?",
-        guidance: "Stellen Sie sich mit vollem Namen vor, bestätigen Sie Ihre Rolle als Bundesfreiwilliger und bedanken Sie sich für den Empfang.",
-        expectedCriteria: ["Name nennen", "Freundlicher Gruß", "Bestätigung der Ankunft", "Höfliche Ansprache (Sie)"],
-        responseTiers: {
-          basic: "Guten Morgen. Ich bin Ali. Ja, ich habe den Weg gefunden. Ich bin der neue BFDler.",
-          natural: "Guten Morgen, Frau Schneider! Mein Name ist Ali. Ja, vielen Dank, ich habe gut hergefunden. Ich freue mich sehr auf meinen Bundesfreiwilligendienst bei Ihnen auf Station.",
-          professionalB2: "Guten Morgen, Frau Schneider! Vielen Dank für die freundliche Aufnahme. Mein Name ist Ali, ich trete heute meinen BFD bei Ihnen an. Die Anfahrt vom Bahnhof Marburg hat reibungslos geklappt. Wo kann ich mich umziehen und wer ist heute meine Ansprechperson?",
-          c1: "Guten Morgen, Frau Schneider! Herzlichen Dank für das Willkommen. Mein Name ist Ali, und ich freue mich außerordentlich darauf, mein Freiwilligenjahr hier im Zentrum für Psychische Gesundheit zu absolvieren. Der Weg hierher war völlig unkompliziert. Wo darf ich meine Sachen deponieren, und mit wem darf ich den heutigen Tagesablauf abstimmen?"
-        },
-        whyExplanation: "Die professionelle B2/C1-Antwort verbindet Höflichkeit mit proaktiver Organisation (Umkleide, Ansprechpartner), was sofortige Verlässlichkeit signalisiert."
-      },
-      {
-        speaker: "Frau Schneider",
-        text: "Sehr schön, Ali! Der Umkleideraum ist im Untergeschoss, Spind Nummer 14 gehört Ihnen. Die Dienstkleidung liegt bereit. Wenn Sie umgezogen sind, kommen Sie bitte direkt wieder hoch zur Frühbesprechung. Haben Sie vorab noch dringende Fragen?",
-        guidance: "Bedanken Sie sich, bestätigen Sie die Anweisung (Umkleide UG, Spind 14) und kündigen Sie an, zur Übergabe pünktlich wieder da zu sein.",
-        expectedCriteria: ["Bestätigung der Anweisung", "Pünktlichkeit zusichern", "Dank"],
-        responseTiers: {
-          basic: "Danke, ich gehe mich jetzt umziehen und komme wieder.",
-          natural: "Alles klar, vielen Dank! Ich ziehe mich schnell im Untergeschoss um und bin zur Übergabe pünktlich wieder hier im Stationszimmer.",
-          professionalB2: "Vielen Dank für die Einweisung, Frau Schneider! Ich gehe direkt in die Umkleide zu Spind 14 und bin zur Frühbesprechung pünktlich wieder im Stationszimmer.",
-          c1: "Hervorragend, vielen Dank! Ich werde mich umgehend im Untergeschoss umziehen und pünktlich zur Frühbesprechung wieder hier sein. Weitere Fragen klären wir gerne im Anschluss an die Übergabe."
-        },
-        whyExplanation: "Wiederholen der Eckdaten (UG, Spind 14, Frühbesprechung) zeigt aktives Zuhören und vermeidet Missverständnisse."
-      }
-    ]
-  },
-
-  {
-    id: "sim_patient_medication_request",
-    title: "Sicherheit: Patient verlangt Bedarfsmedikation",
-    category: "Klinik & BFD",
-    level: "B2",
-    workplace: "Flur der geschützten Akutstation",
-    provenance: "AUS_QUELLE",
-    situation: "Ein sichtlich angespannter Patient (Herr Müller) kommt im Flur auf Sie zu, zittert an den Händen und fordert vehement eine Beruhigungstablette von Ihnen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Herr Müller (Angespannter Patient)",
-    objective: "Ruhig bleiben, absolute Rollengrenze wahren (keine Medikamente!), Empathie zeigen und die zuständige Pflegefachkraft herbeirufen.",
-    turns: [
-      {
-        speaker: "Herr Müller",
-        text: "Ich halte das nicht mehr aus! Mir zerreißt es den Kopf. Geben Sie mir sofort meine Bedarfsmedikation aus dem Schrank, ich brauche die Tablette jetzt!",
-        guidance: "Bleiben Sie ruhig. Signalisieren Sie Verständnis für seine Notlage, aber stellen Sie unmissverständlich klar, dass Sie als BFDler keine Medikamente ausgeben dürfen, und bieten Sie an, sofort die zuständige Pflegekraft zu holen.",
-        expectedCriteria: ["Ruhiger Ton", "Verständnis/Validierung", "Klare Rollengrenze (keine Medikamente)", "Sofortige Weiterleitung an Fachkraft"],
-        responseTiers: {
-          basic: "Ich darf Ihnen keine Medikamente geben. Ich hole die Schwester.",
-          natural: "Herr Müller, ich sehe, wie schlecht es Ihnen gerade geht. Als BFDler darf ich Ihnen leider keine Tabletten geben. Ich hole aber sofort Schwester Julia für Sie!",
-          professionalB2: "Herr Müller, ich nehme wahr, dass Sie unter enormer Anspannung stehen. Als Bundesfreiwilliger darf ich Ihnen aus rechtlichen und Sicherheitsgründen keine Medikamente aushändigen. Kommen Sie bitte kurz mit zum Stationszimmer, ich informiere sofort Ihre zuständige Pflegefachkraft.",
-          c1: "Herr Müller, ich spüre Ihre erhebliche Belastung in diesem Moment. Bitte haben Sie Verständnis dafür, dass ich als Freiwilliger keinesfalls befugt bin, in den Medikamentenschrank einzugreifen. Lassen Sie uns gemeinsam zur Stationszentrale gehen – ich veranlasse umgehend, dass die diensthabende Pflegefachkraft Ihre Bedarfsmedikation prüft."
-        },
-        whyExplanation: "Deeskalation erfordert Empathie ohne Nachgeben bei Sicherheitsgrenzen. Der 'magische Satz' schützt Patient und BFDler rechtlich."
-      }
-    ]
-  },
-
-  {
     id: "sim_sbar_handover",
     title: "Klinische Schichtübergabe nach SBAR-Schema",
     category: "Klinik & BFD",
     level: "B2/C1",
-    workplace: "Besprechungsraum Station 2",
+    workplace: "Besprechungsraum Station 2 (UKGM Marburg)",
     provenance: "AUS_QUELLE",
-    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker an die Spätdienst-Pflegekraft Sarah.",
+    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker (Zimmer 12) an die Spätdienst-Pflegekraft Sarah.",
     userRole: "BFD-Freiwilliger",
     counterpartRole: "Sarah (Pflegefachkraft im Spätdienst)",
-    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten und Verhaltensbeobachtung.",
+    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten, Verhaltensbeobachtung und Nahrungsaufnahme.",
     turns: [
       {
         speaker: "Sarah",
-        text: "Hi Ali! Wie war dein Dienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag irgendwelche Auffälligkeiten beim Essen oder bei den Vitalwerten?",
-        guidance: "Berichten Sie strukturiert: Blutdruck war leicht erhöht (145/90), er hat das Mittagessen verweigert, wirkte aber nach dem Spaziergang im Klinikpark deutlich ruhiger.",
-        expectedCriteria: ["Konkrete Werte nennen", "Nahrungsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
+        text: "Hi Ali! Wie war dein Frühdienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag Auffälligkeiten beim Essen oder bei den Vitalwerten?",
+        guidance: "Berichten Sie präzise: Vitalwerte (145/90 mmHg), Verweigerung der Mittagsmahlzeit, aber 600 ml getrunken, nach Begleitung im Klinikpark motorisch deutlich entspannter.",
+        expectedCriteria: ["Konkrete Werte nennen", "Nahrungs-/Flüssigkeitsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
         responseTiers: {
-          basic: "Er hat nicht gegessen und der Blutdruck war hoch. Nach dem Park ging es ihm besser.",
-          natural: "Herr Becker hatte heute Vormittag einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt. Aber nach unserem Spaziergang im Park um 11 Uhr wirkte er viel entspannter.",
-          professionalB2: "Zur Übergabe von Herrn Becker: Der Blutdruck lag um 09:30 Uhr bei 145/90 mmHg. Die Mittagsmahlzeit hat er verweigert, aber ca. 600 ml Wasser getrunken. Während unserer Begleitung in den Park war er ansprechbar und wirkte deutlich beruhigter.",
-          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle am Vormittag ergab eine leichte Hypertonie mit 145/90 mmHg. Die Nahrungsaufnahme verweigerte er zwar, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen der aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert."
+          basic: "Herr Becker hatte Blutdruck 145 zu 90. Er hat nicht gegessen, aber getrunken. Im Park ging es ihm viel besser.",
+          natural: "Herr Becker hatte um 09:30 Uhr einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt, aber ca. 600 ml Wasser getrunken. Nach unserem Spaziergang im Park wirkte er deutlich ruhiger.",
+          professionalB2: "Zur Übergabe von Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle ergab einen leichten Blutdruckanstieg auf 145/90 mmHg. Die feste Nahrung hat er verweigert, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen unserer aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert.",
+          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die morgendliche Statuserhebung zeigte eine mäßige Hypertonie von 145/90 mmHg bei normofrequenter Herzaktion. Während die Nahrungsaufnahme aufgrund depressiver Antriebslosigkeit sistierte, konnte eine adäquate Hydratation von 600 ml sichergestellt werden. Psychopathologisch präsentierte er sich nach der milieu-therapeutischen Parkbegleitung affektiv deutlich stabilisierter und zugewandter."
         },
-        whyExplanation: "Präzise Fachtermini (Hypertonie, Nahrungsaufnahme, agitiert) erleichtern der Pflegefachkraft die sofortige Dokumentation im Kurvenblatt."
+        whyExplanation: "Strukturierte Fachterminologie (Hypertonie, Hydratation, affektiv stabilisiert) spart Zeit und sichert die lückenlose Behandlungsqualität."
       }
     ]
   },
 
   {
-    id: "sim_deescalation_smoker_area",
-    title: "Deeskalation: Patient will unerlaubt Station verlassen",
+    id: "sim_doctor_rounds_visite",
+    title: "Ärztliche Visite & Fallbesprechung mit der Oberärztin",
     category: "Klinik & BFD",
-    level: "B2",
-    workplace: "Ausgangsbereich / Foyer der Station",
+    level: "B2/C1",
+    workplace: "Arztzimmer / Visite am Patientenbett",
     provenance: "AUS_QUELLE",
-    situation: "Frau Weber, die auf richterlichen Beschluss (Unterbringung) auf Station ist, drängt wütend gegen die Ausgangstür und verlangt, die Klinik sofort zu verlassen.",
+    situation: "Die Oberärztin Dr. Weber bittet Sie während der Visite um Ihre Einschätzung zur Tagesstruktur und Gruppenbeteiligung von Frau Jansen.",
     userRole: "BFD-Freiwilliger",
-    counterpartRole: "Frau Weber (Aufgebrachte Patientin)",
-    objective: "Nicht körperlich festhalten, Deeskalationssprache anwenden, räumlichen Abstand halten und das Stationsteam herbeirufen.",
+    counterpartRole: "Dr. Weber (Oberärztin)",
+    objective: "Wertfreie, präzise Verhaltensbeobachtung ohne Eigendiagnosen schildern und Kooperation in der Ergotherapie beschreiben.",
     turns: [
       {
-        speaker: "Frau Weber",
-        text: "Machen Sie sofort die Tür auf! Sie haben kein Recht, mich hier einzusperren! Wenn Sie mich nicht rauslassen, trete ich die Scheibe ein!",
-        guidance: "Bleiben Sie ruhig, blockieren Sie nicht bedrohlich den Weg, halten Sie mindestens 1,5 Meter Abstand und reden Sie mit ruhiger, tiefer Stimme.",
-        expectedCriteria: ["Ruhe bewahren", "Keine Provokation/Körperkontakt", "Gefühle anerkennen", "Hilfe rufen"],
+        speaker: "Dr. Weber",
+        text: "Ali, Sie haben Frau Jansen diese Woche bei der Ergotherapie und beim gemeinsamen Kochen begleitet. Wie erleben Sie ihre Konzentration und ihre soziale Interaktion in der Gruppe?",
+        guidance: "Schildern Sie differenziert: Zu Beginn zurückhaltend und reizempfindlich, nach ca. 20 Minuten aktive Teilnahme beim Gemüseschneiden, freundlicher Austausch mit Mitpatienten.",
+        expectedCriteria: ["Wertfreie Beobachtung", "Zeitlicher Verlauf", "Gruppeninteraktion", "Rollenangemessene Sprache"],
         responseTiers: {
-          basic: "Bitte treten Sie nicht gegen die Scheibe. Ich rufe den Arzt.",
-          natural: "Frau Weber, bitte bleiben Sie einen Moment stehen. Ich sehe, wie wütend Sie sind. Ich darf die Tür nicht aufschließen, aber ich hole sofort den Stationsarzt, damit Sie mit ihm sprechen können.",
-          professionalB2: "Frau Weber, ich trete einen Schritt zurück. Ich höre Ihren großen Ärger. Bitte beschädigen Sie nicht die Scheibe. Ich kann die Tür nicht öffnen, aber ich bitte sofort Herrn Dr. Keller hinzu, um Ihre Situation direkt zu klären.",
-          c1: "Frau Weber, ich nehme Ihre enorme Verärgerung über die Situation wahr. Ich halte respektvollen Abstand. Da ich aus rechtlichen Gründen nicht schlüsselberechtigt bin, verständige ich augenblicklich den Dienstarzt, damit Sie Ihr Anliegen umgehend im persönlichen Gespräch vortragen können."
+          basic: "Am Anfang war sie leise, aber danach hat sie gut mitgemacht und mit den anderen gesprochen.",
+          natural: "Zu Beginn der Kochgruppe wirkte Frau Jansen noch etwas zurückhaltend und lärmempfindlich. Nach etwa zwanzig Minuten hat sie sich dann aber aktiv beteiligt, beim Schneiden mitgeholfen und sogar gelächelt.",
+          professionalB2: "Frau Jansen zeigte anfangs eine deutliche Reizempfindlichkeit und zog sich zurück. Im weiteren Verlauf konnte sie sich jedoch gut auf die praktische Aufgabe konzentrieren und trat von sich aus in einen freundlichen Austausch mit zwei Mitpatientinnen.",
+          c1: "Phänomenologisch imponierte Frau Jansen zu Beginn der Intervention durch eine ausgeprägte Reizüberflutung mit Rückzugstendenzen. Durch gezielte Reizreduktion gelang ihr jedoch eine erfreuliche Re-Fokussierung: Sie vollzog komplexe Handlungsabläufe adäquat und zeigte im Gruppenkontakt eine spürbare affektive Aufhellung."
         },
-        whyExplanation: "In der Akutpsychiatrie gilt: Sicherheit vor Konfrontation. Eigene Grenzen verbalisieren, Abstand wahren und Fachpersonal hinzuziehen."
+        whyExplanation: "Genaue Verhaltensbeschreibungen unterstützen Ärzte bei der Beurteilung des Therapieerfolgs."
       }
     ]
   },
 
   // ==========================================
-  // 2. FAMILIE & ALLTAG IN DEUTSCHLAND
+  // 2. ENGINEERING & IT-ARBEITSPLATZ
   // ==========================================
   {
-    id: "sim_family_dinner",
-    title: "Abendessen bei der Familie / Gastfamilie",
-    category: "Familie & Alltag",
-    level: "B1+ → B2",
-    workplace: "Esszimmer im Familienhaushalt",
+    id: "sim_tech_daily_standup",
+    title: "Daily Stand-up & Sprint-Architektur im IT-Team",
+    category: "Engineering & IT",
+    level: "B2/C1",
+    workplace: "Agiler Meetingraum / Remote Video Call",
     provenance: "AUS_QUELLE",
-    situation: "Sie sind zum Sonntagsabendessen bei der Familie eingeladen. Die Gastgeberin, Frau Klein, serviert das Essen und erkundigt sich nach Ihren ersten Eindrücken in Marburg.",
-    userRole: "Gast / Familienmitglied",
-    counterpartRole: "Frau Klein (Gastgeberin)",
-    objective: "Höflich für das Essen danken, über den Alltag und BFD erzählen, deutsche Tischkonversation meistern und Interesse an der Familie zeigen.",
+    situation: "Im 15-minütigen Daily Scrum berichten Sie dem Entwicklerteam über den aktuellen Stand der API-Optimierung und bestehende Blocker.",
+    userRole: "Software Engineer / IT Specialist",
+    counterpartRole: "Markus (Scrum Master / Lead Architect)",
+    objective: "Gestern Erledigtes, Heutiges und Blocker (Datenbank-Flaschenhals) klar, prägnant und lösungsorientiert präsentieren.",
     turns: [
       {
-        speaker: "Frau Klein",
-        text: "Greif bitte kräftig zu, Ali! Es gibt Rinderbraten mit Spätzle und frischem Salat. Wie gefällt dir Marburg bisher und wie läuft es im Krankenhaus?",
-        guidance: "Bedanken Sie sich für das Essen, loben Sie die Zubereitung und schildern Sie positiv, aber authentisch Ihre Eindrücke von der Stadt und der Arbeit.",
-        expectedCriteria: ["Dank für das Essen", "Lob der Speisen", "Eindrücke zu Marburg", "Bericht über das Krankenhaus"],
+        speaker: "Markus",
+        text: "Morgen zusammen! Ali, du bist dran: Was hast du gestern geschafft, woran arbeitest du heute und gibt es Blocker bei der Microservice-Migration?",
+        guidance: "Berichten Sie: Gestern Endpunkte refaktoriert, heute Unit-Tests und Docker-Containerisierung, Blocker: Latenzprobleme bei SQL-Queries (Datenbank-Flaschenhals).",
+        expectedCriteria: ["Struktur (Gestern/Heute/Blocker)", "Präzise IT-Fachsprache", "Lösungsvorschlag anbieten"],
         responseTiers: {
-          basic: "Danke, das Essen schmeckt sehr gut. Marburg ist schön und im Krankenhaus ist es interessant.",
-          natural: "Vielen Dank, Frau Klein, das riecht wirklich köstlich! Marburg gefällt mir total gut, besonders die Altstadt. Und im Krankenhaus lerne ich jeden Tag unglaublich viel Neues.",
-          professionalB2: "Herzlichen Dank, Frau Klein! Der Braten sieht wirklich hervorragend aus. Marburg hat mich sehr positiv überrascht – die steilen Gassen und das Schloss haben ein tolles Flair. Im Universitätsklinikum werde ich vom Pflegeteam sehr herzlich unterstützt, was mir den Einstieg enorm erleichtert.",
-          c1: "Ganz herzlichen Dank für die Einladung und dieses wundervolle Essen, Frau Klein! Die historische Kulisse von Marburg fasziniert mich sehr. Auch meine ersten Wochen im Universitätsklinikum empfinde ich als äußerst bereichernd – die interdisziplinäre Zusammenarbeit auf Station gibt mir wertvolle Einblicke in das deutsche Gesundheitssystem."
+          basic: "Gestern habe ich den Code verbessert. Heute schreibe ich Tests. Bei der Datenbank ist es noch zu langsam.",
+          natural: "Gestern habe ich das Refactoring der Authentifizierungs-Endpunkte abgeschlossen. Heute schreibe ich die Unit-Tests und baue den Docker-Container. Als Blocker haben wir noch eine hohe Latenz bei den Datenbank-Queries – da müssen wir die Indizes optimieren.",
+          professionalB2: "Gestern konnte ich das Refactoring der REST-API-Schnittstellen erfolgreich abschließen. Mein Fokus liegt heute auf der Testabdeckung mit PyTest sowie dem Container-Deployment. Als potenziellen Flaschenhals sehe ich die Abfragezeiten der SQL-Datenbank; ich schlage vor, nach dem Stand-up mit Jonas ein kurzes Query-Profiling durchzuführen.",
+          c1: "Gestern habe ich die serviceübergreifende Schnittstellenarchitektur konsolidiert und redundante Payloads eliminiert. Der heutige Meilenstein umfasst die automatisierte CI/CD-Pipeline-Integration und Lasttests. Als kritischen Blocker identifiziere ich persistente I/O-Latenzen im Datenbankcluster, weshalb ich eine Index-Restrukturierung sowie die Implementierung einer Redis-Caching-Schicht favorisiere."
         },
-        whyExplanation: "Natürliche Wertschätzung und ein lebendiger Bericht über Alltagserfahrungen schaffen sofortige familiäre Nähe und Sympathie."
-      },
-      {
-        speaker: "Herr Klein",
-        text: "Möchtest du noch einen Nachschlag, Ali? Es ist noch reichlich da! Und wie kommst du eigentlich mit den Behörden und der Wohnungssuche voran?",
-        guidance: "Höflich antworten (annehmen oder satt sein), für das Angebot danken und kurz über den Stand bei Bürgeramt/Wohnung berichten.",
-        expectedCriteria: ["Reaktion auf Nachschlag", "Dank", "Statusbericht Wohnung/Amt"],
-        responseTiers: {
-          basic: "Ja, gern noch etwas Fleisch. Mit der Wohnung suche ich noch.",
-          natural: "Ein ganz kleines Stück Fleisch nehme ich gerne noch, danke! Bei der Wohnungssuche habe ich nächste Woche zwei Besichtigungen, und beim Bürgerbüro war die Anmeldung zum Glück ganz unkompliziert.",
-          professionalB2: "Gern nehme ich noch eine kleine Portion Spätzle, es schmeckt wirklich vorzüglich. Was die Bürokratie betrifft: Die Ummeldung beim Einwohnermeldeamt hat reibungslos geklappt. Für die Wohnungssuche habe ich bereits einige Bewerbungsunterlagen vorbereitet und hoffe auf eine zeitnahe Rückmeldung.",
-          c1: "Ein klein wenig von den Spätzle nehme ich sehr gerne noch, herzlichen Dank! Was die behördlichen Angelegenheiten anbelangt, verlief die Registrierung absolut planmäßig. Bezüglich der Wohnraumbeschaffung habe ich mein Profil auf den gängigen Portalen hinterlegt und stehe bereits im Austausch mit zwei Vermietern."
-        },
-        whyExplanation: "Flüssige Antworten auf Nachfragen verbinden Höflichkeitsfloskeln mit konkreten Fortschritten im Alltag."
+        whyExplanation: "Im agilen Tech-Umfeld zählen klare Fakten, Fachbegriffe (Refactoring, Latenz, Flaschenhals, Lasttests) und proaktive Lösungen."
       }
     ]
   },
 
   {
-    id: "sim_family_weekend_chores",
-    title: "Wochenendplanung & Haushaltsorganisation",
-    category: "Familie & Alltag",
+    id: "sim_tech_code_review_discussion",
+    title: "Konstruktives Code-Review & Architektur-Debatte",
+    category: "Engineering & IT",
+    level: "B2/C1",
+    workplace: "GitHub Pull Request / Review-Session",
+    provenance: "AUS_QUELLE",
+    situation: "Ein Kollege hat einen Pull Request eingereicht, bei dem Sicherheitsaspekte und Skalierbarkeit unzureichend gelöst sind. Sie möchten das Feedback kollegial und fachlich fundiert vortragen.",
+    userRole: "Senior Software Developer",
+    counterpartRole: "Tobias (Entwicklerkollege)",
+    objective: "Wertschätzend positives Feedback voranstellen, Sicherheitsrisiken sachlich erläutern und Best Practices vorschlagen.",
+    turns: [
+      {
+        speaker: "Tobias",
+        text: "Hi Ali, hast du dir meinen Pull Request für das neue Zahlungs-Gateway schon angeschaut? Ich wollte den Branch eigentlich gleich mergen.",
+        guidance: "Loben Sie die schnelle Umsetzung, weisen Sie aber diplomatisch auf fehlende Eingabevalidierung und unverschlüsselte API-Keys hin, und schlagen Sie Umgebungsvariablen (.env) vor.",
+        expectedCriteria: ["Wertschätzender Einstieg", "Klares Aufzeigen von Risiken", "Konkreter technischer Gegenvorschlag"],
+        responseTiers: {
+          basic: "Der Code ist gut, aber die Passwörter stehen im Klartext. Das können wir so nicht mergen.",
+          natural: "Danke für die schnelle Umsetzung, Tobias! Die Logik sieht super aus. Mir ist allerdings aufgefallen, dass die API-Keys noch direkt im Quellcode stehen. Lass uns die kurz in Umgebungsvariablen auslagern und eine Validierung einbauen, dann können wir direkt mergen.",
+          professionalB2: "Vielen Dank für den PR, die Modulstruktur ist wirklich sauber aufgebaut. Aus Sicherheitsgründen sollten wir die sensiblen Credentials jedoch keinesfalls im Repository committen, sondern über ein Secret-Management laden. Wenn du das kurz anpasst und wir noch zwei Edge-Case-Tests ergänzen, gebe ich sofort mein Approval.",
+          c1: "Ich begrüße die elegante Entkopplung der Komponenten in deinem Entwurf ausdrücklich. Unter Sicherheitsaspekten birgt die Hardcodierung der API-Secrets jedoch ein gravierendes Vulnerabilitätsrisiko. Ich plädiere dafür, die Konfiguration über Vault bzw. Environment-Variablen zu kapseln und strikte Input-Sanitization zu implementieren, um Injection-Vektoren verlässlich zu unterbinden."
+        },
+        whyExplanation: "Konstruktive Kritik im Code-Review trennt die Person von der Sache und schützt die Softwarequalität."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 3. WOHNEN, VERMIETER & HAUSGEMEINSCHAFT
+  // ==========================================
+  {
+    id: "sim_house_heating_complaint",
+    title: "Mängelrüge an den Vermieter (Heizungsausfall im Winter)",
+    category: "Wohnen & Vermieter",
+    level: "B2/C1",
+    workplace: "Telefonat / Schriftliche Mitteilung an die Hausverwaltung",
+    provenance: "AUS_QUELLE",
+    situation: "Mitte November fällt in Ihrer Mietwohnung die Heizung komplett aus. Die Raumtemperatur beträgt nur noch 14 Grad. Sie rufen die Hausverwaltung an, um eine sofortige Notfall-Reparatur einzufordern.",
+    userRole: "Mieter",
+    counterpartRole: "Herr Fischer (Hausverwalter)",
+    objective: "Den Sachverhalt sachlich und bestimmt schildern, Dringlichkeit begründen, Frist setzen und Mietminderung ankündigen falls keine Abhilfe erfolgt.",
+    turns: [
+      {
+        speaker: "Herr Fischer",
+        text: "Hausverwaltung Fischer, guten Tag. Worum geht es bitte?",
+        guidance: "Nennen Sie Namen, Adresse und Wohnungsnummer. Schildern Sie den Totalausfall der Heizung bei Minusgraden und fordern Sie einen Heizungsmonteur für den heutigen Tag an.",
+        expectedCriteria: ["Genaue Adressangabe", "Präzise Mängelbeschreibung", "Dringlichkeit/Frist", "Bestimmter, professioneller Ton"],
+        responseTiers: {
+          basic: "Guten Tag, hier ist Ali. Bei mir ist die Heizung kaputt und es ist sehr kalt. Bitte schicken Sie schnell jemanden.",
+          natural: "Guten Tag, Herr Fischer, mein Name ist Ali aus der Weidenhäuser Straße 14, 2. Stock. Bei mir ist seit gestern Abend die Heizung komplett ausgefallen und die Wohnung hat nur noch 14 Grad. Da es draußen friert, brauche ich bitte heute dringend einen Notdienst.",
+          professionalB2: "Guten Tag, Herr Fischer. Ich melde hiermit einen dringenden Mangel in meiner Wohnung in der Weidenhäuser Straße 14. Die Heizkörper bleiben trotz voller Einstellung vollkommen kalt, die Raumtemperatur liegt unter 15 Grad Celsius. Da hier akute Unbewohnbarkeit droht, bitte ich Sie um die umgehende Entsendung eines Heizungsmonteurs noch am heutigen Vormittag.",
+          c1: "Guten Tag, Herr Fischer. Ich rüge hiermit gemäß § 536 BGB einen gravierenden Mangel an der Mietsache in der Weidenhäuser Straße 14. Es liegt ein vollständiger Ausfall der Heizungsanlage bei winterlichen Außentemperaturen vor, was zu einer Unterschreitung der vertraglich geschuldeten Mindesttemperatur führt. Ich fordere Sie hiermit zur unverzüglichen Mängelbeseitigung binnen 24 Stunden auf und behalte mir andernfalls eine angemessene Mietminderung sowie die Veranlassung einer Ersatzvornahme vor."
+        },
+        whyExplanation: "Im Mietrecht sichert eine präzise Fristsetzung und Verweis auf Mindesttemperaturen sofortiges Handeln der Hausverwaltung."
+      }
+    ]
+  },
+
+  {
+    id: "sim_house_noise_neighbor",
+    title: "Ruhezeiten & Lärmbeschwerde bei Nachbarn klären",
+    category: "Wohnen & Vermieter",
     level: "B2",
-    workplace: "Wohnzimmer / Küche",
+    workplace: "Hausflur / Wohnungstür des Nachbarn",
     provenance: "AUS_QUELLE",
-    situation: "Am Samstagmorgen besprechen Sie mit Ihren Mitbewohnern bzw. Familienangehörigen die anstehenden Aufgaben (Einkaufen, Putzen) und den gemeinsamen Sonntagsausflug.",
-    userRole: "Familienmitglied / Mitbewohner",
-    counterpartRole: "Jonas (Mitbewohner / Bruder)",
-    objective: "Aufgaben proaktiv übernehmen, Vorschläge für den Einkauf machen und einen fairen Kompromiss für das Wochenende finden.",
+    situation: "Ihr Nachbar spielt um 23:30 Uhr unter der Woche laute Musik, während Sie am nächsten Morgen um 05:30 Uhr Frühdienst im Krankenhaus haben. Sie klingeln freundlich, aber bestimmt.",
+    userRole: "Nachbar / BFD-Mitarbeiter",
+    counterpartRole: "Lukas (Feiernder Nachbar)",
+    objective: "Freundlich bleiben, Verständnis für Geselligkeit zeigen, aber klar die gesetzliche Nachtruhe (ab 22 Uhr) und den frühen Dienstbeginn einfordern.",
     turns: [
       {
-        speaker: "Jonas",
-        text: "Morgen steht der Wocheneinkauf an und die Küche müsste auch mal wieder gründlich geputzt werden. Wer übernimmt was? Und hast du eine Idee für morgen Nachmittag?",
-        guidance: "Bieten Sie an, einen Teil der Aufgaben (z. B. Bad/Küche oder Großeinkauf) zu übernehmen, und schlagen Sie eine gemeinsame Aktivität vor (z. B. Ausflug zur Lahn).",
-        expectedCriteria: ["Proaktive Aufgabenübernahme", "Konkreter Vorschlag", "Kooperativer Ton"],
+        speaker: "Lukas",
+        text: "Hi! Sorry, ist die Musik zu laut? Wir feiern nur kurz in meinen Geburtstag rein.",
+        guidance: "Gratulieren Sie kurz zum Geburtstag, erklären Sie Ihre Situation (Frühdienst 05:30 Uhr im Krankenhaus) und bitten Sie darum, die Bässe/Lautstärke auf Zimmerlautstärke zu drosseln.",
+        expectedCriteria: ["Glückwunsch zum Geburtstag", "Empathie für Anlass", "Eigene Schichtarbeit begründen", "Klare Bitte um Zimmerlautstärke"],
         responseTiers: {
-          basic: "Ich kann einkaufen gehen. Und morgen können wir an die Lahn fahren.",
-          natural: "Ich übernehme gerne den Großeinkauf beim Supermarkt, wenn du dafür die Küche machst. Und morgen Nachmittag könnten wir doch bei dem schönen Wetter an die Lahn spazieren gehen!",
-          professionalB2: "Lass uns das fair aufteilen: Ich schreibe die Einkaufsliste und besorge alles im Supermarkt, während du dich um die Küche kümmerst. Für morgen Nachmittag schlage ich vor, dass wir eine kleine Fahrradtour entlang der Lahn machen – was hältst du davon?",
-          c1: "Ich plädiere für eine pragmatische Aufgabenteilung: Ich übernehme den Wocheneinkauf inklusive Getränkekisten, sodass du freie Hand für die Grundreinigung der Küche hast. Im Anschluss an die Erledigungen böte sich morgen bei Sonnenschein ein ausgedehnter Ausflug ins Lahntal an – fändest du das passend?"
+          basic: "Alles Gute zum Geburtstag! Aber bitte mach die Musik leiser, ich muss morgen früh um 5 aufstehen.",
+          natural: "Erst mal herzlichen Glückwunsch zum Geburtstag! Ich gönne euch die Feier von Herzen. Ich habe morgen früh allerdings um 05:30 Uhr Frühdienst im Klinikum und muss dringend schlafen. Wäre es möglich, dass ihr die Bässe etwas runterdreht und die Musik auf Zimmerlautstärke stellt?",
+          professionalB2: "Ganz herzlichen Glückwunsch zum Geburtstag, Lukas! Ich verstehe vollkommen, dass du deinen Ehrentag zelebrieren möchtest. Da ich morgen früh um 05:30 Uhr meinen Dienst auf der Akutstation im Krankenhaus antrete, bin ich dringend auf meinen Schlaf angewiesen. Ich wäre dir sehr dankbar, wenn ihr die Lautstärke der Musik und der Bässe ab jetzt auf Zimmerlautstärke reduzieren könntet.",
+          c1: "Zunächst meine aufrichtigen Glückwünsche zu deinem Geburtstag! Ich möchte eure Feierlaune keineswegs trüben. Da ich jedoch im Rahmen meines Dienstes im Universitätsklinikum morgen früh um 05:30 Uhr voll einsatzfähig sein muss, appelliere ich an deine Rücksichtnahme hinsichtlich der gesetzlichen Nachtruhe. Ich danke dir sehr für dein Verständnis, wenn ihr die Lautstärke entsprechend dämpft."
         },
-        whyExplanation: "Klare Vorschläge mit 'Lass uns...' oder 'Was hältst du davon...' demonstrieren natürliche Verhandlungskompetenz im Alltag."
+        whyExplanation: "Die Kombination aus Glückwünschen und klarer Schilderung der beruflichen Verantwortung entwaffnet Konflikte sofort."
       }
     ]
   },
 
   // ==========================================
-  // 3. PARTNERSCHAFT & HERZ (GF / WIFEY)
+  // 4. FAMILIE, FESTE & WEIHNACHTEN
+  // ==========================================
+  {
+    id: "sim_family_christmas_dinner",
+    title: "Heiligabend & Weihnachtsfeier bei der Familie",
+    category: "Familie, Feste & Feiern",
+    level: "B2/C1",
+    workplace: "Festlich geschmücktes Wohnzimmer am 24. Dezember",
+    provenance: "AUS_QUELLE",
+    situation: "Sie verbringen Heiligabend bei der Familie / Gastfamilie in Hessen. Nach der Bescherung am Tannenbaum stoßen alle mit einem Glas Wein / Sekt an und blicken auf das vergangene Jahr zurück.",
+    userRole: "Gast / Familienmitglied",
+    counterpartRole: "Großmutter / Gastgeberin Elisabeth",
+    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für die Geborgenheit und Integration ausdrücken und frohe Weihnachten wünschen.",
+    turns: [
+      {
+        speaker: "Elisabeth",
+        text: "Lieber Ali, wir freuen uns so sehr, dass du heute an Heiligabend bei uns bist und wir diesen besonderen Abend gemeinsam verbringen dürfen! Möchtest du mit uns anstoßen?",
+        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Aufnahme in die Familie, reflektieren Sie kurz über das Jahr und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
+        expectedCriteria: ["Dank für die Aufnahme", "Gefühl der Geborgenheit", "Reflexion über das Jahr", "Weihnachtswunsch / Toast"],
+        responseTiers: {
+          basic: "Danke für die Einladung. Ich freue mich sehr, hier zu sein. Frohe Weihnachten an alle!",
+          natural: "Ganz herzlichen Dank, liebe Elisabeth! Es bedeutet mir unglaublich viel, heute Heiligabend mit euch in diesem warmen Kreis zu verbringen. Ich habe mich selten so herzlich aufgenommen und geborgen gefühlt. Auf ein frohes und gesegnetes Weihnachtsfest – Prost zusammen!",
+          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Als ich nach Deutschland kam, war vieles neu und herausfordernd – doch durch eure Unterstützung habe ich hier ein echtes Zuhause gefunden. Ich wünsche uns allen erholsame, besinnliche Feiertage und beste Gesundheit. Frohe Weihnachten!",
+          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir zuteilwerden lasst, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Weihnachtsfest!"
+        },
+        whyExplanation: "Weihnachten ist in Deutschland das emotionalste Fest des Jahres – persönliche Dankbarkeit und Wärme berühren tief."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_birthday_toast",
+    title: "Geburtstagsfeier & Gratulationsrede",
+    category: "Familie, Feste & Feiern",
+    level: "B2",
+    workplace: "Geburtstagsfeier im Restaurant / Garten",
+    provenance: "AUS_QUELLE",
+    situation: "Ein geschätzter Kollege bzw. Familienfreund feiert seinen 50. Geburtstag. Sie überreichen ein Geschenk und halten einen kurzen humorvollen Trinkspruch.",
+    userRole: "Gast & Gratulant",
+    counterpartRole: "Jürgen (Das Geburtstagskind)",
+    objective: "Herzlich gratulieren, humorvoll auf das Alter anspielen, gute Wünsche aussprechen und das Geschenk überreichen.",
+    turns: [
+      {
+        speaker: "Jürgen",
+        text: "Ali, wie schön, dass du da bist! Schön, dass du den Weg gefunden hast. Lass uns erst mal anstoßen!",
+        guidance: "Überreichen Sie das Geschenk, wünschen Sie Gesundheit und Glück, machen Sie einen sympathischen Witz über die '50' und stoßen Sie an.",
+        expectedCriteria: ["Herzliche Glückwünsche", "Geschenkübergabe", "Humorvoller Spruch", "Trinkspruch"],
+        responseTiers: {
+          basic: "Alles Gute zum 50. Geburtstag, Jürgen! Hier ist ein kleines Geschenk für dich. Auf deine Gesundheit!",
+          natural: "Herzlichen Glückwunsch zum 50. Geburtstag, lieber Jürgen! Man sieht dir die fünfzig wirklich kein bisschen an – du wirst nicht älter, sondern nur erfahrener! Hier ist eine kleine Aufmerksamkeit von mir. Auf deine Gesundheit, viel Glück und ein fantastisches neues Lebensjahr!",
+          professionalB2: "Lieber Jürgen, zu deinem runden Geburtstag gratuliere ich dir von ganzem Herzen! 50 Jahre sind ein wunderbarer Meilenstein – voller Erfolge, wertvoller Erfahrungen und lebendiger Geschichten. Ich habe dir ein kleines Präsent mitgebracht, das dir hoffentlich eine Freude bereitet. Ich wünsche dir für das kommende Lebensjahrzehnt unerschütterliche Gesundheit, Lebensfreude und weiterhin so viel Energie!",
+          c1: "Lieber Jürgen! Zu diesem herausragenden Jubiläum entbiete ich dir meine herzlichsten Glück- und Segenswünsche. Dein unermüdlicher Tatendrang und deine lebensbejahende Art sind für uns alle eine Inspiration. Möge dir das neue Lebensjahrzehnt beste physische wie mentale Vitalität, inspirierende Momente und berufliche wie private Erfüllung bescheren. Auf dein Wohl und auf die nächsten fünfzig Jahre!"
+        },
+        whyExplanation: "Runde Geburtstage (30, 40, 50) werden in Deutschland mit besonderer Würdigung gefeiert."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 5. PARTNERSCHAFT & HERZ (GF / WIFEY)
   // ==========================================
   {
     id: "sim_gf_comfort_after_shift",
     title: "Nach einem schweren Tag: Freundin / Ehefrau trösten",
     category: "Partnerschaft & Herz",
-    level: "B2",
+    level: "B2/C1",
     workplace: "Zuhause auf dem Sofa",
     provenance: "AUS_QUELLE",
     situation: "Ihre Freundin / Ehefrau kommt völlig erschöpft und den Tränen nahe von der Arbeit nach Hause, lässt die Tasche fallen und setzt sich bedrückt auf das Sofa.",
@@ -21114,7 +21478,7 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
       {
         speaker: "Freundin / Ehefrau",
         text: "Heute war einfach der absolute Horror... Mein Chef hat mich vor dem ganzen Team ungerechtfertigt kritisiert und ich hatte keine einzige Pause. Ich fühle mich einfach nur leer und ausgelaugt.",
-        guidance: "Nehmen Sie sie in den Arm (verbal & emotional), validieren Sie ihren Schmerz ('Das tut mir so leid, Schatz'), bieten Sie etwas zu trinken/essen an und hören Sie einfach nur verständnisvoll zu.",
+        guidance: "Nehmen Sie sie verbal und emotional in den Arm, validieren Sie ihren Schmerz ('Das tut mir so leid, Schatz'), bieten Sie Tee/Essen an und hören Sie einfach nur verständnisvoll zu.",
         expectedCriteria: ["Liebevolles Kosewort", "Emotionale Validierung", "Keine Vorwürfe/Besserwisserei", "Entlastung anbieten"],
         responseTiers: {
           basic: "Komm her, Schatz. Das tut mir leid. Willst du einen Tee trinken?",
@@ -21123,75 +21487,37 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
           c1: "Mein Schatz, lass dich ganz fest umarmen. Dass du heute so einer ungerechten Behandlung ausgesetzt warst, macht mich traurig und wütend zugleich. Du musst diese Last jetzt nicht mehr alleine tragen. Lehn dich einfach an mich an, ich nehme dir heute alle Pflichten ab und sorge dafür, dass du zur Ruhe kommen kannst."
         },
         whyExplanation: "In emotionalen Momenten zählen emotionale Validierung ('Ich sehe deinen Schmerz') und praktische Entlastung mehr als rationale Ratschläge."
-      },
-      {
-        speaker: "Freundin / Ehefrau",
-        text: "Danke, dass du immer für mich da bist... Es tut so gut, deine Stimme zu hören. Manchmal habe ich einfach Angst, dass ich den Anforderungen im Job nicht gewachsen bin.",
-        guidance: "Bauen Sie ihr Selbstvertrauen auf: Erinnern Sie sie an ihre Stärken, versichern Sie ihr Ihre bedingungslose Liebe und Loyalität.",
-        expectedCriteria: ["Liebesbekundung", "Bestärkung des Selbstwertgefühls", "Zukunftszuversicht"],
-        responseTiers: {
-          basic: "Du bist sehr schlau und stark, Schatz. Ich liebe dich.",
-          natural: "Zweifle bitte niemals an dir selbst, Schatz! Du bist unglaublich kompetent, klug und herzlich. Ein schlechter Tag ändert überhaupt nichts an deinem großen Können. Ich glaube immer an dich und ich liebe dich von ganzem Herzen.",
-          professionalB2: "Mein Schatz, bitte lass dir von so einem Tag nicht deinen Selbstwert nehmen. Du leistest jeden Tag Großartiges und hast schon so viele schwierige Hürden mit Bravour gemeistert. Ich bin unfassbar stolz auf dich und stehe bedingungslos hinter dir – egal was passiert.",
-          c1: "Liebling, diese Zweifel sind nach solch einer Belastung verständlich, aber sie spiegeln nicht die Realität wider. Du verfügst über eine außergewöhnliche Stärke, Fachkompetenz und Integrität. Wir stehen das gemeinsam durch, und du hast in mir immer deinen verlässlichsten Rückhalt. Ich liebe dich über alles."
-        },
-        whyExplanation: "Tiefe partnerschaftliche Kommunikation stärkt die emotionale Bindung durch bedingungslose Bestätigung und liebevolle Worte."
       }
     ]
   },
 
+  // ==========================================
+  // 6. HESSEN & FRANKFURT LOKALKOLORIT
+  // ==========================================
   {
-    id: "sim_gf_future_planning",
-    title: "Zukunfts- & Wohnungsplanung mit der Partnerin",
-    category: "Partnerschaft & Herz",
-    level: "B2",
-    workplace: "Küchentisch bei einer Tasse Kaffee",
+    id: "sim_hessen_coffee_banter",
+    title: "Kaffeeküchen-Plausch & Frankfurter Dialekt-Banter",
+    category: "Hessen & Frankfurt",
+    level: "B2 (Authentisch)",
+    workplace: "Kaffeeküche auf Station P2 / Universitätsklinikum",
     provenance: "AUS_QUELLE",
-    situation: "Sie sitzen sonntags gemütlich zusammen und sprechen über die gemeinsame nächste Lebensphase: eine größere Wohnung, gemeinsame Reisen und die Aufteilung der Ersparnisse.",
-    userRole: "Partner / Ehemann",
-    counterpartRole: "Freundin / Ehefrau",
-    objective: "Wünsche empathisch abstimmen, gemeinsame Träume visualisieren und konstruktiv über Budget und Prioritäten sprechen.",
+    situation: "Um 10:30 Uhr treffen Sie Pfleger Heinz in der Kaffeeküche. Heinz ist ein waschechter Frankfurter und begrüßt Sie mit typischem hessischen Charme.",
+    userRole: "BFD-Freiwilliger",
+    counterpartRole: "Pfleger Heinz (Ur-Frankfurter)",
+    objective: "Locker auf Hessisch antworten, den Witz aufgreifen, Smalltalk über den Tag führen und kollegiale Nähe aufbauen.",
     turns: [
       {
-        speaker: "Freundin / Ehefrau",
-        text: "Schatz, schau mal hier auf ImmoScout: Diese 3-Zimmer-Wohnung mit Balkon in der Nähe vom Schlosspark wäre mein absoluter Traum! Meinst du, wir können uns die Miete leisten, wenn du deinen BFD machst?",
-        guidance: "Freude über den Traum teilen, realistisch und optimistisch die Finanzen durchgehen und vorschlagen, einen Besichtigungstermin zu vereinbaren.",
-        expectedCriteria: ["Begeisterung teilen", "Finanzielle Sicherheit/Pragmatismus", "Konkreter nächster Schritt"],
+        speaker: "Heinz",
+        text: "Ei gude, Ali! Na, machste dir erst mal 'nen Schoppe Kaffee? Wie läuft's denn mit den Patienten uff Zimmer 4, machen die kaan Zirkus?",
+        guidance: "Antworten Sie mit einem charmanten 'Gude!', bestätigen Sie den Kaffee und berichten Sie mit einer Prise Humor, dass auf Zimmer 4 alles friedlich ist.",
+        expectedCriteria: ["Hessische Grußformel (Gude)", "Lockerer Kaffeeküchen-Ton", "Entwarnung mit Humor"],
         responseTiers: {
-          basic: "Die Wohnung sieht schön aus. Wir können unser Geld zusammenrechnen und besichtigen.",
-          natural: "Die sieht ja wunderschön aus, Schatz! Mit dem Balkon wäre das perfekt für uns. Lass uns kurz unsere Einnahmen und das BFD-Taschengeld zusammenrechnen – ich glaube, wenn wir sparsam wirtschaften, kriegen wir das gut hin. Soll ich direkt eine Anfrage schreiben?",
-          professionalB2: "Was für ein toller Fund, Liebling! Der Grundriss und die Lage am Schlosspark sind wirklich traumhaft. Wenn wir mein Taschengeld, dein Gehalt und unsere fixen monatlichen Ausgaben kalkulieren, liegt die Warmmiete absolut im machbaren Rahmen. Lass uns heute Abend direkt die Bewerbungsunterlagen absenden!",
-          c1: "Ein fantastisches Objekt, mein Schatz! Die Kombination aus zentrumsnaher Lage und Grünfläche würde unsere Lebensqualität enorm steigern. Aus wirtschaftlicher Sicht ist die Warmmiete durch unsere kombinierte Budgetplanung vollkommen tragbar. Ich schlage vor, dass wir umgehend ein aussagekräftiges Anschreiben formulieren, um unsere Chancen auf einen Besichtigungstermin zu maximieren."
+          basic: "Gude Heinz! Ja, Kaffee brauche ich. Auf Zimmer 4 ist alles ruhig.",
+          natural: "Ei gude, Heinz! Ohne den Kaffee geht heute gar nix mehr! Bei Zimmer 4 ist zum Glück alles friedlich – die machen heute kaan Zirkus, die schlafen tief und fest.",
+          professionalB2: "Gude Heinz! Absolut, der Kaffee ist meine Rettung für die zweite Schichthälfte! Auf Zimmer 4 läuft alles wie am Schnürchen, die Patienten sind versorgt und die Stimmung ist total entspannt. Wie sieht's drüben bei dir aus?",
+          c1: "Ei gude wie, Heinz! Auf diesen Lebenselixier-Kaffee habe ich den ganzen Vormittag hingearbeitet. Bezüglich Zimmer 4 kann ich vollständige Entwarnung geben: Keinerlei Turbulenzen, alle Vitalwerte sind stabil erfasst und die Patienten sind kooperativ. Gönnen wir uns erst mal fünf Minuten Ruhe!"
         },
-        whyExplanation: "Gemeinsame Zukunftsplanung verbindet Begeisterung mit verlässlicher Partnerschaftlichkeit."
-      }
-    ]
-  },
-
-  {
-    id: "sim_gf_resolving_misunderstanding",
-    title: "Konfliktklärung ohne Vorwürfe (Ich-Botschaften)",
-    category: "Partnerschaft & Herz",
-    level: "B2/C1",
-    workplace: "Wohnzimmer am Abend",
-    provenance: "AUS_QUELLE",
-    situation: "Wegen der anstrengenden Schichten im Krankenhaus kam es in den letzten Tagen zu kleinen Spannungen und verpassten Verabredungen. Sie möchten das Gespräch suchen und die Wogen liebevoll glätten.",
-    userRole: "Reflektierter Partner",
-    counterpartRole: "Freundin / Ehefrau",
-    objective: "Ohne Verteidigungshaltung oder Vorwürfe die eigenen Gefühle erklären, Verständnis für die Enttäuschung der Partnerin zeigen und eine liebevolle Lösung vereinbaren.",
-    turns: [
-      {
-        speaker: "Freundin / Ehefrau",
-        text: "Ich hatte in den letzten Tagen oft das Gefühl, dass du mit deinen Gedanken nur noch im Krankenhaus bist und ich an zweiter Stelle stehe. Als du gestern wieder zu spät kamst, war ich wirklich traurig.",
-        guidance: "Reagieren Sie nicht defensiv ('Ich muss schließlich arbeiten!'), sondern spiegeln Sie ihr Gefühl, entschuldigen Sie sich für die Unruhe und betonen Sie, wie wichtig sie Ihnen ist.",
-        expectedCriteria: ["Keine Abwehrhaltung", "Verständnis spiegeln", "Aufrichtige Entschuldigung", "Liebesbekundung & Zeitfenster vereinbaren"],
-        responseTiers: {
-          basic: "Es tut mir leid, dass ich zu spät war. Du bist mir sehr wichtig, Schatz.",
-          natural: "Es tut mir von Herzen leid, Schatz. Ich verstehe total, dass du traurig warst. Die ersten Wochen auf Station sind so voll mit Eindrücken, dass ich manchmal den Kopf voll habe. Aber du stehst für mich immer an erster Stelle. Lass uns dieses Wochenende ganz ohne Handy nur für uns zwei reservieren.",
-          professionalB2: "Danke, dass du mir das so offen und ehrlich sagst, Liebling. Es tut mir aufrichtig leid, dass ich dir unabsichtlich das Gefühl gegeben habe, vernachlässigt zu werden. Mein Kopf war von den Klinikfällen überreizt, aber das ist keine Entschuldigung. Du bist das Wichtigste in meinem Leben. Lass uns feste Abendrituale einführen, an denen das Krankenhaus draußen bleibt.",
-          c1: "Ich bin dir sehr dankbar für deine Offenheit, mein Schatz. Es schmerzt mich zu hören, dass mein Verhalten bei dir den Eindruck erweckt hat, du hättest keine Priorität. Die hohe mentale Belastung des Dienstbeginns hat mich absorbiert, doch das darf unsere Zweisamkeit keinesfalls beeinträchtigen. Ich möchte mich aufrichtig bei dir entschuldigen und vorschlagen, dass wir jeden Abend eine bewusste Stunde exklusiver Paarzeit fest etablieren."
-        },
-        whyExplanation: "Gewaltfreie Kommunikation in der Beziehung basiert auf Wertschätzung, Selbstreflexion und dem Angebot konkreter Verbindlichkeit."
+        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Pflegeteam."
       }
     ]
   }
@@ -21203,185 +21529,195 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   // MODULE: data/phrases_data.js
   // ==========================================
   __register('data/phrases_data.js', function(module, exports, require) {
-// "Was sage ich?" — Master Phrasen- & Redemittel-Transformator
-// Stufenförmige Transformationen: Basic (B1) -> Natürlich -> Professionell (B2) -> C1-Register
-// Vollständig integriert für Klinik, Station 2, Familie, Alltag und Partnerschaft (GF / Wifey)
+// "Was sage ich?" — Master Situations- & Phrasen-Transformator (B2 -> C1)
+// Vollständige Abdeckung: Klinik, IT/Engineering, Wohnen & Miete, Familie & Feste, Partnerschaft, Hessen/Frankfurt Dialekt & Humor
 
 const PHRASES_DATA = exports.PHRASES_DATA = {
-  title: "Praktischer Phrasen- & Redemittel-Transformator",
+  title: "Was sage ich in jeder Situation? (B2 -> C1 Situations-Matrix)",
   provenance: "AUS_QUELLE",
   categories: [
     // ----------------------------------------
-    // 1. VERSTÄNDIGUNG & HÖFLICHE RÜCKFRAGEN
-    // ----------------------------------------
-    {
-      id: "cat_verstaendigung_nachfragen",
-      name: "Verständigung sichern & Rückfragen",
-      icon: "👂",
-      phrases: [
-        {
-          id: "phr_001",
-          situation: "Man hat ein Wort oder eine ärztliche Anweisung akustisch nicht genau verstanden.",
-          basic: "Könnten Sie das bitte wiederholen?",
-          natural: "Könnten Sie das bitte noch einmal wiederholen?",
-          professionalB2: "Würden Sie diesen Punkt bitte noch einmal kurz wiederholen? Ich möchte sicherstellen, dass ich alles richtig erfasst habe.",
-          c1: "Wären Sie so freundlich, Ihre Ausführungen dahingehend noch einmal kurz zu rekapitulieren?",
-          relatedWords: ["wiederholen", "die Wiederholung", "das Nachfragen", "die Akustik"],
-          whyExplanation: "Das B2/C1-Muster signalisiert aktive Professionalität und Qualitätssicherung, statt nur 'nicht gehört' zu haben."
-        },
-        {
-          id: "phr_002",
-          situation: "Man ist unsicher, ob man den genauen Sinn einer Anweisung verstanden hat.",
-          basic: "Ich glaube, das habe ich nicht richtig verstanden.",
-          natural: "Ich glaube, ich habe das vorhin nicht ganz richtig verstanden.",
-          professionalB2: "Darf ich mich kurz vergewissern: Habe ich Sie richtig verstanden, dass die Vitalwerte vor dem Frühstück erhoben werden sollen?",
-          c1: "Um Missverständnisse von vornherein auszuschließen: Verstehe ich Ihre Anweisung dahingehend zutreffend, dass Priorität auf der Dokumentation liegt?",
-          relatedWords: ["verstehen", "das Missverständnis", "die Rückversicherung", "die Priorität"],
-          whyExplanation: "Paraphrasieren ('Darf ich mich vergewissern...') verhindert Behandlungsfehler auf Station."
-        },
-        {
-          id: "phr_003",
-          situation: "Ein Arzt oder Kollege spricht im Stress viel zu schnell.",
-          basic: "Könnten Sie bitte etwas langsamer sprechen?",
-          natural: "Könnten Sie vielleicht ein kleines bisschen langsamer sprechen?",
-          professionalB2: "Wären Sie so nett, das Sprechtempo ein wenig anzupassen, damit ich alle Details lückenlos notieren kann?",
-          c1: "Ich wäre Ihnen dankbar, wenn wir das Tempo kurz drosseln könnten, um eine fehlerfreie Erfassung der Informationen zu gewährleisten.",
-          relatedWords: ["langsam", "das Sprechtempo", "die Deutlichkeit", "lückenlos"],
-          whyExplanation: "Die B2-Begründung ('damit ich notieren kann') nimmt den Druck vom Gegenüber."
-        }
-      ]
-    },
-
-    // ----------------------------------------
-    // 2. KLINIK, STATION 2 & GRENZEN
+    // 1. KLINIK, STATION 2 & ROLLENGRENZEN
     // ----------------------------------------
     {
       id: "cat_klinik_grenzen",
-      name: "Klinik, Station 2 & Rollengrenzen",
+      name: "Klinik, Station 2 & Sicherheit",
       icon: "🏥",
       phrases: [
         {
-          id: "phr_004",
+          id: "phr_med_refusal",
           situation: "Ein Patient fordert Schmerzmittel oder Beruhigungstabletten von Ihnen.",
           basic: "Ich darf keine Medikamente geben. Ich hole die Schwester.",
-          natural: "Ich darf Ihnen leider keine Medikamente aushändigen. Ich sage aber sofort der zuständigen Pflegekraft Bescheid!",
+          natural: "Ich darf Ihnen leider keine Medikamente aushändigen. Ich gebe aber sofort Ihrer zuständigen Pflegekraft Bescheid!",
           professionalB2: "Als Bundesfreiwilliger bin ich rechtlich nicht befugt, Medikamente auszugeben. Ich informiere aber augenblicklich Ihre Pflegefachkraft darüber.",
           c1: "Bitte haben Sie Verständnis dafür, dass die Verabreichung von Arzneimitteln ausschließlich dem examinierten Fachpersonal obliegt. Ich leite Ihren Bedarf unverzüglich an den Dienstarzt weiter.",
-          relatedWords: ["befugt sein", "die Aushändigung", "die Rollengrenze", "obliegen"],
-          whyExplanation: "Juristische und ethische Rollenwahrung nach § 630a BGB schützt Sie vor Haftung."
+          relatedWords: ["die Befugnis", "die Aushändigung", "obliegen", "die Schweigepflicht"],
+          whyExplanation: "Juristische und ethische Rollenwahrung nach § 630a BGB schützt Sie vor Haftungsrisiken."
         },
         {
-          id: "phr_005",
-          situation: "Angehörige fordern am Telefon medizinische Diagnosen oder Befunde ein.",
+          id: "phr_doc_schweigepflicht",
+          situation: "Angehörige fordern am Telefon medizinische Diagnosen ein.",
           basic: "Ich darf Ihnen am Telefon nichts sagen wegen Datenschutz.",
-          natural: "Aus Datenschutzgründen darf ich Ihnen leider keine Auskunft über Diagnosen geben. Ich verbinde Sie mit dem Stationsarzt.",
-          professionalB2: "Aufgrund der ärztlichen Schweigepflicht nach § 203 StGB darf ich telefonisch keine medizinischen Auskünfte erteilen. Ich verbinde Sie sehr gerne direkt mit der behandelnden Ärztin.",
-          c1: "Unter Verweis auf die gesetzliche Schweigepflicht sowie den Patientendatenschutz ist mir eine telekommunikative Befundübermittlung untersagt. Ich transferiere Sie umgehend in das Arztzimmer.",
-          relatedWords: ["die Schweigepflicht", "die Auskunft", "der Datenschutz", "untersagt"],
+          natural: "Aus Datenschutzgründen darf ich Ihnen telefonisch leider keine Auskunft über Diagnosen geben. Ich verbinde Sie direkt mit dem Stationsarzt.",
+          professionalB2: "Aufgrund der ärztlichen Schweigepflicht nach § 203 StGB darf ich telefonisch keine medizinischen Auskünfte erteilen. Ich transferiere Sie gerne zur behandelnden Ärztin.",
+          c1: "Unter Verweis auf die gesetzliche Schweigepflicht sowie den Patientendatenschutz ist mir eine fernmündliche Befundübermittlung untersagt. Ich verbinde Sie umgehend mit dem zuständigen Dienstarzt.",
+          relatedWords: ["die Schweigepflicht", "fernmündlich", "die Befundübermittlung", "untersagt"],
           whyExplanation: "Klare Nennung der Schweigepflicht wirkt hochkompetent und deeskaliert Drängen der Angehörigen."
         }
       ]
     },
 
     // ----------------------------------------
-    // 3. PARTNERSCHAFT, LIEBE & EMOTIONEN (GF / WIFEY)
+    // 2. ENGINEERING & COMPUTERWORK / IT-MEETINGS
     // ----------------------------------------
     {
-      id: "cat_partnerschaft_liebe",
-      name: "Partnerschaft, Trösten & Liebe (GF / Wifey)",
-      icon: "❤️",
+      id: "cat_tech_engineering",
+      name: "Engineering & IT-Arbeitsplatz",
+      icon: "💻",
       phrases: [
         {
-          id: "phr_006",
-          situation: "Die Freundin / Ehefrau kommt erschöpft nach Hause und braucht emotionalen Rückhalt.",
-          basic: "Komm her, Schatz. Das tut mir leid. Ruh dich aus.",
-          natural: "Komm erst mal in meine Arme, mein Schatz! Es tut mir so leid, dass dein Tag so anstrengend war. Lehn dich einfach an mich an.",
-          professionalB2: "Lass dich ganz fest umarmen, Liebling. Es bricht mir das Herz zu sehen, wie erschöpft du bist. Du musst jetzt gar nichts tun – ich koche uns etwas Schönes und bin einfach nur für dich da.",
-          c1: "Mein geliebter Schatz, ich spüre, wie sehr dich die heutigen Ereignisse mitgenommen haben. Tritt einen Moment innerlich zurück und finde bei mir Geborgenheit. Ich halte dir heute den Rücken vollständig frei.",
-          relatedWords: ["die Geborgenheit", "trösten", "erschöpft", "der Rückhalt", "den Rücken freihalten"],
-          whyExplanation: "Echte deutsche Empathieausdrücke ('Komm in meine Arme', 'Ich halte dir den Rücken frei') schaffen emotionale Geborgenheit."
+          id: "phr_tech_standup_blocker",
+          situation: "Im Daily Stand-up einen Blocker oder Datenbank-Flaschenhals melden.",
+          basic: "Ich habe ein Problem mit der Datenbank. Es ist zu langsam.",
+          natural: "Ich hänge gerade an den Datenbankabfragen fest, die Latenz ist noch viel zu hoch. Da brauche ich kurz Unterstützung.",
+          professionalB2: "Als aktuellen Blocker sehe ich die Abfragezeiten des SQL-Clusters. Wir haben hier einen spürbaren Flaschenhals, den wir durch Index-Optimierung beheben sollten.",
+          c1: "Als kritischer Blocker manifestieren sich persistente I/O-Latenzen bei komplexen Joins. Um die geforderte Durchsatzrate zu gewährleisten, plädiere ich für eine relationale Index-Restrukturierung sowie ein Redis-Caching.",
+          relatedWords: ["der Flaschenhals", "die Latenz", "die Skalierbarkeit", "das Refactoring"],
+          whyExplanation: "Im agilen Tech-Umfeld vermittelt präzise Begrifflichkeit sofortige Seniorität."
         },
         {
-          id: "phr_007",
-          situation: "Man möchte seiner Partnerin im Alltag tiefe Liebe, Wertschätzung und Dankbarkeit mitteilen.",
-          basic: "Ich liebe dich sehr und bin froh, dass du da bist.",
-          natural: "Ich liebe dich von ganzem Herzen, Schatz. Du machst mein Leben jeden Tag so viel schöner!",
-          professionalB2: "Ich möchte dir einfach mal sagen, wie unglaublich dankbar ich für dich bin. Mit dir an meiner Seite fühle ich mich vollkommen angekommen und geborgen.",
-          c1: "Worte können kaum beschreiben, welch unschätzbare Bereicherung du für mein Leben darstellst. Deine Wärme, Klugheit und Liebe sind mein größtes Geschenk, für das ich täglich dankbar bin.",
-          relatedWords: ["die Wertschätzung", "geborgen", "die Bereicherung", "unschätzbar", "angekommen sein"],
-          whyExplanation: "Das Gefühl des 'Angekommenseins' gilt im Deutschen als einer der tiefsten Ausdrücke partnerschaftlichen Glücks."
-        },
-        {
-          id: "phr_008",
-          situation: "Man möchte einen kleinen Beziehungs-Konflikt liebevoll und ohne Vorwürfe ansprechen (Ich-Botschaft).",
-          basic: "Ich war traurig, weil wir uns gestern nicht gesehen haben.",
-          natural: "Ich habe dich gestern so sehr vermisst, Schatz. Es hat mir ein bisschen wehgetan, dass wir so wenig Zeit hatten.",
-          professionalB2: "Mir liegt unsere gemeinsame Zeit unglaublich am Herzen, Liebling. Als wir uns gestern verpasst haben, habe ich mich etwas einsam gefühlt. Lass uns schauen, wie wir das besser planen können.",
-          c1: "Unsere partnerschaftliche Zweisamkeit hat für mich höchste Priorität. Wenn berufsbedingt Termine kollidieren, schmerzt mich diese Distanz. Ich wünsche mir sehr, dass wir gemeinsam feste Ruheoasen für uns reservieren.",
-          relatedWords: ["die Zweisamkeit", "vermissen", "die Priorität", "die Ich-Botschaft", "die Ruheoase"],
-          whyExplanation: "Ich-Botschaften ('Ich habe mich einsam gefühlt' statt 'Du bist nie da') verhindern defensive Reaktionen."
+          id: "phr_tech_code_review_security",
+          situation: "Im Code-Review auf eine Sicherheitslücke oder unverschlüsselte Passwörter hinweisen.",
+          basic: "Bitte speichere die Passwörter nicht im Code.",
+          natural: "Die API-Keys sollten wir nicht direkt im Code committen. Lass uns die kurz in Umgebungsvariablen auslagern.",
+          professionalB2: "Aus Sicherheitsgründen sollten wir Secrets keinesfalls im Repository hardcoden. Ich schlage vor, die Konfiguration über ein Secret-Management oder `.env`-Dateien zu laden.",
+          c1: "Unter Sicherheitsaspekten birgt die Hardcodierung der Authentifizierungs-Token ein gravierendes Vulnerabilitätsrisiko. Ich votiere für die Kapselung via Environment-Variablen und strikte Input-Sanitization.",
+          relatedWords: ["die Schwachstelle", "die Kapselung", "votiere für", "das Secret-Management"],
+          whyExplanation: "Konstruktive Kritik schützt Codequalität und fördert die Zusammenarbeit im Team."
         }
       ]
     },
 
     // ----------------------------------------
-    // 4. FAMILIE, GASTFREUNDSCHAFT & ALLTAG
+    // 3. WOHNEN, VERMIETER & NACHBARN
     // ----------------------------------------
     {
-      id: "cat_familie_alltag",
-      name: "Familie, Gastfreundschaft & Alltag",
+      id: "cat_wohnen_vermieter",
+      name: "Wohnen, Vermieter & Reparaturen",
       icon: "🏡",
       phrases: [
         {
-          id: "phr_009",
-          situation: "Man wird bei der Familie zum Essen empfangen und möchte herzlich danken.",
-          basic: "Danke für das leckere Essen und die Einladung.",
-          natural: "Vielen Dank für die Einladung! Das Essen riecht wirklich fantastisch.",
-          professionalB2: "Herzlichen Dank für die liebevolle Gastfreundschaft und dieses köstliche Mahl! Es ist wunderschön, heute bei Ihnen in so gemütlicher Runde zusammenzusitzen.",
-          c1: "Ich möchte meinen aufrichtigen Dank für Ihre überaus herzliche Gastfreundschaft zum Ausdruck bringen. Dieses exquisite Menü und die anregende Gesellschaft bereiten mir außerordentliche Freude.",
-          relatedWords: ["die Gastfreundschaft", "köstlich", "das Mahl", "die Runde", "anregend"],
-          whyExplanation: "Deutsche Tischkultur honoriert sowohl das Essen als auch die gemütliche Geselligkeit."
+          id: "phr_house_heating_complaint",
+          situation: "Heizungsausfall im Winter der Hausverwaltung melden.",
+          basic: "Meine Heizung geht nicht und es ist kalt. Bitte reparieren.",
+          natural: "Guten Tag, bei mir in der Wohnung ist die Heizung komplett ausgefallen und es hat nur 14 Grad. Bitte schicken Sie heute dringend einen Monteur.",
+          professionalB2: "Guten Tag, ich melde hiermit einen dringenden Heizungsausfall in meiner Wohnung. Die Raumtemperatur unterschreitet die Mindestwerte erheblich. Ich bitte um Entsendung eines Notdienstes am heutigen Vormittag.",
+          c1: "Ich rüge hiermit gemäß § 536 BGB den Totalausfall der Heizungsanlage. Da die Mietsache bei den aktuellen Minusgraden unbewohnbar wird, fordere ich Sie zur Mängelbeseitigung binnen 24 Stunden auf und behalte mir eine Mietminderung vor.",
+          relatedWords: ["die Mängelrüge", "die Mietminderung", "die Mietsache", "die Abhilfe"],
+          whyExplanation: "Fristsetzung und rechtliche Klarheit garantieren schnelle Reparaturen."
         },
         {
-          id: "phr_010",
-          situation: "Man möchte bei Tisch höflich ablehnen, wenn man bereits satt ist.",
-          basic: "Nein danke, ich bin voll.",
-          natural: "Vielen Dank, aber ich bin wirklich pappsatt! Es war super lecker.",
-          professionalB2: "Es hat ganz hervorragend geschmeckt, aber ich bin nun wirklich wunschlos satt und rundum zufrieden, vielen Dank!",
-          c1: "Ich danke Ihnen für den überaus großzügigen Nachschlag, muss jedoch dankend ablehnen, da ich vollends gesättigt bin. Das Mahl war vorzüglich.",
-          relatedWords: ["pappsatt", "wunschlos", "gesättigt", "vorzüglich", "der Nachschlag"],
-          whyExplanation: "'Ich bin pappsatt' ist umgangssprachlich herzlich; 'wunschlos satt' ist das ideale B2-Kompliment."
+          id: "phr_house_noise_diplomatic",
+          situation: "Den Nachbarn spät abends freundlich um Nachtruhe bitten.",
+          basic: "Bitte mach die Musik aus, es ist nach 22 Uhr.",
+          natural: "Hi! Entschuldige die Störung, aber könntet ihr die Musik bitte auf Zimmerlautstärke stellen? Ich muss morgen früh um 5 raus zur Frühschicht.",
+          professionalB2: "Guten Abend! Ich verstehe total, dass ihr feiert, aber da ich morgen früh um 05:30 Uhr Dienst im Krankenhaus habe, brauche ich dringend Schlaf. Wärt ihr so lieb und würdet die Bässe etwas dämpfen?",
+          c1: "Guten Abend! Ich möchte eure Geselligkeit keineswegs stören, appelliere jedoch mit Verweis auf die gesetzliche Nachtruhe an eure Rücksichtnahme, da ich morgen im Klinikum Frühdienst leisten muss. Herzlichen Dank!",
+          relatedWords: ["die Nachtruhe", "die Zimmerlautstärke", "die Rücksichtnahme", "dämpfen"],
+          whyExplanation: "Freundlichkeit gepaart mit dem Hinweis auf Schichtarbeit deeskaliert jeden Nachbarschaftskonflikt."
         }
       ]
     },
 
     // ----------------------------------------
-    // 5. DISKURS & DISKUSSION (B2/C1)
+    // 4. FAMILIE, FESTE & WEIHNACHTEN
     // ----------------------------------------
     {
-      id: "cat_diskurs_meinung",
-      name: "Diskurs, Meinung äußern & Einwände",
-      icon: "💬",
+      id: "cat_familie_feste",
+      name: "Familie, Geburtstage & Weihnachten",
+      icon: "🎄",
       phrases: [
         {
-          id: "phr_011",
-          situation: "Höflich unterbrechen, um in der Teamsitzung einen wichtigen Gedanken zu ergänzen.",
-          basic: "Darf ich auch etwas sagen?",
-          natural: "Dürfte ich dazu ganz kurz etwas ergänzen?",
-          professionalB2: "Wenn ich kurz einhaken dürfte: Zu diesem Aspekt gibt es eine wichtige Beobachtung aus dem Frühdienst.",
-          c1: "Gestatten Sie mir an dieser Stelle eine kurze Intervention, um die Argumentation um eine wesentliche klinische Nuance zu erweitern.",
-          relatedWords: ["einhaken", "die Intervention", "der Aspekt", "ergänzen", "die Nuance"],
-          whyExplanation: "'Wenn ich kurz einhaken dürfte' ist der eleganteste B2-Diskursmarker in deutschen Teambesprechungen."
+          id: "phr_xmas_toast",
+          situation: "Ein herzlicher Toast an Heiligabend bei der Familie / Gastfamilie.",
+          basic: "Frohe Weihnachten an alle und danke für das leckere Essen!",
+          natural: "Vielen Dank für diesen wunderschönen Heiligabend! Ich fühle mich bei euch so herzlich aufgenommen und geborgen. Auf ein frohes und gesegnetes Weihnachtsfest!",
+          professionalB2: "Liebe Familie, ich möchte euch von Herzen für eure wunderbare Gastfreundschaft danken. Bei euch habe ich ein echtes zweites Zuhause gefunden. Lasst uns anstoßen auf Gesundheit, Zusammenhalt und ein gesegnetes Fest!",
+          c1: "Es erfüllt mich mit tiefer Dankbarkeit, dieses traditionsreiche Fest in eurer warmen Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir schenkt, ist mein schönstes Geschenk. Auf unser aller Wohl und ein friedvolles Fest!",
+          relatedWords: ["die Geborgenheit", "der Zusammenhalt", "gesegnet", "der Toast"],
+          whyExplanation: "Weihnachten ist das Fest der emotionalen Verbundenheit in Deutschland."
         },
         {
-          id: "phr_012",
-          situation: "Einen Vortrag, eine Übergabe oder ein langes Argument zusammenfassend beenden.",
-          basic: "Ich bin jetzt fertig. Gibt es noch Fragen?",
-          natural: "Ich komme jetzt zum Schluss. Habt ihr dazu noch Fragen?",
-          professionalB2: "Zusammenfassend lässt sich festhalten, dass der Zustand stabil ist. Damit schließe ich meinen Bericht und stehe für Rückfragen zur Verfügung.",
-          c1: "Resümierend darf ich konstatieren, dass die eingeleiteten Maßnahmen greifen. Ich bedanke mich für Ihre Aufmerksamkeit und freue mich auf den anschließenden Diskurs.",
-          relatedWords: ["zusammenfassend", "konstatieren", "resümierend", "der Diskurs", "festhalten"],
-          whyExplanation: "'Zusammenfassend lässt sich festhalten...' ist das Standard-Fazit für B2/C1 Prüfungen und Konferenzen."
+          id: "phr_birthday_toast",
+          situation: "Glückwünsche und Trinkspruch zum Geburtstag eines Kollegen/Freundes.",
+          basic: "Alles Gute zum Geburtstag! Auf deine Gesundheit!",
+          natural: "Herzlichen Glückwunsch zum Geburtstag! Bleib genau so, wie du bist – voller Energie und Lebensfreude. Auf dein neues Lebensjahr!",
+          professionalB2: "Zu deinem Geburtstag gratuliere ich dir von ganzem Herzen! Möge das neue Lebensjahr dir beste Gesundheit, inspirierende Erfolge und viele glückliche Momente bringen. Auf dein Wohl!",
+          c1: "Zu diesem feierlichen Wiegenfest entbiete ich meine aufrichtigsten Glück- und Segenswünsche. Möge dir das kommende Lebensjahrzehnt unerschütterliche Vitalität, persönliche Erfüllung und weiterhin so viel Tatkraft bescheren!",
+          relatedWords: ["das Wiegenfest", "die Vitalität", "die Segenswünsche", "die Tatkraft"],
+          whyExplanation: "Gewandte Toasts erzeugen sofortige Sympathie in gehobener Runde."
+        }
+      ]
+    },
+
+    // ----------------------------------------
+    // 5. PARTNERSCHAFT, LIEBE & EMOTIONEN (GF / WIFEY)
+    // ----------------------------------------
+    {
+      id: "cat_partnerschaft_liebe",
+      name: "Partnerschaft, Trösten & Liebe",
+      icon: "❤️",
+      phrases: [
+        {
+          id: "phr_gf_comfort",
+          situation: "Freundin / Ehefrau kommt erschöpft nach Hause und braucht Halt.",
+          basic: "Komm her, Schatz. Das tut mir leid. Ruh dich aus.",
+          natural: "Komm erst mal in meine Arme, mein Schatz! Es tut mir so leid, dass dein Tag so furchtbar war. Lehn dich an mich an, du bist jetzt in Sicherheit.",
+          professionalB2: "Lass dich ganz fest umarmen, Liebling. Es bricht mir das Herz zu sehen, wie erschöpft du bist. Du musst mir jetzt gar nichts erklären – ich mache uns dein Lieblingsessen und halte dir den Rücken frei.",
+          c1: "Mein geliebter Schatz, ich spüre, wie sehr dich die heutigen Ereignisse mitgenommen haben. Finde bei mir Ruhe und Geborgenheit. Ich nehme dir heute alle Verpflichtungen ab.",
+          relatedWords: ["die Geborgenheit", "den Rücken freihalten", "trösten", "die Zuneigung"],
+          whyExplanation: "Echte deutsche Empathieausdrücke schenken tiefe Geborgenheit."
+        },
+        {
+          id: "phr_gf_ich_botschaft",
+          situation: "Einen Konflikt liebevoll ohne Anschuldigungen ansprechen (Ich-Botschaft).",
+          basic: "Ich war traurig, weil wir uns gestern nicht gesehen haben.",
+          natural: "Ich habe dich gestern so sehr vermisst, Schatz. Es hat mir ein bisschen wehgetan, dass wir so wenig Zeit für uns zwei hatten.",
+          professionalB2: "Unsere gemeinsame Zeit liegt mir unendlich am Herzen, Liebling. Als wir uns gestern verpasst haben, habe ich mich einsam gefühlt. Lass uns schauen, wie wir feste Zeiten nur für uns reservieren können.",
+          c1: "Unsere partnerschaftliche Zweisamkeit hat für mich höchste Priorität. Wenn berufsbedingt Distanz entsteht, schmerzt mich das sehr. Ich wünsche mir, dass wir bewusst verbindliche Ruheoasen für uns etablieren.",
+          relatedWords: ["die Zweisamkeit", "die Ich-Botschaft", "die Priorität", "die Ruheoase"],
+          whyExplanation: "Ich-Botschaften verhindern Abwehrhaltungen und stärken die Liebe."
+        }
+      ]
+    },
+
+    // ----------------------------------------
+    // 6. HESSEN, FRANKFURT & HUMOR
+    // ----------------------------------------
+    {
+      id: "cat_hessen_humor",
+      name: "Hessen, Frankfurt Dialekt & Humor",
+      icon: "🏙️",
+      phrases: [
+        {
+          id: "phr_hessen_gude",
+          situation: "Kollegialer Gruß am Morgen in der Klinik / im Büro.",
+          basic: "Hallo, wie geht es dir?",
+          natural: "Gude! Na, wie läuft's bei dir heute?",
+          professionalB2: "Ei gude wie! Kaffee ist schon gekocht – packen wir den Tag an!",
+          c1: "Ei gude, allerseits! Bereit für die Frühbesprechung? Heute machen wir kaan Zirkus, heute flutscht alles!",
+          relatedWords: ["Gude", "kaan Zirkus", "flutschen", "der Schoppe"],
+          whyExplanation: "'Gude' ist der sympathischste Türöffner in ganz Hessen und Frankfurt."
+        },
+        {
+          id: "phr_humor_schlagfertig_fehler",
+          situation: "Schlagfertige Reaktion bei einem kleinen harmlosen Missgeschick.",
+          basic: "Entschuldigung, das war ein Versehen.",
+          natural: "Ups! Das war der tägliche Wachmacher für uns alle!",
+          professionalB2: "Das war ein taktischer Test, um die Reaktionsgeschwindigkeit unseres Teams zu überprüfen: Test bravourös bestanden!",
+          c1: "Betrachten wir diesen kleinen Fauxpas als empirischen Beweis dafür, dass auch wir nach der dritten Nachtschicht noch über erstaunliche Reflexe verfügen!",
+          relatedWords: ["die Schlagfertigkeit", "der Fauxpas", "bravourös", "die Selbstironie"],
+          whyExplanation: "Charmanter Humor nimmt sofort die Schwere aus stressigen Arbeitssituationen."
         }
       ]
     }
@@ -22218,74 +22554,100 @@ const BUREAUCRACY_DATA = exports.BUREAUCRACY_DATA = {
   // MODULE: data/engineering_data.js
   // ==========================================
   __register('data/engineering_data.js', function(module, exports, require) {
-// Technisches & Ingenieur-Deutsch (B2/C1)
-// Vorbereitung auf die spätere ingenieurwissenschaftliche Laufbahn
+// Technisches & Software-Ingenieur-Deutsch (B2/C1)
+// Vorbereitung auf Softwareentwicklung, Informatik, Cloud, Data Engineering & IT-Teams
 
 const ENGINEERING_DATA = exports.ENGINEERING_DATA = {
-  title: "Technisches & Ingenieur-Deutsch",
+  title: "Software-, Computer- & Ingenieur-Deutsch (B2/C1)",
   provenance: "ERGÄNZT",
-  description: "Grundlagen des Fachwortschatzes und professioneller technischer Kommunikation (B2/C1).",
+  description: "Fachwortschatz, Redemittel und Diskussionsmuster für Softwareentwicklung, IT-Architektur, Code Reviews und agile Teams.",
   categories: [
     {
-      name: "Messungen & Spezifikationen",
+      name: "Software-Architektur & Systementwurf",
       vocabulary: [
         {
-          word: "die Abweichung",
+          word: "die Skalierbarkeit",
           article: "die",
-          level: "B2",
-          definition: "Der Unterschied zwischen dem gemessenen Ist-Wert und dem vorgegebenen Soll-Wert.",
-          exampleGerman: "Die gemessene Toleranz weist eine geringfügige Abweichung von 0,02 mm auf.",
-          exampleEnglish: "The measured tolerance shows a slight deviation of 0.02 mm."
+          level: "B2/C1",
+          definition: "Die Fähigkeit eines Softwaresystems, bei steigender Benutzerlast ohne Leistungseinbußen zu wachsen.",
+          exampleGerman: "Durch die Migration auf Kubernetes gewährleisten wir die horizontale Skalierbarkeit des Backends.",
+          exampleEnglish: "Through migration to Kubernetes, we ensure the horizontal scalability of the backend."
         },
         {
-          word: "die Anforderung",
-          article: "die",
-          level: "B2",
-          definition: "Eine verbindliche Vorgabe oder Bedingung, die ein technisches System erfüllen muss.",
-          exampleGerman: "Das neue Gehäuse erfüllt alle sicherheitstechnischen Anforderungen nach ISO-Norm.",
-          exampleEnglish: "The new housing meets all safety requirements according to ISO standard."
-        },
-        {
-          word: "der Wirkungsgrad",
+          word: "der Flaschenhals (das Bottleneck)",
           article: "der",
+          level: "B2",
+          definition: "Die langsamste Komponente im System, welche die Gesamtleistung limitiert.",
+          exampleGerman: "Die synchrone Festplatten-I/O stellte sich im Profiling als der primäre Flaschenhals heraus.",
+          exampleEnglish: "Synchronous disk I/O turned out to be the primary bottleneck during profiling."
+        },
+        {
+          word: "das Refactoring",
+          article: "das",
+          level: "B2",
+          definition: "Die Überarbeitung und Säuberung des Quellcodes ohne Veränderung der externen Funktionalität.",
+          exampleGerman: "Vor dem nächsten Release führen wir ein gründliches Refactoring der Legacy-Module durch.",
+          exampleEnglish: "Prior to the next release, we conduct a thorough refactoring of the legacy modules."
+        },
+        {
+          word: "die Entkopplung",
+          article: "die",
           level: "C1",
-          definition: "Das Verhältnis der nutzbaren Energie zur zugeführten Energie eines Systems.",
-          exampleGerman: "Durch die Optimierung der Steuerung konnte der Wirkungsgrad um 4,5 % gesteigert werden.",
-          exampleEnglish: "By optimizing the control system, the efficiency was increased by 4.5%."
+          definition: "Die Trennung von Modulen, sodass Änderungen in Modul A keine unerwünschten Seiteneffekte in Modul B erzeugen.",
+          exampleGerman: "Durch Event-Driven Architecture erreichen wir eine lose Entkopplung der Microservices.",
+          exampleEnglish: "Through event-driven architecture, we achieve loose decoupling of microservices."
         }
       ]
     },
+
     {
-      name: "Fehleranalyse & Troubleshooting",
+      name: "DevOps, Cloud & Datenpipelines",
       vocabulary: [
         {
-          word: "die Ursachenanalyse",
+          word: "die Bereitstellung (das Deployment)",
           article: "die",
-          level: "C1",
-          definition: "Die systematische Untersuchung zur Ermittlung des Grundes eines Systemausfalls.",
-          exampleGerman: "Wir leiten unverzüglich eine Ursachenanalyse ein, um den Fehler im Schaltkreis zu lokalisieren.",
-          exampleEnglish: "We are immediately initiating a root cause analysis to locate the fault in the circuit."
+          level: "B2",
+          definition: "Das automatische Übertragen und Starten einer neuen Softwareversion auf dem Produktionsserver.",
+          exampleGerman: "Die CI/CD-Pipeline führt die automatisierte Bereitstellung nach erfolgreichen Unit-Tests aus.",
+          exampleEnglish: "The CI/CD pipeline executes automated deployment following successful unit tests."
         },
         {
-          word: "die Störanfälligkeit",
+          word: "die Ausfallsicherheit (High Availability)",
           article: "die",
           level: "C1",
-          definition: "Die Neigung eines Systems, unter Belastung oder Umwelteinflüssen Fehler zu produzieren.",
-          exampleGerman: "Durch die neue Abschirmung konnte die Störanfälligkeit signifikant gesenkt werden.",
-          exampleEnglish: "Thanks to the new shielding, the susceptibility to interference was significantly reduced."
+          definition: "Die Eigenschaft eines Systems, auch bei Hardware- oder Serverausfällen kontinuierlich weiterzulaufen.",
+          exampleGerman: "Multi-Region-Cluster garantieren maximale Ausfallsicherheit bei Cloud-Hostern.",
+          exampleEnglish: "Multi-region clusters guarantee maximum fault tolerance with cloud providers."
+        },
+        {
+          word: "die Latenz (die Verzögerungszeit)",
+          article: "die",
+          level: "B2/C1",
+          definition: "Die Zeitspanne zwischen dem Absenden einer Anfrage und dem Eintreffen der Antwort.",
+          exampleGerman: "Die Redis-Caching-Schicht konnte die Latenz der API von 250 ms auf 12 ms reduzieren.",
+          exampleEnglish: "The Redis caching layer was able to reduce API latency from 250 ms to 12 ms."
         }
       ]
     },
+
     {
-      name: "Technische Berichte & Besprechungen",
-      phrases: [
+      name: "IT-Besprechungen, Code Reviews & Agilität",
+      vocabulary: [
         {
-          german: "Den vorliegenden Messergebnissen zufolge können wir schlussfolgern, dass...",
-          english: "According to the available measurement results, we can conclude that..."
+          word: "die Testabdeckung (Code Coverage)",
+          article: "die",
+          level: "B2",
+          definition: "Der prozentuale Anteil des Quellcodes, der durch automatisierte Tests abgedeckt ist.",
+          exampleGerman: "Wir streben eine Testabdeckung von mindestens 85 % für alle Kernmodule an.",
+          exampleEnglish: "We aim for a code coverage of at least 85% across all core modules."
         },
         {
-          german: "Um die Betriebssicherheit zu gewährleisten, ist eine Nachjustierung der Parameter erforderlich.",
-          english: "To ensure operational safety, a readjustment of the parameters is required."
+          word: "der Meilenstein",
+          article: "der",
+          level: "B2",
+          definition: "Ein zentrales Zwischenziel im Projektplan, an dem wichtige Teilergebnisse abgeschlossen sind.",
+          exampleGerman: "Mit dem erfolgreichen Lasttest haben wir den zweiten Meilenstein im Sprint erreicht.",
+          exampleEnglish: "With the successful load test, we reached the second milestone in the sprint."
         }
       ]
     }
@@ -22298,7 +22660,7 @@ const ENGINEERING_DATA = exports.ENGINEERING_DATA = {
   // MODULE: components/dashboard.js
   // ==========================================
   __register('components/dashboard.js', function(module, exports, require) {
-// Bento Grid Dashboard - High-Yield German Learning Operating System
+// Bento Grid Dashboard - High-Yield B2/C1 German Learning Operating System
 // 12-Spalten Layout: Hero Mission (Span 8), Station 2 Überlebensmodus (Span 4),
 // 4 Säulen-Sprints (Span 3 je) und adaptiver Tagesablauf (Span 12).
 
@@ -22363,14 +22725,15 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
                 <div class="flex items-center gap-2">
                   <span class="badge badge-amber">Tages-Check-in</span>
                   <span class="badge badge-emerald">BFD • UKGM Station 2</span>
+                  <span class="badge badge-blue">IT & Engineering</span>
                 </div>
-                <span class="text-xs text-muted font-semibold">B1+ → C1 System</span>
+                <span class="text-xs text-muted font-semibold">B2 → C1 System</span>
               </div>
 
               <div>
                 <h1 class="page-title">Guten Tag, Ali!</h1>
                 <p class="subtitle mt-1">
-                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, flüssiges Deutsch im Alltag und tiefe Partnerschaftsgespräche.
+                  Master-Plattform für deinen klinischen Dienst in der Psychiatrie, IT- und Engineering-Fachsprache, flüssiges Deutsch im Alltag und Frankfurter Dialekt & Humor.
                 </p>
               </div>
 
@@ -22380,10 +22743,10 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
                 <div class="flex-between flex-wrap gap-3">
                   <div class="space-y-0.5">
                     <div class="font-bold text-base text-primary">
-                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Dialog-Simulation: BFD, Familie oder Partnerschaft'}
+                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} B2/C1 Vokabeln wiederholen` : 'Dialog-Simulation: 6 Lebensbereiche üben'}
                     </div>
                     <div class="text-xs text-secondary">
-                      ${dueCount > 0 ? 'Fällige Verben, Wortfamilien und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog mit Audio-Feedback.'}
+                      ${dueCount > 0 ? 'Fällige Verben mit Stammformen, Nomen-Verb-Verbindungen und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog (Klinik, Tech, Wohnen, Feste, Partnerschaft, Hessen).'}
                     </div>
                   </div>
                   <a href="${dueCount > 0 ? '#wiederholen?mode=review' : '#simulation'}" class="btn btn-primary btn-sm whitespace-nowrap">
@@ -22393,7 +22756,7 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
               </div>
             </div>
 
-            <!-- Distinct Metric Cards (Never overlapping) -->
+            <!-- Distinct Metric Cards -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-subtle">
               <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
                 <div class="text-[11px] font-semibold text-muted">Fällig</div>
@@ -22414,31 +22777,31 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             </div>
           </div>
 
-          <!-- Span 4: Erster-Tag-Überlebensmodus -->
+          <!-- Span 4: Erster-Tag-Überlebensmodus & Hessen Tone -->
           <div class="col-span-4 bento-card justify-between space-y-3 border-amber-500/30">
             <div class="space-y-3">
               <div class="flex-between">
-                <span class="badge badge-amber">STATION 2 PRAXIS</span>
-                <span class="text-amber-500 font-bold text-sm">🛡️</span>
+                <span class="badge badge-amber">LOKALES WISSEN</span>
+                <span class="text-amber-500 font-bold text-sm">🏙️</span>
               </div>
               <div>
-                <h2 class="text-lg font-bold text-primary">Überlebensmodus & Grenzen</h2>
+                <h2 class="text-lg font-bold text-primary">Hessen & Frankfurt Tone</h2>
                 <p class="text-xs text-secondary mt-1 leading-relaxed">
-                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken (§ 203 StGB) und Schutzregeln für den Klinikdienst.
+                  Wie man in Hessen und Frankfurt wirklich spricht: <em>„Gude!“, „Babbel net“, „Dappisch“, „Uffbasse!“</em> und Kaffeeküchen-Humor.
                 </p>
               </div>
 
               <div class="p-3 bg-subtle rounded-xl space-y-1.5 text-xs">
-                <div class="font-bold text-primary">Klinische Schutzregeln:</div>
-                <div class="text-secondary">✓ Keine eigenständige Medikamentengabe</div>
-                <div class="text-secondary">✓ Schweigepflicht nach § 203 StGB</div>
-                <div class="text-secondary">✓ Der magische Satz bei Unklarheiten</div>
+                <div class="font-bold text-primary">Lokalkolorit & Banter:</div>
+                <div class="text-secondary">✓ Universal-Gruß: „Gude!“</div>
+                <div class="text-secondary">✓ Kontraktionen: <em>haste, kannste, machste</em></div>
+                <div class="text-secondary">✓ Schlagfertigkeit & Kaffeeküchen-Humor</div>
               </div>
             </div>
 
             <div class="pt-2">
-              <a href="#bfd?tab=survival" class="btn btn-secondary btn-sm w-full border-amber-500/40 text-amber-400 hover:bg-amber-500/10">
-                Überlebensmodus öffnen →
+              <a href="#kultur" class="btn btn-secondary btn-sm w-full border-amber-500/40 text-amber-400 hover:bg-amber-500/10">
+                Hessen-Guide öffnen →
               </a>
             </div>
           </div>
@@ -22446,18 +22809,18 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
 
         <!-- 12-Column Bento Grid: Row 2 (4 Power Learning Pillars - Span 3 each) -->
         <div class="bento-grid">
-          <!-- Pillar 1: Vokabeln & Wortfamilien -->
+          <!-- Pillar 1: Vokabeln & Stammformen -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-amber">Wortschatz</span>
+                <span class="badge badge-amber">Wortschatz B2/C1</span>
                 <span class="text-xs font-semibold ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">
                   ${dueCount > 0 ? `${dueCount} fällig` : '✓ Bereit'}
                 </span>
               </div>
-              <h3 class="font-bold text-base text-primary">Verben & SRS</h3>
+              <h3 class="font-bold text-base text-primary">Verben & Nomen-Verb</h3>
               <p class="text-xs text-secondary">
-                ${VOCABULARY_DATA.length} Vokabeln mit Wortfamilien, Präfixen (<em>ab-, unter-, an-, ein-</em>), Stammformen und Audio.
+                ${VOCABULARY_DATA.length} Verben mit 3 Stammformen, Wortfamilien und Funktionsverbgefügen (<em>in Betracht ziehen, zur Verfügung stehen</em>).
               </p>
             </div>
             <div class="pt-2">
@@ -22467,16 +22830,16 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             </div>
           </div>
 
-          <!-- Pillar 2: Dialog-Simulationen (BFD, Familie, GF) -->
+          <!-- Pillar 2: Dialog-Simulationen (6 Bereiche) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-emerald">Simulation</span>
+                <span class="badge badge-emerald">Simulationen</span>
                 <span class="badge badge-gray text-[10px]">${SIMULATIONS_DATA.length} Szenarien</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Rollenspiele & Dialoge</h3>
+              <h3 class="font-bold text-base text-primary">6 Lebensbereiche</h3>
               <p class="text-xs text-secondary">
-                Station 2 Übergaben, familiäres Abendessen & tiefe Partnerschaftsgespräche (Freundin/Wifey trösten).
+                Klinik & BFD, Software & Tech, Mietrecht, Heiligabend & Geburtstage, Partnerschaft und Hessen-Banter.
               </p>
             </div>
             <div class="pt-2">
@@ -22486,21 +22849,21 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
             </div>
           </div>
 
-          <!-- Pillar 3: Kinder- & Jugendpsychiatrie (KJP) -->
+          <!-- Pillar 3: Engineering & IT-Deutsch -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-purple">Psychologie</span>
-                <span class="badge badge-gray text-[10px]">KJP & Deeskalation</span>
+                <span class="badge badge-blue">Tech & IT</span>
+                <span class="badge badge-gray text-[10px]">B2 / C1</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Psychologie & KJP</h3>
+              <h3 class="font-bold text-base text-primary">Software & Computer</h3>
               <p class="text-xs text-secondary">
-                Bindungsmuster nach Bowlby, Co-Regulation bei kindlichen Wutanfällen, ADHS und Notfall-Erdung.
+                Daily Stand-ups, Code Reviews, Architektur-Debatten (<em>Flaschenhals, Skalierbarkeit, Refactoring, Latenz</em>).
               </p>
             </div>
             <div class="pt-2">
-              <a href="#psychologie" class="btn btn-secondary btn-sm w-full">
-                Psychologie lernen →
+              <a href="#engineering" class="btn btn-secondary btn-sm w-full">
+                Tech-Deutsch öffnen →
               </a>
             </div>
           </div>
@@ -22509,8 +22872,8 @@ const renderDashboard = exports.renderDashboard = async function renderDashboard
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-blue">Redemittel</span>
-                <span class="badge badge-gray text-[10px]">4 CEFR-Stufen</span>
+                <span class="badge badge-purple">Redemittel</span>
+                <span class="badge badge-gray text-[10px]">4 Stufen</span>
               </div>
               <h3 class="font-bold text-base text-primary">Was sage ich?</h3>
               <p class="text-xs text-secondary">
@@ -23547,7 +23910,7 @@ const renderSynonymsDiffHub = exports.renderSynonymsDiffHub = function renderSyn
   // MODULE: components/simulations.js
   // ==========================================
   __register('components/simulations.js', function(module, exports, require) {
-// Simulations Component — Interaktive Rollenspiele (BFD, Familie, Partnerschaft)
+// Simulations Component — Interaktive Rollenspiele (BFD, Tech, Wohnen, Feste, Partnerschaft, Hessen)
 
 const { Speech } = require('../speech.js');
 const { SIMULATIONS_DATA } = require('../data/simulations_data.js');
@@ -23573,10 +23936,10 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
         <div class="hero-card">
           <div class="flex-between flex-wrap gap-4">
             <div>
-              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR</span>
+              <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR B2 / C1</span>
               <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
               <p class="subtitle mt-1">
-                Lebensnahe Simulationen für Krankenhaus, Stationsalltag, Familie und tiefe Partnerschaftsgespräche mit 4-Stufen-Feedback.
+                Lebensnahe Simulationen für Krankenhaus, IT/Tech-Arbeitsplatz, Mietrecht, Familienfeste, Partnerschaft und Frankfurter Lokalkolorit.
               </p>
             </div>
             <div class="flex items-center gap-2">
@@ -23588,18 +23951,27 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
         <!-- Category Tabs & Scenario Selector -->
         <div class="bento-card p-4 space-y-3">
           <div class="flex-between flex-wrap gap-3">
-            <div class="flex gap-2 flex-wrap" id="simCategoryTabs">
+            <div class="flex gap-1.5 flex-wrap" id="simCategoryTabs">
               <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
-                Alle Szenarien (${sims.length})
+                Alle (${sims.length})
               </button>
               <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
                 🏥 Klinik & BFD
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Familie & Alltag' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie & Alltag">
-                🏡 Familie & Alltag
+              <button class="btn btn-xs ${activeCategory === 'Engineering & IT' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Engineering & IT">
+                💻 Engineering & IT
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Wohnen & Vermieter' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Wohnen & Vermieter">
+                🏡 Wohnen & Vermieter
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Familie, Feste & Feiern' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie, Feste & Feiern">
+                🎄 Familie & Feste
               </button>
               <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
                 ❤️ Partnerschaft & Herz
+              </button>
+              <button class="btn btn-xs ${activeCategory === 'Hessen & Frankfurt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Frankfurt">
+                🏙️ Hessen & Dialekt
               </button>
             </div>
 
@@ -23607,7 +23979,7 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
             <select id="selectSim" class="p-2 bg-subtle border border-subtle rounded-lg text-primary text-xs font-bold outline-none flex-1 max-w-md">
               ${filteredSims.map(s => `
                 <option value="${s.id}" ${s.id === currentSim.id ? 'selected' : ''}>
-                  ${s.category === 'Partnerschaft & Herz' ? '❤️' : (s.category === 'Familie & Alltag' ? '🏡' : '🏥')} ${s.title} (${s.level})
+                  ${s.title} (${s.level})
                 </option>
               `).join('')}
             </select>
@@ -23683,7 +24055,7 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
           <div class="text-5xl">🏆</div>
           <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
           <p class="text-sm text-secondary max-w-md mx-auto">
-            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich durchlaufen und die wesentlichen Kriterien erfüllt.
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und die Kriterien erfüllt.
           </p>
           <div class="flex justify-center gap-3 pt-4">
             <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
@@ -23747,11 +24119,11 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
           <div class="text-xs font-bold text-muted uppercase tracking-wider">Musterantworten nach Sprachebene:</div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <!-- Basic B1 -->
+            <!-- Basic B1 / Aktiv B2 -->
             <div class="p-3 bg-subtle rounded-xl border border-subtle space-y-1.5 flex flex-col justify-between">
               <div>
                 <div class="flex-between">
-                  <span class="badge badge-gray text-[10px]">Basic (B1)</span>
+                  <span class="badge badge-gray text-[10px]">Basis</span>
                   <button class="btn btn-ghost btn-xs btn-speak-opt" data-text="${turn.responseTiers.basic}">▶</button>
                 </div>
                 <div class="text-xs text-secondary mt-1 font-medium">${turn.responseTiers.basic}</div>
@@ -24751,126 +25123,205 @@ const renderRoadmaps = exports.renderRoadmaps = function renderRoadmaps(containe
   // MODULE: components/culture_bureaucracy.js
   // ==========================================
   __register('components/culture_bureaucracy.js', function(module, exports, require) {
-// Culture & Bureaucracy Component
+// Culture & Bureaucracy Component — Arbeitskultur, Hessen/Frankfurt Dialekt, Mietrecht & Humor
 
 const { CULTURE_DATA } = require('../data/culture_data.js');
-const { BUREAUCRACY_DATA } = require('../data/bureaucracy_data.js');
+const { HESSEN_FRANKFURT_DATA } = require('../data/hessen_frankfurt_data.js');
 const { Speech } = require('../speech.js');
 
-const renderCultureBureaucracy = exports.renderCultureBureaucracy = function renderCultureBureaucracy(container, params = {}) {
-  const activeTab = params.tab || 'culture';
+const renderCultureBureaucracy = exports.renderCultureBureaucracy = function renderCultureBureaucracy(container) {
+  let activeTab = 'hessen'; // 'hessen' | 'norms' | 'what_to_say' | 'bureaucracy'
 
-  container.innerHTML = `
-    <div class="culture-bur-wrapper animate-fadeIn space-y-6">
-      <div class="hero-card">
-        <div class="flex-between flex-wrap gap-4">
-          <div>
-            <span class="badge badge-emerald mb-2">PRAXIS & ALLTAG</span>
-            <h1 class="text-3xl font-bold text-gradient">🇩🇪 Arbeitskultur & Behördendeutsch</h1>
-            <p class="text-secondary mt-1">Normen im deutschen Berufsleben, "Was sagen / Was vermeiden" und Amtssprache.</p>
+  function renderView() {
+    container.innerHTML = `
+      <div class="culture-wrapper animate-fadeIn space-y-6 max-w-6xl mx-auto">
+        <!-- Hero Header -->
+        <div class="hero-card">
+          <div class="flex-between flex-wrap gap-4">
+            <div>
+              <span class="badge badge-amber mb-2">LOKALKOLORIT & ARBEITSKULTUR</span>
+              <h1 class="page-title">🏙️ Hessen, Alltag & Arbeitskultur</h1>
+              <p class="subtitle mt-1">
+                Authentischer Frankfurt-/Hessen-Dialekt, Kaffeeküchen-Humor, Schlagfertigkeit, Arbeitsnormen und Mietrecht.
+              </p>
+            </div>
+            <a href="#heute" class="btn btn-secondary btn-sm">← Zum Dashboard</a>
           </div>
-          <a href="#heute" class="btn btn-secondary">← Zurück</a>
+
+          <!-- Tabs -->
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-subtle" id="cultureTabs">
+            <button class="btn btn-xs ${activeTab === 'hessen' ? 'btn-primary' : 'btn-secondary'} cult-tab-btn" data-tab="hessen">
+              🏙️ Hessen & Frankfurt Tone (${HESSEN_FRANKFURT_DATA.sections[0].items.length})
+            </button>
+            <button class="btn btn-xs ${activeTab === 'norms' ? 'btn-primary' : 'btn-secondary'} cult-tab-btn" data-tab="norms">
+              💼 Arbeitsnormen & Verhalten
+            </button>
+            <button class="btn btn-xs ${activeTab === 'what_to_say' ? 'btn-primary' : 'btn-secondary'} cult-tab-btn" data-tab="what_to_say">
+              💬 Was sage ich / Was nicht?
+            </button>
+            <button class="btn btn-xs ${activeTab === 'humor' ? 'btn-primary' : 'btn-secondary'} cult-tab-btn" data-tab="humor">
+              😄 Humor & Schlagfertigkeit
+            </button>
+          </div>
         </div>
 
-        <div class="flex gap-2 flex-wrap mt-6 pt-4 border-t border-glass">
-          <button class="btn btn-sm ${activeTab === 'culture' ? 'btn-primary' : 'btn-outline'}" data-tab="culture">
-            🏢 Arbeitskultur & Knigge
-          </button>
-          <button class="btn btn-sm ${activeTab === 'say_vs_avoid' ? 'btn-primary' : 'btn-outline'}" data-tab="say_vs_avoid">
-            💬 Was sagen vs. Was vermeiden
-          </button>
-          <button class="btn btn-sm ${activeTab === 'bureaucracy' ? 'btn-primary' : 'btn-outline'}" data-tab="bureaucracy">
-            📑 Behördendeutsch & Ämter
-          </button>
-        </div>
-      </div>
-
-      <div id="cultureTabContent"></div>
-    </div>
-  `;
-
-  const contentArea = container.querySelector('#cultureTabContent');
-
-  if (activeTab === 'culture') {
-    contentArea.innerHTML = `
-      <div class="grid md:grid-cols-2 gap-6">
-        ${CULTURE_DATA.workplaceNorms.map(norm => `
-          <div class="card p-6 space-y-3 border border-glass">
-            <h3 class="text-xl font-bold text-blue-300">📌 ${norm.topic}</h3>
-            <p class="text-sm text-secondary">${norm.explanation}</p>
-            <div class="p-3 bg-surface rounded-xl border border-glass text-xs text-emerald-300">
-              💡 <strong>Praxistipp:</strong> ${norm.tip}
-            </div>
-          </div>
-        `).join('')}
+        <!-- Tab Content -->
+        <div id="cultureContent" class="space-y-6"></div>
       </div>
     `;
-  } else if (activeTab === 'say_vs_avoid') {
-    contentArea.innerHTML = `
-      <div class="space-y-4">
-        ${CULTURE_DATA.whatToSayVsAvoid.map(item => `
-          <div class="card p-6 space-y-3 border border-glass">
-            <div class="badge badge-purple text-xs font-bold">${item.category}</div>
-            <div class="grid md:grid-cols-3 gap-3">
-              <div class="p-3 bg-red-950/20 border border-red-500/30 rounded-lg">
-                <div class="text-xs font-bold text-red-400 uppercase mb-1">🚫 Vermeiden:</div>
-                <div class="text-sm text-red-200">"${item.avoid}"</div>
-              </div>
-              <div class="p-3 bg-surface border border-glass rounded-lg">
-                <div class="text-xs font-bold text-blue-400 uppercase mb-1">👍 Besser:</div>
-                <div class="text-sm text-blue-200">"${item.better}"</div>
-              </div>
-              <div class="p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-lg">
-                <div class="text-xs font-bold text-emerald-400 uppercase mb-1">⭐ Professionell (B2):</div>
-                <div class="text-sm text-emerald-200 font-semibold">"${item.professionalB2}"</div>
-              </div>
-            </div>
-            <div class="text-xs text-secondary italic">💡 Warum? ${item.whyExplanation}</div>
+
+    const contentDiv = container.querySelector('#cultureContent');
+
+    if (activeTab === 'hessen') {
+      contentDiv.innerHTML = `
+        <div class="space-y-6">
+          <div class="bento-card p-4 border border-amber-500/30 space-y-1">
+            <div class="font-bold text-amber-400 text-sm">💡 Lokale Mentalität in Hessen & Rhein-Main:</div>
+            <p class="text-xs text-secondary leading-relaxed">
+              ${HESSEN_FRANKFURT_DATA.intro}
+            </p>
           </div>
-        `).join('')}
-      </div>
-    `;
-  } else if (activeTab === 'bureaucracy') {
-    contentArea.innerHTML = `
-      <div class="space-y-6">
-        ${BUREAUCRACY_DATA.topics.map(t => `
-          <div class="card p-6 space-y-4 border border-glass">
-            <h3 class="text-xl font-bold text-purple-300">📑 ${t.title}</h3>
-            ${t.keyDocuments ? `
-              <div>
-                <div class="text-xs font-bold text-secondary uppercase mb-1">Erforderliche Unterlagen:</div>
-                <div class="flex gap-2 flex-wrap">
-                  ${t.keyDocuments.map(doc => `<span class="badge badge-gray text-xs">${doc}</span>`).join('')}
-                </div>
-              </div>
-            ` : ''}
-            <div class="space-y-2">
-              <div class="text-xs font-bold text-emerald-400 uppercase">Wichtige Sätze:</div>
-              ${t.usefulPhrases.map(p => `
-                <div class="p-3 bg-surface rounded-xl border border-glass flex-between flex-wrap gap-2">
-                  <div>
-                    <div class="text-sm font-semibold text-gray-100">${p.german}</div>
-                    <div class="text-xs text-secondary mt-1">${p.english}</div>
+
+          <!-- Section 1: Hessen Basics -->
+          <div class="bento-card p-6 space-y-4 border border-subtle">
+            <h2 class="text-base font-bold text-primary flex items-center gap-2">
+              <span>🗣️</span> ${HESSEN_FRANKFURT_DATA.sections[0].title}
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${HESSEN_FRANKFURT_DATA.sections[0].items.map(item => `
+                <div class="p-4 bg-subtle rounded-xl border border-subtle space-y-2 flex flex-col justify-between">
+                  <div class="space-y-1.5">
+                    <div class="flex-between items-center">
+                      <span class="font-bold text-base text-amber-400">${item.term}</span>
+                      <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-hessen" data-text="${item.example}">🔊 Audio</button>
+                    </div>
+                    <div class="text-xs text-primary font-medium">Bedeutung: <span class="text-secondary">${item.meaning}</span></div>
+                    <div class="text-xs text-muted">Hochdeutsch: <em>${item.formalEquivalent}</em></div>
+                    
+                    <div class="p-2.5 bg-surface rounded-lg border border-subtle text-xs space-y-1 mt-2">
+                      <div class="text-primary italic">"${item.example}"</div>
+                      <div class="text-emerald-400 font-semibold">↪ Antwort: "${item.response}"</div>
+                    </div>
                   </div>
-                  <button class="btn btn-ghost btn-xs text-blue-400 btn-speak-cb" data-text="${p.german}">🔊</button>
+
+                  <div class="text-[11px] text-muted italic pt-1 border-t border-subtle">
+                    💡 ${item.humorTip}
+                  </div>
                 </div>
               `).join('')}
             </div>
           </div>
-        `).join('')}
-      </div>
-    `;
+
+          <!-- Section 2: Contractions -->
+          <div class="bento-card p-6 space-y-4 border border-subtle">
+            <h2 class="text-base font-bold text-primary flex items-center gap-2">
+              <span>⚡</span> ${HESSEN_FRANKFURT_DATA.sections[1].title}
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              ${HESSEN_FRANKFURT_DATA.sections[1].items.map(item => `
+                <div class="p-3.5 bg-subtle rounded-xl border border-subtle space-y-1.5">
+                  <div class="flex-between">
+                    <span class="font-bold text-sm text-primary font-mono">${item.pattern}</span>
+                    <span class="text-xs text-muted font-mono">${item.formal}</span>
+                  </div>
+                  <div class="text-xs text-secondary italic">"${item.example}"</div>
+                  <div class="text-[11px] text-amber-400">${item.usage}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (activeTab === 'humor') {
+      const humorSection = HESSEN_FRANKFURT_DATA.sections[2];
+      contentDiv.innerHTML = `
+        <div class="bento-card p-6 space-y-4 border border-subtle">
+          <h2 class="text-base font-bold text-primary flex items-center gap-2">
+            <span>😄</span> ${humorSection.title}
+          </h2>
+          <p class="text-xs text-secondary">
+            Wie man in der Kaffeeküche und bei Übergaben souverän, schlagfertig und charmant reagiert.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            ${humorSection.items.map(item => `
+              <div class="p-4 bg-subtle rounded-xl border border-subtle space-y-2">
+                <div class="flex-between">
+                  <span class="badge badge-amber text-[10px]">${item.humorType}</span>
+                  <span class="text-[11px] text-muted font-semibold">${item.tone}</span>
+                </div>
+                <div class="text-xs text-secondary font-medium">
+                  📍 <strong>Situation:</strong> ${item.situation}
+                </div>
+                <div class="p-3 bg-surface rounded-xl border border-emerald-500/30 text-xs space-y-1">
+                  <div class="text-emerald-400 font-bold">✨ Schlagfertige Antwort:</div>
+                  <div class="text-primary italic font-semibold">"${item.wittyReply}"</div>
+                </div>
+                <button class="btn btn-ghost btn-xs text-amber-400 btn-speak-hessen w-full" data-text="${item.wittyReply}">🔊 Vorlesen</button>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else if (activeTab === 'norms') {
+      contentDiv.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          ${CULTURE_DATA.workplaceNorms.map(norm => `
+            <div class="bento-card p-5 space-y-2 border border-subtle">
+              <h3 class="font-bold text-base text-primary">${norm.topic}</h3>
+              <p class="text-xs text-secondary leading-relaxed">${norm.explanation}</p>
+              <div class="p-2.5 bg-subtle rounded-lg text-xs text-emerald-300 font-medium border border-subtle mt-2">
+                💡 <strong>Praxistipp:</strong> ${norm.tip}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    } else if (activeTab === 'what_to_say') {
+      contentDiv.innerHTML = `
+        <div class="space-y-4">
+          ${CULTURE_DATA.whatToSayVsAvoid.map(item => `
+            <div class="bento-card p-5 space-y-3 border border-subtle">
+              <span class="badge badge-amber text-xs">${item.category}</span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div class="p-3 bg-red-950/20 border border-red-500/30 rounded-xl space-y-1">
+                  <div class="font-bold text-red-400">❌ Vermeiden:</div>
+                  <div class="text-secondary">${item.avoid}</div>
+                </div>
+                <div class="p-3 bg-subtle border border-subtle rounded-xl space-y-1">
+                  <div class="font-bold text-primary">✓ Besser:</div>
+                  <div class="text-secondary">${item.better}</div>
+                </div>
+                <div class="p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-1">
+                  <div class="font-bold text-emerald-400">⭐ B2 / C1 Souverän:</div>
+                  <div class="text-emerald-200 font-bold">${item.professionalB2}</div>
+                </div>
+              </div>
+              <p class="text-[11px] text-muted italic">${item.whyExplanation}</p>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // Attach events
+    container.querySelectorAll('.cult-tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        activeTab = btn.getAttribute('data-tab');
+        renderView();
+      };
+    });
+
+    container.querySelectorAll('.btn-speak-hessen').forEach(btn => {
+      btn.onclick = () => {
+        Speech.speak(btn.getAttribute('data-text'), 0.95);
+      };
+    });
   }
 
-  container.querySelectorAll('[data-tab]').forEach(btn => {
-    btn.onclick = () => {
-      window.location.hash = `#kultur?tab=${btn.getAttribute('data-tab')}`;
-    };
-  });
-
-  container.querySelectorAll('.btn-speak-cb').forEach(btn => {
-    btn.onclick = () => Speech.speak(btn.getAttribute('data-text'), 0.9);
-  });
+  renderView();
 }
 
   });

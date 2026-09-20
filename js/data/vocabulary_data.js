@@ -18255,4 +18255,222 @@ export const VOCABULARY_DATA = [{
   ],
   "exampleDe": "Nach dem Sturz ist das rechte Sprunggelenk des Patienten innerhalb von Minuten angeschwollen.",
   "exampleEn": "Following the fall, the patient's right ankle joint swelled up within minutes."
+},
+{
+  "id": "vocab_nvv_001",
+  "word": "in Betracht ziehen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "zieht in Betracht – zog in Betracht – hat in Betracht gezogen",
+  "relatedWords": [
+    "die Betrachtung",
+    "betrachten",
+    "berücksichtigen",
+    "die Erwägung"
+  ],
+  "definitionDe": "Etwas gründlich überlegen, prüfen oder bei einer Entscheidung berücksichtigen.",
+  "definitionEn": "To take into consideration / to take into account.",
+  "collocations": [
+    "eine Alternative in Betracht ziehen",
+    "ernsthaft in Betracht ziehen"
+  ],
+  "exampleDe": "Bei anhaltenden Nebenwirkungen müssen wir einen Wechsel des Medikaments in Betracht ziehen.",
+  "exampleEn": "In case of persistent side effects, we must take a medication change into consideration."
+},
+{
+  "id": "vocab_nvv_002",
+  "word": "zur Verfügung stehen / stellen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "steht zur Verfügung – stand – hat gestanden / stellt zur Verfügung",
+  "relatedWords": [
+    "die Verfügung",
+    "verfügbar",
+    "die Verfügbarkeit"
+  ],
+  "definitionDe": "Bereitstehen, genutzt werden können ODER etwas für andere bereitstellen.",
+  "definitionEn": "To be available / to make available.",
+  "collocations": [
+    "jederzeit zur Verfügung stehen",
+    "Mittel zur Verfügung stellen"
+  ],
+  "exampleDe": "Für Fragen zur Pflegedokumentation stehe ich Ihnen gerne jederzeit zur Verfügung.",
+  "exampleEn": "I am gladly available at any time for questions regarding nursing documentation."
+},
+{
+  "id": "vocab_nvv_003",
+  "word": "in Kenntnis setzen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "setzt in Kenntnis – setzte in Kenntnis – hat in Kenntnis gesetzt",
+  "relatedWords": [
+    "die Kenntnis",
+    "kennen",
+    "informieren",
+    "die Benachrichtigung"
+  ],
+  "definitionDe": "Jemanden offiziell, formell und schriftlich/mündlich über einen Sachverhalt informieren.",
+  "definitionEn": "To inform / to notify formally.",
+  "collocations": [
+    "den Dienstarzt in Kenntnis setzen",
+    "unverzüglich in Kenntnis setzen"
+  ],
+  "exampleDe": "Bei akuter Verschlechterung der Vitalwerte habe ich den Dienstarzt unverzüglich in Kenntnis gesetzt.",
+  "exampleEn": "Upon acute deterioration of vital signs, I immediately notified the physician on duty."
+},
+{
+  "id": "vocab_nvv_004",
+  "word": "zur Sprache bringen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "bringt zur Sprache – brachte zur Sprache – hat zur Sprache gebracht",
+  "relatedWords": [
+    "die Sprache",
+    "ansprechen",
+    "thematisieren",
+    "die Debatte"
+  ],
+  "definitionDe": "Ein wichtiges oder heikles Thema in einer Besprechung oder einem Gespräch ansprechen.",
+  "definitionEn": "To bring up / to raise a topic.",
+  "collocations": [
+    "ein Problem zur Sprache bringen",
+    "in der Teamsitzung zur Sprache bringen"
+  ],
+  "exampleDe": "Die Lärmbelästigung auf dem Flur sollten wir in der nächsten Stationsbesprechung zur Sprache bringen.",
+  "exampleEn": "We should bring up the noise issue in the hallway during the next ward meeting."
+},
+{
+  "id": "vocab_nvv_005",
+  "word": "in Kauf nehmen",
+  "article": "",
+  "category": "Nomen-Verb-Verbindung (B2/C1)",
+  "level": "B2",
+  "stammformen": "nimmt in Kauf – nahm in Kauf – hat in Kauf genommen",
+  "relatedWords": [
+    "der Kauf",
+    "akzeptieren",
+    "der Nachteil",
+    "das Risiko"
+  ],
+  "definitionDe": "Einen unvermeidlichen Nachteil oder ein Risiko bewusst akzeptieren, um ein größeres Ziel zu erreichen.",
+  "definitionEn": "To accept / to put up with a drawback.",
+  "collocations": [
+    "Nachteile in Kauf nehmen",
+    "ein gewisses Risiko in Kauf nehmen"
+  ],
+  "exampleDe": "Für den schnelleren Systemstart müssen wir einen etwas höheren Speicherverbrauch in Kauf nehmen.",
+  "exampleEn": "For a faster system startup, we must accept slightly higher memory usage."
+},
+{
+  "id": "vocab_verb_001",
+  "word": "gewährleisten",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "gewährleistet – gewährleistete – hat gewährleistet",
+  "relatedWords": [
+    "die Gewährleistung",
+    "die Garantie",
+    "sicherstellen",
+    "die Sicherheit"
+  ],
+  "definitionDe": "Verlässlich dafür sorgen, dass etwas sicher, fehlerfrei und stabil funktioniert.",
+  "definitionEn": "To guarantee, to ensure, to warrant.",
+  "collocations": [
+    "Sicherheit gewährleisten",
+    "lückenlose Betreuung gewährleisten"
+  ],
+  "exampleDe": "Durch die regelmäßigen Kontrollen gewährleisten wir die Patientensicherheit auf Station.",
+  "exampleEn": "Through regular checks, we ensure patient safety on the ward."
+},
+{
+  "id": "vocab_verb_002",
+  "word": "beheben",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2",
+  "stammformen": "behebt – behob – hat behoben",
+  "relatedWords": [
+    "die Behebung",
+    "beseitigen",
+    "der Fehler",
+    "der Mangel"
+  ],
+  "definitionDe": "Einen Schaden, Fehler oder Mangel vollständig reparieren oder lösen.",
+  "definitionEn": "To resolve / to rectify / to fix a defect.",
+  "collocations": [
+    "einen Fehler beheben",
+    "einen Mangel unverzüglich beheben"
+  ],
+  "exampleDe": "Der Heizungsmonteur konnte den Ausfall der Therme innerhalb von zwei Stunden beheben.",
+  "exampleEn": "The heating technician was able to fix the boiler breakdown within two hours."
+},
+{
+  "id": "vocab_verb_003",
+  "word": "beeinträchtigen",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "B2/C1",
+  "stammformen": "beeinträchtigt – beeinträchtigte – hat beeinträchtigt",
+  "relatedWords": [
+    "die Beeinträchtigung",
+    "die Einschränkung",
+    "behindern",
+    "schwächen"
+  ],
+  "definitionDe": "Auf etwas störend, mindernd oder negativ einwirken.",
+  "definitionEn": "To impair, to adversely affect.",
+  "collocations": [
+    "die Lebensqualität beeinträchtigen",
+    "die Urteilsfähigkeit beeinträchtigen"
+  ],
+  "exampleDe": "Chronischer Schlafmangel beeinträchtigt die Konzentrationsfähigkeit im Schichtdienst erheblich.",
+  "exampleEn": "Chronic sleep deprivation significantly impairs concentration during shift work."
+},
+{
+  "id": "vocab_verb_004",
+  "word": "unterbinden",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "C1",
+  "stammformen": "unterbindet – unterband – hat unterbunden",
+  "relatedWords": [
+    "die Unterbindung",
+    "verhindern",
+    "stoppen",
+    "die Prävention"
+  ],
+  "definitionDe": "Eine unerwünschte Handlung oder Gefahr sofort und energisch stoppen/verhindern.",
+  "definitionEn": "To prevent, to stop, to curb energetically.",
+  "collocations": [
+    "Sicherheitsrisiken unterbinden",
+    "Schmuggel unterbinden"
+  ],
+  "exampleDe": "Um Kreuzinfektionen zu unterbinden, ist die Händedesinfektion vor jedem Zimmerkontakt obligatorisch.",
+  "exampleEn": "To prevent cross-infections, hand disinfection is mandatory before every room contact."
+},
+{
+  "id": "vocab_verb_005",
+  "word": "plädieren (für)",
+  "article": "",
+  "category": "Gehobene Verben (B2/C1)",
+  "level": "C1",
+  "stammformen": "plädiert – plädierte – hat plädiert",
+  "relatedWords": [
+    "das Plädoyer",
+    "sich einsetzen für",
+    "befürworten"
+  ],
+  "definitionDe": "Sich mit überzeugenden Argumenten für eine bestimmte Lösung oder Haltung aussprechen.",
+  "definitionEn": "To plead for / to advocate for.",
+  "collocations": [
+    "für eine Lösung plädieren",
+    "für mehr Ruhezeiten plädieren"
+  ],
+  "exampleDe": "In der Architektur-Diskussion plädiere ich für eine Microservice-Struktur anstelle eines Monolithen.",
+  "exampleEn": "In the architecture discussion, I advocate for a microservice structure instead of a monolith."
 }];

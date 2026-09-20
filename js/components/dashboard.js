@@ -1,4 +1,4 @@
-// Bento Grid Dashboard - High-Yield German Learning Operating System
+// Bento Grid Dashboard - High-Yield B2/C1 German Learning Operating System
 // 12-Spalten Layout: Hero Mission (Span 8), Station 2 Überlebensmodus (Span 4),
 // 4 Säulen-Sprints (Span 3 je) und adaptiver Tagesablauf (Span 12).
 
@@ -63,14 +63,15 @@ export async function renderDashboard(container) {
                 <div class="flex items-center gap-2">
                   <span class="badge badge-amber">Tages-Check-in</span>
                   <span class="badge badge-emerald">BFD • UKGM Station 2</span>
+                  <span class="badge badge-blue">IT & Engineering</span>
                 </div>
-                <span class="text-xs text-muted font-semibold">B1+ → C1 System</span>
+                <span class="text-xs text-muted font-semibold">B2 → C1 System</span>
               </div>
 
               <div>
                 <h1 class="page-title">Guten Tag, Ali!</h1>
                 <p class="subtitle mt-1">
-                  Systematischer Lernfortschritt für deine Schichten in der Psychiatrie, flüssiges Deutsch im Alltag und tiefe Partnerschaftsgespräche.
+                  Master-Plattform für deinen klinischen Dienst in der Psychiatrie, IT- und Engineering-Fachsprache, flüssiges Deutsch im Alltag und Frankfurter Dialekt & Humor.
                 </p>
               </div>
 
@@ -80,10 +81,10 @@ export async function renderDashboard(container) {
                 <div class="flex-between flex-wrap gap-3">
                   <div class="space-y-0.5">
                     <div class="font-bold text-base text-primary">
-                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} Vokabeln wiederholen` : 'Dialog-Simulation: BFD, Familie oder Partnerschaft'}
+                      ${dueCount > 0 ? `Spaced Repetition: ${dueCount} B2/C1 Vokabeln wiederholen` : 'Dialog-Simulation: 6 Lebensbereiche üben'}
                     </div>
                     <div class="text-xs text-secondary">
-                      ${dueCount > 0 ? 'Fällige Verben, Wortfamilien und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog mit Audio-Feedback.'}
+                      ${dueCount > 0 ? 'Fällige Verben mit Stammformen, Nomen-Verb-Verbindungen und Chunks festigen.' : 'Trainiere 4 Sprachebenen im echten Dialog (Klinik, Tech, Wohnen, Feste, Partnerschaft, Hessen).'}
                     </div>
                   </div>
                   <a href="${dueCount > 0 ? '#wiederholen?mode=review' : '#simulation'}" class="btn btn-primary btn-sm whitespace-nowrap">
@@ -93,7 +94,7 @@ export async function renderDashboard(container) {
               </div>
             </div>
 
-            <!-- Distinct Metric Cards (Never overlapping) -->
+            <!-- Distinct Metric Cards -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 border-t border-subtle">
               <div class="p-2.5 bg-surface rounded-xl border border-subtle text-center">
                 <div class="text-[11px] font-semibold text-muted">Fällig</div>
@@ -114,31 +115,31 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Span 4: Erster-Tag-Überlebensmodus -->
+          <!-- Span 4: Erster-Tag-Überlebensmodus & Hessen Tone -->
           <div class="col-span-4 bento-card justify-between space-y-3 border-amber-500/30">
             <div class="space-y-3">
               <div class="flex-between">
-                <span class="badge badge-amber">STATION 2 PRAXIS</span>
-                <span class="text-amber-500 font-bold text-sm">🛡️</span>
+                <span class="badge badge-amber">LOKALES WISSEN</span>
+                <span class="text-amber-500 font-bold text-sm">🏙️</span>
               </div>
               <div>
-                <h2 class="text-lg font-bold text-primary">Überlebensmodus & Grenzen</h2>
+                <h2 class="text-lg font-bold text-primary">Hessen & Frankfurt Tone</h2>
                 <p class="text-xs text-secondary mt-1 leading-relaxed">
-                  Die wichtigsten Notfall-Sätze, rechtlichen Leitplanken (§ 203 StGB) und Schutzregeln für den Klinikdienst.
+                  Wie man in Hessen und Frankfurt wirklich spricht: <em>„Gude!“, „Babbel net“, „Dappisch“, „Uffbasse!“</em> und Kaffeeküchen-Humor.
                 </p>
               </div>
 
               <div class="p-3 bg-subtle rounded-xl space-y-1.5 text-xs">
-                <div class="font-bold text-primary">Klinische Schutzregeln:</div>
-                <div class="text-secondary">✓ Keine eigenständige Medikamentengabe</div>
-                <div class="text-secondary">✓ Schweigepflicht nach § 203 StGB</div>
-                <div class="text-secondary">✓ Der magische Satz bei Unklarheiten</div>
+                <div class="font-bold text-primary">Lokalkolorit & Banter:</div>
+                <div class="text-secondary">✓ Universal-Gruß: „Gude!“</div>
+                <div class="text-secondary">✓ Kontraktionen: <em>haste, kannste, machste</em></div>
+                <div class="text-secondary">✓ Schlagfertigkeit & Kaffeeküchen-Humor</div>
               </div>
             </div>
 
             <div class="pt-2">
-              <a href="#bfd?tab=survival" class="btn btn-secondary btn-sm w-full border-amber-500/40 text-amber-400 hover:bg-amber-500/10">
-                Überlebensmodus öffnen →
+              <a href="#kultur" class="btn btn-secondary btn-sm w-full border-amber-500/40 text-amber-400 hover:bg-amber-500/10">
+                Hessen-Guide öffnen →
               </a>
             </div>
           </div>
@@ -146,18 +147,18 @@ export async function renderDashboard(container) {
 
         <!-- 12-Column Bento Grid: Row 2 (4 Power Learning Pillars - Span 3 each) -->
         <div class="bento-grid">
-          <!-- Pillar 1: Vokabeln & Wortfamilien -->
+          <!-- Pillar 1: Vokabeln & Stammformen -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-amber">Wortschatz</span>
+                <span class="badge badge-amber">Wortschatz B2/C1</span>
                 <span class="text-xs font-semibold ${dueCount > 0 ? 'text-amber-500' : 'text-emerald-500'}">
                   ${dueCount > 0 ? `${dueCount} fällig` : '✓ Bereit'}
                 </span>
               </div>
-              <h3 class="font-bold text-base text-primary">Verben & SRS</h3>
+              <h3 class="font-bold text-base text-primary">Verben & Nomen-Verb</h3>
               <p class="text-xs text-secondary">
-                ${VOCABULARY_DATA.length} Vokabeln mit Wortfamilien, Präfixen (<em>ab-, unter-, an-, ein-</em>), Stammformen und Audio.
+                ${VOCABULARY_DATA.length} Verben mit 3 Stammformen, Wortfamilien und Funktionsverbgefügen (<em>in Betracht ziehen, zur Verfügung stehen</em>).
               </p>
             </div>
             <div class="pt-2">
@@ -167,16 +168,16 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Pillar 2: Dialog-Simulationen (BFD, Familie, GF) -->
+          <!-- Pillar 2: Dialog-Simulationen (6 Bereiche) -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-emerald">Simulation</span>
+                <span class="badge badge-emerald">Simulationen</span>
                 <span class="badge badge-gray text-[10px]">${SIMULATIONS_DATA.length} Szenarien</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Rollenspiele & Dialoge</h3>
+              <h3 class="font-bold text-base text-primary">6 Lebensbereiche</h3>
               <p class="text-xs text-secondary">
-                Station 2 Übergaben, familiäres Abendessen & tiefe Partnerschaftsgespräche (Freundin/Wifey trösten).
+                Klinik & BFD, Software & Tech, Mietrecht, Heiligabend & Geburtstage, Partnerschaft und Hessen-Banter.
               </p>
             </div>
             <div class="pt-2">
@@ -186,21 +187,21 @@ export async function renderDashboard(container) {
             </div>
           </div>
 
-          <!-- Pillar 3: Kinder- & Jugendpsychiatrie (KJP) -->
+          <!-- Pillar 3: Engineering & IT-Deutsch -->
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-purple">Psychologie</span>
-                <span class="badge badge-gray text-[10px]">KJP & Deeskalation</span>
+                <span class="badge badge-blue">Tech & IT</span>
+                <span class="badge badge-gray text-[10px]">B2 / C1</span>
               </div>
-              <h3 class="font-bold text-base text-primary">Psychologie & KJP</h3>
+              <h3 class="font-bold text-base text-primary">Software & Computer</h3>
               <p class="text-xs text-secondary">
-                Bindungsmuster nach Bowlby, Co-Regulation bei kindlichen Wutanfällen, ADHS und Notfall-Erdung.
+                Daily Stand-ups, Code Reviews, Architektur-Debatten (<em>Flaschenhals, Skalierbarkeit, Refactoring, Latenz</em>).
               </p>
             </div>
             <div class="pt-2">
-              <a href="#psychologie" class="btn btn-secondary btn-sm w-full">
-                Psychologie lernen →
+              <a href="#engineering" class="btn btn-secondary btn-sm w-full">
+                Tech-Deutsch öffnen →
               </a>
             </div>
           </div>
@@ -209,8 +210,8 @@ export async function renderDashboard(container) {
           <div class="col-span-3 bento-card justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex-between">
-                <span class="badge badge-blue">Redemittel</span>
-                <span class="badge badge-gray text-[10px]">4 CEFR-Stufen</span>
+                <span class="badge badge-purple">Redemittel</span>
+                <span class="badge badge-gray text-[10px]">4 Stufen</span>
               </div>
               <h3 class="font-bold text-base text-primary">Was sage ich?</h3>
               <p class="text-xs text-secondary">

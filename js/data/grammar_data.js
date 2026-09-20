@@ -4,8 +4,7 @@
 export const GRAMMAR_DATA = {
   title: "Vollständiges Grammatik-System (B1 -> B2 -> C1)",
   provenance: "AUS_QUELLE",
-  lessons: [
-    {
+  lessons: [{
       id: "gram_01",
       number: 1,
       title: "Satzstellung im Hauptsatz & Inversion",
@@ -409,6 +408,117 @@ Beispiele aus der Praxis:
           hint: "Konjunktiv I von 'sein' in der 3. Person Singular ist 'sei'."
         }
       ]
+    },
+{
+  "id": "gram_b2_passiversatz",
+  "number": 26,
+  "title": "Passiversatzformen (sein + zu + Infinitiv, sich lassen, -bar/-lich)",
+  "level": "B2/C1",
+  "category": "Passiv & Stil",
+  "summary": "Elegante Alternativen zum 'Werden-Passiv' für präzises Fachdeutsch.",
+  "explanationGerman": "Im gehobenen Deutsch (Klinikberichte, IT-Architektur, Behörden) vermeidet man monotone Passivsätze mit 'werden' durch drei elegante Passiversatzformen:\n\n1. sein + zu + Infinitiv (drückt Notwendigkeit oder Möglichkeit aus):\n   - Passiv: Die Akte muss sofort archiviert werden.\n   - B2/C1: Die Akte ist sofort zu archivieren.\n   - Passiv: Das Problem kann nicht gelöst werden.\n   - B2/C1: Das Problem ist nicht zu lösen.\n\n2. sich lassen + Infinitiv (drückt Möglichkeit aus = 'kann gemacht werden'):\n   - Passiv: Die Datenbank kann leicht skaliert werden.\n   - B2/C1: Die Datenbank lässt sich leicht skalieren.\n\n3. Adjektive auf -bar / -lich (drückt passive Machbarkeit aus):\n   - Passiv: Der Fehler kann nicht vermieden werden.\n   - B2/C1: Der Fehler ist unvermeidbar / unvermeidlich.",
+  "examples": [
+    {
+      "german": "Die Vitalwerte sind vor der Medikamentengabe lückenlos zu dokumentieren.",
+      "english": "The vital signs are to be completely documented prior to medication administration."
+    },
+    {
+      "german": "Dieser Softwarefehler lässt sich durch ein kurzes Refactoring zügig beheben.",
+      "english": "This software bug can be fixed quickly through a short refactoring."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Die Akte ist zu archivieren müssen.* -> Richtig: *Die Akte ist zu archivieren.* (Kein Modalverb zusätzlich!)"
+  ],
+  "exercises": [
+    {
+      "id": "ex_passiv_1",
+      "question": "Formen Sie um mit 'sein + zu + Infinitiv': 'Die Dosierung muss vom Dienstarzt überprüft werden.'",
+      "correctSentence": "Die Dosierung ist vom Dienstarzt zu überprüfen.",
+      "hint": "Ersetzen Sie 'muss ... überprüft werden' durch 'ist ... zu überprüfen'."
     }
   ]
+},
+{
+  "id": "gram_b2_partizipialattribute",
+  "number": 27,
+  "title": "Erweiterte Partizipialattribute (Partizip I & II)",
+  "level": "C1",
+  "category": "Satzbau & Stil",
+  "summary": "Kondensierte Informationsdichte vor dem Nomen ohne Relativsätze.",
+  "explanationGerman": "Partizipialattribute komprimieren komplexe Relativsätze direkt vor das Nomen. Typisch für Arztbriefe, IT-Spezifikationen und wissenschaftliche Texte.\n\n1. Partizip I (Gleichzeitigkeit / Aktiv / Vorgang):\n   - Relativsatz: Der Patient, der laut schreit...\n   - C1-Partizip: Der laut schreiende Patient.\n   - Mit 'zu' (Gerundiv = Notwendigkeit): Die noch zu erfassenden Vitalwerte (die Werte, die noch erfasst werden müssen).\n\n2. Partizip II (Vorzeitigkeit / Passiv / Resultat):\n   - Relativsatz: Die Studie, die von der Universität Marburg veröffentlicht wurde...\n   - C1-Partizip: Die von der Universität Marburg veröffentlichte Studie.",
+  "examples": [
+    {
+      "german": "Die von der Stationsleitung angeordnete Isolierungsmaßnahme greift sofort.",
+      "english": "The isolation measure ordered by the ward management takes effect immediately."
+    },
+    {
+      "german": "Das im Code-Review identifizierte Sicherheitsproblem wurde behoben.",
+      "english": "The security vulnerability identified during the code review was resolved."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Der laut geschriene Patient* -> Richtig: *Der laut schreiende Patient* (Partizip I für andauernde Handlung!)"
+  ],
+  "exercises": [
+    {
+      "id": "ex_partizip_1",
+      "question": "Verwandeln Sie in ein Partizipialattribut: 'Die Tests, die automatisiert ablaufen'",
+      "correctSentence": "Die automatisiert ablaufenden Tests",
+      "hint": "Nutzen Sie das Partizip I von 'ablaufen' mit Adjektivendung."
+    }
+  ]
+},
+{
+  "id": "gram_b2_konjunktiv_indirekte_rede",
+  "number": 28,
+  "title": "Konjunktiv I (Indirekte Rede im Klinikbericht)",
+  "level": "B2/C1",
+  "category": "Verben & Distanzierung",
+  "summary": "Sachliche Distanzierung bei Patientenaussagen und Zeugenberichten.",
+  "explanationGerman": "Im Pflegebericht und Arztbrief dokumentiert man Aussagen des Patienten mit Konjunktiv I, um zu signalisieren: 'Der Patient behauptet das, es ist keine gesicherte Tatsache des Personals.'\n\nBildung: Verbstamm + Konjunktiv-Endungen (-e, -est, -e, -en, -et, -en).\nBesonders wichtig: sein -> er sei, sie seien / haben -> er habe, sie hätten / wollen -> er wolle.\n\nBeispiele:\n- Direkte Rede: Patient sagt: 'Ich habe keine Schmerzen und will nach Hause.'\n- B2/C1 Dokumentation: Der Patient gab an, er habe keine Schmerzen und wolle nach Hause entlassen werden.",
+  "examples": [
+    {
+      "german": "Herr Meyer äußerte, er fühle sich deutlich ruhiger und habe gut geschlafen.",
+      "english": "Mr. Meyer stated that he felt significantly calmer and had slept well."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Patient sagt, er hat keine Schmerzen.* (Umgangssprachlich; im Klinikbericht gehört Konjunktiv I: *er habe*)."
+  ],
+  "exercises": [
+    {
+      "id": "ex_konj_1",
+      "question": "Setzen Sie in den Konjunktiv I: 'Die Patientin berichtet: Ich bin seit gestern fieberfrei.' -> 'Die Patientin berichtet, sie ______ seit gestern fieberfrei.'",
+      "correctSentence": "Die Patientin berichtet, sie sei seit gestern fieberfrei.",
+      "hint": "3. Person Singular Konjunktiv I von 'sein' ist 'sei'."
+    }
+  ]
+},
+{
+  "id": "gram_b2_gehobene_konnektoren",
+  "number": 29,
+  "title": "Gehobene Konnektoren & Satzverknüpfungen (C1)",
+  "level": "C1",
+  "category": "Konnektoren & Diskurs",
+  "summary": "Meisterhafte logische Verknüpfungen für flüssige Argumentation.",
+  "explanationGerman": "Um auf C1-Niveau spontan und gewandt zu klingen, nutzt man präzise Konnektoren:\n\n1. insofern als / insoweit als (Einschränkend-begründend):\n   - Das System ist stabil, insofern als keine neuen API-Fehler auftreten.\n\n2. geschweige denn (Steigernde Verneinung = 'erst recht nicht'):\n   - Der Patient kann kaum alleine stehen, geschweige denn Treppen steigen.\n\n3. ungeachtet dessen (Konzessiv = 'trotzdem / dennoch'):\n   - Die Schicht war extrem fordernd; ungeachtet dessen blieb das Team hochkonzentriert.\n\n4. je nachdem ob / wie (Konditionale Abhängigkeit):\n   - Wir verlegen den Patienten morgen, je nachdem wie sich die Entzündungswerte entwickeln.",
+  "examples": [
+    {
+      "german": "Wir entscheiden über das Release, je nachdem ob die Lasttests erfolgreich durchlaufen.",
+      "english": "We will decide on the release depending on whether the load tests succeed."
+    }
+  ],
+  "commonErrors": [
+    "Falsch: *Er kann nicht laufen, geschweige denn er kann rennen.* -> Richtig: *Er kann nicht laufen, geschweige denn rennen.*"
+  ],
+  "exercises": [
+    {
+      "id": "ex_konn_1",
+      "question": "Vervollständigen Sie: 'Er hat kein Geld für ein Fahrrad, ______ für ein teures Auto.'",
+      "correctSentence": "geschweige denn",
+      "hint": "Bedeutet: 'und erst recht nicht'."
+    }
+  ]
+}]
 };
