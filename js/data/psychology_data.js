@@ -1,179 +1,131 @@
-// Psychologie & Kinder-/Jugendpsychiatrie (KJP) verstehen
-// Sprach-, Handlungs- und Deeskalationswissen für Klinik, Pädagogik & Alltag
+// Psychologie, KJP-Krankheitsbilder & Psychiatrische Kommunikation
+// Diagnostik, Symptomlehre und Deeskalation für Station 2 (UKGM Marburg) & Kinder-/Jugendpsychiatrie (11–17 Jahre)
 
 export const PSYCHOLOGY_DATA = {
   overview: {
-    title: "Psychologie & Psychiatrische Kommunikation verstehen",
-    disclaimer: "Dieses Modul vermittelt sprachliches und deeskalierendes Handlungswissen für BFD, Klinik und Betreuung. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik.",
+    title: "KJP-Psychiatrie & Klinische Symptomlehre (11–17 Jahre)",
+    disclaimer: "Dieses Modul vermittelt sprachliches, pflegerisches und deeskalierendes Handlungswissen für die Kinder- und Jugendpsychiatrie (KJP) und Station 2. Es dient der professionellen Kommunikation und NICHT der medizinischen Eigendiagnostik.",
     provenance: "AUS_QUELLE"
   },
 
   concepts: [
-    // ----------------------------------------
-    // 1. KINDER- & JUGENDPSYCHOLOGIE / KJP
-    // ----------------------------------------
+    // ==========================================
+    // 1. KRANKHEITSBILDER & AKUTSYMPTOME (KJP)
+    // ==========================================
+    {
+      id: "psy_psychose_wahn",
+      term: "Die Psychose & Wahnphänomene (Realitätsverlust & Halluzinationen)",
+      domain: "KJP & Akutpsychiatrie",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf / Schizophrenie & Drogenpsychose",
+      explanationGerman: "Ein Zustand mit tiefgreifendem Verlust des Realitätsbezugs. Betroffene Jugendliche erleben akustische Halluzinationen (imperative Stimmen hören), optische Sinnestäuschungen oder Wahnideen (z. B. Verfolgungswahn: 'Die Kameras im Zimmer beobachten mich'). Oft ausgelöst durch Schizophrenie, schwere Traumata oder Cannabiskonsum (Drogenpsychose).",
+      simpleExample: "Ein 16-jähriger Patient verbarrikadiert sich im Zimmer, weil er überzeugt ist, das Pflegepersonal wolle ihn vergiften.",
+      workplaceContext: "Auf Station 2 niemals gegen den Wahn anargumentieren ('Das bilden Sie sich nur ein!'). Das verstärkt die Panik. Stattdessen die reale Angst validieren und Sicherheit bieten.",
+      whatToDo: [
+        "Reale Angst anerkennen: 'Ich sehe, dass Sie gerade große Angst haben. Hier im Stationszimmer sind Sie in Sicherheit.'",
+        "Auf sensorische Reizüberflutung achten: Licht dimmen, leise und mit ruhiger Stimme sprechen.",
+        "Klare, kurze Sätze verwenden; transparent ankündigen, was man tut: 'Ich öffne jetzt die Tür einen Spalt.'"
+      ],
+      whatToAvoid: [
+        "Den Wahn rational widerlegen wollen oder darüber lachen.",
+        "Dem Wahn zustimmen (keine Bestätigung von nicht-realen Inhalten).",
+        "Sich dem Patienten unerwartet von hinten nähern oder ihn überraschend berühren."
+      ],
+      relevantVocabulary: ["die Psychose", "der Verfolgungswahn", "die Halluzination", "das Stimmenhören", "der Realitätsverlust", "imperativ"],
+      speakingPractice: "Ich höre die Stimmen zwar nicht, aber ich sehe, wie sehr sie Ihnen Angst machen. Ich bleibe hier bei Ihnen am Tisch sitzen."
+    },
+
+    {
+      id: "psy_autismus_ass",
+      term: "Autismus-Spektrum-Störung (ASS) bei Jugendlichen",
+      domain: "Entwicklungspsychiatrie & Neurodivergenz",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf / ASS_Leitlinie",
+      explanationGerman: "Eine neurobiologische Besonderheit der Informations- und Reizverarbeitung. Jugendliche im Autismus-Spektrum haben oft eine Reizfilterschwäche, nehmen Sinnesreize intensiv wahr, verstehen Sprache sehr wörtlich (Schwierigkeiten bei Metaphern, Ironie, Redewendungen) und benötigen verlässliche Routinen. Bei Reizüberlastung drohen Meltdowns (explosiver Wut-/Panikausbruch) oder Shutdowns (völliger Rückzug, Sprachlosigkeit).",
+      simpleExample: "Ein 13-Jähriger gerät bei plötzlichem Baulärm und Essengerüchen im Speisesaal in Panik und schlägt mit den Händen auf die Ohren.",
+      workplaceContext: "Auf Station: Feste Tagespläne aushängen, Ankündigungen im Voraus machen, Rückzugsorte ('Snoezelen-Raum' / reizarmes Zimmer) anbieten.",
+      whatToDo: [
+        "Klar, direkt und wörtlich sprechen – komplett auf Ironie, Sarkasmus oder doppeldeutige Witze verzichten.",
+        "Veränderungen frühzeitig ankündigen: 'In 10 Minuten essen wir zu Mittag.'",
+        "Stimming (beruhigende repetitive Bewegungen wie Wippen oder Knetbälle) erlauben und als Selbstregulation respektieren."
+      ],
+      whatToAvoid: [
+        "Unvorhergesehene Planänderungen ohne Erklärung.",
+        "Blickkontakt erzwingen ('Schau mir in die Augen, wenn ich mit dir rede').",
+        "Metaphorische Redewendungen nutzen ('Wir müssen jetzt die Zähne zusammenbeißen')."
+      ],
+      relevantVocabulary: ["das Autismus-Spektrum", "die Reizfilterschwäche", "der Meltdown", "der Shutdown", "das Stimming", "reizarm"],
+      speakingPractice: "Du kannst deine Kopfhörer aufsetzen. Wenn dir der Gruppenraum zu laut ist, gehen wir in den Ruheraum."
+    },
+
+    {
+      id: "psy_enuresis_enkopresis",
+      term: "Enuresis & Enkopresis (Einnässen & Einkoten)",
+      domain: "KJP & Psychosomatik",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Diagnostik_Ausscheidung.pdf",
+      explanationGerman: "Unwillkürliches Einnässen (Enuresis nocturna / diurna) oder Einkoten (Enkopresis) nach Vollendung des 5. Lebensjahres ohne primär organische Ursache. Bei Jugendlichen zwischen 11 und 17 Jahren ist dies fast immer Ausdruck massiver seelischer Not, schwerer Traumatisierung, chronischer Angst oder familiärer Überforderung. Geht einher mit extremer Scham, Selbstwertverlust und Angst vor Mobbing.",
+      simpleExample: "Ein 12-jähriger Junge nässt nachts im Klinikbett ein und versucht morgens verzweifelt, die nasse Bettwäsche unter der Matratze zu verstecken.",
+      workplaceContext: "Als BFDler oder Pflegekraft: Absolute Diskretion! Niemals vor Mitpatienten ansprechen. Scham aktiv nehmen und sachlich-fürsorglich helfen.",
+      whatToDo: [
+        "Absolute Verschwiegenheit und Diskretion wahren; Zimmerkollegen diskret ablenken.",
+        "Scham aktiv entkräften: 'Das ist überhaupt nicht schlimm. Das passiert vielen Menschen unter Stress. Wir machen das Bett schnell frisch.'",
+        "Frische Kleidung und Bettwäsche ohne Aufhebens bereitstellen und unauffällig waschen."
+      ],
+      whatToAvoid: [
+        "Das Einnässen vor anderen Jugendlichen erwähnen oder kommentieren.",
+        "Vorwürfe wie 'Du bist doch schon 13!' oder 'Hättest du halt vorher Bescheid gesagt'.",
+        "Strafmaßnahmen oder Bloßstellung."
+      ],
+      relevantVocabulary: ["die Enuresis", "die Enkopresis", "das Einnässen", "die Scham", "die Entstigmatisierung", "die Diskretion"],
+      speakingPractice: "Komm, wir wechseln das Laken ganz in Ruhe zusammen. Du brauchst dich dafür überhaupt nicht zu schämen."
+    },
+
+    {
+      id: "psy_nssv_schnittdruck",
+      term: "NSSV & Schnittdruck (Nicht-suizidales selbstverletzendes Verhalten)",
+      domain: "KJP & Emotionsregulation",
+      provenance: "AUS_QUELLE",
+      source: "Dialektisch-Behaviorale Therapie für Adoleszente (DBT-A)",
+      explanationGerman: "Gezielte Selbstverletzung (Schneiden, Verbrennen, Schlagen) ohne Suizidabsicht zur Regulierung unerträglicher innerer Spannungszustände oder zur Durchbrechung dissoziativer Taubheitsgefühle. Betrifft häufig Jugendliche mit Borderline-Symptomatik oder Traumafolgestörungen.",
+      simpleExample: "Eine 15-Jährige spürt extremen inneren 'Schnittdruck' nach einem Streit und bittet um Hilfe.",
+      workplaceContext: "Nicht hysterisch reagieren. Wunden sachlich versorgen, Skills (Reizalternativen) anleiten und Non-Suizid-Absprachen überprüfen.",
+      whatToDo: [
+        "Skills aus dem Notfallkoffer anbieten: Ammoniak-Riechstäbchen, scharfe Chilibonbons, Igelball, Kühlpack auf die Unterarme.",
+        "Wundversorgung ruhig und sachlich durchführen – ohne Vorwürfe, aber auch ohne übermäßige Zuwendung (Verstärker vermeiden).",
+        "Spannungsskala erfragen: 'Auf einer Skala von 0 bis 100, wo liegt deine Anspannung gerade?'"
+      ],
+      whatToAvoid: [
+        "Dramatisieren oder Schimpfen ('Warum tust du dir das schon wieder an?').",
+        "Versprechen von Geheimhaltung ('Ich erzähle es der Stationsleitung nicht'). Pflegepersonal muss immer im Team transparent sein.",
+        "Verletzungsutensilien auf Station zugänglich herumliegen lassen."
+      ],
+      relevantVocabulary: ["das NSSV", "der Schnittdruck", "der Skillkoffer", "die Anspannungsskala", "die Wundversorgung", "die Non-Suizid-Absprache"],
+      speakingPractice: "Deine Anspannung ist bei 80. Lass uns den Kühlpack holen und zwei Minuten die 4-7-8-Atmung machen."
+    },
+
+    // ==========================================
+    // 2. ENTWICKLUNGSPSYCHOLOGIE & BINDUNG
+    // ==========================================
     {
       id: "psy_bindungstheorie",
       term: "Die Bindungstheorie & Bindungsmuster (nach Bowlby / Ainsworth)",
       domain: "Entwicklungspsychologie & KJP",
       provenance: "AUS_QUELLE",
-      source: "KJP_Entwicklung.pdf / Psychoanalyse",
-      explanationGerman: "Kinder entwickeln basierend auf den ersten Lebensjahren ein inneres Arbeitsmodell von Beziehungen: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden unterdrückt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bezugsperson bei traumatischen Erfahrungen).",
-      simpleExample: "Ein Kind weint beim Verlassen der Mutter, lässt sich aber nach ihrer Rückkehr schnell trösten (sicher gebunden).",
-      workplaceContext: "Traumatisierte Kinder und Jugendliche auf Station testen oft Grenzen extrem aus, um unbewusst zu prüfen: 'Verlässt du mich auch, wenn ich schwierig bin?'",
+      source: "KJP_Entwicklung.pdf",
+      explanationGerman: "Kinder und Jugendliche entwickeln basierend auf frühen Bezugserfahrungen innere Beziehungsmuster: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden abgewehrt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bindungsperson bei Traumata).",
+      simpleExample: "Ein 14-Jähriger provoziert Betreuer aggressiv, um unbewusst zu testen: 'Schmeißt ihr mich auch raus, wenn ich schwierig werde?'",
+      workplaceContext: "Verlässlichkeit und Kontinuität bieten. Wer Verlässlichkeit zusagt, muss sie einhalten.",
       whatToDo: [
-        "Verlässlichkeit und Vorhersehbarkeit im Verhalten zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
-        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Kindes.",
-        "Positive Zuwendung nicht an Bedingungen oder 'gutes Verhalten' knüpfen."
+        "Verlässlichkeit zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
+        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Jugendlichen."
       ],
       whatToAvoid: [
-        "Liebesentzug oder Drohungen ('Wenn du nicht brav bist, gehe ich weg').",
-        "Widersprüchliche Signale (Doppelbotschaften).",
-        "Die Bindungsangst des Kindes ins Lächerliche ziehen."
+        "Liebesentzug oder Beziehungsabbruch als Erziehungsmaßnahme.",
+        "Widersprüchliche Signale (Doppelbotschaften)."
       ],
-      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit", "die Bindungsperson"],
-      speakingPractice: "Ich sehe, dass du gerade große Angst hast. Ich bleibe hier bei dir sitzen, bis du dich wieder sicher fühlst."
-    },
-
-    {
-      id: "psy_trotzphase_wutanfall",
-      term: "Die Autonomiephase (Trotzphase) & Emotionsregulation bei Kindern",
-      domain: "Entwicklungs- & Traumapädagogik",
-      provenance: "AUS_QUELLE",
-      source: "Traumapaedagogik_Klinik.pdf",
-      explanationGerman: "Zwischen dem 2. und 4. Lebensjahr begreift das Kind sein eigenes 'Ich' und entwickelt einen eigenen Willen. Da der präfrontale Kortex (Sitz der Impulskontrolle) noch unreif ist, führen Frustrationen zu massiven emotionalen Entladungen (Wutanfällen).",
-      simpleExample: "Das Kind darf die Steckdose nicht berühren und wirft sich schreiend auf den Boden.",
-      workplaceContext: "In der Betreuung oder Kinderklinik geraten Kinder bei kleinsten Verboten in heftige Wut. Strafen verschlimmern die Übererregung der Amygdala.",
-      whatToDo: [
-        "Auf Augenhöhe gehen (in die Hocke gehen, Blickkontakt auf gleicher Höhe).",
-        "Das Gefühl benennen und validieren: 'Du bist gerade richtig wütend, weil du noch weiterspielen wolltest.'",
-        "Körperliche Grenzen ruhig und bestimmt halten: 'Wütend sein ist okay, aber Schlagen/Beißen ist nicht erlaubt.'"
-      ],
-      whatToAvoid: [
-        "Selbst laut werden oder das Kind anschreien.",
-        "Lange rationale Vorträge halten, während das Kind im Wutanfall ist (das Gehirn ist für Logik blockiert).",
-        "Das Kind zur Strafe isolieren ('Time-Out' im Zimmer)."
-      ],
-      relevantVocabulary: ["die Autonomiephase", "die Impulskontrolle", "das Gefühlschaos", "die Wutbewältigung", "auf Augenhöhe gehen"],
-      speakingPractice: "Ich merke, wie wütend du bist. Das ist vollkommen verständlich. Atme kurz mit mir aus – ich helfe dir dabei."
-    },
-
-    {
-      id: "psy_adhs_reizueberflutung",
-      term: "ADHS & Reizüberflutung bei Kindern & Jugendlichen",
-      domain: "Kinder- & Jugendpsychiatrie",
-      provenance: "AUS_QUELLE",
-      source: "KJP_Manual.pdf",
-      explanationGerman: "Eine neurobiologische Störung der Reizfilterung und Dopaminregulation. Betroffene Kinder können sensorische Reize (Geräusche, Bewegungen) schlechter filtern, was zu Hyperaktivität, Impulsivität und rascher Erschöpfung durch Reizüberflutung führt.",
-      simpleExample: "Ein Kind kann bei Hintergrundmusik oder vielen bunten Bildern im Raum den Hausaufgaben nicht folgen.",
-      workplaceContext: "Auf Station oder in der Schule wirken diese Kinder oft 'unruhig', 'störend' oder 'aggressiv', obwohl sie schlicht sensorisch überfordert sind.",
-      whatToDo: [
-        "Reizarme Umgebung schaffen (visuelle Ablenkungen und Lärm minimieren).",
-        "Kurze, präzise Arbeitsaufträge in Einzelschritten geben (1 Anweisung statt 5 auf einmal).",
-        "Bewegungspausen gezielt einplanen (Bewegungsdrang als Ressource nutzen)."
-      ],
-      whatToAvoid: [
-        "Pauschale Vorwürfe wie 'Du hörst nie zu!' oder 'Sitz endlich still!'.",
-        "Überladene Räume mit ständig wechselnden Sinnesreizen.",
-        "Komplexe mehrstufige Aufgabenstellungen ohne Zwischenstopps."
-      ],
-      relevantVocabulary: ["die Reizfilterung", "die Impulsivität", "die Aufmerksamkeitsspanne", "reizarm", "die Strukturierung"],
-      speakingPractice: "Lass uns zuerst nur Aufgabe 1 zusammen machen. Wenn du die geschafft hast, machen wir eine kurze 2-Minuten-Pause."
-    },
-
-    {
-      id: "psy_kindgerechte_kommunikation",
-      term: "Kindgerechte Kommunikation & Angstreduktion in der Klinik",
-      domain: "Klinische Pädagogik",
-      provenance: "AUS_QUELLE",
-      source: "Klinische_Kommunikation_KJP.pdf",
-      explanationGerman: "Kinder verstehen Sprache bis etwa zum 10. Lebensjahr sehr wörtlich und bildhaft. Medizinische Fachbegriffe wie 'Blut abnehmen' oder 'Spritze' lösen Todes- oder Verstümmelungsängste aus. Eine kindgerechte Sprache nutzt Metaphern, Entdramatisierung und vorbereitende Ankündigungen.",
-      simpleExample: "Statt 'Wir nehmen dir jetzt Blut ab' sagt man: 'Wir zählen kurz deine Blutkörperchen mit einem kleinen Zauber-Röhrchen.'",
-      workplaceContext: "Bei Blutdruckmessung, EKG oder Verbandswechsel vor der Durchführung das Gerät am Stofftier oder spielerisch vormachen.",
-      whatToDo: [
-        "Positive, ehrliche Erklärungen ('Es piekst kurz wie ein Mückenstich, danach ist es vorbei').",
-        "Das Kind aktiv einbeziehen ('Möchtest du das Pflaster mit den Dinos oder den Sternen?').",
-        "Nach der Untersuchung loben und die Tapferkeit anerkennen."
-      ],
-      whatToAvoid: [
-        "Lügen wie 'Das tut überhaupt gar nicht weh!' (zerstört das Vertrauen, wenn es doch wehtut).",
-        "Fachjargon und drohende Worte verwenden.",
-        "Ironie oder Sarkasmus (Kinder verstehen Ironie kognitiv noch nicht)."
-      ],
-      relevantVocabulary: ["die kindgerechte Sprache", "die Angstreduktion", "die Wahlmöglichkeit", "der Zaubermückenstich", "die Tapferkeit"],
-      speakingPractice: "Schau mal, diese Manschette pustet sich jetzt auf wie ein kleiner Luftballon und umarmt deinen Arm ganz fest."
-    },
-
-    // ----------------------------------------
-    // 2. ERWACHSENENPSYCHIATRIE & DEESKALATION
-    // ----------------------------------------
-    {
-      id: "psy_trauma",
-      term: "Das Trauma / Die Traumatisierung",
-      domain: "Traumapädagogik",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 1-5)",
-      explanationGerman: "Ein Trauma entsteht, wenn eine Person eine Situation als extrem bedrohlich, überwältigend und unkontrollierbar erlebt, während normale Bewältigungsstrategien versagen. Es hinterlässt Gefühle von extremer Angst, Ohnmacht und Hilflosigkeit.",
-      simpleExample: "Ein schwerer Autounfall oder Gewalterfahrungen können traumatisch wirken.",
-      workplaceContext: "Patienten auf Station können durch plötzliche laute Geräusche, geschlossene Türen oder bestimmte Gerüche getriggert werden und in alte Angstzustände zurückfallen.",
-      whatToDo: [
-        "Ruhige, berechenbare Atmosphäre schaffen.",
-        "Ankündigen, was man als Nächstes tut ('Ich öffne jetzt kurz das Fenster').",
-        "Auf körperlichen Abstand achten und den Fluchtweg des Patienten freihalten."
-      ],
-      whatToAvoid: [
-        "Patienten unerwartet von hinten berühren.",
-        "Aussagen wie 'Es ist doch gar nichts passiert' oder 'Beruhigen Sie sich einfach'.",
-        "Detailliert nach traumatischen Erlebnissen ausfragen."
-      ],
-      relevantVocabulary: ["das Bindungstrauma", "die Ohnmacht", "überwältigend", "die Bewältigungsstrategie", "die Reizüberflutung"],
-      speakingPractice: "Herr Müller, ich sehe, dass Ihnen das gerade zu viel wird. Ich trete einen Schritt zurück. Sie sind hier im Krankenhaus in Sicherheit."
-    },
-
-    {
-      id: "psy_ptbs_flashback",
-      term: "Der Flashback / Das Wiedererleben (PTBS)",
-      domain: "Klinische Symptomatik",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 2, 6, 22)",
-      explanationGerman: "Ein Zustand, in dem ein traumatisches Ereignis sich der Person ungewollt wieder aufdrängt. Der Patient erlebt das Gefühl und die Sinneswahrnehmungen des Traumas so intensiv, als fände es genau in diesem Augenblick im Hier und Jetzt erneut statt.",
-      simpleExample: "Ein Knallgeräusch lässt eine Person zusammenzucken und panisch den Raum nach Gefahr absuchen.",
-      workplaceContext: "Ein Patient erstarrt plötzlich, reagiert kaum noch auf Ansprache oder zittert am ganzen Körper.",
-      whatToDo: [
-        "5-4-3-2-1 Erdungsmethode anwenden: Den Patienten ins Hier und Jetzt zurückholen.",
-        "Den Patienten seinen Namen, das heutige Datum und den Raum laut aussprechen lassen.",
-        "Sensorische Reize anbieten (z. B. ein Glas kaltes Wasser, feste Unterlage unter den Füßen spüren lassen)."
-      ],
-      whatToAvoid: [
-        "Den Patienten schütteln oder festhalten.",
-        "Inhaltlich auf das Trauma eingehen.",
-        "Den Patienten alleine im Raum lassen, ohne vorher Hilfe geholt zu haben."
-      ],
-      relevantVocabulary: ["die Intrusion", "die Erdung", "die Orientierung im Hier und Jetzt", "das Hyperarousal", "die Schreckreaktion"],
-      speakingPractice: "Frau Schmidt, hören Sie meine Stimme. Sie sind hier im Gemeinschaftsraum in Marburg. Es ist August. Spüren Sie Ihre Füße auf dem festen Boden?"
-    },
-
-    {
-      id: "psy_grounding_54321",
-      term: "Die 5-4-3-2-1 Erdungstechnik (Grounding)",
-      domain: "Deeskalation & Reorientierung",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 2, 8, 30)",
-      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, die das Nervensystem bei Dissoziation, Panik oder Flashbacks über die 5 Sinne in die Gegenwart zurückholt: 5 Dinge sehen, 4 Dinge spüren, 3 Dinge hören, 2 Dinge riechen, 1 Sache schmecken.",
-      simpleExample: "Der Patient zählt laut auf: Ich sehe den Stuhl, das Fenster, die Lampe, die Uhr, die Tür.",
-      workplaceContext: "Sofortintervention bei Patienten mit massiver innerer Anspannung oder Panikattacken im Stationsflur.",
-      whatToDo: [
-        "Mit ruhiger, tiefer Stimme anleiten.",
-        "Geduldig warten, bis der Patient jeden Sinn wahrgenommen hat.",
-        "Gemeinsam tief durchatmen (längeres Ausatmen als Einatmen)."
-      ],
-      whatToAvoid: [
-        "Hektik verbreiten oder den Patienten drängen.",
-        "Komplexe abstrakte Fragen stellen.",
-        "Über das auslösende Thema diskutieren."
-      ],
-      relevantVocabulary: ["die Sinneswahrnehmung", "das Grounding", "die Panikattacke", "die Beruhigung", "das Ein- und Ausatmen"],
-      speakingPractice: "Schauen Sie sich im Raum um. Nennen Sie mir bitte fünf Gegenstände mit blauer Farbe, die Sie hier sehen."
+      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit"],
+      speakingPractice: "Ich sehe, wie wütend du bist. Ich gehe nicht weg. Ich bleibe hier, bis wir eine Lösung haben."
     }
   ]
 };

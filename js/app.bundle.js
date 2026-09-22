@@ -21034,182 +21034,134 @@ Beispiele aus der Praxis:
   // MODULE: data/psychology_data.js
   // ==========================================
   __register('data/psychology_data.js', function(module, exports, require) {
-// Psychologie & Kinder-/Jugendpsychiatrie (KJP) verstehen
-// Sprach-, Handlungs- und Deeskalationswissen für Klinik, Pädagogik & Alltag
+// Psychologie, KJP-Krankheitsbilder & Psychiatrische Kommunikation
+// Diagnostik, Symptomlehre und Deeskalation für Station 2 (UKGM Marburg) & Kinder-/Jugendpsychiatrie (11–17 Jahre)
 
 const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   overview: {
-    title: "Psychologie & Psychiatrische Kommunikation verstehen",
-    disclaimer: "Dieses Modul vermittelt sprachliches und deeskalierendes Handlungswissen für BFD, Klinik und Betreuung. Es dient ausdrücklich NICHT der medizinischen Eigendiagnostik.",
+    title: "KJP-Psychiatrie & Klinische Symptomlehre (11–17 Jahre)",
+    disclaimer: "Dieses Modul vermittelt sprachliches, pflegerisches und deeskalierendes Handlungswissen für die Kinder- und Jugendpsychiatrie (KJP) und Station 2. Es dient der professionellen Kommunikation und NICHT der medizinischen Eigendiagnostik.",
     provenance: "AUS_QUELLE"
   },
 
   concepts: [
-    // ----------------------------------------
-    // 1. KINDER- & JUGENDPSYCHOLOGIE / KJP
-    // ----------------------------------------
+    // ==========================================
+    // 1. KRANKHEITSBILDER & AKUTSYMPTOME (KJP)
+    // ==========================================
+    {
+      id: "psy_psychose_wahn",
+      term: "Die Psychose & Wahnphänomene (Realitätsverlust & Halluzinationen)",
+      domain: "KJP & Akutpsychiatrie",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf / Schizophrenie & Drogenpsychose",
+      explanationGerman: "Ein Zustand mit tiefgreifendem Verlust des Realitätsbezugs. Betroffene Jugendliche erleben akustische Halluzinationen (imperative Stimmen hören), optische Sinnestäuschungen oder Wahnideen (z. B. Verfolgungswahn: 'Die Kameras im Zimmer beobachten mich'). Oft ausgelöst durch Schizophrenie, schwere Traumata oder Cannabiskonsum (Drogenpsychose).",
+      simpleExample: "Ein 16-jähriger Patient verbarrikadiert sich im Zimmer, weil er überzeugt ist, das Pflegepersonal wolle ihn vergiften.",
+      workplaceContext: "Auf Station 2 niemals gegen den Wahn anargumentieren ('Das bilden Sie sich nur ein!'). Das verstärkt die Panik. Stattdessen die reale Angst validieren und Sicherheit bieten.",
+      whatToDo: [
+        "Reale Angst anerkennen: 'Ich sehe, dass Sie gerade große Angst haben. Hier im Stationszimmer sind Sie in Sicherheit.'",
+        "Auf sensorische Reizüberflutung achten: Licht dimmen, leise und mit ruhiger Stimme sprechen.",
+        "Klare, kurze Sätze verwenden; transparent ankündigen, was man tut: 'Ich öffne jetzt die Tür einen Spalt.'"
+      ],
+      whatToAvoid: [
+        "Den Wahn rational widerlegen wollen oder darüber lachen.",
+        "Dem Wahn zustimmen (keine Bestätigung von nicht-realen Inhalten).",
+        "Sich dem Patienten unerwartet von hinten nähern oder ihn überraschend berühren."
+      ],
+      relevantVocabulary: ["die Psychose", "der Verfolgungswahn", "die Halluzination", "das Stimmenhören", "der Realitätsverlust", "imperativ"],
+      speakingPractice: "Ich höre die Stimmen zwar nicht, aber ich sehe, wie sehr sie Ihnen Angst machen. Ich bleibe hier bei Ihnen am Tisch sitzen."
+    },
+
+    {
+      id: "psy_autismus_ass",
+      term: "Autismus-Spektrum-Störung (ASS) bei Jugendlichen",
+      domain: "Entwicklungspsychiatrie & Neurodivergenz",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Manual.pdf / ASS_Leitlinie",
+      explanationGerman: "Eine neurobiologische Besonderheit der Informations- und Reizverarbeitung. Jugendliche im Autismus-Spektrum haben oft eine Reizfilterschwäche, nehmen Sinnesreize intensiv wahr, verstehen Sprache sehr wörtlich (Schwierigkeiten bei Metaphern, Ironie, Redewendungen) und benötigen verlässliche Routinen. Bei Reizüberlastung drohen Meltdowns (explosiver Wut-/Panikausbruch) oder Shutdowns (völliger Rückzug, Sprachlosigkeit).",
+      simpleExample: "Ein 13-Jähriger gerät bei plötzlichem Baulärm und Essengerüchen im Speisesaal in Panik und schlägt mit den Händen auf die Ohren.",
+      workplaceContext: "Auf Station: Feste Tagespläne aushängen, Ankündigungen im Voraus machen, Rückzugsorte ('Snoezelen-Raum' / reizarmes Zimmer) anbieten.",
+      whatToDo: [
+        "Klar, direkt und wörtlich sprechen – komplett auf Ironie, Sarkasmus oder doppeldeutige Witze verzichten.",
+        "Veränderungen frühzeitig ankündigen: 'In 10 Minuten essen wir zu Mittag.'",
+        "Stimming (beruhigende repetitive Bewegungen wie Wippen oder Knetbälle) erlauben und als Selbstregulation respektieren."
+      ],
+      whatToAvoid: [
+        "Unvorhergesehene Planänderungen ohne Erklärung.",
+        "Blickkontakt erzwingen ('Schau mir in die Augen, wenn ich mit dir rede').",
+        "Metaphorische Redewendungen nutzen ('Wir müssen jetzt die Zähne zusammenbeißen')."
+      ],
+      relevantVocabulary: ["das Autismus-Spektrum", "die Reizfilterschwäche", "der Meltdown", "der Shutdown", "das Stimming", "reizarm"],
+      speakingPractice: "Du kannst deine Kopfhörer aufsetzen. Wenn dir der Gruppenraum zu laut ist, gehen wir in den Ruheraum."
+    },
+
+    {
+      id: "psy_enuresis_enkopresis",
+      term: "Enuresis & Enkopresis (Einnässen & Einkoten)",
+      domain: "KJP & Psychosomatik",
+      provenance: "AUS_QUELLE",
+      source: "KJP_Diagnostik_Ausscheidung.pdf",
+      explanationGerman: "Unwillkürliches Einnässen (Enuresis nocturna / diurna) oder Einkoten (Enkopresis) nach Vollendung des 5. Lebensjahres ohne primär organische Ursache. Bei Jugendlichen zwischen 11 und 17 Jahren ist dies fast immer Ausdruck massiver seelischer Not, schwerer Traumatisierung, chronischer Angst oder familiärer Überforderung. Geht einher mit extremer Scham, Selbstwertverlust und Angst vor Mobbing.",
+      simpleExample: "Ein 12-jähriger Junge nässt nachts im Klinikbett ein und versucht morgens verzweifelt, die nasse Bettwäsche unter der Matratze zu verstecken.",
+      workplaceContext: "Als BFDler oder Pflegekraft: Absolute Diskretion! Niemals vor Mitpatienten ansprechen. Scham aktiv nehmen und sachlich-fürsorglich helfen.",
+      whatToDo: [
+        "Absolute Verschwiegenheit und Diskretion wahren; Zimmerkollegen diskret ablenken.",
+        "Scham aktiv entkräften: 'Das ist überhaupt nicht schlimm. Das passiert vielen Menschen unter Stress. Wir machen das Bett schnell frisch.'",
+        "Frische Kleidung und Bettwäsche ohne Aufhebens bereitstellen und unauffällig waschen."
+      ],
+      whatToAvoid: [
+        "Das Einnässen vor anderen Jugendlichen erwähnen oder kommentieren.",
+        "Vorwürfe wie 'Du bist doch schon 13!' oder 'Hättest du halt vorher Bescheid gesagt'.",
+        "Strafmaßnahmen oder Bloßstellung."
+      ],
+      relevantVocabulary: ["die Enuresis", "die Enkopresis", "das Einnässen", "die Scham", "die Entstigmatisierung", "die Diskretion"],
+      speakingPractice: "Komm, wir wechseln das Laken ganz in Ruhe zusammen. Du brauchst dich dafür überhaupt nicht zu schämen."
+    },
+
+    {
+      id: "psy_nssv_schnittdruck",
+      term: "NSSV & Schnittdruck (Nicht-suizidales selbstverletzendes Verhalten)",
+      domain: "KJP & Emotionsregulation",
+      provenance: "AUS_QUELLE",
+      source: "Dialektisch-Behaviorale Therapie für Adoleszente (DBT-A)",
+      explanationGerman: "Gezielte Selbstverletzung (Schneiden, Verbrennen, Schlagen) ohne Suizidabsicht zur Regulierung unerträglicher innerer Spannungszustände oder zur Durchbrechung dissoziativer Taubheitsgefühle. Betrifft häufig Jugendliche mit Borderline-Symptomatik oder Traumafolgestörungen.",
+      simpleExample: "Eine 15-Jährige spürt extremen inneren 'Schnittdruck' nach einem Streit und bittet um Hilfe.",
+      workplaceContext: "Nicht hysterisch reagieren. Wunden sachlich versorgen, Skills (Reizalternativen) anleiten und Non-Suizid-Absprachen überprüfen.",
+      whatToDo: [
+        "Skills aus dem Notfallkoffer anbieten: Ammoniak-Riechstäbchen, scharfe Chilibonbons, Igelball, Kühlpack auf die Unterarme.",
+        "Wundversorgung ruhig und sachlich durchführen – ohne Vorwürfe, aber auch ohne übermäßige Zuwendung (Verstärker vermeiden).",
+        "Spannungsskala erfragen: 'Auf einer Skala von 0 bis 100, wo liegt deine Anspannung gerade?'"
+      ],
+      whatToAvoid: [
+        "Dramatisieren oder Schimpfen ('Warum tust du dir das schon wieder an?').",
+        "Versprechen von Geheimhaltung ('Ich erzähle es der Stationsleitung nicht'). Pflegepersonal muss immer im Team transparent sein.",
+        "Verletzungsutensilien auf Station zugänglich herumliegen lassen."
+      ],
+      relevantVocabulary: ["das NSSV", "der Schnittdruck", "der Skillkoffer", "die Anspannungsskala", "die Wundversorgung", "die Non-Suizid-Absprache"],
+      speakingPractice: "Deine Anspannung ist bei 80. Lass uns den Kühlpack holen und zwei Minuten die 4-7-8-Atmung machen."
+    },
+
+    // ==========================================
+    // 2. ENTWICKLUNGSPSYCHOLOGIE & BINDUNG
+    // ==========================================
     {
       id: "psy_bindungstheorie",
       term: "Die Bindungstheorie & Bindungsmuster (nach Bowlby / Ainsworth)",
       domain: "Entwicklungspsychologie & KJP",
       provenance: "AUS_QUELLE",
-      source: "KJP_Entwicklung.pdf / Psychoanalyse",
-      explanationGerman: "Kinder entwickeln basierend auf den ersten Lebensjahren ein inneres Arbeitsmodell von Beziehungen: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden unterdrückt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bezugsperson bei traumatischen Erfahrungen).",
-      simpleExample: "Ein Kind weint beim Verlassen der Mutter, lässt sich aber nach ihrer Rückkehr schnell trösten (sicher gebunden).",
-      workplaceContext: "Traumatisierte Kinder und Jugendliche auf Station testen oft Grenzen extrem aus, um unbewusst zu prüfen: 'Verlässt du mich auch, wenn ich schwierig bin?'",
+      source: "KJP_Entwicklung.pdf",
+      explanationGerman: "Kinder und Jugendliche entwickeln basierend auf frühen Bezugserfahrungen innere Beziehungsmuster: Sicher gebunden (Vertrauen in Bezugspersonen), unsicher-vermeidend (Gefühle werden abgewehrt, Pseudo-Autonomie), unsicher-ambivalent (klammernd, extreme Verlustangst) oder desorganisiert (Angst vor der Bindungsperson bei Traumata).",
+      simpleExample: "Ein 14-Jähriger provoziert Betreuer aggressiv, um unbewusst zu testen: 'Schmeißt ihr mich auch raus, wenn ich schwierig werde?'",
+      workplaceContext: "Verlässlichkeit und Kontinuität bieten. Wer Verlässlichkeit zusagt, muss sie einhalten.",
       whatToDo: [
-        "Verlässlichkeit und Vorhersehbarkeit im Verhalten zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
-        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Kindes.",
-        "Positive Zuwendung nicht an Bedingungen oder 'gutes Verhalten' knüpfen."
+        "Verlässlichkeit zeigen ('Ich sage, was ich tue, und tue, was ich sage').",
+        "Co-Regulation anbieten: Ein ruhiges Nervensystem beruhigt das erregte Nervensystem des Jugendlichen."
       ],
       whatToAvoid: [
-        "Liebesentzug oder Drohungen ('Wenn du nicht brav bist, gehe ich weg').",
-        "Widersprüchliche Signale (Doppelbotschaften).",
-        "Die Bindungsangst des Kindes ins Lächerliche ziehen."
+        "Liebesentzug oder Beziehungsabbruch als Erziehungsmaßnahme.",
+        "Widersprüchliche Signale (Doppelbotschaften)."
       ],
-      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit", "die Bindungsperson"],
-      speakingPractice: "Ich sehe, dass du gerade große Angst hast. Ich bleibe hier bei dir sitzen, bis du dich wieder sicher fühlst."
-    },
-
-    {
-      id: "psy_trotzphase_wutanfall",
-      term: "Die Autonomiephase (Trotzphase) & Emotionsregulation bei Kindern",
-      domain: "Entwicklungs- & Traumapädagogik",
-      provenance: "AUS_QUELLE",
-      source: "Traumapaedagogik_Klinik.pdf",
-      explanationGerman: "Zwischen dem 2. und 4. Lebensjahr begreift das Kind sein eigenes 'Ich' und entwickelt einen eigenen Willen. Da der präfrontale Kortex (Sitz der Impulskontrolle) noch unreif ist, führen Frustrationen zu massiven emotionalen Entladungen (Wutanfällen).",
-      simpleExample: "Das Kind darf die Steckdose nicht berühren und wirft sich schreiend auf den Boden.",
-      workplaceContext: "In der Betreuung oder Kinderklinik geraten Kinder bei kleinsten Verboten in heftige Wut. Strafen verschlimmern die Übererregung der Amygdala.",
-      whatToDo: [
-        "Auf Augenhöhe gehen (in die Hocke gehen, Blickkontakt auf gleicher Höhe).",
-        "Das Gefühl benennen und validieren: 'Du bist gerade richtig wütend, weil du noch weiterspielen wolltest.'",
-        "Körperliche Grenzen ruhig und bestimmt halten: 'Wütend sein ist okay, aber Schlagen/Beißen ist nicht erlaubt.'"
-      ],
-      whatToAvoid: [
-        "Selbst laut werden oder das Kind anschreien.",
-        "Lange rationale Vorträge halten, während das Kind im Wutanfall ist (das Gehirn ist für Logik blockiert).",
-        "Das Kind zur Strafe isolieren ('Time-Out' im Zimmer)."
-      ],
-      relevantVocabulary: ["die Autonomiephase", "die Impulskontrolle", "das Gefühlschaos", "die Wutbewältigung", "auf Augenhöhe gehen"],
-      speakingPractice: "Ich merke, wie wütend du bist. Das ist vollkommen verständlich. Atme kurz mit mir aus – ich helfe dir dabei."
-    },
-
-    {
-      id: "psy_adhs_reizueberflutung",
-      term: "ADHS & Reizüberflutung bei Kindern & Jugendlichen",
-      domain: "Kinder- & Jugendpsychiatrie",
-      provenance: "AUS_QUELLE",
-      source: "KJP_Manual.pdf",
-      explanationGerman: "Eine neurobiologische Störung der Reizfilterung und Dopaminregulation. Betroffene Kinder können sensorische Reize (Geräusche, Bewegungen) schlechter filtern, was zu Hyperaktivität, Impulsivität und rascher Erschöpfung durch Reizüberflutung führt.",
-      simpleExample: "Ein Kind kann bei Hintergrundmusik oder vielen bunten Bildern im Raum den Hausaufgaben nicht folgen.",
-      workplaceContext: "Auf Station oder in der Schule wirken diese Kinder oft 'unruhig', 'störend' oder 'aggressiv', obwohl sie schlicht sensorisch überfordert sind.",
-      whatToDo: [
-        "Reizarme Umgebung schaffen (visuelle Ablenkungen und Lärm minimieren).",
-        "Kurze, präzise Arbeitsaufträge in Einzelschritten geben (1 Anweisung statt 5 auf einmal).",
-        "Bewegungspausen gezielt einplanen (Bewegungsdrang als Ressource nutzen)."
-      ],
-      whatToAvoid: [
-        "Pauschale Vorwürfe wie 'Du hörst nie zu!' oder 'Sitz endlich still!'.",
-        "Überladene Räume mit ständig wechselnden Sinnesreizen.",
-        "Komplexe mehrstufige Aufgabenstellungen ohne Zwischenstopps."
-      ],
-      relevantVocabulary: ["die Reizfilterung", "die Impulsivität", "die Aufmerksamkeitsspanne", "reizarm", "die Strukturierung"],
-      speakingPractice: "Lass uns zuerst nur Aufgabe 1 zusammen machen. Wenn du die geschafft hast, machen wir eine kurze 2-Minuten-Pause."
-    },
-
-    {
-      id: "psy_kindgerechte_kommunikation",
-      term: "Kindgerechte Kommunikation & Angstreduktion in der Klinik",
-      domain: "Klinische Pädagogik",
-      provenance: "AUS_QUELLE",
-      source: "Klinische_Kommunikation_KJP.pdf",
-      explanationGerman: "Kinder verstehen Sprache bis etwa zum 10. Lebensjahr sehr wörtlich und bildhaft. Medizinische Fachbegriffe wie 'Blut abnehmen' oder 'Spritze' lösen Todes- oder Verstümmelungsängste aus. Eine kindgerechte Sprache nutzt Metaphern, Entdramatisierung und vorbereitende Ankündigungen.",
-      simpleExample: "Statt 'Wir nehmen dir jetzt Blut ab' sagt man: 'Wir zählen kurz deine Blutkörperchen mit einem kleinen Zauber-Röhrchen.'",
-      workplaceContext: "Bei Blutdruckmessung, EKG oder Verbandswechsel vor der Durchführung das Gerät am Stofftier oder spielerisch vormachen.",
-      whatToDo: [
-        "Positive, ehrliche Erklärungen ('Es piekst kurz wie ein Mückenstich, danach ist es vorbei').",
-        "Das Kind aktiv einbeziehen ('Möchtest du das Pflaster mit den Dinos oder den Sternen?').",
-        "Nach der Untersuchung loben und die Tapferkeit anerkennen."
-      ],
-      whatToAvoid: [
-        "Lügen wie 'Das tut überhaupt gar nicht weh!' (zerstört das Vertrauen, wenn es doch wehtut).",
-        "Fachjargon und drohende Worte verwenden.",
-        "Ironie oder Sarkasmus (Kinder verstehen Ironie kognitiv noch nicht)."
-      ],
-      relevantVocabulary: ["die kindgerechte Sprache", "die Angstreduktion", "die Wahlmöglichkeit", "der Zaubermückenstich", "die Tapferkeit"],
-      speakingPractice: "Schau mal, diese Manschette pustet sich jetzt auf wie ein kleiner Luftballon und umarmt deinen Arm ganz fest."
-    },
-
-    // ----------------------------------------
-    // 2. ERWACHSENENPSYCHIATRIE & DEESKALATION
-    // ----------------------------------------
-    {
-      id: "psy_trauma",
-      term: "Das Trauma / Die Traumatisierung",
-      domain: "Traumapädagogik",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 1-5)",
-      explanationGerman: "Ein Trauma entsteht, wenn eine Person eine Situation als extrem bedrohlich, überwältigend und unkontrollierbar erlebt, während normale Bewältigungsstrategien versagen. Es hinterlässt Gefühle von extremer Angst, Ohnmacht und Hilflosigkeit.",
-      simpleExample: "Ein schwerer Autounfall oder Gewalterfahrungen können traumatisch wirken.",
-      workplaceContext: "Patienten auf Station können durch plötzliche laute Geräusche, geschlossene Türen oder bestimmte Gerüche getriggert werden und in alte Angstzustände zurückfallen.",
-      whatToDo: [
-        "Ruhige, berechenbare Atmosphäre schaffen.",
-        "Ankündigen, was man als Nächstes tut ('Ich öffne jetzt kurz das Fenster').",
-        "Auf körperlichen Abstand achten und den Fluchtweg des Patienten freihalten."
-      ],
-      whatToAvoid: [
-        "Patienten unerwartet von hinten berühren.",
-        "Aussagen wie 'Es ist doch gar nichts passiert' oder 'Beruhigen Sie sich einfach'.",
-        "Detailliert nach traumatischen Erlebnissen ausfragen."
-      ],
-      relevantVocabulary: ["das Bindungstrauma", "die Ohnmacht", "überwältigend", "die Bewältigungsstrategie", "die Reizüberflutung"],
-      speakingPractice: "Herr Müller, ich sehe, dass Ihnen das gerade zu viel wird. Ich trete einen Schritt zurück. Sie sind hier im Krankenhaus in Sicherheit."
-    },
-
-    {
-      id: "psy_ptbs_flashback",
-      term: "Der Flashback / Das Wiedererleben (PTBS)",
-      domain: "Klinische Symptomatik",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 2, 6, 22)",
-      explanationGerman: "Ein Zustand, in dem ein traumatisches Ereignis sich der Person ungewollt wieder aufdrängt. Der Patient erlebt das Gefühl und die Sinneswahrnehmungen des Traumas so intensiv, als fände es genau in diesem Augenblick im Hier und Jetzt erneut statt.",
-      simpleExample: "Ein Knallgeräusch lässt eine Person zusammenzucken und panisch den Raum nach Gefahr absuchen.",
-      workplaceContext: "Ein Patient erstarrt plötzlich, reagiert kaum noch auf Ansprache oder zittert am ganzen Körper.",
-      whatToDo: [
-        "5-4-3-2-1 Erdungsmethode anwenden: Den Patienten ins Hier und Jetzt zurückholen.",
-        "Den Patienten seinen Namen, das heutige Datum und den Raum laut aussprechen lassen.",
-        "Sensorische Reize anbieten (z. B. ein Glas kaltes Wasser, feste Unterlage unter den Füßen spüren lassen)."
-      ],
-      whatToAvoid: [
-        "Den Patienten schütteln oder festhalten.",
-        "Inhaltlich auf das Trauma eingehen.",
-        "Den Patienten alleine im Raum lassen, ohne vorher Hilfe geholt zu haben."
-      ],
-      relevantVocabulary: ["die Intrusion", "die Erdung", "die Orientierung im Hier und Jetzt", "das Hyperarousal", "die Schreckreaktion"],
-      speakingPractice: "Frau Schmidt, hören Sie meine Stimme. Sie sind hier im Gemeinschaftsraum in Marburg. Es ist August. Spüren Sie Ihre Füße auf dem festen Boden?"
-    },
-
-    {
-      id: "psy_grounding_54321",
-      term: "Die 5-4-3-2-1 Erdungstechnik (Grounding)",
-      domain: "Deeskalation & Reorientierung",
-      provenance: "AUS_QUELLE",
-      source: "PsyDeutsch_Idee.pdf (S. 2, 8, 30)",
-      explanationGerman: "Eine strukturierte sensorische Achtsamkeitsübung, die das Nervensystem bei Dissoziation, Panik oder Flashbacks über die 5 Sinne in die Gegenwart zurückholt: 5 Dinge sehen, 4 Dinge spüren, 3 Dinge hören, 2 Dinge riechen, 1 Sache schmecken.",
-      simpleExample: "Der Patient zählt laut auf: Ich sehe den Stuhl, das Fenster, die Lampe, die Uhr, die Tür.",
-      workplaceContext: "Sofortintervention bei Patienten mit massiver innerer Anspannung oder Panikattacken im Stationsflur.",
-      whatToDo: [
-        "Mit ruhiger, tiefer Stimme anleiten.",
-        "Geduldig warten, bis der Patient jeden Sinn wahrgenommen hat.",
-        "Gemeinsam tief durchatmen (längeres Ausatmen als Einatmen)."
-      ],
-      whatToAvoid: [
-        "Hektik verbreiten oder den Patienten drängen.",
-        "Komplexe abstrakte Fragen stellen.",
-        "Über das auslösende Thema diskutieren."
-      ],
-      relevantVocabulary: ["die Sinneswahrnehmung", "das Grounding", "die Panikattacke", "die Beruhigung", "das Ein- und Ausatmen"],
-      speakingPractice: "Schauen Sie sich im Raum um. Nennen Sie mir bitte fünf Gegenstände mit blauer Farbe, die Sie hier sehen."
+      relevantVocabulary: ["das Bindungsmuster", "die Feinfühligkeit", "die Co-Regulation", "die Verlässlichkeit"],
+      speakingPractice: "Ich sehe, wie wütend du bist. Ich gehe nicht weg. Ich bleibe hier, bis wir eine Lösung haben."
     }
   ]
 };
@@ -21220,212 +21172,219 @@ const PSYCHOLOGY_DATA = exports.PSYCHOLOGY_DATA = {
   // MODULE: data/simulations_data.js
   // ==========================================
   __register('data/simulations_data.js', function(module, exports, require) {
-// BFD, Engineering, Wohnen, Feste & Partnerschafts-Simulationen
-// Höchstes Niveau: Aktiv B2 -> Professionell B2+ -> C1 Nuanciert -> C2 Idiomatisch
+// KJP (11–17 J.), Familie (Frühstück, Dinner, Weihnachten), Frankfurt Crytek Tech & Partnerschaft
+// Höchste sprachliche Güte: Aktiv B2 -> Natürlich -> Professionell B2+ -> C1/C2 Fachsprache
 
 const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   // ==========================================
-  // 1. KLINIK & BFD (Station 2 / UKGM Marburg)
+  // 1. KINDER- & JUGENDPSYCHIATRIE (KJP, 11–17 JAHRE)
   // ==========================================
   {
-    id: "sim_sbar_handover",
-    title: "Klinische Schichtübergabe nach SBAR-Schema",
-    category: "Klinik & BFD",
+    id: "sim_kjp_autism_meltdown",
+    title: "Autismus-Overload: Reizüberflutung bei einem 12-Jährigen",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2/C1",
-    workplace: "Besprechungsraum Station 2 (UKGM Marburg)",
+    workplace: "Flur / Essbereich der KJP-Station",
     provenance: "AUS_QUELLE",
-    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker (Zimmer 12) an die Spätdienst-Pflegekraft Sarah.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Sarah (Pflegefachkraft im Spätdienst)",
-    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten, Verhaltensbeobachtung und Nahrungsaufnahme.",
+    situation: "Ein 12-jähriger Junge im Autismus-Spektrum (Lukas) hält sich vor Baulärm und Essengerüchen panisch die Ohren zu, schreit und wirft seinen Teller auf den Boden.",
+    userRole: "BFD-Freiwilliger / Pädagogische Betreuung",
+    counterpartRole: "Lukas (12 Jahre, Reizüberflutung / beginnender Meltdown)",
+    objective: "Reizreduktion einleiten, ohne Vorwürfe auf Augenhöhe gehen, einfache wörtliche Sprache sprechen (keine Metaphern) und einen sicheren Ruheraum anbieten.",
     turns: [
       {
-        speaker: "Sarah",
-        text: "Hi Ali! Wie war dein Frühdienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag Auffälligkeiten beim Essen oder bei den Vitalwerten?",
-        guidance: "Berichten Sie präzise: Vitalwerte (145/90 mmHg), Verweigerung der Mittagsmahlzeit, aber 600 ml getrunken, nach Begleitung im Klinikpark motorisch deutlich entspannter.",
-        expectedCriteria: ["Konkrete Werte nennen", "Nahrungs-/Flüssigkeitsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
+        speaker: "Lukas (schreit verzweifelt)",
+        text: "Es ist viel zu laut! Die Bohrmaschine tut mir im Kopf weh! Macht das sofort aus, ich halte das nicht aus!",
+        guidance: "Gehen Sie in die Hocke auf Augenhöhe. Reden Sie leise, kurz und direkt. Keine langen Erklärungen. Bieten Sie Lärmschutzkopfhörer und den Ruheraum an.",
+        expectedCriteria: ["Augenhöhe / ruhige Stimme", "Reizreduktion anbieten", "Klare, wörtliche Sprache", "Keine Vorwürfe wegen des Tellers"],
         responseTiers: {
-          basic: "Herr Becker hatte Blutdruck 145 zu 90. Er hat nicht gegessen, aber getrunken. Im Park ging es ihm viel besser.",
-          natural: "Herr Becker hatte um 09:30 Uhr einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt, aber ca. 600 ml Wasser getrunken. Nach unserem Spaziergang im Park wirkte er deutlich ruhiger.",
-          professionalB2: "Zur Übergabe von Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle ergab einen leichten Blutdruckanstieg auf 145/90 mmHg. Die feste Nahrung hat er verweigert, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen unserer aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert.",
-          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die morgendliche Statuserhebung zeigte eine mäßige Hypertonie von 145/90 mmHg bei normofrequenter Herzaktion. Während die Nahrungsaufnahme aufgrund depressiver Antriebslosigkeit sistierte, konnte eine adäquate Hydratation von 600 ml sichergestellt werden. Psychopathologisch präsentierte er sich nach der milieu-therapeutischen Parkbegleitung affektiv deutlich stabilisierter und zugewandter."
+          basic: "Lukas, setz die Kopfhörer auf. Wir gehen jetzt in den Ruheraum, da ist es ganz leise.",
+          natural: "Lukas, schau mal zu mir. Hier sind deine Noise-Cancelling-Kopfhörer. Wir gehen jetzt sofort zusammen in den Ruheraum, da hörst du keinen Lärm mehr.",
+          professionalB2: "Lukas, ich sehe, dass dir das Geräusch wehtut. Du bist hier sicher. Ich gebe dir jetzt deine Kopfhörer. Nimm meine Hand, wir gehen sofort in den abgedunkelten Snoezelen-Raum.",
+          c1: "Lukas, ich nehme deine Reizüberlastung wahr. Wir stoppen den Sinnesinput sofort: Hier ist dein Gehörschutz. Wir verlassen diesen Raum jetzt gemeinsam und begeben uns in den reizarmen Rückzugsort."
         },
-        whyExplanation: "Strukturierte Fachterminologie (Hypertonie, Hydratation, affektiv stabilisiert) spart Zeit und sichert die lückenlose Behandlungsqualität."
+        whyExplanation: "Im Autismus-Overload schützt sofortige Reizreduktion (Kopfhörer, Ruheraum) vor der Eskalation zum Vollbild-Meltdown. Lange Sätze überfordern das Gehirn zusätzlich."
       }
     ]
   },
 
   {
-    id: "sim_doctor_rounds_visite",
-    title: "Ärztliche Visite & Fallbesprechung mit der Oberärztin",
-    category: "Klinik & BFD",
+    id: "sim_kjp_psychose_paranoia",
+    title: "Psychose & Wahn: 16-Jähriger verbarrikadiert sich im Zimmer",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2/C1",
-    workplace: "Arztzimmer / Visite am Patientenbett",
+    workplace: "Zimmertür von Zimmer 3 (Akutbereich)",
     provenance: "AUS_QUELLE",
-    situation: "Die Oberärztin Dr. Weber bittet Sie während der Visite um Ihre Einschätzung zur Tagesstruktur und Gruppenbeteiligung von Frau Jansen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Dr. Weber (Oberärztin)",
-    objective: "Wertfreie, präzise Verhaltensbeobachtung ohne Eigendiagnosen schildern und Kooperation in der Ergotherapie beschreiben.",
+    situation: "Jonas (16 Jahre, akute drogeninduzierte Psychose) hat die Zimmertür mit einem Stuhl blockiert, weil er Stimmen hört und glaubt, man wolle ihn durch das Essen vergiften.",
+    userRole: "BFD-Freiwilliger in Begleitung der Fachkraft",
+    counterpartRole: "Jonas (16 Jahre, psychotische Angst)",
+    objective: "Reale Angst validieren ohne den Wahninhalt zu bestätigen, Transparenz herstellen und ruhigen Kontakt durch die Tür aufbauen.",
     turns: [
       {
-        speaker: "Dr. Weber",
-        text: "Ali, Sie haben Frau Jansen diese Woche bei der Ergotherapie und beim gemeinsamen Kochen begleitet. Wie erleben Sie ihre Konzentration und ihre soziale Interaktion in der Gruppe?",
-        guidance: "Schildern Sie differenziert: Zu Beginn zurückhaltend und reizempfindlich, nach ca. 20 Minuten aktive Teilnahme beim Gemüseschneiden, freundlicher Austausch mit Mitpatienten.",
-        expectedCriteria: ["Wertfreie Beobachtung", "Zeitlicher Verlauf", "Gruppeninteraktion", "Rollenangemessene Sprache"],
+        speaker: "Jonas (hinter der Tür)",
+        text: "Verschwindet! Ich weiß genau, dass ihr Kameras im Essen versteckt habt! Die Stimmen sagen, dass ihr mich umbringen wollt!",
+        guidance: "Nicht diskutieren ('Da sind keine Kameras!'). Bestätigen Sie seine Angst ('Ich höre, wie viel Angst du hast'), stellen Sie klar, wer Sie sind, und signalisieren Sie Schutz.",
+        expectedCriteria: ["Kein Diskutieren über den Wahn", "Angst validieren", "Transparenz (Name & Absicht)", "Präsenz & Sicherheit"],
         responseTiers: {
-          basic: "Am Anfang war sie leise, aber danach hat sie gut mitgemacht und mit den anderen gesprochen.",
-          natural: "Zu Beginn der Kochgruppe wirkte Frau Jansen noch etwas zurückhaltend und lärmempfindlich. Nach etwa zwanzig Minuten hat sie sich dann aber aktiv beteiligt, beim Schneiden mitgeholfen und sogar gelächelt.",
-          professionalB2: "Frau Jansen zeigte anfangs eine deutliche Reizempfindlichkeit und zog sich zurück. Im weiteren Verlauf konnte sie sich jedoch gut auf die praktische Aufgabe konzentrieren und trat von sich aus in einen freundlichen Austausch mit zwei Mitpatientinnen.",
-          c1: "Phänomenologisch imponierte Frau Jansen zu Beginn der Intervention durch eine ausgeprägte Reizüberflutung mit Rückzugstendenzen. Durch gezielte Reizreduktion gelang ihr jedoch eine erfreuliche Re-Fokussierung: Sie vollzog komplexe Handlungsabläufe adäquat und zeigte im Gruppenkontakt eine spürbare affektive Aufhellung."
+          basic: "Jonas, hier ist Ali. Niemand will dir etwas tun. Du bist im Krankenhaus und in Sicherheit.",
+          natural: "Jonas, ich bin's, Ali. Ich höre die Stimmen zwar nicht, aber ich spüre, wie viel Angst du gerade hast. Keiner tut dir etwas. Wir stellen das Essen weg und ich bleibe einfach vor deiner Tür stehen.",
+          professionalB2: "Jonas, hier spricht Ali vom Stationsteam. Ich diskutiere nicht über die Stimmen, aber ich sehe deine enorme Angst. Du bist hier auf Station absolut geschützt. Ich schiebe jetzt keinen Stuhl weg – ich bleibe einfach hier ruhig sitzen, bis du bereit bist.",
+          c1: "Jonas, ich nehme deine massive Bedrohungswahrnehmung wahr. Bitte sei versichert, dass dir hier keine Gefahr droht. Wir respektieren deine Distanz und veranlassen keinerlei Zwangsmaßnahmen. Ich bleibe als verlässlicher Ansprechpartner vor der Tür präsent."
         },
-        whyExplanation: "Genaue Verhaltensbeschreibungen unterstützen Ärzte bei der Beurteilung des Therapieerfolgs."
-      }
-    ]
-  },
-
-  // ==========================================
-  // 2. ENGINEERING & IT-ARBEITSPLATZ
-  // ==========================================
-  {
-    id: "sim_tech_daily_standup",
-    title: "Daily Stand-up & Sprint-Architektur im IT-Team",
-    category: "Engineering & IT",
-    level: "B2/C1",
-    workplace: "Agiler Meetingraum / Remote Video Call",
-    provenance: "AUS_QUELLE",
-    situation: "Im 15-minütigen Daily Scrum berichten Sie dem Entwicklerteam über den aktuellen Stand der API-Optimierung und bestehende Blocker.",
-    userRole: "Software Engineer / IT Specialist",
-    counterpartRole: "Markus (Scrum Master / Lead Architect)",
-    objective: "Gestern Erledigtes, Heutiges und Blocker (Datenbank-Flaschenhals) klar, prägnant und lösungsorientiert präsentieren.",
-    turns: [
-      {
-        speaker: "Markus",
-        text: "Morgen zusammen! Ali, du bist dran: Was hast du gestern geschafft, woran arbeitest du heute und gibt es Blocker bei der Microservice-Migration?",
-        guidance: "Berichten Sie: Gestern Endpunkte refaktoriert, heute Unit-Tests und Docker-Containerisierung, Blocker: Latenzprobleme bei SQL-Queries (Datenbank-Flaschenhals).",
-        expectedCriteria: ["Struktur (Gestern/Heute/Blocker)", "Präzise IT-Fachsprache", "Lösungsvorschlag anbieten"],
-        responseTiers: {
-          basic: "Gestern habe ich den Code verbessert. Heute schreibe ich Tests. Bei der Datenbank ist es noch zu langsam.",
-          natural: "Gestern habe ich das Refactoring der Authentifizierungs-Endpunkte abgeschlossen. Heute schreibe ich die Unit-Tests und baue den Docker-Container. Als Blocker haben wir noch eine hohe Latenz bei den Datenbank-Queries – da müssen wir die Indizes optimieren.",
-          professionalB2: "Gestern konnte ich das Refactoring der REST-API-Schnittstellen erfolgreich abschließen. Mein Fokus liegt heute auf der Testabdeckung mit PyTest sowie dem Container-Deployment. Als potenziellen Flaschenhals sehe ich die Abfragezeiten der SQL-Datenbank; ich schlage vor, nach dem Stand-up mit Jonas ein kurzes Query-Profiling durchzuführen.",
-          c1: "Gestern habe ich die serviceübergreifende Schnittstellenarchitektur konsolidiert und redundante Payloads eliminiert. Der heutige Meilenstein umfasst die automatisierte CI/CD-Pipeline-Integration und Lasttests. Als kritischen Blocker identifiziere ich persistente I/O-Latenzen im Datenbankcluster, weshalb ich eine Index-Restrukturierung sowie die Implementierung einer Redis-Caching-Schicht favorisiere."
-        },
-        whyExplanation: "Im agilen Tech-Umfeld zählen klare Fakten, Fachbegriffe (Refactoring, Latenz, Flaschenhals, Lasttests) und proaktive Lösungen."
+        whyExplanation: "Psychose-Deeskalation: Niemals den Wahninhalt debattieren, sondern das echte Gefühl (Angst/Panik) spiegeln und körperliche Unversehrtheit garantieren."
       }
     ]
   },
 
   {
-    id: "sim_tech_code_review_discussion",
-    title: "Konstruktives Code-Review & Architektur-Debatte",
-    category: "Engineering & IT",
-    level: "B2/C1",
-    workplace: "GitHub Pull Request / Review-Session",
-    provenance: "AUS_QUELLE",
-    situation: "Ein Kollege hat einen Pull Request eingereicht, bei dem Sicherheitsaspekte und Skalierbarkeit unzureichend gelöst sind. Sie möchten das Feedback kollegial und fachlich fundiert vortragen.",
-    userRole: "Senior Software Developer",
-    counterpartRole: "Tobias (Entwicklerkollege)",
-    objective: "Wertschätzend positives Feedback voranstellen, Sicherheitsrisiken sachlich erläutern und Best Practices vorschlagen.",
-    turns: [
-      {
-        speaker: "Tobias",
-        text: "Hi Ali, hast du dir meinen Pull Request für das neue Zahlungs-Gateway schon angeschaut? Ich wollte den Branch eigentlich gleich mergen.",
-        guidance: "Loben Sie die schnelle Umsetzung, weisen Sie aber diplomatisch auf fehlende Eingabevalidierung und unverschlüsselte API-Keys hin, und schlagen Sie Umgebungsvariablen (.env) vor.",
-        expectedCriteria: ["Wertschätzender Einstieg", "Klares Aufzeigen von Risiken", "Konkreter technischer Gegenvorschlag"],
-        responseTiers: {
-          basic: "Der Code ist gut, aber die Passwörter stehen im Klartext. Das können wir so nicht mergen.",
-          natural: "Danke für die schnelle Umsetzung, Tobias! Die Logik sieht super aus. Mir ist allerdings aufgefallen, dass die API-Keys noch direkt im Quellcode stehen. Lass uns die kurz in Umgebungsvariablen auslagern und eine Validierung einbauen, dann können wir direkt mergen.",
-          professionalB2: "Vielen Dank für den PR, die Modulstruktur ist wirklich sauber aufgebaut. Aus Sicherheitsgründen sollten wir die sensiblen Credentials jedoch keinesfalls im Repository committen, sondern über ein Secret-Management laden. Wenn du das kurz anpasst und wir noch zwei Edge-Case-Tests ergänzen, gebe ich sofort mein Approval.",
-          c1: "Ich begrüße die elegante Entkopplung der Komponenten in deinem Entwurf ausdrücklich. Unter Sicherheitsaspekten birgt die Hardcodierung der API-Secrets jedoch ein gravierendes Vulnerabilitätsrisiko. Ich plädiere dafür, die Konfiguration über Vault bzw. Environment-Variablen zu kapseln und strikte Input-Sanitization zu implementieren, um Injection-Vektoren verlässlich zu unterbinden."
-        },
-        whyExplanation: "Konstruktive Kritik im Code-Review trennt die Person von der Sache und schützt die Softwarequalität."
-      }
-    ]
-  },
-
-  // ==========================================
-  // 3. WOHNEN, VERMIETER & HAUSGEMEINSCHAFT
-  // ==========================================
-  {
-    id: "sim_house_heating_complaint",
-    title: "Mängelrüge an den Vermieter (Heizungsausfall im Winter)",
-    category: "Wohnen & Vermieter",
-    level: "B2/C1",
-    workplace: "Telefonat / Schriftliche Mitteilung an die Hausverwaltung",
-    provenance: "AUS_QUELLE",
-    situation: "Mitte November fällt in Ihrer Mietwohnung die Heizung komplett aus. Die Raumtemperatur beträgt nur noch 14 Grad. Sie rufen die Hausverwaltung an, um eine sofortige Notfall-Reparatur einzufordern.",
-    userRole: "Mieter",
-    counterpartRole: "Herr Fischer (Hausverwalter)",
-    objective: "Den Sachverhalt sachlich und bestimmt schildern, Dringlichkeit begründen, Frist setzen und Mietminderung ankündigen falls keine Abhilfe erfolgt.",
-    turns: [
-      {
-        speaker: "Herr Fischer",
-        text: "Hausverwaltung Fischer, guten Tag. Worum geht es bitte?",
-        guidance: "Nennen Sie Namen, Adresse und Wohnungsnummer. Schildern Sie den Totalausfall der Heizung bei Minusgraden und fordern Sie einen Heizungsmonteur für den heutigen Tag an.",
-        expectedCriteria: ["Genaue Adressangabe", "Präzise Mängelbeschreibung", "Dringlichkeit/Frist", "Bestimmter, professioneller Ton"],
-        responseTiers: {
-          basic: "Guten Tag, hier ist Ali. Bei mir ist die Heizung kaputt und es ist sehr kalt. Bitte schicken Sie schnell jemanden.",
-          natural: "Guten Tag, Herr Fischer, mein Name ist Ali aus der Weidenhäuser Straße 14, 2. Stock. Bei mir ist seit gestern Abend die Heizung komplett ausgefallen und die Wohnung hat nur noch 14 Grad. Da es draußen friert, brauche ich bitte heute dringend einen Notdienst.",
-          professionalB2: "Guten Tag, Herr Fischer. Ich melde hiermit einen dringenden Mangel in meiner Wohnung in der Weidenhäuser Straße 14. Die Heizkörper bleiben trotz voller Einstellung vollkommen kalt, die Raumtemperatur liegt unter 15 Grad Celsius. Da hier akute Unbewohnbarkeit droht, bitte ich Sie um die umgehende Entsendung eines Heizungsmonteurs noch am heutigen Vormittag.",
-          c1: "Guten Tag, Herr Fischer. Ich rüge hiermit gemäß § 536 BGB einen gravierenden Mangel an der Mietsache in der Weidenhäuser Straße 14. Es liegt ein vollständiger Ausfall der Heizungsanlage bei winterlichen Außentemperaturen vor, was zu einer Unterschreitung der vertraglich geschuldeten Mindesttemperatur führt. Ich fordere Sie hiermit zur unverzüglichen Mängelbeseitigung binnen 24 Stunden auf und behalte mir andernfalls eine angemessene Mietminderung sowie die Veranlassung einer Ersatzvornahme vor."
-        },
-        whyExplanation: "Im Mietrecht sichert eine präzise Fristsetzung und Verweis auf Mindesttemperaturen sofortiges Handeln der Hausverwaltung."
-      }
-    ]
-  },
-
-  {
-    id: "sim_house_noise_neighbor",
-    title: "Ruhezeiten & Lärmbeschwerde bei Nachbarn klären",
-    category: "Wohnen & Vermieter",
+    id: "sim_kjp_enuresis_shame",
+    title: "Enuresis & Scham: 13-Jähriger nässt nachts im Klinikbett ein",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2",
-    workplace: "Hausflur / Wohnungstür des Nachbarn",
+    workplace: "Patientenzimmer am Morgen um 06:45 Uhr",
     provenance: "AUS_QUELLE",
-    situation: "Ihr Nachbar spielt um 23:30 Uhr unter der Woche laute Musik, während Sie am nächsten Morgen um 05:30 Uhr Frühdienst im Krankenhaus haben. Sie klingeln freundlich, aber bestimmt.",
-    userRole: "Nachbar / BFD-Mitarbeiter",
-    counterpartRole: "Lukas (Feiernder Nachbar)",
-    objective: "Freundlich bleiben, Verständnis für Geselligkeit zeigen, aber klar die gesetzliche Nachtruhe (ab 22 Uhr) und den frühen Dienstbeginn einfordern.",
+    situation: "Noah (13 Jahre) steht mit feuchten Augen im Zimmer und versucht hektisch, das nasse Bettlaken unter der Matratze zu verbergen. Er hat furchtbare Angst, dass seine Mitpatienten ihn auslachen.",
+    userRole: "BFD-Freiwilliger im Frühdienst",
+    counterpartRole: "Noah (13 Jahre, beschämt & verängstigt)",
+    objective: "Sofortige Schamreduktion, absolute Diskretion, den Mitpatienten diskret ablenken und das Bett gemeinsam beiläufig und freundlich frisch beziehen.",
     turns: [
       {
-        speaker: "Lukas",
-        text: "Hi! Sorry, ist die Musik zu laut? Wir feiern nur kurz in meinen Geburtstag rein.",
-        guidance: "Gratulieren Sie kurz zum Geburtstag, erklären Sie Ihre Situation (Frühdienst 05:30 Uhr im Krankenhaus) und bitten Sie darum, die Bässe/Lautstärke auf Zimmerlautstärke zu drosseln.",
-        expectedCriteria: ["Glückwunsch zum Geburtstag", "Empathie für Anlass", "Eigene Schichtarbeit begründen", "Klare Bitte um Zimmerlautstärke"],
+        speaker: "Noah (den Tränen nahe, leise)",
+        text: "Bitte sag das keinem... Die anderen lachen mich tot, wenn die das mitkriegen. Ich bin so ein Versager...",
+        guidance: "Nehmen Sie ihm die Scham komplett: 'Das bleibt unter uns. Das passiert ganz vielen, wenn der Körper unter Stress steht.' Schicken Sie den Zimmernachbarn zum Frühstück und beziehen Sie das Bett zusammen.",
+        expectedCriteria: ["Scham aktiv entkräften", "Diskretion zusichern", "Keine Vorwürfe / kein Drama", "Praktische Hilfe anbieten"],
         responseTiers: {
-          basic: "Alles Gute zum Geburtstag! Aber bitte mach die Musik leiser, ich muss morgen früh um 5 aufstehen.",
-          natural: "Erst mal herzlichen Glückwunsch zum Geburtstag! Ich gönne euch die Feier von Herzen. Ich habe morgen früh allerdings um 05:30 Uhr Frühdienst im Klinikum und muss dringend schlafen. Wäre es möglich, dass ihr die Bässe etwas runterdreht und die Musik auf Zimmerlautstärke stellt?",
-          professionalB2: "Ganz herzlichen Glückwunsch zum Geburtstag, Lukas! Ich verstehe vollkommen, dass du deinen Ehrentag zelebrieren möchtest. Da ich morgen früh um 05:30 Uhr meinen Dienst auf der Akutstation im Krankenhaus antrete, bin ich dringend auf meinen Schlaf angewiesen. Ich wäre dir sehr dankbar, wenn ihr die Lautstärke der Musik und der Bässe ab jetzt auf Zimmerlautstärke reduzieren könntet.",
-          c1: "Zunächst meine aufrichtigen Glückwünsche zu deinem Geburtstag! Ich möchte eure Feierlaune keineswegs trüben. Da ich jedoch im Rahmen meines Dienstes im Universitätsklinikum morgen früh um 05:30 Uhr voll einsatzfähig sein muss, appelliere ich an deine Rücksichtnahme hinsichtlich der gesetzlichen Nachtruhe. Ich danke dir sehr für dein Verständnis, wenn ihr die Lautstärke entsprechend dämpft."
+          basic: "Noah, das ist gar kein Problem. Du bist kein Versager. Das bleibt unter uns, wir machen das schnell sauber.",
+          natural: "Noah, schau mich an: Du brauchst dich für überhaupt gar nichts zu schämen! Das passiert total vielen Jugendlichen unter Stress. Das bleibt komplett unter uns. Lass uns das Laken kurz in den Wäschesack werfen und frisch beziehen.",
+          professionalB2: "Noah, atme erst mal tief durch. Du bist absolut kein Versager. Dein Körper zeigt nur, wie viel Druck auf dir lastet – das ist eine völlig normale Reaktion. Ich ziehe kurz die Vorhänge zu, dann wechseln wir die Wäsche unauffällig in zwei Minuten.",
+          c1: "Noah, bitte entlaste dich von diesen Selbstvorwürfen. Eine vegetative Stressreaktion wie das Einnässen ist eine psychosomatische Begleiterscheinung und kein persönliches Versagen. Wir behandeln das mit höchster Diskretion. Ich sorge umgehend für frische Wäsche."
         },
-        whyExplanation: "Die Kombination aus Glückwünschen und klarer Schilderung der beruflichen Verantwortung entwaffnet Konflikte sofort."
+        whyExplanation: "Enuresis im Jugendalter löst schwerste Demütigungsgefühle aus. Ruhige, entlastende Normalisierung verhindert Re-Traumatisierung."
+      }
+    ]
+  },
+
+  {
+    id: "sim_kjp_smartphone_boundary",
+    title: "Handyabgabe & Regelgrenze: 14-Jähriger rebelliert am Abend",
+    category: "KJP Psychiatrie (11–17 J.)",
+    level: "B2",
+    workplace: "Stationsflur um 20:00 Uhr (Nachtruhe-Vorbereitung)",
+    provenance: "AUS_QUELLE",
+    situation: "Um 20:00 Uhr müssen laut Stationsordnung alle Smartphones abgegeben werden. Tim (14 Jahre) zockt weiter und weigert sich aggressiv: 'Ich gebe mein Handy sicher nicht ab!'",
+    userRole: "BFD-Freiwilliger im Spätdienst",
+    counterpartRole: "Tim (14 Jahre, rebellisch)",
+    objective: "Ruhig und unnachgiebig bleiben, Verständnis für Frust zeigen, aber die Stationsregel konsequent durchsetzen.",
+    turns: [
+      {
+        speaker: "Tim",
+        text: "Ihr wollt mich doch alle nur schikanieren! Meine Runde Fortnite läuft noch! Wenn du mir das Handy wegnimmst, raste ich aus!",
+        guidance: "Nicht drohen. Validieren Sie seinen Ärger ('Ich weiß, dass es nervt'), aber halten Sie die Regel fest ('Um 20 Uhr wandert das Handy in den Safe'). Bieten Sie an, den Spielstand noch kurz zu sichern.",
+        expectedCriteria: ["Ruhige Tonlage", "Verständnis für Frust zeigen", "Klare Grenzziehung (Regel bleibt)", "Konkreter Kompromiss für sauberes Beenden"],
+        responseTiers: {
+          basic: "Tim, die Regel gilt für alle. Beende kurz dein Spiel und gib mir dann das Handy.",
+          natural: "Tim, ich verstehe vollkommen, dass es dich nervt, mitten im Spiel aufzuhören. Aber 20:00 Uhr ist Stationsregel für alle. Speichere deinen Spielstand noch schnell in einer Minute ab, und dann wandert das Handy wie vereinbart in den Spind.",
+          professionalB2: "Tim, ich höre deinen Frust und es ist blöd, eine Runde abbrechen zu müssen. Aber die Vereinbarung steht: Um 20 Uhr ist medienfreie Zeit, damit dein Gehirn zur Ruhe kommt. Du hast noch genau zwei Minuten zum Speichern, dann erwarte ich das Gerät an der Stationszentrale.",
+          c1: "Tim, ich akzeptiere deine Verärgerung über die Unterbrechung. Gleichwohl ist die abendliche Medienabgabe eine verbindliche therapeutische Rahmenbedingung. Du hast jetzt noch zwei Minuten Zeit für den geordneten Log-out, danach hinterlegen wir das Gerät plangemäß im Schließfach."
+        },
+        whyExplanation: "Jugendliche brauchen verlässliche Grenzen ('Reibungsflächen') gepaart mit ruhiger Empathie – kein Nachgeben bei Sicherheitsregeln."
       }
     ]
   },
 
   // ==========================================
-  // 4. FAMILIE, FESTE & WEIHNACHTEN
+  // 2. ZUHAUSE & DEUTSCHES FAMILIENLEBEN
   // ==========================================
   {
-    id: "sim_family_christmas_dinner",
-    title: "Heiligabend & Weihnachtsfeier bei der Familie",
-    category: "Familie, Feste & Feiern",
+    id: "sim_family_sunday_breakfast",
+    title: "Sonntagsfrühstück mit der Familie (Brötchen, Kaffee & Wetter)",
+    category: "Zuhause & Familie",
+    level: "B2",
+    workplace: "Sonniger Küchentisch im Familienhaushalt",
+    provenance: "AUS_QUELLE",
+    situation: "Sonntagmorgen um 09:30 Uhr. Auf dem Tisch stehen frische Brötchen vom Bäcker, Marmelade, Käse und eine Kanne Kaffee. Die Familie unterhält sich über das Wetter und die Pläne für den Tag.",
+    userRole: "Gast / Familienmitglied",
+    counterpartRole: "Mutter / Gastgeberin Marianne",
+    objective: "Brötchen reichen, Kaffee einschenken, typisch deutsches Smalltalk-Thema (Wetter) aufgreifen und entspannt über den Tag sprechen.",
+    turns: [
+      {
+        speaker: "Marianne",
+        text: "Guten Morgen, Ali! Hast du gut geschlafen? Nimm dir gleich ein frisches Mohnbrötchen, die sind noch warm vom Bäcker. Möchtest du Kaffee oder lieber einen Tee?",
+        guidance: "Antworten Sie freundlich, loben Sie die frischen Brötchen, wählen Sie Kaffee/Tee und sprechen Sie das sonnige/herbstliche Wetter an.",
+        expectedCriteria: ["Freundlicher Gruß & Dank", "Lob der Brötchen", "Wahl von Kaffee/Tee", "Wetter-Kommentar"],
+        responseTiers: {
+          basic: "Guten Morgen! Ja, danke, ich habe gut geschlafen. Ein Mohnbrötchen nehme ich gern und Kaffee bitte.",
+          natural: "Guten Morgen, Marianne! Wunderschön habe ich geschlafen, vielen Dank. Die Brötchen duften herrlich! Ich nehme sehr gerne eine große Tasse Kaffee mit einem Schluck Milch. Schau mal aus dem Fenster – heute soll ja richtig die Sonne rauskommen!",
+          professionalB2: "Guten Morgen, Marianne! Vielen Dank, ich habe hervorragend geschlafen. Ein noch warmes Bäckerbrötchen am Sonntagmorgen ist der perfekte Start in den Tag. Eine Tasse schwarzer Kaffee wäre fantastisch. Laut Wetterbericht sollen es heute milde 18 Grad werden – ideal für einen Ausflug!",
+          c1: "Einen wunderschönen guten Morgen, liebe Marianne! Herzlichen Dank, die Nacht war überaus erholsam. Dieses reichhaltige Sonntagsfrühstück ist wirklich ein Genuss. Über eine Tasse frisch gebrühten Kaffee würde ich mich sehr freuen. Das milde Herbstwetter lädt heute förmlich zu einer ausgedehnten Erkundungstour ein."
+        },
+        whyExplanation: "Das deutsche Sonntagsfrühstück ist eine Institution: Frische Brötchen, Kaffee und der Wetterbericht sind die Grundpfeiler familiärer Harmonie."
+      },
+      {
+        speaker: "Vater Heinrich",
+        text: "Könntest du mir bitte kurz die Butter und das Messer rüberreichen, Ali? Und was steht heute bei dir an – wollen wir nachher eine Runde im Lahntal spazieren gehen?",
+        guidance: "Reichen Sie die Butter höflich herüber und stimmen Sie begeistert dem Spaziergang an der Lahn zu.",
+        expectedCriteria: ["Höfliches Reichen ('Bitte sehr / Gerne')", "Zustimmung zum Spaziergang", "Vorschlag für die Uhrzeit"],
+        responseTiers: {
+          basic: "Hier ist die Butter, bitte sehr. Ja, an der Lahn spazieren gehen klingt gut.",
+          natural: "Sehr gerne, hier bitte, Heinrich! Ein Spaziergang an der Lahn wäre herrlich bei dem Wetter. Sollen wir gegen 14 Uhr losgehen, wenn die Mittagssonne am schönsten ist?",
+          professionalB2: "Aber natürlich, bitte sehr, die Butter für dich, Heinrich! Die Idee mit dem Lahntal finde ich großartig. Frische Luft nach der anstrengenden Schichtwoche tut mir unglaublich gut. Lass uns nach dem Frühstück gemütlich die Route abstimmen.",
+          c1: "Mit Vergnügen, hier ist die Butter, lass es dir schmecken, Heinrich! Einem ausgedehnten Spaziergang entlang der Lahnauen schließe ich mich mit großer Begeisterung an. Die herbstliche Naturkulisse bietet den idealen Ausgleich. Ich schlage vor, dass wir am frühen Nachmittag aufbrechen."
+        },
+        whyExplanation: "Tischkultur in Deutschland: Dinge mit 'Bitte sehr' reichen und gemeinsame Naturaktivitäten planen."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_dinner_conversation",
+    title: "Gemeinsames Abendessen: Kochen & Tagesrückblick",
+    category: "Zuhause & Familie",
+    level: "B2",
+    workplace: "Gemütlicher Esstisch am Abend",
+    provenance: "AUS_QUELLE",
+    situation: "Nach einem langen Arbeitstag sitzt die Familie beim Abendessen zusammen. Es gibt frisches Brot, Aufschnitt, Käse und einen warmen Gemüseeintopf.",
+    userRole: "Familienmitglied / Mitbewohner",
+    counterpartRole: "Schwester / Mitbewohnerin Sophie",
+    objective: "Über den Tag berichten, für das Essen danken, Fragen zur Arbeit/Schule der anderen stellen und die Unterhaltung lebendig halten.",
+    turns: [
+      {
+        speaker: "Sophie",
+        text: "Greif zu, Ali! Der Eintopf ist ganz frisch gekocht. Wie war dein Tag heute auf Station – gab es spannende oder anstrengende Momente?",
+        guidance: "Bedanken Sie sich, loben Sie den Eintopf, schildern Sie ausgewogen (anstrengend, aber erfüllend) und fragen Sie Sophie nach ihrem Tag.",
+        expectedCriteria: ["Dank für den Eintopf", "Ausgewogener Tagesbericht", "Rückfrage an Sophie", "Natürlicher Plauderton"],
+        responseTiers: {
+          basic: "Danke, der Eintopf schmeckt super. Mein Tag war anstrengend, aber gut. Wie war deiner?",
+          natural: "Vielen Dank, Sophie, der Eintopf schmeckt fantastisch und wärmt richtig gut durch! Auf Station war heute ganz schön viel Trubel bei den Jugendlichen, aber ein Gespräch mit einem 14-Jährigen war wirklich herzergreifend. Und wie war dein Tag in der Uni?",
+          professionalB2: "Ganz herzlichen Dank, Sophie, das Essen ist wirklich köstlich nach so einem Tag! Der Dienst auf Station war heute mental ziemlich fordernd, besonders die Konfliktbegleitung bei zwei Jugendlichen. Aber genau diese Arbeit gibt mir unglaublich viel Sinn. Wie lief es denn heute bei deinem Projekt?",
+          c1: "Herzlichen Dank für diese wunderbare Stärkung, Sophie! Auf Station war das Schichtaufkommen heute außerordentlich intensiv, doch die erfolgreiche Deeskalation einer Krisensituation hat mich sehr erfüllt. Ich bin nun dankbar für die abendliche Ruhe. Erzähl doch mal: Wie verlief deine heutige Präsentation?"
+        },
+        whyExplanation: "Das Abendbrot ist im deutschsprachigen Raum der Ort des emotionalen Tagesabschlusses und des aktiven Interesses aneinander."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_christmas_eve",
+    title: "Heiligabend & Weihnachten: Bescherung & Festessen",
+    category: "Zuhause & Familie",
     level: "B2/C1",
     workplace: "Festlich geschmücktes Wohnzimmer am 24. Dezember",
     provenance: "AUS_QUELLE",
-    situation: "Sie verbringen Heiligabend bei der Familie / Gastfamilie in Hessen. Nach der Bescherung am Tannenbaum stoßen alle mit einem Glas Wein / Sekt an und blicken auf das vergangene Jahr zurück.",
-    userRole: "Gast / Familienmitglied",
-    counterpartRole: "Großmutter / Gastgeberin Elisabeth",
-    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für die Geborgenheit und Integration ausdrücken und frohe Weihnachten wünschen.",
+    situation: "Heiligabend unter dem geschmückten Tannenbaum. Die Kerzen brennen, Weihnachtsmusik läuft leise im Hintergrund. Nach dem Festessen und der Bescherung stoßen alle an.",
+    userRole: "Gast & Familienmitglied",
+    counterpartRole: "Großmutter Elisabeth",
+    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für Geborgenheit und Aufnahme in der Familie ausdrücken und frohe Weihnachten wünschen.",
     turns: [
       {
         speaker: "Elisabeth",
-        text: "Lieber Ali, wir freuen uns so sehr, dass du heute an Heiligabend bei uns bist und wir diesen besonderen Abend gemeinsam verbringen dürfen! Möchtest du mit uns anstoßen?",
-        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Aufnahme in die Familie, reflektieren Sie kurz über das Jahr und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
-        expectedCriteria: ["Dank für die Aufnahme", "Gefühl der Geborgenheit", "Reflexion über das Jahr", "Weihnachtswunsch / Toast"],
+        text: "Lieber Ali, wir freuen uns von Herzen, dass du heute an Heiligabend bei uns bist! Möchtest du mit uns auf das Fest anstoßen?",
+        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Wärme und das Zuhause-Gefühl und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
+        expectedCriteria: ["Dank für Geborgenheit", "Glas erheben", "Reflexion über Zusammenhalt", "Weihnachtswunsch"],
         responseTiers: {
-          basic: "Danke für die Einladung. Ich freue mich sehr, hier zu sein. Frohe Weihnachten an alle!",
+          basic: "Danke Elisabeth. Ich freue mich sehr hier zu sein. Frohe Weihnachten an alle!",
           natural: "Ganz herzlichen Dank, liebe Elisabeth! Es bedeutet mir unglaublich viel, heute Heiligabend mit euch in diesem warmen Kreis zu verbringen. Ich habe mich selten so herzlich aufgenommen und geborgen gefühlt. Auf ein frohes und gesegnetes Weihnachtsfest – Prost zusammen!",
-          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Als ich nach Deutschland kam, war vieles neu und herausfordernd – doch durch eure Unterstützung habe ich hier ein echtes Zuhause gefunden. Ich wünsche uns allen erholsame, besinnliche Feiertage und beste Gesundheit. Frohe Weihnachten!",
-          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir zuteilwerden lasst, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Weihnachtsfest!"
+          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Bei euch habe ich ein echtes zweites Zuhause gefunden. Ich wünsche uns allen erholsame Feiertage und beste Gesundheit. Frohe Weihnachten!",
+          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir schenkt, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Fest!"
         },
         whyExplanation: "Weihnachten ist in Deutschland das emotionalste Fest des Jahres – persönliche Dankbarkeit und Wärme berühren tief."
       }
@@ -21433,35 +21392,94 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   },
 
   {
-    id: "sim_family_birthday_toast",
-    title: "Geburtstagsfeier & Gratulationsrede",
-    category: "Familie, Feste & Feiern",
+    id: "sim_family_walk_history",
+    title: "Sonntagsspaziergang: Wetter, Natur & Marburger Stadtgeschichte",
+    category: "Zuhause & Familie",
     level: "B2",
-    workplace: "Geburtstagsfeier im Restaurant / Garten",
+    workplace: "Weg hinauf zum Marburger Landgrafenschloss",
     provenance: "AUS_QUELLE",
-    situation: "Ein geschätzter Kollege bzw. Familienfreund feiert seinen 50. Geburtstag. Sie überreichen ein Geschenk und halten einen kurzen humorvollen Trinkspruch.",
-    userRole: "Gast & Gratulant",
-    counterpartRole: "Jürgen (Das Geburtstagskind)",
-    objective: "Herzlich gratulieren, humorvoll auf das Alter anspielen, gute Wünsche aussprechen und das Geschenk überreichen.",
+    situation: "Sie spazieren mit der Gastfamilie die steilen Treppen der Marburger Oberstadt hinauf zum Schloss. Der Blick über das Lahntal ist atemberaubend.",
+    userRole: "Kulturinteressierter Spaziergänger",
+    counterpartRole: "Opa Walter (Geschichtsbegeistert)",
+    objective: "Über die historische Altstadt staunen, das Schloss und die Brüder Grimm ansprechen und echtes Interesse an deutscher Kultur zeigen.",
     turns: [
       {
-        speaker: "Jürgen",
-        text: "Ali, wie schön, dass du da bist! Schön, dass du den Weg gefunden hast. Lass uns erst mal anstoßen!",
-        guidance: "Überreichen Sie das Geschenk, wünschen Sie Gesundheit und Glück, machen Sie einen sympathischen Witz über die '50' und stoßen Sie an.",
-        expectedCriteria: ["Herzliche Glückwünsche", "Geschenkübergabe", "Humorvoller Spruch", "Trinkspruch"],
+        speaker: "Opa Walter",
+        text: "Schau mal da drüben, Ali: Diese Fachwerkhäuser hier stehen seit über 500 Jahren! Weißt du eigentlich, dass die Gebrüder Grimm hier in Marburg studiert haben?",
+        guidance: "Bestaunen Sie die Architektur, greifen Sie die Gebrüder Grimm auf und loben Sie das Flair der historischen Altstadt.",
+        expectedCriteria: ["Begeisterung über Fachwerk", "Bezug zu den Grimms", "Interesse an Geschichte"],
         responseTiers: {
-          basic: "Alles Gute zum 50. Geburtstag, Jürgen! Hier ist ein kleines Geschenk für dich. Auf deine Gesundheit!",
-          natural: "Herzlichen Glückwunsch zum 50. Geburtstag, lieber Jürgen! Man sieht dir die fünfzig wirklich kein bisschen an – du wirst nicht älter, sondern nur erfahrener! Hier ist eine kleine Aufmerksamkeit von mir. Auf deine Gesundheit, viel Glück und ein fantastisches neues Lebensjahr!",
-          professionalB2: "Lieber Jürgen, zu deinem runden Geburtstag gratuliere ich dir von ganzem Herzen! 50 Jahre sind ein wunderbarer Meilenstein – voller Erfolge, wertvoller Erfahrungen und lebendiger Geschichten. Ich habe dir ein kleines Präsent mitgebracht, das dir hoffentlich eine Freude bereitet. Ich wünsche dir für das kommende Lebensjahrzehnt unerschütterliche Gesundheit, Lebensfreude und weiterhin so viel Energie!",
-          c1: "Lieber Jürgen! Zu diesem herausragenden Jubiläum entbiete ich dir meine herzlichsten Glück- und Segenswünsche. Dein unermüdlicher Tatendrang und deine lebensbejahende Art sind für uns alle eine Inspiration. Möge dir das neue Lebensjahrzehnt beste physische wie mentale Vitalität, inspirierende Momente und berufliche wie private Erfüllung bescheren. Auf dein Wohl und auf die nächsten fünfzig Jahre!"
+          basic: "Die Häuser sehen toll aus! Ja, die Gebrüder Grimm und ihre Märchen kenne ich gut.",
+          natural: "Das ist wirklich faszinierend, Walter! Über 500 Jahre alt – man spürt die Geschichte in jeder Gasse. Kein Wunder, dass die Brüder Grimm hier zu ihren Märchen inspiriert wurden, die steilen Treppen wirken fast wie verzaubert!",
+          professionalB2: "Das ist wirklich beeindruckende Baukunst, Walter. Die Kombination aus den gotischen Kirchen, dem Landgrafenschloss und den Fachwerkhäusern verleiht Marburg einen einzigartigen historischen Charakter. Dass die Grimms hier gelebt haben, passt perfekt zu dieser märchenhaften Kulisse.",
+          c1: "Eine wahrhaft imposante historische Kulisse, lieber Walter! Diese architektonische Kontinuität über ein halbes Jahrtausend hinweg ist bemerkenswert. Die universitäre Geistesgeschichte Marburgs und das Wirken der Gebrüder Grimm sind hier auf Schritt und Tritt greifbar. Dieser Weitblick über das Lahntal entschädigt für jeden steilen Treppenabsatz!"
         },
-        whyExplanation: "Runde Geburtstage (30, 40, 50) werden in Deutschland mit besonderer Würdigung gefeiert."
+        whyExplanation: "Deutsche lieben es, bei Spaziergängen über lokale Geschichte, Denkmalschutz und Natur zu philosophieren."
       }
     ]
   },
 
   // ==========================================
-  // 5. PARTNERSCHAFT & HERZ (GF / WIFEY)
+  // 3. FRANKFURT TECH & CRYTEK ENGINE VIBES
+  // ==========================================
+  {
+    id: "sim_tech_crytek_engine_standup",
+    title: "Crytek Stand-up: Framerate-Drop & GPU-Rendering-Pipeline",
+    category: "Crytek Tech & Engine (Frankfurt)",
+    level: "B2/C1",
+    workplace: "Frankfurt Osthafen / CryEngine Tech-HQ Meetingraum",
+    provenance: "AUS_QUELLE",
+    situation: "Im morgendlichen Daily Stand-up des Engine-Teams in Frankfurt berichten Sie dem Lead Programmer über drastische Framerate-Einbrüche im Deferred Renderer.",
+    userRole: "Engine & C++ Software Developer",
+    counterpartRole: "Christian (Lead Rendering Architect)",
+    objective: "Stand-up-Format (Gestern/Heute/Blocker) einhalten, GPU-Flaschenhals präzise benennen (Volumetric Clouds Shader) und Profiling-Lösung vorschlagen.",
+    turns: [
+      {
+        speaker: "Christian",
+        text: "Morgen zusammen! Ali, wie sieht's bei der 4K-Optimierung aus? Im letzten Build hatten wir üble Ruckler bei den Shadern für volumetrischen Rauch.",
+        guidance: "Berichten Sie: Gestern RenderDoc-Profiling durchgeführt, Flaschenhals ist der Pixel-Shader auf alten GPUs, heute Optimierung der Compute-Shader und Memory-Bandenbreite.",
+        expectedCriteria: ["Gestern / Heute / Blocker", "C++ / Engine-Fachbegriffe", "Profiling-Ergebnis", "Lösungsvorschlag"],
+        responseTiers: {
+          basic: "Gestern habe ich den Code profilt. Die Shader sind zu langsam auf alten Grafikkarten. Heute mache ich das schneller.",
+          natural: "Morgen Christian! Ich habe gestern mit RenderDoc ein Profiling gemacht: Der Flaschenhals liegt eindeutig beim Pixel-Shader für den volumetrischen Rauch, der frisst zu viel GPU-Bandbreite. Heute lagere ich die Berechnung in einen asynchronen Compute-Shader aus, dann sollten wir wieder stabile 60 FPS erreichen.",
+          professionalB2: "Guten Morgen Christian! Die gestrige Laufzeitanalyse ergab massive Latenzen in der Deferred-Shading-Pipeline. Die Shader-Instanzen verursachen auf älteren Architekturen extreme Overdraw-Kosten. Ich implementiere heute Temporal Upscaling und optimiere die Draw-Calls, um die Framerate verlässlich über 60 FPS zu stabilisieren.",
+          c1: "Morgen allerseits! Das gestrige GPU-Profiling isolierte den Flaschenhals primär in redundanten Texture-Lookups innerhalb des Raymarching-Loops der Volumetrics. Die Memory-Bandbreite saturiert bei 4K-Auflösung vollständig. Mein heutiger Sprint-Fokus liegt auf der Migration auf Half-Precision-Floats und dem Dispatching via Asynchronous Compute, um die Render-Latenz unter das 16-Millisekunden-Budget zu drücken."
+        },
+        whyExplanation: "Im Frankfurter High-Performance-Tech-Umfeld (Crytek) schätzen Tech Leads knallharte Metriken (Latenz, FPS, Memory-Bandbreite) und proaktive Architektur-Lösungen."
+      }
+    ]
+  },
+
+  {
+    id: "sim_tech_crytek_code_review",
+    title: "C++ Code Review: Memory Allocations in the Game Loop",
+    category: "Crytek Tech & Engine (Frankfurt)",
+    level: "B2/C1",
+    workplace: "GitHub Pull Request / Frankfurt Tech Hub",
+    provenance: "AUS_QUELLE",
+    situation: "Ein Junior-Entwickler hat in der Core-Render-Loop dynamische `std::vector`-Allokationen mit Heap-Speicher vorgenommen, was zu Garbage-Collection-Stottern führt.",
+    userRole: "Senior C++ / Systems Engineer",
+    counterpartRole: "Felix (Junior Game Developer)",
+    objective: "Konstruktiv loben, das Problem von Heap-Allokationen in 60-FPS-Loops erklären und statische Pool-Allokatoren vorschlagen.",
+    turns: [
+      {
+        speaker: "Felix",
+        text: "Hi Ali, hast du dir meinen PR für das Partikelsystem angesehen? Ich habe std::vector genutzt, damit sich die Partikel dynamisch anpassen.",
+        guidance: "Loben Sie die Logik, erklären Sie aber freundlich, warum Heap-Allokationen in der Render-Loop Frame-Drops auslösen, und schlagen Sie einen festen Ring-Buffer / Pool-Allocator vor.",
+        expectedCriteria: ["Positives Feedback zuerst", "Erklärung des Performance-Problems", "Konstruktiver C++ Gegenvorschlag"],
+        responseTiers: {
+          basic: "Das Partikelsystem sieht gut aus. Aber std::vector im Loop macht den Speicher langsam. Nimm lieber ein festes Array.",
+          natural: "Hi Felix, klasse Arbeit beim Partikel-Effekt, das sieht optisch mega aus! Ein wichtiger Punkt für die Engine: Wenn wir `std::vector` direkt in der Update-Schleife allozieren, erzeugen wir Heap-Fragmentierung und Frame-Drops. Lass uns stattdessen einen vorallokierten Pool-Allocator nutzen, dann bleibt die Performance butterweich.",
+          professionalB2: "Hallo Felix, vielen Dank für den PR! Die mathematische Trajektorienberechnung der Partikel ist wirklich elegant gelöst. Performancekritisch ist jedoch das dynamsiche Re-Allokieren im Frame-Loop; jede Heap-Allokation kostet wertvolle CPU-Zyklen. Ich empfehle dir, auf einen statischen Ring-Puffer oder Smart-Pointer mit benutzerdefiniertem Stack-Allokator umzustellen.",
+          c1: "Hi Felix, ein optisch überaus überzeugendes Feature! Unter Low-Level-Gesichtspunkten triggern die dynamischen Heap-Reallokationen innerhalb des Render-Ticks jedoch erhebliche Cache-Misses und Memory-Fragmentation. In unserem High-Performance-Framework vermeiden wir Heap-Allokationen im Hot-Path strikt. Ich schlage vor, die Partikel-Pools initial zur Compile-Zeit zu allozieren und via Data-Oriented Design im Cache zu halten."
+        },
+        whyExplanation: "Konstruktives Code-Review in C++ Game-Engines trennt Softwareästhetik von harter Hardware-Effizienz."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 4. PARTNERSCHAFT & HERZ (GF / WIFEY)
   // ==========================================
   {
     id: "sim_gf_comfort_after_shift",
@@ -21492,17 +21510,17 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
   },
 
   // ==========================================
-  // 6. HESSEN & FRANKFURT LOKALKOLORIT
+  // 5. HESSEN & FRANKFURT LOKALKOLORIT
   // ==========================================
   {
     id: "sim_hessen_coffee_banter",
     title: "Kaffeeküchen-Plausch & Frankfurter Dialekt-Banter",
-    category: "Hessen & Frankfurt",
+    category: "Hessen & Dialekt",
     level: "B2 (Authentisch)",
-    workplace: "Kaffeeküche auf Station P2 / Universitätsklinikum",
+    workplace: "Kaffeeküche auf Station / Tech-Büro Frankfurt",
     provenance: "AUS_QUELLE",
     situation: "Um 10:30 Uhr treffen Sie Pfleger Heinz in der Kaffeeküche. Heinz ist ein waschechter Frankfurter und begrüßt Sie mit typischem hessischen Charme.",
-    userRole: "BFD-Freiwilliger",
+    userRole: "BFD-Freiwilliger / Entwickler",
     counterpartRole: "Pfleger Heinz (Ur-Frankfurter)",
     objective: "Locker auf Hessisch antworten, den Witz aufgreifen, Smalltalk über den Tag führen und kollegiale Nähe aufbauen.",
     turns: [
@@ -21517,7 +21535,7 @@ const SIMULATIONS_DATA = exports.SIMULATIONS_DATA = [
           professionalB2: "Gude Heinz! Absolut, der Kaffee ist meine Rettung für die zweite Schichthälfte! Auf Zimmer 4 läuft alles wie am Schnürchen, die Patienten sind versorgt und die Stimmung ist total entspannt. Wie sieht's drüben bei dir aus?",
           c1: "Ei gude wie, Heinz! Auf diesen Lebenselixier-Kaffee habe ich den ganzen Vormittag hingearbeitet. Bezüglich Zimmer 4 kann ich vollständige Entwarnung geben: Keinerlei Turbulenzen, alle Vitalwerte sind stabil erfasst und die Patienten sind kooperativ. Gönnen wir uns erst mal fünf Minuten Ruhe!"
         },
-        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Pflegeteam."
+        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Team."
       }
     ]
   }
@@ -22691,100 +22709,92 @@ const BUREAUCRACY_DATA = exports.BUREAUCRACY_DATA = {
   // MODULE: data/engineering_data.js
   // ==========================================
   __register('data/engineering_data.js', function(module, exports, require) {
-// Technisches & Software-Ingenieur-Deutsch (B2/C1)
-// Vorbereitung auf Softwareentwicklung, Informatik, Cloud, Data Engineering & IT-Teams
+// High-Performance Software Engineering & Game Engine Tech-Deutsch (B2/C1)
+// Authentische Frankfurt Crytek-Vibes: C++, 3D-Rendering, Shader, Concurrency & Profiling
 
 const ENGINEERING_DATA = exports.ENGINEERING_DATA = {
-  title: "Software-, Computer- & Ingenieur-Deutsch (B2/C1)",
+  title: "High-Performance Engineering & Game Engine Systems (Frankfurt Tech-Vibes)",
   provenance: "ERGÄNZT",
-  description: "Fachwortschatz, Redemittel und Diskussionsmuster für Softwareentwicklung, IT-Architektur, Code Reviews und agile Teams.",
+  description: "Fachwortschatz, Redemittel und Architektur-Diskussionen für C++ High-Performance-Entwicklung, Real-Time Rendering Pipelines, GPU-Profiling und Memory Management im Frankfurter Tech-Umfeld (CryEngine / Crytek-Vibes).",
   categories: [
     {
-      name: "Software-Architektur & Systementwurf",
+      name: "Echtzeit-Rendering & Grafikschnittstellen",
       vocabulary: [
         {
-          word: "die Skalierbarkeit",
+          word: "die Rendering-Pipeline",
           article: "die",
           level: "B2/C1",
-          definition: "Die Fähigkeit eines Softwaresystems, bei steigender Benutzerlast ohne Leistungseinbußen zu wachsen.",
-          exampleGerman: "Durch die Migration auf Kubernetes gewährleisten wir die horizontale Skalierbarkeit des Backends.",
-          exampleEnglish: "Through migration to Kubernetes, we ensure the horizontal scalability of the backend."
+          definition: "Die Abfolge von Berechnungsstufen auf der GPU, durch die aus 3D-Geometrie und Shadern das finale 2D-Bild auf dem Monitor gerendert wird.",
+          exampleGerman: "Im CryEngine-Renderer optimieren wir die Deferred-Shading-Stufe der Rendering-Pipeline, um Draw-Calls zu minimieren.",
+          exampleEnglish: "In the CryEngine renderer, we optimize the deferred shading stage of the rendering pipeline to minimize draw calls."
         },
+        {
+          word: "der Shader (das Schattierungsprogramm)",
+          article: "der",
+          level: "B2/C1",
+          definition: "Ein hochspezialisiertes Programm in HLSL/GLSL, das parallel auf Tausenden GPU-Kernen Beleuchtungs- und Oberflächeneffekte berechnet.",
+          exampleGerman: "Der Vertex- und Pixel-Shader für volumetrischen Nebel verursacht auf älteren Grafikkarten erhebliche Framerate-Einbrüche.",
+          exampleEnglish: "The vertex and pixel shader for volumetric fog causes significant framerate drops on older graphics cards."
+        },
+        {
+          word: "die Framerate (die Bildwiederholrate)",
+          article: "die",
+          level: "B2",
+          definition: "Die Anzahl gerenderter Einzelbilder pro Sekunde (Frames Per Second, FPS).",
+          exampleGerman: "Unser Performance-Budget verlangt stabile 60 FPS bei einer 4K-Auflösung ohne Ruckler.",
+          exampleEnglish: "Our performance budget demands a stable 60 FPS at 4K resolution without stuttering."
+        }
+      ]
+    },
+
+    {
+      name: "C++ High Performance & Speicherverwaltung",
+      vocabulary: [
         {
           word: "der Flaschenhals (das Bottleneck)",
           article: "der",
-          level: "B2",
-          definition: "Die langsamste Komponente im System, welche die Gesamtleistung limitiert.",
-          exampleGerman: "Die synchrone Festplatten-I/O stellte sich im Profiling als der primäre Flaschenhals heraus.",
-          exampleEnglish: "Synchronous disk I/O turned out to be the primary bottleneck during profiling."
-        },
-        {
-          word: "das Refactoring",
-          article: "das",
-          level: "B2",
-          definition: "Die Überarbeitung und Säuberung des Quellcodes ohne Veränderung der externen Funktionalität.",
-          exampleGerman: "Vor dem nächsten Release führen wir ein gründliches Refactoring der Legacy-Module durch.",
-          exampleEnglish: "Prior to the next release, we conduct a thorough refactoring of the legacy modules."
-        },
-        {
-          word: "die Entkopplung",
-          article: "die",
-          level: "C1",
-          definition: "Die Trennung von Modulen, sodass Änderungen in Modul A keine unerwünschten Seiteneffekte in Modul B erzeugen.",
-          exampleGerman: "Durch Event-Driven Architecture erreichen wir eine lose Entkopplung der Microservices.",
-          exampleEnglish: "Through event-driven architecture, we achieve loose decoupling of microservices."
-        }
-      ]
-    },
-
-    {
-      name: "DevOps, Cloud & Datenpipelines",
-      vocabulary: [
-        {
-          word: "die Bereitstellung (das Deployment)",
-          article: "die",
-          level: "B2",
-          definition: "Das automatische Übertragen und Starten einer neuen Softwareversion auf dem Produktionsserver.",
-          exampleGerman: "Die CI/CD-Pipeline führt die automatisierte Bereitstellung nach erfolgreichen Unit-Tests aus.",
-          exampleEnglish: "The CI/CD pipeline executes automated deployment following successful unit tests."
-        },
-        {
-          word: "die Ausfallsicherheit (High Availability)",
-          article: "die",
-          level: "C1",
-          definition: "Die Eigenschaft eines Systems, auch bei Hardware- oder Serverausfällen kontinuierlich weiterzulaufen.",
-          exampleGerman: "Multi-Region-Cluster garantieren maximale Ausfallsicherheit bei Cloud-Hostern.",
-          exampleEnglish: "Multi-region clusters guarantee maximum fault tolerance with cloud providers."
-        },
-        {
-          word: "die Latenz (die Verzögerungszeit)",
-          article: "die",
           level: "B2/C1",
-          definition: "Die Zeitspanne zwischen dem Absenden einer Anfrage und dem Eintreffen der Antwort.",
-          exampleGerman: "Die Redis-Caching-Schicht konnte die Latenz der API von 250 ms auf 12 ms reduzieren.",
-          exampleEnglish: "The Redis caching layer was able to reduce API latency from 250 ms to 12 ms."
+          definition: "Die Systemkomponente (CPU, GPU-Bandbreite, RAM-I/O), welche die Gesamtausführungsgeschwindigkeit limitiert.",
+          exampleGerman: "Das Profiling mit RenderDoc zeigte eindeutig: Wir sind CPU-limitiert bei den Physik-Berechnungen und nicht auf der GPU.",
+          exampleEnglish: "Profiling with RenderDoc showed clearly: We are CPU-bound on physics calculations, not on the GPU."
+        },
+        {
+          word: "die Speicherbereinigung (Memory Allocation & Leaks)",
+          article: "die",
+          level: "C1",
+          definition: "Die gezielte Verwaltung von Heap-Speicher zur Vermeidung von Fragmentierung und Speicherlecks in performancekritischen Schleifen.",
+          exampleGerman: "In der Game-Loop dürfen wir keine dynamischen Allokationen mit 'new' durchführen; wir nutzen feste Stack- und Pool-Allokatoren.",
+          exampleEnglish: "In the game loop, we must not perform dynamic allocations with 'new'; we use fixed stack and pool allocators."
+        },
+        {
+          word: "die Nebenläufigkeit (Multithreading / Concurrency)",
+          article: "die",
+          level: "C1",
+          definition: "Die parallele Ausführung von Aufgaben auf mehreren CPU-Kernen ohne Race Conditions und Deadlocks.",
+          exampleGerman: "Durch unser Job-System entkoppeln wir KI-Berechnungen, Animations-Rigging und Rendering auf separate Worker-Threads.",
+          exampleEnglish: "Through our job system, we decouple AI calculations, animation rigging, and rendering onto separate worker threads."
         }
       ]
     },
 
     {
-      name: "IT-Besprechungen, Code Reviews & Agilität",
+      name: "Agile Stand-ups & Tech-Meetings in Frankfurt",
       vocabulary: [
         {
-          word: "die Testabdeckung (Code Coverage)",
-          article: "die",
-          level: "B2",
-          definition: "Der prozentuale Anteil des Quellcodes, der durch automatisierte Tests abgedeckt ist.",
-          exampleGerman: "Wir streben eine Testabdeckung von mindestens 85 % für alle Kernmodule an.",
-          exampleEnglish: "We aim for a code coverage of at least 85% across all core modules."
+          word: "das Profiling (die Laufzeitanalyse)",
+          article: "das",
+          level: "B2/C1",
+          definition: "Das systematische Vermessen von CPU- und GPU-Takten zur Lokalisierung von Latenzen.",
+          exampleGerman: "Lass uns nach dem Stand-up ein CPU-Profiling durchführen, um den Spiketerminanten zu isolieren.",
+          exampleEnglish: "Let's run a CPU profiling after the stand-up to isolate the spike cause."
         },
         {
-          word: "der Meilenstein",
+          word: "der Meilenstein (das Release)",
           article: "der",
           level: "B2",
-          definition: "Ein zentrales Zwischenziel im Projektplan, an dem wichtige Teilergebnisse abgeschlossen sind.",
-          exampleGerman: "Mit dem erfolgreichen Lasttest haben wir den zweiten Meilenstein im Sprint erreicht.",
-          exampleEnglish: "With the successful load test, we reached the second milestone in the sprint."
+          definition: "Ein fest definiertes Lieferdatum für eine Alpha-/Beta-Version der Engine oder des Spiels.",
+          exampleGerman: "Vor dem nächsten Meilenstein müssen alle Unit-Tests in der CI/CD-Pipeline grün durchlaufen.",
+          exampleEnglish: "Prior to the next milestone, all unit tests in the CI/CD pipeline must pass green."
         }
       ]
     }
@@ -24047,7 +24057,7 @@ const renderSynonymsDiffHub = exports.renderSynonymsDiffHub = function renderSyn
   // MODULE: components/simulations.js
   // ==========================================
   __register('components/simulations.js', function(module, exports, require) {
-// Simulations Component — Interaktive Rollenspiele (BFD, Tech, Wohnen, Feste, Partnerschaft, Hessen)
+// Simulations Component — Interaktive Rollenspiele (KJP 11-17J, Zuhause & Familie, Crytek Tech, Partnerschaft)
 
 const { Speech } = require('../speech.js');
 const { SIMULATIONS_DATA } = require('../data/simulations_data.js');
@@ -24076,7 +24086,7 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
               <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR B2 / C1</span>
               <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
               <p class="subtitle mt-1">
-                Lebensnahe Simulationen für Krankenhaus, IT/Tech-Arbeitsplatz, Mietrecht, Familienfeste, Partnerschaft und Frankfurter Lokalkolorit.
+                KJP Kinder- & Jugendpsychiatrie (11–17 J.), Deutsches Familienleben (Frühstück, Dinner, Weihnachten), Frankfurt Crytek Tech & Herzensgespräche.
               </p>
             </div>
             <div class="flex items-center gap-2">
@@ -24092,22 +24102,19 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
               <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
                 Alle (${sims.length})
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
-                🏥 Klinik & BFD
+              <button class="btn btn-xs ${activeCategory === 'KJP Psychiatrie (11–17 J.)' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="KJP Psychiatrie (11–17 J.)">
+                👶 KJP (11–17 J.)
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Engineering & IT' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Engineering & IT">
-                💻 Engineering & IT
+              <button class="btn btn-xs ${activeCategory === 'Zuhause & Familie' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Zuhause & Familie">
+                🏡 Zuhause & Familie
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Wohnen & Vermieter' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Wohnen & Vermieter">
-                🏡 Wohnen & Vermieter
-              </button>
-              <button class="btn btn-xs ${activeCategory === 'Familie, Feste & Feiern' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie, Feste & Feiern">
-                🎄 Familie & Feste
+              <button class="btn btn-xs ${activeCategory === 'Crytek Tech & Engine (Frankfurt)' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Crytek Tech & Engine (Frankfurt)">
+                💻 Crytek Tech & Engine
               </button>
               <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
                 ❤️ Partnerschaft & Herz
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Hessen & Frankfurt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Frankfurt">
+              <button class="btn btn-xs ${activeCategory === 'Hessen & Dialekt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Dialekt">
                 🏙️ Hessen & Dialekt
               </button>
             </div>
@@ -24192,7 +24199,7 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
           <div class="text-5xl">🏆</div>
           <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
           <p class="text-sm text-secondary max-w-md mx-auto">
-            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und die Kriterien erfüllt.
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und souverän reagiert.
           </p>
           <div class="flex justify-center gap-3 pt-4">
             <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
@@ -24307,7 +24314,7 @@ const renderSimulations = exports.renderSimulations = function renderSimulations
 
           ${turn.whyExplanation ? `
             <div class="p-2.5 bg-surface rounded-lg text-xs text-muted italic border border-subtle mt-2">
-              💡 <strong>Linguistische Erklärung:</strong> ${turn.whyExplanation}
+              💡 <strong>Linguistische & Handlungs-Erklärung:</strong> ${turn.whyExplanation}
             </div>
           ` : ''}
         </div>

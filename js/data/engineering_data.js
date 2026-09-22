@@ -1,97 +1,89 @@
-// Technisches & Software-Ingenieur-Deutsch (B2/C1)
-// Vorbereitung auf Softwareentwicklung, Informatik, Cloud, Data Engineering & IT-Teams
+// High-Performance Software Engineering & Game Engine Tech-Deutsch (B2/C1)
+// Authentische Frankfurt Crytek-Vibes: C++, 3D-Rendering, Shader, Concurrency & Profiling
 
 export const ENGINEERING_DATA = {
-  title: "Software-, Computer- & Ingenieur-Deutsch (B2/C1)",
+  title: "High-Performance Engineering & Game Engine Systems (Frankfurt Tech-Vibes)",
   provenance: "ERGÄNZT",
-  description: "Fachwortschatz, Redemittel und Diskussionsmuster für Softwareentwicklung, IT-Architektur, Code Reviews und agile Teams.",
+  description: "Fachwortschatz, Redemittel und Architektur-Diskussionen für C++ High-Performance-Entwicklung, Real-Time Rendering Pipelines, GPU-Profiling und Memory Management im Frankfurter Tech-Umfeld (CryEngine / Crytek-Vibes).",
   categories: [
     {
-      name: "Software-Architektur & Systementwurf",
+      name: "Echtzeit-Rendering & Grafikschnittstellen",
       vocabulary: [
         {
-          word: "die Skalierbarkeit",
+          word: "die Rendering-Pipeline",
           article: "die",
           level: "B2/C1",
-          definition: "Die Fähigkeit eines Softwaresystems, bei steigender Benutzerlast ohne Leistungseinbußen zu wachsen.",
-          exampleGerman: "Durch die Migration auf Kubernetes gewährleisten wir die horizontale Skalierbarkeit des Backends.",
-          exampleEnglish: "Through migration to Kubernetes, we ensure the horizontal scalability of the backend."
+          definition: "Die Abfolge von Berechnungsstufen auf der GPU, durch die aus 3D-Geometrie und Shadern das finale 2D-Bild auf dem Monitor gerendert wird.",
+          exampleGerman: "Im CryEngine-Renderer optimieren wir die Deferred-Shading-Stufe der Rendering-Pipeline, um Draw-Calls zu minimieren.",
+          exampleEnglish: "In the CryEngine renderer, we optimize the deferred shading stage of the rendering pipeline to minimize draw calls."
         },
+        {
+          word: "der Shader (das Schattierungsprogramm)",
+          article: "der",
+          level: "B2/C1",
+          definition: "Ein hochspezialisiertes Programm in HLSL/GLSL, das parallel auf Tausenden GPU-Kernen Beleuchtungs- und Oberflächeneffekte berechnet.",
+          exampleGerman: "Der Vertex- und Pixel-Shader für volumetrischen Nebel verursacht auf älteren Grafikkarten erhebliche Framerate-Einbrüche.",
+          exampleEnglish: "The vertex and pixel shader for volumetric fog causes significant framerate drops on older graphics cards."
+        },
+        {
+          word: "die Framerate (die Bildwiederholrate)",
+          article: "die",
+          level: "B2",
+          definition: "Die Anzahl gerenderter Einzelbilder pro Sekunde (Frames Per Second, FPS).",
+          exampleGerman: "Unser Performance-Budget verlangt stabile 60 FPS bei einer 4K-Auflösung ohne Ruckler.",
+          exampleEnglish: "Our performance budget demands a stable 60 FPS at 4K resolution without stuttering."
+        }
+      ]
+    },
+
+    {
+      name: "C++ High Performance & Speicherverwaltung",
+      vocabulary: [
         {
           word: "der Flaschenhals (das Bottleneck)",
           article: "der",
-          level: "B2",
-          definition: "Die langsamste Komponente im System, welche die Gesamtleistung limitiert.",
-          exampleGerman: "Die synchrone Festplatten-I/O stellte sich im Profiling als der primäre Flaschenhals heraus.",
-          exampleEnglish: "Synchronous disk I/O turned out to be the primary bottleneck during profiling."
-        },
-        {
-          word: "das Refactoring",
-          article: "das",
-          level: "B2",
-          definition: "Die Überarbeitung und Säuberung des Quellcodes ohne Veränderung der externen Funktionalität.",
-          exampleGerman: "Vor dem nächsten Release führen wir ein gründliches Refactoring der Legacy-Module durch.",
-          exampleEnglish: "Prior to the next release, we conduct a thorough refactoring of the legacy modules."
-        },
-        {
-          word: "die Entkopplung",
-          article: "die",
-          level: "C1",
-          definition: "Die Trennung von Modulen, sodass Änderungen in Modul A keine unerwünschten Seiteneffekte in Modul B erzeugen.",
-          exampleGerman: "Durch Event-Driven Architecture erreichen wir eine lose Entkopplung der Microservices.",
-          exampleEnglish: "Through event-driven architecture, we achieve loose decoupling of microservices."
-        }
-      ]
-    },
-
-    {
-      name: "DevOps, Cloud & Datenpipelines",
-      vocabulary: [
-        {
-          word: "die Bereitstellung (das Deployment)",
-          article: "die",
-          level: "B2",
-          definition: "Das automatische Übertragen und Starten einer neuen Softwareversion auf dem Produktionsserver.",
-          exampleGerman: "Die CI/CD-Pipeline führt die automatisierte Bereitstellung nach erfolgreichen Unit-Tests aus.",
-          exampleEnglish: "The CI/CD pipeline executes automated deployment following successful unit tests."
-        },
-        {
-          word: "die Ausfallsicherheit (High Availability)",
-          article: "die",
-          level: "C1",
-          definition: "Die Eigenschaft eines Systems, auch bei Hardware- oder Serverausfällen kontinuierlich weiterzulaufen.",
-          exampleGerman: "Multi-Region-Cluster garantieren maximale Ausfallsicherheit bei Cloud-Hostern.",
-          exampleEnglish: "Multi-region clusters guarantee maximum fault tolerance with cloud providers."
-        },
-        {
-          word: "die Latenz (die Verzögerungszeit)",
-          article: "die",
           level: "B2/C1",
-          definition: "Die Zeitspanne zwischen dem Absenden einer Anfrage und dem Eintreffen der Antwort.",
-          exampleGerman: "Die Redis-Caching-Schicht konnte die Latenz der API von 250 ms auf 12 ms reduzieren.",
-          exampleEnglish: "The Redis caching layer was able to reduce API latency from 250 ms to 12 ms."
+          definition: "Die Systemkomponente (CPU, GPU-Bandbreite, RAM-I/O), welche die Gesamtausführungsgeschwindigkeit limitiert.",
+          exampleGerman: "Das Profiling mit RenderDoc zeigte eindeutig: Wir sind CPU-limitiert bei den Physik-Berechnungen und nicht auf der GPU.",
+          exampleEnglish: "Profiling with RenderDoc showed clearly: We are CPU-bound on physics calculations, not on the GPU."
+        },
+        {
+          word: "die Speicherbereinigung (Memory Allocation & Leaks)",
+          article: "die",
+          level: "C1",
+          definition: "Die gezielte Verwaltung von Heap-Speicher zur Vermeidung von Fragmentierung und Speicherlecks in performancekritischen Schleifen.",
+          exampleGerman: "In der Game-Loop dürfen wir keine dynamischen Allokationen mit 'new' durchführen; wir nutzen feste Stack- und Pool-Allokatoren.",
+          exampleEnglish: "In the game loop, we must not perform dynamic allocations with 'new'; we use fixed stack and pool allocators."
+        },
+        {
+          word: "die Nebenläufigkeit (Multithreading / Concurrency)",
+          article: "die",
+          level: "C1",
+          definition: "Die parallele Ausführung von Aufgaben auf mehreren CPU-Kernen ohne Race Conditions und Deadlocks.",
+          exampleGerman: "Durch unser Job-System entkoppeln wir KI-Berechnungen, Animations-Rigging und Rendering auf separate Worker-Threads.",
+          exampleEnglish: "Through our job system, we decouple AI calculations, animation rigging, and rendering onto separate worker threads."
         }
       ]
     },
 
     {
-      name: "IT-Besprechungen, Code Reviews & Agilität",
+      name: "Agile Stand-ups & Tech-Meetings in Frankfurt",
       vocabulary: [
         {
-          word: "die Testabdeckung (Code Coverage)",
-          article: "die",
-          level: "B2",
-          definition: "Der prozentuale Anteil des Quellcodes, der durch automatisierte Tests abgedeckt ist.",
-          exampleGerman: "Wir streben eine Testabdeckung von mindestens 85 % für alle Kernmodule an.",
-          exampleEnglish: "We aim for a code coverage of at least 85% across all core modules."
+          word: "das Profiling (die Laufzeitanalyse)",
+          article: "das",
+          level: "B2/C1",
+          definition: "Das systematische Vermessen von CPU- und GPU-Takten zur Lokalisierung von Latenzen.",
+          exampleGerman: "Lass uns nach dem Stand-up ein CPU-Profiling durchführen, um den Spiketerminanten zu isolieren.",
+          exampleEnglish: "Let's run a CPU profiling after the stand-up to isolate the spike cause."
         },
         {
-          word: "der Meilenstein",
+          word: "der Meilenstein (das Release)",
           article: "der",
           level: "B2",
-          definition: "Ein zentrales Zwischenziel im Projektplan, an dem wichtige Teilergebnisse abgeschlossen sind.",
-          exampleGerman: "Mit dem erfolgreichen Lasttest haben wir den zweiten Meilenstein im Sprint erreicht.",
-          exampleEnglish: "With the successful load test, we reached the second milestone in the sprint."
+          definition: "Ein fest definiertes Lieferdatum für eine Alpha-/Beta-Version der Engine oder des Spiels.",
+          exampleGerman: "Vor dem nächsten Meilenstein müssen alle Unit-Tests in der CI/CD-Pipeline grün durchlaufen.",
+          exampleEnglish: "Prior to the next milestone, all unit tests in the CI/CD pipeline must pass green."
         }
       ]
     }

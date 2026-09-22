@@ -1,209 +1,216 @@
-// BFD, Engineering, Wohnen, Feste & Partnerschafts-Simulationen
-// Höchstes Niveau: Aktiv B2 -> Professionell B2+ -> C1 Nuanciert -> C2 Idiomatisch
+// KJP (11–17 J.), Familie (Frühstück, Dinner, Weihnachten), Frankfurt Crytek Tech & Partnerschaft
+// Höchste sprachliche Güte: Aktiv B2 -> Natürlich -> Professionell B2+ -> C1/C2 Fachsprache
 
 export const SIMULATIONS_DATA = [
   // ==========================================
-  // 1. KLINIK & BFD (Station 2 / UKGM Marburg)
+  // 1. KINDER- & JUGENDPSYCHIATRIE (KJP, 11–17 JAHRE)
   // ==========================================
   {
-    id: "sim_sbar_handover",
-    title: "Klinische Schichtübergabe nach SBAR-Schema",
-    category: "Klinik & BFD",
+    id: "sim_kjp_autism_meltdown",
+    title: "Autismus-Overload: Reizüberflutung bei einem 12-Jährigen",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2/C1",
-    workplace: "Besprechungsraum Station 2 (UKGM Marburg)",
+    workplace: "Flur / Essbereich der KJP-Station",
     provenance: "AUS_QUELLE",
-    situation: "Zum Schichtwechsel um 14:00 Uhr übergeben Sie Ihre Beobachtungen bezüglich Herrn Becker (Zimmer 12) an die Spätdienst-Pflegekraft Sarah.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Sarah (Pflegefachkraft im Spätdienst)",
-    objective: "Strukturierte Übergabe nach SBAR (Situation, Background, Assessment, Recommendation) bezüglich Vitalwerten, Verhaltensbeobachtung und Nahrungsaufnahme.",
+    situation: "Ein 12-jähriger Junge im Autismus-Spektrum (Lukas) hält sich vor Baulärm und Essengerüchen panisch die Ohren zu, schreit und wirft seinen Teller auf den Boden.",
+    userRole: "BFD-Freiwilliger / Pädagogische Betreuung",
+    counterpartRole: "Lukas (12 Jahre, Reizüberflutung / beginnender Meltdown)",
+    objective: "Reizreduktion einleiten, ohne Vorwürfe auf Augenhöhe gehen, einfache wörtliche Sprache sprechen (keine Metaphern) und einen sicheren Ruheraum anbieten.",
     turns: [
       {
-        speaker: "Sarah",
-        text: "Hi Ali! Wie war dein Frühdienst? Gab es bei Herrn Becker auf Zimmer 12 heute Vormittag Auffälligkeiten beim Essen oder bei den Vitalwerten?",
-        guidance: "Berichten Sie präzise: Vitalwerte (145/90 mmHg), Verweigerung der Mittagsmahlzeit, aber 600 ml getrunken, nach Begleitung im Klinikpark motorisch deutlich entspannter.",
-        expectedCriteria: ["Konkrete Werte nennen", "Nahrungs-/Flüssigkeitsaufnahme erwähnen", "Psychischen Zustand schildern", "Strukturierte Sprache"],
+        speaker: "Lukas (schreit verzweifelt)",
+        text: "Es ist viel zu laut! Die Bohrmaschine tut mir im Kopf weh! Macht das sofort aus, ich halte das nicht aus!",
+        guidance: "Gehen Sie in die Hocke auf Augenhöhe. Reden Sie leise, kurz und direkt. Keine langen Erklärungen. Bieten Sie Lärmschutzkopfhörer und den Ruheraum an.",
+        expectedCriteria: ["Augenhöhe / ruhige Stimme", "Reizreduktion anbieten", "Klare, wörtliche Sprache", "Keine Vorwürfe wegen des Tellers"],
         responseTiers: {
-          basic: "Herr Becker hatte Blutdruck 145 zu 90. Er hat nicht gegessen, aber getrunken. Im Park ging es ihm viel besser.",
-          natural: "Herr Becker hatte um 09:30 Uhr einen Blutdruck von 145 zu 90. Das Mittagessen hat er leider abgelehnt, aber ca. 600 ml Wasser getrunken. Nach unserem Spaziergang im Park wirkte er deutlich ruhiger.",
-          professionalB2: "Zur Übergabe von Herrn Becker auf Zimmer 12: Die Vitalwertkontrolle ergab einen leichten Blutdruckanstieg auf 145/90 mmHg. Die feste Nahrung hat er verweigert, die Flüssigkeitszufuhr lag jedoch bei etwa 600 ml. Im Rahmen unserer aktivierenden Begleitung im Park zeigte er sich kooperativ und motorisch wesentlich weniger agitiert.",
-          c1: "Bezüglich Herrn Becker auf Zimmer 12: Die morgendliche Statuserhebung zeigte eine mäßige Hypertonie von 145/90 mmHg bei normofrequenter Herzaktion. Während die Nahrungsaufnahme aufgrund depressiver Antriebslosigkeit sistierte, konnte eine adäquate Hydratation von 600 ml sichergestellt werden. Psychopathologisch präsentierte er sich nach der milieu-therapeutischen Parkbegleitung affektiv deutlich stabilisierter und zugewandter."
+          basic: "Lukas, setz die Kopfhörer auf. Wir gehen jetzt in den Ruheraum, da ist es ganz leise.",
+          natural: "Lukas, schau mal zu mir. Hier sind deine Noise-Cancelling-Kopfhörer. Wir gehen jetzt sofort zusammen in den Ruheraum, da hörst du keinen Lärm mehr.",
+          professionalB2: "Lukas, ich sehe, dass dir das Geräusch wehtut. Du bist hier sicher. Ich gebe dir jetzt deine Kopfhörer. Nimm meine Hand, wir gehen sofort in den abgedunkelten Snoezelen-Raum.",
+          c1: "Lukas, ich nehme deine Reizüberlastung wahr. Wir stoppen den Sinnesinput sofort: Hier ist dein Gehörschutz. Wir verlassen diesen Raum jetzt gemeinsam und begeben uns in den reizarmen Rückzugsort."
         },
-        whyExplanation: "Strukturierte Fachterminologie (Hypertonie, Hydratation, affektiv stabilisiert) spart Zeit und sichert die lückenlose Behandlungsqualität."
+        whyExplanation: "Im Autismus-Overload schützt sofortige Reizreduktion (Kopfhörer, Ruheraum) vor der Eskalation zum Vollbild-Meltdown. Lange Sätze überfordern das Gehirn zusätzlich."
       }
     ]
   },
 
   {
-    id: "sim_doctor_rounds_visite",
-    title: "Ärztliche Visite & Fallbesprechung mit der Oberärztin",
-    category: "Klinik & BFD",
+    id: "sim_kjp_psychose_paranoia",
+    title: "Psychose & Wahn: 16-Jähriger verbarrikadiert sich im Zimmer",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2/C1",
-    workplace: "Arztzimmer / Visite am Patientenbett",
+    workplace: "Zimmertür von Zimmer 3 (Akutbereich)",
     provenance: "AUS_QUELLE",
-    situation: "Die Oberärztin Dr. Weber bittet Sie während der Visite um Ihre Einschätzung zur Tagesstruktur und Gruppenbeteiligung von Frau Jansen.",
-    userRole: "BFD-Freiwilliger",
-    counterpartRole: "Dr. Weber (Oberärztin)",
-    objective: "Wertfreie, präzise Verhaltensbeobachtung ohne Eigendiagnosen schildern und Kooperation in der Ergotherapie beschreiben.",
+    situation: "Jonas (16 Jahre, akute drogeninduzierte Psychose) hat die Zimmertür mit einem Stuhl blockiert, weil er Stimmen hört und glaubt, man wolle ihn durch das Essen vergiften.",
+    userRole: "BFD-Freiwilliger in Begleitung der Fachkraft",
+    counterpartRole: "Jonas (16 Jahre, psychotische Angst)",
+    objective: "Reale Angst validieren ohne den Wahninhalt zu bestätigen, Transparenz herstellen und ruhigen Kontakt durch die Tür aufbauen.",
     turns: [
       {
-        speaker: "Dr. Weber",
-        text: "Ali, Sie haben Frau Jansen diese Woche bei der Ergotherapie und beim gemeinsamen Kochen begleitet. Wie erleben Sie ihre Konzentration und ihre soziale Interaktion in der Gruppe?",
-        guidance: "Schildern Sie differenziert: Zu Beginn zurückhaltend und reizempfindlich, nach ca. 20 Minuten aktive Teilnahme beim Gemüseschneiden, freundlicher Austausch mit Mitpatienten.",
-        expectedCriteria: ["Wertfreie Beobachtung", "Zeitlicher Verlauf", "Gruppeninteraktion", "Rollenangemessene Sprache"],
+        speaker: "Jonas (hinter der Tür)",
+        text: "Verschwindet! Ich weiß genau, dass ihr Kameras im Essen versteckt habt! Die Stimmen sagen, dass ihr mich umbringen wollt!",
+        guidance: "Nicht diskutieren ('Da sind keine Kameras!'). Bestätigen Sie seine Angst ('Ich höre, wie viel Angst du hast'), stellen Sie klar, wer Sie sind, und signalisieren Sie Schutz.",
+        expectedCriteria: ["Kein Diskutieren über den Wahn", "Angst validieren", "Transparenz (Name & Absicht)", "Präsenz & Sicherheit"],
         responseTiers: {
-          basic: "Am Anfang war sie leise, aber danach hat sie gut mitgemacht und mit den anderen gesprochen.",
-          natural: "Zu Beginn der Kochgruppe wirkte Frau Jansen noch etwas zurückhaltend und lärmempfindlich. Nach etwa zwanzig Minuten hat sie sich dann aber aktiv beteiligt, beim Schneiden mitgeholfen und sogar gelächelt.",
-          professionalB2: "Frau Jansen zeigte anfangs eine deutliche Reizempfindlichkeit und zog sich zurück. Im weiteren Verlauf konnte sie sich jedoch gut auf die praktische Aufgabe konzentrieren und trat von sich aus in einen freundlichen Austausch mit zwei Mitpatientinnen.",
-          c1: "Phänomenologisch imponierte Frau Jansen zu Beginn der Intervention durch eine ausgeprägte Reizüberflutung mit Rückzugstendenzen. Durch gezielte Reizreduktion gelang ihr jedoch eine erfreuliche Re-Fokussierung: Sie vollzog komplexe Handlungsabläufe adäquat und zeigte im Gruppenkontakt eine spürbare affektive Aufhellung."
+          basic: "Jonas, hier ist Ali. Niemand will dir etwas tun. Du bist im Krankenhaus und in Sicherheit.",
+          natural: "Jonas, ich bin's, Ali. Ich höre die Stimmen zwar nicht, aber ich spüre, wie viel Angst du gerade hast. Keiner tut dir etwas. Wir stellen das Essen weg und ich bleibe einfach vor deiner Tür stehen.",
+          professionalB2: "Jonas, hier spricht Ali vom Stationsteam. Ich diskutiere nicht über die Stimmen, aber ich sehe deine enorme Angst. Du bist hier auf Station absolut geschützt. Ich schiebe jetzt keinen Stuhl weg – ich bleibe einfach hier ruhig sitzen, bis du bereit bist.",
+          c1: "Jonas, ich nehme deine massive Bedrohungswahrnehmung wahr. Bitte sei versichert, dass dir hier keine Gefahr droht. Wir respektieren deine Distanz und veranlassen keinerlei Zwangsmaßnahmen. Ich bleibe als verlässlicher Ansprechpartner vor der Tür präsent."
         },
-        whyExplanation: "Genaue Verhaltensbeschreibungen unterstützen Ärzte bei der Beurteilung des Therapieerfolgs."
-      }
-    ]
-  },
-
-  // ==========================================
-  // 2. ENGINEERING & IT-ARBEITSPLATZ
-  // ==========================================
-  {
-    id: "sim_tech_daily_standup",
-    title: "Daily Stand-up & Sprint-Architektur im IT-Team",
-    category: "Engineering & IT",
-    level: "B2/C1",
-    workplace: "Agiler Meetingraum / Remote Video Call",
-    provenance: "AUS_QUELLE",
-    situation: "Im 15-minütigen Daily Scrum berichten Sie dem Entwicklerteam über den aktuellen Stand der API-Optimierung und bestehende Blocker.",
-    userRole: "Software Engineer / IT Specialist",
-    counterpartRole: "Markus (Scrum Master / Lead Architect)",
-    objective: "Gestern Erledigtes, Heutiges und Blocker (Datenbank-Flaschenhals) klar, prägnant und lösungsorientiert präsentieren.",
-    turns: [
-      {
-        speaker: "Markus",
-        text: "Morgen zusammen! Ali, du bist dran: Was hast du gestern geschafft, woran arbeitest du heute und gibt es Blocker bei der Microservice-Migration?",
-        guidance: "Berichten Sie: Gestern Endpunkte refaktoriert, heute Unit-Tests und Docker-Containerisierung, Blocker: Latenzprobleme bei SQL-Queries (Datenbank-Flaschenhals).",
-        expectedCriteria: ["Struktur (Gestern/Heute/Blocker)", "Präzise IT-Fachsprache", "Lösungsvorschlag anbieten"],
-        responseTiers: {
-          basic: "Gestern habe ich den Code verbessert. Heute schreibe ich Tests. Bei der Datenbank ist es noch zu langsam.",
-          natural: "Gestern habe ich das Refactoring der Authentifizierungs-Endpunkte abgeschlossen. Heute schreibe ich die Unit-Tests und baue den Docker-Container. Als Blocker haben wir noch eine hohe Latenz bei den Datenbank-Queries – da müssen wir die Indizes optimieren.",
-          professionalB2: "Gestern konnte ich das Refactoring der REST-API-Schnittstellen erfolgreich abschließen. Mein Fokus liegt heute auf der Testabdeckung mit PyTest sowie dem Container-Deployment. Als potenziellen Flaschenhals sehe ich die Abfragezeiten der SQL-Datenbank; ich schlage vor, nach dem Stand-up mit Jonas ein kurzes Query-Profiling durchzuführen.",
-          c1: "Gestern habe ich die serviceübergreifende Schnittstellenarchitektur konsolidiert und redundante Payloads eliminiert. Der heutige Meilenstein umfasst die automatisierte CI/CD-Pipeline-Integration und Lasttests. Als kritischen Blocker identifiziere ich persistente I/O-Latenzen im Datenbankcluster, weshalb ich eine Index-Restrukturierung sowie die Implementierung einer Redis-Caching-Schicht favorisiere."
-        },
-        whyExplanation: "Im agilen Tech-Umfeld zählen klare Fakten, Fachbegriffe (Refactoring, Latenz, Flaschenhals, Lasttests) und proaktive Lösungen."
+        whyExplanation: "Psychose-Deeskalation: Niemals den Wahninhalt debattieren, sondern das echte Gefühl (Angst/Panik) spiegeln und körperliche Unversehrtheit garantieren."
       }
     ]
   },
 
   {
-    id: "sim_tech_code_review_discussion",
-    title: "Konstruktives Code-Review & Architektur-Debatte",
-    category: "Engineering & IT",
-    level: "B2/C1",
-    workplace: "GitHub Pull Request / Review-Session",
-    provenance: "AUS_QUELLE",
-    situation: "Ein Kollege hat einen Pull Request eingereicht, bei dem Sicherheitsaspekte und Skalierbarkeit unzureichend gelöst sind. Sie möchten das Feedback kollegial und fachlich fundiert vortragen.",
-    userRole: "Senior Software Developer",
-    counterpartRole: "Tobias (Entwicklerkollege)",
-    objective: "Wertschätzend positives Feedback voranstellen, Sicherheitsrisiken sachlich erläutern und Best Practices vorschlagen.",
-    turns: [
-      {
-        speaker: "Tobias",
-        text: "Hi Ali, hast du dir meinen Pull Request für das neue Zahlungs-Gateway schon angeschaut? Ich wollte den Branch eigentlich gleich mergen.",
-        guidance: "Loben Sie die schnelle Umsetzung, weisen Sie aber diplomatisch auf fehlende Eingabevalidierung und unverschlüsselte API-Keys hin, und schlagen Sie Umgebungsvariablen (.env) vor.",
-        expectedCriteria: ["Wertschätzender Einstieg", "Klares Aufzeigen von Risiken", "Konkreter technischer Gegenvorschlag"],
-        responseTiers: {
-          basic: "Der Code ist gut, aber die Passwörter stehen im Klartext. Das können wir so nicht mergen.",
-          natural: "Danke für die schnelle Umsetzung, Tobias! Die Logik sieht super aus. Mir ist allerdings aufgefallen, dass die API-Keys noch direkt im Quellcode stehen. Lass uns die kurz in Umgebungsvariablen auslagern und eine Validierung einbauen, dann können wir direkt mergen.",
-          professionalB2: "Vielen Dank für den PR, die Modulstruktur ist wirklich sauber aufgebaut. Aus Sicherheitsgründen sollten wir die sensiblen Credentials jedoch keinesfalls im Repository committen, sondern über ein Secret-Management laden. Wenn du das kurz anpasst und wir noch zwei Edge-Case-Tests ergänzen, gebe ich sofort mein Approval.",
-          c1: "Ich begrüße die elegante Entkopplung der Komponenten in deinem Entwurf ausdrücklich. Unter Sicherheitsaspekten birgt die Hardcodierung der API-Secrets jedoch ein gravierendes Vulnerabilitätsrisiko. Ich plädiere dafür, die Konfiguration über Vault bzw. Environment-Variablen zu kapseln und strikte Input-Sanitization zu implementieren, um Injection-Vektoren verlässlich zu unterbinden."
-        },
-        whyExplanation: "Konstruktive Kritik im Code-Review trennt die Person von der Sache und schützt die Softwarequalität."
-      }
-    ]
-  },
-
-  // ==========================================
-  // 3. WOHNEN, VERMIETER & HAUSGEMEINSCHAFT
-  // ==========================================
-  {
-    id: "sim_house_heating_complaint",
-    title: "Mängelrüge an den Vermieter (Heizungsausfall im Winter)",
-    category: "Wohnen & Vermieter",
-    level: "B2/C1",
-    workplace: "Telefonat / Schriftliche Mitteilung an die Hausverwaltung",
-    provenance: "AUS_QUELLE",
-    situation: "Mitte November fällt in Ihrer Mietwohnung die Heizung komplett aus. Die Raumtemperatur beträgt nur noch 14 Grad. Sie rufen die Hausverwaltung an, um eine sofortige Notfall-Reparatur einzufordern.",
-    userRole: "Mieter",
-    counterpartRole: "Herr Fischer (Hausverwalter)",
-    objective: "Den Sachverhalt sachlich und bestimmt schildern, Dringlichkeit begründen, Frist setzen und Mietminderung ankündigen falls keine Abhilfe erfolgt.",
-    turns: [
-      {
-        speaker: "Herr Fischer",
-        text: "Hausverwaltung Fischer, guten Tag. Worum geht es bitte?",
-        guidance: "Nennen Sie Namen, Adresse und Wohnungsnummer. Schildern Sie den Totalausfall der Heizung bei Minusgraden und fordern Sie einen Heizungsmonteur für den heutigen Tag an.",
-        expectedCriteria: ["Genaue Adressangabe", "Präzise Mängelbeschreibung", "Dringlichkeit/Frist", "Bestimmter, professioneller Ton"],
-        responseTiers: {
-          basic: "Guten Tag, hier ist Ali. Bei mir ist die Heizung kaputt und es ist sehr kalt. Bitte schicken Sie schnell jemanden.",
-          natural: "Guten Tag, Herr Fischer, mein Name ist Ali aus der Weidenhäuser Straße 14, 2. Stock. Bei mir ist seit gestern Abend die Heizung komplett ausgefallen und die Wohnung hat nur noch 14 Grad. Da es draußen friert, brauche ich bitte heute dringend einen Notdienst.",
-          professionalB2: "Guten Tag, Herr Fischer. Ich melde hiermit einen dringenden Mangel in meiner Wohnung in der Weidenhäuser Straße 14. Die Heizkörper bleiben trotz voller Einstellung vollkommen kalt, die Raumtemperatur liegt unter 15 Grad Celsius. Da hier akute Unbewohnbarkeit droht, bitte ich Sie um die umgehende Entsendung eines Heizungsmonteurs noch am heutigen Vormittag.",
-          c1: "Guten Tag, Herr Fischer. Ich rüge hiermit gemäß § 536 BGB einen gravierenden Mangel an der Mietsache in der Weidenhäuser Straße 14. Es liegt ein vollständiger Ausfall der Heizungsanlage bei winterlichen Außentemperaturen vor, was zu einer Unterschreitung der vertraglich geschuldeten Mindesttemperatur führt. Ich fordere Sie hiermit zur unverzüglichen Mängelbeseitigung binnen 24 Stunden auf und behalte mir andernfalls eine angemessene Mietminderung sowie die Veranlassung einer Ersatzvornahme vor."
-        },
-        whyExplanation: "Im Mietrecht sichert eine präzise Fristsetzung und Verweis auf Mindesttemperaturen sofortiges Handeln der Hausverwaltung."
-      }
-    ]
-  },
-
-  {
-    id: "sim_house_noise_neighbor",
-    title: "Ruhezeiten & Lärmbeschwerde bei Nachbarn klären",
-    category: "Wohnen & Vermieter",
+    id: "sim_kjp_enuresis_shame",
+    title: "Enuresis & Scham: 13-Jähriger nässt nachts im Klinikbett ein",
+    category: "KJP Psychiatrie (11–17 J.)",
     level: "B2",
-    workplace: "Hausflur / Wohnungstür des Nachbarn",
+    workplace: "Patientenzimmer am Morgen um 06:45 Uhr",
     provenance: "AUS_QUELLE",
-    situation: "Ihr Nachbar spielt um 23:30 Uhr unter der Woche laute Musik, während Sie am nächsten Morgen um 05:30 Uhr Frühdienst im Krankenhaus haben. Sie klingeln freundlich, aber bestimmt.",
-    userRole: "Nachbar / BFD-Mitarbeiter",
-    counterpartRole: "Lukas (Feiernder Nachbar)",
-    objective: "Freundlich bleiben, Verständnis für Geselligkeit zeigen, aber klar die gesetzliche Nachtruhe (ab 22 Uhr) und den frühen Dienstbeginn einfordern.",
+    situation: "Noah (13 Jahre) steht mit feuchten Augen im Zimmer und versucht hektisch, das nasse Bettlaken unter der Matratze zu verbergen. Er hat furchtbare Angst, dass seine Mitpatienten ihn auslachen.",
+    userRole: "BFD-Freiwilliger im Frühdienst",
+    counterpartRole: "Noah (13 Jahre, beschämt & verängstigt)",
+    objective: "Sofortige Schamreduktion, absolute Diskretion, den Mitpatienten diskret ablenken und das Bett gemeinsam beiläufig und freundlich frisch beziehen.",
     turns: [
       {
-        speaker: "Lukas",
-        text: "Hi! Sorry, ist die Musik zu laut? Wir feiern nur kurz in meinen Geburtstag rein.",
-        guidance: "Gratulieren Sie kurz zum Geburtstag, erklären Sie Ihre Situation (Frühdienst 05:30 Uhr im Krankenhaus) und bitten Sie darum, die Bässe/Lautstärke auf Zimmerlautstärke zu drosseln.",
-        expectedCriteria: ["Glückwunsch zum Geburtstag", "Empathie für Anlass", "Eigene Schichtarbeit begründen", "Klare Bitte um Zimmerlautstärke"],
+        speaker: "Noah (den Tränen nahe, leise)",
+        text: "Bitte sag das keinem... Die anderen lachen mich tot, wenn die das mitkriegen. Ich bin so ein Versager...",
+        guidance: "Nehmen Sie ihm die Scham komplett: 'Das bleibt unter uns. Das passiert ganz vielen, wenn der Körper unter Stress steht.' Schicken Sie den Zimmernachbarn zum Frühstück und beziehen Sie das Bett zusammen.",
+        expectedCriteria: ["Scham aktiv entkräften", "Diskretion zusichern", "Keine Vorwürfe / kein Drama", "Praktische Hilfe anbieten"],
         responseTiers: {
-          basic: "Alles Gute zum Geburtstag! Aber bitte mach die Musik leiser, ich muss morgen früh um 5 aufstehen.",
-          natural: "Erst mal herzlichen Glückwunsch zum Geburtstag! Ich gönne euch die Feier von Herzen. Ich habe morgen früh allerdings um 05:30 Uhr Frühdienst im Klinikum und muss dringend schlafen. Wäre es möglich, dass ihr die Bässe etwas runterdreht und die Musik auf Zimmerlautstärke stellt?",
-          professionalB2: "Ganz herzlichen Glückwunsch zum Geburtstag, Lukas! Ich verstehe vollkommen, dass du deinen Ehrentag zelebrieren möchtest. Da ich morgen früh um 05:30 Uhr meinen Dienst auf der Akutstation im Krankenhaus antrete, bin ich dringend auf meinen Schlaf angewiesen. Ich wäre dir sehr dankbar, wenn ihr die Lautstärke der Musik und der Bässe ab jetzt auf Zimmerlautstärke reduzieren könntet.",
-          c1: "Zunächst meine aufrichtigen Glückwünsche zu deinem Geburtstag! Ich möchte eure Feierlaune keineswegs trüben. Da ich jedoch im Rahmen meines Dienstes im Universitätsklinikum morgen früh um 05:30 Uhr voll einsatzfähig sein muss, appelliere ich an deine Rücksichtnahme hinsichtlich der gesetzlichen Nachtruhe. Ich danke dir sehr für dein Verständnis, wenn ihr die Lautstärke entsprechend dämpft."
+          basic: "Noah, das ist gar kein Problem. Du bist kein Versager. Das bleibt unter uns, wir machen das schnell sauber.",
+          natural: "Noah, schau mich an: Du brauchst dich für überhaupt gar nichts zu schämen! Das passiert total vielen Jugendlichen unter Stress. Das bleibt komplett unter uns. Lass uns das Laken kurz in den Wäschesack werfen und frisch beziehen.",
+          professionalB2: "Noah, atme erst mal tief durch. Du bist absolut kein Versager. Dein Körper zeigt nur, wie viel Druck auf dir lastet – das ist eine völlig normale Reaktion. Ich ziehe kurz die Vorhänge zu, dann wechseln wir die Wäsche unauffällig in zwei Minuten.",
+          c1: "Noah, bitte entlaste dich von diesen Selbstvorwürfen. Eine vegetative Stressreaktion wie das Einnässen ist eine psychosomatische Begleiterscheinung und kein persönliches Versagen. Wir behandeln das mit höchster Diskretion. Ich sorge umgehend für frische Wäsche."
         },
-        whyExplanation: "Die Kombination aus Glückwünschen und klarer Schilderung der beruflichen Verantwortung entwaffnet Konflikte sofort."
+        whyExplanation: "Enuresis im Jugendalter löst schwerste Demütigungsgefühle aus. Ruhige, entlastende Normalisierung verhindert Re-Traumatisierung."
+      }
+    ]
+  },
+
+  {
+    id: "sim_kjp_smartphone_boundary",
+    title: "Handyabgabe & Regelgrenze: 14-Jähriger rebelliert am Abend",
+    category: "KJP Psychiatrie (11–17 J.)",
+    level: "B2",
+    workplace: "Stationsflur um 20:00 Uhr (Nachtruhe-Vorbereitung)",
+    provenance: "AUS_QUELLE",
+    situation: "Um 20:00 Uhr müssen laut Stationsordnung alle Smartphones abgegeben werden. Tim (14 Jahre) zockt weiter und weigert sich aggressiv: 'Ich gebe mein Handy sicher nicht ab!'",
+    userRole: "BFD-Freiwilliger im Spätdienst",
+    counterpartRole: "Tim (14 Jahre, rebellisch)",
+    objective: "Ruhig und unnachgiebig bleiben, Verständnis für Frust zeigen, aber die Stationsregel konsequent durchsetzen.",
+    turns: [
+      {
+        speaker: "Tim",
+        text: "Ihr wollt mich doch alle nur schikanieren! Meine Runde Fortnite läuft noch! Wenn du mir das Handy wegnimmst, raste ich aus!",
+        guidance: "Nicht drohen. Validieren Sie seinen Ärger ('Ich weiß, dass es nervt'), aber halten Sie die Regel fest ('Um 20 Uhr wandert das Handy in den Safe'). Bieten Sie an, den Spielstand noch kurz zu sichern.",
+        expectedCriteria: ["Ruhige Tonlage", "Verständnis für Frust zeigen", "Klare Grenzziehung (Regel bleibt)", "Konkreter Kompromiss für sauberes Beenden"],
+        responseTiers: {
+          basic: "Tim, die Regel gilt für alle. Beende kurz dein Spiel und gib mir dann das Handy.",
+          natural: "Tim, ich verstehe vollkommen, dass es dich nervt, mitten im Spiel aufzuhören. Aber 20:00 Uhr ist Stationsregel für alle. Speichere deinen Spielstand noch schnell in einer Minute ab, und dann wandert das Handy wie vereinbart in den Spind.",
+          professionalB2: "Tim, ich höre deinen Frust und es ist blöd, eine Runde abbrechen zu müssen. Aber die Vereinbarung steht: Um 20 Uhr ist medienfreie Zeit, damit dein Gehirn zur Ruhe kommt. Du hast noch genau zwei Minuten zum Speichern, dann erwarte ich das Gerät an der Stationszentrale.",
+          c1: "Tim, ich akzeptiere deine Verärgerung über die Unterbrechung. Gleichwohl ist die abendliche Medienabgabe eine verbindliche therapeutische Rahmenbedingung. Du hast jetzt noch zwei Minuten Zeit für den geordneten Log-out, danach hinterlegen wir das Gerät plangemäß im Schließfach."
+        },
+        whyExplanation: "Jugendliche brauchen verlässliche Grenzen ('Reibungsflächen') gepaart mit ruhiger Empathie – kein Nachgeben bei Sicherheitsregeln."
       }
     ]
   },
 
   // ==========================================
-  // 4. FAMILIE, FESTE & WEIHNACHTEN
+  // 2. ZUHAUSE & DEUTSCHES FAMILIENLEBEN
   // ==========================================
   {
-    id: "sim_family_christmas_dinner",
-    title: "Heiligabend & Weihnachtsfeier bei der Familie",
-    category: "Familie, Feste & Feiern",
+    id: "sim_family_sunday_breakfast",
+    title: "Sonntagsfrühstück mit der Familie (Brötchen, Kaffee & Wetter)",
+    category: "Zuhause & Familie",
+    level: "B2",
+    workplace: "Sonniger Küchentisch im Familienhaushalt",
+    provenance: "AUS_QUELLE",
+    situation: "Sonntagmorgen um 09:30 Uhr. Auf dem Tisch stehen frische Brötchen vom Bäcker, Marmelade, Käse und eine Kanne Kaffee. Die Familie unterhält sich über das Wetter und die Pläne für den Tag.",
+    userRole: "Gast / Familienmitglied",
+    counterpartRole: "Mutter / Gastgeberin Marianne",
+    objective: "Brötchen reichen, Kaffee einschenken, typisch deutsches Smalltalk-Thema (Wetter) aufgreifen und entspannt über den Tag sprechen.",
+    turns: [
+      {
+        speaker: "Marianne",
+        text: "Guten Morgen, Ali! Hast du gut geschlafen? Nimm dir gleich ein frisches Mohnbrötchen, die sind noch warm vom Bäcker. Möchtest du Kaffee oder lieber einen Tee?",
+        guidance: "Antworten Sie freundlich, loben Sie die frischen Brötchen, wählen Sie Kaffee/Tee und sprechen Sie das sonnige/herbstliche Wetter an.",
+        expectedCriteria: ["Freundlicher Gruß & Dank", "Lob der Brötchen", "Wahl von Kaffee/Tee", "Wetter-Kommentar"],
+        responseTiers: {
+          basic: "Guten Morgen! Ja, danke, ich habe gut geschlafen. Ein Mohnbrötchen nehme ich gern und Kaffee bitte.",
+          natural: "Guten Morgen, Marianne! Wunderschön habe ich geschlafen, vielen Dank. Die Brötchen duften herrlich! Ich nehme sehr gerne eine große Tasse Kaffee mit einem Schluck Milch. Schau mal aus dem Fenster – heute soll ja richtig die Sonne rauskommen!",
+          professionalB2: "Guten Morgen, Marianne! Vielen Dank, ich habe hervorragend geschlafen. Ein noch warmes Bäckerbrötchen am Sonntagmorgen ist der perfekte Start in den Tag. Eine Tasse schwarzer Kaffee wäre fantastisch. Laut Wetterbericht sollen es heute milde 18 Grad werden – ideal für einen Ausflug!",
+          c1: "Einen wunderschönen guten Morgen, liebe Marianne! Herzlichen Dank, die Nacht war überaus erholsam. Dieses reichhaltige Sonntagsfrühstück ist wirklich ein Genuss. Über eine Tasse frisch gebrühten Kaffee würde ich mich sehr freuen. Das milde Herbstwetter lädt heute förmlich zu einer ausgedehnten Erkundungstour ein."
+        },
+        whyExplanation: "Das deutsche Sonntagsfrühstück ist eine Institution: Frische Brötchen, Kaffee und der Wetterbericht sind die Grundpfeiler familiärer Harmonie."
+      },
+      {
+        speaker: "Vater Heinrich",
+        text: "Könntest du mir bitte kurz die Butter und das Messer rüberreichen, Ali? Und was steht heute bei dir an – wollen wir nachher eine Runde im Lahntal spazieren gehen?",
+        guidance: "Reichen Sie die Butter höflich herüber und stimmen Sie begeistert dem Spaziergang an der Lahn zu.",
+        expectedCriteria: ["Höfliches Reichen ('Bitte sehr / Gerne')", "Zustimmung zum Spaziergang", "Vorschlag für die Uhrzeit"],
+        responseTiers: {
+          basic: "Hier ist die Butter, bitte sehr. Ja, an der Lahn spazieren gehen klingt gut.",
+          natural: "Sehr gerne, hier bitte, Heinrich! Ein Spaziergang an der Lahn wäre herrlich bei dem Wetter. Sollen wir gegen 14 Uhr losgehen, wenn die Mittagssonne am schönsten ist?",
+          professionalB2: "Aber natürlich, bitte sehr, die Butter für dich, Heinrich! Die Idee mit dem Lahntal finde ich großartig. Frische Luft nach der anstrengenden Schichtwoche tut mir unglaublich gut. Lass uns nach dem Frühstück gemütlich die Route abstimmen.",
+          c1: "Mit Vergnügen, hier ist die Butter, lass es dir schmecken, Heinrich! Einem ausgedehnten Spaziergang entlang der Lahnauen schließe ich mich mit großer Begeisterung an. Die herbstliche Naturkulisse bietet den idealen Ausgleich. Ich schlage vor, dass wir am frühen Nachmittag aufbrechen."
+        },
+        whyExplanation: "Tischkultur in Deutschland: Dinge mit 'Bitte sehr' reichen und gemeinsame Naturaktivitäten planen."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_dinner_conversation",
+    title: "Gemeinsames Abendessen: Kochen & Tagesrückblick",
+    category: "Zuhause & Familie",
+    level: "B2",
+    workplace: "Gemütlicher Esstisch am Abend",
+    provenance: "AUS_QUELLE",
+    situation: "Nach einem langen Arbeitstag sitzt die Familie beim Abendessen zusammen. Es gibt frisches Brot, Aufschnitt, Käse und einen warmen Gemüseeintopf.",
+    userRole: "Familienmitglied / Mitbewohner",
+    counterpartRole: "Schwester / Mitbewohnerin Sophie",
+    objective: "Über den Tag berichten, für das Essen danken, Fragen zur Arbeit/Schule der anderen stellen und die Unterhaltung lebendig halten.",
+    turns: [
+      {
+        speaker: "Sophie",
+        text: "Greif zu, Ali! Der Eintopf ist ganz frisch gekocht. Wie war dein Tag heute auf Station – gab es spannende oder anstrengende Momente?",
+        guidance: "Bedanken Sie sich, loben Sie den Eintopf, schildern Sie ausgewogen (anstrengend, aber erfüllend) und fragen Sie Sophie nach ihrem Tag.",
+        expectedCriteria: ["Dank für den Eintopf", "Ausgewogener Tagesbericht", "Rückfrage an Sophie", "Natürlicher Plauderton"],
+        responseTiers: {
+          basic: "Danke, der Eintopf schmeckt super. Mein Tag war anstrengend, aber gut. Wie war deiner?",
+          natural: "Vielen Dank, Sophie, der Eintopf schmeckt fantastisch und wärmt richtig gut durch! Auf Station war heute ganz schön viel Trubel bei den Jugendlichen, aber ein Gespräch mit einem 14-Jährigen war wirklich herzergreifend. Und wie war dein Tag in der Uni?",
+          professionalB2: "Ganz herzlichen Dank, Sophie, das Essen ist wirklich köstlich nach so einem Tag! Der Dienst auf Station war heute mental ziemlich fordernd, besonders die Konfliktbegleitung bei zwei Jugendlichen. Aber genau diese Arbeit gibt mir unglaublich viel Sinn. Wie lief es denn heute bei deinem Projekt?",
+          c1: "Herzlichen Dank für diese wunderbare Stärkung, Sophie! Auf Station war das Schichtaufkommen heute außerordentlich intensiv, doch die erfolgreiche Deeskalation einer Krisensituation hat mich sehr erfüllt. Ich bin nun dankbar für die abendliche Ruhe. Erzähl doch mal: Wie verlief deine heutige Präsentation?"
+        },
+        whyExplanation: "Das Abendbrot ist im deutschsprachigen Raum der Ort des emotionalen Tagesabschlusses und des aktiven Interesses aneinander."
+      }
+    ]
+  },
+
+  {
+    id: "sim_family_christmas_eve",
+    title: "Heiligabend & Weihnachten: Bescherung & Festessen",
+    category: "Zuhause & Familie",
     level: "B2/C1",
     workplace: "Festlich geschmücktes Wohnzimmer am 24. Dezember",
     provenance: "AUS_QUELLE",
-    situation: "Sie verbringen Heiligabend bei der Familie / Gastfamilie in Hessen. Nach der Bescherung am Tannenbaum stoßen alle mit einem Glas Wein / Sekt an und blicken auf das vergangene Jahr zurück.",
-    userRole: "Gast / Familienmitglied",
-    counterpartRole: "Großmutter / Gastgeberin Elisabeth",
-    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für die Geborgenheit und Integration ausdrücken und frohe Weihnachten wünschen.",
+    situation: "Heiligabend unter dem geschmückten Tannenbaum. Die Kerzen brennen, Weihnachtsmusik läuft leise im Hintergrund. Nach dem Festessen und der Bescherung stoßen alle an.",
+    userRole: "Gast & Familienmitglied",
+    counterpartRole: "Großmutter Elisabeth",
+    objective: "Einen herzlichen, feierlichen Toast aussprechen, Dank für Geborgenheit und Aufnahme in der Familie ausdrücken und frohe Weihnachten wünschen.",
     turns: [
       {
         speaker: "Elisabeth",
-        text: "Lieber Ali, wir freuen uns so sehr, dass du heute an Heiligabend bei uns bist und wir diesen besonderen Abend gemeinsam verbringen dürfen! Möchtest du mit uns anstoßen?",
-        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Aufnahme in die Familie, reflektieren Sie kurz über das Jahr und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
-        expectedCriteria: ["Dank für die Aufnahme", "Gefühl der Geborgenheit", "Reflexion über das Jahr", "Weihnachtswunsch / Toast"],
+        text: "Lieber Ali, wir freuen uns von Herzen, dass du heute an Heiligabend bei uns bist! Möchtest du mit uns auf das Fest anstoßen?",
+        guidance: "Erheben Sie das Glas, bedanken Sie sich aufrichtig für die Wärme und das Zuhause-Gefühl und wünschen Sie allen ein gesegnetes Weihnachtsfest.",
+        expectedCriteria: ["Dank für Geborgenheit", "Glas erheben", "Reflexion über Zusammenhalt", "Weihnachtswunsch"],
         responseTiers: {
-          basic: "Danke für die Einladung. Ich freue mich sehr, hier zu sein. Frohe Weihnachten an alle!",
+          basic: "Danke Elisabeth. Ich freue mich sehr hier zu sein. Frohe Weihnachten an alle!",
           natural: "Ganz herzlichen Dank, liebe Elisabeth! Es bedeutet mir unglaublich viel, heute Heiligabend mit euch in diesem warmen Kreis zu verbringen. Ich habe mich selten so herzlich aufgenommen und geborgen gefühlt. Auf ein frohes und gesegnetes Weihnachtsfest – Prost zusammen!",
-          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Als ich nach Deutschland kam, war vieles neu und herausfordernd – doch durch eure Unterstützung habe ich hier ein echtes Zuhause gefunden. Ich wünsche uns allen erholsame, besinnliche Feiertage und beste Gesundheit. Frohe Weihnachten!",
-          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir zuteilwerden lasst, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Weihnachtsfest!"
+          professionalB2: "Liebe Elisabeth, liebe Familie! Ich möchte diesen Moment nutzen, um euch von ganzem Herzen für eure grenzenlose Gastfreundschaft und Wärme zu danken. Bei euch habe ich ein echtes zweites Zuhause gefunden. Ich wünsche uns allen erholsame Feiertage und beste Gesundheit. Frohe Weihnachten!",
+          c1: "Verehrte Elisabeth, liebe Familie! Es erfüllt mich mit tiefer Rührung und Dankbarkeit, dieses traditionsreiche Fest des Friedens in eurer Mitte begehen zu dürfen. Die gelebte Menschlichkeit und Geborgenheit, die ihr mir schenkt, ist für mich das wertvollste Geschenk dieses Jahres. Lasst uns das Glas erheben auf den Zusammenhalt, die Gesundheit und die gemeinsame Zukunft. Ein frohes und gesegnetes Fest!"
         },
         whyExplanation: "Weihnachten ist in Deutschland das emotionalste Fest des Jahres – persönliche Dankbarkeit und Wärme berühren tief."
       }
@@ -211,35 +218,94 @@ export const SIMULATIONS_DATA = [
   },
 
   {
-    id: "sim_family_birthday_toast",
-    title: "Geburtstagsfeier & Gratulationsrede",
-    category: "Familie, Feste & Feiern",
+    id: "sim_family_walk_history",
+    title: "Sonntagsspaziergang: Wetter, Natur & Marburger Stadtgeschichte",
+    category: "Zuhause & Familie",
     level: "B2",
-    workplace: "Geburtstagsfeier im Restaurant / Garten",
+    workplace: "Weg hinauf zum Marburger Landgrafenschloss",
     provenance: "AUS_QUELLE",
-    situation: "Ein geschätzter Kollege bzw. Familienfreund feiert seinen 50. Geburtstag. Sie überreichen ein Geschenk und halten einen kurzen humorvollen Trinkspruch.",
-    userRole: "Gast & Gratulant",
-    counterpartRole: "Jürgen (Das Geburtstagskind)",
-    objective: "Herzlich gratulieren, humorvoll auf das Alter anspielen, gute Wünsche aussprechen und das Geschenk überreichen.",
+    situation: "Sie spazieren mit der Gastfamilie die steilen Treppen der Marburger Oberstadt hinauf zum Schloss. Der Blick über das Lahntal ist atemberaubend.",
+    userRole: "Kulturinteressierter Spaziergänger",
+    counterpartRole: "Opa Walter (Geschichtsbegeistert)",
+    objective: "Über die historische Altstadt staunen, das Schloss und die Brüder Grimm ansprechen und echtes Interesse an deutscher Kultur zeigen.",
     turns: [
       {
-        speaker: "Jürgen",
-        text: "Ali, wie schön, dass du da bist! Schön, dass du den Weg gefunden hast. Lass uns erst mal anstoßen!",
-        guidance: "Überreichen Sie das Geschenk, wünschen Sie Gesundheit und Glück, machen Sie einen sympathischen Witz über die '50' und stoßen Sie an.",
-        expectedCriteria: ["Herzliche Glückwünsche", "Geschenkübergabe", "Humorvoller Spruch", "Trinkspruch"],
+        speaker: "Opa Walter",
+        text: "Schau mal da drüben, Ali: Diese Fachwerkhäuser hier stehen seit über 500 Jahren! Weißt du eigentlich, dass die Gebrüder Grimm hier in Marburg studiert haben?",
+        guidance: "Bestaunen Sie die Architektur, greifen Sie die Gebrüder Grimm auf und loben Sie das Flair der historischen Altstadt.",
+        expectedCriteria: ["Begeisterung über Fachwerk", "Bezug zu den Grimms", "Interesse an Geschichte"],
         responseTiers: {
-          basic: "Alles Gute zum 50. Geburtstag, Jürgen! Hier ist ein kleines Geschenk für dich. Auf deine Gesundheit!",
-          natural: "Herzlichen Glückwunsch zum 50. Geburtstag, lieber Jürgen! Man sieht dir die fünfzig wirklich kein bisschen an – du wirst nicht älter, sondern nur erfahrener! Hier ist eine kleine Aufmerksamkeit von mir. Auf deine Gesundheit, viel Glück und ein fantastisches neues Lebensjahr!",
-          professionalB2: "Lieber Jürgen, zu deinem runden Geburtstag gratuliere ich dir von ganzem Herzen! 50 Jahre sind ein wunderbarer Meilenstein – voller Erfolge, wertvoller Erfahrungen und lebendiger Geschichten. Ich habe dir ein kleines Präsent mitgebracht, das dir hoffentlich eine Freude bereitet. Ich wünsche dir für das kommende Lebensjahrzehnt unerschütterliche Gesundheit, Lebensfreude und weiterhin so viel Energie!",
-          c1: "Lieber Jürgen! Zu diesem herausragenden Jubiläum entbiete ich dir meine herzlichsten Glück- und Segenswünsche. Dein unermüdlicher Tatendrang und deine lebensbejahende Art sind für uns alle eine Inspiration. Möge dir das neue Lebensjahrzehnt beste physische wie mentale Vitalität, inspirierende Momente und berufliche wie private Erfüllung bescheren. Auf dein Wohl und auf die nächsten fünfzig Jahre!"
+          basic: "Die Häuser sehen toll aus! Ja, die Gebrüder Grimm und ihre Märchen kenne ich gut.",
+          natural: "Das ist wirklich faszinierend, Walter! Über 500 Jahre alt – man spürt die Geschichte in jeder Gasse. Kein Wunder, dass die Brüder Grimm hier zu ihren Märchen inspiriert wurden, die steilen Treppen wirken fast wie verzaubert!",
+          professionalB2: "Das ist wirklich beeindruckende Baukunst, Walter. Die Kombination aus den gotischen Kirchen, dem Landgrafenschloss und den Fachwerkhäusern verleiht Marburg einen einzigartigen historischen Charakter. Dass die Grimms hier gelebt haben, passt perfekt zu dieser märchenhaften Kulisse.",
+          c1: "Eine wahrhaft imposante historische Kulisse, lieber Walter! Diese architektonische Kontinuität über ein halbes Jahrtausend hinweg ist bemerkenswert. Die universitäre Geistesgeschichte Marburgs und das Wirken der Gebrüder Grimm sind hier auf Schritt und Tritt greifbar. Dieser Weitblick über das Lahntal entschädigt für jeden steilen Treppenabsatz!"
         },
-        whyExplanation: "Runde Geburtstage (30, 40, 50) werden in Deutschland mit besonderer Würdigung gefeiert."
+        whyExplanation: "Deutsche lieben es, bei Spaziergängen über lokale Geschichte, Denkmalschutz und Natur zu philosophieren."
       }
     ]
   },
 
   // ==========================================
-  // 5. PARTNERSCHAFT & HERZ (GF / WIFEY)
+  // 3. FRANKFURT TECH & CRYTEK ENGINE VIBES
+  // ==========================================
+  {
+    id: "sim_tech_crytek_engine_standup",
+    title: "Crytek Stand-up: Framerate-Drop & GPU-Rendering-Pipeline",
+    category: "Crytek Tech & Engine (Frankfurt)",
+    level: "B2/C1",
+    workplace: "Frankfurt Osthafen / CryEngine Tech-HQ Meetingraum",
+    provenance: "AUS_QUELLE",
+    situation: "Im morgendlichen Daily Stand-up des Engine-Teams in Frankfurt berichten Sie dem Lead Programmer über drastische Framerate-Einbrüche im Deferred Renderer.",
+    userRole: "Engine & C++ Software Developer",
+    counterpartRole: "Christian (Lead Rendering Architect)",
+    objective: "Stand-up-Format (Gestern/Heute/Blocker) einhalten, GPU-Flaschenhals präzise benennen (Volumetric Clouds Shader) und Profiling-Lösung vorschlagen.",
+    turns: [
+      {
+        speaker: "Christian",
+        text: "Morgen zusammen! Ali, wie sieht's bei der 4K-Optimierung aus? Im letzten Build hatten wir üble Ruckler bei den Shadern für volumetrischen Rauch.",
+        guidance: "Berichten Sie: Gestern RenderDoc-Profiling durchgeführt, Flaschenhals ist der Pixel-Shader auf alten GPUs, heute Optimierung der Compute-Shader und Memory-Bandenbreite.",
+        expectedCriteria: ["Gestern / Heute / Blocker", "C++ / Engine-Fachbegriffe", "Profiling-Ergebnis", "Lösungsvorschlag"],
+        responseTiers: {
+          basic: "Gestern habe ich den Code profilt. Die Shader sind zu langsam auf alten Grafikkarten. Heute mache ich das schneller.",
+          natural: "Morgen Christian! Ich habe gestern mit RenderDoc ein Profiling gemacht: Der Flaschenhals liegt eindeutig beim Pixel-Shader für den volumetrischen Rauch, der frisst zu viel GPU-Bandbreite. Heute lagere ich die Berechnung in einen asynchronen Compute-Shader aus, dann sollten wir wieder stabile 60 FPS erreichen.",
+          professionalB2: "Guten Morgen Christian! Die gestrige Laufzeitanalyse ergab massive Latenzen in der Deferred-Shading-Pipeline. Die Shader-Instanzen verursachen auf älteren Architekturen extreme Overdraw-Kosten. Ich implementiere heute Temporal Upscaling und optimiere die Draw-Calls, um die Framerate verlässlich über 60 FPS zu stabilisieren.",
+          c1: "Morgen allerseits! Das gestrige GPU-Profiling isolierte den Flaschenhals primär in redundanten Texture-Lookups innerhalb des Raymarching-Loops der Volumetrics. Die Memory-Bandbreite saturiert bei 4K-Auflösung vollständig. Mein heutiger Sprint-Fokus liegt auf der Migration auf Half-Precision-Floats und dem Dispatching via Asynchronous Compute, um die Render-Latenz unter das 16-Millisekunden-Budget zu drücken."
+        },
+        whyExplanation: "Im Frankfurter High-Performance-Tech-Umfeld (Crytek) schätzen Tech Leads knallharte Metriken (Latenz, FPS, Memory-Bandbreite) und proaktive Architektur-Lösungen."
+      }
+    ]
+  },
+
+  {
+    id: "sim_tech_crytek_code_review",
+    title: "C++ Code Review: Memory Allocations in the Game Loop",
+    category: "Crytek Tech & Engine (Frankfurt)",
+    level: "B2/C1",
+    workplace: "GitHub Pull Request / Frankfurt Tech Hub",
+    provenance: "AUS_QUELLE",
+    situation: "Ein Junior-Entwickler hat in der Core-Render-Loop dynamische `std::vector`-Allokationen mit Heap-Speicher vorgenommen, was zu Garbage-Collection-Stottern führt.",
+    userRole: "Senior C++ / Systems Engineer",
+    counterpartRole: "Felix (Junior Game Developer)",
+    objective: "Konstruktiv loben, das Problem von Heap-Allokationen in 60-FPS-Loops erklären und statische Pool-Allokatoren vorschlagen.",
+    turns: [
+      {
+        speaker: "Felix",
+        text: "Hi Ali, hast du dir meinen PR für das Partikelsystem angesehen? Ich habe std::vector genutzt, damit sich die Partikel dynamisch anpassen.",
+        guidance: "Loben Sie die Logik, erklären Sie aber freundlich, warum Heap-Allokationen in der Render-Loop Frame-Drops auslösen, und schlagen Sie einen festen Ring-Buffer / Pool-Allocator vor.",
+        expectedCriteria: ["Positives Feedback zuerst", "Erklärung des Performance-Problems", "Konstruktiver C++ Gegenvorschlag"],
+        responseTiers: {
+          basic: "Das Partikelsystem sieht gut aus. Aber std::vector im Loop macht den Speicher langsam. Nimm lieber ein festes Array.",
+          natural: "Hi Felix, klasse Arbeit beim Partikel-Effekt, das sieht optisch mega aus! Ein wichtiger Punkt für die Engine: Wenn wir `std::vector` direkt in der Update-Schleife allozieren, erzeugen wir Heap-Fragmentierung und Frame-Drops. Lass uns stattdessen einen vorallokierten Pool-Allocator nutzen, dann bleibt die Performance butterweich.",
+          professionalB2: "Hallo Felix, vielen Dank für den PR! Die mathematische Trajektorienberechnung der Partikel ist wirklich elegant gelöst. Performancekritisch ist jedoch das dynamsiche Re-Allokieren im Frame-Loop; jede Heap-Allokation kostet wertvolle CPU-Zyklen. Ich empfehle dir, auf einen statischen Ring-Puffer oder Smart-Pointer mit benutzerdefiniertem Stack-Allokator umzustellen.",
+          c1: "Hi Felix, ein optisch überaus überzeugendes Feature! Unter Low-Level-Gesichtspunkten triggern die dynamischen Heap-Reallokationen innerhalb des Render-Ticks jedoch erhebliche Cache-Misses und Memory-Fragmentation. In unserem High-Performance-Framework vermeiden wir Heap-Allokationen im Hot-Path strikt. Ich schlage vor, die Partikel-Pools initial zur Compile-Zeit zu allozieren und via Data-Oriented Design im Cache zu halten."
+        },
+        whyExplanation: "Konstruktives Code-Review in C++ Game-Engines trennt Softwareästhetik von harter Hardware-Effizienz."
+      }
+    ]
+  },
+
+  // ==========================================
+  // 4. PARTNERSCHAFT & HERZ (GF / WIFEY)
   // ==========================================
   {
     id: "sim_gf_comfort_after_shift",
@@ -270,17 +336,17 @@ export const SIMULATIONS_DATA = [
   },
 
   // ==========================================
-  // 6. HESSEN & FRANKFURT LOKALKOLORIT
+  // 5. HESSEN & FRANKFURT LOKALKOLORIT
   // ==========================================
   {
     id: "sim_hessen_coffee_banter",
     title: "Kaffeeküchen-Plausch & Frankfurter Dialekt-Banter",
-    category: "Hessen & Frankfurt",
+    category: "Hessen & Dialekt",
     level: "B2 (Authentisch)",
-    workplace: "Kaffeeküche auf Station P2 / Universitätsklinikum",
+    workplace: "Kaffeeküche auf Station / Tech-Büro Frankfurt",
     provenance: "AUS_QUELLE",
     situation: "Um 10:30 Uhr treffen Sie Pfleger Heinz in der Kaffeeküche. Heinz ist ein waschechter Frankfurter und begrüßt Sie mit typischem hessischen Charme.",
-    userRole: "BFD-Freiwilliger",
+    userRole: "BFD-Freiwilliger / Entwickler",
     counterpartRole: "Pfleger Heinz (Ur-Frankfurter)",
     objective: "Locker auf Hessisch antworten, den Witz aufgreifen, Smalltalk über den Tag führen und kollegiale Nähe aufbauen.",
     turns: [
@@ -295,7 +361,7 @@ export const SIMULATIONS_DATA = [
           professionalB2: "Gude Heinz! Absolut, der Kaffee ist meine Rettung für die zweite Schichthälfte! Auf Zimmer 4 läuft alles wie am Schnürchen, die Patienten sind versorgt und die Stimmung ist total entspannt. Wie sieht's drüben bei dir aus?",
           c1: "Ei gude wie, Heinz! Auf diesen Lebenselixier-Kaffee habe ich den ganzen Vormittag hingearbeitet. Bezüglich Zimmer 4 kann ich vollständige Entwarnung geben: Keinerlei Turbulenzen, alle Vitalwerte sind stabil erfasst und die Patienten sind kooperativ. Gönnen wir uns erst mal fünf Minuten Ruhe!"
         },
-        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Pflegeteam."
+        whyExplanation: "Wer in Hessen mit 'Gude' und regionalen Redewendungen antwortet, bricht sofort das Eis im Team."
       }
     ]
   }

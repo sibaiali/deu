@@ -1,4 +1,4 @@
-// Simulations Component — Interaktive Rollenspiele (BFD, Tech, Wohnen, Feste, Partnerschaft, Hessen)
+// Simulations Component — Interaktive Rollenspiele (KJP 11-17J, Zuhause & Familie, Crytek Tech, Partnerschaft)
 
 import { Speech } from '../speech.js';
 import { SIMULATIONS_DATA } from '../data/simulations_data.js';
@@ -27,7 +27,7 @@ export function renderSimulations(container, data, params = {}) {
               <span class="badge badge-amber mb-2">PRAXIS-SIMULATOR B2 / C1</span>
               <h1 class="page-title">🎭 Dialog- & Rollenspiel-Training</h1>
               <p class="subtitle mt-1">
-                Lebensnahe Simulationen für Krankenhaus, IT/Tech-Arbeitsplatz, Mietrecht, Familienfeste, Partnerschaft und Frankfurter Lokalkolorit.
+                KJP Kinder- & Jugendpsychiatrie (11–17 J.), Deutsches Familienleben (Frühstück, Dinner, Weihnachten), Frankfurt Crytek Tech & Herzensgespräche.
               </p>
             </div>
             <div class="flex items-center gap-2">
@@ -43,22 +43,19 @@ export function renderSimulations(container, data, params = {}) {
               <button class="btn btn-xs ${activeCategory === 'alle' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="alle">
                 Alle (${sims.length})
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Klinik & BFD' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Klinik & BFD">
-                🏥 Klinik & BFD
+              <button class="btn btn-xs ${activeCategory === 'KJP Psychiatrie (11–17 J.)' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="KJP Psychiatrie (11–17 J.)">
+                👶 KJP (11–17 J.)
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Engineering & IT' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Engineering & IT">
-                💻 Engineering & IT
+              <button class="btn btn-xs ${activeCategory === 'Zuhause & Familie' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Zuhause & Familie">
+                🏡 Zuhause & Familie
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Wohnen & Vermieter' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Wohnen & Vermieter">
-                🏡 Wohnen & Vermieter
-              </button>
-              <button class="btn btn-xs ${activeCategory === 'Familie, Feste & Feiern' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Familie, Feste & Feiern">
-                🎄 Familie & Feste
+              <button class="btn btn-xs ${activeCategory === 'Crytek Tech & Engine (Frankfurt)' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Crytek Tech & Engine (Frankfurt)">
+                💻 Crytek Tech & Engine
               </button>
               <button class="btn btn-xs ${activeCategory === 'Partnerschaft & Herz' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Partnerschaft & Herz">
                 ❤️ Partnerschaft & Herz
               </button>
-              <button class="btn btn-xs ${activeCategory === 'Hessen & Frankfurt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Frankfurt">
+              <button class="btn btn-xs ${activeCategory === 'Hessen & Dialekt' ? 'btn-primary' : 'btn-secondary'} sim-cat-btn" data-cat="Hessen & Dialekt">
                 🏙️ Hessen & Dialekt
               </button>
             </div>
@@ -143,7 +140,7 @@ export function renderSimulations(container, data, params = {}) {
           <div class="text-5xl">🏆</div>
           <h2 class="text-2xl font-bold text-primary">Szenario erfolgreich gemeistert!</h2>
           <p class="text-sm text-secondary max-w-md mx-auto">
-            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und die Kriterien erfüllt.
+            Du hast alle Gesprächsphasen von <strong>"${sim.title}"</strong> erfolgreich absolviert und souverän reagiert.
           </p>
           <div class="flex justify-center gap-3 pt-4">
             <button id="btnRetrySim" class="btn btn-primary btn-sm">Szenario noch einmal üben</button>
@@ -258,7 +255,7 @@ export function renderSimulations(container, data, params = {}) {
 
           ${turn.whyExplanation ? `
             <div class="p-2.5 bg-surface rounded-lg text-xs text-muted italic border border-subtle mt-2">
-              💡 <strong>Linguistische Erklärung:</strong> ${turn.whyExplanation}
+              💡 <strong>Linguistische & Handlungs-Erklärung:</strong> ${turn.whyExplanation}
             </div>
           ` : ''}
         </div>
